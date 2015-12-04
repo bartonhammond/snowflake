@@ -10,7 +10,7 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 
 ## Application summary
 
- 1. The application runs on **both iOS and Android**with a **single code** base
+ 1. The application runs on **both iOS and Android** with a **single code** base
  2. A User can **Register, Login, Logout, Reset their Password** and modify their **Profile**
  3. The Forms display messages for **help and field validation**.
  4. The Forms are **protected** when fetching.
