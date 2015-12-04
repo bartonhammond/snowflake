@@ -1,8 +1,12 @@
-# setup
+Welcome to Snowflake!
+===================
+*A React-Native mobile app for iOS and Android with a single code base.*
 
-* follow instructions here only for fonts (no navigator)
-  (https://github.com/oblador/react-native-vector-icons) [https://github.com/oblador/react-native-vector-icons]
+![enter image description here](http://imgur.com/bjoM5E4)
 
-* Parse.com
-Settings -> AUthentication ->Allow anonymous users -> false
-Settings -> Email -> Verify User Emails -> true
+| Register     | Login | Profile   |
+| :------- | :---- | :---: |
+| Computer | $1600 |  ![http://imgur.com/bjoM5E4](http://imgur.com/bjoM5E4)   |
+| Phone    | $12   |  12   |
+| Pipe     | $1    |  234  |
+
