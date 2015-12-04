@@ -2,7 +2,7 @@ Welcome to Snowflake!
 ===================
 *A React-Native mobile app for iOS and Android with a single code base.*
 
-![](https://cloud.githubusercontent.com/assets/1282364/11598584/6d45967a-9a88-11e5-91af-2952a5727c54.png )
+![](https://cloud.githubusercontent.com/assets/1282364/11598584/6d45967a-9a88-11e5-91af-2952a5727c54.png  | width=250)
 
 
 ----------
