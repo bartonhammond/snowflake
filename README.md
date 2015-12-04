@@ -67,6 +67,10 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
  4. npm install
  5. Create account and app on Parse.com
  6. Copy the Parse.com app keys for APP_ID and REST_API_KEY and update ```src/lib/config.js```
+ 7. On mac, open XCode and load project
+ 8. For android, ```react-native run-android``` assuming you have an emulator or device attached.
+ 9. To run Jest, ```npm test```
+ 10. To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
  7. Enjoy!
 
 
