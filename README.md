@@ -15,6 +15,7 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
  3. The Forms display messages for **help and field validation**.
  4. The Forms are **protected** when fetching.
  5. The Forms display **spinner** when fetching.
+ 6. Form submission **errors are displayed** (see above Login)
  6. **All state changes*** are actions to the Redux store.
  3. The backend is provided by Parse.com using the **Rest API**
  3. **Every action** performed by the UI interfaces with the **Redux actions** and subsequently to the Redux Store.  This **reduces the complexity** of the JSX Components **tremendously**and makes them easily testable.
