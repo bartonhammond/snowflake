@@ -1,0 +1,60 @@
+{
+  "name": "snowflake",
+  "version": "0.0.1",
+  "private": true,
+  "jest": {
+    "scriptPreprocessor": "jestSupport/scriptProcessor.js",
+    "setupEnvScriptFile": "./node_modules/react-native/jestSupport/env.js",
+    "testPathIgnorePatterns": [
+      "node_modules/"
+    ],
+    "testFileExtensions": [
+      "js"
+    ],
+    "unmockedModulePathPatterns": [
+      "promise",
+      "source-map",
+      "key-mirror",
+      "immutable",
+      "fetch",
+      "react",
+      "redux",
+      "redux-thunk"
+    ],
+    "verbose": true,
+    "testPathDirs": [
+      "src/"
+    ],
+    "collectCoverage": true
+  },
+  "scripts": {
+    "test": "rm -rf ./node_module/jest-cli/.haste_cache && ./node_modules/.bin/jest ",
+    "start": "react-native start",
+    "test:watch": "npm run test -- --watch",
+    "test-chrome": "node-debug --preload false --nodejs --harmony ./node_modules/.bin/jest --runInBand"
+  },
+  "dependencies": {
+    "apsl-react-native-button": "^2.3.0",
+    "immutable": "^3.7.5",
+    "key-mirror": "^1.0.1",
+    "react-native": "^0.15.0",
+    "react-native-gifted-spinner": "0.0.3",
+    "react-native-simple-store": "^0.1.0",
+    "react-native-simpledialog-android": "^1.0.2",
+    "react-native-tab-navigator": "^0.2.11",
+    "react-native-vector-icons": "^0.8.5",
+    "react-redux": "^3.1.0",
+    "redux": "^3.0.4",
+    "redux-thunk": "^1.0.0",
+    "regenerator": "^0.8.42",
+    "tcomb-form-native": "^0.3.0",
+    "underscore": "^1.8.3",
+    "validate.js": "^0.9.0"
+  },
+  "devDependencies": {
+    "babel-core": "~5.8.34",
+    "jest-cli": "^0.8.0",
+    "react": "^0.14.3",
+    "react-addons-test-utils": "^0.14.3"
+  }
+}
