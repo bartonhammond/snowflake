@@ -66,7 +66,12 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
  3. cd snowflake
  4. npm install
  5. Create account and app on Parse.com
- 6. Copy the Parse.com app keys for APP_ID and REST_API_KEY and update ```src/lib/config.js```
+	 6. Copy the Parse.com app keys for APP_ID and REST_API_KEY and update ```src/lib/config.js```
+	 7. Update the Apps Settings -> Authentication 
+		 8. Allow username and password-based authentication -> Yes
+		 9. Allow anonymous users -> No
+	 10. Update the Apps Settings -> Email
+		 11. Verify user emails -> Yes
  7. On mac, open XCode and load project
  8. For android, ```react-native run-android``` assuming you have an emulator or device attached.
  9. To run Jest, ```npm test```
