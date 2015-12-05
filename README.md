@@ -10,18 +10,18 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 
 ## Application summary
 
- 1. The application runs on **both iOS and Android** with a **single code** base
- 2. A User can **Register, Login, Logout, Reset their Password** and modify their **Profile**
- 3. The Forms display messages for **help and field validation**.
- 4. The Forms are **protected** when fetching.
- 5. The Forms display **spinner** when fetching.
- 6. Form submission **errors are displayed** (see above Login)
- 6. **All state changes*** are actions to the Redux store.
- 3. The backend is provided by Parse.com using the **Rest API**
- 3. **Every action** performed by the UI interfaces with the **Redux actions** and subsequently to the Redux Store.  This **reduces the complexity** of the JSX Components **tremendously**and makes them easily testable.
- 4. **Jest Unit Tests cover 86%** of the application statements.
- 5. Demonstrates how to **setup React-Native to perform Jest testing** with Babel.
- 6. Includes ability to **debug Jest unit tests**with Chrome
+1. The application runs on **both iOS and Android** with a **single code** base
+1. A User can **Register, Login, Logout, Reset their Password** and modify their **Profile**
+1. The Forms display messages for **help and field validation**.
+1. The Forms are **protected** when fetching.
+1. The Forms display **spinner** when fetching.
+1. Form submission **errors are displayed** (see above Login)
+1. **All state changes*** are actions to the Redux store.
+1. The backend is provided by Parse.com using the **Rest API**
+1. **Every action** performed by the UI interfaces with the **Redux actions** and subsequently to the Redux Store.  This **reduces the complexity** of the JSX Components **tremendously**and makes them easily testable.
+1. **Jest Unit Tests cover 86%** of the application statements.
+1. Demonstrates how to **setup React-Native to perform Jest testing** with Babel.
+1. Includes ability to **debug Jest unit tests**with Chrome
 
 ## Technologies
 *The following are brief descriptions of the technologies used*
@@ -62,22 +62,23 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
 
 ## Setup
 
- 1. [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
- 2. ```git clone https://github.com/bartonhammond/snowflake.git```
- 3. cd snowflake
- 4. npm install
- 5. Create account and app on Parse.com
-	 6. Copy the Parse.com app keys for APP_ID and REST_API_KEY and update ```src/lib/config.js```
-	 7. Update the Apps Settings -> Authentication 
-		 8. Allow username and password-based authentication -> Yes
-		 9. Allow anonymous users -> No
-	 10. Update the Apps Settings -> Email
-		 11. Verify user emails -> Yes
- 7. On mac, open XCode and load project
- 8. For android, ```react-native run-android``` assuming you have an emulator or device attached.
- 9. To run Jest, ```npm test```
- 10. To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
- 7. Enjoy!
+1. [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
+1. ```git clone https://github.com/bartonhammond/snowflake.git```
+1. cd snowflake
+1. npm install
+1. Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.
+1. Create account and app on Parse.com
+  1. Copy the Parse.com app keys for APP_ID and REST_API_KEY and update ```src/lib/config.js```
+  1. Update the Apps Settings -> Authentication 
+ 	  1. Allow username and password-based authentication -> Yes
+	  1. Allow anonymous users -> No
+  1. Update the Apps Settings -> Email
+	  1. Verify user emails -> Yes
+1. On mac, open XCode and load project
+1. For android, ```react-native run-android``` assuming you have an emulator or device attached.
+1. To run Jest, ```npm test```
+1. To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
+1. Enjoy!
 
 # setup
 
