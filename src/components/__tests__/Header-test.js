@@ -30,7 +30,11 @@ describe('Header', () => {
     header = renderHeader(buttonProps);
     const {output} = header;
     expect(output.type).toEqual(View);
-    expect(output.props.children[1].props.children).toEqual(' ');
+    console.log('-' +
+                output.props.children[0].props.children[1].props.children
+                + '-');
+    expect(output.props.children[0].props.children[1].props.children).toEqual(' ');
+
   });
   
   it('should be display spinner when fetching', () => {
@@ -39,8 +43,9 @@ describe('Header', () => {
     };
     header = renderHeader(buttonProps);
     const {output} = header;
+
     expect(output.type).toEqual(View);
-    expect(output.props.children[1].type.displayName).toEqual('GiftedSpinner');
+    expect(output.props.children[0].props.children[1].type.displayName).toEqual('GiftedSpinner');
   });
 
 });//describe Header

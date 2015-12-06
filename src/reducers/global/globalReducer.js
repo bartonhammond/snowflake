@@ -1,23 +1,17 @@
-import {Record} from 'immutable';
 import {
   SET_SESSION_TOKEN,
-  SET_EVENT_EMITTER,
-
-  LOGGED_OUT,
-  LOGGED_IN,
-
-  EMIT_LOGGED_IN,
-  EMIT_LOGGED_OUT,
 
   GET_PROFILE_SUCCESS,
-  LOGIN_SUCCESS
+  LOGIN_SUCCESS,
+
+  GET_STATE,
+  SET_STATE,
+  SET_STORE
+  
 } from '../../lib/constants';
 
-const InitialState = Record({
-  sessionToken: null,
-  eventEmitter: null,
-  currentUser: null
-});
+import InitialState from './globalInitialState';
+
 const initialState = new InitialState;
 
 export default function globalReducer(state = initialState, action) {
@@ -28,30 +22,37 @@ export default function globalReducer(state = initialState, action) {
   case SET_SESSION_TOKEN:
     return state.set('sessionToken', action.payload);
 
-  case SET_EVENT_EMITTER: 
-    return state.set('eventEmitter', action.payload);
-
-  case EMIT_LOGGED_IN:
-    state.eventEmitter.emit(LOGGED_IN, { });
-    break;
-    
-  case EMIT_LOGGED_OUT:
-    state.eventEmitter.emit(LOGGED_OUT, { });
-    break;
-
   case GET_PROFILE_SUCCESS:
   case LOGIN_SUCCESS:
     return state.set('currentUser',action.payload);
+
+  case SET_STORE:
+    return state.set('store',action.payload);
+    
+  case GET_STATE:
+    let _state = state.store.getState();
+
+    if (action.payload) {
+      let newState = {};
+      newState['auth'] = _state.auth.toJS();
+      newState['device'] = _state.device.toJS();
+      newState['profile'] = _state.profile.toJS();    
+      newState['global'] = _state.global.set('store',null).toJS();
+
+      return state.set('showState',action.payload)
+        .set('currentState',newState);
+    } else {
+      return state.set('showState',action.payload);
+    }
+
+  case SET_STATE:
+    var global = JSON.parse(action.payload).global;
+    var next = state.set('currentUser', global.currentUser)
+          .set('showState', false)
+          .set('currentState', null);
+    return next;
+
   }
+  
   return state;
 }
-
-
-
-
-
-
-
-
-
-
