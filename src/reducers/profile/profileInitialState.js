@@ -1,25 +1,31 @@
 import {Record} from 'immutable';
 import {
-  LOGIN_STATE_REGISTER
+  
 } from '../../lib/constants';
 
 const Form = Record({
-  state: LOGIN_STATE_REGISTER,
+  originalProfile: new(Record({
+    username: null,
+    email: null,
+    objectId: null,
+    emailVerified: null
+  })),
   disabled: false,
   error: null,
   isValid: false,
-  isFetching: true,
+  isFetching: false,
   fields: new (Record({
     username: '',
     usernameHasError: false,
     email: '',
     emailHasError: false,
-    password: '',
-    passwordHasError: false,
-    passwordAgain: '',
-    passwordAgainHasError: false,
-    showPassword: false
+    emailVerified: false
   }))
 });
 
-export default Form;
+
+var InitialState = Record({
+  form: new Form
+});
+
+export default InitialState;

@@ -1,9 +1,7 @@
 'use strict';
-import Form from './authForm';
-import {Record} from 'immutable';
+import InitialState from './authInitialState';
 import fieldValidation from '../../lib/fieldValidation';
 import formValidation from './authFormValidation';
-import _ from 'underscore';
 
 import {
   SESSION_TOKEN_REQUEST,
@@ -30,13 +28,11 @@ import {
 
   RESET_PASSWORD_REQUEST,
   RESET_PASSWORD_SUCCESS,
-  RESET_PASSWORD_FAILURE
-  
+  RESET_PASSWORD_FAILURE,
+
+  SET_STATE
 } from '../../lib/constants';
 
-const InitialState = Record({
-  form: new Form
-});
 const initialState = new InitialState;
 
 export default function authReducer(state = initialState, action) {
@@ -48,8 +44,8 @@ export default function authReducer(state = initialState, action) {
   case LOGOUT_REQUEST:
   case LOGIN_REQUEST:
   case RESET_PASSWORD_REQUEST:
-      let nextState =  state.setIn(['form', 'isFetching'], true)
-        .setIn(['form','error'],null);
+    let nextState =  state.setIn(['form', 'isFetching'], true)
+      .setIn(['form','error'],null);
     return nextState;
 
 
@@ -74,7 +70,7 @@ export default function authReducer(state = initialState, action) {
   case ON_AUTH_FORM_FIELD_CHANGE: {
     const {field, value} = action.payload;
     let nextState =  state.setIn(['form', 'fields', field], value)
-        .setIn(['form','error'],null);
+          .setIn(['form','error'],null);
 
     var finalState = formValidation(
       fieldValidation( nextState, action)
@@ -98,8 +94,27 @@ export default function authReducer(state = initialState, action) {
   case RESET_PASSWORD_FAILURE:
     return state.setIn(['form', 'isFetching'], false)
       .setIn(['form', 'error'], action.payload);
+
+  case SET_STATE:
+    var form = JSON.parse(action.payload).auth.form;
+    
+    var next = state.setIn(['form','state'],form.state)
+      .setIn(['form','disabled'],form.disabled)
+      .setIn(['form','error'], form.error)
+      .setIn(['form','isValid'],form.isValid)
+      .setIn(['form','isFetching'], form.isFetching)
+      .setIn(['form','fields','username'],form.fields.username)
+      .setIn(['form','fields','usernameHasError'],form.fields.usernameHasError)
+      .setIn(['form','fields','email'],form.fields.email)
+      .setIn(['form','fields','emailHasError'],form.fields.emailHasError)
+      .setIn(['form','fields','password'],form.fields.password)
+      .setIn(['form','fields','passwordHasError'],form.fields.passwordHasError)      
+      .setIn(['form','fields','passwordAgain'],form.fields.passwordAgain)
+      .setIn(['form','fields','passwordAgainHasError'],form.fields.passwordAgainHasError);
+    
+    return next;
+    
   }    
 
   return state;
 }
-

@@ -1,46 +1,48 @@
-/**
- * 
- * 
- */
 'use strict';
 
-import React, { Component, AppRegistry } from 'react-native';
+import React, { AppRegistry } from 'react-native';
 import { Provider } from 'react-redux/native';
 import App from './containers/App';
 import configureStore from './lib/configureStore';
 import {setPlatform, setVersion} from './reducers/device/deviceActions';
-import EventEmitter from 'EventEmitter';
+import {setStore} from './reducers/global/globalActions';
 
-var VERSION='0.0.1';
+
+import authInitialState from './reducers/auth/authInitialState';
+import deviceInitialState from './reducers/device/deviceInitialState';
+import globalInitialState from './reducers/global/globalInitialState';
+import profileInitialState from './reducers/profile/profileInitialState';
+
+var VERSION='0.0.2';
+
+
+function getInitialState() {
+    const _initState = {
+    auth: new authInitialState,
+    device: (new deviceInitialState).set('isMobile',true).set('version',VERSION),
+    global: (new globalInitialState),
+    profile: new profileInitialState
+  };
+  return _initState;
+}
 
 export default function native(platform) {
-  const initialState = {
-    device: {
-      isMobile: true,
-      version: VERSION
-    },
-    global: {
-      sessionToken: null,
-      eventEmitter: new EventEmitter(),
-      currentUser: null
-    }
-  };
-  
-  const store = configureStore(initialState);
 
-  store.dispatch(setPlatform(platform));
-  store.dispatch(setVersion(VERSION));
-  
-  class Snowflake  extends Component {
+  let Snowflake = React.createClass( {
     render() {
+      const store = configureStore(getInitialState());
+      store.dispatch(setPlatform(platform));
+      store.dispatch(setVersion(VERSION));
+      store.dispatch(setStore(store));
+
       return (
           <Provider store={store}>
-          {() => <App store={store}/>}
-            </Provider>
+            {() => <App store={store}/>}
+          </Provider>
       );
 
     }
-  }
+  });
 
   AppRegistry.registerComponent('snowflake', () => Snowflake);
 }

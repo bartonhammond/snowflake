@@ -31,9 +31,6 @@ export default keyMirror({
   LOGGED_OUT: null,
 
   SET_SESSION_TOKEN: null,
-  SET_EVENT_EMITTER: null,
-  EMIT_LOGGED_IN: null,
-  EMIT_LOGGED_OUT: null,
 
   RESET_PASSWORD_REQUEST: null,
   RESET_PASSWORD_SUCCESS: null,
@@ -47,6 +44,9 @@ export default keyMirror({
   
   PROFILE_UPDATE_REQUEST: null,
   PROFILE_UPDATE_SUCCESS: null,
-  PROFILE_UPDATE_FAILURE: null
+  PROFILE_UPDATE_FAILURE: null,
 
+  SET_STATE: null,
+  GET_STATE: null,
+  SET_STORE: null
 });

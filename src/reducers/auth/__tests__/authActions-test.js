@@ -30,9 +30,6 @@ import {
   SIGNUP_SUCCESS,
   SIGNUP_FAILURE,
 
-  EMIT_LOGGED_IN,
-  EMIT_LOGGED_OUT,
-
   RESET_PASSWORD_REQUEST,
   RESET_PASSWORD_SUCCESS,
   RESET_PASSWORD_FAILURE
@@ -105,14 +102,6 @@ describe('authActions', () => {
       type: SESSION_TOKEN_FAILURE,payload: error });
   });
 
-  it('should set emitLoggedIn', () => {
-    expect(actions.emitLoggedIn()).toEqual({type: EMIT_LOGGED_IN});
-  });
-
-  it('should set emitLoggedOut', () => {
-    expect(actions.emitLoggedOut()).toEqual({type: EMIT_LOGGED_OUT});
-  });
-
   it('should set signupFailure', () => {
     let error = {error: 'thisistheerror'};
     expect(actions.signupFailure(error)).toEqual({type:
@@ -156,7 +145,6 @@ describe('authActions', () => {
       {type: LOGOUT_REQUEST},
       {type: LOGIN_STATE_REGISTER},
       {type: LOGOUT_SUCCESS},
-      {type: EMIT_LOGGED_OUT},
       {type: SESSION_TOKEN_REQUEST},
       {type: SESSION_TOKEN_SUCCESS}
     ];
@@ -170,8 +158,7 @@ describe('authActions', () => {
     const expectedActions = [
       {type: LOGIN_REQUEST},
       {type: LOGIN_STATE_LOGOUT},
-      {type: LOGIN_SUCCESS},
-      {type: EMIT_LOGGED_IN}
+      {type: LOGIN_SUCCESS}
     ];
 
 
@@ -184,8 +171,7 @@ describe('authActions', () => {
     const expectedActions = [
       {type: SESSION_TOKEN_REQUEST},      
       {type: LOGIN_STATE_LOGOUT},
-      {type: SESSION_TOKEN_SUCCESS},
-      {type: EMIT_LOGGED_IN}
+      {type: SESSION_TOKEN_SUCCESS}
     ];
 
 
@@ -198,8 +184,7 @@ describe('authActions', () => {
     const expectedActions = [
       {type: SIGNUP_REQUEST},      
       {type: LOGIN_STATE_LOGOUT},
-      {type: SIGNUP_SUCCESS},
-      {type: EMIT_LOGGED_IN}
+      {type: SIGNUP_SUCCESS}
     ];
 
     const store = mockStore({}, expectedActions);
@@ -211,8 +196,7 @@ describe('authActions', () => {
     const expectedActions = [
       {type: RESET_PASSWORD_REQUEST},      
       {type: LOGIN_STATE_LOGIN},
-      {type: RESET_PASSWORD_SUCCESS},
-      {type: EMIT_LOGGED_OUT}
+      {type: RESET_PASSWORD_SUCCESS}
     ];
 
     const store = mockStore({}, expectedActions);

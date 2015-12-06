@@ -23,12 +23,9 @@ import {
   SIGNUP_SUCCESS,
   SIGNUP_FAILURE,
 
-  EMIT_LOGGED_IN,
-  EMIT_LOGGED_OUT,
-
   RESET_PASSWORD_REQUEST,
   RESET_PASSWORD_SUCCESS,
-  RESET_PASSWORD_FAILURE
+  RESET_PASSWORD_FAILURE,
 
 } from '../../lib/constants';
 
@@ -89,7 +86,6 @@ export function logout() {
         } else {
           dispatch(loginState());
           dispatch(logoutSuccess());
-          dispatch(emitLoggedOut());
           throw 'TokenMissing';
         }
       })
@@ -106,12 +102,11 @@ export function logout() {
           return response;
         }
       })
-      .then((response) => { //have to send emit after all other dispatches
+      .then((response) => {
         var  res = JSON.parse(response._bodyInit);
         if ((response.status === 200 || response.status === 201)
             || //invalid session token
             (response.status === 400 && res.code === 209)) {
-          dispatch(emitLoggedOut());
           dispatch(deleteSessionToken());          
         }
       })
@@ -165,16 +160,6 @@ export function deleteSessionToken() {
       });
   };
 }
-export function emitLoggedIn() {
-  return {
-    type: EMIT_LOGGED_IN
-  };
-}
-export function emitLoggedOut() {
-  return {
-    type: EMIT_LOGGED_OUT
-  };
-}
 
 export function getSessionToken() {
   return dispatch => {
@@ -184,10 +169,8 @@ export function getSessionToken() {
         if (token) {
           dispatch(logoutState());
           dispatch(sessionTokenRequestSuccess(token));
-          dispatch(emitLoggedIn());
         } else {
           dispatch(sessionTokenRequestFailure());
-          dispatch(emitLoggedOut());
         }
       })
       .catch((error) => {
@@ -233,11 +216,6 @@ export function signup(username, email, password) {
           dispatch(signupFailure(JSON.parse(response._bodyInit)));
         }
         return response;
-      })
-      .then((response) => {
-        if (response.status === 200 || response.status === 201) {
-          dispatch(emitLoggedIn());
-        }
       })
       .catch((error) => {
         dispatch(signupFailure(error));
@@ -287,11 +265,6 @@ export function login(username,  password) {
         }
         return response;
       })
-      .then((response) => {
-        if (response.status === 200 || response.status === 201) {
-          dispatch(emitLoggedIn());
-        }
-      })
       .catch((error) => {
         dispatch(loginFailure(error));
       });
@@ -335,7 +308,6 @@ export function resetPassword(email) {
       })
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
-          dispatch(emitLoggedOut());
         }
       })
       .catch((error) => {
@@ -344,4 +316,3 @@ export function resetPassword(email) {
 
   };
 }
-

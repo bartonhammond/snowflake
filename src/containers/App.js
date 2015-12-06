@@ -15,8 +15,7 @@ import React,
 }
 from 'react-native';
 import {
-  LOGGED_IN,
-  LOGGED_OUT
+  LOGIN_STATE_LOGOUT
 } from '../lib/constants';
 
 
@@ -52,23 +51,16 @@ let App = React.createClass({
       loggedIn: false
     };
   },
-  
-  onLogin() {
+
+  componentWillReceiveProps(props) {
+    var loggedIn =  props.auth.form.state === LOGIN_STATE_LOGOUT;
     this.setState({
-      loggedIn: true
+      loggedIn: loggedIn
     });
   },
-  
-  onLogout() {
-    this.setState({
-      loggedIn: false
-    });
-  },
-  
+
   componentDidMount() {
     this.props.actions.getSessionToken();
-    this.addListenerOn(this.props.global.eventEmitter, LOGGED_IN, this.onLogin);
-    this.addListenerOn(this.props.global.eventEmitter, LOGGED_OUT, this.onLogout);
   },
   
   render () {

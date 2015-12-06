@@ -20,11 +20,14 @@ var LoginForm = React.createClass({
     onChange: PropTypes.func
   },
 
+  
   render() {
+
+    
     let options = {
       auto: 'placeholders',
       fields: {
-
+        
       }
     };
 

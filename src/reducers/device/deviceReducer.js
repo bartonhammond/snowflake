@@ -1,11 +1,11 @@
-import * as actions from './deviceActions';
-import {Record} from 'immutable';
+import InitialState from './deviceInitialState';
 
-const InitialState = Record({
-  isMobile: false,
-  platform: '',
-  version: null
-});
+import {
+  SET_PLATFORM,
+  SET_VERSION,
+  SET_STATE
+} from '../../lib/constants';
+
 const initialState = new InitialState;
 
 export default function deviceReducer(state = initialState, action) {
@@ -13,16 +13,22 @@ export default function deviceReducer(state = initialState, action) {
 
   switch (action.type) {
 
-    case actions.SET_PLATFORM: {
-      const {platform} = action.payload;
-      return state.set('platform', platform);
-    }
+  case SET_PLATFORM: 
+    const {platform} = action.payload;
+    return state.set('platform', platform);
 
-    case actions.SET_VERSION: {
-      const {version} = action.payload;
-      return state.set('version', version);
-    }
 
+  case SET_VERSION: 
+    const {version} = action.payload;
+    return state.set('version', version);
+
+
+  case SET_STATE:
+    const device = JSON.parse(action.payload).device;
+    var next = state.set('isMobile',device.isMobile)
+          .set('platform',device.platform)
+          .set('version',device.version);
+    return next;
   }
 
   return state;

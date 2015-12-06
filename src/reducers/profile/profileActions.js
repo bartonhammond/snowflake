@@ -34,10 +34,10 @@ export function getProfileFailure(json) {
   };
 }
 
-export function getProfile() {
+export function getProfile(sessionToken) {
   return dispatch => {
     dispatch(getProfileRequest());
-    return new AppAuthToken().getSessionToken()
+    return new AppAuthToken().getSessionToken(sessionToken)
       .then((token) => {
         return new Parse(token.sessionToken.sessionToken).getProfile();
       })
@@ -71,10 +71,10 @@ export function profileUpdateFailure(json) {
     payload: json
   };
 }
-export function updateProfile(userId, username, email) {
+export function updateProfile(userId, username, email, sessionToken) {
   return dispatch => {
     dispatch(profileUpdateRequest());
-    return new AppAuthToken().getSessionToken()
+    return new AppAuthToken().getSessionToken(sessionToken)
       .then((token) => {
         return new
         Parse(token.sessionToken.sessionToken).updateProfile(userId,

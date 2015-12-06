@@ -7,6 +7,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux/native';
 import * as authActions from '../reducers/auth/authActions';
+import * as globalActions from '../reducers/global/globalActions';
 import {Map} from 'immutable';
 import Header from '../components/Header';
 import ErrorAlert from '../components/ErrorAlert';
@@ -53,7 +54,8 @@ var styles = StyleSheet.create({
 });
 
 const actions = [
-  authActions
+  authActions,
+  globalActions
 ];
 
 function mapStateToProps(state) {
@@ -81,12 +83,22 @@ export default class Login extends Component {
     this.errorAlert = new ErrorAlert();
     this.state ={
       value: {
-        username: '',
-        email: '',
-        password: '',
-        passwordAgain: ''
+        username: this.props.auth.form.fields.username,
+        email: this.props.auth.form.fields.email,
+        password: this.props.auth.form.fields.password,
+        passwordAgain: this.props.auth.form.fields.passwordAgain
         }
     };
+  }
+  componentWillReceiveProps(props) {
+    this.setState({
+      value: {
+        username: props.auth.form.fields.username,
+        email: props.auth.form.fields.email,
+        password: props.auth.form.fields.password,
+        passwordAgain: props.auth.form.fields.passwordAgain
+      }
+    });
   }
   
   onChange(value) {
@@ -153,7 +165,7 @@ export default class Login extends Component {
       case(LOGIN_STATE_LOGOUT):
         loginButtonText = 'Log out';
         onButtonPress = () => {
-          this.props.actions.logout(this.props.eventEmitter);
+          this.props.actions.logout();
         };
         break;
         
@@ -193,7 +205,12 @@ export default class Login extends Component {
       return (
         <View style={styles.container}>
           <View>
-            <Header isFetching={this.props.auth.form.isFetching}/>
+            <Header isFetching={this.props.auth.form.isFetching}
+                    showState={this.props.global.showState}
+                    currentState={this.props.global.currentState}
+                    onGetState={this.props.actions.getState}
+                    onSetState={this.props.actions.setState}
+            />
               <FormButton
                   isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
                   onPress={onButtonPress.bind(self)}
@@ -201,11 +218,16 @@ export default class Login extends Component {
             </View>
           </View>
         );
-      } else {
+    } else {
         return (
           <View style={styles.container}>
             <View>
-              <Header isFetching={this.props.auth.form.isFetching}/>
+              <Header isFetching={this.props.auth.form.isFetching}
+                      showState={this.props.global.showState}
+                      currentState={this.props.global.currentState}
+                      onGetState={this.props.actions.getState}
+                      onSetState={this.props.actions.setState}                      
+              />
               <View style={styles.inputs}>
                 <LoginForm
                     form={this.props.auth.form}
@@ -230,7 +252,3 @@ export default class Login extends Component {
       }//else
   }
 }
-
-
-
-

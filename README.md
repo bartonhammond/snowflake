@@ -1,14 +1,38 @@
 Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
 ==================================
-#### A React-Native starter mobile app for iOS and Android with a single code base.
+#### A React-Native starter mobile app for iOS and Android with a single code base.  Using Redux and Immutable, the state of the application is fully testable with Jest, currently at 86% coverage.  Snowflake supports Hot Reloading of it's state.
+
+# Content
+
+- [Screens](#screens)
+- [Hot Reloading](#hot-reloading)
+- [Summary](#summary)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Redux State Management](#redux-state-management)
+- [FAQ](#faq)
+- [Release Notes](#release-notes)
 
 ----------
+
+## Screens
+
 | Platform| Register     | Login | Profile   |
 | :------:| :-------: | :----: | :---: |
 | iOS|  ![ios Profile](https://cloud.githubusercontent.com/assets/1282364/11598478/b2b1b5e6-9a87-11e5-8be9-37cbfa478a71.gif)  | ![ios Login](https://cloud.githubusercontent.com/assets/1282364/11598580/6d360f02-9a88-11e5-836b-4171f789a41d.gif)| ![ios Register](https://cloud.githubusercontent.com/assets/1282364/11598582/6d392750-9a88-11e5-9839-05127dfba96b.gif)  |
 | Android |![Android Register](https://cloud.githubusercontent.com/assets/1282364/11598579/6d3487b8-9a88-11e5-9e95-260283a6951e.gif)    | ![Android Login](https://cloud.githubusercontent.com/assets/1282364/11598577/6d2f140e-9a88-11e5-8cd4-1ba8c9cbc603.gif)   |  ![Android Profile](https://cloud.githubusercontent.com/assets/1282364/11598578/6d314ee0-9a88-11e5-9a6c-512a313535ee.gif) |
 
-## Application summary
+----------
+
+## Hot Reloading
+This video shows Snowflake exporting and importing state from Redux.  It demonstrates, with the iOS Simulator, the process of copying the state for import at a later time.  After the demo, I walk through the code to clarify how I achieved this.  It's assumed you have some familiarity with Redux.  Hopefully it helps you gain a better understanding of what Redux provides you!
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=b4eqQUA3O6o" target="_blank"><img src="http://img.youtube.com/vi/b4eqQUA3O6o/0.jpg" 
+alt="Snowflake Hot Loading" width="240" height="180" border="10" /></a>
+
+----------
+
+## Summary
 
 1. The application runs on **both iOS and Android** with a **single code** base
 1. A User can **Register, Login, Logout, Reset their Password** and modify their **Profile**
@@ -22,6 +46,10 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 1. **Jest Unit Tests cover 86%** of the application statements.
 1. Demonstrates how to **setup React-Native to perform Jest testing** with Babel.
 1. Includes ability to **debug Jest unit tests**with Chrome
+
+
+----------
+
 
 ## Technologies
 *The following are brief descriptions of the technologies used*
@@ -60,6 +88,10 @@ Using Parse.com as the backend **reduces the angst** of setting up a server, man
 
 Using Validate.js for the Form processing was a breeze!  And with the ability to test the validations to the Redux state was very easy!
 
+
+----------
+
+
 ## Setup
 
 1. [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
@@ -80,16 +112,12 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
 1. To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
 1. Enjoy!
 
-# setup
 
-* follow instructions here only for fonts (no navigator)
-  (https://github.com/oblador/react-native-vector-icons) [https://github.com/oblador/react-native-vector-icons]
+----------
 
-* Parse.com
-Settings -> AUthentication ->Allow anonymous users -> false
-Settings -> Email -> Verify User Emails -> true
 
-## Quick Explanation of State Management with Redux
+## Redux State Management
+This section explains a little about what I've learned with Redux and the management of application state.
 
 ### Without Redux
 
@@ -242,8 +270,27 @@ Hopefully this gives you some insight into how Redux is integrated into the appl
 If you'd like to read an excellent tutorial on Redux I can't recommend this one enough: [http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html)
 
 
+----------
+## FAQ 
 
+### Why did you use the RestAPI instead of the (JS-sdk | ParseReact)
 
+I looked at it initially and, imo, it had too much magic.  For example, I couldn't see how I was going to isolate my JSX components easily and keep all my "state" in Redux.  ParseReact is right there in the middle of your JSX component which would tie me to a very particular vendor and implementation detail.  If I decided to later move away from ParseReact I'd have to rewrite a lot of code and tests.
+
+Also, it had this statement
+
+> Mutations are dispatched in the manner of Flux Actions, allowing updates to be synchronized between many different components without requiring views to talk to each other
+
+I don't want to deal w/ wrapping my head around Flux Actions and have to monkey-patch or something to get Redux Actions.
+
+In a previous life, I worked with Parse JS SDK and it's based on backbone.js.  So I didn't go that direction either, because, again, I didn't want to have another data model to deal with.  Plus, at the time I was using it, the SDK was buggy and it was difficult to work with. 
+
+With the Parse Rest API, it's simple, can be tested itself from the command line with curl, it's clear, it's succinct and it's easily replaced with something else, an example such as Mongo/Mongoose without much, if any, impact on the code base.
+
+## Release Notes
+
+ - 0.0.1 Dec 4, '15 Initial implementation
+ - 0.0.2 Dec 6, '15 Hot Reloading.  Be sure to ```npm update apsl-react-native-button```due to problem with Jest
 
 
 ######-barton hammond

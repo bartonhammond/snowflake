@@ -29,34 +29,34 @@ var styles = StyleSheet.create({
 });
 
 let Tabbar = React.createClass({
-    getInitialState() {
-      return {
-        selectedTab: 'home'
-      };
-    },
+  getInitialState() {
+    return {
+      selectedTab: 'home'
+    };
+  },
 
-    render() {
-      return (
-        <TabNavigator>
-          <TabNavigator.Item selected={this.state.selectedTab === 'home'}
-                             title="Home"
-                             renderIcon={() => <Icon name="home" size={30} color="#FFB3B3" />}
-                             renderSelectedIcon={() => <Icon name="home" size={30} color="#FF3366" />}
-                             onPress={() => this.setState({ selectedTab: 'home' })}>
-            <View style={styles.container}>
-              <Login />
-            </View>
-          </TabNavigator.Item>
-          <TabNavigator.Item selected={this.state.selectedTab === 'profile'}
-                             title="Profile"
-                             renderIcon={() => <Icon name="gear" size={30} color="#FFB3B3" />}
-                             renderSelectedIcon={() => <Icon name="gear" size={30} color="#FF3366" />}
-                             onPress={() => this.setState({ selectedTab: 'profile' })}>
-            <View style={styles.container}>
-              <Profile time={new Date()}/>
-            </View>
-          </TabNavigator.Item>
-        </TabNavigator>
+  render() {
+    return (
+      <TabNavigator>
+        <TabNavigator.Item selected={this.state.selectedTab === 'home'}
+                           title="Home"
+                           renderIcon={() => <Icon name="home" size={30} color="#FFB3B3" />}
+                           renderSelectedIcon={() => <Icon name="home" size={30} color="#FF3366" />}
+                           onPress={() => this.setState({ selectedTab: 'home' })}>
+          <View style={styles.container}>
+            <Login />
+          </View>
+        </TabNavigator.Item>
+        <TabNavigator.Item selected={this.state.selectedTab === 'profile'}
+                           title="Profile"
+                           renderIcon={() => <Icon name="gear" size={30} color="#FFB3B3" />}
+                           renderSelectedIcon={() => <Icon name="gear" size={30} color="#FF3366" />}
+                           onPress={() => this.setState({ selectedTab: 'profile' })}>
+          <View style={styles.container}>
+            <Profile/>
+          </View>
+        </TabNavigator.Item>
+      </TabNavigator>
 
     )
   }

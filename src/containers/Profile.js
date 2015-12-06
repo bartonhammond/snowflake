@@ -6,6 +6,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux/native';
 import * as profileActions from '../reducers/profile/profileActions';
+import * as globalActions from '../reducers/global/globalActions';
 import {Map} from 'immutable';
 import ErrorAlert from '../components/ErrorAlert';
 import FormButton from '../components/FormButton';
@@ -43,7 +44,8 @@ var styles = StyleSheet.create({
 });
 
 const actions = [
-  profileActions
+  profileActions,
+  globalActions
 ];
 
 function mapStateToProps(state) {
@@ -80,10 +82,7 @@ export default class Profile extends Component {
     this.props.actions.onProfileFormFieldChange(value);
     this.setState({value});
   }
-  
-  componentDidMount() {
-    this.props.actions.getProfile();
-  }
+
   componentWillReceiveProps(props) {
     this.setState({
       formValues: {
@@ -91,10 +90,22 @@ export default class Profile extends Component {
         email: props.profile.form.fields.email
       }
     });
+
+  }
+  componentDidMount() {
+    if (this.props.profile.form.fields.username == '' && this.props.profile.form.fields.email == '') {
+      this.props.actions.getProfile(this.props.global.currentUser);
+    } else {
+      this.setState({
+        formValues: {
+          username: this.props.profile.form.fields.username,
+          email: this.props.profile.form.fields.email
+        }
+      });
+    }      
   }
 
   render() {
-    
     this.errorAlert.checkError(this.props.profile.form.error);
 
     let self = this;
@@ -130,12 +141,18 @@ export default class Profile extends Component {
       this.props.actions.updateProfile(
         this.props.profile.form.originalProfile.objectId,
         this.props.profile.form.fields.username,
-        this.props.profile.form.fields.email);
+        this.props.profile.form.fields.email,
+        this.props.global.currentUser);
     };
 
     return (
       <View style={styles.container}>
-      <Header isFetching={this.props.profile.form.isFetching}/>
+        <Header isFetching={this.props.profile.form.isFetching}
+                showState={this.props.global.showState}
+                currentState={this.props.global.currentState}
+                onGetState={this.props.actions.getState}
+                onSetState={this.props.actions.setState}
+        />
         <View style={styles.inputs}>
           <Form
               ref="form"
@@ -160,7 +177,3 @@ export default class Profile extends Component {
     );
   }
 }
-
-
-
-

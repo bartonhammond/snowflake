@@ -8,16 +8,20 @@ export default class AppAuthToken {
   }
   
   storeSessionToken(sessionToken) {
-    try {
-      return store.save(this.SESSION_TOKEN_KEY,{
-        sessionToken: sessionToken
-      });
-    } catch (error) {
-      throw error;
-    }
+    return store.save(this.SESSION_TOKEN_KEY,{
+      sessionToken: sessionToken
+    });
+
   }
-      
-  getSessionToken() {
+  
+  getSessionToken(sessionToken) {
+    if (sessionToken) {
+      return store.save(this.SESSION_TOKEN_KEY,{
+          sessionToken: sessionToken
+      }).then(() => {
+        return store.get(this.SESSION_TOKEN_KEY);
+      });
+    }
     return store.get(this.SESSION_TOKEN_KEY);
   }
 

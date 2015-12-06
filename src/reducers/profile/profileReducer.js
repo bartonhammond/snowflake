@@ -1,6 +1,5 @@
 'use scrict';
-import Form from './profileForm';
-import {Record} from 'immutable';
+
 import fieldValidation from '../../lib/fieldValidation';
 import formValidation from './profileFormValidation';
 
@@ -12,12 +11,12 @@ import {
 
   PROFILE_UPDATE_REQUEST,
   PROFILE_UPDATE_SUCCESS,
-  PROFILE_UPDATE_FAILURE
+  PROFILE_UPDATE_FAILURE,
+
+  SET_STATE
 } from '../../lib/constants';
 
-const InitialState = Record({
-  form: new Form
-});
+import InitialState from './profileInitialState';
 const initialState = new InitialState;
 
 export default function authReducer(state = initialState, action) {
@@ -65,6 +64,31 @@ export default function authReducer(state = initialState, action) {
       fieldValidation( nextFormState, action)
       , action);
 
+  case SET_STATE:
+    var profile  = JSON.parse(action.payload).profile.form;
+    var next = state.setIn(['form','disabled'],profile.disabled)
+      .setIn(['form','error'],profile.error)
+      .setIn(['form','isValid'],profile.isValid)
+      .setIn(['form','isFetching'],profile.isFetching)
+      .setIn(['form','originalProfile',
+              'username'],profile.originalProfile.username)
+      .setIn(['form','originalProfile',
+              'email'],profile.originalProfile.email)
+      .setIn(['form','originalProfile',
+              'objectId'],profile.originalProfile.objectId)
+      .setIn(['form','originalProfile',
+              'emailVerified'],profile.originalProfile.emailVerified)
+      .setIn(['form','fields',
+              'username'],profile.fields.username)
+      .setIn(['form','fields',
+              'usernameHasError'],profile.fields.usernameHasError)
+      .setIn(['form','fields',
+              'email'],profile.fields.email)
+      .setIn(['form','fields',
+              'emailHasError'],profile.fields.emailHasError)
+      .setIn(['form','fields',
+              'emailVerified'],profile.fields.emailVerified);
+    return next;
     
   }//switch
   return state;
