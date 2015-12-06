@@ -13,7 +13,7 @@ import deviceInitialState from './reducers/device/deviceInitialState';
 import globalInitialState from './reducers/global/globalInitialState';
 import profileInitialState from './reducers/profile/profileInitialState';
 
-var VERSION='0.0.1';
+var VERSION='0.0.2';
 
 
 function getInitialState() {
