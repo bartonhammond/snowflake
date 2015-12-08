@@ -1,6 +1,6 @@
 {
   "name": "snowflake",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "jest": {
     "scriptPreprocessor": "jestSupport/scriptProcessor.js",
@@ -28,10 +28,11 @@
     "collectCoverage": true
   },
   "scripts": {
-    "test": "rm -rf ./node_module/jest-cli/.haste_cache && ./node_modules/.bin/jest ",
+    "test": "rm -rf ./node_modules/jest-cli/.haste_cache && ./node_modules/.bin/jest ",
     "start": "react-native start",
     "test:watch": "npm run test -- --watch",
-    "test-chrome": "node-debug --preload false --nodejs --harmony ./node_modules/.bin/jest --runInBand"
+    "test-chrome": "node-debug --preload false --nodejs --harmony ./node_modules/.bin/jest --runInBand",
+    "docs": "./node_modules/docker/docker -w -i src/ -o ../snowflake-pages "
   },
   "dependencies": {
     "apsl-react-native-button": "git@github.com:bartonhammond/react-native-button.git", 
@@ -53,6 +54,7 @@
   },
   "devDependencies": {
     "babel-core": "~5.8.34",
+    "docker": "^0.2.14",    
     "jest-cli": "^0.8.0",
     "react": "^0.14.3",
     "react-addons-test-utils": "^0.14.3"

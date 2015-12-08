@@ -1,7 +1,23 @@
+/**
+ * # ItemCheckbox.js
+ *
+ * This class was initially written by
+ * https://github.com/mhollweck/react-native-item-checkbox
+ * 
+ * I've opened an issue to attempt to merge this back in 
+ */
 'use strict';
 
+/**
+ * ## Imports
+ *
+ * React
+ */
 var React = require('react-native');
 
+ /**
+  * The vector icon
+  */
 var Icon = require('react-native-vector-icons/FontAwesome');
 
 var {
@@ -12,7 +28,13 @@ var {
   TouchableWithoutFeedback
 } = React;
 
+
 var ItemCheckbox = React.createClass({
+  /**
+   * ## ItemCheckbox class
+   *
+   * set the propTypes
+   */
   propTypes: {
     onCheck: PropTypes.func,
     onUncheck: PropTypes.func,
@@ -27,7 +49,10 @@ var ItemCheckbox = React.createClass({
     text: PropTypes.string,
     disabled: PropTypes.bool
   },
-
+  /**
+   * ### getDefaultProps
+   * set the default values
+   */
   getDefaultProps: function() {
     return {
       onCheck: null,
@@ -43,14 +68,21 @@ var ItemCheckbox = React.createClass({
       disabled: false
     };
   },
-
+  /**
+   * ### getInitialState
+   *
+   * Set the box to be checked or not
+   */
   getInitialState: function () {
     return {
       checked: this.props.checked,
       bg_color: this.props.backgroundColor
     };
   },
-
+  /**
+   * ### _getCircleCheckSytel
+   * merge the props styles w/ some defaults
+   */
   _getCircleCheckStyle: function() {
     return {
       width: this.props.size,
@@ -64,7 +96,10 @@ var ItemCheckbox = React.createClass({
       padding: 2
     };
   },
-
+  /**
+   * ### _getIconSize
+   * @return {Number} size 
+   */
   _getIconSize: function() {
     if (this.props.iconSize == 'small') {
       return this.props.size * 0.5;
@@ -74,7 +109,10 @@ var ItemCheckbox = React.createClass({
       return this.props.size * 0.7;
     }
   },
-
+  /**
+   * ### _getCircleIconStyle
+   * @returns {Object} style object
+   */
   _getCircleIconStyle: function() {
     return {
       color: this.props.backgroundColor,
@@ -83,7 +121,11 @@ var ItemCheckbox = React.createClass({
       height: this._getIconSize()
     };
   },
-
+  /**
+   * ### _completeProgress
+   * If the checkbox is pressable, figure out what state it's in and
+   * what the display should look like
+   */
   _completeProgress: function() {
     if (this.state.checked) {
       this.setState({
@@ -103,13 +145,21 @@ var ItemCheckbox = React.createClass({
       }
     }
   },
-
+  /**
+   * ### componentDidMount
+   * If there is a ```checked``` property, set the UI appropriately
+   */
   componentDidMount: function() {
     if (this.props.checked) {
       this._completeProgress();
     }
   },
-
+  /**
+   * ### render
+   * Use Touchable with or without Feedback depending on
+   * ```disabled```.
+   * Set the ```iconName``` depending on if checked
+   */
   render: function() {
     var iconName=this.props.icon_open;
     if (this.state.checked) {

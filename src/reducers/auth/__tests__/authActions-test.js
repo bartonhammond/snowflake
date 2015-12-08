@@ -1,12 +1,40 @@
+/**
+ * # authActions-test.js
+ * 
+ * This test is for authActions
+ *
+ */
 'use strict';
 jest.autoMockOff();
 
+/**
+ * ## Mocks
+ *
+ * We don't want to use the devices storage, nor actually call Parse.com
+ */
 jest.mock('../../../lib/AppAuthToken');
 jest.mock('../../../lib/Parse');
 
+/**
+ * ## Mock Store
+ *
+ * The ```mockStore``` confirms the all the actions are dispatched and
+ * in the correct order
+ *
+ */
 var mockStore = require('../../mocks/Store');
+
+/**
+ * ## Class under test
+ *
+ */
 var actions = require('../authActions');
 
+/**
+ * ## Imports
+ * 
+ * actions under test 
+ */
 import {
   SESSION_TOKEN_REQUEST,
   SESSION_TOKEN_SUCCESS,
@@ -35,7 +63,15 @@ import {
   RESET_PASSWORD_FAILURE
 } from '../../../lib/constants';
 
+/**
+ * ## Tests
+ * 
+ * authActions
+ */
 describe('authActions', () => {
+  /**
+   * ### simple tests that prove the actions have the specific type
+   */ 
   it('should set logoutState', () => {
     expect(actions.logoutState()).toEqual({type: LOGIN_STATE_LOGOUT });
   });
@@ -67,16 +103,6 @@ describe('authActions', () => {
                                                   payload: error});
 
   });
-
-  it('should set onAuthFormFieldChange', () => {
-    let field = 'field';
-    let value = 'value';
-    expect(actions.onAuthFormFieldChange(field, value)).toEqual({
-      type: ON_AUTH_FORM_FIELD_CHANGE,
-      payload: {field: field, value: value}
-    });
-  });
-
   
   it('should set signupRequest', () => {
     expect(actions.signupRequest()).toEqual({type: SIGNUP_REQUEST});
@@ -139,8 +165,25 @@ describe('authActions', () => {
 
   });
 
-  pit('should logout', () => {
+  it('should set onAuthFormFieldChange', () => {
+    let field = 'field';
+    let value = 'value';
+    expect(actions.onAuthFormFieldChange(field, value)).toEqual({
+      type: ON_AUTH_FORM_FIELD_CHANGE,
+      payload: {field: field, value: value}
+    });
+  });
 
+  /**
+   * ### async tests
+   * 
+   * the following tests describe the actions that should be
+   * dispatched the function is invoked
+   *
+   * *Note*: these tests are run with ```pit``` because they are async
+   *
+   */
+  pit('should logout', () => {
     const expectedActions = [
       {type: LOGOUT_REQUEST},
       {type: LOGIN_STATE_REGISTER},
@@ -154,33 +197,28 @@ describe('authActions', () => {
   });
 
   pit('should login', () => {
-    
     const expectedActions = [
       {type: LOGIN_REQUEST},
       {type: LOGIN_STATE_LOGOUT},
       {type: LOGIN_SUCCESS}
     ];
 
-
     const store = mockStore({}, expectedActions);
     return store.dispatch(actions.login('foo','bar'));
   });
 
   pit('should getSessionToken', () => {
-    
     const expectedActions = [
       {type: SESSION_TOKEN_REQUEST},      
       {type: LOGIN_STATE_LOGOUT},
       {type: SESSION_TOKEN_SUCCESS}
     ];
 
-
     const store = mockStore({}, expectedActions);
     return store.dispatch(actions.getSessionToken());
   });
 
   pit('should signup', () => {
-    
     const expectedActions = [
       {type: SIGNUP_REQUEST},      
       {type: LOGIN_STATE_LOGOUT},
@@ -192,7 +230,6 @@ describe('authActions', () => {
   });
 
   pit('should resetPassword', () => {
-    
     const expectedActions = [
       {type: RESET_PASSWORD_REQUEST},      
       {type: LOGIN_STATE_LOGIN},
@@ -204,7 +241,6 @@ describe('authActions', () => {
   });
 
   pit('should deleteSessionToken', () => {
-    
     const expectedActions = [
       {type: SESSION_TOKEN_REQUEST},
       {type: SESSION_TOKEN_SUCCESS}      

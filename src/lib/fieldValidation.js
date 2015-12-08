@@ -1,15 +1,34 @@
+/**
+ * # Login.js
+ * 
+ * This class is a little complicated as it handles 4 states. It's also
+ * a container so there is boilerplate from Redux similiar to ```App```.
+ */
 'use strict';
 
+/**
+ * ## Imports
+ * 
+ * validate and underscore
+ *
+ */
 import validate from 'validate.js';
 import _ from 'underscore';
 
+/**
+ * ## Email validation setup
+ * Used for validation of emails
+ */
 const emailConstraints = {
   from: {
     email: true
   }
 };
 
-
+/**
+* ## username validation rule
+* read the message.. ;)
+*/
 const usernamePattern = /^[a-zA-Z0-9]{6,12}$/;
 const usernameConstraints = {
   username: {
@@ -21,6 +40,10 @@ const usernameConstraints = {
   }
 };
 
+/**
+* ## password validation rule
+* read the message... ;)
+*/
 const passwordPattern =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/;
 const passwordConstraints = {
   password: {
@@ -39,11 +62,19 @@ const passwordAgainConstraints = {
   }
 };
 
-
+/**
+ * ## Field Validation
+ * @param {Object} state Redux state
+ * @param {Object} action type & payload
+ */
 export default function fieldValidation(state, action ) {
   const {field, value} = action.payload;
   
   switch(field) {
+    /**
+     * ### username validation
+     * set the form field error 
+     */
   case('username'):
     let validUsername  = _.isUndefined(validate({username: value},
                                                 usernameConstraints));
@@ -54,6 +85,10 @@ export default function fieldValidation(state, action ) {
     }
     break;
     
+    /**
+     * ### email validation
+     * set the form field error 
+     */    
   case('email'):
     let validEmail  = _.isUndefined(validate({from: value},
                                              emailConstraints));
@@ -64,6 +99,10 @@ export default function fieldValidation(state, action ) {
     }
     break;
     
+    /**
+     * ### password validation
+     * set the form field error 
+     */    
   case('password'):
     let validPassword = _.isUndefined(validate({password: value},
                                                passwordConstraints));
@@ -74,6 +113,10 @@ export default function fieldValidation(state, action ) {
     }
     break;
     
+    /**
+     * ### passwordAgain validation
+     * set the form field error 
+     */    
   case('passwordAgain'):
     var validPasswordAgain
       = _.isUndefined(validate({password: state.form.fields.password,
@@ -84,7 +127,11 @@ export default function fieldValidation(state, action ) {
       return  state.setIn(['form', 'fields', 'passwordAgainHasError'], true);
     }
     break;
-    
+
+    /**
+     * ### showPassword
+     * toggle the display of the password
+     */    
   case('showPassword'):
     return state.setIn(['form', 'fields',
                                 'showPassword'], value);
