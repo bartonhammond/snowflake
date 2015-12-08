@@ -38,7 +38,7 @@ import profileInitialState from './reducers/profile/profileInitialState';
 /**
  *  The version of the app but not  displayed yet 
  */
-var VERSION='0.0.18';
+var VERSION='0.0.3';
 
 /**
  *
