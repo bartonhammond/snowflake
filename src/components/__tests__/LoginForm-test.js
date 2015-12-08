@@ -1,10 +1,28 @@
+/**
+ * # LoginForm-test.js
+ * 
+ * This class tests that the LoginForm renders correctly under
+ * 4 states of the Login component, namely, logging in,
+ * resetting the password and registration
+ *
+ * *Note:* if you want to understand the structures here, add a
+ * ```console.log``` and then ```npm test```.
+ *
+ */
+
 'use strict';
 
 jest.autoMockOff();
 
+/**
+ * ## Imports
+ * 
+ * React is mocked in src/__mocks__/react-native.js
+ */
 import React,
 {
 } from 'react-native';
+
 import utils from 'react-addons-test-utils';
 
 import {
@@ -13,15 +31,29 @@ import {
   LOGIN_STATE_FORGOT_PASSWORD
 } from '../../lib/constants';
 
-
+/**
+ * ## Under test
+ * class under test
+ */
 jest.dontMock('../LoginForm');
 var LoginForm = require('../LoginForm');
 
+/**
+ * Included here, after dontMock so it's in all it's glory
+ */
 var t = require('tcomb-form-native');
 let Form = t.form.Form;
 
+/**
+ * ## Test
+ */
 describe('LoginForm', () => {
 
+  /**
+   * ### renderLoginForm
+   * render the component under test and return
+   * @returns {Object} object with props, output and the renderer
+   */
   function renderLoginForm(props) {
     const renderer = utils.createRenderer();
     renderer.render(<LoginForm {...props}/>);
@@ -33,15 +65,28 @@ describe('LoginForm', () => {
       renderer
     };
   }
-
+  /**
+   * ### getFields
+   * 
+   * @returns {Object} fields
+   */  
   function getFields(output) {
     return output.props.options.fields;
   }
-
+  /**
+   * ### renderLoginForm
+   * render the component under test and return
+   * @returns {Object} object with props, output and the renderer
+   */
   function getValues(output) {
     return output.props.value;
   }
-
+  /**
+   * ### checkLoginForm
+   *
+   * Depending on the state, this function validates that the rendered
+   * component has the correct data
+   */
   function checkLoginForm(props) {
     const {output} = renderLoginForm(props);
     expect(output.type,Form);
@@ -78,9 +123,14 @@ describe('LoginForm', () => {
     }
 
   }
-  
-  ///////////////////////////////////
+  /**
+   * ## Test Registration
+   */
   describe('LOGIN_STATE_REGISTER', () => {
+    /**
+     * ### it should display without errors and without value
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('should display without errors and without values', () => {
       let form = {
         isFetching: false,
@@ -109,7 +159,10 @@ describe('LoginForm', () => {
 
       checkLoginForm(props);
     });
-
+    /**
+     * ### it should display  errors and  value
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('should display  errors and  values', () => {
       let form = {
         isFetching: false,
@@ -138,8 +191,10 @@ describe('LoginForm', () => {
 
       checkLoginForm(props);
     });
-
-
+    /**
+     * ### it should not be editable if fetching
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('should not be editable if fetching', () => {
       let form = {
         isFetching: true,
@@ -168,8 +223,10 @@ describe('LoginForm', () => {
 
       checkLoginForm(props);
     });
-
-
+    /**
+     * ### the password fields are not secured if shown
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('password fields are not secured if shown', () => {
       let form = {
         isFetching: false,
@@ -200,8 +257,15 @@ describe('LoginForm', () => {
     });
 
   });
-  ///////////////////////////////////
+
+  /**
+   * ## Test Log in
+   */  
   describe('LOGIN_STATE_LOGIN', () => {
+    /**
+     * ### it should display without errors and without value
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('should display without errors and without values', () => {
       let form = {
         isFetching: false,
@@ -226,7 +290,10 @@ describe('LoginForm', () => {
 
       checkLoginForm(props);
     });
-
+    /**
+     * ### it should display  errors and  values
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('should display  errors and  values', () => {
       let form = {
         isFetching: false,
@@ -250,8 +317,10 @@ describe('LoginForm', () => {
 
       checkLoginForm(props);
     });
-
-
+    /**
+     * ### it should not be editable if fetching
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('should not be editable if fetching', () => {
       let form = {
         isFetching: true,
@@ -276,8 +345,10 @@ describe('LoginForm', () => {
 
       checkLoginForm(props);
     });
-
-
+    /**
+     * ### password fields are not secured if shown
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('password fields are not secured if shown', () => {
       let form = {
         isFetching: false,
@@ -304,9 +375,14 @@ describe('LoginForm', () => {
     });
 
   });
-  ///////////////////////////////////
-  ///////////////////////////////////
+  /**
+   * ## Test reset password
+   */
   describe('LOGIN_STATE_FORGOT_PASSWORD', () => {
+    /**
+     * ### it should display without errors and without values
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('should display without errors and without values', () => {
       let form = {
         isFetching: false,
@@ -329,7 +405,10 @@ describe('LoginForm', () => {
 
       checkLoginForm(props);
     });
-
+    /**
+     * ### register password fields are not secured if shown
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('should display  errors and  values', () => {
       let form = {
         isFetching: false,
@@ -352,7 +431,10 @@ describe('LoginForm', () => {
       checkLoginForm(props);
     });
 
-
+    /**
+     * ### it should not be editable if fetching
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('should not be editable if fetching', () => {
       let form = {
         isFetching: true,
@@ -377,7 +459,10 @@ describe('LoginForm', () => {
       checkLoginForm(props);
     });
 
-
+    /**
+     * ### password fields are not secured if shown
+     * change the props and call ```checkLoginForm``` to validate
+     */      
     it('password fields are not secured if shown', () => {
       let form = {
         isFetching: false,

@@ -1,15 +1,29 @@
+/**
+* # FormButton.js
+*
+* Display a button that responds to onPress and is colored appropriately
+*/
 'use strict';
-
+/**
+ * ## Imports
+ *
+ * React
+ */
 import React,
 {
   PropTypes,
   StyleSheet,
   View
-
 } from 'react-native';
-
+  
+/**
+ * The platform neutral button
+ */
 import Button from 'apsl-react-native-button';
 
+/**
+ * ## Styles
+ */
 var styles = StyleSheet.create({
   signin: {
     marginLeft: 10,
@@ -18,13 +32,21 @@ var styles = StyleSheet.create({
 });
 
 var FormButton = React.createClass({
+  /**
+   * ## FormButon 
+   * Display the text within the button, disable if prop is set and
+   * when pressed call the ```onPress```
+   */
   propTypes: {
-    self: PropTypes.object,
     isDisabled:PropTypes.bool,
     onPress: PropTypes.func,
     buttonText: PropTypes.string
   },
-
+  /**
+   * ### render
+   *
+   * Display the Button 
+   */
   render() {
     return (
       <View style={styles.signin}>

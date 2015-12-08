@@ -7,6 +7,7 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 - [Screens](#screens)
 - [Hot Reloading](#hot-reloading)
 - [Summary](#summary)
+- [Source documentation](http://bartonhammond.github.io/snowflake/snowflake.js.html)
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Redux State Management](#redux-state-management)

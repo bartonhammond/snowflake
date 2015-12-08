@@ -1,11 +1,7 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
-import native from './src/native';
+import snowflake from './src/snowflake';
 
-native('android');
+snowflake('android');
 
 

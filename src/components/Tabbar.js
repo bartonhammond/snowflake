@@ -1,15 +1,40 @@
+/**
+ * # Tabbar.js
+ *
+ * This class provides basic navigation between the home and the
+ * profile only if the user is logged in 
+ */
 'use strict';
+/**
+*
+* ## Imports
+*
+* React
+*/
 import React,
 {
   StyleSheet,
   View
 }
 from 'react-native';
+
+/**
+ * A tab bar that switches between scenes, written in JS for cross-platform support
+ */
 import TabNavigator from 'react-native-tab-navigator';
+/**
+ * Font awesome icon
+ */
 import Icon from 'react-native-vector-icons/FontAwesome';
+/**
+ * project imports
+ */
 import Login from '../containers/Login';
 import Profile from '../containers/Profile';
 
+/**
+ * ## Styles
+ */
 var styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
@@ -29,12 +54,21 @@ var styles = StyleSheet.create({
 });
 
 let Tabbar = React.createClass({
+    /**
+     * ## Tabbar class
+     *
+     * getInitialState set the tab to home
+     */
   getInitialState() {
     return {
       selectedTab: 'home'
     };
   },
-
+  /**
+   * ### render
+   * Either display the 'Home' or the 'Profile'
+   *
+   */
   render() {
     return (
       <TabNavigator>
