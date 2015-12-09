@@ -1,6 +1,6 @@
 Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
 ==================================
-#### A React-Native starter mobile app for iOS and Android with a single code base.  Using Redux and Immutable, the state of the application is fully testable with Jest, currently at 86% coverage.  Snowflake supports Hot Reloading of it's state.
+#### A React-Native starter mobile app for iOS and Android with a single code base.  Using Redux and Immutable, the state of the application is fully testable with Jest, currently at 86% coverage.  Snowflake supports Hot Reloading of its state.
 
 # Content
 
