@@ -19,7 +19,8 @@
       "fetch",
       "react",
       "redux",
-      "redux-thunk"
+      "redux-thunk",
+      "fbjs"
     ],
     "verbose": true,
     "testPathDirs": [
