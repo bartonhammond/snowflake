@@ -45,7 +45,11 @@ var ErrorAlert = class ErrorAlertClass{
         errorMessage = obj;
       }
       if (errorMessage !== '') {
-        this.alerter.alert('Error',errorMessage);
+        if (!_.isUndefined(errorMessage.message)) {
+          this.alerter.alert('Error',errorMessage.message);
+        } else {
+          this.alerter.alert('Error',errorMessage);
+        }
       }
     }//isNull
   }

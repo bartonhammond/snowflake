@@ -12,7 +12,6 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 - [Setup](#setup)
 - [Redux State Management](#redux-state-management)
 - [FAQ](#faq)
-- [Release Notes](#release-notes)
 
 ----------
 
@@ -287,11 +286,6 @@ I don't want to deal w/ wrapping my head around Flux Actions and have to monkey-
 In a previous life, I worked with Parse JS SDK and it's based on backbone.js.  So I didn't go that direction either, because, again, I didn't want to have another data model to deal with.  Plus, at the time I was using it, the SDK was buggy and it was difficult to work with. 
 
 With the Parse Rest API, it's simple, can be tested itself from the command line with curl, it's clear, it's succinct and it's easily replaced with something else, an example such as Mongo/Mongoose without much, if any, impact on the code base.
-
-## Release Notes
-
- - 0.0.1 Dec 4, '15 Initial implementation
- - 0.0.2 Dec 6, '15 Hot Reloading.  Be sure to ```npm update apsl-react-native-button```due to problem with Jest
 
 
 ######-barton hammond
