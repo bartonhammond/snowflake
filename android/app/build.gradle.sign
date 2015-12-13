@@ -64,12 +64,23 @@ android {
         }
     }
 
-    buildTypes {
+    signingConfigs {
        release {
+            storeFile file(SNOWFLAKE_RELEASE_STORE_FILE)
+            storePassword SNOWFLAKE_RELEASE_STORE_PASSWORD
+            keyAlias SNOWFLAKE_RELEASE_KEY_ALIAS
+            keyPassword SNOWFLAKE_RELEASE_KEY_PASSWORD
+        }
+    }
+        
+    buildTypes {
+      release {
            minifyEnabled false  // Set this to true to enable Proguard
-          proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
-         }
-   }
+           proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+           signingConfig signingConfigs.release
+       }
+    }       
+
 }
 
 dependencies {
