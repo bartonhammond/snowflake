@@ -26,7 +26,7 @@
     "testPathDirs": [
       "src/"
     ],
-    "collectCoverage": true
+    "collectCoverage": false
   },
   "scripts": {
     "test": "rm -rf ./node_modules/jest-cli/.haste_cache && ./node_modules/.bin/jest ",
