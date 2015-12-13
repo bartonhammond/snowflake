@@ -64,8 +64,8 @@ android {
         }
     }
 
-    if (hasProperty('SNOWFLAKE_RELEASE_STORE_FILE')) {
-        println '//////// has SNOWFLAKE_RELEASE_STORE_FIL'
+    if (project.hasProperty('SNOWFLAKE_RELEASE_STORE_FILE')) {
+        println '//////// has SNOWFLAKE_RELEASE_STORE_FILE'
         signingConfigs {
             release {
                 storeFile file(SNOWFLAKE_RELEASE_STORE_FILE)
