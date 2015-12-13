@@ -6,10 +6,12 @@
 
 #### Assumptions
 * Snowflake is a *starter app* so all tutorials are basic in nature
-* There are a bizzilion ways of doing any of this - I'm showing one 
+* There are a bizzilion ways of doing any of this - I'm showing one
+* There's a number of CI sites, I chose Bitrise.io t
 * The build will be done on Bitrise.io - not locally
 * Local builds with Bitrise.io CLI is not addressed
 * The **only** goal is to get the build to run on Bitrise.io
+
 
 ##### The things addressed
 * Introduction to [https://www.bitrise.io/](https://www.bitrise.io/)
@@ -40,6 +42,7 @@
 
 #### Things not addressed
 * Submission to any store
+* Working with other CIs
 * Complex setups for either ios or andriod
 * Debugging any failures
 * Shiny new things

@@ -11,7 +11,7 @@ platform :ios do
 
             sh("xcodebuild -exportArchive -exportFormat ipa -archivePath ../build/snowflake.xcarchive -exportPath ../build/snowflake.ipa -exportProvisioningProfile 'iOS Team Provisioning Profile: *'")        
 
-            sh("cp ../build/snowflake.ipa ENV['BITRISE_DEPLOY_DIR']
+            sh("cp ../build/snowflake.ipa $BITRISE_DEPLOY_DIR")
         end
 
 end
