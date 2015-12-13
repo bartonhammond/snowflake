@@ -63,12 +63,32 @@ android {
             abiFilters "armeabi-v7a", "x86"
         }
     }
-    buildTypes {
-        release {
-            minifyEnabled false  // Set this to true to enable Proguard
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+
+    if (hasProperty('SNOWFLAKE_RELEASE_STORE_FILE')) {
+        signingConfigs {
+            release {
+                storeFile file(SNOWFLAKE_RELEASE_STORE_FILE)
+                    storePassword SNOWFLAKE_RELEASE_STORE_PASSWORD
+                    keyAlias SNOWFLAKE_RELEASE_KEY_ALIAS
+                    keyPassword SNOWFLAKE_RELEASE_KEY_PASSWORD
+                    }
+        }
+        buildTypes {
+            release {
+                minifyEnabled false  // Set this to true to enable Proguard
+                    proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+                    signingConfig signingConfigs.release
+                    }
+        }        
+    } else {
+        buildTypes {
+            release {
+                minifyEnabled false  // Set this to true to enable Proguard
+                    proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+                    }
         }
     }
+        
 }
 
 dependencies {

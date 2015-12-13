@@ -1,0 +1,2 @@
+app_identifier "org.bartonhammond.snowflake" # The bundle identifier of your app
+apple_id "bartonhammond@gmail.com" # Your Apple email address
