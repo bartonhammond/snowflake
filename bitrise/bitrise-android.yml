@@ -1,20 +1,12 @@
 ---
 format_version: 1.1.0
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
-app:
-  envs:
-  - BITRISE_PROJECT_PATH: ios/snowflake.xcodeproj
-    opts:
-      is_expand: false
-  - BITRISE_SCHEME: snowflake
-    opts:
-      is_expand: false
 trigger_map:
 - pattern: "*"
   is_pull_request_allowed: true
-  workflow: master
+  workflow: primary
 workflows:
-  master:
+  primary:
     steps:
     - activate-ssh-key@3.1.0:
         title: Activate App SSH key
@@ -89,11 +81,32 @@ workflows:
 
             echo y | android update sdk --all --filter build-tools-23.0.1 --no-ui
     - script@1.1.0:
+        title: rename build.gradle
+        inputs:
+        - content: |-
+            #!/bin/bash
+
+            mv android/app/build.gradle android/app/build.gradle.nosign
+            mv android/app/build.gradle.sign android/app/build.gradle
+    - script@1.1.0:
         title: gradlew
         inputs:
-        - content: "#!/bin/bash\n\ncd android \n\n./gradlew -PSNOWFLAKE_RELEASE_STORE_FILE=$SNOWFLAKE_RELEASE_STORE_FILE
+        - content: "#!/bin/bash\n\ncd android \necho //////////////////////\necho
+            $SNOWFLAKE_RELEASE_STORE_FILE\necho $SNOWFLAKE_RELEASE_KEY_ALIAS\necho
+            $SNOWFLAKE_RELEASE_STORE_PASSWORD \necho $SNOWFLAKE_RELEASE_KEY_PASSWORD\necho
+            //////////////////////\n\n./gradlew -PSNOWFLAKE_RELEASE_STORE_FILE=$SNOWFLAKE_RELEASE_STORE_FILE
             -PSNOWFLAKE_RELEASE_KEY_ALIAS=$SNOWFLAKE_RELEASE_KEY_ALIAS -PSNOWFLAKE_RELEASE_STORE_PASSWORD=$SNOWFLAKE_RELEASE_STORE_PASSWORD
             -PSNOWFLAKE_RELEASE_KEY_PASSWORD=$SNOWFLAKE_RELEASE_KEY_PASSWORD assembleRelease"
+          opts:
+            is_expand: true
+    - script@1.1.0:
+        title: restore build.gradle
+        inputs:
+        - content: |-
+            #!/bin/bash
+
+            mv android/app/build.gradle android/app/build.gradle.sign
+            mv android/app/build.gradle.nosign android/app/build.gradle
     - script@1.1.0:
         title: cp apk
         inputs:

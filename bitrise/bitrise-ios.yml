@@ -12,9 +12,9 @@ app:
 trigger_map:
 - pattern: "*"
   is_pull_request_allowed: true
-  workflow: master
+  workflow: primary
 workflows:
-  master:
+  primary:
     steps:
     - script@1.1.0:
         title: node & npm version
