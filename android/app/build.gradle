@@ -65,6 +65,7 @@ android {
     }
 
     if (hasProperty('SNOWFLAKE_RELEASE_STORE_FILE')) {
+        println '//////// has SNOWFLAKE_RELEASE_STORE_FIL'
         signingConfigs {
             release {
                 storeFile file(SNOWFLAKE_RELEASE_STORE_FILE)
@@ -81,6 +82,7 @@ android {
                     }
         }        
     } else {
+        println '//////// does not have  SNOWFLAKE_RELEASE_STORE_FIL'        
         buildTypes {
             release {
                 minifyEnabled false  // Set this to true to enable Proguard
