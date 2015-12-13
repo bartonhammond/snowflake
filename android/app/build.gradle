@@ -64,7 +64,7 @@ android {
         }
     }
 
-    if (project.hasProperty('SNOWFLAKE_RELEASE_STORE_FILE')) {
+  if (project.hasProperty('SNOWFLAKE_RELEASE_STORE_FILE')) {
         println '//////// has SNOWFLAKE_RELEASE_STORE_FILE'
         signingConfigs {
             release {
@@ -82,7 +82,7 @@ android {
                     }
         }        
     } else {
-        println '//////// does not have  SNOWFLAKE_RELEASE_STORE_FIL'        
+        println '//////// does not have  SNOWFLAKE_RELEASE_STORE_FILE'        
         buildTypes {
             release {
                 minifyEnabled false  // Set this to true to enable Proguard
@@ -90,7 +90,7 @@ android {
                     }
         }
     }
-        
+  exit      
 }
 
 dependencies {
