@@ -5,17 +5,10 @@ single code base.  Using Redux and Immutable, the state of the
 application is fully testable with Jest, currently at 86% coverage.
 Snowflake supports Hot Reloading of its state.
 
-[![[Twitter: @KauseFx]]https://img.shields.io/badge/Contact-%40bartonhammond-blue.svg](https://twitter.com/bartonhammond)
-
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-ios:
-[![Build Status](https://www.bitrise.io/app/a44bb73e76a07b0a.svg?token=h7L3i9fo2NQzkk3mgNy-GQ)](https://www.bitrise.io/app/a44bb73e76a07b0a)
-
-android:
-[![Build Status](https://www.bitrise.io/app/2208a743f1e2bc77.svg?token=CDkkOzD9axAqgpIBqOibqA)](https://www.bitrise.io/app/2208a743f1e2bc77)
-
+ios: [![Build Status](https://www.bitrise.io/app/a44bb73e76a07b0a.svg?token=h7L3i9fo2NQzkk3mgNy-GQ)](https://www.bitrise.io/app/a44bb73e76a07b0a)
+android: [![Build Status](https://www.bitrise.io/app/2208a743f1e2bc77.svg?token=CDkkOzD9axAqgpIBqOibqA)](https://www.bitrise.io/app/2208a743f1e2bc77)
 [![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/bartonhammond/snowflake)
-
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE)
 
 # Content
