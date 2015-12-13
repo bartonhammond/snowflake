@@ -6,8 +6,8 @@ application is fully testable with Jest, currently at 86% coverage.
 Snowflake supports Hot Reloading of its state.
 
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-```ios:``` [![Build Status](https://www.bitrise.io/app/a44bb73e76a07b0a.svg?token=h7L3i9fo2NQzkk3mgNy-GQ)](https://www.bitrise.io/app/a44bb73e76a07b0a)
-```android:``` [![Build Status](https://www.bitrise.io/app/2208a743f1e2bc77.svg?token=CDkkOzD9axAqgpIBqOibqA)](https://www.bitrise.io/app/2208a743f1e2bc77)
+![ios](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/a44bb73e76a07b0a.svg?token=h7L3i9fo2NQzkk3mgNy-GQ)](https://www.bitrise.io/app/a44bb73e76a07b0a)
+![andriod](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/2208a743f1e2bc77.svg?token=CDkkOzD9axAqgpIBqOibqA)](https://www.bitrise.io/app/2208a743f1e2bc77)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE)
 
 # Content
