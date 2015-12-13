@@ -8,7 +8,6 @@ Snowflake supports Hot Reloading of its state.
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ios: [![Build Status](https://www.bitrise.io/app/a44bb73e76a07b0a.svg?token=h7L3i9fo2NQzkk3mgNy-GQ)](https://www.bitrise.io/app/a44bb73e76a07b0a)
 android: [![Build Status](https://www.bitrise.io/app/2208a743f1e2bc77.svg?token=CDkkOzD9axAqgpIBqOibqA)](https://www.bitrise.io/app/2208a743f1e2bc77)
-[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/bartonhammond/snowflake/releases/tag/0.0.5)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE)
 
 # Content
