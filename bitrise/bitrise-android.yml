@@ -20,9 +20,6 @@ workflows:
             #!/bin/bash
             curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
             apt-get install -y nodejs
-
-            node --version
-            npm --version
     - script@1.1.0:
         title: npm install
         inputs:
@@ -91,10 +88,7 @@ workflows:
     - script@1.1.0:
         title: gradlew
         inputs:
-        - content: "#!/bin/bash\n\ncd android \necho //////////////////////\necho
-            $SNOWFLAKE_RELEASE_STORE_FILE\necho $SNOWFLAKE_RELEASE_KEY_ALIAS\necho
-            $SNOWFLAKE_RELEASE_STORE_PASSWORD \necho $SNOWFLAKE_RELEASE_KEY_PASSWORD\necho
-            //////////////////////\n\n./gradlew -PSNOWFLAKE_RELEASE_STORE_FILE=$SNOWFLAKE_RELEASE_STORE_FILE
+        - content: "#!/bin/bash\n\ncd android \n\n./gradlew -PSNOWFLAKE_RELEASE_STORE_FILE=$SNOWFLAKE_RELEASE_STORE_FILE
             -PSNOWFLAKE_RELEASE_KEY_ALIAS=$SNOWFLAKE_RELEASE_KEY_ALIAS -PSNOWFLAKE_RELEASE_STORE_PASSWORD=$SNOWFLAKE_RELEASE_STORE_PASSWORD
             -PSNOWFLAKE_RELEASE_KEY_PASSWORD=$SNOWFLAKE_RELEASE_KEY_PASSWORD assembleRelease"
           opts:

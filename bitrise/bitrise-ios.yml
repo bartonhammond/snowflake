@@ -16,14 +16,6 @@ trigger_map:
 workflows:
   primary:
     steps:
-    - script@1.1.0:
-        title: node & npm version
-        inputs:
-        - content: |-
-            #!/bin/bash
-
-            node --version
-            npm --version
     - activate-ssh-key@3.1.0:
         title: Activate App SSH key
         inputs:
@@ -34,8 +26,7 @@ workflows:
         inputs:
         - content: |-
             #!/bin/bash
-            node --version
-            npm --version
+
             npm install
     - script@1.1.0:
         title: npm test
@@ -56,6 +47,7 @@ workflows:
         inputs:
         - content: |-
             #!/bin/bash
+            touch src/lib/config.js
 
             echo "module.exports={ PARSE: {APP_ID: '$PARSE_APP_ID' ,REST_API_KEY: '$PARSE_REST_API_KEY', SESSION_TOKEN_KEY: 'SESSION_TOKEN_KEY'}}" >> src/lib/config.js
     - script@1.1.0:

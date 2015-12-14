@@ -1,9 +1,0 @@
-appEnvVars = {
-  android: {
-    none: 'none are needed for android...'
-  },  
-  ios: {
-    BITRISE_PROJECT_PATH: 'ios/snowflake.xcodeproj or what ever yours is named',
-    BITRISE_SCHEME: 'snowflake or whatever your scheme is named'
-  }
-}
