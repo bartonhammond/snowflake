@@ -9,7 +9,6 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 - [Introduction](#introduction)
 - [Bitrise Overview](#bitrise-overview)
 - [iOS XCode Modifications](#ios-xcode-modifications)
-- [Continuous Integration - Bitrise.io](#continuous-integration)  
 - [XCode Certs Provision Profiles  App Id](#xcode-certs-provision-profiles-app-id)
 - [Create iOS App](#create-ios-app)
 - [iOS install](#ios-install)
