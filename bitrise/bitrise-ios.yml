@@ -1,0 +1,63 @@
+---
+format_version: 1.1.0
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+app:
+  envs:
+  - BITRISE_PROJECT_PATH: ios/snowflake.xcodeproj
+    opts:
+      is_expand: false
+  - BITRISE_SCHEME: snowflake
+    opts:
+      is_expand: false
+trigger_map:
+- pattern: "*"
+  is_pull_request_allowed: true
+  workflow: primary
+workflows:
+  primary:
+    steps:
+    - activate-ssh-key@3.1.0:
+        title: Activate App SSH key
+        inputs:
+        - ssh_key_save_path: "$HOME/.ssh/steplib_ssh_step_id_rsa"
+    - git-clone@3.1.0: {}
+    - script@1.1.0:
+        title: npm install
+        inputs:
+        - content: |-
+            #!/bin/bash
+
+            npm install
+    - script@1.1.0:
+        title: npm test
+        inputs:
+        - content: |-
+            #!/bin/bash
+
+            npm test
+    - script@1.1.0:
+        title: npm install react-native -g
+        inputs:
+        - content: |-
+            #!/bin/bash
+
+            npm install -g react-native-cli
+    - script@1.1.0:
+        title: create config
+        inputs:
+        - content: |-
+            #!/bin/bash
+            touch src/lib/config.js
+
+            echo "module.exports={ PARSE: {APP_ID: '$PARSE_APP_ID' ,REST_API_KEY: '$PARSE_REST_API_KEY', SESSION_TOKEN_KEY: 'SESSION_TOKEN_KEY'}}" >> src/lib/config.js
+    - script@1.1.0:
+        title: bundle-ios
+        inputs:
+        - content: |-
+            #!/bin/bash
+            react-native bundle --entry-file ./index.ios.js --platform ios --bundle-output ios/main.jsbundle
+    - certificate-and-profile-installer@1.4.0: {}
+    - fastlane@2.1.0:
+        inputs:
+        - lane: ios beta
+    - deploy-to-bitrise-io@1.2.0: {}

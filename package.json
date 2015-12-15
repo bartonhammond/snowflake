@@ -1,6 +1,6 @@
 {
   "name": "snowflake",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": true,
   "jest": {
     "scriptPreprocessor": "jestSupport/scriptProcessor.js",
@@ -36,7 +36,7 @@
     "docs": "./node_modules/docker/docker -w -i src/ -o ../snowflake-pages "
   },
   "dependencies": {
-    "apsl-react-native-button": "git+https://git@github.com/bartonhammond/react-native-button.git",
+    "apsl-react-native-button": "git+https://git@github.com/bartonhammond/react-native-button.git", 
     "immutable": "^3.7.5",
     "key-mirror": "^1.0.1",
     "react-native": "^0.15.0",

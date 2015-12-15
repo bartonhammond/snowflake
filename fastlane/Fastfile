@@ -1,0 +1,17 @@
+fastlane_version "1.46.1"
+
+platform :ios do
+                
+        lane :beta do
+            increment_build_number(
+              xcodeproj: './ios/snowflake.xcodeproj'
+            )
+
+            sh("xctool -project ../ios/snowflake.xcodeproj -scheme snowflake clean archive -archivePath ../build/snowflake")
+
+            sh("xcodebuild -exportArchive -exportFormat ipa -archivePath ../build/snowflake.xcarchive -exportPath ../build/snowflake.ipa -exportProvisioningProfile 'iOS Team Provisioning Profile: *'")        
+
+            sh("cp ../build/snowflake.ipa $BITRISE_DEPLOY_DIR")
+        end
+
+end
