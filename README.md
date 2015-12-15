@@ -13,8 +13,9 @@ Snowflake supports Hot Reloading of its state.
 # Content
 
 - [Screens](#screens)
-- [Hot Reloading](#hot-reloading)
 - [Summary](#summary)
+- [Hot Reloading](#hot-reloading)
+- [Continuous Integration - Bitrise.io](#continuous-integration)
 - [Source documentation](http://bartonhammond.github.io/snowflake/snowflake.js.html)
 - [Technologies](docs/Technologies.md)
 - [Setup](docs/Setup.md)
@@ -30,13 +31,6 @@ Snowflake supports Hot Reloading of its state.
 | iOS|  ![ios Profile](https://cloud.githubusercontent.com/assets/1282364/11598478/b2b1b5e6-9a87-11e5-8be9-37cbfa478a71.gif)  | ![ios Login](https://cloud.githubusercontent.com/assets/1282364/11598580/6d360f02-9a88-11e5-836b-4171f789a41d.gif)| ![ios Register](https://cloud.githubusercontent.com/assets/1282364/11598582/6d392750-9a88-11e5-9839-05127dfba96b.gif)  |
 | Android |![Android Register](https://cloud.githubusercontent.com/assets/1282364/11598579/6d3487b8-9a88-11e5-9e95-260283a6951e.gif)    | ![Android Login](https://cloud.githubusercontent.com/assets/1282364/11598577/6d2f140e-9a88-11e5-8cd4-1ba8c9cbc603.gif)   |  ![Android Profile](https://cloud.githubusercontent.com/assets/1282364/11598578/6d314ee0-9a88-11e5-9a6c-512a313535ee.gif) |
 
-----------
-
-## Hot Reloading
-This video shows Snowflake exporting and importing state from Redux.  It demonstrates, with the iOS Simulator, the process of copying the state for import at a later time.  After the demo, I walk through the code to clarify how I achieved this.  It's assumed you have some familiarity with Redux.  Hopefully it helps you gain a better understanding of what Redux provides you!
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=b4eqQUA3O6o" target="_blank"><img src="http://img.youtube.com/vi/b4eqQUA3O6o/0.jpg" 
-alt="Snowflake Hot Loading" width="240" height="180" border="10" /></a>
 
 ----------
 
@@ -54,7 +48,34 @@ alt="Snowflake Hot Loading" width="240" height="180" border="10" /></a>
 1. **Jest Unit Tests cover 86%** of the application statements.
 1. Demonstrates how to **setup React-Native to perform Jest testing** with Babel.
 1. Includes ability to **debug Jest unit tests**with Chrome
+1. Instructions and videos for **continuous integration with Bitrise.io**
 
 ----------
+
+## Hot Reloading
+This video shows Snowflake exporting and importing state from Redux.  It demonstrates, with the iOS Simulator, the process of copying the state for import at a later time.  After the demo, I walk through the code to clarify how I achieved this.  It's assumed you have some familiarity with Redux.  Hopefully it helps you gain a better understanding of what Redux provides you!
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=b4eqQUA3O6o" target="_blank"><img src="http://img.youtube.com/vi/b4eqQUA3O6o/0.jpg" 
+alt="Snowflake Hot Loading" width="240" height="180" border="10" /></a>
+
+----------
+
+
+## Continuous Integration 
+
+CI proves to the developer that everything required to build and test
+the application is well defined and repeatable.  Without CI, one would
+not know, for a fact, that all the required tools and assests are
+available for everyone to build with.  CI gives us developers some
+"peace of mind" that our build process is repeatable.
+
+With that in mind, please refer to the following document for
+instructions and 8 videos.
+
+[CI - Videos And Instructions](docs/CI-BitRise.md)
+
+
+----------
+
 
 ######-barton hammond
