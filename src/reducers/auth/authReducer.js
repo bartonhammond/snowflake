@@ -10,14 +10,14 @@
  * fieldValidation for validating the fields
  * formValidation for setting the form's valid flag
  */
-import InitialState from './authInitialState';
-import fieldValidation from '../../lib/fieldValidation';
-import formValidation from './authFormValidation';
+const InitialState = require('./authInitialState').default;
+const fieldValidation = require('../../lib/fieldValidation').default;
+const formValidation = require('./authFormValidation').default;
 
 /**
  * ## Auth actions
  */
-import {
+const {
   SESSION_TOKEN_REQUEST,
   SESSION_TOKEN_SUCCESS,
   SESSION_TOKEN_FAILURE,
@@ -45,7 +45,7 @@ import {
   RESET_PASSWORD_FAILURE,
 
   SET_STATE
-} from '../../lib/constants';
+} = require('../../lib/constants').default;
 
 const initialState = new InitialState;
 /**

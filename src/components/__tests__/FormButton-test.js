@@ -12,9 +12,12 @@ jest.autoMockOff();
 
 /**
 * ## Imports
-*/
-import React, { View } from 'react-native';
-import utils from 'react-addons-test-utils';
+ */
+
+const React = require('react-native');
+const { View } = React;
+
+const utils = require('react-addons-test-utils');
 
 /**
  * ## Under test
@@ -45,6 +48,7 @@ describe('FormButton', () => {
    * @returns {Object} object with props, output and the renderer
    */
   function renderFormButton(props) {
+    debugger;
     const renderer = utils.createRenderer();
     renderer.render(<FormButton {...props}/>);
     const output = renderer.getRenderOutput();

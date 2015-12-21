@@ -42,6 +42,7 @@ ReactNative.ToolbarAndroid = View;
 ReactNative.Image = View;
 ReactNative.PixelRatio = PixelRatio;
 ReactNative.NativeModules= {};
+ReactNative.NativeModules= {};
 
 ReactNative.Platform = {};
 

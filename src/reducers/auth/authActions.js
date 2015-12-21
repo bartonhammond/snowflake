@@ -14,7 +14,7 @@
  * 
  * The actions supported
  */
-import {
+const {
   SESSION_TOKEN_REQUEST,
   SESSION_TOKEN_SUCCESS,
   SESSION_TOKEN_FAILURE,
@@ -39,17 +39,17 @@ import {
 
   RESET_PASSWORD_REQUEST,
   RESET_PASSWORD_SUCCESS,
-  RESET_PASSWORD_FAILURE,
+  RESET_PASSWORD_FAILURE
 
-} from '../../lib/constants';
+} = require('../../lib/constants').default;
 
 /**
  * Project requirements
  */
-var  Parse = require('../../lib/Parse');
-var  AppAuthToken = require('../../lib/AppAuthToken');
+const  Parse = require('../../lib/Parse').default;
+const  AppAuthToken = require('../../lib/AppAuthToken').default;
 
-import _ from 'underscore';
+const  _ = require('underscore');
 
 /**
  * ## State actions
