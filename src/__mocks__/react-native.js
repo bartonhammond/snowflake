@@ -9,7 +9,7 @@
  * 
  * ReactNative is actually React
  */ 
-import React from 'react';
+const React = require('react');
 const ReactNative = React;
 
 /**
@@ -42,8 +42,7 @@ ReactNative.ToolbarAndroid = View;
 ReactNative.Image = View;
 ReactNative.PixelRatio = PixelRatio;
 ReactNative.NativeModules= {};
-ReactNative.NativeModules= {};
 
 ReactNative.Platform = {};
-
+debugger;
 module.exports = ReactNative;

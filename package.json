@@ -3,7 +3,7 @@
   "version": "0.0.6",
   "private": true,
   "jest": {
-    "scriptPreprocessor": "./node_modules/react-native/jestSupport/preProcessor.js",
+    "scriptPreprocessor": "./node_modules/babel-jest",
     "setupEnvScriptFile": "./node_modules/react-native/jestSupport/env.js",
     "testPathIgnorePatterns": [
       "/node_modules/"
@@ -17,7 +17,6 @@
       "key-mirror",
       "immutable",
       "fetch",
-      "react",
       "redux",
       "redux-thunk",
       "fbjs"
@@ -25,11 +24,10 @@
     "verbose": true,
     "testPathDirs": [
       "src/"
-    ],
-    "collectCoverage": false
+    ]
   },
   "scripts": {
-    "test": "rm -rf ./node_modules/jest-cli/.haste_cache && ./node_modules/.bin/jest ",
+    "test": "rm -rf ./node_modules/jest-cli/.haste_cache && jest ",
     "start": "react-native start",
     "test:watch": "npm run test -- --watch",
     "test-chrome": "node-debug --preload false --nodejs --harmony jest --runInBand",
@@ -54,9 +52,12 @@
     "validate.js": "^0.9.0"
   },
   "devDependencies": {
-    "babel-core": "~5.8.34",
     "babel-jest": "^6.0.1",
-    "docker": "^0.2.14",
+    "babel-plugin-syntax-async-functions": "^6.3.13",
+    "babel-plugin-transform-async-to-generator": "^6.3.13",
+    "babel-plugin-transform-regenerator": "^6.3.18",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
     "istanbul": "gotwarlost/istanbul#source-map",
     "jest-cli": "^0.8.2",
     "react": "^0.14.3",

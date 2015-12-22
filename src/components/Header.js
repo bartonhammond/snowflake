@@ -23,8 +23,9 @@
  *
  * React
 */
-import React,
-{
+const React = require('react-native');
+
+const {
   Image,
   PropTypes,
   StyleSheet,
@@ -33,15 +34,15 @@ import React,
   TouchableHighlight,
   View
 
-} from 'react-native';
+} = React;
 /**
  * A spiner
  */
-import GiftedSpinner from 'react-native-gifted-spinner';
+const GiftedSpinner = require('react-native-gifted-spinner');
 /**
  * Project component that will respond to onPress
  */
-import FormButton from './FormButton';
+const FormButton = require('./FormButton');
 /**
  * ## Styles
  */
