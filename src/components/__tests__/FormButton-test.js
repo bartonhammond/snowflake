@@ -48,7 +48,6 @@ describe('FormButton', () => {
    * @returns {Object} object with props, output and the renderer
    */
   function renderFormButton(props) {
-    debugger;
     const renderer = utils.createRenderer();
     renderer.render(<FormButton {...props}/>);
     const output = renderer.getRenderOutput();

@@ -44,5 +44,4 @@ ReactNative.PixelRatio = PixelRatio;
 ReactNative.NativeModules= {};
 
 ReactNative.Platform = {};
-debugger;
 module.exports = ReactNative;

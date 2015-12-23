@@ -79,6 +79,7 @@ dependencies {
 
    // Add this line:
     compile project(':react-native-vector-icons')
+
     // Add this line:
     compile project(':RNSimpleAlertDialogModule')
 

@@ -13,10 +13,10 @@
  * 
  * The actions supported
  */
-import {
+const {
   SET_PLATFORM,
   SET_VERSION
-} from '../../lib/constants';
+} = require ('../../lib/constants').default;
 
 /**
  * ## Set the platformState 
