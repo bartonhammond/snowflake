@@ -19,17 +19,15 @@ jest.autoMockOff();
  * 
  * React is mocked in src/__mocks__/react-native.js
  */
-import React,
-{
-} from 'react-native';
+const React = require('react-native');
 
-import utils from 'react-addons-test-utils';
+const utils = require('react-addons-test-utils');
 
-import {
+const {
   LOGIN_STATE_REGISTER,
   LOGIN_STATE_LOGIN,
   LOGIN_STATE_FORGOT_PASSWORD
-} from '../../lib/constants';
+} = require('../../lib/constants').default;
 
 /**
  * ## Under test

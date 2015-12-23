@@ -10,7 +10,7 @@
  * fieldValidation for validating the fields
  * formValidation for setting the form's valid flag
  */
-import {
+const {
   SET_SESSION_TOKEN,
 
   GET_PROFILE_SUCCESS,
@@ -20,7 +20,7 @@ import {
   SET_STATE,
   SET_STORE
   
-} from '../../lib/constants';
+} = require('../../lib/constants').default;
 
 import InitialState from './globalInitialState';
 

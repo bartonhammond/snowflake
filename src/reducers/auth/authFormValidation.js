@@ -12,12 +12,12 @@
  * ## Imports
  * the actions being addressed
  */
-import {
+const {
   LOGIN_STATE_LOGOUT,
   LOGIN_STATE_REGISTER,
   LOGIN_STATE_LOGIN,
-  LOGIN_STATE_FORGOT_PASSWORD,
-} from '../../lib/constants';
+  LOGIN_STATE_FORGOT_PASSWORD
+} = require('../../lib/constants').default;
 
 /**
  * ## formValidation

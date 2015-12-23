@@ -24,13 +24,13 @@ jest.mock('../../../lib/Parse');
  * ## Store
  * The mockStore will validate the actions are performed 
  */
-var mockStore = require('../../mocks/Store');
-var actions = require('../profileActions');
+const mockStore = require('../../mocks/Store').default;
+const actions = require('../profileActions');
 
 /**
  * ## Actions to test
  */
-import {
+const {
   GET_PROFILE_REQUEST,
   GET_PROFILE_SUCCESS,
   GET_PROFILE_FAILURE,
@@ -41,7 +41,7 @@ import {
 
   ON_PROFILE_FORM_FIELD_CHANGE
 
-} from '../../../lib/constants';
+} = require('../../../lib/constants').default;
 
 /**
  * ## Tests

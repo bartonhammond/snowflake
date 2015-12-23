@@ -10,12 +10,12 @@
  * 
  * The actions supported
  */
-import {
+const {
   SET_SESSION_TOKEN,
   SET_STORE,
   SET_STATE,
   GET_STATE
-} from '../../lib/constants';
+} = require('../../lib/constants').default;
 
 /**
  * ## set the sessionToken

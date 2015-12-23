@@ -9,7 +9,7 @@
  * 
  * The actions for profile
  */
-import {
+const {
   GET_PROFILE_REQUEST,
   GET_PROFILE_SUCCESS,
   GET_PROFILE_FAILURE,
@@ -19,14 +19,14 @@ import {
   PROFILE_UPDATE_FAILURE,
 
   ON_PROFILE_FORM_FIELD_CHANGE
-} from '../../lib/constants';
+} = require('../../lib/constants').default;
 
 /**
  * Parse for Parse.com
  * AppAuthToken for localStorage sessionToken access 
  */
-import Parse from '../../lib/Parse';
-import AppAuthToken from '../../lib/AppAuthToken';
+const Parse = require( '../../lib/Parse').default;
+const AppAuthToken = require('../../lib/AppAuthToken').default;
 
 /**
  * ## retreiving profile actions

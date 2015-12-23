@@ -19,7 +19,7 @@ jest.autoMockOff();
  * These actions are sufficient to test the reducer as many of the
  * case statements are shared amongst the actions.
  */
-import {
+const {
   SESSION_TOKEN_REQUEST,
   SESSION_TOKEN_SUCCESS,
   SESSION_TOKEN_FAILURE,
@@ -32,7 +32,7 @@ import {
   ON_AUTH_FORM_FIELD_CHANGE,
 
   SIGNUP_FAILURE
-} from '../../../lib/constants';
+} = require('../../../lib/constants').default;
 
 /**
  * ## Class under test
@@ -41,7 +41,7 @@ import {
  * formValidation and fieldValidation objects, so we're testing them
  * as well
  */
-const  authReducer = require('../authReducer');
+const  authReducer = require('../authReducer').default;
 /**
  * ## Tests
  * 

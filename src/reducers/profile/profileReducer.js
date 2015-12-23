@@ -11,14 +11,14 @@
  * fieldValidation for validating the fields
  * formValidation for setting the form's valid flag
  */
-import fieldValidation from '../../lib/fieldValidation';
-import formValidation from './profileFormValidation';
+const fieldValidation = require('../../lib/fieldValidation').default;
+const formValidation = require('./profileFormValidation').default;
 
 /**
  * ## Actions
  *
  */
-import {
+const {
   ON_PROFILE_FORM_FIELD_CHANGE,
   GET_PROFILE_REQUEST,
   GET_PROFILE_SUCCESS,
@@ -29,13 +29,13 @@ import {
   PROFILE_UPDATE_FAILURE,
 
   SET_STATE
-} from '../../lib/constants';
+} = require('../../lib/constants').default;
 
 /**
  * ## Initial State
  *
  */
-import InitialState from './profileInitialState';
+const InitialState = require('./profileInitialState').default;
 const initialState = new InitialState;
 
 /**

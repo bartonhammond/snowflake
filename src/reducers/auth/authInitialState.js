@@ -12,10 +12,10 @@
 /**
  * ## Import
  */
-import {Record} from 'immutable';
-import {
+const {Record} = require('immutable');
+const {
   LOGIN_STATE_REGISTER
-} from '../../lib/constants';
+} = require('../../lib/constants').default;
 
 /**
  * ## Form
