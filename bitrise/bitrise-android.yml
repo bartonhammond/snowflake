@@ -28,7 +28,7 @@ workflows:
 
             npm install
     - script@1.1.0:
-        title: npm test
+        title: npm test src/reducers
         inputs:
         - content: |-
             #!/bin/bash

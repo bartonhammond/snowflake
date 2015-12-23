@@ -9,8 +9,8 @@
  *
  * same middleWare as the app uses
  */
-import { applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+const { applyMiddleware } = require('redux');
+const thunk = require('redux-thunk');
 
 
 const middlewares = [thunk];

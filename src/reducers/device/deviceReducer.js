@@ -14,11 +14,11 @@ import InitialState from './deviceInitialState';
 /**
  * Device actions to test
  */
-import {
+const {
   SET_PLATFORM,
   SET_VERSION,
   SET_STATE
-} from '../../lib/constants';
+} = require('../../lib/constants');
 
 const initialState = new InitialState;
 

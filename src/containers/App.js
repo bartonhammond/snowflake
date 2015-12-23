@@ -23,8 +23,8 @@ import {Map} from 'immutable';
 /**
  * Project imports
  */
-import Login from './Login';
-import Tabbar from '../components/Tabbar';
+const Login = require('./Login').default;
+const Tabbar = require('../components/Tabbar').default;
 
 /**
  * Project actions
@@ -46,9 +46,9 @@ from 'react-native';
  * We only have one state to worry about
  */
 
-import {
+const {
   LOGIN_STATE_LOGOUT
-} from '../lib/constants';
+} = require('../lib/constants').default;
 
 /**
  * ## Actions

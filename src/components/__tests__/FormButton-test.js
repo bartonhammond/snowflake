@@ -12,9 +12,12 @@ jest.autoMockOff();
 
 /**
 * ## Imports
-*/
-import React, { View } from 'react-native';
-import utils from 'react-addons-test-utils';
+ */
+
+const React = require('react-native');
+const { View } = React;
+
+const utils = require('react-addons-test-utils');
 
 /**
  * ## Under test

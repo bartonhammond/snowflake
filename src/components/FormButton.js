@@ -9,17 +9,17 @@
  *
  * React
  */
-import React,
+const  React = require('react-native');
+const
 {
-  PropTypes,
   StyleSheet,
   View
-} from 'react-native';
+} = React;
   
 /**
  * The platform neutral button
  */
-import Button from 'apsl-react-native-button';
+const  Button = require('apsl-react-native-button');
 
 /**
  * ## Styles
@@ -28,20 +28,15 @@ var styles = StyleSheet.create({
   signin: {
     marginLeft: 10,
     marginRight: 10
+  },
+  button: {
+    backgroundColor: '#FF3366',
+    borderColor:  '#FF3366'
   }
+
 });
 
 var FormButton = React.createClass({
-  /**
-   * ## FormButon 
-   * Display the text within the button, disable if prop is set and
-   * when pressed call the ```onPress```
-   */
-  propTypes: {
-    isDisabled:PropTypes.bool,
-    onPress: PropTypes.func,
-    buttonText: PropTypes.string
-  },
   /**
    * ### render
    *
@@ -50,11 +45,7 @@ var FormButton = React.createClass({
   render() {
     return (
       <View style={styles.signin}>
-        <Button
-            style={{
-                backgroundColor: '#FF3366',
-                borderColor:  '#FF3366'
-              }}
+        <Button style={styles.button}
             isDisabled={this.props.isDisabled}
             onPress={this.props.onPress}
         >

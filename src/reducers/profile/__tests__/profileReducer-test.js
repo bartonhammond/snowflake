@@ -9,6 +9,7 @@
  *
  */
 'use strict';
+
 jest.autoMockOff();
 
 /**
@@ -16,7 +17,7 @@ jest.autoMockOff();
  * 
  * These actions of the users profile
  */
-import {
+const {
   ON_PROFILE_FORM_FIELD_CHANGE,
   GET_PROFILE_REQUEST,
   GET_PROFILE_SUCCESS,
@@ -25,13 +26,13 @@ import {
   PROFILE_UPDATE_REQUEST,
   PROFILE_UPDATE_SUCCESS,
   PROFILE_UPDATE_FAILURE
-} from '../../../lib/constants';
+} = require('../../../lib/constants').default;
 
 /**
  * ## Class under test
  *
  */
-const  profileReducer = require('../profileReducer');
+const  profileReducer = require('../profileReducer').default;
 /**
  * ## Tests
  * 

@@ -62,12 +62,12 @@ from 'react-native';
 /**
  * The 4 states were interested in
  */
-import {
+const {
   LOGIN_STATE_LOGOUT,
   LOGIN_STATE_REGISTER,
   LOGIN_STATE_LOGIN,
-  LOGIN_STATE_FORGOT_PASSWORD,
-} from '../lib/constants';
+  LOGIN_STATE_FORGOT_PASSWORD
+} = require('../lib/constants').default;
 /**
  * ## Styles
  */
@@ -116,8 +116,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-@connect(mapStateToProps, mapDispatchToProps)
-export default class Login extends Component {
+class Login extends Component {
   /**
    * ## Login class 
    * Provide 4 user interfaces depending on state
@@ -348,3 +347,4 @@ export default class Login extends Component {
     }//else
   }
 }
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

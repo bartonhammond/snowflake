@@ -104,8 +104,8 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-@connect(mapStateToProps, mapDispatchToProps)
-export default class Profile extends Component {
+
+class Profile extends Component {
   /**
    * ## Profile class
    * Set the initial state and prepare the errorAlert
@@ -253,3 +253,4 @@ export default class Profile extends Component {
     );
   }
 }
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

@@ -12,6 +12,7 @@
  * ## Mock
  *  Mock the simpledialog, see: 'src/__mocks__/react-native-simpledialog-android.js'
  */
+
 jest.autoMockOff();
 jest.mock('react-native-simpledialog-android');
 
@@ -32,7 +33,6 @@ var ErrorAlert = require('../ErrorAlert');
  */
 describe('ErrorAlert', () => {
   it('should be fine', () => {
-
     /**
      * ### defaults
      */

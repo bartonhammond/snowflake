@@ -1,15 +1,21 @@
 {
   "name": "snowflake",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "jest": {
-    "scriptPreprocessor": "jestSupport/scriptProcessor.js",
+    "scriptPreprocessor": "./node_modules/babel-jest",
     "setupEnvScriptFile": "./node_modules/react-native/jestSupport/env.js",
     "testPathIgnorePatterns": [
-      "node_modules/"
+      "/node_modules/"
     ],
     "testFileExtensions": [
+      "es6",
       "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
     ],
     "unmockedModulePathPatterns": [
       "promise",
@@ -17,7 +23,6 @@
       "key-mirror",
       "immutable",
       "fetch",
-      "react",
       "redux",
       "redux-thunk",
       "fbjs"
@@ -25,26 +30,25 @@
     "verbose": true,
     "testPathDirs": [
       "src/"
-    ],
-    "collectCoverage": false
+    ]
   },
   "scripts": {
-    "test": "rm -rf ./node_modules/jest-cli/.haste_cache && ./node_modules/.bin/jest ",
+    "test": "rm -rf ./node_modules/jest-cli/.haste_cache && jest ",
     "start": "react-native start",
     "test:watch": "npm run test -- --watch",
-    "test-chrome": "node-debug --preload false --nodejs --harmony ./node_modules/.bin/jest --runInBand",
+    "test-chrome": "node-debug --preload false --nodejs --harmony jest --runInBand",
     "docs": "./node_modules/docker/docker -w -i src/ -o ../snowflake-pages "
   },
   "dependencies": {
-    "apsl-react-native-button": "git+https://git@github.com/bartonhammond/react-native-button.git", 
+    "apsl-react-native-button": "git+https://git@github.com/bartonhammond/react-native-button.git",
     "immutable": "^3.7.5",
     "key-mirror": "^1.0.1",
-    "react-native": "^0.15.0",
+    "react-native": "^0.17.0",
     "react-native-gifted-spinner": "0.0.3",
     "react-native-simple-store": "^0.1.0",
     "react-native-simpledialog-android": "^1.0.2",
     "react-native-tab-navigator": "^0.2.11",
-    "react-native-vector-icons": "^0.8.5",
+    "react-native-vector-icons": "^1.0.3",
     "react-redux": "^3.1.0",
     "redux": "^3.0.4",
     "redux-thunk": "^1.0.0",
@@ -54,10 +58,10 @@
     "validate.js": "^0.9.0"
   },
   "devDependencies": {
-    "babel-core": "~5.8.34",
+    "babel-jest": "^6.0.1",
     "docker": "^0.2.14",
     "istanbul": "gotwarlost/istanbul#source-map",
-    "jest-cli": "^0.8.0",
+    "jest-cli": "^0.8.2",
     "react": "^0.14.3",
     "react-addons-test-utils": "^0.14.3"
   }

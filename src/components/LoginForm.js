@@ -12,24 +12,24 @@
  *
  * React
  */
-import React,
-{
+const React = require('react-native');
+const {
   PropTypes
-} from 'react-native';
+} = React;
 
 /** 
  * States of login display
  */
-import {
+const {
   LOGIN_STATE_REGISTER,
   LOGIN_STATE_LOGIN,
-  LOGIN_STATE_FORGOT_PASSWORD,
-} from '../lib/constants';
+  LOGIN_STATE_FORGOT_PASSWORD
+} = require('../lib/constants').default;
 
 /**
  *  The fantastic little form library
  */
-import t from 'tcomb-form-native';
+const t = require('tcomb-form-native');
 let Form = t.form.Form;
 
 var LoginForm = React.createClass({
