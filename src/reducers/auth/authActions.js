@@ -46,7 +46,8 @@ const {
 /**
  * Project requirements
  */
-const  Parse = require('../../lib/Parse').default;
+const BackendFactory = require('../../lib/BackendFactory').default;
+
 const  AppAuthToken = require('../../lib/AppAuthToken').default;
 
 const  _ = require('underscore');
@@ -123,36 +124,16 @@ export function logout() {
     dispatch(logoutRequest());
     return new AppAuthToken().getSessionToken()
       .then((token) => {
-        if (!_.isUndefined(token.sessionToken)) {
-          return new Parse(token.sessionToken.sessionToken).logout();
-        } else {
-          dispatch(loginState());
-          dispatch(logoutSuccess());
-          throw 'TokenMissing';
-        }
+        return BackendFactory(token).logout();
       })
-      .then((response) => {
-        var  res = JSON.parse(response._bodyInit);
-        if ((response.status === 200 || response.status === 201)
-            || //invalid session token
-            (response.status === 400 && res.code === 209)) {
+      .then(() => {
           dispatch(registerState());
           dispatch(logoutSuccess());
-          return response;
-        } else {
-          dispatch(logoutFailure(JSON.parse(response._bodyInit)));
-          return response;
-        }
-      })
-      .then((response) => {
-        var  res = JSON.parse(response._bodyInit);
-        if ((response.status === 200 || response.status === 201)
-            || //invalid session token
-            (response.status === 400 && res.code === 209)) {
           dispatch(deleteSessionToken());          
-        }
       })
       .catch((error) => {
+        dispatch(loginState());
+        dispatch(logoutSuccess());
         dispatch(logoutFailure(error));
       });
   };
@@ -249,14 +230,10 @@ export function getSessionToken() {
 /**
  * ## saveSessionToken
  * @param {Object} response - to return to keep the promise chain
- * @param {Object} json - the currentUser from Parse.com w/ sessionToken 
+ * @param {Object} json - object with sessionToken
  */
-export function saveSessionToken(response, json) {
-  return new AppAuthToken().storeSessionToken(json)
-    .then(() => {
-      return response;
-    });
-  
+export function saveSessionToken(json) {
+  return new AppAuthToken().storeSessionToken(json);
 }
 /**
  * ## signup
@@ -272,26 +249,17 @@ export function saveSessionToken(response, json) {
 export function signup(username, email, password) {
   return dispatch => {
     dispatch(signupRequest());
-    return new Parse().signup({
+    return  BackendFactory().signup({
       username: username,
       email: email,
       password: password
     })
-      .then((response) => {
-        if (response.status === 200 || response.status === 201) {
-          let json = JSON.parse(response._bodyInit);
-          return saveSessionToken(response,json);
-        }
-        return response;
-      })
-      .then((response) => {
-        if (response.status === 200 || response.status === 201) {
-          dispatch(logoutState());
-          dispatch(signupSuccess());
-        } else {
-          dispatch(signupFailure(JSON.parse(response._bodyInit)));
-        }
-        return response;
+      .then((json) => {
+        saveSessionToken(json)
+          .then(() => {
+            dispatch(logoutState());
+            dispatch(signupSuccess());            
+          });
       })
       .catch((error) => {
         dispatch(signupFailure(error));
@@ -324,7 +292,7 @@ export function loginFailure(error) {
  * @param {string} username - user's name
  * @param {string} password - user's password
  *
- * After calling Parse, if response is good, save the json
+ * After calling Backend, if response is good, save the json
  * which is the currentUser which contains the sessionToken
  *
  * If successful, set the state to logout
@@ -333,25 +301,17 @@ export function loginFailure(error) {
 export function login(username,  password) {
   return dispatch => {
     dispatch(loginRequest());
-    return new Parse().login({
+    var Hapi = BackendFactory();
+    return Hapi.login({
       username: username,
       password: password
     })
-      .then((response) => {
-        if (response.status === 200 || response.status === 201) {
-          var json = JSON.parse(response._bodyInit);
-          return saveSessionToken(response, json);
-        }
-        return response;
-      })
-      .then((response) => {
-        if (response.status === 200 || response.status === 201) {
-          dispatch(logoutState());          
-          dispatch(loginSuccess());
-        } else {
-          dispatch(loginFailure(JSON.parse(response._bodyInit)));
-        }
-        return response;
+      .then((json) => {
+        saveSessionToken(json)
+          .then(() => {
+            dispatch(logoutState());          
+            dispatch(loginSuccess());
+          });
       })
       .catch((error) => {
         dispatch(loginFailure(error));
@@ -395,21 +355,12 @@ export function resetPasswordFailure(error) {
 export function resetPassword(email) {
   return dispatch => {
     dispatch(resetPasswordRequest());
-    return new Parse().resetPassword({
+    return BackendFactory().resetPassword({
       email: email
     })
-      .then((response) => {
-        if (response.status === 200 || response.status === 201) {
-          dispatch(loginState());
-          dispatch(resetPasswordSuccess());
-        } else {
-          dispatch(resetPasswordFailure(JSON.parse(response._bodyInit)));
-        }
-        return response;
-      })
-      .then((response) => {
-        if (response.status === 200 || response.status === 201) {
-        }
+      .then(() => {
+        dispatch(loginState());
+        dispatch(resetPasswordSuccess());
       })
       .catch((error) => {
         dispatch(resetPasswordFailure(error));

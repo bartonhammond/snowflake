@@ -22,10 +22,10 @@ const {
 } = require('../../lib/constants').default;
 
 /**
- * Parse for Parse.com
+ * BackendFactory - base class for server implementation
  * AppAuthToken for localStorage sessionToken access 
  */
-const Parse = require( '../../lib/Parse').default;
+const BackendFactory = require('../../lib/BackendFactory').default;
 const AppAuthToken = require('../../lib/AppAuthToken').default;
 
 /**
@@ -56,17 +56,13 @@ export function getProfileFailure(json) {
 export function getProfile(sessionToken) {
   return dispatch => {
     dispatch(getProfileRequest());
+    //store or get a sessionToken
     return new AppAuthToken().getSessionToken(sessionToken)
       .then((token) => {
-        return new Parse(token.sessionToken.sessionToken).getProfile();
+        return BackendFactory(token).getProfile();
       })
-      .then((response) => {
-        var  res = JSON.parse(response._bodyInit);
-        if (response.status === 200 || response.status === 201) {
-          dispatch(getProfileSuccess(res));
-        } else {
-          dispatch(getProfileFailure(res));
-        }
+      .then((json) => {
+          dispatch(getProfileSuccess(json));
       })
       .catch((error) => {
         dispatch(getProfileFailure(error));
@@ -96,7 +92,7 @@ export function profileUpdateFailure(json) {
 }
 /**
  * ## updateProfile
- * @param {string} userId - the Parse.com objectId
+ * @param {string} userId -  objectId 
  * @param {string} username - the users name
  * @param {string] email - user's email
  * @param {Object} sessionToken - the sessionToken from Parse.com
@@ -113,22 +109,16 @@ export function updateProfile(userId, username, email, sessionToken) {
     dispatch(profileUpdateRequest());
     return new AppAuthToken().getSessionToken(sessionToken)
       .then((token) => {
-        return new
-        Parse(token.sessionToken.sessionToken).updateProfile(userId,
+        return BackendFactory(token).updateProfile(userId,
           {
             username: username,
             email: email
           }
         );
       })
-      .then((response) => {
-        var  res = JSON.parse(response._bodyInit);
-        if (response.status === 200 || response.status === 201) {
+      .then(() => {
           dispatch(profileUpdateSuccess());
           dispatch(getProfile());
-        } else {
-          dispatch(profileUpdateFailure(res));
-        }
       })
       .catch((error) => {
         dispatch(profileUpdateFailure(error));

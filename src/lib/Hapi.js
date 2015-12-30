@@ -21,12 +21,10 @@ import CONFIG from './config';
 import _ from 'underscore';
 import Backend from './Backend';
 
-export default class Parse extends Backend{
+export default class Hapi extends Backend{
   /**
-   * ## Parse
+   * ## Hapi.js client
    *
-   * constructor sets the default keys required by Parse.com
-   * if a user is logged in, we'll need the sessionToken
    *
    * @throws tokenMissing if token is undefined
    */
@@ -38,11 +36,8 @@ export default class Parse extends Backend{
     this._sessionToken =
       _.isNull(token) ?  null :  token.sessionToken.sessionToken;
     
-    this._applicationId = CONFIG.PARSE.APP_ID;
-    this._restAPIKey = CONFIG.PARSE.REST_API_KEY;
-    this._masterKey = null;
-
-    this.API_BASE_URL= 'https://api.parse.com';
+    this.API_BASE_URL= CONFIG.backend.hapiLocal ?
+      CONFIG.HAPI.local.url : CONFIG.HAPI.remote.url;
   }
   /**
    * ### signup
@@ -61,7 +56,7 @@ export default class Parse extends Backend{
   async signup(data) {
     return await this._fetch({
       method: 'POST',
-      url: '/1/users',
+      url: '/account/register',
       body: data
     })
       .then((response) => {
@@ -88,25 +83,18 @@ export default class Parse extends Backend{
    * @returns
    *
    * createdAt: "2015-12-30T15:29:36.611Z"
-   * email: "barton@foo.com"
-   * objectId: "Z4yvP19OeL"
-   * sessionToken: "r:Kt9wXIBWD0dNijNIq2u5rRllW"
    * updatedAt: "2015-12-30T16:08:50.419Z"
+   * objectId: "Z4yvP19OeL"
+   * email: "barton@foo.com"
+   * sessionToken: "r:Kt9wXIBWD0dNijNIq2u5rRllW"
    * username: "barton"
    *
    */
   async login(data) {
-    var formBody = [];
-    for (var property in data) {
-      var encodedKey = encodeURIComponent(property);
-      var encodedValue = encodeURIComponent(data[property]);
-      formBody.push(encodedKey + "=" + encodedValue);
-    }
-    formBody = formBody.join("&");
-
     return await this._fetch({
-      method: 'GET',
-      url: '/1/login?' + formBody
+      method: 'POST',
+      url: '/account/login',
+      body: data
     })
       .then((response) => {
         var json = JSON.parse(response._bodyInit);
@@ -128,7 +116,7 @@ export default class Parse extends Backend{
   async logout() {
     return await this._fetch({
       method: 'POST',
-      url: '/1/logout',
+      url: '/account/logout',
       body: {}
     })
       .then((response) => {
@@ -138,7 +126,7 @@ export default class Parse extends Backend{
             (response.status === 400 && res.code === 209)) {
           return {};
         } else {
-          throw({code: 404, error: 'unknown error from Parse.com'});
+          throw({code: res.statusCode, error: res.message});
         }
       })
       .catch((error) => {
@@ -160,7 +148,7 @@ export default class Parse extends Backend{
   async resetPassword(data) {
     return await this._fetch({
       method: 'POST',
-      url: '/1/requestPasswordReset',
+      url: '/account/resetPasswordRequest',
       body: data
     })
       .then((response) => {
@@ -195,7 +183,7 @@ export default class Parse extends Backend{
   async getProfile() {
     return await this._fetch({
       method: 'GET',
-      url: '/1/users/me'
+      url: '/account/profile/me'
     })
       .then((response) => {
         var  res = JSON.parse(response._bodyInit);
@@ -220,8 +208,8 @@ export default class Parse extends Backend{
    */
   async updateProfile(userId,data) {
     return await this._fetch({
-      method: 'PUT',
-      url: '/1/users/' + userId,
+      method: 'POST',
+      url: '/account/profile/' + userId,
       body: data
     })
       .then((response) => {
@@ -252,16 +240,11 @@ export default class Parse extends Backend{
     var reqOpts = {
       method: opts.method,
       headers: {
-        'X-Parse-Application-Id': this._applicationId,
-        'X-Parse-REST-API-Key': this._restAPIKey
       }
     };
-    if (this._sessionToken) {
-      reqOpts.headers['X-Parse-Session-Token'] = this._sessionToken;
-    }
     
-    if (this._masterKey) {
-      reqOpts.headers['X-Parse-Master-Key'] = this.masterKey;
+    if (this._sessionToken) {
+      reqOpts.headers['Authorization'] = 'Bearer ' + this._sessionToken;
     }
 
     if (opts.method === 'POST' || opts.method === 'PUT') {
