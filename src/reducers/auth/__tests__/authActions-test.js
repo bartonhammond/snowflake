@@ -13,7 +13,7 @@ jest.autoMockOff();
  * We don't want to use the devices storage, nor actually call Parse.com
  */
 jest.mock('../../../lib/AppAuthToken');
-jest.mock('../../../lib/Parse');
+jest.mock('../../../lib/BackendFactory');
 
 /**
  * ## Mock Store
