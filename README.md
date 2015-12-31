@@ -1,6 +1,6 @@
 Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
 ==================================
-#### A React-Native starter mobile app for iOS and Android with a single code base.  Using Redux and Immutable, the state of the application is fully testable with Jest, currently at 86% coverage. Snowflake supports Hot Reloading of its state.  Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has extensive docs and 45+ min of video demonstating implementation.
+#### A React-Native starter mobile app for iOS and Android with a single code base.  Using Redux and Immutable, the state of the application is fully testable with Jest, currently at 86% coverage. Snowflake supports Hot Reloading of its state.  Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has extensive docs and 45+ min of video demonstrating implementation.
 
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![ios](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/348ae0a97c5e147a.svg?token=RmDwzjeIGuo7i9MeazE1fg)](https://www.bitrise.io/app/348ae0a97c5e147a)
