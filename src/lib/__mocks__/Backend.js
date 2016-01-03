@@ -12,7 +12,7 @@
  */ 
 require('regenerator/runtime');
 
-export default class Parse  {
+export default class Backend  {
   /**
    * ## Parse
    *
