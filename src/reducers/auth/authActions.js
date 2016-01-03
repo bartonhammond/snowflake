@@ -301,8 +301,7 @@ export function loginFailure(error) {
 export function login(username,  password) {
   return dispatch => {
     dispatch(loginRequest());
-    var Hapi = BackendFactory();
-    return Hapi.login({
+    return BackendFactory().login({
       username: username,
       password: password
     })
