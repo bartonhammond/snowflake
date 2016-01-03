@@ -97,31 +97,6 @@ var ItemCheckbox = React.createClass({
     };
   },
   /**
-   * ### _getIconSize
-   * @return {Number} size 
-   */
-  _getIconSize: function() {
-    if (this.props.iconSize == 'small') {
-      return this.props.size * 0.5;
-    } else if (this.props.iconSize == 'normal') {
-      return this.props.size * 0.6;
-    } else {
-      return this.props.size * 0.7;
-    }
-  },
-  /**
-   * ### _getCircleIconStyle
-   * @returns {Object} style object
-   */
-  _getCircleIconStyle: function() {
-    return {
-      color: this.props.backgroundColor,
-      flex: 1,
-      width: this._getIconSize(),
-      height: this._getIconSize()
-    };
-  },
-  /**
    * ### _completeProgress
    * If the checkbox is pressable, figure out what state it's in and
    * what the display should look like
@@ -177,7 +152,6 @@ var ItemCheckbox = React.createClass({
               <Icon
                   name={iconName}
                   size={20}
-                  style={this._getCircleIconStyle}
               />
               <Text> {this.props.text}</Text>
             </View>
@@ -197,8 +171,6 @@ var ItemCheckbox = React.createClass({
                 <Icon
                     name={iconName}
                     size={20}
-                    style={this._getCircleIconStyle}
-                    
                 />
                 <Text> {this.props.text}</Text>
               </View>
