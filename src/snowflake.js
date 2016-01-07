@@ -9,7 +9,7 @@
  * * ```Provider``` will tie the React-Native to the Redux store
  * * ```App``` contains Login and TabBar
  * * ```configureStore``` will connect the ```reducers```, the
- * ```thunk``` and the initial state.  
+ * ```thunk``` and the initial state.
  */
 import React, { AppRegistry } from 'react-native';
 import { Provider } from 'react-redux/native';
@@ -36,28 +36,28 @@ import globalInitialState from './reducers/global/globalInitialState';
 import profileInitialState from './reducers/profile/profileInitialState';
 
 /**
- *  The version of the app but not  displayed yet 
+ *  The version of the app but not  displayed yet
  */
 var VERSION='0.0.9';
 
 /**
  *
  * ## Initial state
- * Create instances for the keys of each structure 
- * @returns {Object} object with 4 keys 
+ * Create instances for the keys of each structure
+ * @returns {Object} object with 4 keys
  */
 function getInitialState() {
   const _initState = {
     auth: new authInitialState,
-    device: (new deviceInitialState).set('isMobile',true).set('version',VERSION),
+    device: (new deviceInitialState).set('isMobile',true),
     global: (new globalInitialState),
     profile: new profileInitialState
   };
   return _initState;
 }
 /**
- * ## Native 
- * 
+ * ## Native
+ *
  * ```configureStore``` with the ```initialState``` and set the
  * ```platform``` and ```version``` into the store by ```dispatch```.
  * *Note* the ```store``` itself is set into the ```store```.  This
