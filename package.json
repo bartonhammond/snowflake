@@ -1,6 +1,6 @@
 {
   "name": "snowflake",
-  "version": "0.0.9",
+  "version": "0.0.9b",
   "private": true,
   "jest": {
     "scriptPreprocessor": "./node_modules/babel-jest",
