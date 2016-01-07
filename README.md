@@ -32,7 +32,7 @@ See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.c
 - [Continuous Integration](#continuous-integration)
 - [Redux State Management](#redux-state-management)
 - [Hot Reloading](#hot-reloading)
-- [FAQ](faq)
+- [FAQ](#faq)
 - [Source documentation](http://bartonhammond.github.io/snowflake/snowflake.js.html)
 
 ----------
@@ -493,7 +493,7 @@ alt="Snowflake Hot Loading" width="240" height="180" border="10" /></a>
 
 -------------
 
-## FAQ 
+## Faq 
 
 ### Why did you use the RestAPI instead of the (JS-sdk | ParseReact)
 
