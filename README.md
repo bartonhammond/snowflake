@@ -27,6 +27,7 @@ See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.c
 
 - [Screens](#screens)
 - [Summary](#summary)
+- [Quotes](#quotes)
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Continuous Integration](#continuous-integration)
@@ -62,6 +63,39 @@ See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.c
 1. Demonstrates how to **setup React-Native to perform Jest testing** with Babel.
 1. Includes ability to **debug Jest unit tests**with Chrome
 1. Instructions and videos for **continuous integration with Bitrise.io**
+
+----------
+## Quotes
+
+Some quotes from users of **Snowflake**
+
+**Viktor**
+>Just saw the tweets, still watching the vids. It's awesome!! It's really really high quality, I'm truly amazed
+
+**John**
+>project is awesome, thank you for providing it!
+
+**Eric**:
+> I've been going through snowflake and love what you have done!
+
+**Nikos**:
+> wow new videos, nice 
+
+**Josh**
+>thanks for the thorough videos!
+
+**Patrick**
+> just wanna snowflake is awesome
+
+**Justin**
+>Congrats - the project is super helpful
+
+**Stephen**
+>Thanks so much for this amazing foundation! 
+
+**Jim**
+>Neat project
+
 
 ----------
 
