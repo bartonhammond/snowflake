@@ -129,7 +129,7 @@ One of the needs of any application is server side processing.  With the ability
 ###[Parse.com](https://www.parse.com/)
 *Focus on creating amazing user experiences and forget complex infrastructure*
 
-Using Parse.com as the backend **reduces the angst** of setting up a server, managing the database, providing security and backups, etc.  Their free tier is more then amble to achieve a POC.
+Using Parse.com as the backend **reduces the angst** of setting up a server, managing the database, providing security and backups, etc.  Their free tier is more then ample to achieve a POC.
 
 While Parse.com was nice to use in starting the Snowflake app, once I needed to write server side code, I chose to look elsewhere.  Why?  Because, for one, I can't debug the "Cloud Code" locally or remotely.  Another, Parse has it's own flavors for HTTP Request and Promises.  It just made it difficult to write server side code and work w/ Parse.  
 
