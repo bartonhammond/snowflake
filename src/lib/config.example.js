@@ -6,6 +6,7 @@ module.exports = {
   },
   backend: {
     parse: false,
-    hapi: true
+    hapiRemote: true,
+    hapiLocal: false
   }
 }
