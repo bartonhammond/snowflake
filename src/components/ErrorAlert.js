@@ -21,18 +21,12 @@ var ErrorAlert = class ErrorAlertClass{
    * ## ErrorAlert 
    * setup to support testing
    */
-  constructor(alerter) {
-    this.alerter = alerter;
-  }
   /**
    * ### checkErro
    * determine if there is an error and how deep it is.  Take the
    * deepest level as the message and display it
    */
   checkError(obj) {
-    if (!this.alerter) {
-      this.alerter = SimpleAlert;
-    }
     let errorMessage = '';
     if (!_.isNull(obj)) {
       if (!_.isUndefined(obj.error)) {
@@ -46,9 +40,9 @@ var ErrorAlert = class ErrorAlertClass{
       }
       if (errorMessage !== '') {
         if (!_.isUndefined(errorMessage.message)) {
-          this.alerter.alert('Error',errorMessage.message);
+          SimpleAlert.alert('Error',errorMessage.message);
         } else {
-          this.alerter.alert('Error',errorMessage);
+          SimpleAlert.alert('Error',errorMessage);
         }
       }
     }//isNull

@@ -49,7 +49,7 @@ describe('ErrorAlert', () => {
      * check that the title is 'Error' which is a hard coded constant
      * and the alert matches the props error
      */
-    new ErrorAlert(SimpleAlert).checkError(errorAlertProps);
+    new ErrorAlert().checkError(errorAlertProps);
     expect(SimpleAlert.alert.mock.calls[0][0]).toEqual('Error');
     expect(SimpleAlert.alert.mock.calls[0][1]).toEqual(errorAlertProps.error.error);
   });

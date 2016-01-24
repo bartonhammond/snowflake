@@ -37,6 +37,7 @@ ReactNative.View = View;
 ReactNative.ScrollView = View;
 ReactNative.Text = View;
 ReactNative.TouchableOpacity = View;
+ReactNative.TouchableHighlight = View;
 ReactNative.TouchableWithoutFeedback = View;
 ReactNative.ToolbarAndroid = View;
 ReactNative.Image = View;
