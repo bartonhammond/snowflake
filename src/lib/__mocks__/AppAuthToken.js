@@ -17,25 +17,25 @@ export default class AppAuthToken {
    * ### getSessionToken
    * @returns {Object} sessionToken
    */
-  async getSessionToken () {
-    return await {
+  getSessionToken () {
+    return Promise.resolve( {
       sessionToken: {
         sessionToken: 'token'
       }
-    };
+    });
   }
   /**
    * ### storeSessionToken
    * @returns {Object} empty
    */
-  async storeSessionToken() {
-    return await {};
+  storeSessionToken() {
+    return Promise.resolve({});
   }
   /**
    * ### deleteSessionToken
    */  
-  async deleteSessionToken () {
-    return await {};
+  deleteSessionToken () {
+    return Promise.resolve({});
   }
 };
 

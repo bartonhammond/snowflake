@@ -193,7 +193,9 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.logout());
+    return store.dispatch(actions.logout()).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
   pit('should login', () => {
@@ -204,7 +206,9 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.login('foo','bar'));
+    return store.dispatch(actions.login('foo','bar')).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
   pit('should getSessionToken', () => {
@@ -215,7 +219,9 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.getSessionToken());
+    return store.dispatch(actions.getSessionToken()).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
   pit('should signup', () => {
@@ -226,7 +232,9 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.signup('user','email','password'));
+    return store.dispatch(actions.signup('user','email','password')).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
   pit('should resetPassword', () => {
@@ -237,7 +245,9 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.resetPassword('email'));
+    return store.dispatch(actions.resetPassword('email')).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
   pit('should deleteSessionToken', () => {
@@ -247,7 +257,8 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.deleteSessionToken());
+    return store.dispatch(actions.deleteSessionToken()).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
-
 });
