@@ -21,12 +21,19 @@ workflows:
             curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
             apt-get install -y nodejs
     - script@1.1.0:
-        title: npm install
+        title: npm install -g npm3
         inputs:
         - content: |-
             #!/bin/bash
 
-            npm install
+            npm install -g npm3
+    - script@1.1.0:
+        title: npm3 install
+        inputs:
+        - content: |-
+            #!/bin/bash
+
+            npm3 install
     - script@1.1.0:
         title: npm test
         inputs:
