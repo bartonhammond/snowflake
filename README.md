@@ -151,6 +151,10 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
 
 ## Setup
 
+* NOTE: as of release 0.0.10, ```npm3``` is required
+
+```npm install -g npm3```
+
 * [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
 
 * Clone snowflake:
@@ -161,7 +165,7 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
 
 *  cd snowflake
 ```
-npm install
+npm3 install
 ```
 
 *  Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.
