@@ -13,7 +13,7 @@
  * Imports from redux
  */
 import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux/native';
+import { connect } from 'react-redux';
 
 /**
  * Immutable Map

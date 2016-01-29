@@ -1,6 +1,6 @@
 {
   "name": "snowflake",
-  "version": "0.0.9b",
+  "version": "0.0.10",
   "private": true,
   "jest": {
     "scriptPreprocessor": "jestSupport/scriptPreprocess.js",
@@ -43,19 +43,19 @@
   },
   "dependencies": {
     "apsl-react-native-button": "git+https://git@github.com/bartonhammond/react-native-button.git",
-    "immutable": "^3.7.5",
+    "immutable": "^3.7.6",
     "key-mirror": "^1.0.1",
-    "react-native": "^0.17.0",
+    "react-native": "^0.18.1",
     "react-native-gifted-spinner": "0.0.3",
     "react-native-simple-store": "^0.1.0",
     "react-native-simpledialog-android": "^1.0.2",
-    "react-native-tab-navigator": "^0.2.11",
-    "react-native-vector-icons": "^1.0.4",
-    "react-redux": "^3.1.0",
-    "redux": "^3.0.4",
-    "redux-thunk": "^1.0.0",
+    "react-native-tab-navigator": "^0.2.15",
+    "react-native-vector-icons": "^1.1.0",
+    "react-redux": "^4.1.1",
+    "redux": "^3.1.2",
+    "redux-thunk": "^1.0.3",
     "regenerator": "^0.8.42",
-    "tcomb-form-native": "^0.3.0",
+    "tcomb-form-native": "^0.3.3",
     "underscore": "^1.8.3",
     "validate.js": "^0.9.0"
   },
@@ -63,9 +63,9 @@
     "babel-core": "^6.4.5",
     "babel-jest": "^6.0.1",
     "docker": "^0.2.14",
-    "istanbul": "gotwarlost/istanbul#source-map",
+    "istanbul": "^0.4.2",
     "jest-cli": "^0.8.2",
-    "react": "^0.14.3",
-    "react-addons-test-utils": "^0.14.3"
+    "react": "^0.14.7",
+    "react-addons-test-utils": "^0.14.7"
   }
 }

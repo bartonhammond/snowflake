@@ -12,7 +12,7 @@
  * ```thunk``` and the initial state.
  */
 import React, { AppRegistry } from 'react-native';
-import { Provider } from 'react-redux/native';
+import { Provider } from 'react-redux';
 import App from './containers/App';
 import configureStore from './lib/configureStore';
 
@@ -38,7 +38,7 @@ import profileInitialState from './reducers/profile/profileInitialState';
 /**
  *  The version of the app but not  displayed yet
  */
-var VERSION='0.0.9';
+var VERSION='0.0.10';
 
 /**
  *
@@ -76,8 +76,8 @@ export default function native(platform) {
        * have a ```store```
        */
       return (
-          <Provider store={store}>
-          {() => <App store={store}/>}
+        <Provider store={store}>
+          <App/>
         </Provider>
       );
 
