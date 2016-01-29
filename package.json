@@ -1,6 +1,6 @@
 {
   "name": "snowflake",
-  "version": "0.0.9b",
+  "version": "0.0.10",
   "private": true,
   "jest": {
     "scriptPreprocessor": "jestSupport/scriptPreprocess.js",

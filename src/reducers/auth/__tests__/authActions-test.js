@@ -180,10 +180,10 @@ describe('authActions', () => {
    * the following tests describe the actions that should be
    * dispatched the function is invoked
    *
-   * *Note*: these tests are run with ```pit``` because they are async
+   * *Note*: these tests are run with ```it``` because they are async
    *
    */
-  pit('should logout', () => {
+  it('should logout', () => {
     const expectedActions = [
       {type: LOGOUT_REQUEST},
       {type: LOGIN_STATE_REGISTER},
@@ -196,7 +196,7 @@ describe('authActions', () => {
     return store.dispatch(actions.logout());
   });
 
-  pit('should login', () => {
+  it('should login', () => {
     const expectedActions = [
       {type: LOGIN_REQUEST},
       {type: LOGIN_STATE_LOGOUT},
@@ -207,7 +207,7 @@ describe('authActions', () => {
     return store.dispatch(actions.login('foo','bar'));
   });
 
-  pit('should getSessionToken', () => {
+  it('should getSessionToken', () => {
     const expectedActions = [
       {type: SESSION_TOKEN_REQUEST},      
       {type: LOGIN_STATE_LOGOUT},
@@ -218,7 +218,7 @@ describe('authActions', () => {
     return store.dispatch(actions.getSessionToken());
   });
 
-  pit('should signup', () => {
+  it('should signup', () => {
     const expectedActions = [
       {type: SIGNUP_REQUEST},      
       {type: LOGIN_STATE_LOGOUT},
@@ -229,7 +229,7 @@ describe('authActions', () => {
     return store.dispatch(actions.signup('user','email','password'));
   });
 
-  pit('should resetPassword', () => {
+  it('should resetPassword', () => {
     const expectedActions = [
       {type: RESET_PASSWORD_REQUEST},      
       {type: LOGIN_STATE_LOGIN},
@@ -240,7 +240,7 @@ describe('authActions', () => {
     return store.dispatch(actions.resetPassword('email'));
   });
 
-  pit('should deleteSessionToken', () => {
+  it('should deleteSessionToken', () => {
     const expectedActions = [
       {type: SESSION_TOKEN_REQUEST},
       {type: SESSION_TOKEN_SUCCESS}      
