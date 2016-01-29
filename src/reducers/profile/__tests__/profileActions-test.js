@@ -100,7 +100,7 @@ describe('profileActions', () => {
    * *Note*: these tests are run with ```pit``` because they are async
    *
    */
-  pit('should getProfile', () => {
+  it('should getProfile', () => {
     const expectedActions = [
       {type: GET_PROFILE_REQUEST},
       {type: GET_PROFILE_SUCCESS}
@@ -112,7 +112,7 @@ describe('profileActions', () => {
     });
   });
 
-  pit('should updateProfile', () => {
+  it('should updateProfile', () => {
     const expectedActions = [
       {type: PROFILE_UPDATE_REQUEST},
       {type: PROFILE_UPDATE_SUCCESS},
