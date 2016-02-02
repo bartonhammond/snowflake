@@ -29,10 +29,7 @@
       "redux-thunk",
       "fbjs"
     ],
-    "verbose": true,
-    "testPathDirs": [
-      "src/"
-    ]
+    "verbose": true
   },
   "scripts": {
     "test": "rm -rf ./node_modules/jest-cli/.haste_cache && jest ",
