@@ -4,7 +4,7 @@
  * This class combines all the reducers into one
  * 
  */
-'use string';
+'use strict';
 /**
  * ## Imports
  * 
