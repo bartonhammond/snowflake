@@ -5,7 +5,7 @@
  * see [https://parse.com/docs/rest/guide](https://parse.com/docs/rest/guide)
  *
  */
-'use string';
+'use strict';
 
 
 const backend = require('./Backend').default;
