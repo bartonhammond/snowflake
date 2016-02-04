@@ -4,7 +4,7 @@
  * A thin wrapper over the react-native-simple-store
  *
  */
-'use string';
+'use strict';
 /**
  * ## Imports
  * 

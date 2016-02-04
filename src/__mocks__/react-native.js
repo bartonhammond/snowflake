@@ -3,7 +3,7 @@
  * 
  * This class stubs out the React-Native classes with React classes
  */
-'use string';
+'use strict';
 /**
  * ## Imports
  * 

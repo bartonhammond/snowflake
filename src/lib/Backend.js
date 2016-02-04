@@ -4,7 +4,7 @@
  * Abstract Base class for Backend support
  *
  */
-'use string';
+'use strict';
 /**
  * ## Async support
  * 
