@@ -127,9 +127,9 @@ export function logout() {
         return BackendFactory(token).logout();
       })
       .then(() => {
-          dispatch(registerState());
-          dispatch(logoutSuccess());
-          dispatch(deleteSessionToken());          
+        dispatch(registerState());
+        dispatch(logoutSuccess());
+        dispatch(deleteSessionToken());          
       })
       .catch((error) => {
         dispatch(loginState());
@@ -255,26 +255,26 @@ export function signup(username, email, password) {
       email: email,
       password: password
     })
-		.then(function (json) {
-			return saveSessionToken(json)
-			.then(function () {
-				dispatch(signupSuccess(
-					Object.assign({}, 
-						{
-							username: username,
-							email: email,
-							objectId: json.objectId,
-							createdAt: json.createdAt,
-							sessionToken: json.sessionToken
-						}
-					)
-				));
-				dispatch(logoutState());          
-			});
-		})
-		.catch((error) => {
-			dispatch(signupFailure(error));
-		});
+      .then(function (json) {
+	return saveSessionToken(json)
+	  .then(function () {
+	    dispatch(signupSuccess(
+	      Object.assign({}, 
+			    {
+			      username: username,
+			      email: email,
+			      objectId: json.objectId,
+			      createdAt: json.createdAt,
+			      sessionToken: json.sessionToken
+			    }
+			   )
+	    ));
+	    dispatch(logoutState());          
+	  });
+      })
+      .catch((error) => {
+	dispatch(signupFailure(error));
+      });
   };
 }
 
@@ -318,16 +318,16 @@ export function login(username,  password) {
       username: username,
       password: password
     })
-		.then(function (json) {
-			return saveSessionToken(json)
-			.then(function () {
-				dispatch(loginSuccess(json));
-				dispatch(logoutState());          
-			});
-		})
-		.catch((error) => {
-			dispatch(loginFailure(error));
-		});
+      .then(function (json) {
+	return saveSessionToken(json)
+	  .then(function () {
+	    dispatch(loginSuccess(json));
+	    dispatch(logoutState());          
+	  });
+      })
+      .catch((error) => {
+	dispatch(loginFailure(error));
+      });
   };
 }
 
