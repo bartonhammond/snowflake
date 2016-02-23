@@ -157,9 +157,10 @@ export function signupRequest() {
     type: SIGNUP_REQUEST
   };
 } 
-export function signupSuccess() {
+export function signupSuccess(json) {
   return {
-    type: SIGNUP_SUCCESS
+    type: SIGNUP_SUCCESS,
+    payload: json
   };
 }
 export function signupFailure(error) {
@@ -254,18 +255,19 @@ export function signup(username, email, password) {
       email: email,
       password: password
     })
-      .then((json) => {
-        saveSessionToken(json)
-          .then(() => {
-            dispatch(logoutState());
-            dispatch(signupSuccess());            
-          });
-      })
-      .catch((error) => {
-        dispatch(signupFailure(error));
-      });
+		.then(function (json) {
+			return saveSessionToken(json)
+			.then(function () {
+				dispatch(signupSuccess(json));
+				dispatch(logoutState());          
+			});
+		})
+		.catch((error) => {
+			dispatch(signupFailure(error));
+		});
   };
 }
+
 /**
  * ## Login actions
  */
@@ -275,9 +277,10 @@ export function loginRequest() {
   };
 }
 
-export function loginSuccess() {
+export function loginSuccess(json) {
   return {
-    type: LOGIN_SUCCESS
+    type: LOGIN_SUCCESS,
+    payload: json
   };
 }
 
@@ -305,19 +308,19 @@ export function login(username,  password) {
       username: username,
       password: password
     })
-      .then((json) => {
-        saveSessionToken(json)
-          .then(() => {
-            dispatch(logoutState());          
-            dispatch(loginSuccess());
-          });
-      })
-      .catch((error) => {
-        dispatch(loginFailure(error));
-      });
-
+		.then(function (json) {
+			return saveSessionToken(json)
+			.then(function () {
+				dispatch(loginSuccess(json));
+				dispatch(logoutState());          
+			});
+		})
+		.catch((error) => {
+			dispatch(loginFailure(error));
+		});
   };
 }
+
 /**
  * ## ResetPassword actions
  */
