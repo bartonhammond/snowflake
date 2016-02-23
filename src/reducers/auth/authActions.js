@@ -258,7 +258,17 @@ export function signup(username, email, password) {
 		.then(function (json) {
 			return saveSessionToken(json)
 			.then(function () {
-				dispatch(signupSuccess(json));
+				dispatch(signupSuccess(
+					Object.assign({}, 
+						{
+							username: username,
+							email: email,
+							objectId: json.objectId,
+							createdAt: json.createdAt,
+							sessionToken: json.sessionToken
+						}
+					)
+				));
 				dispatch(logoutState());          
 			});
 		})
