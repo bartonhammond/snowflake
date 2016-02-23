@@ -14,6 +14,7 @@ const {
   SET_SESSION_TOKEN,
 
   GET_PROFILE_SUCCESS,
+  SIGNUP_SUCCESS,
   LOGIN_SUCCESS,
 
   GET_STATE,
@@ -48,6 +49,7 @@ export default function globalReducer(state = initialState, action) {
      * ```objectId``` which will be needed for some calls to Parse
      */
   case GET_PROFILE_SUCCESS:
+  case SIGNUP_SUCCESS:
   case LOGIN_SUCCESS:
     return state.set('currentUser',action.payload);
     
