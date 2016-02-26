@@ -1,8 +1,8 @@
 /**
- * # Parse.js
+ * # Hapi.js
  * 
- * This class interfaces with Parse.com using the rest api
- * see [https://parse.com/docs/rest/guide](https://parse.com/docs/rest/guide)
+ * This class interfaces with Hapi.com using the rest api
+ * see [http://hapijs.com/api](http://hapijs.com/api)
  *
  */
 'use strict';
