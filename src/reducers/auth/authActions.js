@@ -127,9 +127,9 @@ export function logout() {
         return BackendFactory(token).logout();
       })
       .then(() => {
-          dispatch(registerState());
-          dispatch(logoutSuccess());
-          dispatch(deleteSessionToken());          
+        dispatch(registerState());
+        dispatch(logoutSuccess());
+        dispatch(deleteSessionToken());          
       })
       .catch((error) => {
         dispatch(loginState());
@@ -157,9 +157,10 @@ export function signupRequest() {
     type: SIGNUP_REQUEST
   };
 } 
-export function signupSuccess() {
+export function signupSuccess(json) {
   return {
-    type: SIGNUP_SUCCESS
+    type: SIGNUP_SUCCESS,
+    payload: json
   };
 }
 export function signupFailure(error) {
@@ -254,18 +255,29 @@ export function signup(username, email, password) {
       email: email,
       password: password
     })
-      .then((json) => {
-        saveSessionToken(json)
-          .then(() => {
-            dispatch(logoutState());
-            dispatch(signupSuccess());            
-          });
+      .then(function (json) {
+	return saveSessionToken(json)
+	  .then(function () {
+	    dispatch(signupSuccess(
+	      Object.assign({}, 
+			    {
+			      username: username,
+			      email: email,
+			      objectId: json.objectId,
+			      createdAt: json.createdAt,
+			      sessionToken: json.sessionToken
+			    }
+			   )
+	    ));
+	    dispatch(logoutState());          
+	  });
       })
       .catch((error) => {
-        dispatch(signupFailure(error));
+	dispatch(signupFailure(error));
       });
   };
 }
+
 /**
  * ## Login actions
  */
@@ -275,9 +287,10 @@ export function loginRequest() {
   };
 }
 
-export function loginSuccess() {
+export function loginSuccess(json) {
   return {
-    type: LOGIN_SUCCESS
+    type: LOGIN_SUCCESS,
+    payload: json
   };
 }
 
@@ -305,19 +318,19 @@ export function login(username,  password) {
       username: username,
       password: password
     })
-      .then((json) => {
-        saveSessionToken(json)
-          .then(() => {
-            dispatch(logoutState());          
-            dispatch(loginSuccess());
-          });
+      .then(function (json) {
+	return saveSessionToken(json)
+	  .then(function () {
+	    dispatch(loginSuccess(json));
+	    dispatch(logoutState());          
+	  });
       })
       .catch((error) => {
-        dispatch(loginFailure(error));
+	dispatch(loginFailure(error));
       });
-
   };
 }
+
 /**
  * ## ResetPassword actions
  */

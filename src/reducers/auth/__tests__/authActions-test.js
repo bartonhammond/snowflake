@@ -199,7 +199,7 @@ describe('authActions', () => {
     });
   });
 
-  it.only('should login', () => {
+  it('should login', () => {
     const expectedActions = [
       {type: LOGIN_REQUEST},
       {type: LOGIN_STATE_LOGOUT},
