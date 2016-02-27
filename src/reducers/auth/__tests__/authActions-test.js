@@ -213,6 +213,19 @@ describe('authActions', () => {
     });
   });
 
+  it('should fail login', () => {
+    const expectedActions = [
+      {type: LOGIN_REQUEST},
+      {type: LOGIN_FAILURE}
+    ];
+
+    const store = mockStore({}, expectedActions);
+    return store.dispatch(actions.login('foo','wrong')).then(() => {
+      jest.runAllTicks();
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
+  });
+
   it('should getSessionToken', () => {
     const expectedActions = [
       {type: SESSION_TOKEN_REQUEST},      
