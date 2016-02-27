@@ -194,11 +194,12 @@ describe('authActions', () => {
 
     const store = mockStore({}, expectedActions);
     return store.dispatch(actions.logout()).then(() => {
+      jest.runAllTicks();
       expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
     });
   });
 
-  it('should login', () => {
+  it.only('should login', () => {
     const expectedActions = [
       {type: LOGIN_REQUEST},
       {type: LOGIN_STATE_LOGOUT},
@@ -207,6 +208,7 @@ describe('authActions', () => {
 
     const store = mockStore({}, expectedActions);
     return store.dispatch(actions.login('foo','bar')).then(() => {
+      jest.runAllTicks();
       expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
     });
   });
@@ -233,6 +235,7 @@ describe('authActions', () => {
 
     const store = mockStore({}, expectedActions);
     return store.dispatch(actions.signup('user','email','password')).then(() => {
+      jest.runAllTicks();
       expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
     });
   });
