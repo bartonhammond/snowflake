@@ -183,7 +183,7 @@ describe('authActions', () => {
    * *Note*: these tests are run with ```it``` because they are async
    *
    */
-  it('should logout', () => {
+  pit('should logout', () => {
     const expectedActions = [
       {type: LOGOUT_REQUEST},
       {type: LOGIN_STATE_REGISTER},
@@ -199,21 +199,20 @@ describe('authActions', () => {
     });
   });
 
-  it('should login', () => {
+  pit('should login', () => {
     const expectedActions = [
       {type: LOGIN_REQUEST},
-      {type: LOGIN_STATE_LOGOUT},
-      {type: LOGIN_SUCCESS}
+      {type: LOGIN_SUCCESS},
+      {type: LOGIN_STATE_LOGOUT}
     ];
 
     const store = mockStore({}, expectedActions);
     return store.dispatch(actions.login('foo','bar')).then(() => {
-      jest.runAllTicks();
       expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
     });
   });
 
-  it('should fail login', () => {
+  pit('should fail login', () => {
     const expectedActions = [
       {type: LOGIN_REQUEST},
       {type: LOGIN_FAILURE}
@@ -221,7 +220,6 @@ describe('authActions', () => {
 
     const store = mockStore({}, expectedActions);
     return store.dispatch(actions.login('foo','wrong')).then(() => {
-      jest.runAllTicks();
       expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
     });
   });
@@ -239,16 +237,15 @@ describe('authActions', () => {
     });
   });
 
-  it('should signup', () => {
+  pit('should signup', () => {
     const expectedActions = [
       {type: SIGNUP_REQUEST},      
-      {type: LOGIN_STATE_LOGOUT},
-      {type: SIGNUP_SUCCESS}
+      {type: SIGNUP_SUCCESS},
+      {type: LOGIN_STATE_LOGOUT}
     ];
 
     const store = mockStore({}, expectedActions);
     return store.dispatch(actions.signup('user','email','password')).then(() => {
-      jest.runAllTicks();
       expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
     });
   });
