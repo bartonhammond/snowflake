@@ -129,7 +129,7 @@ export function logout() {
       .then(() => {
         dispatch(registerState());
         dispatch(logoutSuccess());
-        dispatch(deleteSessionToken());          
+        return dispatch(deleteSessionToken());
       })
       .catch((error) => {
         dispatch(loginState());
@@ -198,7 +198,7 @@ export function sessionTokenRequestFailure(error) {
 export function deleteSessionToken() {
   return dispatch => {
     dispatch(sessionTokenRequest());
-    return new  AppAuthToken().deleteSessionToken()
+    return new AppAuthToken().deleteSessionToken()
       .then(() => {
         dispatch(sessionTokenRequestSuccess());
       });
