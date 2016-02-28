@@ -24,6 +24,9 @@ const middlewares = [thunk];
  * @see http://rackt.org/redux/docs/recipes/WritingTests.html
  */
 export default function mockStore(state, expectedActions) {
+  let expectedActionCount = expectedActions.length;
+  let actualActionCount = 0;
+
   if (!Array.isArray(expectedActions)) {
     throw new Error('expectedActions should be an array of expected actions.');
   }
@@ -34,6 +37,14 @@ export default function mockStore(state, expectedActions) {
    */
   function mockStoreWithoutMiddleware() {
     return {
+      getExpectedActionCount() {
+        return expectedActionCount;
+      },
+
+      getActualActionCount() {
+        return actualActionCount;
+      },
+
       getState() {
         return typeof state === 'function' ? state() : state;
       },
@@ -43,7 +54,14 @@ export default function mockStore(state, expectedActions) {
        * confirm that it is in order, and that all of them have been processed
        */
       dispatch(action) {
+        actualActionCount += 1;
         const expectedAction = expectedActions.shift();
+
+        if (!expectedAction) {
+          throw new Error('Additional action beyond expected dispatched: ' + action.type);
+        }
+
+        console.log(action.type);
         try {
           expect(action.type).toEqual(expectedAction.type);
           return action;

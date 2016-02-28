@@ -39,7 +39,10 @@ export default class Backend  {
    * ### login
    * @returns {Object} response
    */
-  async login() {
+  async login(credentials) {
+    if (credentials.password === "wrong") {
+        throw "error";
+    }
     return await this.response;
   }
   /**

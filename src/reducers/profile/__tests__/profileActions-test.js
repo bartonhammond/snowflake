@@ -107,7 +107,9 @@ describe('profileActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.getProfile());
+    return store.dispatch(actions.getProfile()).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
   it('should updateProfile', () => {
@@ -119,7 +121,9 @@ describe('profileActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.updateProfile('userid','username','email'));
+    return store.dispatch(actions.updateProfile('userid','username','email')).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
 });

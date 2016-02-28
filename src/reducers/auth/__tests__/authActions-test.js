@@ -183,7 +183,7 @@ describe('authActions', () => {
    * *Note*: these tests are run with ```it``` because they are async
    *
    */
-  it('should logout', () => {
+  pit('should logout', () => {
     const expectedActions = [
       {type: LOGOUT_REQUEST},
       {type: LOGIN_STATE_REGISTER},
@@ -193,18 +193,35 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.logout());
+    return store.dispatch(actions.logout()).then(() => {
+      jest.runAllTicks();
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
-  it('should login', () => {
+  pit('should login', () => {
     const expectedActions = [
       {type: LOGIN_REQUEST},
-      {type: LOGIN_STATE_LOGOUT},
-      {type: LOGIN_SUCCESS}
+      {type: LOGIN_SUCCESS},
+      {type: LOGIN_STATE_LOGOUT}
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.login('foo','bar'));
+    return store.dispatch(actions.login('foo','bar')).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
+  });
+
+  pit('should fail login', () => {
+    const expectedActions = [
+      {type: LOGIN_REQUEST},
+      {type: LOGIN_FAILURE}
+    ];
+
+    const store = mockStore({}, expectedActions);
+    return store.dispatch(actions.login('foo','wrong')).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
   it('should getSessionToken', () => {
@@ -215,18 +232,22 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.getSessionToken());
+    return store.dispatch(actions.getSessionToken()).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
-  it('should signup', () => {
+  pit('should signup', () => {
     const expectedActions = [
       {type: SIGNUP_REQUEST},      
-      {type: LOGIN_STATE_LOGOUT},
-      {type: SIGNUP_SUCCESS}
+      {type: SIGNUP_SUCCESS},
+      {type: LOGIN_STATE_LOGOUT}
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.signup('user','email','password'));
+    return store.dispatch(actions.signup('user','email','password')).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
   it('should resetPassword', () => {
@@ -237,7 +258,9 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.resetPassword('email'));
+    return store.dispatch(actions.resetPassword('email')).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
 
   it('should deleteSessionToken', () => {
@@ -247,7 +270,8 @@ describe('authActions', () => {
     ];
 
     const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.deleteSessionToken());
+    return store.dispatch(actions.deleteSessionToken()).then(() => {
+      expect(store.getExpectedActionCount()).toEqual(store.getActualActionCount());
+    });
   });
-
 });
