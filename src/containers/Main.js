@@ -1,9 +1,6 @@
 /**
- * # app.js
- *  Display startup screen and 
- *  getSessionTokenAtStartup which will navigate upon completion 
-*
- *   
+ * # Main.js
+ *  This is the main app screen
  *  
  */
 'use strict';
@@ -16,8 +13,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 /**
- * Immutable Map
- */
+ * Immutable
+ */ 
 import {Map} from 'immutable';
 
 /**
@@ -25,24 +22,14 @@ import {Map} from 'immutable';
 	*/
 import {Actions} from 'react-native-router-flux'
 
-/**
- * Project imports
- */
-import Login from './Login';
-//const StartupScreen = require('../components/startupScreen').default;
-
-/**
- * Project actions
- */
-import * as authActions from '../reducers/auth/authActions';
-import * as deviceActions from '../reducers/device/deviceActions';
-import * as globalActions from '../reducers/global/globalActions';
+import Subview from './Subview';
 
 /**
  * We only need React
  */
 import React,
 { 	
+	Component,
 	StyleSheet,
 	View,
 	Text
@@ -50,17 +37,22 @@ import React,
 from 'react-native';
 
 /**
- * ## Actions
- * 3 of our actions will be available as ```actions```
+ * The platform neutral button
+ */
+const  Button = require('apsl-react-native-button');
+
+
+/**
+ * If your app uses Redux action creators, you can add them here...
+ * 
  */
 const actions = [
-  authActions,
-  deviceActions,
-  globalActions
 ];
 
 /**
- *  Save that state
+ *  Instead of including all app states via ...state
+ *  You probably want to explicitly enumerate only those which Main.js will depend on.
+ *
  */
 function mapStateToProps(state) {
   return {
@@ -89,40 +81,44 @@ function mapDispatchToProps(dispatch) {
 /**
  * ## App class
  */
-let App = React.createClass({
- 	/**
-   * See if there's a sessionToken from a previous login
-   * 
-   */
-  componentDidMount() {
-    this.props.actions.getSessionToken();
-  },
+class Main extends Component {
+  
+  handlePress(event) {
+		Actions.Subview({
+			title: 'Subview'
+			// you can add additional props to be passed to Subview here...
+		});
+	}
   
   render() {
   	return(
     	<View style={ styles.container }>
-				<Text style={ styles.summary }>App Startup Screen</Text>
+    		<Button style={ styles.button } onPress={ this.handlePress.bind(this) }>
+					{'Navigate to Subview'}
+				</Button>
 			</View>
     );
   }
-});
+};
 
 var styles = StyleSheet.create({
 	container: {
-		borderTopWidth: 2,
-		borderBottomWidth:2,
-		marginTop: 80,
+		marginTop: 200,
 		padding: 10
 	},
 	summary: {
 		fontFamily: 'BodoniSvtyTwoITCTT-Book',
 		fontSize: 18,
-		fontWeight: 'bold'
-	}
+		fontWeight: 'bold',
+	},
+	button: {
+    backgroundColor: '#FF3366',
+    borderColor:  '#FF3366'
+  }
 });
 
 /**
  * Connect the properties
  */
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
 

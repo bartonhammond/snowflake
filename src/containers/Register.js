@@ -1,5 +1,5 @@
 /**
- * # Login.js
+ * Register.js
  * 
  * 
  * 
@@ -37,11 +37,10 @@ import React,
 }
 from 'react-native';
 
-
 const {
-	LOGIN,
-	REGISTER, 
-	FORGOT_PASSWORD 
+  LOGIN, 
+  REGISTER,
+  FORGOT_PASSWORD
 } = require('../lib/constants').default;
 
 /**
@@ -69,33 +68,39 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function buttonPressHandler(login, username, password) {
-	login (username, password);
+function buttonPressHandler(signup, username, email, password) {
+	signup (username, email, password);
 }
 
-let Login = React.createClass({
+let Register = React.createClass({
 
   render() {
-		let loginButtonText = 'Log in';
+
+  	let loginButtonText = 'Register';
 		let onButtonPress = buttonPressHandler.bind(null,
-				this.props.actions.login,
-				this.props.auth.form.fields.username, 
-				this.props.auth.form.fields.password
+					this.props.actions.signup,
+					this.props.auth.form.fields.username,
+					this.props.auth.form.fields.email,
+					this.props.auth.form.fields.password
 		);
+ 		
+
+
 
 		return(
 			<LoginRender 
-				formType={ LOGIN }
+				formType={ REGISTER }
 				loginButtonText={ loginButtonText }
-				onButtonPress={ onButtonPress }
-				displayPasswordCheckbox={ true }
-				leftMessageType={ REGISTER }
-				rightMessageType={ FORGOT_PASSWORD }
+				onButtonPress={ onButtonPress }				
+				displayPasswordCheckbox ={ true }
+				leftMessageType={ FORGOT_PASSWORD }
+				rightMessageType={ LOGIN }
 				auth={ this.props.auth }
 				global={ this.props.global }
+
 			/>
+
 		);
   }
 });
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

@@ -21,6 +21,9 @@ const {
   SESSION_TOKEN_REQUEST,
   SESSION_TOKEN_SUCCESS,
   SESSION_TOKEN_FAILURE,
+  
+  DELETE_TOKEN_REQUEST,
+  DELETE_TOKEN_SUCCESS,
 
   LOGIN_STATE_LOGOUT,
   LOGIN_STATE_REGISTER,
@@ -166,7 +169,14 @@ export default function authReducer(state = initialState, action) {
           .setIn(['form','fields','passwordAgainHasError'],form.fields.passwordAgainHasError);
     
     return next;
-    
+  
+    case DELETE_TOKEN_REQUEST:
+    case DELETE_TOKEN_SUCCESS:
+        /**
+         * no state change, just an ability to track action requests...
+         */
+        return state;
+        
   }    
   /**
    * ## Default

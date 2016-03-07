@@ -1,9 +1,6 @@
 /**
- * # app.js
- *  Display startup screen and 
- *  getSessionTokenAtStartup which will navigate upon completion 
-*
- *   
+ * # Subview.js
+ *  This is called from main to demonstrate the back button
  *  
  */
 'use strict';
@@ -16,8 +13,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 /**
- * Immutable Map
- */
+ * Immutable
+ */ 
 import {Map} from 'immutable';
 
 /**
@@ -26,17 +23,9 @@ import {Map} from 'immutable';
 import {Actions} from 'react-native-router-flux'
 
 /**
- * Project imports
+ * Navigation Bar
  */
-import Login from './Login';
-//const StartupScreen = require('../components/startupScreen').default;
-
-/**
- * Project actions
- */
-import * as authActions from '../reducers/auth/authActions';
-import * as deviceActions from '../reducers/device/deviceActions';
-import * as globalActions from '../reducers/global/globalActions';
+import NavigationBar from 'react-native-navbar';
 
 /**
  * We only need React
@@ -50,17 +39,16 @@ import React,
 from 'react-native';
 
 /**
- * ## Actions
- * 3 of our actions will be available as ```actions```
+ * If your app uses Redux action creators, you can add them here...
+ * 
  */
 const actions = [
-  authActions,
-  deviceActions,
-  globalActions
 ];
 
 /**
- *  Save that state
+ *  Instead of including all app states via ...state
+ *  You probably want to explicitly enumerate only those which Main.js will depend on.
+ *
  */
 function mapStateToProps(state) {
   return {
@@ -89,19 +77,27 @@ function mapDispatchToProps(dispatch) {
 /**
  * ## App class
  */
-let App = React.createClass({
- 	/**
-   * See if there's a sessionToken from a previous login
-   * 
-   */
-  componentDidMount() {
-    this.props.actions.getSessionToken();
-  },
+let Subview = React.createClass({
   
   render() {
+    var titleConfig = {
+   		title: "Subview"
+   	};
+   	
+   	var leftButtonConfig = {
+   		title: 'Back',
+   		handler: Actions.pop
+   	};
+   	
   	return(
-    	<View style={ styles.container }>
-				<Text style={ styles.summary }>App Startup Screen</Text>
+  		<View>
+				<NavigationBar
+					title={ titleConfig }
+					leftButton={ leftButtonConfig }
+				/>
+				<View style={ styles.container }>
+					<Text style={ styles.summary }>Subview</Text>
+				</View>
 			</View>
     );
   }
@@ -124,5 +120,4 @@ var styles = StyleSheet.create({
 /**
  * Connect the properties
  */
-export default connect(mapStateToProps, mapDispatchToProps)(App);
-
+export default connect(mapStateToProps, mapDispatchToProps)(Subview);
