@@ -24,10 +24,10 @@ const {
   SESSION_TOKEN_SUCCESS,
   SESSION_TOKEN_FAILURE,
 
-  LOGIN_STATE_LOGOUT,
-  LOGIN_STATE_LOGIN,
-  LOGIN_STATE_REGISTER,
-  LOGIN_STATE_FORGOT_PASSWORD,
+  LOGOUT,
+  LOGIN,
+  REGISTER,
+  FORGOT_PASSWORD,
   
   ON_AUTH_FORM_FIELD_CHANGE,
 
@@ -119,7 +119,7 @@ describe('authReducer', () => {
    * ### The user logs out
    * 
    */
-  describe('LOGIN_STATE_LOGOUT', () => {
+  describe('LOGOUT', () => {
     let initialState = null;
     /**
      * #### Get a valid state
@@ -138,11 +138,11 @@ describe('authReducer', () => {
      */
     it('form is valid to logout', () => {
       const action = {
-        type: LOGIN_STATE_LOGOUT
+        type: LOGOUT
       };
       let next = authReducer(initialState, action);
 
-      expect(next.form.state).toBe(LOGIN_STATE_LOGOUT);
+      expect(next.form.state).toBe(LOGOUT);
       expect(next.form.isValid).toBe(true);
     });
     /**
@@ -154,7 +154,7 @@ describe('authReducer', () => {
      */
     it('form is valid to logout even with form fields', () => {
       const action = {
-        type: LOGIN_STATE_LOGOUT
+        type: LOGOUT
       };
       let init = authReducer(initialState, action);
       let withFields =
@@ -163,7 +163,7 @@ describe('authReducer', () => {
             .setIn(['form','fields','password'],'foo')
             .setIn(['form','fields','passwordAgain'],'foo');
       let next = authReducer(withFields, action);
-      expect(next.form.state).toBe(LOGIN_STATE_LOGOUT);
+      expect(next.form.state).toBe(LOGOUT);
       expect(next.form.isValid).toBe(true);
       expect(next.form.fields.username).toBe('');
       expect(next.form.fields.email).toBe('');
@@ -176,7 +176,7 @@ describe('authReducer', () => {
    * ### The user wants to reset their password
    * 
    */
-  describe('LOGIN_STATE_FORGOT_PASSWORD', () => {
+  describe('FORGOT_PASSWORD', () => {
     let initialState = null;
     /**
      * #### before each
@@ -197,11 +197,11 @@ describe('authReducer', () => {
      */
     it('form is not valid with empty field', () => {
       const action = {
-        type: LOGIN_STATE_FORGOT_PASSWORD
+        type: FORGOT_PASSWORD
       };
       let next = authReducer(initialState, action);
 
-      expect(next.form.state).toBe(LOGIN_STATE_FORGOT_PASSWORD);
+      expect(next.form.state).toBe(FORGOT_PASSWORD);
       expect(next.form.isValid).toBe(false);
     });
     /**
@@ -220,11 +220,11 @@ describe('authReducer', () => {
                                    emailFieldChangeAction);
 
       const action = {
-        type: LOGIN_STATE_FORGOT_PASSWORD
+        type: FORGOT_PASSWORD
       };
       let next = authReducer(emailState,
                              action);
-      expect(next.form.state).toBe(LOGIN_STATE_FORGOT_PASSWORD);
+      expect(next.form.state).toBe(FORGOT_PASSWORD);
       expect(next.form.isValid).toBe(true);
     });
     /**
@@ -243,11 +243,11 @@ describe('authReducer', () => {
                                    emailFieldChangeAction);
 
       const action = {
-        type: LOGIN_STATE_FORGOT_PASSWORD
+        type: FORGOT_PASSWORD
       };
       let next = authReducer(emailState,
                              action);
-      expect(next.form.state).toBe(LOGIN_STATE_FORGOT_PASSWORD);
+      expect(next.form.state).toBe(FORGOT_PASSWORD);
       expect(next.form.isValid).toBe(false);
     });
 
@@ -256,7 +256,7 @@ describe('authReducer', () => {
    * ### The user logs in
    * 
    */
-  describe('LOGIN_STATE_LOGIN', () => {
+  describe('LOGIN', () => {
     let initialState = null;
     /**
      * #### Get a valid state
@@ -275,11 +275,11 @@ describe('authReducer', () => {
      */        
     it('form is not valid with empty fields', () => {
       const action = {
-        type: LOGIN_STATE_LOGIN
+        type: LOGIN
       };
       let next = authReducer(initialState, action);
 
-      expect(next.form.state).toBe(LOGIN_STATE_LOGIN);
+      expect(next.form.state).toBe(LOGIN);
       expect(next.form.isValid).toBe(false);
     });
     /**
@@ -304,11 +304,11 @@ describe('authReducer', () => {
                                       passwordFieldChangeAction);
       
       const action = {
-        type: LOGIN_STATE_LOGIN
+        type: LOGIN
       };
 
       let next = authReducer(passwordState, action);
-      expect(next.form.state).toBe(LOGIN_STATE_LOGIN);
+      expect(next.form.state).toBe(LOGIN);
       expect(next.form.fields.usernameHasError).toBe(false);
       expect(next.form.fields.passwordHasError).toBe(false);
       expect(next.form.isValid).toBe(true);
@@ -336,22 +336,22 @@ describe('authReducer', () => {
                                       passwordFieldChangeAction);
       
       const action = {
-        type: LOGIN_STATE_LOGIN
+        type: LOGIN
       };
 
       let next = authReducer(passwordState, action);
-      expect(next.form.state).toBe(LOGIN_STATE_LOGIN);
+      expect(next.form.state).toBe(LOGIN);
       expect(next.form.fields.usernameHasError).toBe(true);
       expect(next.form.fields.passwordHasError).toBe(true);
       expect(next.form.isValid).toBe(false);
     });
 
-  });//LOGIN_STATE_LOGIN
+  });//LOGIN
   /**
    * ### The user registers
    * 
    */
-  describe('LOGIN_STATE_REGISTER', () => {
+  describe('REGISTER', () => {
     let initialState = null;
     /**
      * #### Get a valid state
@@ -370,11 +370,11 @@ describe('authReducer', () => {
      */        
     it('form is not valid with empty fields', () => {
       const action = {
-        type: LOGIN_STATE_REGISTER
+        type: REGISTER
       };
       let next = authReducer(initialState, action);
 
-      expect(next.form.state).toBe(LOGIN_STATE_REGISTER);
+      expect(next.form.state).toBe(REGISTER);
       expect(next.form.isValid).toBe(false);
     });
     /**
@@ -413,11 +413,11 @@ describe('authReducer', () => {
                                            passwordAgainFieldChangeAction);
       
       const action = {
-        type: LOGIN_STATE_REGISTER
+        type: REGISTER
       };
 
       let next = authReducer(passwordAgainState, action);
-      expect(next.form.state).toBe(LOGIN_STATE_REGISTER);
+      expect(next.form.state).toBe(REGISTER);
       expect(next.form.fields.usernameHasError).toBe(false);
       expect(next.form.fields.emailHasError).toBe(false);
       expect(next.form.fields.passwordHasError).toBe(false);
@@ -457,11 +457,11 @@ describe('authReducer', () => {
                                            passwordAgainFieldChangeAction);
       
       const action = {
-        type: LOGIN_STATE_REGISTER
+        type: REGISTER
       };
 
       let next = authReducer(passwordAgainState, action);
-      expect(next.form.state).toBe(LOGIN_STATE_REGISTER);
+      expect(next.form.state).toBe(REGISTER);
       expect(next.form.fields.usernameHasError).toBe(true);
       expect(next.form.fields.emailHasError).toBe(true);
       expect(next.form.fields.passwordHasError).toBe(true);
@@ -470,5 +470,5 @@ describe('authReducer', () => {
       
     });
 
-  });//LOGIN_STATE_REGISTER
+  });//REGISTER
 });//authReducer

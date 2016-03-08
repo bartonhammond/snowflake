@@ -27,6 +27,8 @@ const {
   PROFILE_UPDATE_REQUEST,
   PROFILE_UPDATE_SUCCESS,
   PROFILE_UPDATE_FAILURE,
+  
+  LOGOUT_SUCCESS,
 
   SET_STATE
 } = require('../../lib/constants').default;
@@ -44,6 +46,8 @@ const initialState = new InitialState;
  * @param {Object} action - type and payload
  */
 export default function profileReducer(state = initialState, action) {
+  let nextProfileState = null;
+
   if (!(state instanceof InitialState)) return initialState.mergeDeep(state);
 
   switch (action.type) {
@@ -72,7 +76,7 @@ export default function profileReducer(state = initialState, action) {
      * mung it up through some other mechanism
      */    
   case GET_PROFILE_SUCCESS:
-    let nextProfileState = state.setIn(['form', 'isFetching'], false)
+    nextProfileState = state.setIn(['form', 'isFetching'], false)
       .setIn(['form','fields','username'], action.payload.username)
       .setIn(['form','fields','email'], action.payload.email)
       .setIn(['form','fields','emailVerified'],
@@ -86,6 +90,21 @@ export default function profileReducer(state = initialState, action) {
     return formValidation(
       fieldValidation( nextProfileState, action)
       , action);
+    
+    /**
+     * User logged out, so reset form fields and original profile.
+     * 
+     */ 
+  case LOGOUT_SUCCESS:
+    nextProfileState = state.setIn(['form','fields','username'], '')   
+      .setIn(['form','fields','email'], '')
+      .setIn(['form','fields','emailVerified'], false)
+      .setIn(['form','originalProfile','username'],'')
+      .setIn(['form','originalProfile','email'],'')
+      .setIn(['form','originalProfile','emailVerified'],false)
+      .setIn(['form','originalProfile','objectId'],null)
+      .setIn(['form','error'],null);
+    return formValidation( nextProfileState, action);
 
     /**
      * ### Request fails
@@ -121,6 +140,7 @@ export default function profileReducer(state = initialState, action) {
      *
      */    
   case SET_STATE:
+    debugger;
     var profile  = JSON.parse(action.payload).profile.form;
     var next = state.setIn(['form','disabled'],profile.disabled)
           .setIn(['form','error'],profile.error)

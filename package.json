@@ -1,6 +1,6 @@
 {
   "name": "snowflake",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": true,
   "jest": {
     "scriptPreprocessor": "jestSupport/scriptPreprocess.js",
@@ -20,6 +20,7 @@
     "unmockedModulePathPatterns": [
       "react",
       "react-addons-test-utils",
+      "react-native-router-flux",
       "promise",
       "source-map",
       "key-mirror",
@@ -29,6 +30,7 @@
       "redux-thunk",
       "fbjs"
     ],
+    "collectCoverage": false,
     "verbose": true,
     "testPathDirs": [
       "src/"
@@ -47,9 +49,10 @@
     "key-mirror": "^1.0.1",
     "react-native": "^0.18.1",
     "react-native-gifted-spinner": "0.0.3",
+    "react-native-navbar": "^1.2.1",
+    "react-native-router-flux": "^2.3.1",
     "react-native-simple-store": "^0.1.0",
     "react-native-simpledialog-android": "^1.0.2",
-    "react-native-tab-navigator": "^0.2.15",
     "react-native-vector-icons": "^1.1.0",
     "react-redux": "^4.1.1",
     "redux": "^3.1.2",

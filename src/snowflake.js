@@ -6,15 +6,69 @@
 
 /**
  * ## imports
- * * ```Provider``` will tie the React-Native to the Redux store
- * * ```App``` contains Login and TabBar
- * * ```configureStore``` will connect the ```reducers```, the
- * ```thunk``` and the initial state.
+ *
  */
-import React, { AppRegistry } from 'react-native';
-import { Provider } from 'react-redux';
-import App from './containers/App';
+/**
+ * ### React
+ *
+ * Necessary components from ReactNative
+ */
+import React, {
+  AppRegistry,
+  Navigator,
+  View,
+  Text } from 'react-native';
+
+/**
+ * ### Router-Flux
+ *
+ * Necessary components from Router-Flux
+ */
+import RNRF, {
+  Route,
+  Schema,
+  TabBar} from 'react-native-router-flux';
+
+/**
+ * ### Redux
+ *
+ * ```Provider``` will tie the React-Native to the Redux store
+ */
+import {
+  Provider,
+  connect } from 'react-redux';
+
+/**
+ * ### configureStore
+ *
+ *  ```configureStore``` will connect the ```reducers```, the
+ *
+ */
 import configureStore from './lib/configureStore';
+
+
+/**
+ * ### containers
+ *
+ * All the top level containers
+ *
+ */
+import App from './containers/App';
+import Login from './containers/Login';
+import Logout from './containers/Logout';
+import Register from './containers/Register';
+import ForgotPassword from './containers/ForgotPassword';
+import Profile from './containers/Profile';
+import Main from './containers/Main';
+import Subview from './containers/Subview';
+
+/** 
+ * ### icons
+ *
+ * Add icon support for use in Tabbar
+ * 
+ */
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 /**
  * ## Actions
@@ -23,13 +77,11 @@ import configureStore from './lib/configureStore';
 import {setPlatform, setVersion} from './reducers/device/deviceActions';
 import {setStore} from './reducers/global/globalActions';
 
-
 /**
  * ## States
- * There are 4 initial states defined and together they make the Apps
- * initial state
+ * Snowflake explicitly defines initial state
+ *
  */
-
 import authInitialState from './reducers/auth/authInitialState';
 import deviceInitialState from './reducers/device/deviceInitialState';
 import globalInitialState from './reducers/global/globalInitialState';
@@ -38,12 +90,12 @@ import profileInitialState from './reducers/profile/profileInitialState';
 /**
  *  The version of the app but not  displayed yet
  */
-var VERSION='0.0.11';
+var VERSION='0.0.12';
 
 /**
  *
  * ## Initial state
- * Create instances for the keys of each structure
+ * Create instances for the keys of each structure in snowflake
  * @returns {Object} object with 4 keys
  */
 function getInitialState() {
@@ -56,6 +108,24 @@ function getInitialState() {
   return _initState;
 }
 /**
+* ## TabIcon 
+* 
+* Displays the icon for the tab w/ color dependent upon selection
+*/
+class TabIcon extends React.Component {
+  render() {
+    var color = this.props.selected ? 'FF3366' : 'FFB3B3';
+
+    return (
+      <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center'}}>
+	<Icon style={{color: color}} name={this.props.iconName} size={30} />
+	<Text style={{color: color}}>{this.props.title}</Text>
+      </View>	
+    );
+  }
+}
+
+/**
  * ## Native
  *
  * ```configureStore``` with the ```initialState``` and set the
@@ -63,24 +133,95 @@ function getInitialState() {
  * *Note* the ```store``` itself is set into the ```store```.  This
  * will be used when doing hot loading
  */
+
 export default function native(platform) {
 
   let Snowflake = React.createClass( {
     render() {
+      
       const store = configureStore(getInitialState());
+
+      //Connect w/ the Router
+      const Router = connect()(RNRF.Router);
+      
+      // configureStore will combine reducers from snowflake and main application
+      // it will then create the store based on aggregate state from all reducers
       store.dispatch(setPlatform(platform));
       store.dispatch(setVersion(VERSION));
       store.dispatch(setStore(store));
-      /**
-       * Provider wrap the ```App``` with a ```Provider``` and both
-       * have a ```store```
-       */
+      
+      // setup the router table with App selected as the initial component
       return (
         <Provider store={store}>
-          <App/>
+	  <Router hideNavBar={true}>
+	    <Schema name="modal"
+                    sceneConfig={Navigator.SceneConfigs.FloatFromBottom}/>
+            
+	    <Schema name="floatFromRight"
+                    sceneConfig={Navigator.SceneConfigs.FloatFromRight}/>
+            
+	    <Schema name="default"/>
+            
+	    <Schema name="tab"
+                    type="switch"
+                    icon={TabIcon} />
+	    
+	    <Route name="App"
+                   component={App}
+                   title="App"
+                   initial={true}/>
+            
+	    <Route name="Login"
+                   component={Login}
+                   title="Login"
+                   type="replace"/>
+	    
+	    <Route name="Register"
+                   component={Register}
+                   title="Register"
+                   type="replace"/>
+	    
+	    <Route name="ForgotPassword"
+                   component={ForgotPassword}
+                   title="ForgotPassword"
+                   type="replace" />
+	    
+	    <Route name="Subview"
+                   component={Subview}
+                   title="Subview"
+                   Schema="floatFromRight"	/> 
+
+	    <Route name="Tabbar" type="replace">
+	      <Router footer={TabBar}
+                      showNavigationBar={false}>
+                
+	        <Route name="Logout"
+                       schema="tab"
+                       title="logout"
+                       iconName={"sign-out"}
+                       hideNavBar={true}
+                       component={Logout}/>
+                
+	        <Route name="Main"
+                       schema="tab"
+                       title="main"
+                       iconName={"home"}
+                       hideNavBar={true}
+                       component={Main}
+                       initial={true}/>
+
+                <Route name="Profile"
+                       schema="tab"
+                       title="profile"
+                       iconName={"gear"}
+                       hideNavBar={true}
+                       component={Profile}/>
+	      </Router>
+	    </Route>
+	    
+	  </Router>
         </Provider>
       );
-
     }
   });
   /**

@@ -40,10 +40,12 @@ const {
   SESSION_TOKEN_SUCCESS,
   SESSION_TOKEN_FAILURE,
 
-  LOGIN_STATE_LOGOUT,
-  LOGIN_STATE_REGISTER,
-  LOGIN_STATE_LOGIN,
-  LOGIN_STATE_FORGOT_PASSWORD,
+  DELETE_TOKEN_REQUEST,
+  
+  LOGOUT,
+  REGISTER,
+  LOGIN,
+  FORGOT_PASSWORD,
 
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
@@ -73,19 +75,19 @@ describe('authActions', () => {
    * ### simple tests that prove the actions have the specific type
    */ 
   it('should set logoutState', () => {
-    expect(actions.logoutState()).toEqual({type: LOGIN_STATE_LOGOUT });
+    expect(actions.logoutState()).toEqual({type: LOGOUT });
   });
 
   it('should set registerState', () => {
-    expect(actions.registerState()).toEqual({type: LOGIN_STATE_REGISTER });
+    expect(actions.registerState()).toEqual({type: REGISTER });
   });
 
   it('should set loginState', () => {
-    expect(actions.loginState()).toEqual({type: LOGIN_STATE_LOGIN});
+    expect(actions.loginState()).toEqual({type: LOGIN});
   });
   
   it('should set forgotPasswordState', () => {
-    expect(actions.forgotPasswordState()).toEqual({type: LOGIN_STATE_FORGOT_PASSWORD});
+    expect(actions.forgotPasswordState()).toEqual({type: FORGOT_PASSWORD});
   });
 
   it('should set logoutRequest', () => {
@@ -186,7 +188,7 @@ describe('authActions', () => {
   it('should logout', () => {
     const expectedActions = [
       {type: LOGOUT_REQUEST},
-      {type: LOGIN_STATE_REGISTER},
+      {type: REGISTER},
       {type: LOGOUT_SUCCESS},
       {type: SESSION_TOKEN_REQUEST},
       {type: SESSION_TOKEN_SUCCESS}
@@ -199,7 +201,7 @@ describe('authActions', () => {
   it('should login', () => {
     const expectedActions = [
       {type: LOGIN_REQUEST},
-      {type: LOGIN_STATE_LOGOUT},
+      {type: LOGOUT},
       {type: LOGIN_SUCCESS}
     ];
 
@@ -210,7 +212,7 @@ describe('authActions', () => {
   it('should getSessionToken', () => {
     const expectedActions = [
       {type: SESSION_TOKEN_REQUEST},      
-      {type: LOGIN_STATE_LOGOUT},
+      {type: LOGOUT},
       {type: SESSION_TOKEN_SUCCESS}
     ];
 
@@ -221,7 +223,7 @@ describe('authActions', () => {
   it('should signup', () => {
     const expectedActions = [
       {type: SIGNUP_REQUEST},      
-      {type: LOGIN_STATE_LOGOUT},
+      {type: LOGOUT},
       {type: SIGNUP_SUCCESS}
     ];
 
@@ -232,7 +234,7 @@ describe('authActions', () => {
   it('should resetPassword', () => {
     const expectedActions = [
       {type: RESET_PASSWORD_REQUEST},      
-      {type: LOGIN_STATE_LOGIN},
+      {type: LOGIN},
       {type: RESET_PASSWORD_SUCCESS}
     ];
 
@@ -242,6 +244,7 @@ describe('authActions', () => {
 
   it('should deleteSessionToken', () => {
     const expectedActions = [
+      {type: DELETE_TOKEN_REQUEST},
       {type: SESSION_TOKEN_REQUEST},
       {type: SESSION_TOKEN_SUCCESS}      
     ];

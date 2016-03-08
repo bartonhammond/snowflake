@@ -8,8 +8,9 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE)
 
 --------------- 
+Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
 
-Using Redux and Immutable, the state of the application is fully testable with Jest, currently at 86% coverage. 
+Using [Redux](https://github.com/reactjs/react-redux) and [Immutable](https://facebook.github.io/immutable-js/), the state of the application is testable with Jest, currently at 80% coverage. 
 
 Snowflake supports Hot Reloading of its state.  Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has extensive docs and 45+ min of video demonstating implementation.
 

@@ -13,10 +13,10 @@
  * the actions being addressed
  */
 const {
-  LOGIN_STATE_LOGOUT,
-  LOGIN_STATE_REGISTER,
-  LOGIN_STATE_LOGIN,
-  LOGIN_STATE_FORGOT_PASSWORD
+  LOGOUT,
+  REGISTER,
+  LOGIN,
+  FORGOT_PASSWORD
 } = require('../../lib/constants').default;
 
 /**
@@ -29,12 +29,12 @@ export default function formValidation (state) {
     /**
      * ### Logout has no fields, so always valid
      */
-  case LOGIN_STATE_LOGOUT:
+  case LOGOUT:
     return state.setIn(['form','isValid'],true);
     /**
      * ### Registration has 4 fields
      */     
-  case LOGIN_STATE_REGISTER:
+  case REGISTER:
     if (state.form.fields.username != ''
         &&
         state.form.fields.email !== ''
@@ -57,7 +57,7 @@ export default function formValidation (state) {
     /**
      * ### Login has 2 fields
      */
-  case LOGIN_STATE_LOGIN:
+  case LOGIN:
     if (state.form.fields.username !== ''
         &&
         state.form.fields.password !== ''
@@ -72,7 +72,7 @@ export default function formValidation (state) {
     /**
      * ### Reset password has 1 field
      */     
-  case LOGIN_STATE_FORGOT_PASSWORD:
+  case FORGOT_PASSWORD:
     if (state.form.fields.email !== ''
         &&
         !state.form.fields.emailHasError){ 

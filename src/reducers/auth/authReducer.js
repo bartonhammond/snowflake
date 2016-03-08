@@ -21,11 +21,14 @@ const {
   SESSION_TOKEN_REQUEST,
   SESSION_TOKEN_SUCCESS,
   SESSION_TOKEN_FAILURE,
+  
+  DELETE_TOKEN_REQUEST,
+  DELETE_TOKEN_SUCCESS,
 
-  LOGIN_STATE_LOGOUT,
-  LOGIN_STATE_REGISTER,
-  LOGIN_STATE_LOGIN,
-  LOGIN_STATE_FORGOT_PASSWORD,
+  LOGOUT,
+  REGISTER,
+  LOGIN,
+  FORGOT_PASSWORD,
 
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
@@ -55,8 +58,8 @@ const initialState = new InitialState;
  */
 export default function authReducer(state = initialState, action) {
   if (!(state instanceof InitialState)) return initialState.mergeDeep(state);
-  switch (action.type) {
 
+  switch (action.type) {
     /**
      * ### Requests start
      * set the form to fetching and clear any errors
@@ -75,7 +78,7 @@ export default function authReducer(state = initialState, action) {
      * The user has successfully access Parse.com
      * Clear the form's error and all the fields
      */
-  case LOGIN_STATE_LOGOUT:
+  case LOGOUT:
     return formValidation(
       state.setIn(['form', 'state'], action.type)
         .setIn(['form','error'],null)
@@ -92,9 +95,9 @@ export default function authReducer(state = initialState, action) {
      * 
      * Set the form state and clear any errors
      */
-  case LOGIN_STATE_LOGIN:
-  case LOGIN_STATE_REGISTER:
-  case LOGIN_STATE_FORGOT_PASSWORD:
+  case LOGIN:
+  case REGISTER:
+  case FORGOT_PASSWORD:
     return formValidation(
       state.setIn(['form', 'state'], action.type)
         .setIn(['form','error'],null)
@@ -149,6 +152,7 @@ export default function authReducer(state = initialState, action) {
      * Set all the field values from the payload
      */    
   case SET_STATE:
+    debugger;
     var form = JSON.parse(action.payload).auth.form;
     
     var next = state.setIn(['form','state'],form.state)
@@ -166,7 +170,14 @@ export default function authReducer(state = initialState, action) {
           .setIn(['form','fields','passwordAgainHasError'],form.fields.passwordAgainHasError);
     
     return next;
-    
+  
+    case DELETE_TOKEN_REQUEST:
+    case DELETE_TOKEN_SUCCESS:
+        /**
+         * no state change, just an ability to track action requests...
+         */
+        return state;
+        
   }    
   /**
    * ## Default
