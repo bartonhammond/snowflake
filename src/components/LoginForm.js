@@ -21,9 +21,9 @@ const {
  * States of login display
  */
 const {
-  LOGIN_STATE_REGISTER,
-  LOGIN_STATE_LOGIN,
-  LOGIN_STATE_FORGOT_PASSWORD
+  REGISTER,
+  LOGIN,
+  FORGOT_PASSWORD
 } = require('../lib/constants').default;
 
 /**
@@ -41,6 +41,7 @@ var LoginForm = React.createClass({
    * * onChange: function to call when user enters text
    */
   propTypes: {
+    formType: PropTypes.string,
     form: PropTypes.object,
     value: PropTypes.object,
     onChange: PropTypes.func
@@ -54,6 +55,8 @@ var LoginForm = React.createClass({
    */
   render() {
 
+    let formType = this.props.formType;
+    
     let options = {
       auto: 'placeholders',
       fields: {
@@ -98,12 +101,12 @@ var LoginForm = React.createClass({
     };
 
     let loginForm;
-    switch(this.props.form.state) {
+    switch(formType) {
       /**
        * ### Registration
        * The registration form has 4 fields
        */
-    case(LOGIN_STATE_REGISTER):
+    case(REGISTER):
       loginForm = t.struct({
         username: t.String,
         email: t.String,
@@ -120,20 +123,20 @@ var LoginForm = React.createClass({
        * ### Login
        * The login form has only 2 fields
        */
-    case(LOGIN_STATE_LOGIN):
+    case(LOGIN):
       loginForm = t.struct({
         username: t.String,
         password: t.String
       });
       options.fields['username'] = username;
       options.fields['password'] = password;
-        break;
-        
-        /**
-         * ### Reset password
-         * The password reset form has only 1 field
-         */
-    case(LOGIN_STATE_FORGOT_PASSWORD):
+      break;
+      
+      /**
+       * ### Reset password
+       * The password reset form has only 1 field
+       */
+    case(FORGOT_PASSWORD):
       loginForm = t.struct({
         email: t.String
       });
@@ -146,12 +149,12 @@ var LoginForm = React.createClass({
      * returns the Form component with the correct structures
      */
     return (
-      <Form ref="form"
-            type={loginForm}
-            options={options}
-            value={this.props.value}
-            onChange={this.props.onChange}
-      />
+        <Form ref="form"
+      type={loginForm}
+      options={options}
+      value={this.props.value}
+      onChange={this.props.onChange}
+        />
 
     );
   }

@@ -18,11 +18,14 @@ const {
   SESSION_TOKEN_REQUEST,
   SESSION_TOKEN_SUCCESS,
   SESSION_TOKEN_FAILURE,
+  
+  DELETE_TOKEN_REQUEST,
+  DELETE_TOKEN_SUCCESS,
 
-  LOGIN_STATE_LOGOUT,
-  LOGIN_STATE_REGISTER,
-  LOGIN_STATE_LOGIN,
-  LOGIN_STATE_FORGOT_PASSWORD,
+  LOGOUT,
+  REGISTER,
+  LOGIN,
+  FORGOT_PASSWORD,
 
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
@@ -48,6 +51,8 @@ const {
  */
 const BackendFactory = require('../../lib/BackendFactory').default;
 
+import {Actions} from 'react-native-router-flux';
+
 const  AppAuthToken = require('../../lib/AppAuthToken').default;
 
 const  _ = require('underscore');
@@ -57,27 +62,28 @@ const  _ = require('underscore');
  * controls which form is displayed to the user
  * as in login, register, logout or reset password
  */
+
 export function logoutState() {
   return {
-    type: LOGIN_STATE_LOGOUT
+    type: LOGOUT
   };
 
 }
 export function registerState() {
   return {
-    type: LOGIN_STATE_REGISTER
+    type: REGISTER
   };
 }
 
 export function loginState() {
   return {
-    type: LOGIN_STATE_LOGIN
+    type: LOGIN
   };
 }
 
 export function forgotPasswordState() {
   return {
-    type: LOGIN_STATE_FORGOT_PASSWORD
+    type: FORGOT_PASSWORD
   };
 }
 
@@ -118,26 +124,29 @@ export function logoutFailure(error) {
  * How could there be an invalid sessionToken?  Maybe they
  * haven't used the app for a long time.  Or they used another
  * device and logged out there.
- */
+ */ 
 export function logout() {
   return dispatch => {
     dispatch(logoutRequest());
     return new AppAuthToken().getSessionToken()
+
       .then((token) => {
         return BackendFactory(token).logout();
       })
+    
       .then(() => {
-        dispatch(registerState());
+        dispatch(loginState());          
         dispatch(logoutSuccess());
-        dispatch(deleteSessionToken());          
-      })
+        dispatch(deleteSessionToken());   
+        Actions.Login();
+      })            		
+
       .catch((error) => {
-        dispatch(loginState());
-        dispatch(logoutSuccess());
+        dispatch(loginState());        
         dispatch(logoutFailure(error));
+        Actions.Login();
       });
   };
-
 }
 /**
  * ## onAuthFormFieldChange
@@ -191,21 +200,35 @@ export function sessionTokenRequestFailure(error) {
 }
 
 /**
+ * ## DeleteToken actions
+ */
+export function deleteTokenRequest() {
+  return {
+    type: DELETE_TOKEN_REQUEST
+  };
+}
+export function deleteTokenRequestSuccess() {
+  return {
+    type: DELETE_TOKEN_SUCCESS
+  };
+}
+
+/**
  * ## Delete session token
  *
  * Call the AppAuthToken deleteSessionToken 
  */
 export function deleteSessionToken() {
   return dispatch => {
-    dispatch(sessionTokenRequest());
+    dispatch(deleteTokenRequest());
     return new  AppAuthToken().deleteSessionToken()
       .then(() => {
-        dispatch(sessionTokenRequestSuccess());
+        dispatch(deleteTokenRequestSuccess());
       });
   };
 }
 /**
- * ## getSessionToken
+ * ## Token
  * If AppAuthToken has the sessionToken, the user is logged in
  * so set the state to logout.
  * Otherwise, the user will default to the login in screen.
@@ -214,16 +237,22 @@ export function getSessionToken() {
   return dispatch => {
     dispatch(sessionTokenRequest());
     return new AppAuthToken().getSessionToken()
+
       .then((token) => {
         if (token) {
-          dispatch(logoutState());
           dispatch(sessionTokenRequestSuccess(token));
+          dispatch(logoutState());
+          Actions.Tabbar();
         } else {
           dispatch(sessionTokenRequestFailure());
+          Actions.Register();
         }
       })
+    
       .catch((error) => {
         dispatch(sessionTokenRequestFailure(error));
+        dispatch(loginState());
+        Actions.Register();
       });
   };
 }
@@ -248,6 +277,7 @@ export function saveSessionToken(json) {
  * Otherwise, dispatch the error so the user can see
  */
 export function signup(username, email, password) {
+  
   return dispatch => {
     dispatch(signupRequest());
     return  BackendFactory().signup({
@@ -255,26 +285,34 @@ export function signup(username, email, password) {
       email: email,
       password: password
     })
-      .then(function (json) {
-	return saveSessionToken(json)
-	  .then(function () {
+
+      .then((json) => {
+	return saveSessionToken(
+	  Object.assign({}, json,
+			{
+			  username: username,
+			  email: email
+			})			
+	)
+        
+          .then(() => {
 	    dispatch(signupSuccess(
-	      Object.assign({}, 
+	      Object.assign({}, json,
 			    {
 			      username: username,
-			      email: email,
-			      objectId: json.objectId,
-			      createdAt: json.createdAt,
-			      sessionToken: json.sessionToken
+			      email: email
 			    }
 			   )
 	    ));
-	    dispatch(logoutState());          
+	    dispatch(logoutState());  
+	    // navigate to Tabbar
+	    Actions.Tabbar();        
 	  });
       })
       .catch((error) => {
 	dispatch(signupFailure(error));
       });
+
   };
 }
 
@@ -311,6 +349,7 @@ export function loginFailure(error) {
  * If successful, set the state to logout
  * otherwise, dispatch a failure
  */
+
 export function login(username,  password) {
   return dispatch => {
     dispatch(loginRequest());
@@ -318,11 +357,13 @@ export function login(username,  password) {
       username: username,
       password: password
     })
+
       .then(function (json) {
 	return saveSessionToken(json)
 	  .then(function () {
-	    dispatch(loginSuccess(json));
-	    dispatch(logoutState());          
+	    dispatch(loginSuccess(json));  
+	    dispatch(logoutState());   
+	    Actions.Tabbar(); 
 	  });
       })
       .catch((error) => {
@@ -373,6 +414,7 @@ export function resetPassword(email) {
       .then(() => {
         dispatch(loginState());
         dispatch(resetPasswordSuccess());
+        Actions.Login();
       })
       .catch((error) => {
         dispatch(resetPasswordFailure(error));

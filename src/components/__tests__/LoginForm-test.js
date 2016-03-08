@@ -24,9 +24,9 @@ const React = require('react-native');
 const utils = require('react-addons-test-utils');
 
 const {
-  LOGIN_STATE_REGISTER,
-  LOGIN_STATE_LOGIN,
-  LOGIN_STATE_FORGOT_PASSWORD
+  REGISTER,
+  LOGIN,
+  FORGOT_PASSWORD
 } = require('../../lib/constants').default;
 
 /**
@@ -87,14 +87,16 @@ describe('LoginForm', () => {
    */
   function checkLoginForm(props) {
     const {output} = renderLoginForm(props);
+
     expect(output.type,Form);
 
     const fields = getFields(output);
     const values = getValues(output);
     
-    if (props.form.state === LOGIN_STATE_REGISTER
+    if (props.form.state === REGISTER
         ||
-        props.form.state === LOGIN_STATE_LOGIN) {
+        props.form.state === LOGIN) {
+
       expect(values.username).toEqual(props.value.username);      
       expect(fields.username.editable).toEqual(!props.form.isFetching);
       expect(fields.username.hasError).toEqual(props.form.fields.usernameHasError);
@@ -105,15 +107,15 @@ describe('LoginForm', () => {
       expect(fields.password.secureTextEntry).toEqual(!props.form.fields.showPassword);
     }
     
-    if (props.form.state === LOGIN_STATE_FORGOT_PASSWORD
+    if (props.form.state === FORGOT_PASSWORD
         ||
-        props.form.state === LOGIN_STATE_REGISTER) {
+        props.form.state === REGISTER) {
       expect(values.email).toEqual(props.value.email);      
       expect(fields.email.editable).toEqual(!props.form.isFetching);
       expect(fields.email.hasError).toEqual(props.form.fields.emailHasError);
     }
 
-    if (props.form.state === LOGIN_STATE_REGISTER) {
+    if (props.form.state === REGISTER) {
       expect(values.passwordAgain).toEqual(props.value.passwordAgain);          
       expect(fields.passwordAgain.editable).toEqual(!props.form.isFetching);
       expect(fields.passwordAgain.hasError).toEqual(props.form.fields.passwordAgainHasError);    
@@ -124,7 +126,7 @@ describe('LoginForm', () => {
   /**
    * ## Test Registration
    */
-  describe('LOGIN_STATE_REGISTER', () => {
+  describe('REGISTER', () => {
     /**
      * ### it should display without errors and without value
      * change the props and call ```checkLoginForm``` to validate
@@ -139,7 +141,7 @@ describe('LoginForm', () => {
           passwordAgainHasError: false,
           showPassword: false
         },
-        state: LOGIN_STATE_REGISTER
+        formType: REGISTER
       };
 
       let value = {
@@ -171,7 +173,7 @@ describe('LoginForm', () => {
           passwordAgainHasError: true,
           showPassword: false
         },
-        state: LOGIN_STATE_REGISTER
+        formType: REGISTER
       };
 
       let value = {
@@ -203,7 +205,7 @@ describe('LoginForm', () => {
           passwordAgainHasError: true,
           showPassword: false
         },
-        state: LOGIN_STATE_REGISTER
+        formType: REGISTER
       };
 
       let value = {
@@ -235,7 +237,7 @@ describe('LoginForm', () => {
           passwordAgainHasError: false,
           showPassword: true
         },
-        state: LOGIN_STATE_REGISTER
+        formType: REGISTER
       };
 
       let value = {
@@ -259,7 +261,7 @@ describe('LoginForm', () => {
   /**
    * ## Test Log in
    */  
-  describe('LOGIN_STATE_LOGIN', () => {
+  describe('LOGIN', () => {
     /**
      * ### it should display without errors and without value
      * change the props and call ```checkLoginForm``` to validate
@@ -272,7 +274,7 @@ describe('LoginForm', () => {
           passwordHasError: false,
           showPassword: false
         },
-        state: LOGIN_STATE_LOGIN
+        formType: LOGIN
       };
 
       let value = {
@@ -299,7 +301,7 @@ describe('LoginForm', () => {
           usernameHasError: true,
           passwordHasError: true
         },
-        state: LOGIN_STATE_LOGIN
+        formType: LOGIN
       };
 
       let value = {
@@ -327,7 +329,7 @@ describe('LoginForm', () => {
           passwordHasError: true,
           showPassword: false
         },
-        state: LOGIN_STATE_LOGIN
+        formType: LOGIN
       };
 
       let value = {
@@ -355,7 +357,7 @@ describe('LoginForm', () => {
           passwordHasError: false,
           showPassword: true
         },
-        state: LOGIN_STATE_LOGIN
+        formType: LOGIN
       };
 
       let value = {
@@ -376,7 +378,7 @@ describe('LoginForm', () => {
   /**
    * ## Test reset password
    */
-  describe('LOGIN_STATE_FORGOT_PASSWORD', () => {
+  describe('FORGOT_PASSWORD', () => {
     /**
      * ### it should display without errors and without values
      * change the props and call ```checkLoginForm``` to validate
@@ -388,7 +390,7 @@ describe('LoginForm', () => {
           emailHasError: false,
           showPassword: false
         },
-        state: LOGIN_STATE_FORGOT_PASSWORD
+        formType: FORGOT_PASSWORD
       };
 
       let value = {
@@ -413,7 +415,7 @@ describe('LoginForm', () => {
         fields: {
           emailHasError: true
         },
-        state: LOGIN_STATE_FORGOT_PASSWORD
+        formType: FORGOT_PASSWORD
       };
 
       let value = {
@@ -440,7 +442,7 @@ describe('LoginForm', () => {
           emailHasError: true,
           showPassword: false
         },
-        state: LOGIN_STATE_LOGIN
+        formType: LOGIN
       };
 
       let value = {
@@ -468,7 +470,7 @@ describe('LoginForm', () => {
           emailHasError: false,
           showPassword: true
         },
-        state: LOGIN_STATE_FORGOT_PASSWORD
+        formType: FORGOT_PASSWORD
       };
 
       let value = {

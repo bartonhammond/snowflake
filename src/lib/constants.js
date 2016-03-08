@@ -8,11 +8,11 @@ export default keyMirror({
   SESSION_TOKEN_SUCCESS: null,
   SESSION_TOKEN_FAILURE: null,
   
+  DELETE_TOKEN_REQUEST: null,
+  DELETE_TOKEN_SUCCESS: null,
+  
   ON_LOGIN_STATE_CHANGE: null,
-  LOGIN_STATE_LOGOUT: null,
-  LOGIN_STATE_REGISTER: null,
-  LOGIN_STATE_LOGIN: null,
-  LOGIN_STATE_FORGOT_PASSWORD: null,
+  LOGOUT: null,
   
   ON_AUTH_FORM_FIELD_CHANGE: null,
   SIGNUP_REQUEST: null,
@@ -48,5 +48,10 @@ export default keyMirror({
 
   SET_STATE: null,
   GET_STATE: null,
-  SET_STORE: null
+  SET_STORE: null,
+  
+  FORGOT_PASSWORD: null,
+  LOGIN: null,
+  REGISTER: null
+
 });

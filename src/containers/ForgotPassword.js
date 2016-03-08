@@ -1,7 +1,5 @@
 /**
- * # Login.js
- * 
- *  The container to display the Login form 
+ * # ForgotPassword.js
  * 
  */
 'use strict';
@@ -29,20 +27,19 @@ import {Map} from 'immutable';
 import LoginRender from '../components/LoginRender';
 
 /**
- * The necessary React components
+ * Need React
  */
 import React from 'react-native';
 
-
 const {
-  LOGIN,
   REGISTER, 
-  FORGOT_PASSWORD 
+  LOGIN,
+  FORGOT_PASSWORD
 } = require('../lib/constants').default;
 
 /**
- * ## Redux boilerplate
- */
+  * ## Redux boilerplate
+  */
 const actions = [
   authActions
 ];
@@ -65,28 +62,27 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function buttonPressHandler(login, username, password) {
-  login (username, password);
+function buttonPressHandler(resetPassword, email) {
+  resetPassword (email);
 }
 
-let Login = React.createClass({
+let ForgotPassword = React.createClass({
 
   render() {
-    let loginButtonText = 'Log in';
+    let loginButtonText = 'Reset password';
     let onButtonPress = buttonPressHandler.bind(null,
-				                this.props.actions.login,
-				                this.props.auth.form.fields.username, 
-				                this.props.auth.form.fields.password
+					        this.props.actions.resetPassword,
+					        this.props.auth.form.fields.email
 		                               );
 
     return(
       <LoginRender 
-          formType={ LOGIN }
+          formType={ FORGOT_PASSWORD }
           loginButtonText={ loginButtonText }
           onButtonPress={ onButtonPress }
-          displayPasswordCheckbox={ true }
-          leftMessageType={ REGISTER }
-          rightMessageType={ FORGOT_PASSWORD }
+          displayPasswordCheckbox={ false }
+          leftMessageType = { REGISTER }
+          rightMessageType = { LOGIN }
           auth={ this.props.auth }
           global={ this.props.global }
       />
@@ -94,4 +90,4 @@ let Login = React.createClass({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(ForgotPassword);
