@@ -12,13 +12,13 @@ workflows:
         title: Activate App SSH key
         inputs:
         - ssh_key_save_path: "$HOME/.ssh/steplib_ssh_step_id_rsa"
-    - git-clone@3.1.0: {}
+    - git-clone@3.1.1: {}
     - script@1.1.0:
         title: install node & npm
         inputs:
         - content: |-
             #!/bin/bash
-            curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+            curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
             apt-get install -y nodejs
     - script@1.1.0:
         title: npm install -g npm3
@@ -53,7 +53,7 @@ workflows:
         inputs:
         - content: |-
             #!/bin/bash
-             touch src/lib/config.js
+            touch src/lib/config.js
 
             echo "module.exports={ PARSE: {APP_ID: '$PARSE_APP_ID' ,REST_API_KEY: '$PARSE_REST_API_KEY', SESSION_TOKEN_KEY: 'SESSION_TOKEN_KEY'}}" >> src/lib/config.js
     - script@1.1.0:
@@ -64,56 +64,20 @@ workflows:
 
             react-native bundle --entry-file ./index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle
     - script@1.1.0:
-        title: keytool
-        inputs:
-        - content: |-
-            #!/bin/bash
-
-            keytool -genkey -noprompt -alias $SNOWFLAKE_RELEASE_KEY_ALIAS -dname "CN=snowflake.bartonhammond.org, OU=bartonhammond.org, O=Unknown, L=Austin, ST=TX, C=US" -keystore $SNOWFLAKE_RELEASE_STORE_FILE -storepass $SNOWFLAKE_RELEASE_STORE_PASSWORD -keypass $SNOWFLAKE_RELEASE_KEY_PASSWORD
-    - script@1.1.0:
-        title: cp keystore
-        inputs:
-        - content: |-
-            #!/bin/bash
-
-            cp ./$SNOWFLAKE_RELEASE_STORE_FILE android/app
-    - script@1.1.0:
-        title: Install Android SDK 23.0.1
-        inputs:
-        - content: |-
-            #!/bin/bash
-
-            echo y | android update sdk --all --filter build-tools-23.0.1 --no-ui
-    - script@1.1.0:
-        title: rename build.gradle
-        inputs:
-        - content: |-
-            #!/bin/bash
-
-            mv android/app/build.gradle android/app/build.gradle.nosign
-            mv android/app/build.gradle.sign android/app/build.gradle
-    - script@1.1.0:
         title: gradlew
         inputs:
-        - content: "#!/bin/bash\n\ncd android \n\n./gradlew -PSNOWFLAKE_RELEASE_STORE_FILE=$SNOWFLAKE_RELEASE_STORE_FILE
-            -PSNOWFLAKE_RELEASE_KEY_ALIAS=$SNOWFLAKE_RELEASE_KEY_ALIAS -PSNOWFLAKE_RELEASE_STORE_PASSWORD=$SNOWFLAKE_RELEASE_STORE_PASSWORD
-            -PSNOWFLAKE_RELEASE_KEY_PASSWORD=$SNOWFLAKE_RELEASE_KEY_PASSWORD assembleRelease"
-          opts:
+        - content: "#!/bin/bash\n\ncd android \n\n./gradlew assembleRelease"
+           opts:
             is_expand: true
-    - script@1.1.0:
-        title: restore build.gradle
+    - sign-apk@0.9.4:
         inputs:
-        - content: |-
-            #!/bin/bash
-
-            mv android/app/build.gradle android/app/build.gradle.sign
-            mv android/app/build.gradle.nosign android/app/build.gradle
+        - apk_path: "/bitrise/src/android/app/build/outputs/apk/app-release-unsigned.apk"
     - script@1.1.0:
         title: cp apk
         inputs:
         - content: |-
             #!/bin/bash
-            find . -name *.apk
 
-            cp ./android/app/build/outputs/apk/app-release.apk $BITRISE_DEPLOY_DIR
-    - deploy-to-bitrise-io@1.2.0: {}
+            cp $BITRISE_SIGNED_APK_PATH $BITRISE_DEPLOY_DIR/signed-app-release.apk
+    - deploy-to-bitrise-io@1.2.2:
+        is_always_run: false
