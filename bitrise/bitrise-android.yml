@@ -53,7 +53,7 @@ workflows:
         inputs:
         - content: |-
             #!/bin/bash
-            touch src/lib/config.js
+             touch src/lib/config.js
 
             echo "module.exports={ PARSE: {APP_ID: '$PARSE_APP_ID' ,REST_API_KEY: '$PARSE_REST_API_KEY', SESSION_TOKEN_KEY: 'SESSION_TOKEN_KEY'}}" >> src/lib/config.js
     - script@1.1.0:
@@ -66,8 +66,8 @@ workflows:
     - script@1.1.0:
         title: gradlew
         inputs:
-        - content: "#!/bin/bash\n\ncd android \n\n./gradlew assembleRelease"
-           opts:
+        - content: "#!/bin/bash\n\ncd android \n./gradlew  assembleRelease"
+          opts:
             is_expand: true
     - sign-apk@0.9.4:
         inputs:
@@ -78,6 +78,6 @@ workflows:
         - content: |-
             #!/bin/bash
 
-            cp $BITRISE_SIGNED_APK_PATH $BITRISE_DEPLOY_DIR/signed-app-release.apk
+             cp $BITRISE_SIGNED_APK_PATH $BITRISE_DEPLOY_DIR/signed-app-release.apk
     - deploy-to-bitrise-io@1.2.2:
         is_always_run: false
