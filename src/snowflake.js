@@ -26,7 +26,7 @@ import React, {
  */
 import RNRF, {
   Route,
-  Schema,
+  Scene,
   TabBar} from 'react-native-router-flux';
 
 /**
@@ -90,7 +90,7 @@ import profileInitialState from './reducers/profile/profileInitialState';
 /**
  *  The version of the app but not  displayed yet
  */
-var VERSION='0.0.12';
+var VERSION='0.0.13';
 
 /**
  *
@@ -112,16 +112,16 @@ function getInitialState() {
 * 
 * Displays the icon for the tab w/ color dependent upon selection
 */
-class TabIcon extends React.Component {
-  render() {
-    var color = this.props.selected ? 'FF3366' : 'FFB3B3';
 
+class TabIcon extends React.Component {
+  render(){
+    var color = this.props.selected ? '#FF3366' : '#FFB3B3';
     return (
       <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center'}}>
-	<Icon style={{color: color}} name={this.props.iconName} size={30} />
-	<Text style={{color: color}}>{this.props.title}</Text>
-      </View>	
-    );
+        <Icon style={{color: color}} name={this.props.iconName} size={30} />
+        <Text style={{color: color}}>{this.props.title}</Text>
+      </View>
+      );
   }
 }
 
@@ -154,71 +154,55 @@ export default function native(platform) {
       return (
         <Provider store={store}>
 	  <Router hideNavBar={true}>
-	    <Schema name="modal"
-                    sceneConfig={Navigator.SceneConfigs.FloatFromBottom}/>
-            
-	    <Schema name="floatFromRight"
-                    sceneConfig={Navigator.SceneConfigs.FloatFromRight}/>
-            
-	    <Schema name="default"/>
-            
-	    <Schema name="tab"
-                    type="switch"
-                    icon={TabIcon} />
-	    
-	    <Route name="App"
-                   component={App}
-                   title="App"
-                   initial={true}/>
-            
-	    <Route name="Login"
-                   component={Login}
-                   title="Login"
-                   type="replace"/>
-	    
-	    <Route name="Register"
-                   component={Register}
-                   title="Register"
-                   type="replace"/>
-	    
-	    <Route name="ForgotPassword"
-                   component={ForgotPassword}
-                   title="ForgotPassword"
-                   type="replace" />
-	    
-	    <Route name="Subview"
-                   component={Subview}
-                   title="Subview"
-                   Schema="floatFromRight"	/> 
+	    <Scene key="root">
+	      <Scene key="App"
+                     component={App}
+                     title="App"
+                     initial={true}/>
+              
+	      <Scene key="Login"
+                     component={Login}
+                     title="Login"
+                     type="replace"/>
+	      
+	      <Scene key="Register"
+                     component={Register}
+                     title="Register"
+                     type="replace"/>
+	      
+	      <Scene key="ForgotPassword"
+                     component={ForgotPassword}
+                     title="ForgotPassword"
+                     type="replace" />
+	      
+	      <Scene key="Subview"
+                     component={Subview}
+                     title="Subview"/>
 
-	    <Route name="Tabbar" type="replace">
-	      <Router footer={TabBar}
-                      showNavigationBar={false}>
-                
-	        <Route name="Logout"
-                       schema="tab"
+	      <Scene key="Tabbar" tabs={true} default="Main">
+	        <Scene key="Logout"
                        title="logout"
+                       icon={TabIcon}
                        iconName={"sign-out"}
                        hideNavBar={true}
                        component={Logout}/>
                 
-	        <Route name="Main"
-                       schema="tab"
+	        <Scene key="Main"
                        title="main"
                        iconName={"home"}
+                       icon={TabIcon}                       
                        hideNavBar={true}
                        component={Main}
                        initial={true}/>
 
-                <Route name="Profile"
-                       schema="tab"
+                <Scene key="Profile"
                        title="profile"
+                       icon={TabIcon}                       
                        iconName={"gear"}
                        hideNavBar={true}
                        component={Profile}/>
-	      </Router>
-	    </Route>
-	    
+	      </Scene>
+	    </Scene>
 	  </Router>
         </Provider>
       );
