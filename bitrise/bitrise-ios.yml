@@ -22,19 +22,12 @@ workflows:
         - ssh_key_save_path: "$HOME/.ssh/steplib_ssh_step_id_rsa"
     - git-clone@3.1.0: {}
     - script@1.1.0:
-        title: npm install -g npm3
+        title: npm install
         inputs:
         - content: |-
             #!/bin/bash
 
-            npm install -g npm3
-    - script@1.1.0:
-        title: npm3 install
-        inputs:
-        - content: |-
-            #!/bin/bash
-
-            npm3 install
+            npm install
     - script@1.1.0:
         title: npm test
         inputs:
