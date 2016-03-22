@@ -23,7 +23,7 @@ jest.mock('../../../lib/BackendFactory');
  * ## Store
  * The mockStore will validate the actions are performed 
  */
-const mockStore = require('../../mocks/Store').default;
+const mockStore = require('../../mocks/Store');
 const actions = require('../profileActions');
 
 /**

@@ -22,7 +22,7 @@ jest.mock('../../../lib/BackendFactory');
  * in the correct order
  *
  */
-var mockStore = require('../../mocks/Store').default;
+var mockStore = require('../../mocks/Store');
 
 /**
  * ## Class under test
