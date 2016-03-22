@@ -17,6 +17,9 @@
       "json",
       "es6"
     ],
+    "preprocessorIgnorePatterns": [
+      "/node_modules/"
+    ],
     "unmockedModulePathPatterns": [
       "react",
       "react-addons-test-utils",
@@ -34,7 +37,7 @@
     "verbose": true
   },
   "scripts": {
-    "test": "rm -rf ./node_modules/jest-cli/.haste_cache && jest ",
+    "test": "rm -rf ./node_modules/jest-cli/.haste_cache && jest  --no-cache",
     "start": "react-native start",
     "test:watch": "npm run test -- --watch",
     "test-chrome": "node-debug --preload false --nodejs --harmony jest --runInBand",
