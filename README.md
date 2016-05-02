@@ -1,3 +1,6 @@
+# NOTE: Due to health issues and other demanding life events, I am no longer actively maintaining Snowflake.  Trying to keep Snowflake working with all the associated Javascript library changes is a never ending job and requires more time then I have time for.  I will, however, merge PRs if someone wants to contribute.  If anyone is interested in taking over all of Snowflake, let me know via Gitter. 
+
+
 Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
 ==================================
 #### A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base. 
