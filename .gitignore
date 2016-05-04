@@ -32,7 +32,7 @@ local.properties
 # node.js
 #
 npm-debug.log
-
+node_modules/
 # jest
 coverage/
 

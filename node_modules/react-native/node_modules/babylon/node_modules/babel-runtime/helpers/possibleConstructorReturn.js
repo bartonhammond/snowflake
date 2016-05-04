@@ -2,7 +2,7 @@
 
 exports.__esModule = true;
 
-var _typeof2 = require("../helpers/typeof");
+var _typeof2 = require("babel-runtime/helpers/typeof");
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 

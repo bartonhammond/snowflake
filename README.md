@@ -1,5 +1,4 @@
 # NOTES: 
-###Snowflake now (May 4, 2016) has the ```node_modules``` checked in so that the app will work for everyone. 
 
 ###Due to health issues and other demanding life events, I am no longer actively maintaining Snowflake.  
 
@@ -170,6 +169,10 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
  git clone https://github.com/bartonhammond/snowflake.git
  ```
 
+* install dependencies
+```
+npm install
+```
 
 *  Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.
    * Note: you must select one of three options for the ```backend``` as shown below:

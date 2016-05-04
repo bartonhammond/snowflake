@@ -2,11 +2,11 @@
 
 exports.__esModule = true;
 
-var _isIterable2 = require("../core-js/is-iterable");
+var _isIterable2 = require("babel-runtime/core-js/is-iterable");
 
 var _isIterable3 = _interopRequireDefault(_isIterable2);
 
-var _getIterator2 = require("../core-js/get-iterator");
+var _getIterator2 = require("babel-runtime/core-js/get-iterator");
 
 var _getIterator3 = _interopRequireDefault(_getIterator2);
 

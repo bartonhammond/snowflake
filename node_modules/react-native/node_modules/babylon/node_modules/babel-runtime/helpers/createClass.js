@@ -2,7 +2,7 @@
 
 exports.__esModule = true;
 
-var _defineProperty = require("../core-js/object/define-property");
+var _defineProperty = require("babel-runtime/core-js/object/define-property");
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 

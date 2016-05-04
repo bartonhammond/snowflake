@@ -2,11 +2,11 @@
 
 exports.__esModule = true;
 
-var _defineProperties = require("../core-js/object/define-properties");
+var _defineProperties = require("babel-runtime/core-js/object/define-properties");
 
 var _defineProperties2 = _interopRequireDefault(_defineProperties);
 
-var _freeze = require("../core-js/object/freeze");
+var _freeze = require("babel-runtime/core-js/object/freeze");
 
 var _freeze2 = _interopRequireDefault(_freeze);
 

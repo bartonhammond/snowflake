@@ -1,3 +1,31 @@
+"use strict";
+
+var _promise = require("babel-runtime/core-js/promise");
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _setPrototypeOf = require("babel-runtime/core-js/object/set-prototype-of");
+
+var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
+
+var _create = require("babel-runtime/core-js/object/create");
+
+var _create2 = _interopRequireDefault(_create);
+
+var _typeof2 = require("babel-runtime/helpers/typeof");
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _iterator = require("babel-runtime/core-js/symbol/iterator");
+
+var _iterator2 = _interopRequireDefault(_iterator);
+
+var _symbol = require("babel-runtime/core-js/symbol");
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -8,26 +36,14 @@
  * the same directory.
  */
 
-"use strict";
-
-var _Symbol = require("babel-runtime/core-js/symbol")["default"];
-
-var _Object$create = require("babel-runtime/core-js/object/create")["default"];
-
-var _Object$setPrototypeOf = require("babel-runtime/core-js/object/set-prototype-of")["default"];
-
-var _Promise = require("babel-runtime/core-js/promise")["default"];
-
-!(function (global) {
+!function (global) {
   "use strict";
 
   var hasOwn = Object.prototype.hasOwnProperty;
   var undefined; // More compressible than void 0.
-  var $Symbol = typeof _Symbol === "function" ? _Symbol : {};
-  var iteratorSymbol = $Symbol.iterator || "@@iterator";
-  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+  var iteratorSymbol = typeof _symbol2.default === "function" && _iterator2.default || "@@iterator";
 
-  var inModule = typeof module === "object";
+  var inModule = (typeof module === "undefined" ? "undefined" : (0, _typeof3.default)(module)) === "object";
   var runtime = global.regeneratorRuntime;
   if (runtime) {
     if (inModule) {
@@ -46,7 +62,7 @@ var _Promise = require("babel-runtime/core-js/promise")["default"];
 
   function wrap(innerFn, outerFn, self, tryLocsList) {
     // If outerFn provided, then outerFn.prototype instanceof Generator.
-    var generator = _Object$create((outerFn || Generator).prototype);
+    var generator = (0, _create2.default)((outerFn || Generator).prototype);
     var context = new Context(tryLocsList || []);
 
     // The ._invoke method unifies the implementations of the .next,
@@ -95,7 +111,7 @@ var _Promise = require("babel-runtime/core-js/promise")["default"];
   var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype;
   GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
   GeneratorFunctionPrototype.constructor = GeneratorFunction;
-  GeneratorFunctionPrototype[toStringTagSymbol] = GeneratorFunction.displayName = "GeneratorFunction";
+  GeneratorFunction.displayName = "GeneratorFunction";
 
   // Helper for defining the .next, .throw, and .return methods of the
   // Iterator interface in terms of a single ._invoke method.
@@ -116,15 +132,12 @@ var _Promise = require("babel-runtime/core-js/promise")["default"];
   };
 
   runtime.mark = function (genFun) {
-    if (_Object$setPrototypeOf) {
-      _Object$setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    if (_setPrototypeOf2.default) {
+      (0, _setPrototypeOf2.default)(genFun, GeneratorFunctionPrototype);
     } else {
       genFun.__proto__ = GeneratorFunctionPrototype;
-      if (!(toStringTagSymbol in genFun)) {
-        genFun[toStringTagSymbol] = "GeneratorFunction";
-      }
     }
-    genFun.prototype = _Object$create(Gp);
+    genFun.prototype = (0, _create2.default)(Gp);
     return genFun;
   };
 
@@ -142,54 +155,44 @@ var _Promise = require("babel-runtime/core-js/promise")["default"];
   }
 
   function AsyncIterator(generator) {
-    function invoke(method, arg, resolve, reject) {
-      var record = tryCatch(generator[method], generator, arg);
-      if (record.type === "throw") {
-        reject(record.arg);
-      } else {
-        var result = record.arg;
-        var value = result.value;
-        if (value instanceof AwaitArgument) {
-          return _Promise.resolve(value.arg).then(function (value) {
-            invoke("next", value, resolve, reject);
-          }, function (err) {
-            invoke("throw", err, resolve, reject);
-          });
-        }
-
-        return _Promise.resolve(value).then(function (unwrapped) {
-          // When a yielded Promise is resolved, its final value becomes
-          // the .value of the Promise<{value,done}> result for the
-          // current iteration. If the Promise is rejected, however, the
-          // result for this iteration will be rejected with the same
-          // reason. Note that rejections of yielded Promises are not
-          // thrown back into the generator function, as is the case
-          // when an awaited Promise is rejected. This difference in
-          // behavior between yield and await is important, because it
-          // allows the consumer to decide what to do with the yielded
-          // rejection (swallow it and continue, manually .throw it back
-          // into the generator, abandon iteration, whatever). With
-          // await, by contrast, there is no opportunity to examine the
-          // rejection reason outside the generator function, so the
-          // only option is to throw it from the await expression, and
-          // let the generator function handle the exception.
-          result.value = unwrapped;
-          resolve(result);
-        }, reject);
-      }
+    // This invoke function is written in a style that assumes some
+    // calling function (or Promise) will handle exceptions.
+    function invoke(method, arg) {
+      var result = generator[method](arg);
+      var value = result.value;
+      return value instanceof AwaitArgument ? _promise2.default.resolve(value.arg).then(invokeNext, invokeThrow) : _promise2.default.resolve(value).then(function (unwrapped) {
+        // When a yielded Promise is resolved, its final value becomes
+        // the .value of the Promise<{value,done}> result for the
+        // current iteration. If the Promise is rejected, however, the
+        // result for this iteration will be rejected with the same
+        // reason. Note that rejections of yielded Promises are not
+        // thrown back into the generator function, as is the case
+        // when an awaited Promise is rejected. This difference in
+        // behavior between yield and await is important, because it
+        // allows the consumer to decide what to do with the yielded
+        // rejection (swallow it and continue, manually .throw it back
+        // into the generator, abandon iteration, whatever). With
+        // await, by contrast, there is no opportunity to examine the
+        // rejection reason outside the generator function, so the
+        // only option is to throw it from the await expression, and
+        // let the generator function handle the exception.
+        result.value = unwrapped;
+        return result;
+      });
     }
 
-    if (typeof process === "object" && process.domain) {
+    if ((typeof process === "undefined" ? "undefined" : (0, _typeof3.default)(process)) === "object" && process.domain) {
       invoke = process.domain.bind(invoke);
     }
 
+    var invokeNext = invoke.bind(generator, "next");
+    var invokeThrow = invoke.bind(generator, "throw");
+    var invokeReturn = invoke.bind(generator, "return");
     var previousPromise;
 
     function enqueue(method, arg) {
       function callInvokeWithMethodAndArg() {
-        return new _Promise(function (resolve, reject) {
-          invoke(method, arg, resolve, reject);
-        });
+        return invoke(method, arg);
       }
 
       return previousPromise =
@@ -208,7 +211,9 @@ var _Promise = require("babel-runtime/core-js/promise")["default"];
       previousPromise ? previousPromise.then(callInvokeWithMethodAndArg,
       // Avoid propagating failures to Promises returned by later
       // invocations of the iterator.
-      callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+      callInvokeWithMethodAndArg) : new _promise2.default(function (resolve) {
+        resolve(callInvokeWithMethodAndArg());
+      });
     }
 
     // Define the unified helper method that is used to implement .next,
@@ -308,6 +313,8 @@ var _Promise = require("babel-runtime/core-js/promise")["default"];
         }
 
         if (method === "next") {
+          context._sent = arg;
+
           if (state === GenStateSuspendedYield) {
             context.sent = arg;
           } else {
@@ -369,8 +376,6 @@ var _Promise = require("babel-runtime/core-js/promise")["default"];
   Gp[iteratorSymbol] = function () {
     return this;
   };
-
-  Gp[toStringTagSymbol] = "Generator";
 
   Gp.toString = function () {
     return "[object Generator]";
@@ -640,8 +645,8 @@ var _Promise = require("babel-runtime/core-js/promise")["default"];
       return ContinueSentinel;
     }
   };
-})(
+}(
 // Among the various tricks for obtaining a reference to the global
 // object, this seems to be the most reliable technique that does not
 // use indirect eval (which violates Content Security Policy).
-typeof global === "object" ? global : typeof window === "object" ? window : typeof self === "object" ? self : undefined);
+(typeof global === "undefined" ? "undefined" : (0, _typeof3.default)(global)) === "object" ? global : (typeof window === "undefined" ? "undefined" : (0, _typeof3.default)(window)) === "object" ? window : (typeof self === "undefined" ? "undefined" : (0, _typeof3.default)(self)) === "object" ? self : undefined);
