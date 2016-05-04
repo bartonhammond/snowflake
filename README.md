@@ -1,4 +1,11 @@
-# NOTE: Due to health issues and other demanding life events, I am no longer actively maintaining Snowflake.  Trying to keep Snowflake working with all the associated Javascript library changes is a never ending job and requires more time then I have time for.  I will, however, merge PRs if someone wants to contribute.  If anyone is interested in taking over all of Snowflake, let me know via Gitter. 
+# NOTES: 
+###Snowflake now (May 4, 2016) has the ```node_modules``` checked in so that the app will work for everyone. 
+
+###Due to health issues and other demanding life events, I am no longer actively maintaining Snowflake.  
+
+###Trying to keep Snowflake working with all the associated Javascript library changes is a never ending job and requires more time then I have time for.  
+
+###If you successfully upgrade Snowflake, please make a PR and I will merge. 
 
 
 Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
@@ -163,10 +170,6 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
  git clone https://github.com/bartonhammond/snowflake.git
  ```
 
-*  cd snowflake
-```
-npm install
-```
 
 *  Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.
    * Note: you must select one of three options for the ```backend``` as shown below:

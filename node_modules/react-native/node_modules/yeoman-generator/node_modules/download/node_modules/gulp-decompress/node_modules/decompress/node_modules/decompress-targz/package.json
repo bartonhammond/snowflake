@@ -1,0 +1,73 @@
+{
+  "name": "decompress-targz",
+  "version": "3.1.0",
+  "description": "decompress tar.gz plugin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevva/decompress-targz.git"
+  },
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "decompress",
+    "decompressplugin",
+    "extract",
+    "gulpplugin",
+    "tar.gz",
+    "targz"
+  ],
+  "dependencies": {
+    "is-gzip": "^1.0.0",
+    "object-assign": "^2.0.0",
+    "strip-dirs": "^1.0.0",
+    "tar-stream": "^1.1.1",
+    "through2": "^0.6.1",
+    "vinyl": "^0.4.3"
+  },
+  "devDependencies": {
+    "ava": "0.0.4",
+    "buffer-equal": "0.0.1",
+    "is-jpg": "^1.0.0",
+    "vinyl-file": "^1.1.0"
+  },
+  "gitHead": "fd71f276a5fedfc208fdfcf3540418a64a2ae541",
+  "bugs": {
+    "url": "https://github.com/kevva/decompress-targz/issues"
+  },
+  "homepage": "https://github.com/kevva/decompress-targz",
+  "_id": "decompress-targz@3.1.0",
+  "_shasum": "b2c13df98166268991b715d6447f642e9696f5a0",
+  "_from": "decompress-targz@>=3.0.0 <4.0.0",
+  "_npmVersion": "2.7.1",
+  "_nodeVersion": "1.6.2",
+  "_npmUser": {
+    "name": "kevva",
+    "email": "kevinmartensson@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "kevva",
+      "email": "kevinmartensson@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "b2c13df98166268991b715d6447f642e9696f5a0",
+    "tarball": "https://registry.npmjs.org/decompress-targz/-/decompress-targz-3.1.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/decompress-targz/-/decompress-targz-3.1.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

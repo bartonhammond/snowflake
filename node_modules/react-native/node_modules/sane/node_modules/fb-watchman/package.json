@@ -1,0 +1,62 @@
+{
+  "name": "fb-watchman",
+  "version": "1.9.0",
+  "description": "Bindings for the Watchman file watching service",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/facebook/watchman.git"
+  },
+  "keywords": [
+    "facebook",
+    "watchman",
+    "file",
+    "watch",
+    "watcher",
+    "watching",
+    "fs.watch",
+    "fswatcher",
+    "fs",
+    "glob",
+    "utility"
+  ],
+  "author": {
+    "name": "Wez Furlong",
+    "email": "wez@fb.com",
+    "url": "http://wezfurlong.org"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/facebook/watchman/issues"
+  },
+  "homepage": "https://facebook.github.io/watchman/",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "bser": "^1.0.2"
+  },
+  "_id": "fb-watchman@1.9.0",
+  "scripts": {},
+  "_shasum": "6f268f1f347a6b3c875d1e89da7e1ed79adfc0ec",
+  "_from": "fb-watchman@>=1.8.0 <2.0.0",
+  "_npmVersion": "3.3.12",
+  "_nodeVersion": "5.2.0",
+  "_npmUser": {
+    "name": "wez",
+    "email": "wez@wezfurlong.org"
+  },
+  "dist": {
+    "shasum": "6f268f1f347a6b3c875d1e89da7e1ed79adfc0ec",
+    "tarball": "https://registry.npmjs.org/fb-watchman/-/fb-watchman-1.9.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "wez",
+      "email": "wez@wezfurlong.org"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/fb-watchman/-/fb-watchman-1.9.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

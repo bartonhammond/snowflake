@@ -1,0 +1,61 @@
+{
+  "name": "commondir",
+  "version": "1.0.1",
+  "description": "compute the closest common parent for file paths",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^3.5.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/substack/node-commondir.git"
+  },
+  "keywords": [
+    "common",
+    "path",
+    "directory",
+    "file",
+    "parent",
+    "root"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.4"
+  },
+  "gitHead": "57797b60db24c60029f7593995241749b1704902",
+  "bugs": {
+    "url": "https://github.com/substack/node-commondir/issues"
+  },
+  "homepage": "https://github.com/substack/node-commondir",
+  "_id": "commondir@1.0.1",
+  "_shasum": "ddd800da0c66127393cca5950ea968a3aaf1253b",
+  "_from": "commondir@>=1.0.1 <2.0.0",
+  "_npmVersion": "2.3.0",
+  "_nodeVersion": "0.12.0",
+  "_npmUser": {
+    "name": "substack",
+    "email": "mail@substack.net"
+  },
+  "maintainers": [
+    {
+      "name": "substack",
+      "email": "mail@substack.net"
+    }
+  ],
+  "dist": {
+    "shasum": "ddd800da0c66127393cca5950ea968a3aaf1253b",
+    "tarball": "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

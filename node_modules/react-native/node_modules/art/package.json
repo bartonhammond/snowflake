@@ -1,0 +1,61 @@
+{
+  "name": "art",
+  "description": "Cross-browser Vector Graphics",
+  "version": "0.10.1",
+  "keywords": [
+    "art",
+    "canvas",
+    "svg",
+    "vml"
+  ],
+  "author": {
+    "name": "Sebastian Markbage"
+  },
+  "homepage": "http://sebmarkbage.github.io/art",
+  "bugs": {
+    "url": "https://github.com/sebmarkbage/art/issues"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebmarkbage/art.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "gitHead": "51ffce8164a555d652843241c2fdda52e186cbbd",
+  "_id": "art@0.10.1",
+  "scripts": {},
+  "_shasum": "38541883e399225c5e193ff246e8f157cf7b2146",
+  "_from": "art@>=0.10.0 <0.11.0",
+  "_npmVersion": "2.14.15",
+  "_nodeVersion": "4.2.2",
+  "_npmUser": {
+    "name": "zpao",
+    "email": "paul@oshannessy.com"
+  },
+  "maintainers": [
+    {
+      "name": "kamicane",
+      "email": "kamicane@gmail.com"
+    },
+    {
+      "name": "sebmarkbage",
+      "email": "sebastian@calyptus.eu"
+    },
+    {
+      "name": "zpao",
+      "email": "paul@oshannessy.com"
+    }
+  ],
+  "dist": {
+    "shasum": "38541883e399225c5e193ff246e8f157cf7b2146",
+    "tarball": "https://registry.npmjs.org/art/-/art-0.10.1.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/art/-/art-0.10.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

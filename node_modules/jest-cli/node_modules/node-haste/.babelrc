@@ -1,0 +1,8 @@
+{
+  "presets": ["es2015", "stage-2"],
+  "env": {
+    "test": {
+      "plugins": ["fbjs-scripts/babel-6/inline-requires"]
+    }
+  }
+}

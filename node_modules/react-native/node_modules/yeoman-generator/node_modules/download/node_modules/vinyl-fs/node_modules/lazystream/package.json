@@ -1,0 +1,67 @@
+{
+  "name": "lazystream",
+  "version": "1.0.0",
+  "description": "Open Node Streams on demand.",
+  "homepage": "https://github.com/jpommerening/node-lazystream",
+  "author": {
+    "name": "Jonas Pommerening",
+    "email": "jonas.pommerening@gmail.com",
+    "url": "https://npmjs.org/~jpommerening"
+  },
+  "contributors": [
+    {
+      "name": "Mario Casciaro",
+      "email": "mariocasciaro@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpommerening/node-lazystream.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jpommerening/node-lazystream/issues"
+  },
+  "license": "MIT",
+  "main": "lib/lazystream.js",
+  "engines": {
+    "node": ">= 0.6.3"
+  },
+  "scripts": {
+    "test": "nodeunit test/readable_test.js test/writable_test.js test/pipe_test.js test/fs_test.js"
+  },
+  "dependencies": {
+    "readable-stream": "^2.0.5"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  },
+  "keywords": [
+    "emfile",
+    "lazy",
+    "streams",
+    "stream"
+  ],
+  "gitHead": "f1f047c1957c75d39da6d4c21bb1d5196427d6c6",
+  "_id": "lazystream@1.0.0",
+  "_shasum": "f6995fe0f820392f61396be89462407bb77168e4",
+  "_from": "lazystream@>=1.0.0 <2.0.0",
+  "_npmVersion": "2.14.6",
+  "_nodeVersion": "4.1.2",
+  "_npmUser": {
+    "name": "jpommerening",
+    "email": "jonas.pommerening@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "jpommerening",
+      "email": "jonas.pommerening@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "f6995fe0f820392f61396be89462407bb77168e4",
+    "tarball": "https://registry.npmjs.org/lazystream/-/lazystream-1.0.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/lazystream/-/lazystream-1.0.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

@@ -1,0 +1,74 @@
+{
+  "name": "strip-bom-stream",
+  "version": "1.0.0",
+  "description": "Strip UTF-8 byte order mark (BOM) from a stream",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/strip-bom-stream.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "bom",
+    "strip",
+    "byte",
+    "mark",
+    "unicode",
+    "utf8",
+    "utf-8",
+    "remove",
+    "delete",
+    "trim",
+    "text",
+    "stream",
+    "streams"
+  ],
+  "dependencies": {
+    "first-chunk-stream": "^1.0.0",
+    "strip-bom": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "0.0.4",
+    "concat-stream": "^1.4.5"
+  },
+  "gitHead": "bf94858c313e67de092d21230fcaa6b517a98137",
+  "bugs": {
+    "url": "https://github.com/sindresorhus/strip-bom-stream/issues"
+  },
+  "homepage": "https://github.com/sindresorhus/strip-bom-stream",
+  "_id": "strip-bom-stream@1.0.0",
+  "_shasum": "e7144398577d51a6bed0fa1994fa05f43fd988ee",
+  "_from": "strip-bom-stream@>=1.0.0 <2.0.0",
+  "_npmVersion": "2.11.2",
+  "_nodeVersion": "0.12.5",
+  "_npmUser": {
+    "name": "sindresorhus",
+    "email": "sindresorhus@gmail.com"
+  },
+  "dist": {
+    "shasum": "e7144398577d51a6bed0fa1994fa05f43fd988ee",
+    "tarball": "https://registry.npmjs.org/strip-bom-stream/-/strip-bom-stream-1.0.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/strip-bom-stream/-/strip-bom-stream-1.0.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

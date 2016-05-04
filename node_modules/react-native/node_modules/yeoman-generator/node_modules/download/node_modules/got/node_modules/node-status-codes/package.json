@@ -1,0 +1,72 @@
+{
+  "name": "node-status-codes",
+  "version": "1.0.0",
+  "description": "Node.js `http.STATUS_CODES` ponyfill",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/node-status-codes.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "built-in",
+    "builtin",
+    "core",
+    "ponyfill",
+    "polyfill",
+    "shim",
+    "http",
+    "https",
+    "status",
+    "codes",
+    "code",
+    "statuscodes",
+    "statuses",
+    "statusmessage",
+    "message",
+    "msg"
+  ],
+  "devDependencies": {
+    "ava": "0.0.4"
+  },
+  "gitHead": "6014eac021c0b9dac389d43b98360d1c13c063a6",
+  "bugs": {
+    "url": "https://github.com/sindresorhus/node-status-codes/issues"
+  },
+  "homepage": "https://github.com/sindresorhus/node-status-codes#readme",
+  "_id": "node-status-codes@1.0.0",
+  "_shasum": "5ae5541d024645d32a58fcddc9ceecea7ae3ac2f",
+  "_from": "node-status-codes@>=1.0.0 <2.0.0",
+  "_npmVersion": "2.13.2",
+  "_nodeVersion": "0.12.5",
+  "_npmUser": {
+    "name": "sindresorhus",
+    "email": "sindresorhus@gmail.com"
+  },
+  "dist": {
+    "shasum": "5ae5541d024645d32a58fcddc9ceecea7ae3ac2f",
+    "tarball": "https://registry.npmjs.org/node-status-codes/-/node-status-codes-1.0.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/node-status-codes/-/node-status-codes-1.0.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

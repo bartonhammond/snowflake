@@ -1,0 +1,104 @@
+<div class="dox">
+  <div class="summary">
+    <%= md(description.summary) %>
+  </div>
+  <div class="body">
+    <%= md(description.body) %>
+  </div>
+
+<%
+
+if(tags.length){
+  var hasParams = false, hasReturn = false, hasType = false;    %>
+  <div class="details">
+<%
+  for(var i = 0; i < tags.length; i += 1){
+    var tag = tags[i];
+    if(tag.type == 'param'){
+      if(!hasParams){
+        hasParams = true;                                       %>
+    <div class="dox_tag_title">Params</div>
+<%    }                                                         %>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name"><%= tag.name %></span>
+<%    if(tag.types){
+        for(var j = 0; j < tag.types.length; j += 1){           %>
+      <span class="dox_type"><%= tag.types[j] %></span>
+<%      }
+      }
+
+      if(tag.description){                                      %>
+      <span><%= md(tag.description, true) %></span>
+<%    }                                                         %>
+    </div>
+<%  }
+
+    if(tag.type == 'return'){
+      if(!hasReturn){
+        hasReturn = true;                                       %>
+    <div class="dox_tag_title">Returns</div>
+<%    }                                                         %>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name"><%= tag.name %></span>
+<%    if(tag.types){
+        for(var j = 0; j < tag.types.length; j += 1){           %>
+      <span class="dox_type"><%= tag.types[j] %></span>
+<%      }
+      }
+
+      if(tag.description){                                      %>
+      <span><%= md(tag.description, true) %></span>
+<%    }                                                         %>
+    </div>
+<%  }
+
+    if(tag.type == 'type'){
+      if(!hasType){
+        hasType = true;                                         %>
+    <div class="dox_tag_title">Type</div>
+<%    }                                                         %>
+    <div class="dox_tag_detail">
+<%    for(var j = 0; j < tag.types.length; j += 1){             %>
+      <span class="dox_type"><%= tag.types[j] %></span>
+<%    }                                                         %>
+    </div>
+<%  }
+
+    if(tag.type == 'api'){                                      %>
+    <div class="dox_tag_title">API</div>
+    <div class="dox_tag_detail">
+      <span class="dox_type"><%= tag.visibility %></span>
+    </div>
+<%  }
+
+    if(tag.type == 'unknown'){                                      %>
+    <div class="dox_tag_title"><%= tag.name %></div>
+    <div class="dox_tag_detail">
+<%    if(tag.types){
+        for(var j = 0; j < tag.types.length; j += 1){           %>
+      <span class="dox_type"><%= tag.types[j] %></span>
+<%      }
+      }
+
+      if(tag.description){                                      %>
+      <span><%= md(tag.description, true) %></span>
+<%    }                                                         %>
+    </div>
+<%  }
+
+    if(tag.type == 'see'){                                      %>
+    <div class="dox_tag_title">See</div>
+    <div class="dox_tag_detail">
+<%    if(tag.url){                                              %>
+      <a href="<%= tag.url %>"><%= tag.title || tag.url %></a>
+<%    }
+      if(tag.local){                                            %>
+      <span class="dox_type"><%= tag.local %></span>
+<%    }                                                         %>
+    </div>
+<%  }
+  }                                                             %>
+  </div>
+<%
+}                                                               %>
+</div>

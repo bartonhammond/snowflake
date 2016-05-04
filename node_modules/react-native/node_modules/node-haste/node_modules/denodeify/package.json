@@ -1,0 +1,58 @@
+{
+  "name": "denodeify",
+  "version": "1.2.1",
+  "description": "Tool to turn functions with Node-style callback APIs into functions that return Promises",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "files": "find . -name '*.js' ! -path './node_modules/*'",
+    "jshint": "jshint `npm run -s files`",
+    "lintspaces": "lintspaces -i js-comments -e .editorconfig `npm run -s files`",
+    "test": "mocha test/*test.js && npm run jshint && npm run lintspaces"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthew-andrews/denodeify.git"
+  },
+  "author": {
+    "name": "Matt Andrews"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthew-andrews/denodeify/issues"
+  },
+  "homepage": "https://github.com/matthew-andrews/denodeify",
+  "devDependencies": {
+    "es6-promise": "^1.0.0",
+    "es6-shim": "^0.18.0",
+    "jshint": "^2.5.5",
+    "lie": "^2.7.7",
+    "lintspaces-cli": "0.0.4",
+    "mocha": "^1.21.4",
+    "native-promise-only": "^0.7.6-a"
+  },
+  "gitHead": "e500054eb336c748264507e9553af949981ee2c3",
+  "_id": "denodeify@1.2.1",
+  "_shasum": "3a36287f5034e699e7577901052c2e6c94251631",
+  "_from": "denodeify@>=1.2.1 <2.0.0",
+  "_npmVersion": "2.1.14",
+  "_nodeVersion": "0.10.33",
+  "_npmUser": {
+    "name": "mattandrews",
+    "email": "matt@mattandre.ws"
+  },
+  "maintainers": [
+    {
+      "name": "mattandrews",
+      "email": "matt@mattandre.ws"
+    }
+  ],
+  "dist": {
+    "shasum": "3a36287f5034e699e7577901052c2e6c94251631",
+    "tarball": "https://registry.npmjs.org/denodeify/-/denodeify-1.2.1.tgz"
+  },
+  "_resolved": "https://registry.npmjs.org/denodeify/-/denodeify-1.2.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

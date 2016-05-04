@@ -1,0 +1,85 @@
+{
+  "name": "opn",
+  "version": "3.0.3",
+  "description": "A better node-open. Opens stuff like websites, files, executables. Cross-platform.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/opn.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js",
+    "xdg-open"
+  ],
+  "keywords": [
+    "app",
+    "open",
+    "opn",
+    "opener",
+    "opens",
+    "launch",
+    "start",
+    "xdg-open",
+    "xdg",
+    "default",
+    "cmd",
+    "browser",
+    "editor",
+    "executable",
+    "exe",
+    "url",
+    "urls",
+    "arguments",
+    "args",
+    "spawn",
+    "exec",
+    "child",
+    "process",
+    "website",
+    "file"
+  ],
+  "dependencies": {
+    "object-assign": "^4.0.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "gitHead": "80d06d7f4a7daa7a215bf9b0a2e530dc277497d8",
+  "bugs": {
+    "url": "https://github.com/sindresorhus/opn/issues"
+  },
+  "homepage": "https://github.com/sindresorhus/opn",
+  "_id": "opn@3.0.3",
+  "_shasum": "b6d99e7399f78d65c3baaffef1fb288e9b85243a",
+  "_from": "opn@>=3.0.2 <4.0.0",
+  "_npmVersion": "2.14.7",
+  "_nodeVersion": "4.2.1",
+  "_npmUser": {
+    "name": "sindresorhus",
+    "email": "sindresorhus@gmail.com"
+  },
+  "dist": {
+    "shasum": "b6d99e7399f78d65c3baaffef1fb288e9b85243a",
+    "tarball": "https://registry.npmjs.org/opn/-/opn-3.0.3.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/opn/-/opn-3.0.3.tgz",
+  "readme": "ERROR: No README data found!"
+}

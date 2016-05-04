@@ -1,0 +1,71 @@
+{
+  "name": "decompress-tar",
+  "version": "3.1.0",
+  "description": "decompress tar plugin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevva/decompress-tar.git"
+  },
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "decompress",
+    "decompressplugin",
+    "extract",
+    "gulpplugin",
+    "tar"
+  ],
+  "dependencies": {
+    "is-tar": "^1.0.0",
+    "object-assign": "^2.0.0",
+    "strip-dirs": "^1.0.0",
+    "tar-stream": "^1.1.1",
+    "through2": "^0.6.1",
+    "vinyl": "^0.4.3"
+  },
+  "devDependencies": {
+    "ava": "^0.0.4",
+    "is-jpg": "^1.0.0",
+    "vinyl-file": "^1.1.0"
+  },
+  "gitHead": "64c66ebdb9a673a2cd00ad13a2750b19c21fb406",
+  "bugs": {
+    "url": "https://github.com/kevva/decompress-tar/issues"
+  },
+  "homepage": "https://github.com/kevva/decompress-tar",
+  "_id": "decompress-tar@3.1.0",
+  "_shasum": "217c789f9b94450efaadc5c5e537978fc333c466",
+  "_from": "decompress-tar@>=3.0.0 <4.0.0",
+  "_npmVersion": "2.7.1",
+  "_nodeVersion": "1.6.2",
+  "_npmUser": {
+    "name": "kevva",
+    "email": "kevinmartensson@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "kevva",
+      "email": "kevinmartensson@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "217c789f9b94450efaadc5c5e537978fc333c466",
+    "tarball": "https://registry.npmjs.org/decompress-tar/-/decompress-tar-3.1.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/decompress-tar/-/decompress-tar-3.1.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

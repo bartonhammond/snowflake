@@ -1,0 +1,72 @@
+{
+  "name": "vinyl-file",
+  "version": "1.3.0",
+  "description": "Create a vinyl file from an actual file",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/vinyl-file.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "vinyl",
+    "fs",
+    "file",
+    "read",
+    "virtual",
+    "format",
+    "gulp",
+    "gulpfriendly"
+  ],
+  "dependencies": {
+    "graceful-fs": "^4.1.2",
+    "strip-bom": "^2.0.0",
+    "strip-bom-stream": "^1.0.0",
+    "vinyl": "^1.1.0"
+  },
+  "devDependencies": {
+    "ava": "0.0.4",
+    "is-stream": "^1.0.0",
+    "xo": "*"
+  },
+  "gitHead": "9bdbc6d9211d7d896e2e3c88afa8beb530d873b7",
+  "bugs": {
+    "url": "https://github.com/sindresorhus/vinyl-file/issues"
+  },
+  "homepage": "https://github.com/sindresorhus/vinyl-file",
+  "_id": "vinyl-file@1.3.0",
+  "_shasum": "aa05634d3a867ba91447bedbb34afcb26f44f6e7",
+  "_from": "vinyl-file@>=1.1.0 <2.0.0",
+  "_npmVersion": "2.14.7",
+  "_nodeVersion": "4.2.1",
+  "_npmUser": {
+    "name": "sindresorhus",
+    "email": "sindresorhus@gmail.com"
+  },
+  "dist": {
+    "shasum": "aa05634d3a867ba91447bedbb34afcb26f44f6e7",
+    "tarball": "https://registry.npmjs.org/vinyl-file/-/vinyl-file-1.3.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/vinyl-file/-/vinyl-file-1.3.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

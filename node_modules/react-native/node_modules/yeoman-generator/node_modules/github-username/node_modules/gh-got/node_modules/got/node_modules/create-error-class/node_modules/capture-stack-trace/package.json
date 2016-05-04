@@ -1,0 +1,58 @@
+{
+  "name": "capture-stack-trace",
+  "version": "1.0.0",
+  "description": "Error.captureStackTrace ponyfill",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/floatdrop/capture-stack-trace.git"
+  },
+  "author": {
+    "name": "Vsevolod Strukchinsky",
+    "email": "floatdrop@gmail.com",
+    "url": "github.com/floatdrop"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "Error",
+    "captureStackTrace"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "gitHead": "eb46ce326fa9074b6ce17a94d4b76500321a331f",
+  "bugs": {
+    "url": "https://github.com/floatdrop/capture-stack-trace/issues"
+  },
+  "homepage": "https://github.com/floatdrop/capture-stack-trace",
+  "_id": "capture-stack-trace@1.0.0",
+  "_shasum": "4a6fa07399c26bba47f0b2496b4d0fb408c5550d",
+  "_from": "capture-stack-trace@>=1.0.0 <2.0.0",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "floatdrop",
+    "email": "floatdrop@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "floatdrop",
+      "email": "floatdrop@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "4a6fa07399c26bba47f0b2496b4d0fb408c5550d",
+    "tarball": "https://registry.npmjs.org/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/capture-stack-trace/-/capture-stack-trace-1.0.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

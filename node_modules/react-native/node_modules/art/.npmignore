@@ -1,0 +1,13 @@
+demos/
+docs/
+lib/link/
+tests/
+node_modules
+npm-debug.log
+.DS_Store
+lib/ast.js/Demos
+lib/slick/SlickSpec
+lib/slick/speed
+lib/sheet.js/Demo
+lib/sheet.js/Test
+lib/sheet.js/test-all

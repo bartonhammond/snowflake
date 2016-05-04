@@ -1,0 +1,63 @@
+{
+  "name": "buffer-to-vinyl",
+  "version": "1.1.0",
+  "description": "Create a vinyl file or stream from a buffer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevva/buffer-to-vinyl.git"
+  },
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "https://github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [],
+  "dependencies": {
+    "file-type": "^3.1.0",
+    "readable-stream": "^2.0.2",
+    "uuid": "^2.0.1",
+    "vinyl": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.0.4",
+    "concat-stream": "^1.4.7",
+    "xo": "*"
+  },
+  "gitHead": "84e59a6c15a702076ea3a5904579c06e25a26817",
+  "bugs": {
+    "url": "https://github.com/kevva/buffer-to-vinyl/issues"
+  },
+  "homepage": "https://github.com/kevva/buffer-to-vinyl#readme",
+  "_id": "buffer-to-vinyl@1.1.0",
+  "_shasum": "00f15faee3ab7a1dda2cde6d9121bffdd07b2262",
+  "_from": "buffer-to-vinyl@>=1.0.0 <2.0.0",
+  "_npmVersion": "3.3.3",
+  "_nodeVersion": "4.1.2",
+  "_npmUser": {
+    "name": "kevva",
+    "email": "kevinmartensson@gmail.com"
+  },
+  "dist": {
+    "shasum": "00f15faee3ab7a1dda2cde6d9121bffdd07b2262",
+    "tarball": "https://registry.npmjs.org/buffer-to-vinyl/-/buffer-to-vinyl-1.1.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "kevva",
+      "email": "kevinmartensson@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/buffer-to-vinyl/-/buffer-to-vinyl-1.1.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
