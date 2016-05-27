@@ -23,18 +23,16 @@
  *
  * React
 */
-const React = require('react-native');
-
-const {
+import React, {PropTypes} from 'react';
+import
+{
   Image,
-  PropTypes,
   StyleSheet,
   Text,
   TextInput,
   TouchableHighlight,
   View
-
-} = React;
+} from 'react-native';
 /**
  * A spiner
  */

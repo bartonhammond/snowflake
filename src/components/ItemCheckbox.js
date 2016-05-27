@@ -13,20 +13,20 @@
  *
  * React
  */
-var React = require('react-native');
+import React, {PropTypes} from 'react';
+import
+{
+  View,
+  Text,
+  TouchableHighlight,
+  TouchableWithoutFeedback
+} from 'react-native';
 
  /**
   * The vector icon
   */
 var Icon = require('react-native-vector-icons/FontAwesome');
 
-var {
-  PropTypes,
-  View,
-  Text,
-  TouchableHighlight,
-  TouchableWithoutFeedback
-} = React;
 
 
 var ItemCheckbox = React.createClass({

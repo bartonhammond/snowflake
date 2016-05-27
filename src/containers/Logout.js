@@ -37,9 +37,9 @@ import FormButton from '../components/FormButton';
 /**
  * The necessary React components
  */
-import React,
+import React, {Component} from 'react';
+import
 {
-  Component,
   StyleSheet,
   View
 }

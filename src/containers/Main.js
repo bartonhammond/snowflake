@@ -36,9 +36,9 @@ import Header from '../components/Header';
 /**
  * The components needed from React
  */
-import React,
-{ 	
-  Component,
+import React, {Component} from 'react';
+import
+{
   StyleSheet,
   View
 }

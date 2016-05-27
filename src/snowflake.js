@@ -13,9 +13,11 @@
  *
  * Necessary components from ReactNative
  */
-import React, {
+import React from 'react';
+import {
   AppRegistry,
   Navigator,
+  StyleSheet,
   View,
   Text } from 'react-native';
 
@@ -24,8 +26,8 @@ import React, {
  *
  * Necessary components from Router-Flux
  */
-import RNRF, {
-  Route,
+import {
+	Router,
   Scene,
   TabBar} from 'react-native-router-flux';
 
@@ -107,6 +109,13 @@ function getInitialState() {
   };
   return _initState;
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+		height: 70
+  }
+});
+
 /**
 * ## TabIcon 
 * 
@@ -140,9 +149,6 @@ export default function native(platform) {
     render() {
       
       const store = configureStore(getInitialState());
-
-      //Connect w/ the Router
-      const Router = connect()(RNRF.Router);
       
       // configureStore will combine reducers from snowflake and main application
       // it will then create the store based on aggregate state from all reducers
@@ -166,22 +172,24 @@ export default function native(platform) {
                      
         <Scene key="Login"
                      component={Login}
-                     title="Login"/>
+                     title="Login" 
+                     type="replace"/>
 	      
 	      <Scene key="Register"
                      component={Register}
-                     title="Register"/>
+                     title="Register"
+                     type="replace" />
 	      
 	      <Scene key="ForgotPassword"
                      component={ForgotPassword}
-                     title="ForgotPassword"
-                     type="replace" />
+                     title="ForgotPassword" 
+                     type="replace"/>
 	      
 	      <Scene key="Subview"
                      component={Subview}
                      title="Subview"/>
 
-	      <Scene key="Tabbar" tabs={true} default="Main">
+	      <Scene key="Tabbar" tabs={true} tabBarStyle={ styles.tabBar } default="Main">
 	        <Scene key="Logout"
                        title="logout"
                        icon={TabIcon}

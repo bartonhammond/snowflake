@@ -31,8 +31,7 @@ import LoginRender from '../components/LoginRender';
 /**
  * The necessary React components
  */
-import React from 'react-native';
-
+import React from 'react';
 
 const {
   LOGIN,

@@ -9,12 +9,12 @@
  *
  * React
  */
-const  React = require('react-native');
-const
-{
-  StyleSheet,
+import React, {Component} from 'react';
+import
+{  
+	StyleSheet,
   View
-} = React;
+} from 'react-native';
   
 /**
  * The platform neutral button

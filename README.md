@@ -10,6 +10,58 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE) 
 
 --------------- 
+#BREAKING CHANGES -- Latest version of Snowflake now supports React Native v26.1.
+
+If you are upgrading from a prior version of Snowflake, follow these instructions
+
+* Update package.json, src/snowflake.js, all files in src/containers and all files in src/components
+
+* Update any additional React Native container and component files in your project:
+
+Instead of:
+
+```
+import React, { Component, View } from 'react-native';
+```
+
+you need to now use:
+
+```
+import React, { Component } from 'react';
+import { View } from 'react-native';
+```
+
+* install dependencies:
+```
+npm install
+```
+
+* Update your iOS or Android project files by running this in a terminal:
+```
+$ react-native upgrade
+```
+
+You can accept all suggested changes
+
+* iOS manual changes after 'react-native upgrade':
+- Re-select the app icons in Images.xcasserts after doing the upgrade
+- Edit info.plist and add a property called 'Fonts provided by application'.  Add 'FontAwesome.ttf' as a sub-item of type 'String'
+   
+* Android manual changes after 'react-native upgrade':
+- tbd
+
+* Install rnpm globally:
+```
+npm install -g rnpm
+```
+
+* Install rnpm globally:
+```
+npm install -g rnpm
+```
+
+------------
+
 Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
 
 Using [Redux](https://github.com/reactjs/react-redux) and [Immutable](https://facebook.github.io/immutable-js/), the state of the application is testable with Jest, currently at 80% coverage. 
