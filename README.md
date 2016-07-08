@@ -200,7 +200,7 @@ npm install
 	  * Verify user emails -> Yes
 
 ### To run: 
-* On mac, open XCode and load project
+* For iOS, open XCode and load project, Run `Product -> Run (⌘+R)`. don't running via command `react-native run-ios`
 * For android, ```react-native run-android``` assuming you have an emulator or device attached.
 * To run Jest, ```npm test```
 * To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
