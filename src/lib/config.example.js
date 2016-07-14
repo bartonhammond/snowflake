@@ -6,7 +6,15 @@ module.exports = {
   },
   backend: {
     parse: false,
-    hapiRemote: true,
-    hapiLocal: false
-  }
+    hapiRemote: false,
+    hapiLocal: true
+  },
+  HAPI: {
+    local: {
+      url: 'http://127.0.0.1:5000'
+    },
+    remote: {
+      url: 'enter your remote url here'
+    }
+  }  
 }
