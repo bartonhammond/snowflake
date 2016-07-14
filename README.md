@@ -1,4 +1,4 @@
-# NOTES: 
+
 
 Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
 ==================================
@@ -177,7 +177,7 @@ npm install
     hapiRemote: true
   },
 ```
-   * To run Hapi either locally on remotely on OpenShift, update the below ```src/lib/config.js``` file:
+* To run Hapi either locally on remotely on OpenShift, update the ```src/lib/config.js``` file as shown below:
 
 ```
   HAPI: {
@@ -185,7 +185,7 @@ npm install
       url: 'http://127.0.0.1:5000'
     },
     remote: {
-      url: 'https://mysnowflake-bartonhammond.rhcloud.com'
+      url: 'put your remote url here'
     }
   }
 
@@ -200,8 +200,8 @@ npm install
 	  * Verify user emails -> Yes
 
 ### To run: 
-* For iOS, open XCode and load project, Run `Product -> Run (⌘+R)`. don't running via command `react-native run-ios`
-* For android, ```react-native run-android``` assuming you have an emulator or device attached.
+* For iOS, from the command line, run via command: ```react-native run-ios``` or open XCode and load project, Run ```Product -> Run (⌘+R)```
+* For android, from the command line, run via the command: ```react-native run-android``` assuming you have an emulator or device running and attached
 * To run Jest, ```npm test```
 * To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
 * Enjoy!
