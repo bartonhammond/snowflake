@@ -12,6 +12,7 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 
 Please review the release notes: [https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha](https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha)
 ------------
+##Notes
 
 Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
 
@@ -27,8 +28,6 @@ or
 
 See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
 
------------------
-[https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha](https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha)
 ---------------
 # Content
 
