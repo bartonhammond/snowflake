@@ -73,7 +73,15 @@ describe('Header', () => {
     const {output} = header;
 
     expect(output.type).toEqual(View);
-    expect(output.props.children[0].props.children[1].type.displayName).toEqual('GiftedSpinner');
+    let animating =
+          output.props.children[0].props.children[1].props.animating;
+    let size = output.props.children[0].props.children[1].props.size;    
+
+
+    expect(animating).toEqual(true);
+    expect(size).toEqual('large');
+           
+    //expect(output.props.children[0].props.children[1].type.displayName).toEqual('GiftedSpinner');
   });
 
 });//describe Header

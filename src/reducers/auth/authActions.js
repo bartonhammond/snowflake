@@ -137,14 +137,13 @@ export function logout() {
       .then(() => {
         dispatch(loginState());          
         dispatch(logoutSuccess());
-        dispatch(deleteSessionToken());   
-        Actions.Login();
+        dispatch(deleteSessionToken());
+        Actions.InitialLoginForm();
       })            		
 
       .catch((error) => {
         dispatch(loginState());        
         dispatch(logoutFailure(error));
-        Actions.Login();
       });
   };
 }
@@ -239,17 +238,18 @@ export function getSessionToken() {
     return new AppAuthToken().getSessionToken()
 
       .then((token) => {
+        console.log('authactions.token',token);
         if (token) {
           dispatch(sessionTokenRequestSuccess(token));
           dispatch(logoutState());
-          Actions.Tabbar();
+          console.log('authactions.Actions',Actions);
         } else {
           dispatch(sessionTokenRequestFailure());
-          Actions.InitialLoginForm();
         }
       })
     
       .catch((error) => {
+        console.log('authactions.error',error);
         dispatch(sessionTokenRequestFailure(error));
         dispatch(loginState());
         Actions.InitialLoginForm();
@@ -263,6 +263,7 @@ export function getSessionToken() {
  * @param {Object} json - object with sessionToken
  */
 export function saveSessionToken(json) {
+  debugger;
   return new AppAuthToken().storeSessionToken(json);
 }
 /**
@@ -361,9 +362,10 @@ export function login(username,  password) {
       .then(function (json) {
 	return saveSessionToken(json)
 	  .then(function () {
-	    dispatch(loginSuccess(json));  
-	    dispatch(logoutState());   
-	    Actions.Tabbar(); 
+	    dispatch(loginSuccess(json));
+	    // navigate to Tabbar
+	    Actions.Tabbar();                    
+	    dispatch(logoutState());
 	  });
       })
       .catch((error) => {

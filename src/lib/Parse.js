@@ -65,13 +65,14 @@ export default class Parse extends Backend{
       body: data
     })
       .then((response) => {
-        var json = JSON.parse(response._bodyInit);        
-        if (response.status === 200 || response.status === 201) {
-          return json;
-        } else {
-          throw(json);
-        }
-      })
+        return response.json().then(function (json) {       
+					if (response.status === 200 || response.status === 201) {
+						return json;
+					} else {
+						throw(json);
+					}
+				})
+			})
       .catch((error) => {
         throw(error);
       });
@@ -109,17 +110,17 @@ export default class Parse extends Backend{
       url: '/1/login?' + formBody
     })
       .then((response) => {
-        var json = JSON.parse(response._bodyInit);
-        if (response.status === 200 || response.status === 201) {
-          return json;
-        } else {
-          throw(json);
-        }
-      })
+      	return response.json().then(function (json) {
+					if (response.status === 200 || response.status === 201) {
+						return json;
+					} else {
+						throw(json);
+					}
+				})
+			})
       .catch((error) => {
         throw(error);
       });
-
   }
   /**
    * ### logout
@@ -132,14 +133,15 @@ export default class Parse extends Backend{
       body: {}
     })
       .then((response) => {
-        var  res = JSON.parse(response._bodyInit);        
-        if ((response.status === 200 || response.status === 201)
-            || //invalid session token
-            (response.status === 400 && res.code === 209)) {
-          return {};
-        } else {
-          throw({code: 404, error: 'unknown error from Parse.com'});
-        }
+        return response.json().then(function (res) {     
+					if ((response.status === 200 || response.status === 201)
+							|| //invalid session token
+							(response.status === 400 && res.code === 209)) {
+						return {};
+					} else {
+						throw({code: 404, error: 'unknown error from Parse.com'});
+					}
+				})
       })
       .catch((error) => {
         throw(error);
@@ -167,8 +169,9 @@ export default class Parse extends Backend{
         if ((response.status === 200 || response.status === 201)) {
           return {};
         } else {
-          var  res = JSON.parse(response._bodyInit);                  
-          throw(res);
+					response.json().then(function (res) {               
+						throw(res);
+					})
         }
       })
       .catch((error) => {
@@ -198,12 +201,13 @@ export default class Parse extends Backend{
       url: '/1/users/me'
     })
       .then((response) => {
-        var  res = JSON.parse(response._bodyInit);
-        if ((response.status === 200 || response.status === 201)) {
-          return res;
-        } else {
-          throw(res);
-        }
+        return response.json().then(function (res) {
+					if ((response.status === 200 || response.status === 201)) {
+						return res;
+					} else {
+						throw(res);
+					}
+				})
       })
       .catch((error) => {
         throw(error);
@@ -228,8 +232,9 @@ export default class Parse extends Backend{
         if ((response.status === 200 || response.status === 201)) {
           return {};
         } else {
-          var  res = JSON.parse(response._bodyInit);          
-          throw(res);
+          response.json().then(function (res) {     
+          	throw(res);
+          })
         }
       })
       .catch((error) => {

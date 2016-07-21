@@ -54,9 +54,9 @@ import ItemCheckbox from '../components/ItemCheckbox';
 /**
  * The necessary React components
  */
-import React,
+import React, {Component} from 'react';
+import
 {
-  Component,
   StyleSheet,
   ScrollView,
   Text,

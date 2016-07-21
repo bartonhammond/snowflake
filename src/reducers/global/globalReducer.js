@@ -118,7 +118,6 @@ export default function globalReducer(state = initialState, action) {
      *
      */    
   case SET_STATE:
-    debugger;
     var global = JSON.parse(action.payload).global;
     var next = state.set('currentUser', global.currentUser)
           .set('showState', false)

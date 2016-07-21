@@ -47,7 +47,7 @@ export default class Hapi extends Backend{
    * {username: "barton", email: "foo@gmail.com", password: "Passw0rd!"}
    *
    * @return
-   * if ok, {createdAt: "2015-12-30T15:17:05.379Z",
+   * if ok, res.json={createdAt: "2015-12-30T15:17:05.379Z",
    *   objectId: "5TgExo2wBA", 
    *   sessionToken: "r:dEgdUkcs2ydMV9Y9mt8HcBrDM"}
    *
@@ -59,12 +59,11 @@ export default class Hapi extends Backend{
       url: '/account/register',
       body: data
     })
-      .then((response) => {
-        var json = JSON.parse(response._bodyInit);        
-        if (response.status === 200 || response.status === 201) {
-          return json;
+      .then((res) => {
+        if (res.status === 200 || res.status === 201) {
+          return res.json;
         } else {
-          throw(json);
+          throw res.json;
         }
       })
       .catch((error) => {
@@ -96,12 +95,11 @@ export default class Hapi extends Backend{
       url: '/account/login',
       body: data
     })
-      .then((response) => {
-        var json = JSON.parse(response._bodyInit);
-        if (response.status === 200 || response.status === 201) {
-          return json;
+      .then((res) => {
+        if (res.status === 200 || res.status === 201) {
+          return res.json;
         } else {
-          throw(json);
+          throw(res.json);
         }
       })
       .catch((error) => {
@@ -119,11 +117,10 @@ export default class Hapi extends Backend{
       url: '/account/logout',
       body: {}
     })
-      .then((response) => {
-        var  res = JSON.parse(response._bodyInit);        
-        if ((response.status === 200 || response.status === 201)
+      .then((res) => {
+        if ((res.status === 200 || res.status === 201)
             || //invalid session token
-            (response.status === 400 && res.code === 209)) {
+            (res.status === 400 && res.code === 209)) {
           return {};
         } else {
           throw({code: res.statusCode, error: res.message});
@@ -185,12 +182,11 @@ export default class Hapi extends Backend{
       method: 'GET',
       url: '/account/profile/me'
     })
-      .then((response) => {
-        var  res = JSON.parse(response._bodyInit);
-        if ((response.status === 200 || response.status === 201)) {
-          return res;
+      .then((res) => {
+        if ((res.status === 200 || res.status === 201)) {
+          return res.json;
         } else {
-          throw(res);
+          throw(res.json);
         }
       })
       .catch((error) => {
@@ -212,12 +208,11 @@ export default class Hapi extends Backend{
       url: '/account/profile/' + userId,
       body: data
     })
-      .then((response) => {
-        if ((response.status === 200 || response.status === 201)) {
+      .then((res) => {
+        if ((res.status === 200 || res.status === 201)) {
           return {};
         } else {
-          var  res = JSON.parse(response._bodyInit);          
-          throw(res);
+          throw(res.json);
         }
       })
       .catch((error) => {
@@ -227,7 +222,12 @@ export default class Hapi extends Backend{
   }  
   /**
    * ### _fetch
-   * A generic function that prepares the request to Parse.com
+   * A generic function that prepares the request to Parse.com or Hapi
+   *
+   * @returns object:
+   *  {code: response.code,
+   *   status: response.status,
+   *   json: response.json()
    */  
   async _fetch(opts) {
     opts = _.extend({
@@ -256,8 +256,18 @@ export default class Hapi extends Backend{
       reqOpts.body = JSON.stringify(opts.body);
     }
 
-    return await fetch(this.API_BASE_URL + opts.url, reqOpts);
+    let url = this.API_BASE_URL + opts.url;
+    let res = {};
 
+    let response = await fetch(url , reqOpts);
+    res.status = response.status;
+    res.code = response.code;
+
+    return response.json()
+      .then((json) => {
+        res.json = json;
+        return res;
+      });
   }
 };
 
