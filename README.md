@@ -8,22 +8,9 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE) 
 
 --------------- 
-##BREAKING CHANGES -- Latest version of Snowflake now supports React Native v26.1.
+##BREAKING CHANGES -- This version of Snowflake now supports React Native v29.2 and should be considered **1.2.Alpha**
 
-Once you merge the Snowflake updates you'll need to modify any additional react files in your project:
-
-Instead of:
-
-```
-import React, { Component, PropTypes, View } from 'react-native';
-```
-
-you need to now use:
-
-```
-import React, { Component, PropTypes } from 'react';
-import { View } from 'react-native';
-```
+Please review the release notes
 ------------
 
 Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
@@ -41,7 +28,8 @@ or
 See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
 
 -----------------
-
+[https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha](https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha)
+---------------
 # Content
 
 - [Screens](#screens)
