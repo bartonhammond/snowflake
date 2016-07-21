@@ -31,9 +31,10 @@ import NavigationBar from 'react-native-navbar';
 /**
  * The necessary components from React
  */
-import React,
-{ 	
-  StyleSheet,
+import React from 'react';
+import
+{  
+	StyleSheet,
   View,
   Text
 }

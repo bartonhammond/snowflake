@@ -1,5 +1,3 @@
-
-
 Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
 ==================================
 #### A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base. 
@@ -10,6 +8,24 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE) 
 
 --------------- 
+##BREAKING CHANGES -- Latest version of Snowflake now supports React Native v26.1.
+
+Once you merge the Snowflake updates you'll need to modify any additional react files in your project:
+
+Instead of:
+
+```
+import React, { Component, PropTypes, View } from 'react-native';
+```
+
+you need to now use:
+
+```
+import React, { Component, PropTypes } from 'react';
+import { View } from 'react-native';
+```
+------------
+
 Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
 
 Using [Redux](https://github.com/reactjs/react-redux) and [Immutable](https://facebook.github.io/immutable-js/), the state of the application is testable with Jest, currently at 80% coverage. 

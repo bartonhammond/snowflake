@@ -12,10 +12,7 @@
  *
  * React
  */
-const React = require('react-native');
-const {
-  PropTypes
-} = React;
+import React, {PropTypes} from 'react';
 
 /** 
  * States of login display

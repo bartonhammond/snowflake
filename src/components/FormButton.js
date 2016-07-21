@@ -1,25 +1,25 @@
 /**
-* # FormButton.js
-*
-* Display a button that responds to onPress and is colored appropriately
-*/
+ * # FormButton.js
+ *
+ * Display a button that responds to onPress and is colored appropriately
+ */
 'use strict';
 /**
  * ## Imports
  *
  * React
  */
-const  React = require('react-native');
-const
-{
+import React, {Component} from 'react';
+import
+{  
   StyleSheet,
   View
-} = React;
-  
+} from 'react-native';
+
 /**
  * The platform neutral button
  */
-const  Button = require('apsl-react-native-button');
+const  Button = require('snowflake-react-native-button');
 
 /**
  * ## Styles
@@ -46,9 +46,9 @@ var FormButton = React.createClass({
     return (
       <View style={styles.signin}>
         <Button style={styles.button}
-            isDisabled={this.props.isDisabled}
-            onPress={this.props.onPress}
-        >
+                textStyle={{fontSize: 18}}                
+                isDisabled={this.props.isDisabled}
+                onPress={this.props.onPress} >
           {this.props.buttonText}
         </Button>
       </View>

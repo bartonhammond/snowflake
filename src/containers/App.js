@@ -30,7 +30,8 @@ import * as globalActions from '../reducers/global/globalActions';
 /**
  * The components we need from ReactNative
  */
-import React,
+import React from 'react';
+import
 { 	
   StyleSheet,
   View,

@@ -13,9 +13,11 @@
  *
  * Necessary components from ReactNative
  */
-import React, {
+import React from 'react';
+import {
   AppRegistry,
   Navigator,
+  StyleSheet,
   View,
   Text } from 'react-native';
 
@@ -24,8 +26,8 @@ import React, {
  *
  * Necessary components from Router-Flux
  */
-import RNRF, {
-  Route,
+import {
+  Router,
   Scene,
   TabBar} from 'react-native-router-flux';
 
@@ -90,7 +92,7 @@ import profileInitialState from './reducers/profile/profileInitialState';
 /**
  *  The version of the app but not  displayed yet
  */
-var VERSION='0.1.1';
+var VERSION='0.1.2';
 
 /**
  *
@@ -107,21 +109,28 @@ function getInitialState() {
   };
   return _initState;
 }
+
+const styles = StyleSheet.create({
+  tabBar: {
+    height: 70
+  }
+});
+
 /**
-* ## TabIcon 
-* 
-* Displays the icon for the tab w/ color dependent upon selection
-*/
+ * ## TabIcon 
+ * 
+ * Displays the icon for the tab w/ color dependent upon selection
+ */
 
 class TabIcon extends React.Component {
   render(){
     var color = this.props.selected ? '#FF3366' : '#FFB3B3';
     return (
-      <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center'}}>
+        <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center'}}>
         <Icon style={{color: color}} name={this.props.iconName} size={30} />
         <Text style={{color: color}}>{this.props.title}</Text>
-      </View>
-      );
+        </View>
+    );
   }
 }
 
@@ -140,9 +149,6 @@ export default function native(platform) {
     render() {
       
       const store = configureStore(getInitialState());
-
-      //Connect w/ the Router
-      const Router = connect()(RNRF.Router);
       
       // configureStore will combine reducers from snowflake and main application
       // it will then create the store based on aggregate state from all reducers
@@ -151,37 +157,44 @@ export default function native(platform) {
       store.dispatch(setStore(store));
       
       // setup the router table with App selected as the initial component
+      // note: See https://github.com/aksonov/react-native-router-flux/issues/948 
       return (
         <Provider store={store}>
-	  <Router hideNavBar={true}>
-	    <Scene key="root">
-	      <Scene key="App"
-                     component={App}
-                     title="App"
-                     initial={true}/>
-              
+
+	  <Router sceneStyle={{ backgroundColor: 'white' }}>
+	    <Scene key="root"
+                   hideNavBar={true}>
 	      <Scene key="InitialLoginForm"
                      component={Register}
-                     title="Register" />
-                     
-        <Scene key="Login"
+                     title="Register"
+                     type="replace"
+                     initial={true}/>
+              
+              <Scene key="Login"
                      component={Login}
-                     title="Login"/>
+                     title="Login" 
+                     type="replace"/>
 	      
 	      <Scene key="Register"
                      component={Register}
-                     title="Register"/>
+                     title="Register"
+                     type="replace" />
 	      
 	      <Scene key="ForgotPassword"
                      component={ForgotPassword}
-                     title="ForgotPassword"
-                     type="replace" />
+                     title="ForgotPassword" 
+                     type="replace"/>
 	      
 	      <Scene key="Subview"
                      component={Subview}
                      title="Subview"/>
 
-	      <Scene key="Tabbar" tabs={true} default="Main">
+	      <Scene key="Tabbar"
+                     tabs={true}
+                     hideNavBar={true}
+                     tabBarStyle={ styles.tabBar }
+                     default="Main">
+                
 	        <Scene key="Logout"
                        title="logout"
                        icon={TabIcon}

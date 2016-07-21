@@ -30,7 +30,7 @@ import LoginRender from '../components/LoginRender';
 /**
  * The necessary React 
  */
-import React from 'react-native';
+import React from 'react';
 
 const {
   LOGIN, 

@@ -25,6 +25,7 @@ project.xcworkspace
 
 # Android/IJ
 #
+*.iml
 .idea
 .gradle
 local.properties
@@ -37,3 +38,9 @@ node_modules/
 coverage/
 
 src/lib/config.js
+
+# BUCK
+buck-out/
+\.buckd/
+android/app/libs
+android/keystores/debug.keystore

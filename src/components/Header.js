@@ -23,22 +23,18 @@
  *
  * React
 */
-const React = require('react-native');
-
-const {
+import React, {PropTypes} from 'react';
+import
+{
+  ActivityIndicator,
   Image,
-  PropTypes,
   StyleSheet,
   Text,
   TextInput,
   TouchableHighlight,
   View
+} from 'react-native';
 
-} = React;
-/**
- * A spiner
- */
-const GiftedSpinner = require('react-native-gifted-spinner');
 /**
  * Project component that will respond to onPress
  */
@@ -159,7 +155,10 @@ var Header = React.createClass({
     
     let spinner = <Text> </Text>;
     if (this.props.isFetching) {
-      spinner =  <GiftedSpinner/>;
+      spinner = <ActivityIndicator
+                  animating={true}
+                  size="large"
+                  />
     }
 
     return (

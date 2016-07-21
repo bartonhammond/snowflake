@@ -152,7 +152,6 @@ export default function authReducer(state = initialState, action) {
      * Set all the field values from the payload
      */    
   case SET_STATE:
-    debugger;
     var form = JSON.parse(action.payload).auth.form;
     
     var next = state.setIn(['form','state'],form.state)
