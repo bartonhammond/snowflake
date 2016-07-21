@@ -8,9 +8,9 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE) 
 
 --------------- 
-##BREAKING CHANGES -- This version of Snowflake now supports React Native v29.2 and should be considered **1.2.Alpha**
+##BREAKING CHANGES -- This version of Snowflake now supports React Native v29.2 and should be considered **1.2.Alpha** for the time being.
 
-Please review the release notes
+Please review the release notes: [https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha](https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha)
 ------------
 
 Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
