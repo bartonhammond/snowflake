@@ -1,6 +1,6 @@
 /**
  * # Header-test.js
- * 
+ *
  * This class tests that the Header component displays correctly
  *
  * *Note:* if you want to understand the structures here, add a
@@ -9,79 +9,45 @@
  */
 'use strict';
 
-jest.autoMockOff();
+jest.mock('ActivityIndicator', () => 'ActivityIndicator');
 
 /**
 * ## Imports
 */
-import React, { View } from 'react-native';
-import utils from 'react-addons-test-utils';
+import 'react-native';
+import React from 'react';
 
-/**
- * ## Under test
- * class under test
- */
-jest.dontMock('../Header');
-var Header = require('../Header');
+import Header from '../Header';
+
+import renderer from 'react/lib/ReactTestRenderer';
 
 /**
  * ## Test
  */
 describe('Header', () => {
-  let header;
-  
-  /**
-   * ### renderHeader
-   * display component and return 
-   * @returns {Object} with props, output and renderer
-   */ 
-
-  function renderHeader(props) {
-    const renderer = utils.createRenderer();
-    renderer.render(<Header {...props}/>);
-    const output = renderer.getRenderOutput();
-
-    return {
-      props,
-      output,
-      renderer
-    };
-  }
   /**
    * ### it should be display empty text when not fetching
    * render the header when not fetching
-   */    
+   */
   it('should be display empty text when not fetching', () => {
-    const buttonProps = {
+    const props = {
       isFetching: false
     };
-    header = renderHeader(buttonProps);
-    const {output} = header;
-    expect(output.type).toEqual(View);
-    expect(output.props.children[0].props.children[1].props.children).toEqual(' ');
+    const tree = renderer.create(<Header {...props} />).toJSON();
+    expect(tree).toMatchSnapshot();
 
   });
   /**
    * ### it should be display spinner when fetching
    * When fetching, the GiftedSpinner should display
-   */    
+   */
   it('should be display spinner when fetching', () => {
-    const buttonProps = {
+    const props = {
       isFetching: true
     };
-    header = renderHeader(buttonProps);
-    const {output} = header;
 
-    expect(output.type).toEqual(View);
-    let animating =
-          output.props.children[0].props.children[1].props.animating;
-    let size = output.props.children[0].props.children[1].props.size;    
-
-
-    expect(animating).toEqual(true);
-    expect(size).toEqual('large');
-           
-    //expect(output.props.children[0].props.children[1].type.displayName).toEqual('GiftedSpinner');
+    const tree = renderer.create(<Header {...props} />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
 });//describe Header

@@ -1,11 +1,10 @@
 /**
  * # authActions-test.js
- * 
+ *
  * This test is for authActions
  *
  */
 'use strict';
-jest.autoMockOff();
 
 /**
  * ## Mocks
@@ -32,8 +31,8 @@ var actions = require('../authActions');
 
 /**
  * ## Imports
- * 
- * actions under test 
+ *
+ * actions under test
  */
 const {
   SESSION_TOKEN_REQUEST,
@@ -41,7 +40,7 @@ const {
   SESSION_TOKEN_FAILURE,
 
   DELETE_TOKEN_REQUEST,
-  
+
   LOGOUT,
   REGISTER,
   LOGIN,
@@ -54,7 +53,7 @@ const {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
-  
+
   ON_AUTH_FORM_FIELD_CHANGE,
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
@@ -67,13 +66,13 @@ const {
 
 /**
  * ## Tests
- * 
+ *
  * authActions
  */
 describe('authActions', () => {
   /**
    * ### simple tests that prove the actions have the specific type
-   */ 
+   */
   it('should set logoutState', () => {
     expect(actions.logoutState()).toEqual({type: LOGOUT });
   });
@@ -85,7 +84,7 @@ describe('authActions', () => {
   it('should set loginState', () => {
     expect(actions.loginState()).toEqual({type: LOGIN});
   });
-  
+
   it('should set forgotPasswordState', () => {
     expect(actions.forgotPasswordState()).toEqual({type: FORGOT_PASSWORD});
   });
@@ -105,7 +104,7 @@ describe('authActions', () => {
                                                   payload: error});
 
   });
-  
+
   it('should set signupRequest', () => {
     expect(actions.signupRequest()).toEqual({type: SIGNUP_REQUEST});
   });
@@ -178,7 +177,7 @@ describe('authActions', () => {
 
   /**
    * ### async tests
-   * 
+   *
    * the following tests describe the actions that should be
    * dispatched the function is invoked
    *
@@ -211,7 +210,7 @@ describe('authActions', () => {
 
   it('should getSessionToken', () => {
     const expectedActions = [
-      {type: SESSION_TOKEN_REQUEST},      
+      {type: SESSION_TOKEN_REQUEST},
       {type: LOGOUT},
       {type: SESSION_TOKEN_SUCCESS}
     ];
@@ -222,7 +221,7 @@ describe('authActions', () => {
 
   it('should signup', () => {
     const expectedActions = [
-      {type: SIGNUP_REQUEST},      
+      {type: SIGNUP_REQUEST},
       {type: LOGOUT},
       {type: SIGNUP_SUCCESS}
     ];
@@ -233,7 +232,7 @@ describe('authActions', () => {
 
   it('should resetPassword', () => {
     const expectedActions = [
-      {type: RESET_PASSWORD_REQUEST},      
+      {type: RESET_PASSWORD_REQUEST},
       {type: LOGIN},
       {type: RESET_PASSWORD_SUCCESS}
     ];
@@ -246,7 +245,7 @@ describe('authActions', () => {
     const expectedActions = [
       {type: DELETE_TOKEN_REQUEST},
       {type: SESSION_TOKEN_REQUEST},
-      {type: SESSION_TOKEN_SUCCESS}      
+      {type: SESSION_TOKEN_SUCCESS}
     ];
 
     const store = mockStore({}, expectedActions);

@@ -1,20 +1,18 @@
 /**
  * # profileReducer-test.js
- * 
+ *
  *
  * This will confirm that given a specific action with a type and
  * payload, that the state object is modified accordingly.
  *
- * *Note*: in this app,```state``` is an Immutable.js object 
+ * *Note*: in this app,```state``` is an Immutable.js object
  *
  */
 'use strict';
 
-jest.autoMockOff();
-
 /**
  * ## Imports
- * 
+ *
  * These actions of the users profile
  */
 const {
@@ -35,17 +33,17 @@ const {
 const  profileReducer = require('../profileReducer').default;
 /**
  * ## Tests
- * 
+ *
  * profileReducer
  */
 describe('profileReducer', () => {
   /**
    * ### Profile Request
-   * 
+   *
    * *Note*: these tests call the ```profileReducer``` with an
    * ```undefined``` state so that the reducer will return a valid state.
    *
-   */  
+   */
   describe('PROFILE_REQUEST', () => {
     /**
      * #### starts fetching
@@ -101,7 +99,7 @@ describe('profileReducer', () => {
      *
      * On failure, toggle the fetching flag and provide the error so
      * the use can see it
-     */    
+     */
     it('finishes fetching on failure', () => {
       const action = {
         type: GET_PROFILE_FAILURE,
@@ -113,10 +111,10 @@ describe('profileReducer', () => {
     });
 
   });//Profile Request
-  
+
   /**
    * ### Profile update
-   * 
+   *
    */
   describe('PROFILE_UPDATE', () => {
     /**
@@ -152,7 +150,7 @@ describe('profileReducer', () => {
      *
      * The fetching has ended and the error saved so the user can see
      * it
-     */    
+     */
     it('finishes fetching on failure and saves error', () => {
       const action = {
         type: PROFILE_UPDATE_FAILURE,
@@ -166,14 +164,14 @@ describe('profileReducer', () => {
   });//ProfileUpdate
   /**
    * ### Profile form field changes
-   * 
+   *
    */
   describe('PROFILE_FORM_FIELD_CHANGE', () => {
     /**
      * #### form is valid to logout
      *
      * Should have a valid form and and the fields have no errors
-     */    
+     */
     it('form is valid with valid email & username', () => {
       const action = {
         type: ON_PROFILE_FORM_FIELD_CHANGE,
@@ -181,19 +179,19 @@ describe('profileReducer', () => {
       };
       let next = profileReducer(undefined,
                                 action);
-      
-      expect(next.form.isValid,true);      
+
+      expect(next.form.isValid,true);
       expect(next.form.fields.username,
              action.payload.field.username);
       expect(next.form.fields.usernameHasError,false);
       expect(next.form.fields.email, action.payload.field.email);
-      expect(next.form.fields.emailHasError, false);      
+      expect(next.form.fields.emailHasError, false);
     });
     /**
      * #### form is invalid with invalid email & invalid username
      *
      * Bad data in, errors out!
-     */    
+     */
     it('form is invalid with invalid email & invalid username', () => {
       const action = {
         type: ON_PROFILE_FORM_FIELD_CHANGE,
@@ -209,8 +207,8 @@ describe('profileReducer', () => {
       expect(next.form.fields.email, action.payload.field.email);
       expect(next.form.fields.emailHasError, true);
 
-      
+
     });
-    
+
   }); //FORM FIELD CHANGE
 });//profileReducer
