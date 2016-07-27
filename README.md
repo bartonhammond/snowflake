@@ -7,10 +7,6 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 ![andriod](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/1e0425744dcc7ce3.svg?token=uvZDZvo89BLXvjrArJJreQ)](https://www.bitrise.io/app/1e0425744dcc7ce3)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE) 
 
---------------- 
-##BREAKING CHANGES -- This version of Snowflake now supports React Native v29.2 and should be considered **1.2.Alpha** for the time being.
-
-Please review the release notes: [https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha](https://github.com/bartonhammond/snowflake/releases/tag/0.1.2-alpha)
 ------------
 ##Notes
 
