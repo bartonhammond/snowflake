@@ -47,7 +47,7 @@ from 'react-native';
 /**
  * The platform neutral button
  */
-const  Button = require('snowflake-react-native-button');
+const  Button = require('apsl-react-native-button');
 
 
 /**
