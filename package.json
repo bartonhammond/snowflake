@@ -5,10 +5,10 @@
   "jest": {
     "preset": "jest-react-native",
     "moduleNameMapper": {
-      "\\.\/datepicker$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/datepicker.ios.js"
+      "\\./datepicker$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/datepicker.ios.js"
     },
     "preprocessorIgnorePatterns": [
-      "node_modules/(?!react-native|tcomb-form-native|snowflake-react-native-button)"
+      "node_modules/(?!react-native|tcomb-form-native|apsl-react-native-button)"
     ],
     "verbose": true
   },
@@ -20,15 +20,15 @@
     "docs": "./node_modules/docker/docker -w -i src/ -o ../snowflake-pages "
   },
   "dependencies": {
-    "snowflake-react-native-button": "git+https://git@github.com/bartonhammond/snowflake-react-native-button.git",
+    "apsl-react-native-button": "3.0.0",
     "immutable": "3.8.1",
     "key-mirror": "1.0.1",
-    "react": "15.2.0",
+    "react": "15.2.1",
     "react-native": "0.30.0",
     "react-native-navbar": "1.5.0",
     "react-native-router-flux": "3.31.1",
     "react-native-simple-store": "1.0.1",
-    "react-native-simpledialog-android": "git+https://git@github.com/bartonhammond/react-native-simpledialog-android.git",
+    "react-native-simpledialog-android": "1.0.7",
     "react-native-vector-icons": "2.0.3",
     "react-redux": "4.4.5",
     "redux": "3.5.2",
