@@ -5,7 +5,7 @@
  *
  * *Note:* if you want to understand the structures here, add a
  * ```console.log``` and then ```npm test```.
- * 
+ *
  */
 'use strict';
 /**
@@ -13,7 +13,6 @@
  *  Mock the simpledialog, see: 'src/__mocks__/react-native-simpledialog-android.js'
  */
 
-jest.autoMockOff();
 jest.mock('react-native-simpledialog-android');
 
 /**
@@ -25,7 +24,6 @@ const SimpleAlert = require('react-native-simpledialog-android');
  * ## Under test
  * Object under test
  */
-jest.dontMock('../ErrorAlert');
 var ErrorAlert = require('../ErrorAlert');
 
 /**
@@ -41,7 +39,7 @@ describe('ErrorAlert', () => {
         error: 'Error occurred'
       }
     };
-    
+
     /**
      * Invoke the ErrorAlert constructor and pass in the mocked
      * version

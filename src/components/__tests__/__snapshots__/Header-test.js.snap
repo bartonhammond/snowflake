@@ -1,0 +1,111 @@
+exports[`Header should be display empty text when not fetching 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "justifyContent": "center",
+        "marginTop": 10
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function bound touchableHandleResponderGrant]}
+      onResponderMove={[Function bound touchableHandleResponderMove]}
+      onResponderRelease={[Function bound touchableHandleResponderRelease]}
+      onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
+      onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
+      onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent"
+          },
+          undefined
+        ]
+      }
+      testID={undefined}>
+      <Image
+        source={
+          Object {
+            "uri": "http://i.imgur.com/da4G0Io.png"
+          }
+        }
+        style={
+          Object {
+            "height": 50,
+            "width": 50
+          }
+        } />
+    </View>
+    <Text>
+       
+    </Text>
+  </View>
+  <Text>
+     
+  </Text>
+</View>
+`;
+
+exports[`Header should be display spinner when fetching 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "justifyContent": "center",
+        "marginTop": 10
+      }
+    }>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function bound touchableHandleResponderGrant]}
+      onResponderMove={[Function bound touchableHandleResponderMove]}
+      onResponderRelease={[Function bound touchableHandleResponderRelease]}
+      onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
+      onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
+      onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent"
+          },
+          undefined
+        ]
+      }
+      testID={undefined}>
+      <Image
+        source={
+          Object {
+            "uri": "http://i.imgur.com/da4G0Io.png"
+          }
+        }
+        style={
+          Object {
+            "height": 50,
+            "width": 50
+          }
+        } />
+    </View>
+    <ActivityIndicator
+      animating={true}
+      size="large" />
+  </View>
+  <Text>
+     
+  </Text>
+</View>
+`;

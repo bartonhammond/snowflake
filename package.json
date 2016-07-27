@@ -3,48 +3,17 @@
   "version": "0.1.2",
   "private": true,
   "jest": {
-    "setupEnvScriptFile": "./node_modules/react-native/jestSupport/env.js",
-    "haste": {
-      "defaultPlatform": "ios",
-      "platforms": [
-        "ios",
-        "android"
-      ],
-      "providesModuleNodeModules": [
-        "react-native"
-      ]
+    "preset": "jest-react-native",
+    "moduleNameMapper": {
+      "\\.\/datepicker$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/datepicker.ios.js"
     },
-    "testPathIgnorePatterns": [
-      "/node_modules/"
+    "preprocessorIgnorePatterns": [
+      "node_modules/(?!react-native|tcomb-form-native|snowflake-react-native-button)"
     ],
-    "testFileExtensions": [
-      "es6",
-      "js"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "es6",
-      "ios.js"
-    ],
-    "unmockedModulePathPatterns": [
-      "react",
-      "react-addons-test-utils",
-      "react-native-router-flux",
-      "promise",
-      "source-map",
-      "key-mirror",
-      "immutable",
-      "fetch",
-      "redux",
-      "redux-thunk",
-      "fbjs"
-    ],
-    "collectCoverage": false,
     "verbose": true
   },
   "scripts": {
-    "test": "rm -rf ./node_modules/jest-cli/.haste_cache && jest  --no-cache",
+    "test": "jest",
     "start": "react-native start",
     "test:watch": "npm run test -- --watch",
     "test-chrome": "node-debug --preload false --nodejs --harmony jest --runInBand",
@@ -55,7 +24,7 @@
     "immutable": "3.8.1",
     "key-mirror": "1.0.1",
     "react": "15.2.0",
-    "react-native": "0.29.2",
+    "react-native": "0.30.0",
     "react-native-navbar": "1.5.0",
     "react-native-router-flux": "3.31.1",
     "react-native-simple-store": "1.0.1",
@@ -65,18 +34,19 @@
     "redux": "3.5.2",
     "redux-thunk": "2.1.0",
     "regenerator": "0.8.46",
-    "tcomb-form-native": "0.5.3",    
+    "tcomb-form-native": "0.5.3",
     "undefined": "0.1.0",
     "underscore": "1.8.3",
     "validate.js": "0.9.0"
   },
   "devDependencies": {
     "babel-core": "6.9.0",
-    "babel-jest": "12.1.0",
+    "babel-jest": "14.0.0",
     "babel-preset-react-native": "1.8.0",
     "docker": "0.2.14",
     "istanbul": "0.4.3",
-    "jest-cli": "13.2.3",
+    "jest": "14.0.0",
+    "jest-react-native": "14.0.0",
     "react-addons-test-utils": "15.0.2",
     "redux-mock-store": "1.0.3",
     "rnpm-plugin-upgrade": "0.26.0"

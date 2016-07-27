@@ -1,11 +1,11 @@
 /**
  * # profileActions.js
- * 
+ *
  * All the request actions have 3 variations, the request, a success
  * and a failure. They all follow the pattern that the request will
  * set the ```isFetching``` to true and the whether it's successful or
  * fails, setting it back to false.
- * 
+ *
  */
 'use strict';
 
@@ -15,13 +15,11 @@
  * turn mocking off but mock AppAuthToken and Parse
  *
  */
-jest.autoMockOff();
-
 jest.mock('../../../lib/AppAuthToken');
 jest.mock('../../../lib/BackendFactory');
 /**
  * ## Store
- * The mockStore will validate the actions are performed 
+ * The mockStore will validate the actions are performed
  */
 const mockStore = require('../../mocks/Store');
 const actions = require('../profileActions');
@@ -44,13 +42,13 @@ const {
 
 /**
  * ## Tests
- * 
+ *
  * profileActions
  */
 describe('profileActions', () => {
   /**
    * ### simple tests that prove the actions have the specific type
-   */   
+   */
   it('should getProfileRequest', () => {
     expect(actions.getProfileRequest()).toEqual({type: GET_PROFILE_REQUEST});
   });
@@ -68,7 +66,7 @@ describe('profileActions', () => {
                                                      GET_PROFILE_FAILURE,
                                                      payload:json});
   });
-  
+
   it('should profileUpdateRequest', () => {
     expect(actions.profileUpdateRequest()).toEqual({type: PROFILE_UPDATE_REQUEST});
   });
@@ -93,7 +91,7 @@ describe('profileActions', () => {
 
   /**
    * ### async tests
-   * 
+   *
    * the following tests describe the actions that should be
    * dispatched the function is invoked
    *
