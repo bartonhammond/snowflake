@@ -10,6 +10,7 @@
     "preprocessorIgnorePatterns": [
       "node_modules/(?!react-native|tcomb-form-native|apsl-react-native-button)"
     ],
+    "collectCoverage": true,
     "verbose": true
   },
   "scripts": {

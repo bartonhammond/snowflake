@@ -12,7 +12,8 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 
 Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
 
-Using [Redux](https://github.com/reactjs/react-redux) and [Immutable](https://facebook.github.io/immutable-js/), the state of the application is testable with Jest, currently at 80% coverage. 
+Using [Redux](https://github.com/reactjs/react-redux) and [Immutable](https://facebook.github.io/immutable-js/), the state of the application is testable with
+[Jest](https://facebook.github.io/jest/), which includes [Snapshot tests](http://facebook.github.io/jest/blog/2016/07/27/jest-14.html) currently with 85 tests and 90% coverage!!!
 
 Snowflake supports Hot Reloading of its state.  Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has extensive docs and 45+ min of video demonstating implementation.
 
@@ -112,11 +113,11 @@ What more can I say?  It's a fantastic leap forward in providing the ability to 
 This application provides one code base that works on both platforms.  It demonstrates Form interactions,  Navigation, and use of many other components.
 
 ###[Jest](https://facebook.github.io/jest/) 
-*81 Unit tests that cover plain objects and JSX components*
+*85 Unit tests that cover plain objects and JSX components*
 
 The de-facto standard for React/Native testing.  This app demonstrates how to mock **ReactNative, node_modules, classes** and to properly **test JSX components** by programmatically changing the props, and throughly **test the applications data state and the actions** in conjunction with Redux.
 
-![Jest Coverage Analysis](https://cloud.githubusercontent.com/assets/1282364/11598581/6d38ead8-9a88-11e5-956f-c0f09c22b6f0.png)
+![Jest Coverage Analysis](https://cloud.githubusercontent.com/assets/1282364/17187737/19524234-5400-11e6-8350-53e653a4c1f6.png)
 
 ###[Redux](http://redux.js.org/)
 *Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.*
