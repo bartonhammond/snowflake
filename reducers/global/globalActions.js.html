@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>globalActions.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/global/globalActions.js", defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#globalactions.js">globalActions.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#set%20the%20sessiontoken">set the sessionToken</a>
+      </div>
+      <div class="heading h2">
+        <a href="#set%20the%20store">set the store</a>
+      </div>
+      <div class="heading h2">
+        <a href="#set%20state">set state</a>
+      </div>
+      <div class="heading h2">
+        <a href="#getstate">getState</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="globalactions.js">
+  <h1>
+    <a href="#globalactions.js" name="globalactions.js" class="pilcrow">&#182;</a>
+    globalActions.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>Actions that are global in nature</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>The actions supported</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="p">{</span>
+  <span class="nx">SET_SESSION_TOKEN</span><span class="p">,</span>
+  <span class="nx">SET_STORE</span><span class="p">,</span>
+  <span class="nx">SET_STATE</span><span class="p">,</span>
+  <span class="nx">GET_STATE</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="set%20the%20sessiontoken">
+  <h2>
+    <a href="#set%20the%20sessiontoken" name="set%20the%20sessiontoken" class="pilcrow">&#182;</a>
+    set the sessionToken
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">export</span> <span class="kd">function</span> <span class="nx">setSessionToken</span><span class="p">(</span><span class="nx">sessionToken</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">SET_SESSION_TOKEN</span><span class="p">,</span>
+    <span class="nx">payload</span><span class="o">:</span> <span class="nx">sessionToken</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="set%20the%20store">
+  <h2>
+    <a href="#set%20the%20store" name="set%20the%20store" class="pilcrow">&#182;</a>
+    set the store
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>this is the Redux store</p>
+
+<p>this is here to support Hot Loading</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">export</span> <span class="kd">function</span> <span class="nx">setStore</span><span class="p">(</span><span class="nx">store</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">SET_STORE</span><span class="p">,</span>
+    <span class="nx">payload</span><span class="o">:</span> <span class="nx">store</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="set%20state">
+  <h2>
+    <a href="#set%20state" name="set%20state" class="pilcrow">&#182;</a>
+    set state
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">export</span> <span class="kd">function</span> <span class="nx">setState</span><span class="p">(</span><span class="nx">newState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">SET_STATE</span><span class="p">,</span>
+    <span class="nx">payload</span><span class="o">:</span> <span class="nx">newState</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="getstate">
+  <h2>
+    <a href="#getstate" name="getstate" class="pilcrow">&#182;</a>
+    getState
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">export</span> <span class="kd">function</span> <span class="nx">getState</span><span class="p">(</span><span class="nx">toggle</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="nx">GET_STATE</span><span class="p">,</span>
+    <span class="nx">payload</span><span class="o">:</span> <span class="nx">toggle</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

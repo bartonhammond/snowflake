@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ErrorAlert.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/ErrorAlert.js", defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#erroralert.js">ErrorAlert.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#erroralert">ErrorAlert</a>
+      </div>
+      <div class="heading h3">
+        <a href="#checkerro">checkErro</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="erroralert.js">
+  <h1>
+    <a href="#erroralert.js" name="erroralert.js" class="pilcrow">&#182;</a>
+    ErrorAlert.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>This class uses a component which displays the appropriate alert
+depending on the platform</p>
+
+<p>The main purpose here is to determine if there is an error and then
+plucking off the message depending on the shape of the error object.</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="nx">SimpleAlert</span> <span class="nx">from</span> <span class="s1">&#39;react-native-simpledialog-android&#39;</span><span class="p">;</span>
+<span class="kr">import</span>  <span class="nx">_</span> <span class="nx">from</span> <span class="s1">&#39;underscore&#39;</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">ErrorAlert</span> <span class="o">=</span> <span class="kr">class</span> <span class="nx">ErrorAlertClass</span><span class="p">{</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="erroralert">
+  <h2>
+    <a href="#erroralert" name="erroralert" class="pilcrow">&#182;</a>
+    ErrorAlert
+  </h2>
+</div>
+
+
+<p>setup to support testing</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+
+<div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="checkerro">
+  <h3>
+    <a href="#checkerro" name="checkerro" class="pilcrow">&#182;</a>
+    checkErro
+  </h3>
+</div>
+
+
+<p>determine if there is an error and how deep it is.  Take the
+deepest level as the message and display it</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">checkError</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isNull</span><span class="p">(</span><span class="nx">obj</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">error</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">error</span><span class="p">))</span> <span class="p">{</span>
+          <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">error</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">error</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">errorMessage</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span> <span class="p">{</span>
+          <span class="nx">SimpleAlert</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span><span class="nx">errorMessage</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">SimpleAlert</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span><span class="nx">errorMessage</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span><span class="c1">//isNull</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">ErrorAlert</span><span class="p">;</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parse.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//lib/Parse.js", defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#parse.js">Parse.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#async%20support">Async support</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#parse">Parse</a>
+      </div>
+      <div class="heading h3">
+        <a href="#signup">signup</a>
+      </div>
+      <div class="heading h3">
+        <a href="#login">login</a>
+      </div>
+      <div class="heading h3">
+        <a href="#logout">logout</a>
+      </div>
+      <div class="heading h3">
+        <a href="#resetpassword">resetPassword</a>
+      </div>
+      <div class="heading h3">
+        <a href="#getprofile">getProfile</a>
+      </div>
+      <div class="heading h3">
+        <a href="#updateprofile">updateProfile</a>
+      </div>
+      <div class="heading h3">
+        <a href="#_fetch">_fetch</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="parse.js">
+  <h1>
+    <a href="#parse.js" name="parse.js" class="pilcrow">&#182;</a>
+    Parse.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>This class interfaces with Parse.com using the rest api
+see <a href="https://parse.com/docs/rest/guide">https://parse.com/docs/rest/guide</a></p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="async%20support">
+  <h2>
+    <a href="#async%20support" name="async%20support" class="pilcrow">&#182;</a>
+    Async support
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;regenerator/runtime&#39;</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>Config for defaults and underscore for a couple of features</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="nx">CONFIG</span> <span class="nx">from</span> <span class="s1">&#39;./config&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">_</span> <span class="nx">from</span> <span class="s1">&#39;underscore&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Backend</span> <span class="nx">from</span> <span class="s1">&#39;./Backend&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">Parse</span> <span class="kr">extends</span> <span class="nx">Backend</span><span class="p">{</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="parse">
+  <h2>
+    <a href="#parse" name="parse" class="pilcrow">&#182;</a>
+    Parse
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>constructor sets the default keys required by Parse.com
+if a user is logged in, we'll need the sessionToken</p>
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">throws</div>
+    <div class="dox_tag_detail">
+      <span>tokenMissing if token is undefined</span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">constructor</span><span class="p">(</span> <span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">super</span><span class="p">(</span><span class="nx">token</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isNull</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">token</span><span class="p">.</span><span class="nx">sessionToken</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="s1">&#39;TokenMissing&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_sessionToken</span> <span class="o">=</span>
+      <span class="nx">_</span><span class="p">.</span><span class="nx">isNull</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="o">?</span>  <span class="kc">null</span> <span class="o">:</span>  <span class="nx">token</span><span class="p">.</span><span class="nx">sessionToken</span><span class="p">.</span><span class="nx">sessionToken</span><span class="p">;</span>
+    
+    <span class="k">this</span><span class="p">.</span><span class="nx">_applicationId</span> <span class="o">=</span> <span class="nx">CONFIG</span><span class="p">.</span><span class="nx">PARSE</span><span class="p">.</span><span class="nx">APP_ID</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_restAPIKey</span> <span class="o">=</span> <span class="nx">CONFIG</span><span class="p">.</span><span class="nx">PARSE</span><span class="p">.</span><span class="nx">REST_API_KEY</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_masterKey</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">API_BASE_URL</span><span class="o">=</span> <span class="s1">&#39;https://api.parse.com&#39;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="signup">
+  <h3>
+    <a href="#signup" name="signup" class="pilcrow">&#182;</a>
+    signup
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Params</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">data</span>
+      <span>object
+
+{username: "barton", email: "<a href='mailto:<a href='mailto:foo@gmail.com'>foo@gmail.com</a>'><a href='mailto:foo@gmail.com'>foo@gmail.com</a></a>", password: "Passw0rd!"}</span>
+    </div>
+    <div class="dox_tag_title">return
+if</div>
+    <div class="dox_tag_detail">
+      <span>ok, {createdAt: "2015-12-30T15:17:05.379Z",
+  objectId: "5TgExo2wBA", 
+  sessionToken: "r:dEgdUkcs2ydMV9Y9mt8HcBrDM"}
+
+if error, {code: xxx, error: 'message'}</span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">signup</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_fetch</span><span class="p">({</span>
+      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/1/users&#39;</span><span class="p">,</span>
+      <span class="nx">body</span><span class="o">:</span> <span class="nx">data</span>
+    <span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>       
+          <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span> <span class="o">||</span> <span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">201</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">throw</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">})</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">throw</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="p">});</span>
+
+  <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="login">
+  <h3>
+    <a href="#login" name="login" class="pilcrow">&#182;</a>
+    login
+  </h3>
+</div>
+
+
+<p>encode the data and and call _fetch</p>
+  </div>
+  <div class="body">
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Params</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">data
+
+</span>
+      <span>{username: "barton", password: "Passw0rd!"}</span>
+    </div>
+    <div class="dox_tag_title">returns
+
+createdAt:</div>
+    <div class="dox_tag_detail">
+      <span>"2015-12-30T15:29:36.611Z"
+email: "<a href='mailto:<a href='mailto:barton@foo.com'>barton@foo.com</a>'><a href='mailto:barton@foo.com'>barton@foo.com</a></a>"
+objectId: "Z4yvP19OeL"
+sessionToken: "r:Kt9wXIBWD0dNijNIq2u5rRllW"
+updatedAt: "2015-12-30T16:08:50.419Z"
+username: "barton"</span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">login</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">formBody</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">property</span> <span class="k">in</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">encodedKey</span> <span class="o">=</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">property</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">encodedValue</span> <span class="o">=</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="nx">property</span><span class="p">]);</span>
+      <span class="nx">formBody</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">encodedKey</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">+</span> <span class="nx">encodedValue</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">formBody</span> <span class="o">=</span> <span class="nx">formBody</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">&quot;&amp;&quot;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_fetch</span><span class="p">({</span>
+      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/1/login?&#39;</span> <span class="o">+</span> <span class="nx">formBody</span>
+    <span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span> <span class="o">||</span> <span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">201</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">throw</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">})</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">throw</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="logout">
+  <h3>
+    <a href="#logout" name="logout" class="pilcrow">&#182;</a>
+    logout
+  </h3>
+</div>
+
+
+<p>prepare the request and call _fetch</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">logout</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_fetch</span><span class="p">({</span>
+      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/1/logout&#39;</span><span class="p">,</span>
+      <span class="nx">body</span><span class="o">:</span> <span class="p">{}</span>
+    <span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>     
+          <span class="k">if</span> <span class="p">((</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span> <span class="o">||</span> <span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">201</span><span class="p">)</span>
+              <span class="o">||</span> <span class="c1">//invalid session token</span>
+              <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">400</span> <span class="o">&amp;&amp;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">code</span> <span class="o">===</span> <span class="mi">209</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="p">{};</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">throw</span><span class="p">({</span><span class="nx">code</span><span class="o">:</span> <span class="mi">404</span><span class="p">,</span> <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;unknown error from Parse.com&#39;</span><span class="p">});</span>
+          <span class="p">}</span>
+        <span class="p">})</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">throw</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="p">});</span>
+
+  <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="resetpassword">
+  <h3>
+    <a href="#resetpassword" name="resetpassword" class="pilcrow">&#182;</a>
+    resetPassword
+  </h3>
+</div>
+
+
+<p>the data is already in a JSON format, so call _fetch</p>
+  </div>
+  <div class="body">
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Params</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">data</span>
+      <span>{email: "<a href='mailto:<a href='mailto:barton@foo.com'>barton@foo.com</a>'><a href='mailto:barton@foo.com'>barton@foo.com</a></a>"}</span>
+    </div>
+    <div class="dox_tag_title">Returns</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name"></span>
+      <span>empty object
+
+if error:  {code: xxx, error: 'message'}</span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">resetPassword</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_fetch</span><span class="p">({</span>
+      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/1/requestPasswordReset&#39;</span><span class="p">,</span>
+      <span class="nx">body</span><span class="o">:</span> <span class="nx">data</span>
+    <span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span> <span class="o">||</span> <span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">201</span><span class="p">))</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="p">{};</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>               
+            <span class="k">throw</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+          <span class="p">})</span>
+        <span class="p">}</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">throw</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">}</span>  
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="getprofile">
+  <h3>
+    <a href="#getprofile" name="getprofile" class="pilcrow">&#182;</a>
+    getProfile
+  </h3>
+</div>
+
+
+<p>Using the sessionToken, we'll get everything about
+the current user.</p>
+  </div>
+  <div class="body">
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">returns
+
+if</div>
+    <div class="dox_tag_detail">
+      <span>good:
+{createdAt: "2015-12-30T15:29:36.611Z"
+ email: "<a href='mailto:<a href='mailto:barton@acclivyx.com'>barton@acclivyx.com</a>'><a href='mailto:barton@acclivyx.com'>barton@acclivyx.com</a></a>"
+ objectId: "Z4yvP19OeL"
+ sessionToken: "r:uFeYONgIsZMPyxOWVJ6VqJGqv"
+ updatedAt: "2015-12-30T15:29:36.611Z"
+ username: "barton"}
+
+if error, {code: xxx, error: 'message'}</span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">getProfile</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_fetch</span><span class="p">({</span>
+      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/1/users/me&#39;</span>
+    <span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">((</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span> <span class="o">||</span> <span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">201</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">throw</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+          <span class="p">}</span>
+        <span class="p">})</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">throw</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="updateprofile">
+  <h3>
+    <a href="#updateprofile" name="updateprofile" class="pilcrow">&#182;</a>
+    updateProfile
+  </h3>
+</div>
+
+
+<p>for this user, update their record
+the data is already in JSON format</p>
+  </div>
+  <div class="body">
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Params</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">userId</span>
+      <span>_id of Parse.com</span>
+    </div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">data</span>
+      <span>object:
+{username: "barton", email: "<a href='mailto:<a href='mailto:barton@foo.com'>barton@foo.com</a>'><a href='mailto:barton@foo.com'>barton@foo.com</a></a>"}</span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">updateProfile</span><span class="p">(</span><span class="nx">userId</span><span class="p">,</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_fetch</span><span class="p">({</span>
+      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;PUT&#39;</span><span class="p">,</span>
+      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/1/users/&#39;</span> <span class="o">+</span> <span class="nx">userId</span><span class="p">,</span>
+      <span class="nx">body</span><span class="o">:</span> <span class="nx">data</span>
+    <span class="p">})</span>
+      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span> <span class="o">||</span> <span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">201</span><span class="p">))</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="p">{};</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>     
+            <span class="k">throw</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+          <span class="p">})</span>
+        <span class="p">}</span>
+      <span class="p">})</span>
+      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">throw</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+      <span class="p">});</span>
+
+  <span class="p">}</span>  
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="_fetch">
+  <h3>
+    <a href="#_fetch" name="_fetch" class="pilcrow">&#182;</a>
+    _fetch
+  </h3>
+</div>
+
+
+<p>A generic function that prepares the request to Parse.com</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">_fetch</span><span class="p">(</span><span class="nx">opts</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">opts</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+      <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+      <span class="nx">url</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nx">body</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nx">callback</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">},</span> <span class="nx">opts</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">reqOpts</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">method</span><span class="o">:</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">method</span><span class="p">,</span>
+      <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;X-Parse-Application-Id&#39;</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_applicationId</span><span class="p">,</span>
+        <span class="s1">&#39;X-Parse-REST-API-Key&#39;</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_restAPIKey</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_sessionToken</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">reqOpts</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;X-Parse-Session-Token&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_sessionToken</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_masterKey</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">reqOpts</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;X-Parse-Master-Key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">masterKey</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">opts</span><span class="p">.</span><span class="nx">method</span> <span class="o">===</span> <span class="s1">&#39;POST&#39;</span> <span class="o">||</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">method</span> <span class="o">===</span> <span class="s1">&#39;PUT&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">reqOpts</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;Accept&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span><span class="p">;</span>
+      <span class="nx">reqOpts</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/json&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">opts</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">reqOpts</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">opts</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">await</span> <span class="nx">fetch</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">API_BASE_URL</span> <span class="o">+</span> <span class="nx">opts</span><span class="p">.</span><span class="nx">url</span><span class="p">,</span> <span class="nx">reqOpts</span><span class="p">);</span>
+
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

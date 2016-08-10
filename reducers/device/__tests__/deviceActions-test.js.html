@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>deviceActions-test.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../../doc-style.css" />
+  <script src="../../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/device/__tests__/deviceActions-test.js", defaultSidebar = true;
+  </script>
+  <script src="../../../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#deviceactions-test.js">deviceActions-test.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#mocks">Mocks</a>
+      </div>
+      <div class="heading h2">
+        <a href="#class%20under%20test">Class under test</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#tests">Tests</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="deviceactions-test.js">
+  <h1>
+    <a href="#deviceactions-test.js" name="deviceactions-test.js" class="pilcrow">&#182;</a>
+    deviceActions-test.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>This test is for deviceActions</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="mocks">
+  <h2>
+    <a href="#mocks" name="mocks" class="pilcrow">&#182;</a>
+    Mocks
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>We don't want to use the devices storage, nor actually call
+Parse.com</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;../../../lib/AppAuthToken&#39;</span><span class="p">);</span>
+<span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;../../../lib/BackendFactory&#39;</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="class%20under%20test">
+  <h2>
+    <a href="#class%20under%20test" name="class%20under%20test" class="pilcrow">&#182;</a>
+    Class under test
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">actions</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../deviceActions&#39;</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>actions under test</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="p">{</span>
+  <span class="nx">SET_PLATFORM</span><span class="p">,</span>
+  <span class="nx">SET_VERSION</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="tests">
+  <h2>
+    <a href="#tests" name="tests" class="pilcrow">&#182;</a>
+    Tests
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>deviceActions</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;deviceActions&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should setPlatform&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">platform</span> <span class="o">=</span> <span class="s1">&#39;ios&#39;</span><span class="p">;</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">setPlatform</span><span class="p">(</span><span class="nx">platform</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="nx">SET_PLATFORM</span><span class="p">,</span>
+      <span class="nx">payload</span><span class="o">:</span> <span class="nx">platform</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should setVersion&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">version</span> <span class="o">=</span> <span class="s1">&#39;0.0.8&#39;</span><span class="p">;</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">setVersion</span><span class="p">(</span><span class="nx">version</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span>
+      <span class="nx">type</span><span class="o">:</span> <span class="nx">SET_VERSION</span><span class="p">,</span>
+      <span class="nx">payload</span><span class="o">:</span> <span class="nx">version</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

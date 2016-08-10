@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>authReducer.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/auth/authReducer.js", defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#authreducer.js">authReducer.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#auth%20actions">Auth actions</a>
+      </div>
+      <div class="heading h2">
+        <a href="#authreducer%20function">authReducer function</a>
+      </div>
+      <div class="heading h3">
+        <a href="#requests%20start">Requests start</a>
+      </div>
+      <div class="heading h3">
+        <a href="#logout%20state">Logout state</a>
+      </div>
+      <div class="heading h3">
+        <a href="#loggin%20in%20state">Loggin in state</a>
+      </div>
+      <div class="heading h3">
+        <a href="#auth%20form%20field%20change">Auth form field change</a>
+      </div>
+      <div class="heading h3">
+        <a href="#requests%20end%2C%20good%20or%20bad">Requests end, good or bad</a>
+      </div>
+      <div class="heading h3">
+        <a href="#access%20to%20parse.com%20denied%20or%20failed">Access to Parse.com denied or failed</a>
+      </div>
+      <div class="heading h3">
+        <a href="#hot%20loading%20support">Hot Loading support</a>
+      </div>
+      <div class="heading h2">
+        <a href="#default">Default</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="authreducer.js">
+  <h1>
+    <a href="#authreducer.js" name="authreducer.js" class="pilcrow">&#182;</a>
+    authReducer.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>The reducer for all the actions from the various log states</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+
+<p>The InitialState for auth
+fieldValidation for validating the fields
+formValidation for setting the form's valid flag</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="nx">InitialState</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./authInitialState&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">fieldValidation</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/fieldValidation&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">formValidation</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./authFormValidation&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="auth%20actions">
+  <h2>
+    <a href="#auth%20actions" name="auth%20actions" class="pilcrow">&#182;</a>
+    Auth actions
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="p">{</span>
+  <span class="nx">SESSION_TOKEN_REQUEST</span><span class="p">,</span>
+  <span class="nx">SESSION_TOKEN_SUCCESS</span><span class="p">,</span>
+  <span class="nx">SESSION_TOKEN_FAILURE</span><span class="p">,</span>
+  
+  <span class="nx">DELETE_TOKEN_REQUEST</span><span class="p">,</span>
+  <span class="nx">DELETE_TOKEN_SUCCESS</span><span class="p">,</span>
+
+  <span class="nx">LOGOUT</span><span class="p">,</span>
+  <span class="nx">REGISTER</span><span class="p">,</span>
+  <span class="nx">LOGIN</span><span class="p">,</span>
+  <span class="nx">FORGOT_PASSWORD</span><span class="p">,</span>
+
+  <span class="nx">LOGOUT_REQUEST</span><span class="p">,</span>
+  <span class="nx">LOGOUT_SUCCESS</span><span class="p">,</span>
+  <span class="nx">LOGOUT_FAILURE</span><span class="p">,</span>
+
+  <span class="nx">LOGIN_REQUEST</span><span class="p">,</span>
+  <span class="nx">LOGIN_SUCCESS</span><span class="p">,</span>
+  <span class="nx">LOGIN_FAILURE</span><span class="p">,</span>
+  
+  <span class="nx">ON_AUTH_FORM_FIELD_CHANGE</span><span class="p">,</span>
+  <span class="nx">SIGNUP_REQUEST</span><span class="p">,</span>
+  <span class="nx">SIGNUP_SUCCESS</span><span class="p">,</span>
+  <span class="nx">SIGNUP_FAILURE</span><span class="p">,</span>
+
+  <span class="nx">RESET_PASSWORD_REQUEST</span><span class="p">,</span>
+  <span class="nx">RESET_PASSWORD_SUCCESS</span><span class="p">,</span>
+  <span class="nx">RESET_PASSWORD_FAILURE</span><span class="p">,</span>
+
+  <span class="nx">SET_STATE</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InitialState</span><span class="p">;</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="authreducer%20function">
+  <h2>
+    <a href="#authreducer%20function" name="authreducer%20function" class="pilcrow">&#182;</a>
+    authReducer function
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Params</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">state</span>
+      <span class="dox_type">Object</span>
+      <span><ul>
+<li>initialState </li>
+</ul></span>
+    </div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">action</span>
+      <span class="dox_type">Object</span>
+      <span><ul>
+<li>type and payload</li>
+</ul></span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">authReducer</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">initialState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">state</span> <span class="k">instanceof</span> <span class="nx">InitialState</span><span class="p">))</span> <span class="k">return</span> <span class="nx">initialState</span><span class="p">.</span><span class="nx">mergeDeep</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span>
+
+  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="requests%20start">
+  <h3>
+    <a href="#requests%20start" name="requests%20start" class="pilcrow">&#182;</a>
+    Requests start
+  </h3>
+</div>
+
+
+<p>set the form to fetching and clear any errors</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">SESSION_TOKEN_REQUEST</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">SIGNUP_REQUEST</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">LOGOUT_REQUEST</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">LOGIN_REQUEST</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">RESET_PASSWORD_REQUEST</span><span class="o">:</span>
+    <span class="kd">let</span> <span class="nx">nextState</span> <span class="o">=</span>  <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;isFetching&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">nextState</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="logout%20state">
+  <h3>
+    <a href="#logout%20state" name="logout%20state" class="pilcrow">&#182;</a>
+    Logout state
+  </h3>
+</div>
+
+
+<p>The user has successfully access Parse.com
+Clear the form's error and all the fields</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">LOGOUT</span><span class="o">:</span>
+    <span class="k">return</span> <span class="nx">formValidation</span><span class="p">(</span>
+      <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;state&#39;</span><span class="p">],</span> <span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;username&#39;</span><span class="p">],</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;email&#39;</span><span class="p">],</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;password&#39;</span><span class="p">],</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;passwordAgain&#39;</span><span class="p">],</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="p">);</span>
+    
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="loggin%20in%20state">
+  <h3>
+    <a href="#loggin%20in%20state" name="loggin%20in%20state" class="pilcrow">&#182;</a>
+    Loggin in state
+  </h3>
+</div>
+
+
+<p>The user isn't logged in, and needs to 
+login, register or reset password</p>
+  </div>
+  <div class="body"><p>Set the form state and clear any errors</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">LOGIN</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">REGISTER</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">FORGOT_PASSWORD</span><span class="o">:</span>
+    <span class="k">return</span> <span class="nx">formValidation</span><span class="p">(</span>
+      <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;state&#39;</span><span class="p">],</span> <span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">)</span>
+    <span class="p">);</span>
+    
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="auth%20form%20field%20change">
+  <h3>
+    <a href="#auth%20form%20field%20change" name="auth%20form%20field%20change" class="pilcrow">&#182;</a>
+    Auth form field change
+  </h3>
+</div>
+
+  </div>
+  <div class="body"><p>Set the form's field with the value
+Clear the forms error
+Pass the fieldValidation results to the
+the formValidation</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">ON_AUTH_FORM_FIELD_CHANGE</span><span class="o">:</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span><span class="nx">field</span><span class="p">,</span> <span class="nx">value</span><span class="p">}</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">nextState</span> <span class="o">=</span>  <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="nx">field</span><span class="p">],</span> <span class="nx">value</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">finalState</span> <span class="o">=</span> <span class="nx">formValidation</span><span class="p">(</span>
+      <span class="nx">fieldValidation</span><span class="p">(</span> <span class="nx">nextState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span>
+      <span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">finalState</span><span class="p">;</span>
+  <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="requests%20end%2C%20good%20or%20bad">
+  <h3>
+    <a href="#requests%20end%2C%20good%20or%20bad" name="requests%20end%2C%20good%20or%20bad" class="pilcrow">&#182;</a>
+    Requests end, good or bad
+  </h3>
+</div>
+
+
+<p>Set the fetching flag so the forms will be enabled</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">SESSION_TOKEN_SUCCESS</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">SESSION_TOKEN_FAILURE</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">SIGNUP_SUCCESS</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">LOGIN_SUCCESS</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">LOGOUT_SUCCESS</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">RESET_PASSWORD_SUCCESS</span><span class="o">:</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;isFetching&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="access%20to%20parse.com%20denied%20or%20failed">
+  <h3>
+    <a href="#access%20to%20parse.com%20denied%20or%20failed" name="access%20to%20parse.com%20denied%20or%20failed" class="pilcrow">&#182;</a>
+    Access to Parse.com denied or failed
+  </h3>
+</div>
+
+
+<p>The fetching is done, but save the error
+for display to the user</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">SIGNUP_FAILURE</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">LOGOUT_FAILURE</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">LOGIN_FAILURE</span><span class="o">:</span>
+  <span class="k">case</span> <span class="nx">RESET_PASSWORD_FAILURE</span><span class="o">:</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;isFetching&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;error&#39;</span><span class="p">],</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="hot%20loading%20support">
+  <h3>
+    <a href="#hot%20loading%20support" name="hot%20loading%20support" class="pilcrow">&#182;</a>
+    Hot Loading support
+  </h3>
+</div>
+
+  </div>
+  <div class="body"><p>Set all the field values from the payload</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">SET_STATE</span><span class="o">:</span>
+    <span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">).</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">;</span>
+    
+    <span class="kd">var</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;state&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">state</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;disabled&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">disabled</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span> <span class="nx">form</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">isValid</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isFetching&#39;</span><span class="p">],</span> <span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;username&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;usernameHasError&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;email&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;emailHasError&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;password&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">password</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;passwordHasError&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordHasError</span><span class="p">)</span>      
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;passwordAgain&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgain</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;passwordAgainHasError&#39;</span><span class="p">],</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgainHasError</span><span class="p">);</span>
+    
+    <span class="k">return</span> <span class="nx">next</span><span class="p">;</span>
+  
+    <span class="k">case</span> <span class="nx">DELETE_TOKEN_REQUEST</span><span class="o">:</span>
+    <span class="k">case</span> <span class="nx">DELETE_TOKEN_SUCCESS</span><span class="o">:</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-12" id="section-12">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>no state change, just an ability to track action requests...</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+        <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+        
+  <span class="p">}</span>    
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="default">
+  <h2>
+    <a href="#default" name="default" class="pilcrow">&#182;</a>
+    Default
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

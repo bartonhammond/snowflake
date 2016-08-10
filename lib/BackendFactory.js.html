@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BackendFactory.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//lib/BackendFactory.js", defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#parse.js">Parse.js</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="parse.js">
+  <h1>
+    <a href="#parse.js" name="parse.js" class="pilcrow">&#182;</a>
+    Parse.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>This class interfaces with Parse.com using the rest api
+see <a href="https://parse.com/docs/rest/guide">https://parse.com/docs/rest/guide</a></p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="nx">CONFIG</span> <span class="nx">from</span> <span class="s1">&#39;./config&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Parse</span> <span class="nx">from</span> <span class="s1">&#39;./Parse&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Hapi</span> <span class="nx">from</span> <span class="s1">&#39;./Hapi&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">BackendFactory</span><span class="p">(</span><span class="nx">token</span> <span class="o">=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">backend</span><span class="p">.</span><span class="nx">parse</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Parse</span><span class="p">(</span><span class="nx">token</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">CONFIG</span><span class="p">.</span><span class="nx">backend</span><span class="p">.</span><span class="nx">hapiLocal</span> <span class="o">||</span> <span class="nx">CONFIG</span><span class="p">.</span><span class="nx">backend</span><span class="p">.</span><span class="nx">hapiRemote</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Hapi</span><span class="p">(</span><span class="nx">token</span><span class="p">);</span>
+
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

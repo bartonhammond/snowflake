@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Header-test.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/__tests__/Header-test.js", defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#header-test.js">Header-test.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#test">Test</a>
+      </div>
+      <div class="heading h3">
+        <a href="#it%20should%20be%20display%20empty%20text%20when%20not%20fetching">it should be display empty text when not fetching</a>
+      </div>
+      <div class="heading h3">
+        <a href="#it%20should%20be%20display%20spinner%20when%20fetching">it should be display spinner when fetching</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="header-test.js">
+  <h1>
+    <a href="#header-test.js" name="header-test.js" class="pilcrow">&#182;</a>
+    Header-test.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>This class tests that the Header component displays correctly</p>
+
+<p><em>Note:</em> if you want to understand the structures here, add a
+<code>console.log</code> and then <code>npm test</code>.</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+<span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;ActivityIndicator&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="s1">&#39;ActivityIndicator&#39;</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="nx">Header</span> <span class="nx">from</span> <span class="s1">&#39;../Header&#39;</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="nx">renderer</span> <span class="nx">from</span> <span class="s1">&#39;react/lib/ReactTestRenderer&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="test">
+  <h2>
+    <a href="#test" name="test" class="pilcrow">&#182;</a>
+    Test
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Header&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="it%20should%20be%20display%20empty%20text%20when%20not%20fetching">
+  <h3>
+    <a href="#it%20should%20be%20display%20empty%20text%20when%20not%20fetching" name="it%20should%20be%20display%20empty%20text%20when%20not%20fetching" class="pilcrow">&#182;</a>
+    it should be display empty text when not fetching
+  </h3>
+</div>
+
+
+<p>render the header when not fetching</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should be display empty text when not fetching&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">};</span>
+    <span class="kr">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">renderer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Header</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">();</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">tree</span><span class="p">).</span><span class="nx">toMatchSnapshot</span><span class="p">();</span>
+
+  <span class="p">});</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="it%20should%20be%20display%20spinner%20when%20fetching">
+  <h3>
+    <a href="#it%20should%20be%20display%20spinner%20when%20fetching" name="it%20should%20be%20display%20spinner%20when%20fetching" class="pilcrow">&#182;</a>
+    it should be display spinner when fetching
+  </h3>
+</div>
+
+
+<p>When fetching, the GiftedSpinner should display</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should be display spinner when fetching&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">};</span>
+
+    <span class="kr">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">renderer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Header</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">();</span>
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">tree</span><span class="p">).</span><span class="nx">toMatchSnapshot</span><span class="p">();</span>
+  <span class="p">});</span>
+
+<span class="p">});</span><span class="c1">//describe Header</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>authInitialState.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/auth/authInitialState.js", defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#authinitialstate.js">authInitialState.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#import">Import</a>
+      </div>
+      <div class="heading h2">
+        <a href="#form">Form</a>
+      </div>
+      <div class="heading h2">
+        <a href="#initialstate">InitialState</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="authinitialstate.js">
+  <h1>
+    <a href="#authinitialstate.js" name="authinitialstate.js" class="pilcrow">&#182;</a>
+    authInitialState.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>This class is a Immutable object
+Working <em>successfully</em> with Redux, requires
+state that is immutable.
+In my opinion, that can not be by convention
+By using Immutable, it's enforced.  Just saying....</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="import">
+  <h2>
+    <a href="#import" name="import" class="pilcrow">&#182;</a>
+    Import
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="p">{</span><span class="nx">Record</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;immutable&#39;</span><span class="p">);</span>
+<span class="kr">const</span> <span class="p">{</span>
+  <span class="nx">REGISTER</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="form">
+  <h2>
+    <a href="#form" name="form" class="pilcrow">&#182;</a>
+    Form
+  </h2>
+</div>
+
+
+<p>This Record contains the state of the form and the
+fields it contains.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="nx">Form</span> <span class="o">=</span> <span class="nx">Record</span><span class="p">({</span>
+  <span class="nx">state</span><span class="o">:</span> <span class="nx">REGISTER</span><span class="p">,</span>
+  <span class="nx">disabled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">error</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">isValid</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nx">fields</span><span class="o">:</span> <span class="k">new</span> <span class="p">(</span><span class="nx">Record</span><span class="p">({</span>
+    <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">usernameHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">emailHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">passwordHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">passwordAgain</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="nx">passwordAgainHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">false</span>
+  <span class="p">}))</span>
+<span class="p">});</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="initialstate">
+  <h2>
+    <a href="#initialstate" name="initialstate" class="pilcrow">&#182;</a>
+    InitialState
+  </h2>
+</div>
+
+
+<p>The form is set </p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">InitialState</span> <span class="o">=</span> <span class="nx">Record</span><span class="p">({</span>
+  <span class="nx">form</span><span class="o">:</span> <span class="k">new</span> <span class="nx">Form</span>
+<span class="p">});</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">InitialState</span><span class="p">;</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

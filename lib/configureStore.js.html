@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>configureStore.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//lib/configureStore.js", defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#configurestore.js">configureStore.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#reducer">Reducer</a>
+      </div>
+      <div class="heading h2">
+        <a href="#creatstorewithmiddleware">creatStoreWithMiddleware</a>
+      </div>
+      <div class="heading h2">
+        <a href="#configurestore">configureStore</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="configurestore.js">
+  <h1>
+    <a href="#configurestore.js" name="configurestore.js" class="pilcrow">&#182;</a>
+    configureStore.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>A Redux boilerplate setup</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>redux functions</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">createStore</span><span class="p">,</span> <span class="nx">applyMiddleware</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">thunk</span> <span class="nx">from</span> <span class="s1">&#39;redux-thunk&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="reducer">
+  <h2>
+    <a href="#reducer" name="reducer" class="pilcrow">&#182;</a>
+    Reducer
+  </h2>
+</div>
+
+
+<p>The reducer contains the 4 reducers from 
+device, global, auth, profile</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="nx">reducer</span> <span class="nx">from</span> <span class="s1">&#39;../reducers&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="creatstorewithmiddleware">
+  <h2>
+    <a href="#creatstorewithmiddleware" name="creatstorewithmiddleware" class="pilcrow">&#182;</a>
+    creatStoreWithMiddleware
+  </h2>
+</div>
+
+
+<p>Like the name...</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="nx">createStoreWithMiddleware</span> <span class="o">=</span> <span class="nx">applyMiddleware</span><span class="p">(</span>
+  <span class="nx">thunk</span>
+<span class="p">)(</span><span class="nx">createStore</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="configurestore">
+  <h2>
+    <a href="#configurestore" name="configurestore" class="pilcrow">&#182;</a>
+    configureStore
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Params</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">the</span>
+      <span class="dox_type">Object</span>
+      <span>state with for keys:
+device, global, auth, profile</span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">configureStore</span><span class="p">(</span><span class="nx">initialState</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">createStoreWithMiddleware</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span> <span class="nx">initialState</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

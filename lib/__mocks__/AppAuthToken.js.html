@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AppAuthToken.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//lib/__mocks__/AppAuthToken.js", defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#appauthtoken.js">AppAuthToken.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#async">Async</a>
+      </div>
+      <div class="heading h2">
+        <a href="#appauthtoken">AppAuthToken</a>
+      </div>
+      <div class="heading h3">
+        <a href="#getsessiontoken">getSessionToken</a>
+      </div>
+      <div class="heading h3">
+        <a href="#storesessiontoken">storeSessionToken</a>
+      </div>
+      <div class="heading h3">
+        <a href="#deletesessiontoken">deleteSessionToken</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="appauthtoken.js">
+  <h1>
+    <a href="#appauthtoken.js" name="appauthtoken.js" class="pilcrow">&#182;</a>
+    AppAuthToken.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>Simple mock of lib/AppAuthToken.js</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="async">
+  <h2>
+    <a href="#async" name="async" class="pilcrow">&#182;</a>
+    Async
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>Need to still treat as async</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;regenerator/runtime&#39;</span><span class="p">);</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">AppAuthToken</span> <span class="p">{</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="appauthtoken">
+  <h2>
+    <a href="#appauthtoken" name="appauthtoken" class="pilcrow">&#182;</a>
+    AppAuthToken
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+<div class="pilwrap" id="getsessiontoken">
+  <h3>
+    <a href="#getsessiontoken" name="getsessiontoken" class="pilcrow">&#182;</a>
+    getSessionToken
+  </h3>
+</div>
+
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Returns</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name"></span>
+      <span class="dox_type">Object</span>
+      <span>sessionToken</span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">getSessionToken</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">await</span> <span class="p">{</span>
+      <span class="nx">sessionToken</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">sessionToken</span><span class="o">:</span> <span class="s1">&#39;token&#39;</span>
+      <span class="p">}</span>
+    <span class="p">};</span>
+  <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="storesessiontoken">
+  <h3>
+    <a href="#storesessiontoken" name="storesessiontoken" class="pilcrow">&#182;</a>
+    storeSessionToken
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Returns</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name"></span>
+      <span class="dox_type">Object</span>
+      <span>empty</span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">storeSessionToken</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">await</span> <span class="p">{};</span>
+  <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="deletesessiontoken">
+  <h3>
+    <a href="#deletesessiontoken" name="deletesessiontoken" class="pilcrow">&#182;</a>
+    deleteSessionToken
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">async</span> <span class="nx">deleteSessionToken</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">await</span> <span class="p">{};</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

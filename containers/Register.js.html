@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//containers/Register.js", defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#redux%20boilerplate">Redux boilerplate</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs">
+          <h1>Register.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>Register.js</p>
+  </div>
+  <div class="body"><p>Allow user to register </p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>Redux </p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">bindActionCreators</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-redux&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>The actions we need</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">authActions</span> <span class="nx">from</span> <span class="s1">&#39;../reducers/auth/authActions&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>Immutable</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Map</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;immutable&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>LoginRender</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="nx">LoginRender</span> <span class="nx">from</span> <span class="s1">&#39;../components/LoginRender&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>The necessary React </p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="p">{</span>
+  <span class="nx">LOGIN</span><span class="p">,</span> 
+  <span class="nx">REGISTER</span><span class="p">,</span>
+  <span class="nx">FORGOT_PASSWORD</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="redux%20boilerplate">
+  <h2>
+    <a href="#redux%20boilerplate" name="redux%20boilerplate" class="pilcrow">&#182;</a>
+    Redux boilerplate
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="nx">authActions</span>
+<span class="p">];</span>
+
+<span class="kd">function</span> <span class="nx">mapStateToProps</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+      <span class="p">...</span><span class="nx">state</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">mapDispatchToProps</span><span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">creators</span> <span class="o">=</span> <span class="nx">Map</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">merge</span><span class="p">(...</span><span class="nx">actions</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">value</span> <span class="o">=&gt;</span> <span class="k">typeof</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">toObject</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">actions</span><span class="o">:</span> <span class="nx">bindActionCreators</span><span class="p">(</span><span class="nx">creators</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">),</span>
+    <span class="nx">dispatch</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">buttonPressHandler</span><span class="p">(</span><span class="nx">signup</span><span class="p">,</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">signup</span> <span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">Register</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">let</span> <span class="nx">loginButtonText</span> <span class="o">=</span> <span class="s1">&#39;Register&#39;</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">onButtonPress</span> <span class="o">=</span> <span class="nx">buttonPressHandler</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span>
+                  <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">signup</span><span class="p">,</span>
+                  <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span>
+                  <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
+                  <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">password</span>
+                                   <span class="p">);</span>
+    
+
+
+
+    <span class="k">return</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">LoginRender</span> 
+          <span class="nx">formType</span><span class="o">=</span><span class="p">{</span> <span class="nx">REGISTER</span> <span class="p">}</span>
+          <span class="nx">loginButtonText</span><span class="o">=</span><span class="p">{</span> <span class="nx">loginButtonText</span> <span class="p">}</span>
+          <span class="nx">onButtonPress</span><span class="o">=</span><span class="p">{</span> <span class="nx">onButtonPress</span> <span class="p">}</span>       
+          <span class="nx">displayPasswordCheckbox</span> <span class="o">=</span><span class="p">{</span> <span class="kc">true</span> <span class="p">}</span>
+          <span class="nx">leftMessageType</span><span class="o">=</span><span class="p">{</span> <span class="nx">FORGOT_PASSWORD</span> <span class="p">}</span>
+          <span class="nx">rightMessageType</span><span class="o">=</span><span class="p">{</span> <span class="nx">LOGIN</span> <span class="p">}</span>
+          <span class="nx">auth</span><span class="o">=</span><span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span> <span class="p">}</span>
+          <span class="nx">global</span><span class="o">=</span><span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">global</span> <span class="p">}</span>
+      <span class="o">/&gt;</span>
+
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Register</span><span class="p">);</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

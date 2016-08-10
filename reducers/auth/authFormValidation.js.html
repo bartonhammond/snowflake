@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>authFormValidation.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../doc-style.css" />
+  <script src="../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/auth/authFormValidation.js", defaultSidebar = true;
+  </script>
+  <script src="../../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#authformvalidation.js">authFormValidation.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#formvalidation">formValidation</a>
+      </div>
+      <div class="heading h3">
+        <a href="#logout%20has%20no%20fields%2C%20so%20always%20valid">Logout has no fields, so always valid</a>
+      </div>
+      <div class="heading h3">
+        <a href="#registration%20has%204%20fields">Registration has 4 fields</a>
+      </div>
+      <div class="heading h3">
+        <a href="#login%20has%202%20fields">Login has 2 fields</a>
+      </div>
+      <div class="heading h3">
+        <a href="#reset%20password%20has%201%20field">Reset password has 1 field</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="authformvalidation.js">
+  <h1>
+    <a href="#authformvalidation.js" name="authformvalidation.js" class="pilcrow">&#182;</a>
+    authFormValidation.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>This class determines only if the form is valid 
+so that the form button can be enabled.
+if all the fields on the form are without error,
+the form is considered valid</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+
+<p>the actions being addressed</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="p">{</span>
+  <span class="nx">LOGOUT</span><span class="p">,</span>
+  <span class="nx">REGISTER</span><span class="p">,</span>
+  <span class="nx">LOGIN</span><span class="p">,</span>
+  <span class="nx">FORGOT_PASSWORD</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="formvalidation">
+  <h2>
+    <a href="#formvalidation" name="formvalidation" class="pilcrow">&#182;</a>
+    formValidation
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+  <div class="details">
+    <div class="dox_tag_title">Params</div>
+    <div class="dox_tag_detail">
+      <span class="dox_tag_name">state</span>
+      <span class="dox_type">Object</span>
+      <span><ul>
+<li>the Redux state object</li>
+</ul></span>
+    </div>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">formValidation</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="k">switch</span><span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="logout%20has%20no%20fields%2C%20so%20always%20valid">
+  <h3>
+    <a href="#logout%20has%20no%20fields%2C%20so%20always%20valid" name="logout%20has%20no%20fields%2C%20so%20always%20valid" class="pilcrow">&#182;</a>
+    Logout has no fields, so always valid
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">LOGOUT</span><span class="o">:</span>
+    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="kc">true</span><span class="p">);</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="registration%20has%204%20fields">
+  <h3>
+    <a href="#registration%20has%204%20fields" name="registration%20has%204%20fields" class="pilcrow">&#182;</a>
+    Registration has 4 fields
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">REGISTER</span><span class="o">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">password</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgain</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordHasError</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgainHasError</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="login%20has%202%20fields">
+  <h3>
+    <a href="#login%20has%202%20fields" name="login%20has%202%20fields" class="pilcrow">&#182;</a>
+    Login has 2 fields
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">LOGIN</span><span class="o">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">password</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordHasError</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="reset%20password%20has%201%20field">
+  <h3>
+    <a href="#reset%20password%20has%201%20field" name="reset%20password%20has%201%20field" class="pilcrow">&#182;</a>
+    Reset password has 1 field
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">case</span> <span class="nx">FORGOT_PASSWORD</span><span class="o">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span>
+        <span class="o">&amp;&amp;</span>
+        <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">){</span> 
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="kc">false</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+  <span class="p">}</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>Default, return the state</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

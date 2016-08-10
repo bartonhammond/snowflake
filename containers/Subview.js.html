@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Subview.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//containers/Subview.js", defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#subview.js">Subview.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#subview%20class">Subview class</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="subview.js">
+  <h1>
+    <a href="#subview.js" name="subview.js" class="pilcrow">&#182;</a>
+    Subview.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>This is called from main to demonstrate the back button</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>Imports from redux</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">bindActionCreators</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-redux&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>Immutable</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Map</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;immutable&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>Router</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Actions</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native-router-flux&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>Navigation Bar</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="nx">NavigationBar</span> <span class="nx">from</span> <span class="s1">&#39;react-native-navbar&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>The necessary components from React</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span>
+<span class="p">{</span>  
+  <span class="nx">StyleSheet</span><span class="p">,</span>
+  <span class="nx">View</span><span class="p">,</span>
+  <span class="nx">Text</span>
+<span class="p">}</span>
+<span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>If your app uses Redux action creators, you can add them here...</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">];</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>Instead of including all app states via ...state
+ You probably want to explicitly enumerate only those which Main.js will depend on.</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">function</span> <span class="nx">mapStateToProps</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+      <span class="p">...</span><span class="nx">state</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>Bind all the functions from the <code>actions</code> and bind them with
+<code>dispatch</code></p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">function</span> <span class="nx">mapDispatchToProps</span><span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="kr">const</span> <span class="nx">creators</span> <span class="o">=</span> <span class="nx">Map</span><span class="p">()</span>
+          <span class="p">.</span><span class="nx">merge</span><span class="p">(...</span><span class="nx">actions</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">value</span> <span class="o">=&gt;</span> <span class="k">typeof</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">toObject</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">actions</span><span class="o">:</span> <span class="nx">bindActionCreators</span><span class="p">(</span><span class="nx">creators</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">),</span>
+    <span class="nx">dispatch</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="nx">container</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">borderTopWidth</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nx">borderBottomWidth</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span>
+    <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+    <span class="nx">padding</span><span class="o">:</span> <span class="mi">10</span>
+  <span class="p">},</span>
+  <span class="nx">summary</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;BodoniSvtyTwoITCTT-Book&#39;</span><span class="p">,</span>
+    <span class="nx">fontSize</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span>
+    <span class="nx">fontWeight</span><span class="o">:</span> <span class="s1">&#39;bold&#39;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="subview%20class">
+  <h2>
+    <a href="#subview%20class" name="subview%20class" class="pilcrow">&#182;</a>
+    Subview class
+  </h2>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">let</span> <span class="nx">Subview</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">titleConfig</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Subview&quot;</span>
+    <span class="p">};</span>
+    
+    <span class="kd">var</span> <span class="nx">leftButtonConfig</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Back&#39;</span><span class="p">,</span>
+      <span class="nx">handler</span><span class="o">:</span> <span class="nx">Actions</span><span class="p">.</span><span class="nx">pop</span>
+    <span class="p">};</span>
+    
+    <span class="k">return</span><span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">View</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">NavigationBar</span>
+            <span class="nx">title</span><span class="o">=</span><span class="p">{</span> <span class="nx">titleConfig</span> <span class="p">}</span>
+            <span class="nx">leftButton</span><span class="o">=</span><span class="p">{</span> <span class="nx">leftButtonConfig</span> <span class="p">}</span>
+  <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">container</span> <span class="p">}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Text</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">summary</span> <span class="p">}</span><span class="o">&gt;</span><span class="nx">Subview</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+  <span class="o">&lt;</span><span class="err">/View&gt;</span>
+      <span class="o">&lt;</span><span class="err">/View&gt;</span>
+    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-11" id="section-11">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>Connect the properties</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Subview</span><span class="p">);</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ItemCheckbox.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../doc-style.css" />
+  <script src="../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/ItemCheckbox.js", defaultSidebar = true;
+  </script>
+  <script src="../doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#itemcheckbox.js">ItemCheckbox.js</a>
+      </div>
+      <div class="heading h2">
+        <a href="#imports">Imports</a>
+      </div>
+      <div class="heading h2">
+        <a href="#itemcheckbox%20class">ItemCheckbox class</a>
+      </div>
+      <div class="heading h3">
+        <a href="#getdefaultprops">getDefaultProps</a>
+      </div>
+      <div class="heading h3">
+        <a href="#getinitialstate">getInitialState</a>
+      </div>
+      <div class="heading h3">
+        <a href="#_getcirclechecksytel">_getCircleCheckSytel</a>
+      </div>
+      <div class="heading h3">
+        <a href="#_completeprogress">_completeProgress</a>
+      </div>
+      <div class="heading h3">
+        <a href="#componentdidmount">componentDidMount</a>
+      </div>
+      <div class="heading h3">
+        <a href="#render">render</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="itemcheckbox.js">
+  <h1>
+    <a href="#itemcheckbox.js" name="itemcheckbox.js" class="pilcrow">&#182;</a>
+    ItemCheckbox.js
+  </h1>
+</div>
+
+  </div>
+  <div class="body"><p>This class was initially written by
+<a href='https://github.com/mhollweck/react-native-item-checkbox'>https://github.com/mhollweck/react-native-item-checkbox</a></p>
+
+<p>I've opened an issue to attempt to merge this back in </p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
+    Imports
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>React</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span>
+<span class="p">{</span>
+  <span class="nx">View</span><span class="p">,</span>
+  <span class="nx">Text</span><span class="p">,</span>
+  <span class="nx">TouchableHighlight</span><span class="p">,</span>
+  <span class="nx">TouchableWithoutFeedback</span>
+<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+</div>
+<div class="dox">
+  <div class="summary"><p>The vector icon</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">Icon</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-vector-icons/FontAwesome&#39;</span><span class="p">);</span>
+
+
+
+<span class="kd">var</span> <span class="nx">ItemCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="itemcheckbox%20class">
+  <h2>
+    <a href="#itemcheckbox%20class" name="itemcheckbox%20class" class="pilcrow">&#182;</a>
+    ItemCheckbox class
+  </h2>
+</div>
+
+  </div>
+  <div class="body"><p>set the propTypes</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">onCheck</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span>
+    <span class="nx">onUncheck</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span>
+    <span class="nx">icon_check</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+    <span class="nx">icon_open</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">,</span>
+    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+    <span class="nx">iconSize</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+    <span class="nx">checked</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
+    <span class="nx">style</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span>
+    <span class="nx">text</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
+    <span class="nx">disabled</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span>
+  <span class="p">},</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="getdefaultprops">
+  <h3>
+    <a href="#getdefaultprops" name="getdefaultprops" class="pilcrow">&#182;</a>
+    getDefaultProps
+  </h3>
+</div>
+
+
+<p>set the default values</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">getDefaultProps</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">onCheck</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nx">onUncheck</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="nx">icon_check</span><span class="o">:</span> <span class="s2">&quot;check-square&quot;</span><span class="p">,</span>
+      <span class="nx">icon_open</span><span class="o">:</span> <span class="s2">&quot;square-o&quot;</span><span class="p">,</span>
+      <span class="nx">size</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+      <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span>
+      <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span>
+      <span class="nx">iconSize</span><span class="o">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span>
+      <span class="nx">checked</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;MISSING TEXT&#39;</span><span class="p">,</span>
+      <span class="nx">disabled</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="getinitialstate">
+  <h3>
+    <a href="#getinitialstate" name="getinitialstate" class="pilcrow">&#182;</a>
+    getInitialState
+  </h3>
+</div>
+
+  </div>
+  <div class="body"><p>Set the box to be checked or not</p>
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">checked</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span><span class="p">,</span>
+      <span class="nx">bg_color</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">backgroundColor</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="_getcirclechecksytel">
+  <h3>
+    <a href="#_getcirclechecksytel" name="_getcirclechecksytel" class="pilcrow">&#182;</a>
+    _getCircleCheckSytel
+  </h3>
+</div>
+
+
+<p>merge the props styles w/ some defaults</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">_getCircleCheckStyle</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">width</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">size</span><span class="p">,</span>
+      <span class="nx">height</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">size</span><span class="p">,</span>
+      <span class="nx">backgroundColor</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">bg_color</span><span class="p">,</span>
+      <span class="nx">borderColor</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">,</span>
+      <span class="nx">borderWidth</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nx">borderRadius</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+      <span class="nx">justifyContent</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+      <span class="nx">alignItems</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+      <span class="nx">padding</span><span class="o">:</span> <span class="mi">2</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="_completeprogress">
+  <h3>
+    <a href="#_completeprogress" name="_completeprogress" class="pilcrow">&#182;</a>
+    _completeProgress
+  </h3>
+</div>
+
+
+<p>If the checkbox is pressable, figure out what state it's in and
+what the display should look like</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">_completeProgress</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+        <span class="nx">checked</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">bg_color</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">backgroundColor</span>
+      <span class="p">});</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onUncheck</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onUncheck</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+        <span class="nx">checked</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">bg_color</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span>
+      <span class="p">});</span>
+      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onCheck</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onCheck</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="componentdidmount">
+  <h3>
+    <a href="#componentdidmount" name="componentdidmount" class="pilcrow">&#182;</a>
+    componentDidMount
+  </h3>
+</div>
+
+
+<p>If there is a <code>checked</code> property, set the UI appropriately</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">componentDidMount</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">_completeProgress</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="render">
+  <h3>
+    <a href="#render" name="render" class="pilcrow">&#182;</a>
+    render
+  </h3>
+</div>
+
+
+<p>Use Touchable with or without Feedback depending on
+<code>disabled</code>.
+Set the <code>iconName</code> depending on if checked</p>
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">iconName</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon_open</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">iconName</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon_check</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">disabled</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">iconName</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span> <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon_check</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon_open</span><span class="p">;</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">style</span><span class="p">}</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">TouchableWithoutFeedback</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span>
+                <span class="nx">flexDirection</span><span class="o">:</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span>
+                <span class="nx">flex</span><span class="o">:</span><span class="mi">1</span>
+              <span class="p">}}</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">Icon</span>
+                  <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="nx">iconName</span><span class="p">}</span>
+                  <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">20</span><span class="p">}</span>
+              <span class="o">/&gt;</span>
+              <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+            <span class="o">&lt;</span><span class="err">/View&gt;</span>
+          <span class="o">&lt;</span><span class="err">/TouchableWithoutFeedback&gt;</span>
+        <span class="o">&lt;</span><span class="err">/View&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">style</span><span class="p">}</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">TouchableHighlight</span>
+                <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_completeProgress</span><span class="p">}</span>
+            <span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span>
+                  <span class="nx">flexDirection</span><span class="o">:</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span>
+                  <span class="nx">flex</span><span class="o">:</span><span class="mi">1</span>
+                <span class="p">}}</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">Icon</span>
+                    <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="nx">iconName</span><span class="p">}</span>
+                    <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">20</span><span class="p">}</span>
+                <span class="o">/&gt;</span>
+                <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+              <span class="o">&lt;</span><span class="err">/View&gt;</span>
+            <span class="o">&lt;</span><span class="err">/TouchableHighlight&gt;</span>
+          <span class="o">&lt;</span><span class="err">/View&gt;</span>
+        <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">ItemCheckbox</span><span class="p">;</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>
