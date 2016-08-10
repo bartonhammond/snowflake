@@ -238,18 +238,15 @@ export function getSessionToken() {
     return new AppAuthToken().getSessionToken()
 
       .then((token) => {
-        console.log('authactions.token',token);
         if (token) {
           dispatch(sessionTokenRequestSuccess(token));
           dispatch(logoutState());
-          console.log('authactions.Actions',Actions);
         } else {
           dispatch(sessionTokenRequestFailure());
         }
       })
     
       .catch((error) => {
-        console.log('authactions.error',error);
         dispatch(sessionTokenRequestFailure(error));
         dispatch(loginState());
         Actions.InitialLoginForm();

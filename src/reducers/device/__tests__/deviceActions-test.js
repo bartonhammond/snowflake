@@ -10,19 +10,12 @@
 /**
  * ## Mocks
  *
- * We don't want to use the devices storage, nor actually call Parse.com
+ * We don't want to use the devices storage, nor actually call
+ * Parse.com
+ * 
  */
 jest.mock('../../../lib/AppAuthToken');
 jest.mock('../../../lib/BackendFactory');
-
-/**
- * ## Mock Store
- *
- * The ```mockStore``` confirms the all the actions are dispatched and
- * in the correct order
- *
- */
-var mockStore = require('../../mocks/Store').default;
 
 /**
  * ## Class under test

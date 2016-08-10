@@ -9,10 +9,14 @@
 /**
  * ## Mocks
  *
- * We don't want to use the devices storage, nor actually call Parse.com
+ * We don't want to use the devices storage, nor actually call
+ * Parse.com
+ *
+ * Need to mock router so the "keys" are available (see src/__mocks__)
  */
 jest.mock('../../../lib/AppAuthToken');
 jest.mock('../../../lib/BackendFactory');
+jest.mock('react-native-router-flux');
 
 /**
  * ## Mock Store
@@ -21,8 +25,11 @@ jest.mock('../../../lib/BackendFactory');
  * in the correct order
  *
  */
-var mockStore = require('../../mocks/Store');
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 
+const middlewares = [thunk]; // add your middlewares like `redux-thunk`
+const mockStore = configureStore(middlewares);
 /**
  * ## Class under test
  *
@@ -40,6 +47,7 @@ const {
   SESSION_TOKEN_FAILURE,
 
   DELETE_TOKEN_REQUEST,
+  DELETE_TOKEN_SUCCESS,
 
   LOGOUT,
   REGISTER,
@@ -187,47 +195,73 @@ describe('authActions', () => {
   it('should logout', () => {
     const expectedActions = [
       {type: LOGOUT_REQUEST},
-      {type: REGISTER},
+      {type: LOGIN},
       {type: LOGOUT_SUCCESS},
-      {type: SESSION_TOKEN_REQUEST},
-      {type: SESSION_TOKEN_SUCCESS}
+      {type: DELETE_TOKEN_REQUEST}
     ];
 
-    const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.logout());
+    const store = mockStore({});
+    return store.dispatch(actions.logout())
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);        
+      });
   });
 
   it('should login', () => {
     const expectedActions = [
       {type: LOGIN_REQUEST},
-      {type: LOGOUT},
-      {type: LOGIN_SUCCESS}
+      {type: LOGIN_SUCCESS, payload: {status: 201}},
+      {type: LOGOUT}
     ];
 
-    const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.login('foo','bar'));
+    const store = mockStore({});
+    return store.dispatch(actions.login('foo','bar'))
+      .then(() => {
+        expect(store.getActions()[0].type).toEqual(expectedActions[0].type);
+        expect(store.getActions()[1].type).toEqual(expectedActions[1].type);
+        expect(store.getActions()[1].payload.status).toEqual(expectedActions[1].payload.status);   
+        expect(store.getActions()[2].type).toEqual(expectedActions[2].type);        
+      });
   });
 
   it('should getSessionToken', () => {
     const expectedActions = [
       {type: SESSION_TOKEN_REQUEST},
-      {type: LOGOUT},
-      {type: SESSION_TOKEN_SUCCESS}
+      {type: SESSION_TOKEN_SUCCESS, payload: {sessionToken:
+                                              {sessionToken: 'token'}}},
+      {type: LOGOUT}
     ];
 
-    const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.getSessionToken());
+    const store = mockStore({});
+    return store.dispatch(actions.getSessionToken())
+      .then(() => {
+        expect(store.getActions()[0].type).toEqual(expectedActions[0].type);
+        expect(store.getActions()[1].type).toEqual(expectedActions[1].type);
+        expect(store.getActions()[1].payload.sessionToken.sessionToken).toEqual(expectedActions[1].payload.sessionToken.sessionToken);   
+        expect(store.getActions()[2].type).toEqual(expectedActions[2].type);
+      });
   });
 
   it('should signup', () => {
     const expectedActions = [
       {type: SIGNUP_REQUEST},
-      {type: LOGOUT},
-      {type: SIGNUP_SUCCESS}
+      {type: SIGNUP_SUCCESS, payload: {status: 201,
+                                       username: 'user',
+                                       email: 'email'}},      
+      {type: LOGOUT}
     ];
 
-    const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.signup('user','email','password'));
+    const store = mockStore({});
+    
+    return store.dispatch(actions.signup('user','email','password'))
+      .then(() => {
+        expect(store.getActions()[0]).toEqual(expectedActions[0]);
+        expect(store.getActions()[1].type).toEqual(expectedActions[1].type);
+        expect(store.getActions()[1].payload.status).toEqual(expectedActions[1].payload.status);
+        expect(store.getActions()[1].payload.username).toEqual(expectedActions[1].payload.username);
+        expect(store.getActions()[1].payload.email).toEqual(expectedActions[1].payload.email);
+        expect(store.getActions()[2]).toEqual(expectedActions[2]);        
+      });
   });
 
   it('should resetPassword', () => {
@@ -237,19 +271,26 @@ describe('authActions', () => {
       {type: RESET_PASSWORD_SUCCESS}
     ];
 
-    const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.resetPassword('email'));
+    const store = mockStore({});
+    
+    return store.dispatch(actions.resetPassword('email'))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
   });
 
   it('should deleteSessionToken', () => {
     const expectedActions = [
       {type: DELETE_TOKEN_REQUEST},
-      {type: SESSION_TOKEN_REQUEST},
-      {type: SESSION_TOKEN_SUCCESS}
+      {type: DELETE_TOKEN_SUCCESS}
     ];
 
-    const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.deleteSessionToken());
+    const store = mockStore({});
+    
+    return store.dispatch(actions.deleteSessionToken())
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
   });
 
 });

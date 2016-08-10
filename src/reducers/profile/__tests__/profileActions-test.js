@@ -13,15 +13,25 @@
  * ## Mocks
  *
  * turn mocking off but mock AppAuthToken and Parse
+ * also mock the router (see src/__mocks__)
  *
  */
 jest.mock('../../../lib/AppAuthToken');
 jest.mock('../../../lib/BackendFactory');
+jest.mock('react-native-router-flux');
 /**
  * ## Store
  * The mockStore will validate the actions are performed
  */
-const mockStore = require('../../mocks/Store');
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+
+const middlewares = [thunk]; // add your middlewares like `redux-thunk`
+const mockStore = configureStore(middlewares);
+/**
+ * ## Class under test
+ *
+ */
 const actions = require('../profileActions');
 
 /**
@@ -104,20 +114,26 @@ describe('profileActions', () => {
       {type: GET_PROFILE_SUCCESS}
     ];
 
-    const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.getProfile());
+    const store = mockStore({});
+    return store.dispatch(actions.getProfile())
+      .then(() => {
+        expect(store.getActions()[0].type).toEqual(expectedActions[0].type);
+        expect(store.getActions()[1].type).toEqual(expectedActions[1].type);        
+      });
   });
 
   it('should updateProfile', () => {
     const expectedActions = [
       {type: PROFILE_UPDATE_REQUEST},
       {type: PROFILE_UPDATE_SUCCESS},
-      {type: GET_PROFILE_REQUEST},
-      {type: GET_PROFILE_SUCCESS}
+      {type: GET_PROFILE_REQUEST}
     ];
 
-    const store = mockStore({}, expectedActions);
-    return store.dispatch(actions.updateProfile('userid','username','email'));
+    const store = mockStore({});
+    return store.dispatch(actions.updateProfile('userid','username','email'))
+      .then(() => {
+        expect(store.getActions()).toEqual(expectedActions);        
+      });
   });
 
 });
