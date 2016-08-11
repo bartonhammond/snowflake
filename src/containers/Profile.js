@@ -128,7 +128,12 @@ class Profile extends Component {
    * 
    */
   onChange(value) {
-    this.props.actions.onProfileFormFieldChange(value);
+    if (value.username != '') {
+      this.props.actions.onProfileFormFieldChange('username',value.username);
+    }
+    if (value.email != '') {
+      this.props.actions.onProfileFormFieldChange('email',value.email);      
+    }
     this.setState({value});
   }
   /**
@@ -191,14 +196,14 @@ class Profile extends Component {
           maxLength: 12,
           editable: !this.props.profile.form.isFetching,
           hasError: this.props.profile.form.fields.usernameHasError,
-          error: 'Must have 6-12 characters and/or numbers'
+          error: this.props.profile.form.fields.usernameErrorMsg
         },
         email: {
           label: 'Email',
           keyboardType: 'email-address',
           editable: !this.props.profile.form.isFetching,
           hasError: this.props.profile.form.fields.emailHasError,
-          error: 'Please enter valid email'
+          error: this.props.profile.form.fields.emailErrorMsg
         }
       }
     };

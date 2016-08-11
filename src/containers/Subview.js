@@ -34,17 +34,23 @@ import NavigationBar from 'react-native-navbar';
 import React from 'react';
 import
 {  
-	StyleSheet,
+  StyleSheet,
   View,
   Text
 }
 from 'react-native';
 
 /**
- * If your app uses Redux action creators, you can add them here...
+ * Use device options so we can reference the Version
  * 
  */
+import * as deviceActions from '../reducers/device/deviceActions';
+
+/** 
+* ## Redux boilerplate
+*/
 const actions = [
+  deviceActions
 ];
 
 /**
@@ -104,7 +110,7 @@ let Subview = React.createClass({
       title: 'Back',
       handler: Actions.pop
     };
-    
+
     return(
       <View>
 	<NavigationBar
@@ -112,7 +118,7 @@ let Subview = React.createClass({
             leftButton={ leftButtonConfig }
 	/>
 	<View style={ styles.container }>
-	  <Text style={ styles.summary }>Subview</Text>
+	<Text style={ styles.summary }>Subview Version: {this.props.device.version} </Text>
 	</View>
       </View>
     );

@@ -31,12 +31,16 @@ const Form = Record({
   fields: new (Record({
     username: '',
     usernameHasError: false,
+    usernameErrorMsg: '',
     email: '',
     emailHasError: false,
+    emailErrorMsg: '',
     password: '',
     passwordHasError: false,
+    passwordErrorMsg: '',
     passwordAgain: '',
     passwordAgainHasError: false,
+    passwordAgainErrorMsg: '',    
     showPassword: false
   }))
 });

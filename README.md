@@ -177,12 +177,14 @@ npm install
     hapiRemote: true
   },
 ```
-* To run Hapi either locally on remotely on OpenShift, update the ```src/lib/config.js``` file as shown below:
+* To run Hapi either locally on remotely on OpenShift, update the
+  ```src/lib/config.js``` file as shown below.  *Note:* use the ip
+  from the `ifconfig` command.  This ip matches the Hapi server setup.
 
 ```
   HAPI: {
     local: {
-      url: 'http://127.0.0.1:5000'
+      url: 'http://192.168.0.5:5000'
     },
     remote: {
       url: 'put your remote url here'

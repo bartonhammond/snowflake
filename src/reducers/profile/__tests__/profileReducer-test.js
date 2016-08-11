@@ -84,14 +84,13 @@ describe('profileReducer', () => {
 
       expect(next.form.isFetching).toBe(false);
       expect(next.form.error).toBe(null);
-      expect(next.form.fields.username, action.payload.username);
-      expect(next.form.fields.email, action.payload.email);
-      expect(next.form.fields.emailVerified,
-             action.payload.emailVerified);
+      expect(next.form.fields.username).toEqual(action.payload.username);
+      expect(next.form.fields.email).toEqual(action.payload.email);
+      expect(next.form.fields.emailVerified).toBe(action.payload.emailVerified);
 
-      expect(next.form.originalProfile.username, action.payload.username);
-      expect(next.form.originalProfile.email, action.payload.email);
-      expect(next.form.originalProfile.emailVerified, action.payload.emailVerified);
+      expect(next.form.originalProfile.username).toEqual(action.payload.username);
+      expect(next.form.originalProfile.email).toEqual(action.payload.email);
+      expect(next.form.originalProfile.emailVerified).toBe(action.payload.emailVerified);
 
     });
     /**
@@ -170,43 +169,53 @@ describe('profileReducer', () => {
     /**
      * #### form is valid to logout
      *
-     * Should have a valid form and and the fields have no errors
+     * Should have a valid form when the field has no error
      */
     it('form is valid with valid email & username', () => {
-      const action = {
+      const usernameAction = {
         type: ON_PROFILE_FORM_FIELD_CHANGE,
-        payload: {field: {username: 'barton', email: 'bar@ton.com'}}
+        payload: {field: 'username', value: 'barton'}
       };
-      let next = profileReducer(undefined,
-                                action);
-
-      expect(next.form.isValid,true);
-      expect(next.form.fields.username,
-             action.payload.field.username);
-      expect(next.form.fields.usernameHasError,false);
-      expect(next.form.fields.email, action.payload.field.email);
-      expect(next.form.fields.emailHasError, false);
+      const emailAction = {
+        type: ON_PROFILE_FORM_FIELD_CHANGE,
+        payload: {field: 'email', value: 'barton@gmail.com'}
+      };      
+      let firstState = profileReducer(undefined,
+                                usernameAction);
+      let next = profileReducer(firstState,
+                                emailAction);
+      
+      expect(next.form.isValid).toBe(true); //
+      expect(next.form.fields.username).toEqual(usernameAction.payload.value);
+      expect(next.form.fields.usernameHasError).toBe(false);
+      expect(next.form.fields.email).toEqual(emailAction.payload.value);
+      expect(next.form.fields.emailHasError).toBe(false);
     });
     /**
      * #### form is invalid with invalid email & invalid username
      *
      * Bad data in, errors out!
      */
-    it('form is invalid with invalid email & invalid username', () => {
-      const action = {
+    it('form is invalid with invalid username', () => {
+      const usernameAction = {
         type: ON_PROFILE_FORM_FIELD_CHANGE,
-        payload: {field: {username: 'bart', email: 'bar.com'}}
+        payload: {field: 'username', value:'bart'}
       };
-      let next = profileReducer(undefined,
-                                action);
+      
+      const emailAction = {
+        type: ON_PROFILE_FORM_FIELD_CHANGE,
+        payload: {field: 'email', value:'bart'}
+      };      
+      let firstState = profileReducer(undefined,
+                                usernameAction);
 
-      expect(next.form.isValid,true);
-      expect(next.form.fields.username,
-             action.payload.field.username);
-      expect(next.form.fields.usernameHasError,true);
-      expect(next.form.fields.email, action.payload.field.email);
-      expect(next.form.fields.emailHasError, true);
-
+      let next = profileReducer(firstState, emailAction);
+      
+      expect(next.form.isValid).toBe(false);
+      expect(next.form.fields.username).toEqual(usernameAction.payload.value);
+      expect(next.form.fields.usernameHasError).toBe(true);
+      expect(next.form.fields.email).toEqual(emailAction.payload.value);
+      expect(next.form.fields.emailHasError).toBe(true);
 
     });
 

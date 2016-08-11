@@ -1,5 +1,5 @@
 /**
- * # authFormValidation.js
+ * # profileFormValidation.js
  * 
  * This class determines only if the form is valid 
  * so that the form button can be enabled.

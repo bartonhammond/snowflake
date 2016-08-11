@@ -147,8 +147,9 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
       "auto": "placeholders",
       "fields": Object {
         "email": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Please enter valid email",
+          "error": undefined,
           "hasError": false,
           "keyboardType": "email-address",
           "label": "Email"
@@ -313,8 +314,9 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
       "auto": "placeholders",
       "fields": Object {
         "email": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Please enter valid email",
+          "error": undefined,
           "hasError": true,
           "keyboardType": "email-address",
           "label": "Email"
@@ -479,8 +481,9 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
       "auto": "placeholders",
       "fields": Object {
         "email": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Please enter valid email",
+          "error": undefined,
           "hasError": false,
           "keyboardType": "email-address",
           "label": "Email"
@@ -646,15 +649,16 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
       "fields": Object {
         "password": Object {
           "editable": false,
-          "error": "Must have 6-12 characters with at least 1 number and 1 special character",
+          "error": undefined,
           "hasError": undefined,
           "label": "Password",
           "maxLength": 12,
           "secureTextEntry": true
         },
         "username": Object {
+          "autoCapitalize": "none",
           "editable": false,
-          "error": "Must have 6-12 characters and/or numbers",
+          "error": undefined,
           "hasError": undefined,
           "label": "Username",
           "maxLength": 12
@@ -821,15 +825,16 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
       "fields": Object {
         "password": Object {
           "editable": true,
-          "error": "Must have 6-12 characters with at least 1 number and 1 special character",
+          "error": undefined,
           "hasError": false,
           "label": "Password",
           "maxLength": 12,
           "secureTextEntry": false
         },
         "username": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Must have 6-12 characters and/or numbers",
+          "error": undefined,
           "hasError": false,
           "label": "Username",
           "maxLength": 12
@@ -996,15 +1001,16 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
       "fields": Object {
         "password": Object {
           "editable": true,
-          "error": "Must have 6-12 characters with at least 1 number and 1 special character",
+          "error": undefined,
           "hasError": true,
           "label": "Password",
           "maxLength": 12,
           "secureTextEntry": true
         },
         "username": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Must have 6-12 characters and/or numbers",
+          "error": undefined,
           "hasError": true,
           "label": "Username",
           "maxLength": 12
@@ -1171,15 +1177,16 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
       "fields": Object {
         "password": Object {
           "editable": true,
-          "error": "Must have 6-12 characters with at least 1 number and 1 special character",
+          "error": undefined,
           "hasError": false,
           "label": "Password",
           "maxLength": 12,
           "secureTextEntry": true
         },
         "username": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Must have 6-12 characters and/or numbers",
+          "error": undefined,
           "hasError": false,
           "label": "Username",
           "maxLength": 12
@@ -1346,15 +1353,16 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
       "fields": Object {
         "password": Object {
           "editable": false,
-          "error": "Must have 6-12 characters with at least 1 number and 1 special character",
+          "error": undefined,
           "hasError": true,
           "label": "Password",
           "maxLength": 12,
           "secureTextEntry": true
         },
         "username": Object {
+          "autoCapitalize": "none",
           "editable": false,
-          "error": "Must have 6-12 characters and/or numbers",
+          "error": undefined,
           "hasError": true,
           "label": "Username",
           "maxLength": 12
@@ -1520,15 +1528,16 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
       "auto": "placeholders",
       "fields": Object {
         "email": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Please enter valid email",
+          "error": undefined,
           "hasError": false,
           "keyboardType": "email-address",
           "label": "Email"
         },
         "password": Object {
           "editable": true,
-          "error": "Must have 6-12 characters with at least 1 number and 1 special character",
+          "error": undefined,
           "hasError": false,
           "label": "Password",
           "maxLength": 12,
@@ -1536,15 +1545,16 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
         },
         "passwordAgain": Object {
           "editable": true,
-          "error": "Passwords must match",
+          "error": undefined,
           "hasError": false,
           "label": "Please enter password again",
           "maxLength": 12,
           "secureTextEntry": false
         },
         "username": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Must have 6-12 characters and/or numbers",
+          "error": undefined,
           "hasError": false,
           "label": "Username",
           "maxLength": 12
@@ -1712,15 +1722,16 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
       "auto": "placeholders",
       "fields": Object {
         "email": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Please enter valid email",
+          "error": undefined,
           "hasError": true,
           "keyboardType": "email-address",
           "label": "Email"
         },
         "password": Object {
           "editable": true,
-          "error": "Must have 6-12 characters with at least 1 number and 1 special character",
+          "error": undefined,
           "hasError": true,
           "label": "Password",
           "maxLength": 12,
@@ -1728,15 +1739,16 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
         },
         "passwordAgain": Object {
           "editable": true,
-          "error": "Passwords must match",
+          "error": undefined,
           "hasError": true,
           "label": "Please enter password again",
           "maxLength": 12,
           "secureTextEntry": true
         },
         "username": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Must have 6-12 characters and/or numbers",
+          "error": undefined,
           "hasError": true,
           "label": "Username",
           "maxLength": 12
@@ -1904,15 +1916,16 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
       "auto": "placeholders",
       "fields": Object {
         "email": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Please enter valid email",
+          "error": undefined,
           "hasError": false,
           "keyboardType": "email-address",
           "label": "Email"
         },
         "password": Object {
           "editable": true,
-          "error": "Must have 6-12 characters with at least 1 number and 1 special character",
+          "error": undefined,
           "hasError": false,
           "label": "Password",
           "maxLength": 12,
@@ -1920,15 +1933,16 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
         },
         "passwordAgain": Object {
           "editable": true,
-          "error": "Passwords must match",
+          "error": undefined,
           "hasError": false,
           "label": "Please enter password again",
           "maxLength": 12,
           "secureTextEntry": true
         },
         "username": Object {
+          "autoCapitalize": "none",
           "editable": true,
-          "error": "Must have 6-12 characters and/or numbers",
+          "error": undefined,
           "hasError": false,
           "label": "Username",
           "maxLength": 12
@@ -2096,15 +2110,16 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
       "auto": "placeholders",
       "fields": Object {
         "email": Object {
+          "autoCapitalize": "none",
           "editable": false,
-          "error": "Please enter valid email",
+          "error": undefined,
           "hasError": true,
           "keyboardType": "email-address",
           "label": "Email"
         },
         "password": Object {
           "editable": false,
-          "error": "Must have 6-12 characters with at least 1 number and 1 special character",
+          "error": undefined,
           "hasError": true,
           "label": "Password",
           "maxLength": 12,
@@ -2112,15 +2127,16 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
         },
         "passwordAgain": Object {
           "editable": false,
-          "error": "Passwords must match",
+          "error": undefined,
           "hasError": true,
           "label": "Please enter password again",
           "maxLength": 12,
           "secureTextEntry": true
         },
         "username": Object {
+          "autoCapitalize": "none",
           "editable": false,
-          "error": "Must have 6-12 characters and/or numbers",
+          "error": undefined,
           "hasError": true,
           "label": "Username",
           "maxLength": 12

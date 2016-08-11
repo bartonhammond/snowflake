@@ -92,7 +92,8 @@ import profileInitialState from './reducers/profile/profileInitialState';
 /**
  *  The version of the app but not  displayed yet
  */
-var VERSION='0.1.2';
+import pack from '../package';
+var VERSION=pack.version;
 
 /**
  *
@@ -187,7 +188,8 @@ export default function native(platform) {
 	      
 	      <Scene key="Subview"
                      component={Subview}
-                     title="Subview"/>
+                     title="Subview"
+              />
 
 	      <Scene key="Tabbar"
                      tabs={true}

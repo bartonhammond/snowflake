@@ -122,14 +122,12 @@ export default function profileReducer(state = initialState, action) {
      * and perform field and form validation
      */    
   case ON_PROFILE_FORM_FIELD_CHANGE:
-    let nextFormState =
-      state.setIn(['form', 'fields', 'username'],
-                  action.payload.field.username)
-      .setIn(['form', 'fields', 'email'], action.payload.field.email)
-      .setIn(['form','error'],null);
+    const {field, value} = action.payload;
+    let nextState =  state.setIn(['form', 'fields', field], value)
+          .setIn(['form','error'],null);
 
     return formValidation(
-      fieldValidation( nextFormState, action)
+      fieldValidation( nextState, action)
       , action);
 
     /**

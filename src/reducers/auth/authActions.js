@@ -260,7 +260,6 @@ export function getSessionToken() {
  * @param {Object} json - object with sessionToken
  */
 export function saveSessionToken(json) {
-  debugger;
   return new AppAuthToken().storeSessionToken(json);
 }
 /**

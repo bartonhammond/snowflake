@@ -116,11 +116,10 @@ export default function authReducer(state = initialState, action) {
     let nextState =  state.setIn(['form', 'fields', field], value)
           .setIn(['form','error'],null);
 
-    var finalState = formValidation(
+    return formValidation(
       fieldValidation( nextState, action)
       , action);
 
-    return finalState;
   }
     /**
      * ### Requests end, good or bad

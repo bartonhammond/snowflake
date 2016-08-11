@@ -1,8 +1,10 @@
 /**
- * # Login.js
+ * # fieldValidation.js
  * 
- * This class is a little complicated as it handles 4 states. It's also
- * a container so there is boilerplate from Redux similiar to ```App```.
+ * Define the validation rules for various fields such as email, username,
+ * and passwords.  If the rules are not passed, the appropriate
+ * message is displayed to the user
+ *
  */
 'use strict';
 
@@ -25,6 +27,7 @@ const emailConstraints = {
   }
 };
 
+
 /**
 * ## username validation rule
 * read the message.. ;)
@@ -34,8 +37,7 @@ const usernameConstraints = {
   username: {
     format: {
       pattern: usernamePattern,
-      flags: 'i',
-      message: "must have 6-12 numbers, letters or special characters"
+      flags: 'i'
     }
   }
 };
@@ -49,9 +51,7 @@ const passwordConstraints = {
   password: {
     format: {
       pattern: passwordPattern,
-      flags: "i",
-      message: "have at least a number and a special character,"
-          + " and between 6-12 in length"
+      flags: "i"
     }
   }
 };
@@ -79,9 +79,14 @@ export default function fieldValidation(state, action ) {
     let validUsername  = _.isUndefined(validate({username: value},
                                                 usernameConstraints));
     if (validUsername) {
-      return state.setIn(['form', 'fields', 'usernameHasError'], false);
+      return state.setIn(['form', 'fields', 'usernameHasError'],
+                         false)
+        .setIn(['form', 'fields', 'usernameErrorMsg'], "");
+
     } else {
-      return state.setIn(['form', 'fields', 'usernameHasError'], true);
+      return state.setIn(['form', 'fields', 'usernameHasError'], true)
+      .setIn(['form', 'fields', 'usernameErrorMsg'], "6-12 in"
+             + " length with letters or numbers");      
     }
     break;
     
@@ -95,7 +100,8 @@ export default function fieldValidation(state, action ) {
     if (validEmail) {
         return state.setIn(['form', 'fields', 'emailHasError'], false);
     } else {
-      return state.setIn(['form', 'fields', 'emailHasError'], true);
+      return state.setIn(['form', 'fields', 'emailHasError'], true)
+          .setIn(['form', 'fields', 'emailErrorMsg'], "Provide valid email");      
     }
     break;
     
@@ -107,9 +113,14 @@ export default function fieldValidation(state, action ) {
     let validPassword = _.isUndefined(validate({password: value},
                                                passwordConstraints));
     if (validPassword) {
-      return state.setIn(['form', 'fields', 'passwordHasError'], false);
+      return state.setIn(['form', 'fields', 'passwordHasError'],
+                         false)
+        .setIn(['form', 'fields', 'passwordErrorMsg'],
+               "");
     } else {
-      return state.setIn(['form', 'fields', 'passwordHasError'], true);
+      return state.setIn(['form', 'fields', 'passwordHasError'], true)
+        .setIn(['form', 'fields', 'passwordErrorMsg'],
+               "6-12 in length, with a number and special character: !@#$%^&*");      
     }
     break;
     
@@ -122,9 +133,14 @@ export default function fieldValidation(state, action ) {
       = _.isUndefined(validate({password: state.form.fields.password,
                                 confirmPassword: value}, passwordAgainConstraints));
     if (validPasswordAgain) {
-      return state.setIn(['form', 'fields', 'passwordAgainHasError'], false);
+      return state.setIn(['form', 'fields', 'passwordAgainHasError'],
+                         false)
+        .setIn(['form', 'fields', 'passwordAgainErrorMsg'],'');
     } else {
-      return  state.setIn(['form', 'fields', 'passwordAgainHasError'], true);
+      return state.setIn(['form', 'fields', 'passwordAgainHasError'],
+                          true)
+        .setIn(['form', 'fields', 'passwordAgainErrorMsg'],
+               'Passwords must match');      
     }
     break;
 

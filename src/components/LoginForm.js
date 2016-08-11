@@ -66,7 +66,7 @@ var LoginForm = React.createClass({
       maxLength: 12,
       editable: !this.props.form.isFetching,
       hasError: this.props.form.fields.usernameHasError,
-      error: 'Must have 6-12 characters and/or numbers'
+      error: this.props.form.fields.usernameErrorMsg
     };
     
     let email = {
@@ -74,7 +74,7 @@ var LoginForm = React.createClass({
       keyboardType: 'email-address',
       editable: !this.props.form.isFetching,
       hasError: this.props.form.fields.emailHasError,
-      error: 'Please enter valid email'
+      error: this.props.form.fields.emailErrorMsg
     };
 
     let secureTextEntry = !this.props.form.fields.showPassword;
@@ -85,7 +85,7 @@ var LoginForm = React.createClass({
       secureTextEntry: secureTextEntry,
       editable: !this.props.form.isFetching,
       hasError: this.props.form.fields.passwordHasError,
-      error: 'Must have 6-12 characters with at least 1 number and 1 special character'
+      error: this.props.form.fields.passwordErrorMsg
     };
 
     let passwordAgain= {
@@ -94,7 +94,7 @@ var LoginForm = React.createClass({
       maxLength: 12,
       editable: !this.props.form.isFetching,
       hasError: this.props.form.fields.passwordAgainHasError,
-      error: 'Passwords must match'
+      error: this.props.form.fields.passwordAgainErrorMsg
     };
 
     let loginForm;
@@ -111,7 +111,9 @@ var LoginForm = React.createClass({
         passwordAgain: t.String
       });
       options.fields['username'] = username;
+      options.fields['username'].autoCapitalize = 'none';
       options.fields['email'] = email;
+      options.fields['email'].autoCapitalize = 'none';
       options.fields['password'] = password;
       options.fields['passwordAgain'] = passwordAgain;
       break;
@@ -126,6 +128,7 @@ var LoginForm = React.createClass({
         password: t.String
       });
       options.fields['username'] = username;
+      options.fields['username'].autoCapitalize = 'none';
       options.fields['password'] = password;
       break;
       
@@ -138,6 +141,7 @@ var LoginForm = React.createClass({
         email: t.String
       });
       options.fields['email'] = email;
+      options.fields['email'].autoCapitalize = 'none';
       break;
     } //switch
 
@@ -146,12 +150,12 @@ var LoginForm = React.createClass({
      * returns the Form component with the correct structures
      */
     return (
-        <Form ref="form"
-      type={loginForm}
-      options={options}
-      value={this.props.value}
-      onChange={this.props.onChange}
-        />
+      <Form ref="form"
+            type={loginForm}
+            options={options}
+            value={this.props.value}
+            onChange={this.props.onChange}
+      />
 
     );
   }
