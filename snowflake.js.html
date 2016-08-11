@@ -334,7 +334,8 @@
 </div>
         </td>
         <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">VERSION</span><span class="o">=</span><span class="s1">&#39;0.1.2&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">pack</span> <span class="nx">from</span> <span class="s1">&#39;../package&#39;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">VERSION</span><span class="o">=</span><span class="nx">pack</span><span class="p">.</span><span class="nx">version</span><span class="p">;</span>
 
 
 </pre></div>
@@ -505,7 +506,8 @@ note: See <a href='https://github.com/aksonov/react-native-router-flux/issues/94
         
         <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Subview&quot;</span>
                      <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Subview</span><span class="p">}</span>
-                     <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Subview&quot;</span><span class="o">/&gt;</span>
+                     <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Subview&quot;</span>
+              <span class="o">/&gt;</span>
 
         <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Tabbar&quot;</span>
                      <span class="nx">tabs</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>

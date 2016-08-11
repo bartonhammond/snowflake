@@ -19,7 +19,7 @@
     <div id="tree"></div>
     <div id="headings">
       <div class="heading h1">
-        <a href="#login.js">Login.js</a>
+        <a href="#fieldvalidation.js">fieldValidation.js</a>
       </div>
       <div class="heading h2">
         <a href="#imports">Imports</a>
@@ -60,16 +60,17 @@
       <tr>
         <td class="docs"><div class="dox">
   <div class="summary">
-<div class="pilwrap" id="login.js">
+<div class="pilwrap" id="fieldvalidation.js">
   <h1>
-    <a href="#login.js" name="login.js" class="pilcrow">&#182;</a>
-    Login.js
+    <a href="#fieldvalidation.js" name="fieldvalidation.js" class="pilcrow">&#182;</a>
+    fieldValidation.js
   </h1>
 </div>
 
   </div>
-  <div class="body"><p>This class is a little complicated as it handles 4 states. It's also
-a container so there is boilerplate from Redux similiar to <code>App</code>.</p>
+  <div class="body"><p>Define the validation rules for various fields such as email, username,
+and passwords.  If the rules are not passed, the appropriate
+message is displayed to the user</p>
   </div>
 </div>
         </td>
@@ -127,6 +128,7 @@ a container so there is boilerplate from Redux similiar to <code>App</code>.</p>
 <span class="p">};</span>
 
 
+
 </pre></div>
         </td>
       </tr>
@@ -153,8 +155,7 @@ a container so there is boilerplate from Redux similiar to <code>App</code>.</p>
   <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">format</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">pattern</span><span class="o">:</span> <span class="nx">usernamePattern</span><span class="p">,</span>
-      <span class="nx">flags</span><span class="o">:</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span>
-      <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;must have 6-12 numbers, letters or special characters&quot;</span>
+      <span class="nx">flags</span><span class="o">:</span> <span class="s1">&#39;i&#39;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -186,9 +187,7 @@ a container so there is boilerplate from Redux similiar to <code>App</code>.</p>
   <span class="nx">password</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">format</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">pattern</span><span class="o">:</span> <span class="nx">passwordPattern</span><span class="p">,</span>
-      <span class="nx">flags</span><span class="o">:</span> <span class="s2">&quot;i&quot;</span><span class="p">,</span>
-      <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;have at least a number and a special character,&quot;</span>
-          <span class="o">+</span> <span class="s2">&quot; and between 6-12 in length&quot;</span>
+      <span class="nx">flags</span><span class="o">:</span> <span class="s2">&quot;i&quot;</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -262,9 +261,14 @@ a container so there is boilerplate from Redux similiar to <code>App</code>.</p>
     <span class="kd">let</span> <span class="nx">validUsername</span>  <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">validate</span><span class="p">({</span><span class="nx">username</span><span class="o">:</span> <span class="nx">value</span><span class="p">},</span>
                                                 <span class="nx">usernameConstraints</span><span class="p">));</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">validUsername</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameHasError&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameHasError&#39;</span><span class="p">],</span>
+                         <span class="kc">false</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameErrorMsg&#39;</span><span class="p">],</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameErrorMsg&#39;</span><span class="p">],</span> <span class="s2">&quot;6-12 in&quot;</span>
+             <span class="o">+</span> <span class="s2">&quot; length with letters or numbers&quot;</span><span class="p">);</span>      
     <span class="p">}</span>
     <span class="k">break</span><span class="p">;</span>
     
@@ -296,7 +300,8 @@ a container so there is boilerplate from Redux similiar to <code>App</code>.</p>
     <span class="k">if</span> <span class="p">(</span><span class="nx">validEmail</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailHasError&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailErrorMsg&#39;</span><span class="p">],</span> <span class="s2">&quot;Provide valid email&quot;</span><span class="p">);</span>      
     <span class="p">}</span>
     <span class="k">break</span><span class="p">;</span>
     
@@ -326,9 +331,14 @@ a container so there is boilerplate from Redux similiar to <code>App</code>.</p>
     <span class="kd">let</span> <span class="nx">validPassword</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">validate</span><span class="p">({</span><span class="nx">password</span><span class="o">:</span> <span class="nx">value</span><span class="p">},</span>
                                                <span class="nx">passwordConstraints</span><span class="p">));</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">validPassword</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordHasError&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordHasError&#39;</span><span class="p">],</span>
+                         <span class="kc">false</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordErrorMsg&#39;</span><span class="p">],</span>
+               <span class="s2">&quot;&quot;</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordErrorMsg&#39;</span><span class="p">],</span>
+               <span class="s2">&quot;6-12 in length, with a number and special character: !@#$%^&amp;*&quot;</span><span class="p">);</span>      
     <span class="p">}</span>
     <span class="k">break</span><span class="p">;</span>
     
@@ -359,9 +369,14 @@ a container so there is boilerplate from Redux similiar to <code>App</code>.</p>
       <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">validate</span><span class="p">({</span><span class="nx">password</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span>
                                 <span class="nx">confirmPassword</span><span class="o">:</span> <span class="nx">value</span><span class="p">},</span> <span class="nx">passwordAgainConstraints</span><span class="p">));</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">validPasswordAgain</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainHasError&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainHasError&#39;</span><span class="p">],</span>
+                         <span class="kc">false</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainErrorMsg&#39;</span><span class="p">],</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span>  <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainHasError&#39;</span><span class="p">],</span>
+                          <span class="kc">true</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainErrorMsg&#39;</span><span class="p">],</span>
+               <span class="s1">&#39;Passwords must match&#39;</span><span class="p">);</span>      
     <span class="p">}</span>
     <span class="k">break</span><span class="p">;</span>
 

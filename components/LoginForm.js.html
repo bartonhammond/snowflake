@@ -199,7 +199,7 @@ Login, Register or Reset Password</p>
       <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
       <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
       <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span><span class="p">,</span>
-      <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;Must have 6-12 characters and/or numbers&#39;</span>
+      <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameErrorMsg</span>
     <span class="p">};</span>
     
     <span class="kd">let</span> <span class="nx">email</span> <span class="o">=</span> <span class="p">{</span>
@@ -207,7 +207,7 @@ Login, Register or Reset Password</p>
       <span class="nx">keyboardType</span><span class="o">:</span> <span class="s1">&#39;email-address&#39;</span><span class="p">,</span>
       <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
       <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">,</span>
-      <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;Please enter valid email&#39;</span>
+      <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailErrorMsg</span>
     <span class="p">};</span>
 
     <span class="kd">let</span> <span class="nx">secureTextEntry</span> <span class="o">=</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">showPassword</span><span class="p">;</span>
@@ -218,7 +218,7 @@ Login, Register or Reset Password</p>
       <span class="nx">secureTextEntry</span><span class="o">:</span> <span class="nx">secureTextEntry</span><span class="p">,</span>
       <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
       <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordHasError</span><span class="p">,</span>
-      <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;Must have 6-12 characters with at least 1 number and 1 special character&#39;</span>
+      <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordErrorMsg</span>
     <span class="p">};</span>
 
     <span class="kd">let</span> <span class="nx">passwordAgain</span><span class="o">=</span> <span class="p">{</span>
@@ -227,7 +227,7 @@ Login, Register or Reset Password</p>
       <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
       <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
       <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgainHasError</span><span class="p">,</span>
-      <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;Passwords must match&#39;</span>
+      <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgainErrorMsg</span>
     <span class="p">};</span>
 
     <span class="kd">let</span> <span class="nx">loginForm</span><span class="p">;</span>
@@ -262,7 +262,9 @@ Login, Register or Reset Password</p>
         <span class="nx">passwordAgain</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span>
       <span class="p">});</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">username</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">email</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">password</span><span class="p">;</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;passwordAgain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">passwordAgain</span><span class="p">;</span>
       <span class="k">break</span><span class="p">;</span>
@@ -295,6 +297,7 @@ Login, Register or Reset Password</p>
         <span class="nx">password</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span>
       <span class="p">});</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">username</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">password</span><span class="p">;</span>
       <span class="k">break</span><span class="p">;</span>
       
@@ -325,6 +328,7 @@ Login, Register or Reset Password</p>
         <span class="nx">email</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span>
       <span class="p">});</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">email</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
       <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span> <span class="c1">//switch</span>
 
@@ -351,12 +355,12 @@ Login, Register or Reset Password</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre>
     <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">Form</span> <span class="nx">ref</span><span class="o">=</span><span class="s2">&quot;form&quot;</span>
-      <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="nx">loginForm</span><span class="p">}</span>
-      <span class="nx">options</span><span class="o">=</span><span class="p">{</span><span class="nx">options</span><span class="p">}</span>
-      <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span>
-      <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onChange</span><span class="p">}</span>
-        <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Form</span> <span class="nx">ref</span><span class="o">=</span><span class="s2">&quot;form&quot;</span>
+            <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="nx">loginForm</span><span class="p">}</span>
+            <span class="nx">options</span><span class="o">=</span><span class="p">{</span><span class="nx">options</span><span class="p">}</span>
+            <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span>
+            <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onChange</span><span class="p">}</span>
+      <span class="o">/&gt;</span>
 
     <span class="p">);</span>
   <span class="p">}</span>

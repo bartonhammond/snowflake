@@ -322,11 +322,10 @@ the formValidation</p>
     <span class="kd">let</span> <span class="nx">nextState</span> <span class="o">=</span>  <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="nx">field</span><span class="p">],</span> <span class="nx">value</span><span class="p">)</span>
           <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">);</span>
 
-    <span class="kd">var</span> <span class="nx">finalState</span> <span class="o">=</span> <span class="nx">formValidation</span><span class="p">(</span>
+    <span class="k">return</span> <span class="nx">formValidation</span><span class="p">(</span>
       <span class="nx">fieldValidation</span><span class="p">(</span> <span class="nx">nextState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span>
       <span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
 
-    <span class="k">return</span> <span class="nx">finalState</span><span class="p">;</span>
   <span class="p">}</span>
 
 </pre></div>

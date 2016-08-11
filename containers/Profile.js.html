@@ -384,7 +384,12 @@ be validated.</p>
         </td>
         <td class="code highlight"><div class="highlight"><pre>
   <span class="nx">onChange</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">onProfileFormFieldChange</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">username</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">onProfileFormFieldChange</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span><span class="nx">value</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">email</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">onProfileFormFieldChange</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span><span class="nx">value</span><span class="p">.</span><span class="nx">email</span><span class="p">);</span>      
+    <span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">value</span><span class="p">});</span>
   <span class="p">}</span>
 
@@ -509,14 +514,14 @@ are disabled.  </p>
           <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
           <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
           <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span><span class="p">,</span>
-          <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;Must have 6-12 characters and/or numbers&#39;</span>
+          <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameErrorMsg</span>
         <span class="p">},</span>
         <span class="nx">email</span><span class="o">:</span> <span class="p">{</span>
           <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
           <span class="nx">keyboardType</span><span class="o">:</span> <span class="s1">&#39;email-address&#39;</span><span class="p">,</span>
           <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
           <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">,</span>
-          <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;Please enter valid email&#39;</span>
+          <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailErrorMsg</span>
         <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">};</span>
