@@ -165,11 +165,18 @@ export default function native(platform) {
 	  <Router sceneStyle={{ backgroundColor: 'white' }}>
 	    <Scene key="root"
                    hideNavBar={true}>
+              
+              <Scene key="App"
+                     component={App}
+                     title="App"
+                     type="replace"
+                     initial={true}/>
+              
 	      <Scene key="InitialLoginForm"
                      component={Register}
                      title="Register"
                      type="replace"
-                     initial={true}/>
+                     />
               
               <Scene key="Login"
                      component={Login}

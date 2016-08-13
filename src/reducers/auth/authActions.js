@@ -241,6 +241,7 @@ export function getSessionToken() {
         if (token) {
           dispatch(sessionTokenRequestSuccess(token));
           dispatch(logoutState());
+          Actions.Tabbar();
         } else {
           dispatch(sessionTokenRequestFailure());
         }
