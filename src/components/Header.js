@@ -177,7 +177,7 @@ var Header = React.createClass({
              }}>
              <FormButton  isDisabled={this.state.isDisabled}
                           onPress={this._updateStateButtonPress}
-                          buttonText={'Update State'}>
+                          buttonText={I18n.t('Header.update_state')}>
              </FormButton>
              
            </View>
