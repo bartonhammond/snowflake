@@ -37,6 +37,9 @@
         <a href="#configurestore">configureStore</a>
       </div>
       <div class="heading h3">
+        <a href="#translations">Translations</a>
+      </div>
+      <div class="heading h3">
         <a href="#containers">containers</a>
       </div>
       <div class="heading h3">
@@ -214,6 +217,44 @@
 <span class="kr">import</span> <span class="nx">configureStore</span> <span class="nx">from</span> <span class="s1">&#39;./lib/configureStore&#39;</span><span class="p">;</span>
 
 
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="translations">
+  <h3>
+    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
+    Translations
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8">&#182;</a>
+</div>
+<p>Support fallbacks so en-US &amp; en-BR both use en</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="nx">I18n</span><span class="p">.</span><span class="nx">fallbacks</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;./lib/Translations&#39;</span><span class="p">;</span>
+<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+
 
 </pre></div>
         </td>
@@ -324,7 +365,7 @@
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-11" id="section-11">&#182;</a>
+  <a class="pilcrow" href="#section-13" id="section-13">&#182;</a>
 </div>
 <div class="dox">
   <div class="summary"><p>The version of the app but not  displayed yet</p>
@@ -403,15 +444,14 @@
 </div>
         </td>
         <td class="code highlight"><div class="highlight"><pre>
-
 <span class="kr">class</span> <span class="nx">TabIcon</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">render</span><span class="p">(){</span>
     <span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">selected</span> <span class="o">?</span> <span class="s1">&#39;#FF3366&#39;</span> <span class="o">:</span> <span class="s1">&#39;#FFB3B3&#39;</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">flex</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">flexDirection</span><span class="o">:</span><span class="s1">&#39;column&#39;</span><span class="p">,</span> <span class="nx">alignItems</span><span class="o">:</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="nx">alignSelf</span><span class="o">:</span><span class="s1">&#39;center&#39;</span><span class="p">}}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">flex</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">flexDirection</span><span class="o">:</span><span class="s1">&#39;column&#39;</span><span class="p">,</span> <span class="nx">alignItems</span><span class="o">:</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="nx">alignSelf</span><span class="o">:</span><span class="s1">&#39;center&#39;</span><span class="p">}}</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">}}</span> <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">iconName</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">30</span><span class="p">}</span> <span class="o">/&gt;</span>
         <span class="o">&lt;</span><span class="nx">Text</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">}}</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
-        <span class="o">&lt;</span><span class="err">/View&gt;</span>
+      <span class="o">&lt;</span><span class="err">/View&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -454,7 +494,7 @@ will be used when doing hot loading</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-15" id="section-15">&#182;</a>
+  <a class="pilcrow" href="#section-17" id="section-17">&#182;</a>
 </div>
 <p>configureStore will combine reducers from snowflake and main application
 it will then create the store based on aggregate state from all reducers</p>
@@ -471,7 +511,7 @@ it will then create the store based on aggregate state from all reducers</p>
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-16" id="section-16">&#182;</a>
+  <a class="pilcrow" href="#section-18" id="section-18">&#182;</a>
 </div>
 <p>setup the router table with App selected as the initial component
 note: See <a href='https://github.com/aksonov/react-native-router-flux/issues/948'>https://github.com/aksonov/react-native-router-flux/issues/948</a> </p>
@@ -483,30 +523,31 @@ note: See <a href='https://github.com/aksonov/react-native-router-flux/issues/94
     <span class="o">&lt;</span><span class="nx">Router</span> <span class="nx">sceneStyle</span><span class="o">=</span><span class="p">{{</span> <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;white&#39;</span> <span class="p">}}</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;root&quot;</span>
                    <span class="nx">hideNavBar</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;InitialLoginForm&quot;</span>
-                     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Register</span><span class="p">}</span>
-                     <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Register&quot;</span>
+              
+              <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;App&quot;</span>
+                     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">App</span><span class="p">}</span>
                      <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span>
                      <span class="nx">initial</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span><span class="o">/&gt;</span>
               
+        <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;InitialLoginForm&quot;</span>
+                     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Register</span><span class="p">}</span>
+                     <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span>
+                     <span class="o">/&gt;</span>
+              
               <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Login&quot;</span>
                      <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Login</span><span class="p">}</span>
-                     <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Login&quot;</span> 
                      <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="o">/&gt;</span>
         
         <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Register&quot;</span>
                      <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Register</span><span class="p">}</span>
-                     <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Register&quot;</span>
                      <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span> <span class="o">/&gt;</span>
         
         <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;ForgotPassword&quot;</span>
                      <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">ForgotPassword</span><span class="p">}</span>
-                     <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;ForgotPassword&quot;</span> 
                      <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="o">/&gt;</span>
         
         <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Subview&quot;</span>
                      <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Subview</span><span class="p">}</span>
-                     <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;Subview&quot;</span>
               <span class="o">/&gt;</span>
 
         <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Tabbar&quot;</span>
@@ -516,14 +557,14 @@ note: See <a href='https://github.com/aksonov/react-native-router-flux/issues/94
                      <span class="k">default</span><span class="o">=</span><span class="s2">&quot;Main&quot;</span><span class="o">&gt;</span>
                 
           <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Logout&quot;</span>
-                       <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;logout&quot;</span>
+                       <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Snowflake.logout&quot;</span><span class="p">)}</span>
                        <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">TabIcon</span><span class="p">}</span>
                        <span class="nx">iconName</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;sign-out&quot;</span><span class="p">}</span>
                        <span class="nx">hideNavBar</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
                        <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Logout</span><span class="p">}</span><span class="o">/&gt;</span>
                 
-          <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Main&quot;</span>
-                       <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;main&quot;</span>
+                <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Main&quot;</span>
+                       <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Snowflake.main&quot;</span><span class="p">)}</span>                            
                        <span class="nx">iconName</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;home&quot;</span><span class="p">}</span>
                        <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">TabIcon</span><span class="p">}</span>                       
                        <span class="nx">hideNavBar</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
@@ -531,7 +572,7 @@ note: See <a href='https://github.com/aksonov/react-native-router-flux/issues/94
                        <span class="nx">initial</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span><span class="o">/&gt;</span>
 
                 <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Profile&quot;</span>
-                       <span class="nx">title</span><span class="o">=</span><span class="s2">&quot;profile&quot;</span>
+                       <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Snowflake.profile&quot;</span><span class="p">)}</span>                       
                        <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">TabIcon</span><span class="p">}</span>                       
                        <span class="nx">iconName</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;gear&quot;</span><span class="p">}</span>
                        <span class="nx">hideNavBar</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
@@ -550,7 +591,7 @@ note: See <a href='https://github.com/aksonov/react-native-router-flux/issues/94
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-17" id="section-17">&#182;</a>
+  <a class="pilcrow" href="#section-19" id="section-19">&#182;</a>
 </div>
 <div class="dox">
   <div class="summary"><p>registerComponent to the AppRegistery and off we go....</p>

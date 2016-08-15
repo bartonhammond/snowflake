@@ -27,6 +27,9 @@
       <div class="heading h2">
         <a href="#styles">Styles</a>
       </div>
+      <div class="heading h3">
+        <a href="#translations">Translations</a>
+      </div>
       <div class="heading h2">
         <a href="#header.class">Header.class</a>
       </div>
@@ -155,19 +158,45 @@ state  </p>
   <span class="nx">container</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">flexDirection</span><span class="o">:</span> <span class="s1">&#39;column&#39;</span><span class="p">,</span>
     <span class="nx">flex</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nx">margin</span><span class="o">:</span> <span class="mi">20</span>
+    <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">10</span>
   <span class="p">},</span>
   <span class="nx">header</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
     <span class="nx">justifyContent</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
     <span class="nx">alignItems</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
     <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;transparent&#39;</span>
   <span class="p">},</span>
   <span class="nx">mark</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="mi">50</span>
+    <span class="nx">height</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span>
+    <span class="nx">width</span><span class="o">:</span> <span class="mi">100</span>
   <span class="p">}</span>
+  
+
 <span class="p">});</span>
+
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="translations">
+  <h3>
+    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
+    Translations
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
+<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
+<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">Header</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
 
@@ -340,41 +369,15 @@ races with Hot Loading...just call the
         </td>
         <td class="code highlight"><div class="highlight"><pre>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">showState</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="err">/Text&gt;;</span>
+    <span class="kd">let</span> <span class="nx">displayText</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">showState</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">displayText</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">currentState</span><span class="p">);</span>
+      <span class="nx">displayText</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">currentState</span><span class="p">);</span>
       
      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">displayText</span><span class="p">);</span>
 
-      <span class="nx">showState</span> <span class="o">=</span>
-      <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="nx">Current</span> <span class="nx">State</span> <span class="p">(</span><span class="nx">see</span> <span class="nx">console</span><span class="p">)</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
-        <span class="o">&lt;</span><span class="nx">TextInput</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">height</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">borderColor</span><span class="o">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="nx">borderWidth</span><span class="o">:</span> <span class="mi">1</span><span class="p">}}</span>
-                   <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">displayText</span><span class="p">}</span>
-                   <span class="nx">editable</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                   <span class="nx">multiline</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                   <span class="nx">onChangeText</span><span class="o">=</span><span class="p">{(</span><span class="nx">text</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_onChangeText</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
-                   <span class="nx">numberOfLines</span><span class="o">=</span><span class="p">{</span><span class="mi">20</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="err">/TextInput&gt;</span>
-        <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span>
-            <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">10</span>
-          <span class="p">}}</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">FormButton</span>  <span class="nx">isDisabled</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isDisabled</span><span class="p">}</span>
-                       <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_updateStateButtonPress</span><span class="p">}</span>
-                       <span class="nx">buttonText</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Update State&#39;</span><span class="p">}</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="err">/FormButton&gt;</span>
-          
-        <span class="o">&lt;</span><span class="err">/View&gt;</span>
-      <span class="o">&lt;</span><span class="err">/View&gt;</span>
     <span class="p">}</span>
     
-    <span class="kd">let</span> <span class="nx">spinner</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="err">/Text&gt;;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">spinner</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nx">ActivityIndicator</span>
-                  <span class="nx">animating</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                  <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;large&quot;</span>
-                  <span class="o">/&gt;</span>
-    <span class="p">}</span>
+
 
     <span class="k">return</span> <span class="p">(</span>
       <span class="o">&lt;</span><span class="nx">View</span><span class="o">&gt;</span>
@@ -382,13 +385,40 @@ races with Hot Loading...just call the
 
           <span class="o">&lt;</span><span class="nx">TouchableHighlight</span> <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_onPressMark</span><span class="p">}</span><span class="o">&gt;</span>
 
-            <span class="o">&lt;</span><span class="nx">Image</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mark</span><span class="p">}</span> <span class="nx">source</span><span class="o">=</span><span class="p">{{</span><span class="nx">uri</span><span class="o">:</span>
-                                                <span class="s1">&#39;http://i.imgur.com/da4G0Io.png&#39;</span><span class="p">}}</span>
+            <span class="o">&lt;</span><span class="nx">Image</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mark</span><span class="p">}</span>
+                   <span class="nx">source</span><span class="o">=</span><span class="p">{</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../images/Snowflake.png&#39;</span><span class="p">)}</span>
             <span class="o">/&gt;</span>
           <span class="o">&lt;</span><span class="err">/TouchableHighlight&gt;</span>
-          <span class="p">{</span><span class="nx">spinner</span><span class="p">}</span>
+          <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">isFetching</span> <span class="o">?</span>
+           <span class="o">&lt;</span><span class="nx">ActivityIndicator</span>    <span class="nx">animating</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>      <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;large&quot;</span>   <span class="o">/&gt;</span>
+           <span class="o">:</span>
+           <span class="kc">null</span>
+          <span class="p">}</span>
+
+
         <span class="o">&lt;</span><span class="err">/View&gt;</span>
-        <span class="p">{</span><span class="nx">showState</span><span class="p">}</span>
+        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">showState</span> <span class="o">?</span>
+         <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
+           <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Header.current_state&quot;</span><span class="p">)}</span> <span class="p">({</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Header.see_console&quot;</span><span class="p">)})</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+           <span class="o">&lt;</span><span class="nx">TextInput</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">height</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">borderColor</span><span class="o">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="nx">borderWidth</span><span class="o">:</span> <span class="mi">1</span><span class="p">}}</span>
+                      <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">displayText</span><span class="p">}</span>
+                      <span class="nx">editable</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+                      <span class="nx">multiline</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
+                      <span class="nx">onChangeText</span><span class="o">=</span><span class="p">{(</span><span class="nx">text</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_onChangeText</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
+                      <span class="nx">numberOfLines</span><span class="o">=</span><span class="p">{</span><span class="mi">20</span><span class="p">}</span><span class="o">&gt;</span>
+           <span class="o">&lt;</span><span class="err">/TextInput&gt;</span>
+           <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span>
+               <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">10</span>
+             <span class="p">}}</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="nx">FormButton</span>  <span class="nx">isDisabled</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isDisabled</span><span class="p">}</span>
+                          <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_updateStateButtonPress</span><span class="p">}</span>
+                          <span class="nx">buttonText</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s1">&#39;Header.update_state&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="err">/FormButton&gt;</span>
+             
+           <span class="o">&lt;</span><span class="err">/View&gt;</span>
+         <span class="o">&lt;</span><span class="err">/View&gt;</span>
+         <span class="o">:</span>
+         <span class="kc">null</span><span class="p">}</span>
       <span class="o">&lt;</span><span class="err">/View&gt;</span>
     <span class="p">);</span>
   <span class="p">}</span>

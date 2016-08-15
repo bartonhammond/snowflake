@@ -27,6 +27,9 @@
       <div class="heading h2">
         <a href="#redux%20boilerplate">Redux boilerplate</a>
       </div>
+      <div class="heading h3">
+        <a href="#translations">Translations</a>
+      </div>
     </div>
   </div>
   <div id="sidebar-toggle"></div>
@@ -200,10 +203,34 @@
   <span class="nx">login</span> <span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">password</span><span class="p">);</span>
 <span class="p">}</span>
 
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="translations">
+  <h3>
+    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
+    Translations
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
+<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
+<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+
 <span class="kd">let</span> <span class="nx">Login</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
 
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">loginButtonText</span> <span class="o">=</span> <span class="s1">&#39;Log in&#39;</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">loginButtonText</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Login.login&quot;</span><span class="p">);</span>
     <span class="kd">let</span> <span class="nx">onButtonPress</span> <span class="o">=</span> <span class="nx">buttonPressHandler</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span>
                         <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">login</span><span class="p">,</span>
                         <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span> 

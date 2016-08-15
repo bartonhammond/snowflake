@@ -509,8 +509,10 @@ Otherwise, the user will default to the login in screen.</p>
         <span class="k">if</span> <span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
           <span class="nx">dispatch</span><span class="p">(</span><span class="nx">sessionTokenRequestSuccess</span><span class="p">(</span><span class="nx">token</span><span class="p">));</span>
           <span class="nx">dispatch</span><span class="p">(</span><span class="nx">logoutState</span><span class="p">());</span>
+          <span class="nx">Actions</span><span class="p">.</span><span class="nx">Tabbar</span><span class="p">();</span>
         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
           <span class="nx">dispatch</span><span class="p">(</span><span class="nx">sessionTokenRequestFailure</span><span class="p">());</span>
+          <span class="nx">Actions</span><span class="p">.</span><span class="nx">InitialLoginForm</span><span class="p">();</span>
         <span class="p">}</span>
       <span class="p">})</span>
     

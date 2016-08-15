@@ -24,6 +24,9 @@
       <div class="heading h2">
         <a href="#import">Import</a>
       </div>
+      <div class="heading h3">
+        <a href="#translations">Translations</a>
+      </div>
       <div class="heading h2">
         <a href="#loginform%20class">LoginForm class</a>
       </div>
@@ -131,6 +134,30 @@ Login, Register or Reset Password</p>
 <span class="kr">const</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;tcomb-form-native&#39;</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">Form</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">Form</span><span class="p">;</span>
 
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="translations">
+  <h3>
+    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
+    Translations
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
+<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
+<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+
 <span class="kd">var</span> <span class="nx">LoginForm</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
 
 </pre></div>
@@ -186,16 +213,14 @@ Login, Register or Reset Password</p>
   <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
 
     <span class="kd">let</span> <span class="nx">formType</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">formType</span><span class="p">;</span>
-    
+
     <span class="kd">let</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">auto</span><span class="o">:</span> <span class="s1">&#39;placeholders&#39;</span><span class="p">,</span>
       <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-        
       <span class="p">}</span>
     <span class="p">};</span>
 
     <span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span>
+      <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.username&quot;</span><span class="p">),</span>
       <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
       <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
       <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span><span class="p">,</span>
@@ -203,7 +228,7 @@ Login, Register or Reset Password</p>
     <span class="p">};</span>
     
     <span class="kd">let</span> <span class="nx">email</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span>
+      <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.email&quot;</span><span class="p">),</span>
       <span class="nx">keyboardType</span><span class="o">:</span> <span class="s1">&#39;email-address&#39;</span><span class="p">,</span>
       <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
       <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">,</span>
@@ -213,7 +238,7 @@ Login, Register or Reset Password</p>
     <span class="kd">let</span> <span class="nx">secureTextEntry</span> <span class="o">=</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">showPassword</span><span class="p">;</span>
 
     <span class="kd">let</span> <span class="nx">password</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;Password&#39;</span><span class="p">,</span>
+      <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password&quot;</span><span class="p">),</span>
       <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
       <span class="nx">secureTextEntry</span><span class="o">:</span> <span class="nx">secureTextEntry</span><span class="p">,</span>
       <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
@@ -222,13 +247,14 @@ Login, Register or Reset Password</p>
     <span class="p">};</span>
 
     <span class="kd">let</span> <span class="nx">passwordAgain</span><span class="o">=</span> <span class="p">{</span>
-      <span class="nx">label</span><span class="o">:</span> <span class="s1">&#39;Please enter password again&#39;</span><span class="p">,</span>
+      <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password_again&quot;</span><span class="p">),</span>
       <span class="nx">secureTextEntry</span><span class="o">:</span> <span class="nx">secureTextEntry</span><span class="p">,</span>
       <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
       <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
       <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgainHasError</span><span class="p">,</span>
       <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgainErrorMsg</span>
     <span class="p">};</span>
+    
 
     <span class="kd">let</span> <span class="nx">loginForm</span><span class="p">;</span>
     <span class="k">switch</span><span class="p">(</span><span class="nx">formType</span><span class="p">)</span> <span class="p">{</span>
@@ -262,11 +288,15 @@ Login, Register or Reset Password</p>
         <span class="nx">passwordAgain</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span>
       <span class="p">});</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">username</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.username&quot;</span><span class="p">);</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">email</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.email&quot;</span><span class="p">);</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">password</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password&quot;</span><span class="p">);</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;passwordAgain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">passwordAgain</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;passwordAgain&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password_again&quot;</span><span class="p">);</span>                
       <span class="k">break</span><span class="p">;</span>
 
 
@@ -297,8 +327,10 @@ Login, Register or Reset Password</p>
         <span class="nx">password</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span>
       <span class="p">});</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">username</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.username&quot;</span><span class="p">);</span>      
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">password</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password&quot;</span><span class="p">);</span>      
       <span class="k">break</span><span class="p">;</span>
       
 
@@ -329,6 +361,7 @@ Login, Register or Reset Password</p>
       <span class="p">});</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">email</span><span class="p">;</span>
       <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
+      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.email&quot;</span><span class="p">);</span>      
       <span class="k">break</span><span class="p">;</span>
     <span class="p">}</span> <span class="c1">//switch</span>
 

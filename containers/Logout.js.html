@@ -31,6 +31,9 @@
         <a href="#redux%20boilerplate">Redux boilerplate</a>
       </div>
       <div class="heading h3">
+        <a href="#translations">Translations</a>
+      </div>
+      <div class="heading h3">
         <a href="#render">render</a>
       </div>
     </div>
@@ -249,6 +252,30 @@
   <span class="p">};</span>
 <span class="p">}</span>
 
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="translations">
+  <h3>
+    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
+    Translations
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
+<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
+<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+
+
 <span class="kr">class</span> <span class="nx">Logout</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
 
 
@@ -293,7 +320,7 @@
             <span class="o">&lt;</span><span class="nx">FormButton</span>
                 <span class="nx">isDisabled</span><span class="o">=</span><span class="p">{</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isValid</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">}</span>
                 <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="nx">onButtonPress</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">self</span><span class="p">)}</span>
-                <span class="nx">buttonText</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Log out&#39;</span><span class="p">}</span><span class="o">/&gt;</span>
+                <span class="nx">buttonText</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Snowflake.logout&quot;</span><span class="p">)}</span><span class="o">/&gt;</span>
           <span class="o">&lt;</span><span class="err">/View&gt;</span>
         <span class="o">&lt;</span><span class="err">/View&gt;</span>
       <span class="p">);</span>

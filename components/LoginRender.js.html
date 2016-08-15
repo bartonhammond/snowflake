@@ -31,6 +31,9 @@
         <a href="#redux%20boilerplate">Redux boilerplate</a>
       </div>
       <div class="heading h3">
+        <a href="#translations">Translations</a>
+      </div>
+      <div class="heading h3">
         <a href="#componentwillreceiveprops">componentWillReceiveProps</a>
       </div>
       <div class="heading h3">
@@ -369,6 +372,30 @@ textinput and displays the error messages</p>
   <span class="p">};</span>
 <span class="p">}</span>
 
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="translations">
+  <h3>
+    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
+    Translations
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
+<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
+<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+
+
 <span class="kr">class</span> <span class="nx">LoginRender</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
   <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
     <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
@@ -464,7 +491,7 @@ meet the requirements.
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-17" id="section-17">&#182;</a>
+  <a class="pilcrow" href="#section-18" id="section-18">&#182;</a>
 </div>
 <div class="dox">
   <div class="summary"><p>Get the appropriate message for the current action
@@ -483,7 +510,7 @@ meet the requirements.
             <span class="nx">actions</span><span class="p">.</span><span class="nx">forgotPasswordState</span><span class="p">();</span>
             <span class="nx">Actions</span><span class="p">.</span><span class="nx">ForgotPassword</span><span class="p">();</span>
           <span class="p">}}</span> <span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="nx">Forgot</span> <span class="nx">Password</span><span class="o">?&lt;</span><span class="err">/Text&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginRender.forgot_password&quot;</span><span class="p">)}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
     <span class="o">&lt;</span><span class="err">/TouchableHighlight&gt;;</span>
 
     <span class="kd">let</span> <span class="nx">alreadyHaveAccount</span> <span class="o">=</span>
@@ -492,7 +519,7 @@ meet the requirements.
             <span class="nx">actions</span><span class="p">.</span><span class="nx">loginState</span><span class="p">();</span>
             <span class="nx">Actions</span><span class="p">.</span><span class="nx">Login</span><span class="p">();</span>
           <span class="p">}}</span> <span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="nx">Already</span> <span class="nx">have</span> <span class="nx">an</span> <span class="nx">account</span><span class="o">?&lt;</span><span class="err">/Text&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginRender.already_have_account&quot;</span><span class="p">)}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
     <span class="o">&lt;</span><span class="err">/TouchableHighlight&gt;;</span>
     
     <span class="kd">let</span> <span class="nx">register</span> <span class="o">=</span>
@@ -501,7 +528,7 @@ meet the requirements.
             <span class="nx">actions</span><span class="p">.</span><span class="nx">registerState</span><span class="p">();</span>
             <span class="nx">Actions</span><span class="p">.</span><span class="nx">Register</span><span class="p">();</span>
           <span class="p">}}</span> <span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="nx">Register</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginRender.register&quot;</span><span class="p">)}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
     <span class="o">&lt;</span><span class="err">/TouchableHighlight&gt;;</span>
     
     <span class="k">switch</span><span class="p">(</span><span class="nx">messageType</span><span class="p">)</span> <span class="p">{</span>
@@ -557,7 +584,7 @@ meet the requirements.
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-19" id="section-19">&#182;</a>
+  <a class="pilcrow" href="#section-20" id="section-20">&#182;</a>
 </div>
 <p>display the login / register / change password screens</p>
         </td>
@@ -571,7 +598,7 @@ meet the requirements.
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-20" id="section-20">&#182;</a>
+  <a class="pilcrow" href="#section-21" id="section-21">&#182;</a>
 </div>
 <div class="dox">
   <div class="summary"><p>Toggle the display of the Password and PasswordAgain fields</p>
@@ -584,7 +611,7 @@ meet the requirements.
     <span class="k">if</span> <span class="p">(</span><span class="nx">displayPasswordCheckbox</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">passwordCheckbox</span> <span class="o">=</span>
       <span class="o">&lt;</span><span class="nx">ItemCheckbox</span>
-          <span class="nx">text</span><span class="o">=</span><span class="s2">&quot;Show Password&quot;</span>
+      <span class="nx">text</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginRender.show_password&quot;</span><span class="p">)}</span>
           <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">}</span>
           <span class="nx">onCheck</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">onAuthFormFieldChange</span><span class="p">(</span><span class="s1">&#39;showPassword&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
@@ -602,7 +629,7 @@ meet the requirements.
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-21" id="section-21">&#182;</a>
+  <a class="pilcrow" href="#section-22" id="section-22">&#182;</a>
 </div>
 <div class="dox">
   <div class="summary"><p>The LoginForm is now defined with the required fields.  Just

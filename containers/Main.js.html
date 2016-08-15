@@ -24,6 +24,9 @@
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+      <div class="heading h3">
+        <a href="#translations">Translations</a>
+      </div>
       <div class="heading h2">
         <a href="#app%20class">App class</a>
       </div>
@@ -291,6 +294,29 @@
   <span class="p">}</span>
 <span class="p">});</span>
 
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="translations">
+  <h3>
+    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
+    Translations
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
+<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
+<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+
 
 </pre></div>
         </td>
@@ -323,7 +349,7 @@
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-13" id="section-13">&#182;</a>
+  <a class="pilcrow" href="#section-14" id="section-14">&#182;</a>
 </div>
 <p>you can add additional props to be passed to Subview here...</p>
         </td>
@@ -342,7 +368,7 @@
                 <span class="nx">onSetState</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">setState</span><span class="p">}</span>
         <span class="o">/&gt;</span>        
       <span class="o">&lt;</span><span class="nx">Button</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">button</span> <span class="p">}</span> <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="nx">handlePress</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span> <span class="p">}</span><span class="o">&gt;</span>
-    <span class="p">{</span><span class="s1">&#39;Navigate to Subview&#39;</span><span class="p">}</span>
+  <span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Main.navigate&quot;</span><span class="p">)}</span>
         <span class="o">&lt;</span><span class="err">/Button&gt;</span>
         <span class="o">&lt;</span><span class="err">/View&gt;</span>
       <span class="o">&lt;</span><span class="err">/View&gt;</span>
@@ -357,7 +383,7 @@
       <tr>
         <td class="docs">
 <div class="pilwrap">
-  <a class="pilcrow" href="#section-14" id="section-14">&#182;</a>
+  <a class="pilcrow" href="#section-15" id="section-15">&#182;</a>
 </div>
 <div class="dox">
   <div class="summary"><p>Connect the properties</p>

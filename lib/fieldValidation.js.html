@@ -24,6 +24,9 @@
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+      <div class="heading h3">
+        <a href="#translations">Translations</a>
+      </div>
       <div class="heading h2">
         <a href="#email%20validation%20setup">Email validation setup</a>
       </div>
@@ -98,6 +101,29 @@ message is displayed to the user</p>
         <td class="code highlight"><div class="highlight"><pre>
 <span class="kr">import</span> <span class="nx">validate</span> <span class="nx">from</span> <span class="s1">&#39;validate.js&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">_</span> <span class="nx">from</span> <span class="s1">&#39;underscore&#39;</span><span class="p">;</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs"><div class="dox">
+  <div class="summary">
+<div class="pilwrap" id="translations">
+  <h3>
+    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
+    Translations
+  </h3>
+</div>
+
+  </div>
+  <div class="body">
+  </div>
+</div>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
+<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
+<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
 
 
 </pre></div>
@@ -267,8 +293,8 @@ message is displayed to the user</p>
 
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameErrorMsg&#39;</span><span class="p">],</span> <span class="s2">&quot;6-12 in&quot;</span>
-             <span class="o">+</span> <span class="s2">&quot; length with letters or numbers&quot;</span><span class="p">);</span>      
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameErrorMsg&#39;</span><span class="p">],</span>
+               <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;FieldValidation.valid_user_name&quot;</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">break</span><span class="p">;</span>
     
@@ -301,7 +327,8 @@ message is displayed to the user</p>
         <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailHasError&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailErrorMsg&#39;</span><span class="p">],</span> <span class="s2">&quot;Provide valid email&quot;</span><span class="p">);</span>      
+        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailErrorMsg&#39;</span><span class="p">],</span>
+                 <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;FieldValidation.valid_email&quot;</span><span class="p">));</span>
     <span class="p">}</span>
     <span class="k">break</span><span class="p">;</span>
     
@@ -338,7 +365,7 @@ message is displayed to the user</p>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
       <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordErrorMsg&#39;</span><span class="p">],</span>
-               <span class="s2">&quot;6-12 in length, with a number and special character: !@#$%^&amp;*&quot;</span><span class="p">);</span>      
+          <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;FieldValidation.valid_password&quot;</span><span class="p">));</span>               
     <span class="p">}</span>
     <span class="k">break</span><span class="p">;</span>
     
@@ -376,7 +403,8 @@ message is displayed to the user</p>
       <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainHasError&#39;</span><span class="p">],</span>
                           <span class="kc">true</span><span class="p">)</span>
         <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainErrorMsg&#39;</span><span class="p">],</span>
-               <span class="s1">&#39;Passwords must match&#39;</span><span class="p">);</span>      
+        <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;FieldValidation.valid_password_again&quot;</span><span class="p">));</span> 
+
     <span class="p">}</span>
     <span class="k">break</span><span class="p">;</span>
 
