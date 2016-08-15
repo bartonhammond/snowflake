@@ -79,6 +79,13 @@ function mapDispatchToProps(dispatch) {
     dispatch
   };
 }
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
+
 
 class Logout extends Component {
 
@@ -106,7 +113,7 @@ class Logout extends Component {
             <FormButton
                 isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
                 onPress={onButtonPress.bind(self)}
-                buttonText={'Log out'}/>
+                buttonText={I18n.t("Snowflake.logout")}/>
           </View>
         </View>
       );

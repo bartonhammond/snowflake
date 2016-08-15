@@ -10,20 +10,35 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 ------------
 ##Notes
 
-Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
+Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux).  Multiple scenes support **Login, Register, and Reset Password**.  Once successfully logged in, there are 3 more scenes: **Logout, Subview, and Profile**.
 
-Using [Redux](https://github.com/reactjs/react-redux) and [Immutable](https://facebook.github.io/immutable-js/), the state of the application is testable with
-[Jest](https://facebook.github.io/jest/), which includes [Snapshot tests](http://facebook.github.io/jest/blog/2016/07/27/jest-14.html) currently with 85 tests and 90% coverage!!!
+A user can **change** their **Email Address** and **User Name** once they are logged in using the **Profile** form.
 
-Snowflake supports Hot Reloading of its state.  Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has extensive docs and 45+ min of video demonstating implementation.
+The icons used throughout the app are from [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons), namely using **FontAwesome**
 
-Note: Snowflake now (Jan 3, 2016) has a **choice of servers**, either 
+**Form building** is extremely easy and consistent by using [Tcomb Form Library](https://github.com/gcanti/tcomb-form-native) by using **domain models** and writing less code.
 
-* The original Parse.com 
+Using [Redux](https://github.com/reactjs/react-redux) and [Immutable](https://facebook.github.io/immutable-js/), the state of the application is **testable** with [Jest](https://facebook.github.io/jest/), which includes [Snapshot tests](http://facebook.github.io/jest/blog/2016/07/27/jest-14.html) currently with 85 tests and ~90% coverage!!!  
+
+To ease the pain of Redux Action definitions, Snowflake uses [Key Mirror](https://github.com/STRML/keyMirror).
+
+Using the [Validate.JS](https://validatejs.org/) Library, all **user input is validated**.  Appropriate messages are displayed to the user guiding them in the input requirements.
+
+Once a user is logged in, their **Session State is stored** in [AsyncStorage](https://github.com/jasonmerino/react-native-simple-store) so that subsequent usage does not require logging in again.
+
+Snowflake supports **multiple languages** using [I18n](https://github.com/AlexanderZaytsev/react-native-i18n) with English, French and Spanish.
+
+Snowflake supports **Hot Reloading** of its state.  
+
+Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has **extensive docs and 45+ min of video** demonstating implementation.
+
+Snowflake has a **choice of servers**, either 
+
+* The original **Parse.com**
 or 
-* Hapi Server that runs on Openshift and locally.  
+* **Hapi Server** that runs on **RedHat Openshift** and **locally**.
 
-See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
+    See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
 
 ---------------
 # Content
@@ -62,15 +77,18 @@ See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.c
 1. **All state changes*** are actions to the Redux store.
 1. The backend is provided by Parse.com using the **Rest API**
 1. **Every action** performed by the UI interfaces with the **Redux actions** and subsequently to the Redux Store.  This **reduces the complexity** of the JSX Components **tremendously**and makes them easily testable.
-1. **Jest Unit Tests cover 86%** of the application statements.
-1. Demonstrates how to **setup React-Native to perform Jest testing** with Babel.
-1. Includes ability to **debug Jest unit tests**with Chrome
+1. **Jest Unit Tests cover ~90%** of the application statements.
+1. Demonstrates how to **setup React-Native to perform Jest testing** with Mock modules
+1. Includes ability to **debug Jest unit tests** with Chrome
 1. Instructions and videos for **continuous integration with Bitrise.io**
 
 ----------
 ## Quotes
 
 Some quotes from users of **Snowflake**
+
+**Pepperoni App Kit** (see [Credits](https://github.com/futurice/pepperoni-app-kit#credits) )
+>This project was initially motivated by Snowflake....you should check it out to see if it's a good fit for your app.
 
 **Viktor**
 >Just saw the tweets, still watching the vids. It's awesome!! It's really really high quality, I'm truly amazed
@@ -98,7 +116,6 @@ Some quotes from users of **Snowflake**
 
 **Jim**
 >Neat project
-
 
 ----------
 
@@ -533,6 +550,10 @@ alt="Snowflake Hot Loading" width="240" height="180" border="10" /></a>
 -------------
 
 ## Faq 
+
+### How do I change the Language of the App?  
+
+Just use the Settings of your Device or Simulator.
 
 ### Why did you use the RestAPI instead of the (JS-sdk | ParseReact)
 

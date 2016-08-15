@@ -46,18 +46,20 @@ var styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     flex: 1,
-    margin: 20
+    marginTop: 10
   },
   header: {
-    marginTop: 10,
+    marginTop: 20,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'transparent'
   },
   mark: {
-    width: 50,
-    height: 50
+    height:100,
+    width: 100
   }
+  
+
 });
 
 var Header = React.createClass({
@@ -125,41 +127,15 @@ var Header = React.createClass({
    *
    */
   render() {
-    let showState = <Text> </Text>;
+
     if (this.props.showState) {
       let displayText = JSON.stringify(this.props.currentState);
       
      console.log(displayText);
 
-      showState =
-      <View style={styles.container}>
-        <Text>Current State (see console)</Text>
-        <TextInput style={{height: 100, borderColor: 'gray', borderWidth: 1}}
-                   value={displayText}
-                   editable={true}
-                   multiline={true}
-                   onChangeText={(text) => this._onChangeText(text)}
-                   numberOfLines={20}>
-        </TextInput>
-        <View style={{
-            marginTop: 10
-          }}>
-          <FormButton  isDisabled={this.state.isDisabled}
-                       onPress={this._updateStateButtonPress}
-                       buttonText={'Update State'}>
-          </FormButton>
-          
-        </View>
-      </View>
     }
     
-    let spinner = <Text> </Text>;
-    if (this.props.isFetching) {
-      spinner = <ActivityIndicator
-                  animating={true}
-                  size="large"
-                  />
-    }
+
 
     return (
       <View>
@@ -167,13 +143,40 @@ var Header = React.createClass({
 
           <TouchableHighlight onPress={this._onPressMark}>
 
-            <Image style={styles.mark} source={{uri:
-                                                'http://i.imgur.com/da4G0Io.png'}}
+            <Image style={styles.mark}
+                   source={require('../images/Snowflake.png')}
             />
           </TouchableHighlight>
-          {spinner}
+          {this.props.isFetching ?
+           <ActivityIndicator    animating={true}      size="large"   />
+           :
+           null
+          }
+
+
         </View>
-        {showState}
+        {this.props.showState ?
+         <View style={styles.container}>
+           <Text>{I18n.t("Header.current_state")} ({I18n.t("Header.see_console")})</Text>
+           <TextInput style={{height: 100, borderColor: 'gray', borderWidth: 1}}
+                      value={displayText}
+                      editable={true}
+                      multiline={true}
+                      onChangeText={(text) => this._onChangeText(text)}
+                      numberOfLines={20}>
+           </TextInput>
+           <View style={{
+               marginTop: 10
+             }}>
+             <FormButton  isDisabled={this.state.isDisabled}
+                          onPress={this._updateStateButtonPress}
+                          buttonText={'Update State'}>
+             </FormButton>
+             
+           </View>
+         </View>
+         :
+         null}
       </View>
     );
   }

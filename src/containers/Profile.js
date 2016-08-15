@@ -103,6 +103,12 @@ function mapDispatchToProps(dispatch) {
     dispatch
   };
 }
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
 
 
 class Profile extends Component {
@@ -192,14 +198,14 @@ class Profile extends Component {
       auto: 'placeholders',
       fields: {
         username: {
-          label: 'Username',
+          label: I18n.t("Profile.username"),
           maxLength: 12,
           editable: !this.props.profile.form.isFetching,
           hasError: this.props.profile.form.fields.usernameHasError,
           error: this.props.profile.form.fields.usernameErrorMsg
         },
         email: {
-          label: 'Email',
+          label: I18n.t("Profile.email"),
           keyboardType: 'email-address',
           editable: !this.props.profile.form.isFetching,
           hasError: this.props.profile.form.fields.emailHasError,
@@ -213,7 +219,7 @@ class Profile extends Component {
      * ```currrentUser``` object as it contains the sessionToken and
      * user objectId which Parse.com requires
      */
-    let profileButtonText = 'Update Profile';
+    let profileButtonText = I18n.t("Profile.update");
     let onButtonPress = () => {
       this.props.actions.updateProfile(
         this.props.profile.form.originalProfile.objectId,
@@ -226,6 +232,10 @@ class Profile extends Component {
      * mostly for support of Hot reloading. See the docs for Header
      * for more info.
      */
+    let verfiedText = I18n.t("Profile.verified") +
+                       ' (' +
+                       I18n.t("Profile.display") +
+                       ')';
     return (
       <View style={styles.container}>
         <Header isFetching={this.props.profile.form.isFetching}
@@ -242,7 +252,7 @@ class Profile extends Component {
               value={this.state.formValues}
               onChange={this.onChange.bind(self)}
           />
-          <ItemCheckbox text="Email verified (display only)"
+        <ItemCheckbox text={verfiedText}
                         disabled={true}
                         checked={this.props.profile.form.fields.emailVerified}
           />

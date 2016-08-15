@@ -16,6 +16,12 @@
  */
 import validate from 'validate.js';
 import _ from 'underscore';
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
 
 /**
  * ## Email validation setup
@@ -85,8 +91,8 @@ export default function fieldValidation(state, action ) {
 
     } else {
       return state.setIn(['form', 'fields', 'usernameHasError'], true)
-      .setIn(['form', 'fields', 'usernameErrorMsg'], "6-12 in"
-             + " length with letters or numbers");      
+        .setIn(['form', 'fields', 'usernameErrorMsg'],
+               I18n.t("FieldValidation.valid_user_name"));
     }
     break;
     
@@ -101,7 +107,8 @@ export default function fieldValidation(state, action ) {
         return state.setIn(['form', 'fields', 'emailHasError'], false);
     } else {
       return state.setIn(['form', 'fields', 'emailHasError'], true)
-          .setIn(['form', 'fields', 'emailErrorMsg'], "Provide valid email");      
+        .setIn(['form', 'fields', 'emailErrorMsg'],
+                 I18n.t("FieldValidation.valid_email"));
     }
     break;
     
@@ -120,7 +127,7 @@ export default function fieldValidation(state, action ) {
     } else {
       return state.setIn(['form', 'fields', 'passwordHasError'], true)
         .setIn(['form', 'fields', 'passwordErrorMsg'],
-               "6-12 in length, with a number and special character: !@#$%^&*");      
+          I18n.t("FieldValidation.valid_password"));               
     }
     break;
     
@@ -140,7 +147,8 @@ export default function fieldValidation(state, action ) {
       return state.setIn(['form', 'fields', 'passwordAgainHasError'],
                           true)
         .setIn(['form', 'fields', 'passwordAgainErrorMsg'],
-               'Passwords must match');      
+        I18n.t("FieldValidation.valid_password_again")); 
+
     }
     break;
 

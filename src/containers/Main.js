@@ -105,6 +105,12 @@ var styles = StyleSheet.create({
     marginRight: 10    
   }
 });
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
 
 /**
  * ## App class
@@ -129,7 +135,7 @@ class Main extends Component {
                 onSetState={this.props.actions.setState}
         />        
     	<Button style={ styles.button } onPress={ this.handlePress.bind(this) }>
-	  {'Navigate to Subview'}
+	{I18n.t("Main.navigate")}
         </Button>
         </View>
       </View>

@@ -48,6 +48,16 @@ import {
  */
 import configureStore from './lib/configureStore';
 
+/**
+* ### Translations
+*/
+var I18n = require('react-native-i18n');
+
+//Support fallbacks so en-US & en-BR both use en
+I18n.fallbacks = true;
+
+import Translations from './lib/Translations';
+I18n.translations = Translations;
 
 /**
  * ### containers
@@ -122,15 +132,14 @@ const styles = StyleSheet.create({
  * 
  * Displays the icon for the tab w/ color dependent upon selection
  */
-
 class TabIcon extends React.Component {
   render(){
     var color = this.props.selected ? '#FF3366' : '#FFB3B3';
     return (
-        <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center'}}>
+      <View style={{flex:1, flexDirection:'column', alignItems:'center', alignSelf:'center'}}>
         <Icon style={{color: color}} name={this.props.iconName} size={30} />
         <Text style={{color: color}}>{this.props.title}</Text>
-        </View>
+      </View>
     );
   }
 }
@@ -168,34 +177,28 @@ export default function native(platform) {
               
               <Scene key="App"
                      component={App}
-                     title="App"
                      type="replace"
                      initial={true}/>
               
 	      <Scene key="InitialLoginForm"
                      component={Register}
-                     title="Register"
                      type="replace"
                      />
               
               <Scene key="Login"
                      component={Login}
-                     title="Login" 
                      type="replace"/>
 	      
 	      <Scene key="Register"
                      component={Register}
-                     title="Register"
                      type="replace" />
 	      
 	      <Scene key="ForgotPassword"
                      component={ForgotPassword}
-                     title="ForgotPassword" 
                      type="replace"/>
 	      
 	      <Scene key="Subview"
                      component={Subview}
-                     title="Subview"
               />
 
 	      <Scene key="Tabbar"
@@ -205,14 +208,14 @@ export default function native(platform) {
                      default="Main">
                 
 	        <Scene key="Logout"
-                       title="logout"
+                       title={I18n.t("Snowflake.logout")}
                        icon={TabIcon}
                        iconName={"sign-out"}
                        hideNavBar={true}
                        component={Logout}/>
                 
-	        <Scene key="Main"
-                       title="main"
+                <Scene key="Main"
+                       title={I18n.t("Snowflake.main")}                            
                        iconName={"home"}
                        icon={TabIcon}                       
                        hideNavBar={true}
@@ -220,7 +223,7 @@ export default function native(platform) {
                        initial={true}/>
 
                 <Scene key="Profile"
-                       title="profile"
+                       title={I18n.t("Snowflake.profile")}                       
                        icon={TabIcon}                       
                        iconName={"gear"}
                        hideNavBar={true}

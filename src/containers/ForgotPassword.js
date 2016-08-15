@@ -65,11 +65,17 @@ function mapDispatchToProps(dispatch) {
 function buttonPressHandler(resetPassword, email) {
   resetPassword (email);
 }
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
 
 let ForgotPassword = React.createClass({
 
   render() {
-    let loginButtonText = 'Reset password';
+    let loginButtonText = I18n.t("ForgotPassword.reset_password");
     let onButtonPress = buttonPressHandler.bind(null,
 					        this.props.actions.resetPassword,
 					        this.props.auth.form.fields.email

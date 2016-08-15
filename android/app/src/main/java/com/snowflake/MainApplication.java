@@ -16,6 +16,8 @@ import java.util.List;
 import com.oblador.vectoricons.VectorIconsPackage;
 // Add this line:
 import com.burnweb.rnsimplealertdialog.RNSimpleAlertDialogPackage;  
+// Add this line:
+import com.i18n.reactnativei18n.ReactNativeI18n;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -31,7 +33,8 @@ public class MainApplication extends Application implements ReactApplication {
                                          new MainReactPackage(),
                                          //Added two lines
                                          new RNSimpleAlertDialogPackage(),
-                                         new VectorIconsPackage()
+                                         new VectorIconsPackage(),
+                                         new ReactNativeI18n()
                                          );
     }
   };

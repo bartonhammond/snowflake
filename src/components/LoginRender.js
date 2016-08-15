@@ -123,6 +123,13 @@ function mapDispatchToProps(dispatch) {
     dispatch
   };
 }
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
+
 
 class LoginRender extends Component {
   constructor(props) {
@@ -191,7 +198,7 @@ class LoginRender extends Component {
             actions.forgotPasswordState();
             Actions.ForgotPassword();
           }} >
-      <Text>Forgot Password?</Text>
+      <Text>{I18n.t("LoginRender.forgot_password")}</Text>
     </TouchableHighlight>;
 
     let alreadyHaveAccount =
@@ -200,7 +207,7 @@ class LoginRender extends Component {
             actions.loginState();
             Actions.Login();
           }} >
-      <Text>Already have an account?</Text>
+      <Text>{I18n.t("LoginRender.already_have_account")}</Text>
     </TouchableHighlight>;
     
     let register =
@@ -209,7 +216,7 @@ class LoginRender extends Component {
             actions.registerState();
             Actions.Register();
           }} >
-      <Text>Register</Text>
+      <Text>{I18n.t("LoginRender.register")}</Text>
     </TouchableHighlight>;
     
     switch(messageType) {
@@ -249,7 +256,7 @@ class LoginRender extends Component {
     if (displayPasswordCheckbox) {
       passwordCheckbox =
       <ItemCheckbox
-          text="Show Password"
+      text={I18n.t("LoginRender.show_password")}
           disabled={this.props.auth.form.isFetching}
           onCheck={() => {
 	      this.props.actions.onAuthFormFieldChange('showPassword',true);

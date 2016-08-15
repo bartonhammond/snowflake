@@ -1,8 +1,6 @@
 package com.snowflake;
 
 import com.facebook.react.ReactActivity;
-import com.burnweb.rnsimplealertdialog.RNSimpleAlertDialogPackage;
-import com.burnweb.rnsimplealertdialog.RNSimpleAlertDialogPackage;
 
 public class MainActivity extends ReactActivity {
 

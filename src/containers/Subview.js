@@ -95,6 +95,12 @@ var styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 });
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
 
 /**
  * ## Subview class
@@ -103,11 +109,11 @@ let Subview = React.createClass({
   
   render() {
     var titleConfig = {
-      title: "Subview"
+      title: I18n.t("Subview.subview")
     };
     
     var leftButtonConfig = {
-      title: 'Back',
+      title: I18n.t("Subview.back"),
       handler: Actions.pop
     };
 
@@ -118,7 +124,7 @@ let Subview = React.createClass({
             leftButton={ leftButtonConfig }
 	/>
 	<View style={ styles.container }>
-	<Text style={ styles.summary }>Subview Version: {this.props.device.version} </Text>
+	<Text style={ styles.summary }>{I18n.t("Subview.subview")} {I18n.t("App.version")}: {this.props.device.version} </Text>
 	</View>
       </View>
     );

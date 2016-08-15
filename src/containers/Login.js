@@ -68,10 +68,17 @@ function buttonPressHandler(login, username, password) {
   login (username, password);
 }
 
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
+
 let Login = React.createClass({
 
   render() {
-    let loginButtonText = 'Log in';
+    let loginButtonText = I18n.t("Login.login");
     let onButtonPress = buttonPressHandler.bind(null,
 				                this.props.actions.login,
 				                this.props.auth.form.fields.username, 

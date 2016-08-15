@@ -40,6 +40,11 @@ import
 from 'react-native';
 
 /**
+ * The Header will display a Image and support Hot Loading
+ */
+import Header from '../components/Header';
+
+/**
  * ## Actions
  * 3 of our actions will be available as ```actions```
  */
@@ -93,24 +98,48 @@ var styles = StyleSheet.create({
 /**
  * ## App class
  */
+var reactMixin = require('react-mixin');
+import TimerMixin from 'react-timer-mixin';
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
+
 let App = React.createClass({
   /**
    * See if there's a sessionToken from a previous login
    * 
    */
   componentDidMount() {
-    this.props.actions.getSessionToken();
+    //Use a timer so App screen is displayed 
+    this.setTimeout(
+      () => {
+        this.props.actions.getSessionToken();
+      },
+      2500
+    );
+
   },
   
   render() {
     return(
       <View style={ styles.container }>
-	<Text style={ styles.summary }>App Startup Screen</Text>
+	<Header isFetching={this.props.auth.form.isFetching}
+                showState={this.props.global.showState}
+                currentState={this.props.global.currentState}
+                onGetState={this.props.actions.getState}
+                onSetState={this.props.actions.setState}                      
+	/>
+        
+	<Text style={ styles.summary }>Snowflake {I18n.t("App.version")}:  {this.props.device.version}</Text>
       </View>
     );
   }
 });
-
+// Since we're using ES6 classes, have to define the TimerMixin
+reactMixin(App.prototype, TimerMixin);
 /**
  * Connect the properties
  */

@@ -29,6 +29,13 @@ const {
 const t = require('tcomb-form-native');
 let Form = t.form.Form;
 
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
+
 var LoginForm = React.createClass({
   /**
    * ## LoginForm class
@@ -53,16 +60,14 @@ var LoginForm = React.createClass({
   render() {
 
     let formType = this.props.formType;
-    
+
     let options = {
-      auto: 'placeholders',
       fields: {
-        
       }
     };
 
     let username = {
-      label: 'Username',
+      label: I18n.t("LoginForm.username"),
       maxLength: 12,
       editable: !this.props.form.isFetching,
       hasError: this.props.form.fields.usernameHasError,
@@ -70,7 +75,7 @@ var LoginForm = React.createClass({
     };
     
     let email = {
-      label: 'Email',
+      label: I18n.t("LoginForm.email"),
       keyboardType: 'email-address',
       editable: !this.props.form.isFetching,
       hasError: this.props.form.fields.emailHasError,
@@ -80,7 +85,7 @@ var LoginForm = React.createClass({
     let secureTextEntry = !this.props.form.fields.showPassword;
 
     let password = {
-      label: 'Password',
+      label: I18n.t("LoginForm.password"),
       maxLength: 12,
       secureTextEntry: secureTextEntry,
       editable: !this.props.form.isFetching,
@@ -89,13 +94,14 @@ var LoginForm = React.createClass({
     };
 
     let passwordAgain= {
-      label: 'Please enter password again',
+      label: I18n.t("LoginForm.password_again"),
       secureTextEntry: secureTextEntry,
       maxLength: 12,
       editable: !this.props.form.isFetching,
       hasError: this.props.form.fields.passwordAgainHasError,
       error: this.props.form.fields.passwordAgainErrorMsg
     };
+    
 
     let loginForm;
     switch(formType) {
@@ -111,11 +117,15 @@ var LoginForm = React.createClass({
         passwordAgain: t.String
       });
       options.fields['username'] = username;
+      options.fields['username'].placeholder = I18n.t("LoginForm.username");
       options.fields['username'].autoCapitalize = 'none';
       options.fields['email'] = email;
+      options.fields['email'].placeholder = I18n.t("LoginForm.email");
       options.fields['email'].autoCapitalize = 'none';
       options.fields['password'] = password;
+      options.fields['password'].placeholder = I18n.t("LoginForm.password");
       options.fields['passwordAgain'] = passwordAgain;
+      options.fields['passwordAgain'].placeholder = I18n.t("LoginForm.password_again");                
       break;
 
       /**
@@ -128,8 +138,10 @@ var LoginForm = React.createClass({
         password: t.String
       });
       options.fields['username'] = username;
+      options.fields['username'].placeholder = I18n.t("LoginForm.username");      
       options.fields['username'].autoCapitalize = 'none';
       options.fields['password'] = password;
+      options.fields['password'].placeholder = I18n.t("LoginForm.password");      
       break;
       
       /**
@@ -142,6 +154,7 @@ var LoginForm = React.createClass({
       });
       options.fields['email'] = email;
       options.fields['email'].autoCapitalize = 'none';
+      options.fields['email'].placeholder = I18n.t("LoginForm.email");      
       break;
     } //switch
 
