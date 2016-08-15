@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//lib/constants.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/lib/constants.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,87 +21,96 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
       <tr>
         <td class="docs">
           <h1>constants.js</h1>
         </td>
         <td class="code highlight"></td>
       </tr>
+    
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-1" id="section-1">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="kr">import</span> <span class="nx">keyMirror</span> <span class="nx">from</span> <span class="s1">&#39;key-mirror&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> keyMirror <span class="hljs-keyword">from</span> <span class="hljs-string">'key-mirror'</span>;
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">keyMirror</span><span class="p">({</span>
-  <span class="nx">SET_PLATFORM</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">SET_VERSION</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> keyMirror({
+  SET_PLATFORM: <span class="hljs-literal">null</span>,
+  SET_VERSION: <span class="hljs-literal">null</span>,
 
-  <span class="nx">SESSION_TOKEN_REQUEST</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">SESSION_TOKEN_SUCCESS</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">SESSION_TOKEN_FAILURE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  SESSION_TOKEN_REQUEST: <span class="hljs-literal">null</span>,
+  SESSION_TOKEN_SUCCESS: <span class="hljs-literal">null</span>,
+  SESSION_TOKEN_FAILURE: <span class="hljs-literal">null</span>,
   
-  <span class="nx">DELETE_TOKEN_REQUEST</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">DELETE_TOKEN_SUCCESS</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  DELETE_TOKEN_REQUEST: <span class="hljs-literal">null</span>,
+  DELETE_TOKEN_SUCCESS: <span class="hljs-literal">null</span>,
   
-  <span class="nx">ON_LOGIN_STATE_CHANGE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">LOGOUT</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  ON_LOGIN_STATE_CHANGE: <span class="hljs-literal">null</span>,
+  LOGOUT: <span class="hljs-literal">null</span>,
   
-  <span class="nx">ON_AUTH_FORM_FIELD_CHANGE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">SIGNUP_REQUEST</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">SIGNUP_SUCCESS</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">SIGNUP_FAILURE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  ON_AUTH_FORM_FIELD_CHANGE: <span class="hljs-literal">null</span>,
+  SIGNUP_REQUEST: <span class="hljs-literal">null</span>,
+  SIGNUP_SUCCESS: <span class="hljs-literal">null</span>,
+  SIGNUP_FAILURE: <span class="hljs-literal">null</span>,
 
-  <span class="nx">LOGIN_REQUEST</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">LOGIN_SUCCESS</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">LOGIN_FAILURE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  LOGIN_REQUEST: <span class="hljs-literal">null</span>,
+  LOGIN_SUCCESS: <span class="hljs-literal">null</span>,
+  LOGIN_FAILURE: <span class="hljs-literal">null</span>,
 
-  <span class="nx">LOGOUT_REQUEST</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">LOGOUT_SUCCESS</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">LOGOUT_FAILURE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  LOGOUT_REQUEST: <span class="hljs-literal">null</span>,
+  LOGOUT_SUCCESS: <span class="hljs-literal">null</span>,
+  LOGOUT_FAILURE: <span class="hljs-literal">null</span>,
 
-  <span class="nx">LOGGED_IN</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">LOGGED_OUT</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  LOGGED_IN: <span class="hljs-literal">null</span>,
+  LOGGED_OUT: <span class="hljs-literal">null</span>,
 
-  <span class="nx">SET_SESSION_TOKEN</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  SET_SESSION_TOKEN: <span class="hljs-literal">null</span>,
 
-  <span class="nx">RESET_PASSWORD_REQUEST</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">RESET_PASSWORD_SUCCESS</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">RESET_PASSWORD_FAILURE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  RESET_PASSWORD_REQUEST: <span class="hljs-literal">null</span>,
+  RESET_PASSWORD_SUCCESS: <span class="hljs-literal">null</span>,
+  RESET_PASSWORD_FAILURE: <span class="hljs-literal">null</span>,
 
-  <span class="nx">GET_PROFILE_REQUEST</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_SUCCESS</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_FAILURE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  GET_PROFILE_REQUEST: <span class="hljs-literal">null</span>,
+  GET_PROFILE_SUCCESS: <span class="hljs-literal">null</span>,
+  GET_PROFILE_FAILURE: <span class="hljs-literal">null</span>,
 
-  <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  ON_PROFILE_FORM_FIELD_CHANGE: <span class="hljs-literal">null</span>,
   
-  <span class="nx">PROFILE_UPDATE_REQUEST</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_SUCCESS</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_FAILURE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  PROFILE_UPDATE_REQUEST: <span class="hljs-literal">null</span>,
+  PROFILE_UPDATE_SUCCESS: <span class="hljs-literal">null</span>,
+  PROFILE_UPDATE_FAILURE: <span class="hljs-literal">null</span>,
 
-  <span class="nx">SET_STATE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">GET_STATE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">SET_STORE</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  SET_STATE: <span class="hljs-literal">null</span>,
+  GET_STATE: <span class="hljs-literal">null</span>,
+  SET_STORE: <span class="hljs-literal">null</span>,
   
-  <span class="nx">FORGOT_PASSWORD</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">LOGIN</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">REGISTER</span><span class="o">:</span> <span class="kc">null</span>
+  FORGOT_PASSWORD: <span class="hljs-literal">null</span>,
+  LOGIN: <span class="hljs-literal">null</span>,
+  REGISTER: <span class="hljs-literal">null</span>
 
-<span class="p">});</span>
-</pre></div>
+});
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

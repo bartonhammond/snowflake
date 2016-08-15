@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//lib/config.example.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/lib/config.example.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,50 +21,59 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
       <tr>
         <td class="docs">
           <h1>config.example.js</h1>
         </td>
         <td class="code highlight"></td>
       </tr>
+    
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-1" id="section-1">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">PARSE</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">APP_ID</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="nx">REST_API_KEY</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-    <span class="nx">SESSION_TOKEN_KEY</span><span class="o">:</span> <span class="s1">&#39;SESSION_TOKEN_KEY&#39;</span>
-  <span class="p">},</span>
-  <span class="nx">backend</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">parse</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">hapiRemote</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">hapiLocal</span><span class="o">:</span> <span class="kc">true</span>
-  <span class="p">},</span>
-  <span class="nx">HAPI</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">local</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://127.0.0.1:5000&#39;</span>
-    <span class="p">},</span>
-    <span class="nx">remote</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;enter your remote url here&#39;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>  
-<span class="p">}</span>
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-built_in">module</span>.exports = {
+  PARSE: {
+    APP_ID: <span class="hljs-string">''</span>,
+    REST_API_KEY: <span class="hljs-string">''</span>,
+    SESSION_TOKEN_KEY: <span class="hljs-string">'SESSION_TOKEN_KEY'</span>
+  },
+  backend: {
+    parse: <span class="hljs-literal">false</span>,
+    hapiRemote: <span class="hljs-literal">false</span>,
+    hapiLocal: <span class="hljs-literal">true</span>
+  },
+  HAPI: {
+    local: {
+      url: <span class="hljs-string">'http://127.0.0.1:5000'</span>
+    },
+    remote: {
+      url: <span class="hljs-string">'enter your remote url here'</span>
+    }
+  }  
+}
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

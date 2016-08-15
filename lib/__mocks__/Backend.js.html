@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//lib/__mocks__/Backend.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/lib/__mocks__/Backend.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,312 +21,304 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#parse.js">Parse.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#async">Async</a>
       </div>
+
       <div class="heading h2">
         <a href="#parse">Parse</a>
       </div>
+
       <div class="heading h3">
-        <a href="#constructor">constructor</a>
+        <a href="#constructor-1">constructor</a>
       </div>
+
       <div class="heading h3">
         <a href="#logout">logout</a>
       </div>
+
       <div class="heading h3">
         <a href="#login">login</a>
       </div>
+
       <div class="heading h3">
         <a href="#signup">signup</a>
       </div>
+
       <div class="heading h3">
         <a href="#resetpassword">resetPassword</a>
       </div>
+
       <div class="heading h3">
         <a href="#getprofile">getProfile</a>
       </div>
+
       <div class="heading h3">
         <a href="#updateprofile">updateProfile</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="parse.js">
   <h1>
-    <a href="#parse.js" name="parse.js" class="pilcrow">&#182;</a>
-    Parse.js
+    <a href="#parse.js" name="parse.js" class="pilcrow"></a>
+Parse.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This class mocks lib/Parse.js</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<div class="body">
+<p>This class mocks lib/Parse.js</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="async">
   <h2>
-    <a href="#async" name="async" class="pilcrow">&#182;</a>
-    Async
+    <a href="#async" name="async" class="pilcrow"></a>
+Async
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>Need to still treat as async</p>
-  </div>
 </div>
+<div class="body">
+<p>Need to still treat as async</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;regenerator/runtime&#39;</span><span class="p">);</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-built_in">require</span>(<span class="hljs-string">'regenerator/runtime'</span>);
 
-<span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">Backend</span>  <span class="p">{</span>
-
-</pre></div>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Backend</span>  </span>{
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="parse">
   <h2>
-    <a href="#parse" name="parse" class="pilcrow">&#182;</a>
-    Parse
+    <a href="#parse" name="parse" class="pilcrow"></a>
+Parse
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-<div class="pilwrap" id="constructor_NaN">
+</div>
+<div class="body">
+<div class="pilwrap" id="constructor-1">
   <h3>
-    <a href="#constructor_NaN" name="constructor_NaN" class="pilcrow">&#182;</a>
-    constructor
+    <a href="#constructor-1" name="constructor-1" class="pilcrow"></a>
+constructor
   </h3>
 </div>
-
-
 <p>prepare the response for all the methods</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">constructor</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">_bodyInit</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-      <span class="nx">code</span><span class="o">:</span> <span class="mi">200</span>
-    <span class="p">});</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">response</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="s2">&quot;status&quot;</span><span class="o">:</span> <span class="mi">201</span>
-    <span class="p">};</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">_bodyInit</span> <span class="o">=</span> <span class="nx">_bodyInit</span><span class="p">;</span>  
-  <span class="p">}</span>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">constructor</span>(){
+    <span class="hljs-keyword">var</span> _bodyInit = <span class="hljs-built_in">JSON</span>.stringify({
+      code: <span class="hljs-number">200</span>
+    });
+    <span class="hljs-keyword">this</span>.response = {
+      <span class="hljs-string">"status"</span>: <span class="hljs-number">201</span>
+    };
+    <span class="hljs-keyword">this</span>.response._bodyInit = _bodyInit;  
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="logout">
   <h3>
-    <a href="#logout" name="logout" class="pilcrow">&#182;</a>
-    logout
+    <a href="#logout" name="logout" class="pilcrow"></a>
+logout
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Returns</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name"></span>
-      <span class="dox_type">Object</span>
-      <span>response</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">logout</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="body">
+</div>
+<div class="details">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> logout () {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.response;
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="login">
   <h3>
-    <a href="#login" name="login" class="pilcrow">&#182;</a>
-    login
+    <a href="#login" name="login" class="pilcrow"></a>
+login
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Returns</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name"></span>
-      <span class="dox_type">Object</span>
-      <span>response</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">login</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="body">
+</div>
+<div class="details">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> login() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.response;
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="signup">
   <h3>
-    <a href="#signup" name="signup" class="pilcrow">&#182;</a>
-    signup
+    <a href="#signup" name="signup" class="pilcrow"></a>
+signup
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Returns</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name"></span>
-      <span class="dox_type">Object</span>
-      <span>response</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">signup</span><span class="p">()</span> <span class="p">{</span>    
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="body">
+</div>
+<div class="details">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> signup() {    
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.response;
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="resetpassword">
   <h3>
-    <a href="#resetpassword" name="resetpassword" class="pilcrow">&#182;</a>
-    resetPassword
+    <a href="#resetpassword" name="resetpassword" class="pilcrow"></a>
+resetPassword
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Returns</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name"></span>
-      <span class="dox_type">Object</span>
-      <span>response</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">resetPassword</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="body">
+</div>
+<div class="details">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> resetPassword() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.response;
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="getprofile">
   <h3>
-    <a href="#getprofile" name="getprofile" class="pilcrow">&#182;</a>
-    getProfile
+    <a href="#getprofile" name="getprofile" class="pilcrow"></a>
+getProfile
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Returns</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name"></span>
-      <span class="dox_type">Object</span>
-      <span>response</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">getProfile</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="body">
+</div>
+<div class="details">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> getProfile() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.response;
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="updateprofile">
   <h3>
-    <a href="#updateprofile" name="updateprofile" class="pilcrow">&#182;</a>
-    updateProfile
+    <a href="#updateprofile" name="updateprofile" class="pilcrow"></a>
+updateProfile
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Returns</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name"></span>
-      <span class="dox_type">Object</span>
-      <span>response</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">updateProfile</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
-  <span class="p">}</span>
+<div class="body">
+</div>
+<div class="details">
+</div>
+</div>
 
-<span class="p">}</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> updateProfile() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.response;
+  }
+
+}
+
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/profile/profileActions.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/profile/profileActions.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,334 +21,359 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#profileactions.js">profileActions.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
-        <a href="#retreiving%20profile%20actions">retreiving profile actions</a>
+        <a href="#retreiving-profile-actions">retreiving profile actions</a>
       </div>
+
       <div class="heading h2">
-        <a href="#state%20actions">State actions</a>
+        <a href="#state-actions">State actions</a>
       </div>
+
       <div class="heading h2">
-        <a href="#state%20actions">State actions</a>
+        <a href="#state-actions-1">State actions</a>
       </div>
+
       <div class="heading h2">
         <a href="#updateprofile">updateProfile</a>
       </div>
+
       <div class="heading h2">
         <a href="#onprofileformfieldchange">onProfileFormFieldChange</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="profileactions.js">
   <h1>
-    <a href="#profileactions.js" name="profileactions.js" class="pilcrow">&#182;</a>
-    profileActions.js
+    <a href="#profileactions.js" name="profileactions.js" class="pilcrow"></a>
+profileActions.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>The actions to support the users profile</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<div class="body">
+<p>The actions to support the users profile</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>The actions for profile</p>
-  </div>
 </div>
+<div class="body">
+<p>The actions for profile</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">GET_PROFILE_REQUEST</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_SUCCESS</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_FAILURE</span><span class="p">,</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> {
+  GET_PROFILE_REQUEST,
+  GET_PROFILE_SUCCESS,
+  GET_PROFILE_FAILURE,
 
-  <span class="nx">PROFILE_UPDATE_REQUEST</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_SUCCESS</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_FAILURE</span><span class="p">,</span>
+  PROFILE_UPDATE_REQUEST,
+  PROFILE_UPDATE_SUCCESS,
+  PROFILE_UPDATE_FAILURE,
 
-  <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+  ON_PROFILE_FORM_FIELD_CHANGE
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/constants'</span>).default;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>BackendFactory - base class for server implementation
-AppAuthToken for localStorage sessionToken access </p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>BackendFactory - base class for server implementation
+AppAuthToken for localStorage sessionToken access</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">BackendFactory</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/BackendFactory&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">AppAuthToken</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/AppAuthToken&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> BackendFactory = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/BackendFactory'</span>).default;
+<span class="hljs-keyword">const</span> AppAuthToken = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/AppAuthToken'</span>).default;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="retreiving%20profile%20actions">
-  <h2>
-    <a href="#retreiving%20profile%20actions" name="retreiving%20profile%20actions" class="pilcrow">&#182;</a>
-    retreiving profile actions
-  </h2>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">getProfileRequest</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_REQUEST</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">getProfileSuccess</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_SUCCESS</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">json</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">getProfileFailure</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_FAILURE</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">json</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="state%20actions">
-  <h2>
-    <a href="#state%20actions" name="state%20actions" class="pilcrow">&#182;</a>
-    State actions
-  </h2>
-</div>
-
-
-<p>controls which form is displayed to the user
-as in login, register, logout or reset password</p>
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">getProfile</span><span class="p">(</span><span class="nx">sessionToken</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">getProfileRequest</span><span class="p">());</span>
-
-</pre></div>
-        </td>
-      </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-6" id="section-6">&#182;</a>
-</div>
-<p>store or get a sessionToken</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">AppAuthToken</span><span class="p">().</span><span class="nx">getSessionToken</span><span class="p">(</span><span class="nx">sessionToken</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">token</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">BackendFactory</span><span class="p">(</span><span class="nx">token</span><span class="p">).</span><span class="nx">getProfile</span><span class="p">();</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">json</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="nx">dispatch</span><span class="p">(</span><span class="nx">getProfileSuccess</span><span class="p">(</span><span class="nx">json</span><span class="p">));</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">getProfileFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
-      <span class="p">});</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="state%20actions">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="retreiving-profile-actions">
   <h2>
-    <a href="#state%20actions" name="state%20actions" class="pilcrow">&#182;</a>
-    State actions
+    <a href="#retreiving-profile-actions" name="retreiving-profile-actions" class="pilcrow"></a>
+retreiving profile actions
   </h2>
 </div>
+</div>
+<div class="body">
+</div>
+</div>
 
-
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getProfileRequest</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: GET_PROFILE_REQUEST
+  };
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getProfileSuccess</span>(<span class="hljs-params">json</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: GET_PROFILE_SUCCESS,
+    payload: json
+  };
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getProfileFailure</span>(<span class="hljs-params">json</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: GET_PROFILE_FAILURE,
+    payload: json
+  };
+}
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="state-actions">
+  <h2>
+    <a href="#state-actions" name="state-actions" class="pilcrow"></a>
+State actions
+  </h2>
+</div>
 <p>controls which form is displayed to the user
 as in login, register, logout or reset password</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">profileUpdateRequest</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_REQUEST</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">profileUpdateSuccess</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_SUCCESS</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">profileUpdateFailure</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_FAILURE</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">json</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getProfile</span>(<span class="hljs-params">sessionToken</span>) </span>{
+  <span class="hljs-keyword">return</span> dispatch =&gt; {
+    dispatch(getProfileRequest());
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
+</div>
+<p>store or get a sessionToken</p>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> AppAuthToken().getSessionToken(sessionToken)
+      .then((token) =&gt; {
+        <span class="hljs-keyword">return</span> BackendFactory(token).getProfile();
+      })
+      .then((json) =&gt; {
+          dispatch(getProfileSuccess(json));
+      })
+      .catch((error) =&gt; {
+        dispatch(getProfileFailure(error));
+      });
+  };
+}
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="state-actions-1">
+  <h2>
+    <a href="#state-actions-1" name="state-actions-1" class="pilcrow"></a>
+State actions
+  </h2>
+</div>
+<p>controls which form is displayed to the user
+as in login, register, logout or reset password</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">profileUpdateRequest</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: PROFILE_UPDATE_REQUEST
+  };
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">profileUpdateSuccess</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: PROFILE_UPDATE_SUCCESS
+  };
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">profileUpdateFailure</span>(<span class="hljs-params">json</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: PROFILE_UPDATE_FAILURE,
+    payload: json
+  };
+}
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="updateprofile">
   <h2>
-    <a href="#updateprofile" name="updateprofile" class="pilcrow">&#182;</a>
-    updateProfile
+    <a href="#updateprofile" name="updateprofile" class="pilcrow"></a>
+updateProfile
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">userId</span>
-      <span class="dox_type">string</span>
-      <span><ul>
-<li>objectId </li>
-</ul></span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">username</span>
-      <span class="dox_type">string</span>
-      <span><ul>
-<li>the users name</li>
-</ul></span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">{string]email-user'semail</span>
-      <span class="dox_type">string]email-user&#x27;semail</span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">sessionToken</span>
-      <span class="dox_type">Object</span>
-      <span><ul>
-<li>the sessionToken from Parse.com</li>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">userId</span>
+<span class="dox_type">string</span>
+<span><ul>
+<li>objectId</li>
 </ul>
-
-The sessionToken is provided when Hot Loading.
-
+</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">username</span>
+<span class="dox_type">string</span>
+<span><ul>
+<li>the users name</li>
+</ul>
+</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">{string] email - user&#39;s email</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">sessionToken</span>
+<span class="dox_type">Object</span>
+<span><ul>
+<li>the sessionToken from Parse.com
+The sessionToken is provided when Hot Loading.</li>
+</ul>
 With the sessionToken, Parse.com is called with the data to update
 If successful, get the profile so that the screen is updated with
-the data as now persisted on Parse.com</span>
-    </div>
-  </div>
+the data as now persisted on Parse.com
+</span>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">updateProfile</span><span class="p">(</span><span class="nx">userId</span><span class="p">,</span> <span class="nx">username</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">sessionToken</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">profileUpdateRequest</span><span class="p">());</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">AppAuthToken</span><span class="p">().</span><span class="nx">getSessionToken</span><span class="p">(</span><span class="nx">sessionToken</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">token</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">BackendFactory</span><span class="p">(</span><span class="nx">token</span><span class="p">).</span><span class="nx">updateProfile</span><span class="p">(</span><span class="nx">userId</span><span class="p">,</span>
-          <span class="p">{</span>
-            <span class="nx">username</span><span class="o">:</span> <span class="nx">username</span><span class="p">,</span>
-            <span class="nx">email</span><span class="o">:</span> <span class="nx">email</span>
-          <span class="p">}</span>
-        <span class="p">);</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="nx">dispatch</span><span class="p">(</span><span class="nx">profileUpdateSuccess</span><span class="p">());</span>
-          <span class="nx">dispatch</span><span class="p">(</span><span class="nx">getProfile</span><span class="p">());</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">profileUpdateFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
-      <span class="p">});</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateProfile</span>(<span class="hljs-params">userId, username, email, sessionToken</span>) </span>{
+  <span class="hljs-keyword">return</span> dispatch =&gt; {
+    dispatch(profileUpdateRequest());
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> AppAuthToken().getSessionToken(sessionToken)
+      .then((token) =&gt; {
+        <span class="hljs-keyword">return</span> BackendFactory(token).updateProfile(userId,
+          {
+            username: username,
+            email: email
+          }
+        );
+      })
+      .then(() =&gt; {
+          dispatch(profileUpdateSuccess());
+          dispatch(getProfile());
+      })
+      .catch((error) =&gt; {
+        dispatch(profileUpdateFailure(error));
+      });
+  };
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="onprofileformfieldchange">
   <h2>
-    <a href="#onprofileformfieldchange" name="onprofileformfieldchange" class="pilcrow">&#182;</a>
-    onProfileFormFieldChange
+    <a href="#onprofileformfieldchange" name="onprofileformfieldchange" class="pilcrow"></a>
+onProfileFormFieldChange
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">onProfileFormFieldChange</span><span class="p">(</span><span class="nx">field</span><span class="p">,</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span><span class="nx">field</span><span class="o">:</span> <span class="nx">field</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">}</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onProfileFormFieldChange</span>(<span class="hljs-params">field,value</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: ON_PROFILE_FORM_FIELD_CHANGE,
+    payload: {field: field, value: value}
+  };
+}
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

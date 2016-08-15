@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../../doc-style.css" />
   <script src="../../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/device/__tests__/deviceReducer-test.js", defaultSidebar = true;
+    var relativeDir = "../../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/device/__tests__/deviceReducer-test.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,177 +21,196 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#devicereducer-test.js">deviceReducer-test.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
-        <a href="#class%20under%20test">Class under test</a>
+        <a href="#class-under-test">Class under test</a>
       </div>
+
       <div class="heading h2">
         <a href="#tests">Tests</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="devicereducer-test.js">
   <h1>
-    <a href="#devicereducer-test.js" name="devicereducer-test.js" class="pilcrow">&#182;</a>
-    deviceReducer-test.js
+    <a href="#devicereducer-test.js" name="devicereducer-test.js" class="pilcrow"></a>
+deviceReducer-test.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>Test the deviceReducer's only function, like all reducers, where the
+</div>
+<div class="body">
+<p>Test the deviceReducer's only function, like all reducers, where the
 state and action are passed in.</p>
-
 <p>This will confirm that given a specific action with a type and
 payload, that the state object is modified accordingly.</p>
-
 <p><em>Note</em>: in this app,<code>state</code> is an Immutable.js object</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-<span class="nx">jest</span><span class="p">.</span><span class="nx">autoMockOff</span><span class="p">();</span>
-
-</pre></div>
+jest.autoMockOff();
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>These actions are sufficient to test the reducer as many of the
-case statements are shared amongst the actions.</p>
-  </div>
 </div>
+<div class="body">
+<p>These actions are sufficient to test the reducer as many of the
+case statements are shared amongst the actions.</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">SET_PLATFORM</span><span class="p">,</span>
-  <span class="nx">SET_VERSION</span><span class="p">,</span>
-  <span class="nx">SET_STATE</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> {
+  SET_PLATFORM,
+  SET_VERSION,
+  SET_STATE
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../../lib/constants'</span>).default;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="class%20under%20test">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="class-under-test">
   <h2>
-    <a href="#class%20under%20test" name="class%20under%20test" class="pilcrow">&#182;</a>
-    Class under test
+    <a href="#class-under-test" name="class-under-test" class="pilcrow"></a>
+Class under test
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>Note that since autoMockOff has been called, we will get the actual
+</div>
+<div class="body">
+<p>Note that since autoMockOff has been called, we will get the actual
 formValidation and fieldValidation objects, so we're testing them
 as well</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span>  <span class="nx">deviceReducer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../deviceReducer&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span>  deviceReducer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../deviceReducer'</span>).default;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="tests">
   <h2>
-    <a href="#tests" name="tests" class="pilcrow">&#182;</a>
-    Tests
+    <a href="#tests" name="tests" class="pilcrow"></a>
+Tests
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>deviceReducer</p>
-  </div>
 </div>
+<div class="body">
+<p>deviceReducer</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;deviceReducer&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript">describe(<span class="hljs-string">'deviceReducer'</span>, () =&gt; {
+  describe(<span class="hljs-string">'init'</span>, () =&gt; {
+    <span class="hljs-keyword">let</span> initialState = <span class="hljs-literal">null</span>;
 
-    <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;dummy&#39;</span>
-      <span class="p">};</span>
-      <span class="nx">initialState</span> <span class="o">=</span> <span class="nx">deviceReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-    <span class="p">});</span>
+    beforeEach(() =&gt; {
+      <span class="hljs-keyword">const</span> action = {
+        type: <span class="hljs-string">'dummy'</span>
+      };
+      initialState = deviceReducer(<span class="hljs-literal">undefined</span>, action);
+    });
 
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;sets platform to an empty string&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">initialState</span><span class="p">.</span><span class="nx">platform</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-    <span class="p">});</span>
+    it(<span class="hljs-string">'sets platform to an empty string'</span>, () =&gt; {
+      expect(initialState.platform).toEqual(<span class="hljs-string">''</span>);
+    });
 
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;sets isMobile to false&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">initialState</span><span class="p">.</span><span class="nx">isMobile</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-    <span class="p">});</span>
+    it(<span class="hljs-string">'sets isMobile to false'</span>, () =&gt; {
+      expect(initialState.isMobile).toEqual(<span class="hljs-literal">false</span>);
+    });
 
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;sets version to null&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">initialState</span><span class="p">.</span><span class="nx">version</span><span class="p">).</span><span class="nx">toBeNull</span><span class="p">();</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
+    it(<span class="hljs-string">'sets version to null'</span>, () =&gt; {
+      expect(initialState.version).toBeNull();
+    });
+  });
 
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;SET_PLATFORM&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;modifies the platform and returns a new state&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">platform</span> <span class="o">=</span> <span class="s1">&#39;ios&#39;</span><span class="p">;</span>
+  describe(<span class="hljs-string">'SET_PLATFORM'</span>, () =&gt; {
+    it(<span class="hljs-string">'modifies the platform and returns a new state'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> platform = <span class="hljs-string">'ios'</span>;
 
-      <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">SET_PLATFORM</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="nx">platform</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">const</span> action = {
+        type: SET_PLATFORM,
+        payload: platform
+      };
 
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">deviceReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+      <span class="hljs-keyword">let</span> next = deviceReducer(<span class="hljs-literal">undefined</span>, action);
 
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">platform</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">platform</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
+      expect(next.platform).toEqual(platform);
+    });
+  });
 
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;SET_VERSION&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;modifies the version and returns a new state&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">version</span> <span class="o">=</span> <span class="s1">&#39;0.0.8&#39;</span><span class="p">;</span>
+  describe(<span class="hljs-string">'SET_VERSION'</span>, () =&gt; {
+    it(<span class="hljs-string">'modifies the version and returns a new state'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> version = <span class="hljs-string">'0.0.8'</span>;
 
-      <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">SET_VERSION</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="nx">version</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">const</span> action = {
+        type: SET_VERSION,
+        payload: version
+      };
 
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">deviceReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">version</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">version</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
-<span class="p">});</span><span class="c1">//deviceReducer</span>
-</pre></div>
+      <span class="hljs-keyword">let</span> next = deviceReducer(<span class="hljs-literal">undefined</span>, action);
+      expect(next.version).toEqual(version);
+    });
+  });
+});<span class="hljs-comment">//deviceReducer</span>
+
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

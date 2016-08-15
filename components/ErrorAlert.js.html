@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/ErrorAlert.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/components/ErrorAlert.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,137 +21,148 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#erroralert.js">ErrorAlert.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
         <a href="#erroralert">ErrorAlert</a>
       </div>
+
       <div class="heading h3">
         <a href="#checkerro">checkErro</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="erroralert.js">
   <h1>
-    <a href="#erroralert.js" name="erroralert.js" class="pilcrow">&#182;</a>
-    ErrorAlert.js
+    <a href="#erroralert.js" name="erroralert.js" class="pilcrow"></a>
+ErrorAlert.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This class uses a component which displays the appropriate alert
+</div>
+<div class="body">
+<p>This class uses a component which displays the appropriate alert
 depending on the platform</p>
-
 <p>The main purpose here is to determine if there is an error and then
 plucking off the message depending on the shape of the error object.</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">SimpleAlert</span> <span class="nx">from</span> <span class="s1">&#39;react-native-simpledialog-android&#39;</span><span class="p">;</span>
-<span class="kr">import</span>  <span class="nx">_</span> <span class="nx">from</span> <span class="s1">&#39;underscore&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> SimpleAlert <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native-simpledialog-android'</span>;
+<span class="hljs-keyword">import</span>  _ <span class="hljs-keyword">from</span> <span class="hljs-string">'underscore'</span>;
 
-<span class="kd">var</span> <span class="nx">ErrorAlert</span> <span class="o">=</span> <span class="kr">class</span> <span class="nx">ErrorAlertClass</span><span class="p">{</span>
-
-</pre></div>
+<span class="hljs-keyword">var</span> ErrorAlert = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ErrorAlertClass</span></span>{
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="erroralert">
   <h2>
-    <a href="#erroralert" name="erroralert" class="pilcrow">&#182;</a>
-    ErrorAlert
+    <a href="#erroralert" name="erroralert" class="pilcrow"></a>
+ErrorAlert
   </h2>
 </div>
-
-
 <p>setup to support testing</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-
+<div class="body">
+</div>
+</div>
 <div class="dox">
-  <div class="summary">
+<div class="summary">
 <div class="pilwrap" id="checkerro">
   <h3>
-    <a href="#checkerro" name="checkerro" class="pilcrow">&#182;</a>
-    checkErro
+    <a href="#checkerro" name="checkerro" class="pilcrow"></a>
+checkErro
   </h3>
 </div>
-
-
 <p>determine if there is an error and how deep it is.  Take the
 deepest level as the message and display it</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">checkError</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">errorMessage</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isNull</span><span class="p">(</span><span class="nx">obj</span><span class="p">))</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">error</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">error</span><span class="p">))</span> <span class="p">{</span>
-          <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">error</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">error</span><span class="p">;</span>
-        <span class="p">}</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">errorMessage</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">errorMessage</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">errorMessage</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span> <span class="p">{</span>
-          <span class="nx">SimpleAlert</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span><span class="nx">errorMessage</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="nx">SimpleAlert</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span><span class="nx">errorMessage</span><span class="p">);</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span><span class="c1">//isNull</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+<div class="body">
+</div>
+</div>
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">ErrorAlert</span><span class="p">;</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  checkError(obj) {
+    <span class="hljs-keyword">let</span> errorMessage = <span class="hljs-string">''</span>;
+    <span class="hljs-keyword">if</span> (!_.isNull(obj)) {
+      <span class="hljs-keyword">if</span> (!_.isUndefined(obj.error)) {
+        <span class="hljs-keyword">if</span> (!_.isUndefined(obj.error.error)) {
+          errorMessage = obj.error.error;
+        } <span class="hljs-keyword">else</span> {
+          errorMessage = obj.error;
+        }
+      } <span class="hljs-keyword">else</span> {
+        errorMessage = obj;
+      }
+      <span class="hljs-keyword">if</span> (errorMessage !== <span class="hljs-string">''</span>) {
+        <span class="hljs-keyword">if</span> (!_.isUndefined(errorMessage.message)) {
+          SimpleAlert.alert(<span class="hljs-string">'Error'</span>,errorMessage.message);
+        } <span class="hljs-keyword">else</span> {
+          SimpleAlert.alert(<span class="hljs-string">'Error'</span>,errorMessage);
+        }
+      }
+    }<span class="hljs-comment">//isNull</span>
+  }
+};
+
+<span class="hljs-built_in">module</span>.exports = ErrorAlert;
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//containers/Profile.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/containers/Profile.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,628 +21,681 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#profile.js">Profile.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
         <a href="#styles">Styles</a>
       </div>
+
       <div class="heading h2">
-        <a href="#redux%20boilerplate">Redux boilerplate</a>
+        <a href="#redux-boilerplate">Redux boilerplate</a>
       </div>
+
       <div class="heading h3">
         <a href="#translations">Translations</a>
       </div>
+
       <div class="heading h2">
-        <a href="#profile%20class">Profile class</a>
+        <a href="#profile-class">Profile class</a>
       </div>
+
       <div class="heading h3">
         <a href="#onchange">onChange</a>
       </div>
+
       <div class="heading h3">
         <a href="#componentwillreceiveprops">componentWillReceiveProps</a>
       </div>
+
       <div class="heading h3">
         <a href="#componentdidmount">componentDidMount</a>
       </div>
+
       <div class="heading h3">
         <a href="#render">render</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="profile.js">
   <h1>
-    <a href="#profile.js" name="profile.js" class="pilcrow">&#182;</a>
-    Profile.js
+    <a href="#profile.js" name="profile.js" class="pilcrow"></a>
+Profile.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This component provides an interface for a logged in user to change
+</div>
+<div class="body">
+<p>This component provides an interface for a logged in user to change
 their username and email.
 It too is a container so there is boilerplate from Redux similar to
 <code>App</code> and <code>Login</code></p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>Redux</p>
-  </div>
 </div>
+<div class="body">
+<p>Redux</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">bindActionCreators</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-redux&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> { bindActionCreators } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The actions we need</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The actions we need</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">profileActions</span> <span class="nx">from</span> <span class="s1">&#39;../reducers/profile/profileActions&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">globalActions</span> <span class="nx">from</span> <span class="s1">&#39;../reducers/global/globalActions&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> profileActions <span class="hljs-keyword">from</span> <span class="hljs-string">'../reducers/profile/profileActions'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> globalActions <span class="hljs-keyword">from</span> <span class="hljs-string">'../reducers/global/globalActions'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-4" id="section-4">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Immutable Mapn</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>Immutable Mapn</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span><span class="nx">Map</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;immutable&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {<span class="hljs-built_in">Map</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">'immutable'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-5" id="section-5">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The ErrorAlert will display any and all errors</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The ErrorAlert will display any and all errors</p>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">ErrorAlert</span> <span class="nx">from</span> <span class="s1">&#39;../components/ErrorAlert&#39;</span><span class="p">;</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> ErrorAlert <span class="hljs-keyword">from</span> <span class="hljs-string">'../components/ErrorAlert'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-6" id="section-6">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The FormButton will respond to the press</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The FormButton will respond to the press</p>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">FormButton</span> <span class="nx">from</span> <span class="s1">&#39;../components/FormButton&#39;</span><span class="p">;</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> FormButton <span class="hljs-keyword">from</span> <span class="hljs-string">'../components/FormButton'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-7" id="section-7">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The Header will display a Image and support Hot Loading</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The Header will display a Image and support Hot Loading</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">Header</span> <span class="nx">from</span> <span class="s1">&#39;../components/Header&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> Header <span class="hljs-keyword">from</span> <span class="hljs-string">'../components/Header'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-8" id="section-8">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The itemCheckbox will display the state of the email verified</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The itemCheckbox will display the state of the email verified</p>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">ItemCheckbox</span> <span class="nx">from</span> <span class="s1">&#39;../components/ItemCheckbox&#39;</span><span class="p">;</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> ItemCheckbox <span class="hljs-keyword">from</span> <span class="hljs-string">'../components/ItemCheckbox'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-9" id="section-9">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The necessary React components</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The necessary React components</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">Component</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span>
-<span class="p">{</span>
-  <span class="nx">StyleSheet</span><span class="p">,</span>
-  <span class="nx">View</span>
-<span class="p">}</span>
-<span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> React, {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span>
+{
+  StyleSheet,
+  View
+}
+<span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-10" id="section-10">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-10" id="section-10"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The form processing component</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The form processing component</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">t</span> <span class="nx">from</span> <span class="s1">&#39;tcomb-form-native&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> t <span class="hljs-keyword">from</span> <span class="hljs-string">'tcomb-form-native'</span>;
 
-<span class="kd">let</span> <span class="nx">Form</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">Form</span><span class="p">;</span>
+<span class="hljs-keyword">let</span> Form = t.form.Form;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="styles">
   <h2>
-    <a href="#styles" name="styles" class="pilcrow">&#182;</a>
-    Styles
+    <a href="#styles" name="styles" class="pilcrow"></a>
+Styles
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="nx">container</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">flexDirection</span><span class="o">:</span> <span class="s1">&#39;column&#39;</span><span class="p">,</span>
-    <span class="nx">flex</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;transparent&#39;</span>
-  <span class="p">},</span>
-  <span class="nx">inputs</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="nx">marginBottom</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="nx">marginLeft</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="nx">marginRight</span><span class="o">:</span> <span class="mi">10</span>
-  <span class="p">}</span>
-<span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> styles = StyleSheet.create({
+  container: {
+    flexDirection: <span class="hljs-string">'column'</span>,
+    flex: <span class="hljs-number">1</span>,
+    backgroundColor: <span class="hljs-string">'transparent'</span>
+  },
+  inputs: {
+    marginTop: <span class="hljs-number">10</span>,
+    marginBottom: <span class="hljs-number">10</span>,
+    marginLeft: <span class="hljs-number">10</span>,
+    marginRight: <span class="hljs-number">10</span>
+  }
+});
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="redux%20boilerplate">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="redux-boilerplate">
   <h2>
-    <a href="#redux%20boilerplate" name="redux%20boilerplate" class="pilcrow">&#182;</a>
-    Redux boilerplate
+    <a href="#redux-boilerplate" name="redux-boilerplate" class="pilcrow"></a>
+Redux boilerplate
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="nx">profileActions</span><span class="p">,</span>
-  <span class="nx">globalActions</span>
-<span class="p">];</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
+  profileActions,
+  globalActions
+];
 
-<span class="kd">function</span> <span class="nx">mapStateToProps</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-      <span class="p">...</span><span class="nx">state</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+      ...state
+  };
+}
 
-<span class="kd">function</span> <span class="nx">mapDispatchToProps</span><span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">creators</span> <span class="o">=</span> <span class="nx">Map</span><span class="p">()</span>
-          <span class="p">.</span><span class="nx">merge</span><span class="p">(...</span><span class="nx">actions</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">value</span> <span class="o">=&gt;</span> <span class="k">typeof</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">toObject</span><span class="p">();</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
+  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
+          .merge(...actions)
+          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
+          .toObject();
 
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">actions</span><span class="o">:</span> <span class="nx">bindActionCreators</span><span class="p">(</span><span class="nx">creators</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">),</span>
-    <span class="nx">dispatch</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-</pre></div>
+  <span class="hljs-keyword">return</span> {
+    actions: bindActionCreators(creators, dispatch),
+    dispatch
+  };
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="translations">
   <h3>
-    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
-    Translations
+    <a href="#translations" name="translations" class="pilcrow"></a>
+Translations
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
-<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
-<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> I18n = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-native-i18n'</span>);
+<span class="hljs-keyword">import</span> Translations <span class="hljs-keyword">from</span> <span class="hljs-string">'../lib/Translations'</span>;
+I18n.translations = Translations;
 
 
-<span class="kr">class</span> <span class="nx">Profile</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
-
-</pre></div>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Profile</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="profile%20class">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="profile-class">
   <h2>
-    <a href="#profile%20class" name="profile%20class" class="pilcrow">&#182;</a>
-    Profile class
+    <a href="#profile-class" name="profile-class" class="pilcrow"></a>
+Profile class
   </h2>
 </div>
-
-
 <p>Set the initial state and prepare the errorAlert</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">constructor</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">super</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">errorAlert</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ErrorAlert</span><span class="p">();</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">formValues</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-      <span class="p">}</span>
-    <span class="p">};</span>
-  <span class="p">}</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-keyword">this</span>.errorAlert = <span class="hljs-keyword">new</span> ErrorAlert();
+    <span class="hljs-keyword">this</span>.state = {
+      formValues: {
+        username: <span class="hljs-string">''</span>,
+        email: <span class="hljs-string">''</span>
+      }
+    };
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="onchange">
   <h3>
-    <a href="#onchange" name="onchange" class="pilcrow">&#182;</a>
-    onChange
+    <a href="#onchange" name="onchange" class="pilcrow"></a>
+onChange
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>When any fields change in the form, fire this action so they can
-be validated.</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">onChange</span><span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">username</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">onProfileFormFieldChange</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span><span class="nx">value</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">email</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">onProfileFormFieldChange</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span><span class="nx">value</span><span class="p">.</span><span class="nx">email</span><span class="p">);</span>      
-    <span class="p">}</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">value</span><span class="p">});</span>
-  <span class="p">}</span>
+<div class="body">
+<p>When any fields change in the form, fire this action so they can
+be validated.</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  onChange(value) {
+    <span class="hljs-keyword">if</span> (value.username != <span class="hljs-string">''</span>) {
+      <span class="hljs-keyword">this</span>.props.actions.onProfileFormFieldChange(<span class="hljs-string">'username'</span>,value.username);
+    }
+    <span class="hljs-keyword">if</span> (value.email != <span class="hljs-string">''</span>) {
+      <span class="hljs-keyword">this</span>.props.actions.onProfileFormFieldChange(<span class="hljs-string">'email'</span>,value.email);      
+    }
+    <span class="hljs-keyword">this</span>.setState({value});
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="componentwillreceiveprops">
   <h3>
-    <a href="#componentwillreceiveprops" name="componentwillreceiveprops" class="pilcrow">&#182;</a>
-    componentWillReceiveProps
+    <a href="#componentwillreceiveprops" name="componentwillreceiveprops" class="pilcrow"></a>
+componentWillReceiveProps
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>Since the Forms are looking at the state for the values of the
-fields, when we we need to set them</p>
-  </div>
 </div>
+<div class="body">
+<p>Since the Forms are looking at the state for the values of the
+fields, when we we need to set them</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">componentWillReceiveProps</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
-      <span class="nx">formValues</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span>
-      <span class="p">}</span>
-    <span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript">  componentWillReceiveProps(props) {
+    <span class="hljs-keyword">this</span>.setState({
+      formValues: {
+        username: props.profile.form.fields.username,
+        email: props.profile.form.fields.email
+      }
+    });
 
-  <span class="p">}</span>
-
-</pre></div>
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="componentdidmount">
   <h3>
-    <a href="#componentdidmount" name="componentdidmount" class="pilcrow">&#182;</a>
-    componentDidMount
+    <a href="#componentdidmount" name="componentdidmount" class="pilcrow"></a>
+componentDidMount
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>During Hot Loading, when the component mounts due the state
-immediately being in a "logged in" state, we need to just set the
-form fields.  Otherwise, we need to go fetch the fields</p>
-  </div>
 </div>
+<div class="body">
+<p>During Hot Loading, when the component mounts due the state
+immediately being in a &quot;logged in&quot; state, we need to just set the
+form fields.  Otherwise, we need to go fetch the fields</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">getProfile</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">global</span><span class="p">.</span><span class="nx">currentUser</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
-        <span class="nx">formValues</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">username</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span>
-          <span class="nx">email</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span>
-        <span class="p">}</span>
-      <span class="p">});</span>
-    <span class="p">}</span>      
-  <span class="p">}</span>
+        <td class="code highlight">
+          <pre class="javascript">  componentDidMount() {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.profile.form.fields.username == <span class="hljs-string">''</span> &amp;&amp; <span class="hljs-keyword">this</span>.props.profile.form.fields.email == <span class="hljs-string">''</span>) {
+      <span class="hljs-keyword">this</span>.props.actions.getProfile(<span class="hljs-keyword">this</span>.props.global.currentUser);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">this</span>.setState({
+        formValues: {
+          username: <span class="hljs-keyword">this</span>.props.profile.form.fields.username,
+          email: <span class="hljs-keyword">this</span>.props.profile.form.fields.email
+        }
+      });
+    }      
+  }
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="render">
   <h3>
-    <a href="#render" name="render" class="pilcrow">&#182;</a>
-    render
+    <a href="#render" name="render" class="pilcrow"></a>
+render
   </h3>
 </div>
-
-
 <p>display the form wrapped with the header and button</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">errorAlert</span><span class="p">.</span><span class="nx">checkError</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+<div class="body">
+</div>
+</div>
 
-    <span class="kd">let</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  render() {
+    <span class="hljs-keyword">this</span>.errorAlert.checkError(<span class="hljs-keyword">this</span>.props.profile.form.error);
+
+    <span class="hljs-keyword">let</span> self = <span class="hljs-keyword">this</span>;
     
-    <span class="kd">let</span> <span class="nx">ProfileForm</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">struct</span><span class="p">({</span>
-      <span class="nx">username</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span><span class="p">,</span>
-      <span class="nx">email</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span>
-    <span class="p">});</span>
-
-</pre></div>
+    <span class="hljs-keyword">let</span> ProfileForm = t.struct({
+      username: t.String,
+      email: t.String
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-19" id="section-19">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-19" id="section-19"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Set up the field definitions.  If we're fetching, the fields
-are disabled.  </p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>Set up the field definitions.  If we're fetching, the fields
+are disabled.</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="kd">let</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">auto</span><span class="o">:</span> <span class="s1">&#39;placeholders&#39;</span><span class="p">,</span>
-      <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Profile.username&quot;</span><span class="p">),</span>
-          <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
-          <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
-          <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span><span class="p">,</span>
-          <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameErrorMsg</span>
-        <span class="p">},</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Profile.email&quot;</span><span class="p">),</span>
-          <span class="nx">keyboardType</span><span class="o">:</span> <span class="s1">&#39;email-address&#39;</span><span class="p">,</span>
-          <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
-          <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">,</span>
-          <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailErrorMsg</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">let</span> options = {
+      auto: <span class="hljs-string">'placeholders'</span>,
+      fields: {
+        username: {
+          label: I18n.t(<span class="hljs-string">"Profile.username"</span>),
+          maxLength: <span class="hljs-number">12</span>,
+          editable: !<span class="hljs-keyword">this</span>.props.profile.form.isFetching,
+          hasError: <span class="hljs-keyword">this</span>.props.profile.form.fields.usernameHasError,
+          error: <span class="hljs-keyword">this</span>.props.profile.form.fields.usernameErrorMsg
+        },
+        email: {
+          label: I18n.t(<span class="hljs-string">"Profile.email"</span>),
+          keyboardType: <span class="hljs-string">'email-address'</span>,
+          editable: !<span class="hljs-keyword">this</span>.props.profile.form.isFetching,
+          hasError: <span class="hljs-keyword">this</span>.props.profile.form.fields.emailHasError,
+          error: <span class="hljs-keyword">this</span>.props.profile.form.fields.emailErrorMsg
+        }
+      }
+    };
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-20" id="section-20">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-20" id="section-20"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>When the button is pressed, send the users info including the
+<div class="summary">
+<p>When the button is pressed, send the users info including the
 <code>currrentUser</code> object as it contains the sessionToken and
 user objectId which Parse.com requires</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="kd">let</span> <span class="nx">profileButtonText</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Profile.update&quot;</span><span class="p">);</span>
-    <span class="kd">let</span> <span class="nx">onButtonPress</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">updateProfile</span><span class="p">(</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">objectId</span><span class="p">,</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span><span class="p">,</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">global</span><span class="p">.</span><span class="nx">currentUser</span><span class="p">);</span>
-    <span class="p">};</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">let</span> profileButtonText = I18n.t(<span class="hljs-string">"Profile.update"</span>);
+    <span class="hljs-keyword">let</span> onButtonPress = () =&gt; {
+      <span class="hljs-keyword">this</span>.props.actions.updateProfile(
+        <span class="hljs-keyword">this</span>.props.profile.form.originalProfile.objectId,
+        <span class="hljs-keyword">this</span>.props.profile.form.fields.username,
+        <span class="hljs-keyword">this</span>.props.profile.form.fields.email,
+        <span class="hljs-keyword">this</span>.props.global.currentUser);
+    };
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-21" id="section-21">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-21" id="section-21"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Wrap the form with the header and button.  The header props are
+<div class="summary">
+<p>Wrap the form with the header and button.  The header props are
 mostly for support of Hot reloading. See the docs for Header
 for more info.</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="kd">let</span> <span class="nx">verfiedText</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Profile.verified&quot;</span><span class="p">)</span> <span class="o">+</span>
-                       <span class="s1">&#39; (&#39;</span> <span class="o">+</span>
-                       <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Profile.display&quot;</span><span class="p">)</span> <span class="o">+</span>
-                       <span class="s1">&#39;)&#39;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Header</span> <span class="nx">isFetching</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">}</span>
-                <span class="nx">showState</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">global</span><span class="p">.</span><span class="nx">showState</span><span class="p">}</span>
-                <span class="nx">currentState</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">global</span><span class="p">.</span><span class="nx">currentState</span><span class="p">}</span>
-                <span class="nx">onGetState</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">getState</span><span class="p">}</span>
-                <span class="nx">onSetState</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">setState</span><span class="p">}</span>
-        <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">inputs</span><span class="p">}</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">Form</span>
-              <span class="nx">ref</span><span class="o">=</span><span class="s2">&quot;form&quot;</span>
-              <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="nx">ProfileForm</span><span class="p">}</span>
-              <span class="nx">options</span><span class="o">=</span><span class="p">{</span><span class="nx">options</span><span class="p">}</span>
-              <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">formValues</span><span class="p">}</span>
-              <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">onChange</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">self</span><span class="p">)}</span>
-          <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">ItemCheckbox</span> <span class="nx">text</span><span class="o">=</span><span class="p">{</span><span class="nx">verfiedText</span><span class="p">}</span>
-                        <span class="nx">disabled</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                        <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailVerified</span><span class="p">}</span>
-          <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="err">/View&gt;</span>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">let</span> verfiedText = I18n.t(<span class="hljs-string">"Profile.verified"</span>) +
+                       <span class="hljs-string">' ('</span> +
+                       I18n.t(<span class="hljs-string">"Profile.display"</span>) +
+                       <span class="hljs-string">')'</span>;
+    <span class="hljs-keyword">return</span> (
+      &lt;View style={styles.container}&gt;
+        &lt;Header isFetching={this.props.profile.form.isFetching}
+                showState={this.props.global.showState}
+                currentState={this.props.global.currentState}
+                onGetState={this.props.actions.getState}
+                onSetState={this.props.actions.setState}
+        /&gt;
+        &lt;View style={styles.inputs}&gt;
+          &lt;Form
+              ref="form"
+              type={ProfileForm}
+              options={options}
+              value={this.state.formValues}
+              onChange={this.onChange.bind(self)}
+          /&gt;
+        &lt;ItemCheckbox text={verfiedText}
+                        disabled={true}
+                        checked={this.props.profile.form.fields.emailVerified}
+          /&gt;
+        &lt;/View&gt;
 
-        <span class="o">&lt;</span><span class="nx">FormButton</span>
-            <span class="nx">isDisabled</span><span class="o">=</span><span class="p">{</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isValid</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">}</span>
-            <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="nx">onButtonPress</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">self</span><span class="p">)}</span>
-            <span class="nx">buttonText</span><span class="o">=</span><span class="p">{</span><span class="nx">profileButtonText</span><span class="p">}</span><span class="o">/&gt;</span>
+        &lt;FormButton
+            isDisabled={!this.props.profile.form.isValid || this.props.profile.form.isFetching}
+            onPress={onButtonPress.bind(self)}
+            buttonText={profileButtonText}/&gt;
 
 
-      <span class="o">&lt;</span><span class="err">/View&gt;</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Profile</span><span class="p">);</span>
-</pre></div>
+      &lt;/View&gt;
+    );
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

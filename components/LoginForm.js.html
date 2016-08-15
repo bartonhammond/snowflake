@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/LoginForm.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/components/LoginForm.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,393 +21,424 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#loginform.js">LoginForm.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#import">Import</a>
       </div>
+
       <div class="heading h3">
         <a href="#translations">Translations</a>
       </div>
+
       <div class="heading h2">
-        <a href="#loginform%20class">LoginForm class</a>
+        <a href="#loginform-class">LoginForm class</a>
       </div>
+
       <div class="heading h2">
         <a href="#render">render</a>
       </div>
+
       <div class="heading h3">
         <a href="#registration">Registration</a>
       </div>
+
       <div class="heading h3">
         <a href="#login">Login</a>
       </div>
+
       <div class="heading h3">
-        <a href="#reset%20password">Reset password</a>
+        <a href="#reset-password">Reset password</a>
       </div>
+
       <div class="heading h3">
         <a href="#return">Return</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="loginform.js">
   <h1>
-    <a href="#loginform.js" name="loginform.js" class="pilcrow">&#182;</a>
-    LoginForm.js
+    <a href="#loginform.js" name="loginform.js" class="pilcrow"></a>
+LoginForm.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This class utilizes the <code>tcomb-form-native</code> library and just
+</div>
+<div class="body">
+<p>This class utilizes the <code>tcomb-form-native</code> library and just
 sets up the options required for the 3 states of Login, namely
 Login, Register or Reset Password</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="import">
   <h2>
-    <a href="#import" name="import" class="pilcrow">&#182;</a>
-    Import
+    <a href="#import" name="import" class="pilcrow"></a>
+Import
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>React</p>
-  </div>
 </div>
+<div class="body">
+<p>React</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> React, {PropTypes} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>States of login display</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>States of login display</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">REGISTER</span><span class="p">,</span>
-  <span class="nx">LOGIN</span><span class="p">,</span>
-  <span class="nx">FORGOT_PASSWORD</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> {
+  REGISTER,
+  LOGIN,
+  FORGOT_PASSWORD
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../lib/constants'</span>).default;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-4" id="section-4">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The fantastic little form library</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The fantastic little form library</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;tcomb-form-native&#39;</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">Form</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">Form</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> t = <span class="hljs-built_in">require</span>(<span class="hljs-string">'tcomb-form-native'</span>);
+<span class="hljs-keyword">let</span> Form = t.form.Form;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="translations">
   <h3>
-    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
-    Translations
+    <a href="#translations" name="translations" class="pilcrow"></a>
+Translations
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
-<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
-<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> I18n = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-native-i18n'</span>);
+<span class="hljs-keyword">import</span> Translations <span class="hljs-keyword">from</span> <span class="hljs-string">'../lib/Translations'</span>;
+I18n.translations = Translations;
 
-<span class="kd">var</span> <span class="nx">LoginForm</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-
-</pre></div>
+<span class="hljs-keyword">var</span> LoginForm = React.createClass({
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="loginform%20class">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="loginform-class">
   <h2>
-    <a href="#loginform%20class" name="loginform%20class" class="pilcrow">&#182;</a>
-    LoginForm class
+    <a href="#loginform-class" name="loginform-class" class="pilcrow"></a>
+LoginForm class
   </h2>
 </div>
-
-  </div>
-  <div class="body"><ul>
+</div>
+<div class="body">
+<ul>
 <li>form: the properties to set into the UI form</li>
 <li>value: the values to set in the input fields</li>
 <li>onChange: function to call when user enters text</li>
 </ul>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">formType</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
-    <span class="nx">form</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">object</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">object</span><span class="p">,</span>
-    <span class="nx">onChange</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span>
-  <span class="p">},</span>
+        <td class="code highlight">
+          <pre class="javascript">  propTypes: {
+    formType: PropTypes.string,
+    form: PropTypes.object,
+    value: PropTypes.object,
+    onChange: PropTypes.func
+  },
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="render">
   <h2>
-    <a href="#render" name="render" class="pilcrow">&#182;</a>
-    render
+    <a href="#render" name="render" class="pilcrow"></a>
+render
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>setup all the fields using the props and default messages</p>
-  </div>
 </div>
+<div class="body">
+<p>setup all the fields using the props and default messages</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <td class="code highlight">
+          <pre class="javascript">  render() {
 
-    <span class="kd">let</span> <span class="nx">formType</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">formType</span><span class="p">;</span>
+    <span class="hljs-keyword">let</span> formType = <span class="hljs-keyword">this</span>.props.formType;
 
-    <span class="kd">let</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-      <span class="p">}</span>
-    <span class="p">};</span>
+    <span class="hljs-keyword">let</span> options = {
+      fields: {
+      }
+    };
 
-    <span class="kd">let</span> <span class="nx">username</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.username&quot;</span><span class="p">),</span>
-      <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
-      <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
-      <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span><span class="p">,</span>
-      <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameErrorMsg</span>
-    <span class="p">};</span>
+    <span class="hljs-keyword">let</span> username = {
+      label: I18n.t(<span class="hljs-string">"LoginForm.username"</span>),
+      maxLength: <span class="hljs-number">12</span>,
+      editable: !<span class="hljs-keyword">this</span>.props.form.isFetching,
+      hasError: <span class="hljs-keyword">this</span>.props.form.fields.usernameHasError,
+      error: <span class="hljs-keyword">this</span>.props.form.fields.usernameErrorMsg
+    };
     
-    <span class="kd">let</span> <span class="nx">email</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.email&quot;</span><span class="p">),</span>
-      <span class="nx">keyboardType</span><span class="o">:</span> <span class="s1">&#39;email-address&#39;</span><span class="p">,</span>
-      <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
-      <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">,</span>
-      <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailErrorMsg</span>
-    <span class="p">};</span>
+    <span class="hljs-keyword">let</span> email = {
+      label: I18n.t(<span class="hljs-string">"LoginForm.email"</span>),
+      keyboardType: <span class="hljs-string">'email-address'</span>,
+      editable: !<span class="hljs-keyword">this</span>.props.form.isFetching,
+      hasError: <span class="hljs-keyword">this</span>.props.form.fields.emailHasError,
+      error: <span class="hljs-keyword">this</span>.props.form.fields.emailErrorMsg
+    };
 
-    <span class="kd">let</span> <span class="nx">secureTextEntry</span> <span class="o">=</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">showPassword</span><span class="p">;</span>
+    <span class="hljs-keyword">let</span> secureTextEntry = !<span class="hljs-keyword">this</span>.props.form.fields.showPassword;
 
-    <span class="kd">let</span> <span class="nx">password</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password&quot;</span><span class="p">),</span>
-      <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
-      <span class="nx">secureTextEntry</span><span class="o">:</span> <span class="nx">secureTextEntry</span><span class="p">,</span>
-      <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
-      <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordHasError</span><span class="p">,</span>
-      <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordErrorMsg</span>
-    <span class="p">};</span>
+    <span class="hljs-keyword">let</span> password = {
+      label: I18n.t(<span class="hljs-string">"LoginForm.password"</span>),
+      maxLength: <span class="hljs-number">12</span>,
+      secureTextEntry: secureTextEntry,
+      editable: !<span class="hljs-keyword">this</span>.props.form.isFetching,
+      hasError: <span class="hljs-keyword">this</span>.props.form.fields.passwordHasError,
+      error: <span class="hljs-keyword">this</span>.props.form.fields.passwordErrorMsg
+    };
 
-    <span class="kd">let</span> <span class="nx">passwordAgain</span><span class="o">=</span> <span class="p">{</span>
-      <span class="nx">label</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password_again&quot;</span><span class="p">),</span>
-      <span class="nx">secureTextEntry</span><span class="o">:</span> <span class="nx">secureTextEntry</span><span class="p">,</span>
-      <span class="nx">maxLength</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
-      <span class="nx">editable</span><span class="o">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">,</span>
-      <span class="nx">hasError</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgainHasError</span><span class="p">,</span>
-      <span class="nx">error</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">passwordAgainErrorMsg</span>
-    <span class="p">};</span>
+    <span class="hljs-keyword">let</span> passwordAgain= {
+      label: I18n.t(<span class="hljs-string">"LoginForm.password_again"</span>),
+      secureTextEntry: secureTextEntry,
+      maxLength: <span class="hljs-number">12</span>,
+      editable: !<span class="hljs-keyword">this</span>.props.form.isFetching,
+      hasError: <span class="hljs-keyword">this</span>.props.form.fields.passwordAgainHasError,
+      error: <span class="hljs-keyword">this</span>.props.form.fields.passwordAgainErrorMsg
+    };
     
 
-    <span class="kd">let</span> <span class="nx">loginForm</span><span class="p">;</span>
-    <span class="k">switch</span><span class="p">(</span><span class="nx">formType</span><span class="p">)</span> <span class="p">{</span>
-
-</pre></div>
+    <span class="hljs-keyword">let</span> loginForm;
+    <span class="hljs-keyword">switch</span>(formType) {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="registration">
   <h3>
-    <a href="#registration" name="registration" class="pilcrow">&#182;</a>
-    Registration
+    <a href="#registration" name="registration" class="pilcrow"></a>
+Registration
   </h3>
 </div>
-
-
 <p>The registration form has 4 fields</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="k">case</span><span class="p">(</span><span class="nx">REGISTER</span><span class="p">)</span><span class="o">:</span>
-      <span class="nx">loginForm</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">struct</span><span class="p">({</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span><span class="p">,</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span><span class="p">,</span>
-        <span class="nx">passwordAgain</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span>
-      <span class="p">});</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">username</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.username&quot;</span><span class="p">);</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">email</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.email&quot;</span><span class="p">);</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">password</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password&quot;</span><span class="p">);</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;passwordAgain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">passwordAgain</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;passwordAgain&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password_again&quot;</span><span class="p">);</span>                
-      <span class="k">break</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">case</span>(REGISTER):
+      loginForm = t.struct({
+        username: t.String,
+        email: t.String,
+        password: t.String,
+        passwordAgain: t.String
+      });
+      options.fields[<span class="hljs-string">'username'</span>] = username;
+      options.fields[<span class="hljs-string">'username'</span>].placeholder = I18n.t(<span class="hljs-string">"LoginForm.username"</span>);
+      options.fields[<span class="hljs-string">'username'</span>].autoCapitalize = <span class="hljs-string">'none'</span>;
+      options.fields[<span class="hljs-string">'email'</span>] = email;
+      options.fields[<span class="hljs-string">'email'</span>].placeholder = I18n.t(<span class="hljs-string">"LoginForm.email"</span>);
+      options.fields[<span class="hljs-string">'email'</span>].autoCapitalize = <span class="hljs-string">'none'</span>;
+      options.fields[<span class="hljs-string">'password'</span>] = password;
+      options.fields[<span class="hljs-string">'password'</span>].placeholder = I18n.t(<span class="hljs-string">"LoginForm.password"</span>);
+      options.fields[<span class="hljs-string">'passwordAgain'</span>] = passwordAgain;
+      options.fields[<span class="hljs-string">'passwordAgain'</span>].placeholder = I18n.t(<span class="hljs-string">"LoginForm.password_again"</span>);                
+      <span class="hljs-keyword">break</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="login">
   <h3>
-    <a href="#login" name="login" class="pilcrow">&#182;</a>
-    Login
+    <a href="#login" name="login" class="pilcrow"></a>
+Login
   </h3>
 </div>
-
-
 <p>The login form has only 2 fields</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="k">case</span><span class="p">(</span><span class="nx">LOGIN</span><span class="p">)</span><span class="o">:</span>
-      <span class="nx">loginForm</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">struct</span><span class="p">({</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span>
-      <span class="p">});</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">username</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.username&quot;</span><span class="p">);</span>      
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">password</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.password&quot;</span><span class="p">);</span>      
-      <span class="k">break</span><span class="p">;</span>
-      
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">case</span>(LOGIN):
+      loginForm = t.struct({
+        username: t.String,
+        password: t.String
+      });
+      options.fields[<span class="hljs-string">'username'</span>] = username;
+      options.fields[<span class="hljs-string">'username'</span>].placeholder = I18n.t(<span class="hljs-string">"LoginForm.username"</span>);      
+      options.fields[<span class="hljs-string">'username'</span>].autoCapitalize = <span class="hljs-string">'none'</span>;
+      options.fields[<span class="hljs-string">'password'</span>] = password;
+      options.fields[<span class="hljs-string">'password'</span>].placeholder = I18n.t(<span class="hljs-string">"LoginForm.password"</span>);      
+      <span class="hljs-keyword">break</span>;
+      
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="reset%20password">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="reset-password">
   <h3>
-    <a href="#reset%20password" name="reset%20password" class="pilcrow">&#182;</a>
-    Reset password
+    <a href="#reset-password" name="reset-password" class="pilcrow"></a>
+Reset password
   </h3>
 </div>
-
-
 <p>The password reset form has only 1 field</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="k">case</span><span class="p">(</span><span class="nx">FORGOT_PASSWORD</span><span class="p">)</span><span class="o">:</span>
-      <span class="nx">loginForm</span> <span class="o">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">struct</span><span class="p">({</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="nx">t</span><span class="p">.</span><span class="nb">String</span>
-      <span class="p">});</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">email</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">autoCapitalize</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
-      <span class="nx">options</span><span class="p">.</span><span class="nx">fields</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">].</span><span class="nx">placeholder</span> <span class="o">=</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;LoginForm.email&quot;</span><span class="p">);</span>      
-      <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span> <span class="c1">//switch</span>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">case</span>(FORGOT_PASSWORD):
+      loginForm = t.struct({
+        email: t.String
+      });
+      options.fields[<span class="hljs-string">'email'</span>] = email;
+      options.fields[<span class="hljs-string">'email'</span>].autoCapitalize = <span class="hljs-string">'none'</span>;
+      options.fields[<span class="hljs-string">'email'</span>].placeholder = I18n.t(<span class="hljs-string">"LoginForm.email"</span>);      
+      <span class="hljs-keyword">break</span>;
+    } <span class="hljs-comment">//switch</span>
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="return">
   <h3>
-    <a href="#return" name="return" class="pilcrow">&#182;</a>
-    Return
+    <a href="#return" name="return" class="pilcrow"></a>
+Return
   </h3>
 </div>
-
-
 <p>returns the Form component with the correct structures</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">Form</span> <span class="nx">ref</span><span class="o">=</span><span class="s2">&quot;form&quot;</span>
-            <span class="nx">type</span><span class="o">=</span><span class="p">{</span><span class="nx">loginForm</span><span class="p">}</span>
-            <span class="nx">options</span><span class="o">=</span><span class="p">{</span><span class="nx">options</span><span class="p">}</span>
-            <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">value</span><span class="p">}</span>
-            <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onChange</span><span class="p">}</span>
-      <span class="o">/&gt;</span>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Form</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"form"</span>
+            <span class="hljs-attr">type</span>=<span class="hljs-string">{loginForm}</span>
+            <span class="hljs-attr">options</span>=<span class="hljs-string">{options}</span>
+            <span class="hljs-attr">value</span>=<span class="hljs-string">{this.props.value}</span>
+            <span class="hljs-attr">onChange</span>=<span class="hljs-string">{this.props.onChange}</span>
+      /&gt;</span>
 
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
+    );
+  }
+});
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">LoginForm</span><span class="p">;</span>
-</pre></div>
+module.exports = LoginForm;
+
+
+</span></pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/__tests__/LoginForm-test.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/components/__tests__/LoginForm-test.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,806 +21,841 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#loginform-test.js">LoginForm-test.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#test">Test</a>
       </div>
+
       <div class="heading h3">
         <a href="#snapshotform">snapshotForm</a>
       </div>
+
       <div class="heading h2">
-        <a href="#test%20registration">Test Registration</a>
+        <a href="#test-registration">Test Registration</a>
       </div>
+
       <div class="heading h3">
-        <a href="#it%20should%20display%20without%20errors%20and%20without%20value">it should display without errors and without value</a>
+        <a href="#it-should-display-without-errors-and-without-value">it should display without errors and without value</a>
       </div>
+
       <div class="heading h3">
-        <a href="#it%20should%20display%20%20errors%20and%20%20value">it should display  errors and  value</a>
+        <a href="#it-should-display-errors-and-value">it should display  errors and  value</a>
       </div>
+
       <div class="heading h3">
-        <a href="#it%20should%20not%20be%20editable%20if%20fetching">it should not be editable if fetching</a>
+        <a href="#it-should-not-be-editable-if-fetching">it should not be editable if fetching</a>
       </div>
+
       <div class="heading h3">
-        <a href="#the%20password%20fields%20are%20not%20secured%20if%20shown">the password fields are not secured if shown</a>
+        <a href="#the-password-fields-are-not-secured-if-shown">the password fields are not secured if shown</a>
       </div>
+
       <div class="heading h2">
-        <a href="#test%20log%20in">Test Log in</a>
+        <a href="#test-log-in">Test Log in</a>
       </div>
+
       <div class="heading h3">
-        <a href="#it%20should%20display%20without%20errors%20and%20without%20value">it should display without errors and without value</a>
+        <a href="#it-should-display-without-errors-and-without-value-1">it should display without errors and without value</a>
       </div>
+
       <div class="heading h3">
-        <a href="#it%20should%20display%20%20errors%20and%20%20values">it should display  errors and  values</a>
+        <a href="#it-should-display-errors-and-values">it should display  errors and  values</a>
       </div>
+
       <div class="heading h3">
-        <a href="#it%20should%20not%20be%20editable%20if%20fetching">it should not be editable if fetching</a>
+        <a href="#it-should-not-be-editable-if-fetching-1">it should not be editable if fetching</a>
       </div>
+
       <div class="heading h3">
-        <a href="#password%20fields%20are%20not%20secured%20if%20shown">password fields are not secured if shown</a>
+        <a href="#password-fields-are-not-secured-if-shown">password fields are not secured if shown</a>
       </div>
+
       <div class="heading h2">
-        <a href="#test%20reset%20password">Test reset password</a>
+        <a href="#test-reset-password">Test reset password</a>
       </div>
+
       <div class="heading h3">
-        <a href="#it%20should%20display%20without%20errors%20and%20without%20values">it should display without errors and without values</a>
+        <a href="#it-should-display-without-errors-and-without-values">it should display without errors and without values</a>
       </div>
+
       <div class="heading h3">
-        <a href="#register%20password%20fields%20are%20not%20secured%20if%20shown">register password fields are not secured if shown</a>
+        <a href="#register-password-fields-are-not-secured-if-shown">register password fields are not secured if shown</a>
       </div>
+
       <div class="heading h3">
-        <a href="#it%20should%20not%20be%20editable%20if%20fetching">it should not be editable if fetching</a>
+        <a href="#it-should-not-be-editable-if-fetching-2">it should not be editable if fetching</a>
       </div>
+
       <div class="heading h3">
-        <a href="#password%20fields%20are%20not%20secured%20if%20shown">password fields are not secured if shown</a>
+        <a href="#password-fields-are-not-secured-if-shown-1">password fields are not secured if shown</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="loginform-test.js">
-  <h1>
-    <a href="#loginform-test.js" name="loginform-test.js" class="pilcrow">&#182;</a>
-    LoginForm-test.js
-  </h1>
-</div>
-
-  </div>
-  <div class="body"><p>This class tests that the LoginForm renders correctly under
-4 states of the Login component, namely, logging in,
-resetting the password and registration</p>
-
-<p><em>Note:</em> if you want to understand the structures here, add a
-<code>console.log</code> and then <code>npm test</code>.</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-
-<span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;tcomb-form-native&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;React&#39;</span><span class="p">);</span>
-  <span class="kr">const</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">require</span><span class="p">.</span><span class="nx">requireActual</span><span class="p">(</span><span class="s1">&#39;tcomb-form-native&#39;</span><span class="p">);</span>
-
-</pre></div>
-        </td>
-      </tr>
+    
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-2" id="section-2">&#182;</a>
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="loginform-test.js">
+  <h1>
+    <a href="#loginform-test.js" name="loginform-test.js" class="pilcrow"></a>
+LoginForm-test.js
+  </h1>
+</div>
+</div>
+<div class="body">
+<p>This class tests that the LoginForm renders correctly under
+4 states of the Login component, namely, logging in,
+resetting the password and registration</p>
+<p><em>Note:</em> if you want to understand the structures here, add a
+<code>console.log</code> and then <code>npm test</code>.</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">
+'use strict'</span>;
+
+jest.mock(<span class="hljs-string">'tcomb-form-native'</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> React = <span class="hljs-built_in">require</span>(<span class="hljs-string">'React'</span>);
+  <span class="hljs-keyword">const</span> t = <span class="hljs-built_in">require</span>.requireActual(<span class="hljs-string">'tcomb-form-native'</span>);
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2"></a>
 </div>
 <p>Patch the base Component class to make rendering possible.</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">t</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">Component</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">render</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getTemplate</span><span class="p">().</span><span class="nx">name</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">);</span>
-  <span class="p">};</span>
-  <span class="k">return</span> <span class="nx">t</span><span class="p">;</span>
-<span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript">  t.form.Component.prototype.render = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> React.createElement(<span class="hljs-keyword">this</span>.getTemplate().name, <span class="hljs-keyword">this</span>.props);
+  };
+  <span class="hljs-keyword">return</span> t;
+});
 
-<span class="kr">import</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'react-native'</span>;
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
 
-<span class="kr">import</span> <span class="nx">LoginForm</span> <span class="nx">from</span> <span class="s1">&#39;../LoginForm&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> LoginForm <span class="hljs-keyword">from</span> <span class="hljs-string">'../LoginForm'</span>;
 
-<span class="kr">import</span> <span class="nx">renderer</span> <span class="nx">from</span> <span class="s1">&#39;react/lib/ReactTestRenderer&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> renderer <span class="hljs-keyword">from</span> <span class="hljs-string">'react/lib/ReactTestRenderer'</span>;
 
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">REGISTER</span><span class="p">,</span>
-  <span class="nx">LOGIN</span><span class="p">,</span>
-  <span class="nx">FORGOT_PASSWORD</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-
-</pre></div>
+<span class="hljs-keyword">const</span> {
+  REGISTER,
+  LOGIN,
+  FORGOT_PASSWORD
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/constants'</span>).default;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="test">
   <h2>
-    <a href="#test" name="test" class="pilcrow">&#182;</a>
-    Test
+    <a href="#test" name="test" class="pilcrow"></a>
+Test
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;LoginForm&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <td class="code highlight">
+          <pre class="javascript">describe(<span class="hljs-string">'LoginForm'</span>, () =&gt; {
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="snapshotform">
   <h3>
-    <a href="#snapshotform" name="snapshotform" class="pilcrow">&#182;</a>
-    snapshotForm
+    <a href="#snapshotform" name="snapshotform" class="pilcrow"></a>
+snapshotForm
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>Depending on the state, this function validates that the rendered
+</div>
+<div class="body">
+<p>Depending on the state, this function validates that the rendered
 component has the correct data</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="kd">function</span> <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">renderer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">LoginForm</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">();</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">tree</span><span class="p">).</span><span class="nx">toMatchSnapshot</span><span class="p">();</span>
-  <span class="p">}</span>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">snapshotForm</span>(<span class="hljs-params">props</span>) </span>{
+    <span class="hljs-keyword">const</span> tree = renderer.create(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LoginForm</span> {<span class="hljs-attr">...props</span>} /&gt;</span>).toJSON();
+    expect(tree).toMatchSnapshot();
+  }
+</span></pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="test%20registration">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="test-registration">
   <h2>
-    <a href="#test%20registration" name="test%20registration" class="pilcrow">&#182;</a>
-    Test Registration
+    <a href="#test-registration" name="test-registration" class="pilcrow"></a>
+Test Registration
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;REGISTER&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  describe(<span class="hljs-string">'REGISTER'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="it%20should%20display%20without%20errors%20and%20without%20value">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="it-should-display-without-errors-and-without-value">
   <h3>
-    <a href="#it%20should%20display%20without%20errors%20and%20without%20value" name="it%20should%20display%20without%20errors%20and%20without%20value" class="pilcrow">&#182;</a>
-    it should display without errors and without value
+    <a href="#it-should-display-without-errors-and-without-value" name="it-should-display-without-errors-and-without-value" class="pilcrow"></a>
+it should display without errors and without value
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should display without errors and without values&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">usernameHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">emailHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">passwordHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">passwordAgainHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">false</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'should display without errors and without values'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">false</span>,
+        fields: {
+          usernameHasError: <span class="hljs-literal">false</span>,
+          emailHasError: <span class="hljs-literal">false</span>,
+          passwordHasError: <span class="hljs-literal">false</span>,
+          passwordAgainHasError: <span class="hljs-literal">false</span>,
+          showPassword: <span class="hljs-literal">false</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="nx">passwordAgain</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        username: <span class="hljs-string">''</span>,
+        email: <span class="hljs-string">''</span>,
+        password: <span class="hljs-string">''</span>,
+        passwordAgain: <span class="hljs-string">''</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">REGISTER</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: REGISTER,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
-
-</pre></div>
+      snapshotForm(props);
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="it%20should%20display%20%20errors%20and%20%20value">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="it-should-display-errors-and-value">
   <h3>
-    <a href="#it%20should%20display%20%20errors%20and%20%20value" name="it%20should%20display%20%20errors%20and%20%20value" class="pilcrow">&#182;</a>
-    it should display  errors and  value
+    <a href="#it-should-display-errors-and-value" name="it-should-display-errors-and-value" class="pilcrow"></a>
+it should display  errors and  value
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should display  errors and  values&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">usernameHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">emailHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">passwordHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">passwordAgainHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">false</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'should display  errors and  values'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">false</span>,
+        fields: {
+          usernameHasError: <span class="hljs-literal">true</span>,
+          emailHasError: <span class="hljs-literal">true</span>,
+          passwordHasError: <span class="hljs-literal">true</span>,
+          passwordAgainHasError: <span class="hljs-literal">true</span>,
+          showPassword: <span class="hljs-literal">false</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
-        <span class="nx">passwordAgain</span><span class="o">:</span> <span class="s1">&#39;passwordagain&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        username: <span class="hljs-string">'username'</span>,
+        email: <span class="hljs-string">'email'</span>,
+        password: <span class="hljs-string">'password'</span>,
+        passwordAgain: <span class="hljs-string">'passwordagain'</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">REGISTER</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: REGISTER,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
-
-</pre></div>
+      snapshotForm(props);
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="it%20should%20not%20be%20editable%20if%20fetching">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="it-should-not-be-editable-if-fetching">
   <h3>
-    <a href="#it%20should%20not%20be%20editable%20if%20fetching" name="it%20should%20not%20be%20editable%20if%20fetching" class="pilcrow">&#182;</a>
-    it should not be editable if fetching
+    <a href="#it-should-not-be-editable-if-fetching" name="it-should-not-be-editable-if-fetching" class="pilcrow"></a>
+it should not be editable if fetching
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should not be editable if fetching&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">usernameHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">emailHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">passwordHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">passwordAgainHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">false</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'should not be editable if fetching'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">true</span>,
+        fields: {
+          usernameHasError: <span class="hljs-literal">true</span>,
+          emailHasError: <span class="hljs-literal">true</span>,
+          passwordHasError: <span class="hljs-literal">true</span>,
+          passwordAgainHasError: <span class="hljs-literal">true</span>,
+          showPassword: <span class="hljs-literal">false</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
-        <span class="nx">passwordAgain</span><span class="o">:</span> <span class="s1">&#39;passwordagain&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        username: <span class="hljs-string">'username'</span>,
+        email: <span class="hljs-string">'email'</span>,
+        password: <span class="hljs-string">'password'</span>,
+        passwordAgain: <span class="hljs-string">'passwordagain'</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">REGISTER</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: REGISTER,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
-
-</pre></div>
+      snapshotForm(props);
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="the%20password%20fields%20are%20not%20secured%20if%20shown">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="the-password-fields-are-not-secured-if-shown">
   <h3>
-    <a href="#the%20password%20fields%20are%20not%20secured%20if%20shown" name="the%20password%20fields%20are%20not%20secured%20if%20shown" class="pilcrow">&#182;</a>
-    the password fields are not secured if shown
+    <a href="#the-password-fields-are-not-secured-if-shown" name="the-password-fields-are-not-secured-if-shown" class="pilcrow"></a>
+the password fields are not secured if shown
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;password fields are not secured if shown&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">usernameHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">emailHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">passwordHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">passwordAgainHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'password fields are not secured if shown'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">false</span>,
+        fields: {
+          usernameHasError: <span class="hljs-literal">false</span>,
+          emailHasError: <span class="hljs-literal">false</span>,
+          passwordHasError: <span class="hljs-literal">false</span>,
+          passwordAgainHasError: <span class="hljs-literal">false</span>,
+          showPassword: <span class="hljs-literal">true</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
-        <span class="nx">passwordAgain</span><span class="o">:</span> <span class="s1">&#39;passwordagain&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        username: <span class="hljs-string">'username'</span>,
+        email: <span class="hljs-string">'email'</span>,
+        password: <span class="hljs-string">'password'</span>,
+        passwordAgain: <span class="hljs-string">'passwordagain'</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">REGISTER</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: REGISTER,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
+      snapshotForm(props);
+    });
 
-  <span class="p">});</span>
+  });
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="test%20log%20in">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="test-log-in">
   <h2>
-    <a href="#test%20log%20in" name="test%20log%20in" class="pilcrow">&#182;</a>
-    Test Log in
+    <a href="#test-log-in" name="test-log-in" class="pilcrow"></a>
+Test Log in
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;LOGIN&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  describe(<span class="hljs-string">'LOGIN'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="it%20should%20display%20without%20errors%20and%20without%20value">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="it-should-display-without-errors-and-without-value-1">
   <h3>
-    <a href="#it%20should%20display%20without%20errors%20and%20without%20value" name="it%20should%20display%20without%20errors%20and%20without%20value" class="pilcrow">&#182;</a>
-    it should display without errors and without value
+    <a href="#it-should-display-without-errors-and-without-value-1" name="it-should-display-without-errors-and-without-value-1" class="pilcrow"></a>
+it should display without errors and without value
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should display without errors and without values&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">usernameHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">passwordHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">false</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'should display without errors and without values'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">false</span>,
+        fields: {
+          usernameHasError: <span class="hljs-literal">false</span>,
+          passwordHasError: <span class="hljs-literal">false</span>,
+          showPassword: <span class="hljs-literal">false</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        username: <span class="hljs-string">''</span>,
+        password: <span class="hljs-string">''</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">LOGIN</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: LOGIN,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
-
-</pre></div>
+      snapshotForm(props);
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="it%20should%20display%20%20errors%20and%20%20values">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="it-should-display-errors-and-values">
   <h3>
-    <a href="#it%20should%20display%20%20errors%20and%20%20values" name="it%20should%20display%20%20errors%20and%20%20values" class="pilcrow">&#182;</a>
-    it should display  errors and  values
+    <a href="#it-should-display-errors-and-values" name="it-should-display-errors-and-values" class="pilcrow"></a>
+it should display  errors and  values
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should display  errors and  values&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">usernameHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">passwordHasError</span><span class="o">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'should display  errors and  values'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">false</span>,
+        fields: {
+          usernameHasError: <span class="hljs-literal">true</span>,
+          passwordHasError: <span class="hljs-literal">true</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;password&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        username: <span class="hljs-string">'username'</span>,
+        password: <span class="hljs-string">'password'</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">LOGIN</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: LOGIN,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
-
-</pre></div>
+      snapshotForm(props);
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="it%20should%20not%20be%20editable%20if%20fetching">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="it-should-not-be-editable-if-fetching-1">
   <h3>
-    <a href="#it%20should%20not%20be%20editable%20if%20fetching" name="it%20should%20not%20be%20editable%20if%20fetching" class="pilcrow">&#182;</a>
-    it should not be editable if fetching
+    <a href="#it-should-not-be-editable-if-fetching-1" name="it-should-not-be-editable-if-fetching-1" class="pilcrow"></a>
+it should not be editable if fetching
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should not be editable if fetching&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">usernameHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">passwordHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">false</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'should not be editable if fetching'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">true</span>,
+        fields: {
+          usernameHasError: <span class="hljs-literal">true</span>,
+          passwordHasError: <span class="hljs-literal">true</span>,
+          showPassword: <span class="hljs-literal">false</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;password&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        username: <span class="hljs-string">'username'</span>,
+        password: <span class="hljs-string">'password'</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">LOGIN</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: LOGIN,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
-
-</pre></div>
+      snapshotForm(props);
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="password%20fields%20are%20not%20secured%20if%20shown">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="password-fields-are-not-secured-if-shown">
   <h3>
-    <a href="#password%20fields%20are%20not%20secured%20if%20shown" name="password%20fields%20are%20not%20secured%20if%20shown" class="pilcrow">&#182;</a>
-    password fields are not secured if shown
+    <a href="#password-fields-are-not-secured-if-shown" name="password-fields-are-not-secured-if-shown" class="pilcrow"></a>
+password fields are not secured if shown
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;password fields are not secured if shown&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">usernameHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">passwordHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'password fields are not secured if shown'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">false</span>,
+        fields: {
+          usernameHasError: <span class="hljs-literal">false</span>,
+          passwordHasError: <span class="hljs-literal">false</span>,
+          showPassword: <span class="hljs-literal">true</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;password&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        username: <span class="hljs-string">'username'</span>,
+        password: <span class="hljs-string">'password'</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">LOGIN</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: LOGIN,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
+      snapshotForm(props);
+    });
 
-  <span class="p">});</span>
-
-</pre></div>
+  });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="test%20reset%20password">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="test-reset-password">
   <h2>
-    <a href="#test%20reset%20password" name="test%20reset%20password" class="pilcrow">&#182;</a>
-    Test reset password
+    <a href="#test-reset-password" name="test-reset-password" class="pilcrow"></a>
+Test reset password
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;FORGOT_PASSWORD&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  describe(<span class="hljs-string">'FORGOT_PASSWORD'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="it%20should%20display%20without%20errors%20and%20without%20values">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="it-should-display-without-errors-and-without-values">
   <h3>
-    <a href="#it%20should%20display%20without%20errors%20and%20without%20values" name="it%20should%20display%20without%20errors%20and%20without%20values" class="pilcrow">&#182;</a>
-    it should display without errors and without values
+    <a href="#it-should-display-without-errors-and-without-values" name="it-should-display-without-errors-and-without-values" class="pilcrow"></a>
+it should display without errors and without values
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should display without errors and without values&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">emailHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">false</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'should display without errors and without values'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">false</span>,
+        fields: {
+          emailHasError: <span class="hljs-literal">false</span>,
+          showPassword: <span class="hljs-literal">false</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        email: <span class="hljs-string">''</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">FORGOT_PASSWORD</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: FORGOT_PASSWORD,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
-
-</pre></div>
+      snapshotForm(props);
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="register%20password%20fields%20are%20not%20secured%20if%20shown">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="register-password-fields-are-not-secured-if-shown">
   <h3>
-    <a href="#register%20password%20fields%20are%20not%20secured%20if%20shown" name="register%20password%20fields%20are%20not%20secured%20if%20shown" class="pilcrow">&#182;</a>
-    register password fields are not secured if shown
+    <a href="#register-password-fields-are-not-secured-if-shown" name="register-password-fields-are-not-secured-if-shown" class="pilcrow"></a>
+register password fields are not secured if shown
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should display  errors and  values&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">emailHasError</span><span class="o">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'should display  errors and  values'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">false</span>,
+        fields: {
+          emailHasError: <span class="hljs-literal">true</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;email&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        email: <span class="hljs-string">'email'</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">FORGOT_PASSWORD</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: FORGOT_PASSWORD,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
+      snapshotForm(props);
+    });
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="it%20should%20not%20be%20editable%20if%20fetching">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="it-should-not-be-editable-if-fetching-2">
   <h3>
-    <a href="#it%20should%20not%20be%20editable%20if%20fetching" name="it%20should%20not%20be%20editable%20if%20fetching" class="pilcrow">&#182;</a>
-    it should not be editable if fetching
+    <a href="#it-should-not-be-editable-if-fetching-2" name="it-should-not-be-editable-if-fetching-2" class="pilcrow"></a>
+it should not be editable if fetching
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should not be editable if fetching&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">emailHasError</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">false</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'should not be editable if fetching'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">true</span>,
+        fields: {
+          emailHasError: <span class="hljs-literal">true</span>,
+          showPassword: <span class="hljs-literal">false</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span>
-        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;password&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        username: <span class="hljs-string">'username'</span>,
+        password: <span class="hljs-string">'password'</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">LOGIN</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: LOGIN,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
+      snapshotForm(props);
+    });
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="password%20fields%20are%20not%20secured%20if%20shown">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="password-fields-are-not-secured-if-shown-1">
   <h3>
-    <a href="#password%20fields%20are%20not%20secured%20if%20shown" name="password%20fields%20are%20not%20secured%20if%20shown" class="pilcrow">&#182;</a>
-    password fields are not secured if shown
+    <a href="#password-fields-are-not-secured-if-shown-1" name="password-fields-are-not-secured-if-shown-1" class="pilcrow"></a>
+password fields are not secured if shown
   </h3>
 </div>
-
-
 <p>change the props and call <code>snapshotForm</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;password fields are not secured if shown&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">isFetching</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">emailHasError</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-          <span class="nx">showPassword</span><span class="o">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'password fields are not secured if shown'</span>, () =&gt; {
+      <span class="hljs-keyword">let</span> form = {
+        isFetching: <span class="hljs-literal">false</span>,
+        fields: {
+          emailHasError: <span class="hljs-literal">false</span>,
+          showPassword: <span class="hljs-literal">true</span>
+        }
+      };
 
-      <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;email&#39;</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> value = {
+        email: <span class="hljs-string">'email'</span>
+      };
 
-      <span class="kd">let</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">form</span><span class="o">:</span> <span class="nx">form</span><span class="p">,</span>
-        <span class="nx">formType</span><span class="o">:</span> <span class="nx">FORGOT_PASSWORD</span><span class="p">,</span>
-        <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">,</span>
-        <span class="nx">onChange</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{}</span>
-      <span class="p">};</span>
+      <span class="hljs-keyword">let</span> props = {
+        form: form,
+        formType: FORGOT_PASSWORD,
+        value: value,
+        onChange: () =&gt; {}
+      };
 
-      <span class="nx">snapshotForm</span><span class="p">(</span><span class="nx">props</span><span class="p">);</span>
-    <span class="p">});</span>
+      snapshotForm(props);
+    });
 
-  <span class="p">});</span>
+  });
 
-<span class="p">});</span><span class="c1">//describe LoginFormTest</span>
-</pre></div>
+});<span class="hljs-comment">//describe LoginFormTest</span>
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

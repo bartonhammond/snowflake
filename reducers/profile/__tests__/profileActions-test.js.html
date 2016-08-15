@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../../doc-style.css" />
   <script src="../../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/profile/__tests__/profileActions-test.js", defaultSidebar = true;
+    var relativeDir = "../../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/profile/__tests__/profileActions-test.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,300 +21,326 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#profileactions.js">profileActions.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#mocks">Mocks</a>
       </div>
+
       <div class="heading h2">
         <a href="#store">Store</a>
       </div>
+
       <div class="heading h2">
-        <a href="#class%20under%20test">Class under test</a>
+        <a href="#class-under-test">Class under test</a>
       </div>
+
       <div class="heading h2">
-        <a href="#actions%20to%20test">Actions to test</a>
+        <a href="#actions-to-test">Actions to test</a>
       </div>
+
       <div class="heading h2">
         <a href="#tests">Tests</a>
       </div>
+
       <div class="heading h3">
-        <a href="#simple%20tests%20that%20prove%20the%20actions%20have%20the%20specific%20type">simple tests that prove the actions have the specific type</a>
+        <a href="#simple-tests-that-prove-the-actions-have-the-specific-type">simple tests that prove the actions have the specific type</a>
       </div>
+
       <div class="heading h3">
-        <a href="#async%20tests">async tests</a>
+        <a href="#async-tests">async tests</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="profileactions.js">
   <h1>
-    <a href="#profileactions.js" name="profileactions.js" class="pilcrow">&#182;</a>
-    profileActions.js
+    <a href="#profileactions.js" name="profileactions.js" class="pilcrow"></a>
+profileActions.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>All the request actions have 3 variations, the request, a success
+</div>
+<div class="body">
+<p>All the request actions have 3 variations, the request, a success
 and a failure. They all follow the pattern that the request will
 set the <code>isFetching</code> to true and the whether it's successful or
 fails, setting it back to false.</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="mocks">
   <h2>
-    <a href="#mocks" name="mocks" class="pilcrow">&#182;</a>
-    Mocks
+    <a href="#mocks" name="mocks" class="pilcrow"></a>
+Mocks
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>turn mocking off but mock AppAuthToken and Parse
-also mock the router (see src/<strong>mocks</strong>)</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;../../../lib/AppAuthToken&#39;</span><span class="p">);</span>
-<span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;../../../lib/BackendFactory&#39;</span><span class="p">);</span>
-<span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;react-native-router-flux&#39;</span><span class="p">);</span>
+<div class="body">
+<p>turn mocking off but mock AppAuthToken and Parse
+also mock the router (see src/<strong>mocks</strong>)</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">jest.mock(<span class="hljs-string">'../../../lib/AppAuthToken'</span>);
+jest.mock(<span class="hljs-string">'../../../lib/BackendFactory'</span>);
+jest.mock(<span class="hljs-string">'react-native-router-flux'</span>);
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="store">
   <h2>
-    <a href="#store" name="store" class="pilcrow">&#182;</a>
-    Store
+    <a href="#store" name="store" class="pilcrow"></a>
+Store
   </h2>
 </div>
-
-
 <p>The mockStore will validate the actions are performed</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">configureStore</span> <span class="nx">from</span> <span class="s1">&#39;redux-mock-store&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">thunk</span> <span class="nx">from</span> <span class="s1">&#39;redux-thunk&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> configureStore <span class="hljs-keyword">from</span> <span class="hljs-string">'redux-mock-store'</span>;
+<span class="hljs-keyword">import</span> thunk <span class="hljs-keyword">from</span> <span class="hljs-string">'redux-thunk'</span>;
 
-<span class="kr">const</span> <span class="nx">middlewares</span> <span class="o">=</span> <span class="p">[</span><span class="nx">thunk</span><span class="p">];</span> <span class="c1">// add your middlewares like `redux-thunk`</span>
-<span class="kr">const</span> <span class="nx">mockStore</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">(</span><span class="nx">middlewares</span><span class="p">);</span>
-
-</pre></div>
+<span class="hljs-keyword">const</span> middlewares = [thunk]; <span class="hljs-comment">// add your middlewares like `redux-thunk`</span>
+<span class="hljs-keyword">const</span> mockStore = configureStore(middlewares);
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="class%20under%20test">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="class-under-test">
   <h2>
-    <a href="#class%20under%20test" name="class%20under%20test" class="pilcrow">&#182;</a>
-    Class under test
+    <a href="#class-under-test" name="class-under-test" class="pilcrow"></a>
+Class under test
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../profileActions&#39;</span><span class="p">);</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> actions = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../profileActions'</span>);
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="actions%20to%20test">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="actions-to-test">
   <h2>
-    <a href="#actions%20to%20test" name="actions%20to%20test" class="pilcrow">&#182;</a>
-    Actions to test
+    <a href="#actions-to-test" name="actions-to-test" class="pilcrow"></a>
+Actions to test
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">GET_PROFILE_REQUEST</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_SUCCESS</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_FAILURE</span><span class="p">,</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> {
+  GET_PROFILE_REQUEST,
+  GET_PROFILE_SUCCESS,
+  GET_PROFILE_FAILURE,
 
-  <span class="nx">PROFILE_UPDATE_REQUEST</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_SUCCESS</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_FAILURE</span><span class="p">,</span>
+  PROFILE_UPDATE_REQUEST,
+  PROFILE_UPDATE_SUCCESS,
+  PROFILE_UPDATE_FAILURE,
 
-  <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span>
+  ON_PROFILE_FORM_FIELD_CHANGE
 
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../../lib/constants'</span>).default;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="tests">
   <h2>
-    <a href="#tests" name="tests" class="pilcrow">&#182;</a>
-    Tests
+    <a href="#tests" name="tests" class="pilcrow"></a>
+Tests
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>profileActions</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;profileActions&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="simple%20tests%20that%20prove%20the%20actions%20have%20the%20specific%20type">
-  <h3>
-    <a href="#simple%20tests%20that%20prove%20the%20actions%20have%20the%20specific%20type" name="simple%20tests%20that%20prove%20the%20actions%20have%20the%20specific%20type" class="pilcrow">&#182;</a>
-    simple tests that prove the actions have the specific type
-  </h3>
+<div class="body">
+<p>profileActions</p>
+</div>
 </div>
 
-  </div>
-  <div class="body">
-  </div>
-</div>
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should getProfileRequest&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">getProfileRequest</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_REQUEST</span><span class="p">});</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should getProfileSuccess&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="p">{</span><span class="nx">json</span><span class="o">:</span> <span class="kc">true</span><span class="p">};</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">getProfileSuccess</span><span class="p">(</span><span class="nx">json</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span>
-                                                     <span class="nx">GET_PROFILE_SUCCESS</span><span class="p">,</span>
-                                                     <span class="nx">payload</span><span class="o">:</span> <span class="nx">json</span><span class="p">});</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should getProfileFailure&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="p">{</span><span class="nx">json</span><span class="o">:</span> <span class="kc">true</span><span class="p">};</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">getProfileFailure</span><span class="p">(</span><span class="nx">json</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span>
-                                                     <span class="nx">GET_PROFILE_FAILURE</span><span class="p">,</span>
-                                                     <span class="nx">payload</span><span class="o">:</span><span class="nx">json</span><span class="p">});</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should profileUpdateRequest&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">profileUpdateRequest</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_REQUEST</span><span class="p">});</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should profileUpdateSuccess&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">profileUpdateSuccess</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_SUCCESS</span><span class="p">});</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should profileUpdateFailure&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">json</span> <span class="o">=</span> <span class="p">{</span><span class="nx">json</span><span class="o">:</span> <span class="kc">true</span><span class="p">};</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">profileUpdateFailure</span><span class="p">(</span><span class="nx">json</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span><span class="nx">type</span><span class="o">:</span>
-                                                        <span class="nx">PROFILE_UPDATE_FAILURE</span><span class="p">,</span>
-                                                        <span class="nx">payload</span><span class="o">:</span><span class="nx">json</span><span class="p">});</span>
-  <span class="p">});</span>
-
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should onProfileFormFieldChange&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">field</span> <span class="o">=</span> <span class="s1">&#39;field&#39;</span><span class="p">;</span>
-    <span class="kd">let</span> <span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">;</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">onProfileFormFieldChange</span><span class="p">(</span><span class="nx">field</span><span class="p">,</span> <span class="nx">value</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">({</span>
-      <span class="nx">type</span><span class="o">:</span> <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="p">,</span>       <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span><span class="nx">field</span><span class="o">:</span> <span class="nx">field</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">}});</span>
-  <span class="p">});</span>
-
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript">describe(<span class="hljs-string">'profileActions'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="async%20tests">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="simple-tests-that-prove-the-actions-have-the-specific-type">
   <h3>
-    <a href="#async%20tests" name="async%20tests" class="pilcrow">&#182;</a>
-    async tests
+    <a href="#simple-tests-that-prove-the-actions-have-the-specific-type" name="simple-tests-that-prove-the-actions-have-the-specific-type" class="pilcrow"></a>
+simple tests that prove the actions have the specific type
   </h3>
 </div>
+</div>
+<div class="body">
+</div>
+</div>
 
-  </div>
-  <div class="body"><p>the following tests describe the actions that should be
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  it(<span class="hljs-string">'should getProfileRequest'</span>, () =&gt; {
+    expect(actions.getProfileRequest()).toEqual({type: GET_PROFILE_REQUEST});
+  });
+
+  it(<span class="hljs-string">'should getProfileSuccess'</span>, () =&gt; {
+    <span class="hljs-keyword">var</span> json = {json: <span class="hljs-literal">true</span>};
+    expect(actions.getProfileSuccess(json)).toEqual({type:
+                                                     GET_PROFILE_SUCCESS,
+                                                     payload: json});
+  });
+
+  it(<span class="hljs-string">'should getProfileFailure'</span>, () =&gt; {
+    <span class="hljs-keyword">var</span> json = {json: <span class="hljs-literal">true</span>};
+    expect(actions.getProfileFailure(json)).toEqual({type:
+                                                     GET_PROFILE_FAILURE,
+                                                     payload:json});
+  });
+
+  it(<span class="hljs-string">'should profileUpdateRequest'</span>, () =&gt; {
+    expect(actions.profileUpdateRequest()).toEqual({type: PROFILE_UPDATE_REQUEST});
+  });
+
+  it(<span class="hljs-string">'should profileUpdateSuccess'</span>, () =&gt; {
+    expect(actions.profileUpdateSuccess()).toEqual({type: PROFILE_UPDATE_SUCCESS});
+  });
+
+  it(<span class="hljs-string">'should profileUpdateFailure'</span>, () =&gt; {
+    <span class="hljs-keyword">var</span> json = {json: <span class="hljs-literal">true</span>};
+    expect(actions.profileUpdateFailure(json)).toEqual({type:
+                                                        PROFILE_UPDATE_FAILURE,
+                                                        payload:json});
+  });
+
+  it(<span class="hljs-string">'should onProfileFormFieldChange'</span>, () =&gt; {
+    <span class="hljs-keyword">let</span> field = <span class="hljs-string">'field'</span>;
+    <span class="hljs-keyword">let</span> value = <span class="hljs-string">'value'</span>;
+    expect(actions.onProfileFormFieldChange(field, value)).toEqual({
+      type: ON_PROFILE_FORM_FIELD_CHANGE,       payload: {field: field, value: value}});
+  });
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="async-tests">
+  <h3>
+    <a href="#async-tests" name="async-tests" class="pilcrow"></a>
+async tests
+  </h3>
+</div>
+</div>
+<div class="body">
+<p>the following tests describe the actions that should be
 dispatched the function is invoked</p>
-
 <p><em>Note</em>: these tests are run with <code>pit</code> because they are async</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should getProfile&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">expectedActions</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_REQUEST</span><span class="p">},</span>
-      <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_SUCCESS</span><span class="p">}</span>
-    <span class="p">];</span>
+        <td class="code highlight">
+          <pre class="javascript">  it(<span class="hljs-string">'should getProfile'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> expectedActions = [
+      {type: GET_PROFILE_REQUEST},
+      {type: GET_PROFILE_SUCCESS}
+    ];
 
-    <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">mockStore</span><span class="p">({});</span>
-    <span class="k">return</span> <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">getProfile</span><span class="p">())</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">expect</span><span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">getActions</span><span class="p">()[</span><span class="mi">0</span><span class="p">].</span><span class="nx">type</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">expectedActions</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">type</span><span class="p">);</span>
-        <span class="nx">expect</span><span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">getActions</span><span class="p">()[</span><span class="mi">1</span><span class="p">].</span><span class="nx">type</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">expectedActions</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">type</span><span class="p">);</span>        
-      <span class="p">});</span>
-  <span class="p">});</span>
+    <span class="hljs-keyword">const</span> store = mockStore({});
+    <span class="hljs-keyword">return</span> store.dispatch(actions.getProfile())
+      .then(() =&gt; {
+        expect(store.getActions()[<span class="hljs-number">0</span>].type).toEqual(expectedActions[<span class="hljs-number">0</span>].type);
+        expect(store.getActions()[<span class="hljs-number">1</span>].type).toEqual(expectedActions[<span class="hljs-number">1</span>].type);        
+      });
+  });
 
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should updateProfile&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">expectedActions</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_REQUEST</span><span class="p">},</span>
-      <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_SUCCESS</span><span class="p">},</span>
-      <span class="p">{</span><span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_REQUEST</span><span class="p">}</span>
-    <span class="p">];</span>
+  it(<span class="hljs-string">'should updateProfile'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> expectedActions = [
+      {type: PROFILE_UPDATE_REQUEST},
+      {type: PROFILE_UPDATE_SUCCESS},
+      {type: GET_PROFILE_REQUEST}
+    ];
 
-    <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">mockStore</span><span class="p">({});</span>
-    <span class="k">return</span> <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">actions</span><span class="p">.</span><span class="nx">updateProfile</span><span class="p">(</span><span class="s1">&#39;userid&#39;</span><span class="p">,</span><span class="s1">&#39;username&#39;</span><span class="p">,</span><span class="s1">&#39;email&#39;</span><span class="p">))</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">expect</span><span class="p">(</span><span class="nx">store</span><span class="p">.</span><span class="nx">getActions</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">expectedActions</span><span class="p">);</span>        
-      <span class="p">});</span>
-  <span class="p">});</span>
+    <span class="hljs-keyword">const</span> store = mockStore({});
+    <span class="hljs-keyword">return</span> store.dispatch(actions.updateProfile(<span class="hljs-string">'userid'</span>,<span class="hljs-string">'username'</span>,<span class="hljs-string">'email'</span>))
+      .then(() =&gt; {
+        expect(store.getActions()).toEqual(expectedActions);        
+      });
+  });
 
-<span class="p">});</span>
-</pre></div>
+});
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//lib/fieldValidation.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/lib/fieldValidation.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,431 +21,459 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#fieldvalidation.js">fieldValidation.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h3">
         <a href="#translations">Translations</a>
       </div>
+
       <div class="heading h2">
-        <a href="#email%20validation%20setup">Email validation setup</a>
+        <a href="#email-validation-setup">Email validation setup</a>
       </div>
+
       <div class="heading h2">
-        <a href="#username%20validation%20rule">username validation rule</a>
+        <a href="#username-validation-rule">username validation rule</a>
       </div>
+
       <div class="heading h2">
-        <a href="#password%20validation%20rule">password validation rule</a>
+        <a href="#password-validation-rule">password validation rule</a>
       </div>
+
       <div class="heading h2">
-        <a href="#field%20validation">Field Validation</a>
+        <a href="#field-validation">Field Validation</a>
       </div>
+
       <div class="heading h3">
-        <a href="#username%20validation">username validation</a>
+        <a href="#username-validation">username validation</a>
       </div>
+
       <div class="heading h3">
-        <a href="#email%20validation">email validation</a>
+        <a href="#email-validation">email validation</a>
       </div>
+
       <div class="heading h3">
-        <a href="#password%20validation">password validation</a>
+        <a href="#password-validation">password validation</a>
       </div>
+
       <div class="heading h3">
-        <a href="#passwordagain%20validation">passwordAgain validation</a>
+        <a href="#passwordagain-validation">passwordAgain validation</a>
       </div>
+
       <div class="heading h3">
         <a href="#showpassword">showPassword</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="fieldvalidation.js">
   <h1>
-    <a href="#fieldvalidation.js" name="fieldvalidation.js" class="pilcrow">&#182;</a>
-    fieldValidation.js
+    <a href="#fieldvalidation.js" name="fieldvalidation.js" class="pilcrow"></a>
+fieldValidation.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>Define the validation rules for various fields such as email, username,
+</div>
+<div class="body">
+<p>Define the validation rules for various fields such as email, username,
 and passwords.  If the rules are not passed, the appropriate
 message is displayed to the user</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>validate and underscore</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">validate</span> <span class="nx">from</span> <span class="s1">&#39;validate.js&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">_</span> <span class="nx">from</span> <span class="s1">&#39;underscore&#39;</span><span class="p">;</span>
+<div class="body">
+<p>validate and underscore</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> validate <span class="hljs-keyword">from</span> <span class="hljs-string">'validate.js'</span>;
+<span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'underscore'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="translations">
   <h3>
-    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
-    Translations
+    <a href="#translations" name="translations" class="pilcrow"></a>
+Translations
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
-<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
-<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> I18n = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-native-i18n'</span>);
+<span class="hljs-keyword">import</span> Translations <span class="hljs-keyword">from</span> <span class="hljs-string">'../lib/Translations'</span>;
+I18n.translations = Translations;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="email%20validation%20setup">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="email-validation-setup">
   <h2>
-    <a href="#email%20validation%20setup" name="email%20validation%20setup" class="pilcrow">&#182;</a>
-    Email validation setup
+    <a href="#email-validation-setup" name="email-validation-setup" class="pilcrow"></a>
+Email validation setup
   </h2>
 </div>
-
-
 <p>Used for validation of emails</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">emailConstraints</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">from</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">email</span><span class="o">:</span> <span class="kc">true</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> emailConstraints = {
+  <span class="hljs-keyword">from</span>: {
+    email: <span class="hljs-literal">true</span>
+  }
+};
 
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="username%20validation%20rule">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="username-validation-rule">
   <h2>
-    <a href="#username%20validation%20rule" name="username%20validation%20rule" class="pilcrow">&#182;</a>
-    username validation rule
+    <a href="#username-validation-rule" name="username-validation-rule" class="pilcrow"></a>
+username validation rule
   </h2>
 </div>
-
-
 <p>read the message.. ;)</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">usernamePattern</span> <span class="o">=</span> <span class="sr">/^[a-zA-Z0-9]{6,12}$/</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">usernameConstraints</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">username</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">format</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">pattern</span><span class="o">:</span> <span class="nx">usernamePattern</span><span class="p">,</span>
-      <span class="nx">flags</span><span class="o">:</span> <span class="s1">&#39;i&#39;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> usernamePattern = <span class="hljs-regexp">/^[a-zA-Z0-9]{6,12}$/</span>;
+<span class="hljs-keyword">const</span> usernameConstraints = {
+  username: {
+    format: {
+      pattern: usernamePattern,
+      flags: <span class="hljs-string">'i'</span>
+    }
+  }
+};
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="password%20validation%20rule">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="password-validation-rule">
   <h2>
-    <a href="#password%20validation%20rule" name="password%20validation%20rule" class="pilcrow">&#182;</a>
-    password validation rule
+    <a href="#password-validation-rule" name="password-validation-rule" class="pilcrow"></a>
+password validation rule
   </h2>
 </div>
-
-
 <p>read the message... ;)</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">passwordPattern</span> <span class="o">=</span>  <span class="sr">/^(?=.*[0-9])(?=.*[!@#$%^&amp;*])[a-zA-Z0-9!@#$%^&amp;*]{6,12}$/</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">passwordConstraints</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">password</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">format</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">pattern</span><span class="o">:</span> <span class="nx">passwordPattern</span><span class="p">,</span>
-      <span class="nx">flags</span><span class="o">:</span> <span class="s2">&quot;i&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> passwordPattern =  <span class="hljs-regexp">/^(?=.*[0-9])(?=.*[!@#$%^&amp;*])[a-zA-Z0-9!@#$%^&amp;*]{6,12}$/</span>;
+<span class="hljs-keyword">const</span> passwordConstraints = {
+  password: {
+    format: {
+      pattern: passwordPattern,
+      flags: <span class="hljs-string">"i"</span>
+    }
+  }
+};
 
-<span class="kr">const</span> <span class="nx">passwordAgainConstraints</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">confirmPassword</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">equality</span><span class="o">:</span> <span class="s2">&quot;password&quot;</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+<span class="hljs-keyword">const</span> passwordAgainConstraints = {
+  confirmPassword: {
+    equality: <span class="hljs-string">"password"</span>
+  }
+};
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="field%20validation">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="field-validation">
   <h2>
-    <a href="#field%20validation" name="field%20validation" class="pilcrow">&#182;</a>
-    Field Validation
+    <a href="#field-validation" name="field-validation" class="pilcrow"></a>
+Field Validation
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">state</span>
-      <span class="dox_type">Object</span>
-      <span>Redux state</span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">action</span>
-      <span class="dox_type">Object</span>
-      <span>type &amp; payload</span>
-    </div>
-  </div>
 </div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">state</span>
+<span class="dox_type">Object</span>
+<span>Redux state
+</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">action</span>
+<span class="dox_type">Object</span>
+<span>type &amp; payload
+</span>
+</div>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">fieldValidation</span><span class="p">(</span><span class="nx">state</span><span class="p">,</span> <span class="nx">action</span> <span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="p">{</span><span class="nx">field</span><span class="p">,</span> <span class="nx">value</span><span class="p">}</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fieldValidation</span>(<span class="hljs-params">state, action </span>) </span>{
+  <span class="hljs-keyword">const</span> {field, value} = action.payload;
   
-  <span class="k">switch</span><span class="p">(</span><span class="nx">field</span><span class="p">)</span> <span class="p">{</span>
-
-</pre></div>
+  <span class="hljs-keyword">switch</span>(field) {
+</pre>
         </td>
       </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="username%20validation">
-  <h3>
-    <a href="#username%20validation" name="username%20validation" class="pilcrow">&#182;</a>
-    username validation
-  </h3>
-</div>
-
-
-<p>set the form field error </p>
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">)</span><span class="o">:</span>
-    <span class="kd">let</span> <span class="nx">validUsername</span>  <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">validate</span><span class="p">({</span><span class="nx">username</span><span class="o">:</span> <span class="nx">value</span><span class="p">},</span>
-                                                <span class="nx">usernameConstraints</span><span class="p">));</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">validUsername</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameHasError&#39;</span><span class="p">],</span>
-                         <span class="kc">false</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameErrorMsg&#39;</span><span class="p">],</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
-
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;usernameErrorMsg&#39;</span><span class="p">],</span>
-               <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;FieldValidation.valid_user_name&quot;</span><span class="p">));</span>
-    <span class="p">}</span>
-    <span class="k">break</span><span class="p">;</span>
     
-
-</pre></div>
-        </td>
-      </tr>
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="email%20validation">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="username-validation">
   <h3>
-    <a href="#email%20validation" name="email%20validation" class="pilcrow">&#182;</a>
-    email validation
+    <a href="#username-validation" name="username-validation" class="pilcrow"></a>
+username validation
   </h3>
 </div>
-
-
-<p>set the form field error </p>
-  </div>
-  <div class="body">
-  </div>
+<p>set the form field error</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">)</span><span class="o">:</span>
-    <span class="kd">let</span> <span class="nx">validEmail</span>  <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">validate</span><span class="p">({</span><span class="nx">from</span><span class="o">:</span> <span class="nx">value</span><span class="p">},</span>
-                                             <span class="nx">emailConstraints</span><span class="p">));</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">validEmail</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailHasError&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;emailErrorMsg&#39;</span><span class="p">],</span>
-                 <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;FieldValidation.valid_email&quot;</span><span class="p">));</span>
-    <span class="p">}</span>
-    <span class="k">break</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span>(<span class="hljs-string">'username'</span>):
+    <span class="hljs-keyword">let</span> validUsername  = _.isUndefined(validate({username: value},
+                                                usernameConstraints));
+    <span class="hljs-keyword">if</span> (validUsername) {
+      <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'usernameHasError'</span>],
+                         <span class="hljs-literal">false</span>)
+        .setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'usernameErrorMsg'</span>], <span class="hljs-string">""</span>);
+
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'usernameHasError'</span>], <span class="hljs-literal">true</span>)
+        .setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'usernameErrorMsg'</span>],
+               I18n.t(<span class="hljs-string">"FieldValidation.valid_user_name"</span>));
+    }
+    <span class="hljs-keyword">break</span>;
     
-
-</pre></div>
+</pre>
         </td>
       </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="password%20validation">
-  <h3>
-    <a href="#password%20validation" name="password%20validation" class="pilcrow">&#182;</a>
-    password validation
-  </h3>
-</div>
-
-
-<p>set the form field error </p>
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">)</span><span class="o">:</span>
-    <span class="kd">let</span> <span class="nx">validPassword</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">validate</span><span class="p">({</span><span class="nx">password</span><span class="o">:</span> <span class="nx">value</span><span class="p">},</span>
-                                               <span class="nx">passwordConstraints</span><span class="p">));</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">validPassword</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordHasError&#39;</span><span class="p">],</span>
-                         <span class="kc">false</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordErrorMsg&#39;</span><span class="p">],</span>
-               <span class="s2">&quot;&quot;</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordHasError&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordErrorMsg&#39;</span><span class="p">],</span>
-          <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;FieldValidation.valid_password&quot;</span><span class="p">));</span>               
-    <span class="p">}</span>
-    <span class="k">break</span><span class="p">;</span>
     
-
-</pre></div>
-        </td>
-      </tr>
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="passwordagain%20validation">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="email-validation">
   <h3>
-    <a href="#passwordagain%20validation" name="passwordagain%20validation" class="pilcrow">&#182;</a>
-    passwordAgain validation
+    <a href="#email-validation" name="email-validation" class="pilcrow"></a>
+email validation
   </h3>
 </div>
-
-
-<p>set the form field error </p>
-  </div>
-  <div class="body">
-  </div>
+<p>set the form field error</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span><span class="p">(</span><span class="s1">&#39;passwordAgain&#39;</span><span class="p">)</span><span class="o">:</span>
-    <span class="kd">var</span> <span class="nx">validPasswordAgain</span>
-      <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">validate</span><span class="p">({</span><span class="nx">password</span><span class="o">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">password</span><span class="p">,</span>
-                                <span class="nx">confirmPassword</span><span class="o">:</span> <span class="nx">value</span><span class="p">},</span> <span class="nx">passwordAgainConstraints</span><span class="p">));</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">validPasswordAgain</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainHasError&#39;</span><span class="p">],</span>
-                         <span class="kc">false</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainErrorMsg&#39;</span><span class="p">],</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainHasError&#39;</span><span class="p">],</span>
-                          <span class="kc">true</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="s1">&#39;passwordAgainErrorMsg&#39;</span><span class="p">],</span>
-        <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;FieldValidation.valid_password_again&quot;</span><span class="p">));</span> 
-
-    <span class="p">}</span>
-    <span class="k">break</span><span class="p">;</span>
-
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span>(<span class="hljs-string">'email'</span>):
+    <span class="hljs-keyword">let</span> validEmail  = _.isUndefined(validate({<span class="hljs-keyword">from</span>: value},
+                                             emailConstraints));
+    <span class="hljs-keyword">if</span> (validEmail) {
+        <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'emailHasError'</span>], <span class="hljs-literal">false</span>);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'emailHasError'</span>], <span class="hljs-literal">true</span>)
+        .setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'emailErrorMsg'</span>],
+                 I18n.t(<span class="hljs-string">"FieldValidation.valid_email"</span>));
+    }
+    <span class="hljs-keyword">break</span>;
+    
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="password-validation">
+  <h3>
+    <a href="#password-validation" name="password-validation" class="pilcrow"></a>
+password validation
+  </h3>
+</div>
+<p>set the form field error</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span>(<span class="hljs-string">'password'</span>):
+    <span class="hljs-keyword">let</span> validPassword = _.isUndefined(validate({password: value},
+                                               passwordConstraints));
+    <span class="hljs-keyword">if</span> (validPassword) {
+      <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'passwordHasError'</span>],
+                         <span class="hljs-literal">false</span>)
+        .setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'passwordErrorMsg'</span>],
+               <span class="hljs-string">""</span>);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'passwordHasError'</span>], <span class="hljs-literal">true</span>)
+        .setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'passwordErrorMsg'</span>],
+          I18n.t(<span class="hljs-string">"FieldValidation.valid_password"</span>));               
+    }
+    <span class="hljs-keyword">break</span>;
+    
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="passwordagain-validation">
+  <h3>
+    <a href="#passwordagain-validation" name="passwordagain-validation" class="pilcrow"></a>
+passwordAgain validation
+  </h3>
+</div>
+<p>set the form field error</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span>(<span class="hljs-string">'passwordAgain'</span>):
+    <span class="hljs-keyword">var</span> validPasswordAgain
+      = _.isUndefined(validate({password: state.form.fields.password,
+                                confirmPassword: value}, passwordAgainConstraints));
+    <span class="hljs-keyword">if</span> (validPasswordAgain) {
+      <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'passwordAgainHasError'</span>],
+                         <span class="hljs-literal">false</span>)
+        .setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'passwordAgainErrorMsg'</span>],<span class="hljs-string">''</span>);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'passwordAgainHasError'</span>],
+                          <span class="hljs-literal">true</span>)
+        .setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, <span class="hljs-string">'passwordAgainErrorMsg'</span>],
+        I18n.t(<span class="hljs-string">"FieldValidation.valid_password_again"</span>)); 
+
+    }
+    <span class="hljs-keyword">break</span>;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="showpassword">
   <h3>
-    <a href="#showpassword" name="showpassword" class="pilcrow">&#182;</a>
-    showPassword
+    <a href="#showpassword" name="showpassword" class="pilcrow"></a>
+showPassword
   </h3>
 </div>
-
-
 <p>toggle the display of the password</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span><span class="p">(</span><span class="s1">&#39;showPassword&#39;</span><span class="p">)</span><span class="o">:</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;showPassword&#39;</span><span class="p">],</span> <span class="nx">value</span><span class="p">);</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+<div class="body">
+</div>
+</div>
 
-<span class="p">}</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span>(<span class="hljs-string">'showPassword'</span>):
+    <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>,
+                                <span class="hljs-string">'showPassword'</span>], value);
+    <span class="hljs-keyword">break</span>;
+  }
+  <span class="hljs-keyword">return</span> state;
+
+}
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

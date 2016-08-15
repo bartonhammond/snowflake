@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/global/globalReducer.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/global/globalReducer.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,333 +21,364 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#globalreducer.js">globalReducer.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
-        <a href="#globalreducer%20function">globalReducer function</a>
+        <a href="#globalreducer-function">globalReducer function</a>
       </div>
+
       <div class="heading h3">
-        <a href="#save%20the%20sessiontoken">Save the sessionToken</a>
+        <a href="#save-the-sessiontoken">Save the sessionToken</a>
       </div>
+
       <div class="heading h3">
-        <a href="#save%20the%20payload%20in%20the%20store">Save the payload in the store</a>
+        <a href="#save-the-payload-in-the-store">Save the payload in the store</a>
       </div>
+
       <div class="heading h3">
-        <a href="#clear%20currentuser">Clear currentUser</a>
+        <a href="#clear-currentuser">Clear currentUser</a>
       </div>
+
       <div class="heading h3">
-        <a href="#sets%20the%20payload%20into%20the%20store">sets the payload into the store</a>
+        <a href="#sets-the-payload-into-the-store">sets the payload into the store</a>
       </div>
+
       <div class="heading h3">
-        <a href="#get%20the%20current%20state%20from%20the%20store">Get the current state from the store</a>
+        <a href="#get-the-current-state-from-the-store">Get the current state from the store</a>
       </div>
+
       <div class="heading h3">
-        <a href="#set%20the%20state">Set the state</a>
+        <a href="#set-the-state">Set the state</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="globalreducer.js">
   <h1>
-    <a href="#globalreducer.js" name="globalreducer.js" class="pilcrow">&#182;</a>
-    globalReducer.js
+    <a href="#globalreducer.js" name="globalreducer.js" class="pilcrow"></a>
+globalReducer.js
   </h1>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-
 <p>The InitialState for auth
 fieldValidation for validating the fields
 formValidation for setting the form's valid flag</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">SET_SESSION_TOKEN</span><span class="p">,</span>
+<div class="body">
+</div>
+</div>
 
-  <span class="nx">GET_PROFILE_SUCCESS</span><span class="p">,</span>
-  <span class="nx">SIGNUP_SUCCESS</span><span class="p">,</span>
-  <span class="nx">LOGIN_SUCCESS</span><span class="p">,</span>
-  <span class="nx">SESSION_TOKEN_SUCCESS</span><span class="p">,</span>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> {
+  SET_SESSION_TOKEN,
+
+  GET_PROFILE_SUCCESS,
+  SIGNUP_SUCCESS,
+  LOGIN_SUCCESS,
+  SESSION_TOKEN_SUCCESS,
   
-  <span class="nx">LOGOUT_SUCCESS</span><span class="p">,</span>
+  LOGOUT_SUCCESS,
 
-  <span class="nx">GET_STATE</span><span class="p">,</span>
-  <span class="nx">SET_STATE</span><span class="p">,</span>
-  <span class="nx">SET_STORE</span>
+  GET_STATE,
+  SET_STATE,
+  SET_STORE
   
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/constants'</span>).default;
 
-<span class="kr">import</span> <span class="nx">InitialState</span> <span class="nx">from</span> <span class="s1">&#39;./globalInitialState&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> InitialState <span class="hljs-keyword">from</span> <span class="hljs-string">'./globalInitialState'</span>;
 
-<span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InitialState</span><span class="p">;</span>
-
-</pre></div>
+<span class="hljs-keyword">const</span> initialState = <span class="hljs-keyword">new</span> InitialState;
+</pre>
         </td>
       </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="globalreducer%20function">
-  <h2>
-    <a href="#globalreducer%20function" name="globalreducer%20function" class="pilcrow">&#182;</a>
-    globalReducer function
-  </h2>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">state</span>
-      <span class="dox_type">Object</span>
-      <span><ul>
-<li>initialState </li>
-</ul></span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">action</span>
-      <span class="dox_type">Object</span>
-      <span><ul>
-<li>type and payload</li>
-</ul></span>
-    </div>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">globalReducer</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">initialState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">state</span> <span class="k">instanceof</span> <span class="nx">InitialState</span><span class="p">))</span> <span class="k">return</span> <span class="nx">initialState</span><span class="p">.</span><span class="nx">merge</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span>
-
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="save%20the%20sessiontoken">
-  <h3>
-    <a href="#save%20the%20sessiontoken" name="save%20the%20sessiontoken" class="pilcrow">&#182;</a>
-    Save the sessionToken
-  </h3>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">SET_SESSION_TOKEN</span><span class="o">:</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;sessionToken&#39;</span><span class="p">,</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
     
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="save%20the%20payload%20in%20the%20store">
-  <h3>
-    <a href="#save%20the%20payload%20in%20the%20store" name="save%20the%20payload%20in%20the%20store" class="pilcrow">&#182;</a>
-    Save the payload in the store
-  </h3>
-</div>
-
-  </div>
-  <div class="body"><p>This payload is the <code>currentUser</code> object returned by
-Parse.com.  It contains the <code>sessionToken</code> and the user's
-<code>objectId</code> which will be needed for some calls to Parse</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">SIGNUP_SUCCESS</span><span class="o">:</span>
-  <span class="k">case</span> <span class="nx">LOGIN_SUCCESS</span><span class="o">:</span>
-  <span class="k">case</span> <span class="nx">GET_PROFILE_SUCCESS</span><span class="o">:</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;currentUser&#39;</span><span class="p">,</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-    
-  <span class="k">case</span> <span class="nx">SESSION_TOKEN_SUCCESS</span><span class="o">:</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;currentUser&#39;</span><span class="p">,</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">sessionToken</span><span class="p">);</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="clear%20currentuser">
-  <h3>
-    <a href="#clear%20currentuser" name="clear%20currentuser" class="pilcrow">&#182;</a>
-    Clear currentUser
-  </h3>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">LOGOUT_SUCCESS</span><span class="o">:</span>
-    
-    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;currentUser&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
-    
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="sets%20the%20payload%20into%20the%20store">
-  <h3>
-    <a href="#sets%20the%20payload%20into%20the%20store" name="sets%20the%20payload%20into%20the%20store" class="pilcrow">&#182;</a>
-    sets the payload into the store
-  </h3>
-</div>
-
-  </div>
-  <div class="body"><p><em>Note</em> this is for support of Hot Loading - the payload is the
-<code>store</code> itself.</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">SET_STORE</span><span class="o">:</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">,</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="get%20the%20current%20state%20from%20the%20store">
-  <h3>
-    <a href="#get%20the%20current%20state%20from%20the%20store" name="get%20the%20current%20state%20from%20the%20store" class="pilcrow">&#182;</a>
-    Get the current state from the store
-  </h3>
-</div>
-
-  </div>
-  <div class="body"><p>The Redux <code>store</code> provides the state object.
-We convert each key to JSON and set it in the state</p>
-
-<p><em>Note</em>: the global state removes the <code>store</code>, otherwise,
-when trying to convert to JSON, it will be recursive and fail</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">GET_STATE</span><span class="o">:</span>
-    <span class="kd">let</span> <span class="nx">_state</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">store</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">let</span> <span class="nx">newState</span> <span class="o">=</span> <span class="p">{};</span>
-      <span class="nx">newState</span><span class="p">[</span><span class="s1">&#39;auth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">_state</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">toJS</span><span class="p">();</span>
-      <span class="nx">newState</span><span class="p">[</span><span class="s1">&#39;device&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">_state</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">toJS</span><span class="p">();</span>
-      <span class="nx">newState</span><span class="p">[</span><span class="s1">&#39;profile&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">_state</span><span class="p">.</span><span class="nx">profile</span><span class="p">.</span><span class="nx">toJS</span><span class="p">();</span>
-
-
-
-</pre></div>
-        </td>
-      </tr>
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-9" id="section-9">&#182;</a>
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="globalreducer-function">
+  <h2>
+    <a href="#globalreducer-function" name="globalreducer-function" class="pilcrow"></a>
+globalReducer function
+  </h2>
+</div>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">state</span>
+<span class="dox_type">Object</span>
+<span><ul>
+<li>initialState</li>
+</ul>
+</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">action</span>
+<span class="dox_type">Object</span>
+<span><ul>
+<li>type and payload</li>
+</ul>
+</span>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">globalReducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+  <span class="hljs-keyword">if</span> (!(state <span class="hljs-keyword">instanceof</span> InitialState)) <span class="hljs-keyword">return</span> initialState.merge(state);
+
+  <span class="hljs-keyword">switch</span> (action.type) {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="save-the-sessiontoken">
+  <h3>
+    <a href="#save-the-sessiontoken" name="save-the-sessiontoken" class="pilcrow"></a>
+Save the sessionToken
+  </h3>
+</div>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> SET_SESSION_TOKEN:
+    <span class="hljs-keyword">return</span> state.set(<span class="hljs-string">'sessionToken'</span>, action.payload);
+    
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="save-the-payload-in-the-store">
+  <h3>
+    <a href="#save-the-payload-in-the-store" name="save-the-payload-in-the-store" class="pilcrow"></a>
+Save the payload in the store
+  </h3>
+</div>
+</div>
+<div class="body">
+<p>This payload is the <code>currentUser</code> object returned by
+Parse.com.  It contains the <code>sessionToken</code> and the user's
+<code>objectId</code> which will be needed for some calls to Parse</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> SIGNUP_SUCCESS:
+  <span class="hljs-keyword">case</span> LOGIN_SUCCESS:
+  <span class="hljs-keyword">case</span> GET_PROFILE_SUCCESS:
+    <span class="hljs-keyword">return</span> state.set(<span class="hljs-string">'currentUser'</span>,action.payload);
+    
+  <span class="hljs-keyword">case</span> SESSION_TOKEN_SUCCESS:
+    <span class="hljs-keyword">return</span> state.set(<span class="hljs-string">'currentUser'</span>,action.payload.sessionToken);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="clear-currentuser">
+  <h3>
+    <a href="#clear-currentuser" name="clear-currentuser" class="pilcrow"></a>
+Clear currentUser
+  </h3>
+</div>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> LOGOUT_SUCCESS:
+    
+    <span class="hljs-keyword">return</span> state.set(<span class="hljs-string">'currentUser'</span>, <span class="hljs-literal">null</span>);
+    
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="sets-the-payload-into-the-store">
+  <h3>
+    <a href="#sets-the-payload-into-the-store" name="sets-the-payload-into-the-store" class="pilcrow"></a>
+sets the payload into the store
+  </h3>
+</div>
+</div>
+<div class="body">
+<p><em>Note</em> this is for support of Hot Loading - the payload is the
+<code>store</code> itself.</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> SET_STORE:
+    <span class="hljs-keyword">return</span> state.set(<span class="hljs-string">'store'</span>,action.payload);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="get-the-current-state-from-the-store">
+  <h3>
+    <a href="#get-the-current-state-from-the-store" name="get-the-current-state-from-the-store" class="pilcrow"></a>
+Get the current state from the store
+  </h3>
+</div>
+</div>
+<div class="body">
+<p>The Redux <code>store</code> provides the state object.
+We convert each key to JSON and set it in the state</p>
+<p><em>Note</em>: the global state removes the <code>store</code>, otherwise,
+when trying to convert to JSON, it will be recursive and fail</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> GET_STATE:
+    <span class="hljs-keyword">let</span> _state = state.store.getState();
+
+    <span class="hljs-keyword">if</span> (action.payload) {
+      <span class="hljs-keyword">let</span> newState = {};
+      newState[<span class="hljs-string">'auth'</span>] = _state.auth.toJS();
+      newState[<span class="hljs-string">'device'</span>] = _state.device.toJS();
+      newState[<span class="hljs-string">'profile'</span>] = _state.profile.toJS();
+
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
 </div>
 <p>Make sure global doesn't have the previous currentState
 let _noCurrentState =  _state.global.set('currentState',null);
 let _noStore = _noCurrentState.set('store',null);</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
+        <td class="code highlight">
+          <pre class="javascript">      
+      newState[<span class="hljs-string">'global'</span>] =  _state.global.set(<span class="hljs-string">'currentState'</span>,<span class="hljs-literal">null</span>).set(<span class="hljs-string">'store'</span>,<span class="hljs-literal">null</span>).toJS();
       
-      <span class="nx">newState</span><span class="p">[</span><span class="s1">&#39;global&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="nx">_state</span><span class="p">.</span><span class="nx">global</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;currentState&#39;</span><span class="p">,</span><span class="kc">null</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;store&#39;</span><span class="p">,</span><span class="kc">null</span><span class="p">).</span><span class="nx">toJS</span><span class="p">();</span>
-      
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;showState&#39;</span><span class="p">,</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">)</span>
-        <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;currentState&#39;</span><span class="p">,</span><span class="nx">newState</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;showState&#39;</span><span class="p">,</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-    <span class="p">}</span>
+      <span class="hljs-keyword">return</span> state.set(<span class="hljs-string">'showState'</span>,action.payload)
+        .set(<span class="hljs-string">'currentState'</span>,newState);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> state.set(<span class="hljs-string">'showState'</span>,action.payload);
+    }
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="set%20the%20state">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="set-the-state">
   <h3>
-    <a href="#set%20the%20state" name="set%20the%20state" class="pilcrow">&#182;</a>
-    Set the state
+    <a href="#set-the-state" name="set-the-state" class="pilcrow"></a>
+Set the state
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>This is in support of Hot Loading</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">SET_STATE</span><span class="o">:</span>
-    <span class="kd">var</span> <span class="nx">global</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">).</span><span class="nx">global</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;currentUser&#39;</span><span class="p">,</span> <span class="nx">global</span><span class="p">.</span><span class="nx">currentUser</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;showState&#39;</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;currentState&#39;</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">next</span><span class="p">;</span>
+<div class="body">
+<p>This is in support of Hot Loading</p>
+</div>
+</div>
 
-  <span class="p">}</span>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> SET_STATE:
+    <span class="hljs-keyword">var</span> global = <span class="hljs-built_in">JSON</span>.parse(action.payload).global;
+    <span class="hljs-keyword">var</span> next = state.set(<span class="hljs-string">'currentUser'</span>, global.currentUser)
+          .set(<span class="hljs-string">'showState'</span>, <span class="hljs-literal">false</span>)
+          .set(<span class="hljs-string">'currentState'</span>, <span class="hljs-literal">null</span>);
+    <span class="hljs-keyword">return</span> next;
+
+  }
   
-  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+  <span class="hljs-keyword">return</span> state;
+}
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

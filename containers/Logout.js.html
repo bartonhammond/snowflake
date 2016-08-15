@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//containers/Logout.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/containers/Logout.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,320 +21,350 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#logout.js">Logout.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
         <a href="#styles">Styles</a>
       </div>
+
       <div class="heading h2">
-        <a href="#redux%20boilerplate">Redux boilerplate</a>
+        <a href="#redux-boilerplate">Redux boilerplate</a>
       </div>
+
       <div class="heading h3">
         <a href="#translations">Translations</a>
       </div>
+
       <div class="heading h3">
         <a href="#render">render</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="logout.js">
   <h1>
-    <a href="#logout.js" name="logout.js" class="pilcrow">&#182;</a>
-    Logout.js
+    <a href="#logout.js" name="logout.js" class="pilcrow"></a>
+Logout.js
   </h1>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>Redux </p>
-  </div>
 </div>
+<div class="body">
+<p>Redux</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">bindActionCreators</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-redux&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> { bindActionCreators } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>;
 
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The actions we need</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The actions we need</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">authActions</span> <span class="nx">from</span> <span class="s1">&#39;../reducers/auth/authActions&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">globalActions</span> <span class="nx">from</span> <span class="s1">&#39;../reducers/global/globalActions&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> authActions <span class="hljs-keyword">from</span> <span class="hljs-string">'../reducers/auth/authActions'</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> globalActions <span class="hljs-keyword">from</span> <span class="hljs-string">'../reducers/global/globalActions'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-4" id="section-4">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Immutable</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>Immutable</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span><span class="nx">Map</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;immutable&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {<span class="hljs-built_in">Map</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">'immutable'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-5" id="section-5">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The Header will display a Image and support Hot Loading</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The Header will display a Image and support Hot Loading</p>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">Header</span> <span class="nx">from</span> <span class="s1">&#39;../components/Header&#39;</span><span class="p">;</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> Header <span class="hljs-keyword">from</span> <span class="hljs-string">'../components/Header'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-6" id="section-6">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The FormButton will change it's text between the 4 states as necessary</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The FormButton will change it's text between the 4 states as necessary</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">FormButton</span> <span class="nx">from</span> <span class="s1">&#39;../components/FormButton&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> FormButton <span class="hljs-keyword">from</span> <span class="hljs-string">'../components/FormButton'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-7" id="section-7">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The necessary React components</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The necessary React components</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">Component</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span>
-<span class="p">{</span>
-  <span class="nx">StyleSheet</span><span class="p">,</span>
-  <span class="nx">View</span>
-<span class="p">}</span>
-<span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> React, {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span>
+{
+  StyleSheet,
+  View
+}
+<span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="styles">
   <h2>
-    <a href="#styles" name="styles" class="pilcrow">&#182;</a>
-    Styles
+    <a href="#styles" name="styles" class="pilcrow"></a>
+Styles
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="nx">container</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">flexDirection</span><span class="o">:</span> <span class="s1">&#39;column&#39;</span><span class="p">,</span>
-    <span class="nx">flex</span><span class="o">:</span> <span class="mi">1</span>
-  <span class="p">}</span>
-<span class="p">});</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> styles = StyleSheet.create({
+  container: {
+    flexDirection: <span class="hljs-string">'column'</span>,
+    flex: <span class="hljs-number">1</span>
+  }
+});
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="redux%20boilerplate">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="redux-boilerplate">
   <h2>
-    <a href="#redux%20boilerplate" name="redux%20boilerplate" class="pilcrow">&#182;</a>
-    Redux boilerplate
+    <a href="#redux-boilerplate" name="redux-boilerplate" class="pilcrow"></a>
+Redux boilerplate
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="nx">authActions</span><span class="p">,</span>
-  <span class="nx">globalActions</span>
-<span class="p">];</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
+  authActions,
+  globalActions
+];
 
-<span class="kd">function</span> <span class="nx">mapStateToProps</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-      <span class="p">...</span><span class="nx">state</span>
-  <span class="p">}</span>
-<span class="p">};</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+      ...state
+  }
+};
 
-<span class="kd">function</span> <span class="nx">mapDispatchToProps</span><span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">creators</span> <span class="o">=</span> <span class="nx">Map</span><span class="p">()</span>
-          <span class="p">.</span><span class="nx">merge</span><span class="p">(...</span><span class="nx">actions</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">value</span> <span class="o">=&gt;</span> <span class="k">typeof</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">toObject</span><span class="p">();</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
+  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
+          .merge(...actions)
+          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
+          .toObject();
 
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">actions</span><span class="o">:</span> <span class="nx">bindActionCreators</span><span class="p">(</span><span class="nx">creators</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">),</span>
-    <span class="nx">dispatch</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-</pre></div>
+  <span class="hljs-keyword">return</span> {
+    actions: bindActionCreators(creators, dispatch),
+    dispatch
+  };
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="translations">
   <h3>
-    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
-    Translations
+    <a href="#translations" name="translations" class="pilcrow"></a>
+Translations
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
-<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
-<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> I18n = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-native-i18n'</span>);
+<span class="hljs-keyword">import</span> Translations <span class="hljs-keyword">from</span> <span class="hljs-string">'../lib/Translations'</span>;
+I18n.translations = Translations;
 
 
-<span class="kr">class</span> <span class="nx">Logout</span> <span class="kr">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Logout</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="render">
   <h3>
-    <a href="#render" name="render" class="pilcrow">&#182;</a>
-    render
+    <a href="#render" name="render" class="pilcrow"></a>
+render
   </h3>
 </div>
-
-
-<p>Setup some default presentations and render </p>
-  </div>
-  <div class="body">
-  </div>
+<p>Setup some default presentations and render</p>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-            
-    <span class="kd">let</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-    
-    <span class="kd">let</span> <span class="nx">onButtonPress</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">logout</span><span class="p">();</span>
-    <span class="p">};</span>
+<div class="body">
+</div>
+</div>
 
-     <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">View</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">Header</span> <span class="nx">isFetching</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">}</span>
-                    <span class="nx">showState</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">global</span><span class="p">.</span><span class="nx">showState</span><span class="p">}</span>
-                    <span class="nx">currentState</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">global</span><span class="p">.</span><span class="nx">currentState</span><span class="p">}</span>
-                    <span class="nx">onGetState</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">getState</span><span class="p">}</span>
-                    <span class="nx">onSetState</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">setState</span><span class="p">}</span>
-            <span class="o">/&gt;</span>
-            <span class="o">&lt;</span><span class="nx">FormButton</span>
-                <span class="nx">isDisabled</span><span class="o">=</span><span class="p">{</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isValid</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">auth</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">}</span>
-                <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="nx">onButtonPress</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">self</span><span class="p">)}</span>
-                <span class="nx">buttonText</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Snowflake.logout&quot;</span><span class="p">)}</span><span class="o">/&gt;</span>
-          <span class="o">&lt;</span><span class="err">/View&gt;</span>
-        <span class="o">&lt;</span><span class="err">/View&gt;</span>
-      <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Logout</span><span class="p">);</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  render() {
+            
+    <span class="hljs-keyword">let</span> self = <span class="hljs-keyword">this</span>;
+    
+    <span class="hljs-keyword">let</span> onButtonPress = () =&gt; {
+			<span class="hljs-keyword">this</span>.props.actions.logout();
+		};
+
+     <span class="hljs-keyword">return</span> (
+        &lt;View style={styles.container}&gt;
+          &lt;View&gt;
+            &lt;Header isFetching={this.props.auth.form.isFetching}
+                    showState={this.props.global.showState}
+                    currentState={this.props.global.currentState}
+                    onGetState={this.props.actions.getState}
+                    onSetState={this.props.actions.setState}
+            /&gt;
+            &lt;FormButton
+                isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
+                onPress={onButtonPress.bind(self)}
+                buttonText={I18n.t("Snowflake.logout")}/&gt;
+          &lt;/View&gt;
+        &lt;/View&gt;
+      );
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Logout);
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

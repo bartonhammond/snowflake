@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/index.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/index.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,98 +21,115 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#reducers">reducers</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
         <a href="#combinereducers">CombineReducers</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="reducers">
   <h1>
-    <a href="#reducers" name="reducers" class="pilcrow">&#182;</a>
-    reducers
+    <a href="#reducers" name="reducers" class="pilcrow"></a>
+reducers
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This class combines all the reducers into one</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<div class="body">
+<p>This class combines all the reducers into one</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>our 4 reducers</p>
-  </div>
 </div>
+<div class="body">
+<p>our 4 reducers</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">auth</span> <span class="nx">from</span> <span class="s1">&#39;./auth/authReducer&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">device</span> <span class="nx">from</span> <span class="s1">&#39;./device/deviceReducer&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">global</span> <span class="nx">from</span> <span class="s1">&#39;./global/globalReducer&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">profile</span> <span class="nx">from</span> <span class="s1">&#39;./profile/profileReducer&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> auth <span class="hljs-keyword">from</span> <span class="hljs-string">'./auth/authReducer'</span>;
+<span class="hljs-keyword">import</span> device <span class="hljs-keyword">from</span> <span class="hljs-string">'./device/deviceReducer'</span>;
+<span class="hljs-keyword">import</span> global <span class="hljs-keyword">from</span> <span class="hljs-string">'./global/globalReducer'</span>;
+<span class="hljs-keyword">import</span> profile <span class="hljs-keyword">from</span> <span class="hljs-string">'./profile/profileReducer'</span>;
 
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">combineReducers</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> { combineReducers } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="combinereducers">
   <h2>
-    <a href="#combinereducers" name="combinereducers" class="pilcrow">&#182;</a>
-    CombineReducers
+    <a href="#combinereducers" name="combinereducers" class="pilcrow"></a>
+CombineReducers
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>the rootReducer will call each and every reducer with the state and action
-EVERY TIME there is a basic action</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">rootReducer</span> <span class="o">=</span> <span class="nx">combineReducers</span><span class="p">({</span>
-  <span class="nx">auth</span><span class="p">,</span>
-  <span class="nx">device</span><span class="p">,</span>
-  <span class="nx">global</span><span class="p">,</span>
-  <span class="nx">profile</span>
-<span class="p">});</span>
+<div class="body">
+<p>the rootReducer will call each and every reducer with the state and action
+EVERY TIME there is a basic action</p>
+</div>
+</div>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">rootReducer</span><span class="p">;</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> rootReducer = combineReducers({
+  auth,
+  device,
+  global,
+  profile
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> rootReducer;
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="doc-style.css" />
   <script src="doc-filelist.js"></script>
   <script>
-    var relativeDir = "", thisFile = "Users/barton/projects/snowflakework/snowflake//snowflake.js", defaultSidebar = true;
+    var relativeDir = "";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/snowflake.js";
+    var defaultSidebar = true;
   </script>
   <script src="doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,597 +21,636 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#snowflake">snowflake</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">imports</a>
       </div>
+
       <div class="heading h3">
         <a href="#react">React</a>
       </div>
+
       <div class="heading h3">
         <a href="#router-flux">Router-Flux</a>
       </div>
+
       <div class="heading h3">
         <a href="#redux">Redux</a>
       </div>
+
       <div class="heading h3">
         <a href="#configurestore">configureStore</a>
       </div>
+
       <div class="heading h3">
         <a href="#translations">Translations</a>
       </div>
+
       <div class="heading h3">
         <a href="#containers">containers</a>
       </div>
+
       <div class="heading h3">
         <a href="#icons">icons</a>
       </div>
+
       <div class="heading h2">
         <a href="#actions">Actions</a>
       </div>
+
       <div class="heading h2">
         <a href="#states">States</a>
       </div>
+
       <div class="heading h2">
-        <a href="#initial%20state">Initial state</a>
+        <a href="#initial-state">Initial state</a>
       </div>
+
       <div class="heading h2">
         <a href="#tabicon">TabIcon</a>
       </div>
+
       <div class="heading h2">
         <a href="#native">Native</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
       <tr>
         <td class="docs">
           <h1>snowflake.js</h1>
         </td>
         <td class="code highlight"></td>
       </tr>
+    
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-1" id="section-1">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1"></a>
 </div>
 
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="snowflake">
   <h1>
-    <a href="#snowflake" name="snowflake" class="pilcrow">&#182;</a>
-    snowflake
+    <a href="#snowflake" name="snowflake" class="pilcrow"></a>
+snowflake
   </h1>
 </div>
-
-
-<p>Snowflake <img src="https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png" alt="snowflake" title="" /></p>
-  </div>
-  <div class="body">
-  </div>
+<p>Snowflake <img src="https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png" alt="snowflake"></p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript">
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+imports
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-
+<div class="body">
+</div>
+</div>
 <div class="dox">
-  <div class="summary">
+<div class="summary">
 <div class="pilwrap" id="react">
   <h3>
-    <a href="#react" name="react" class="pilcrow">&#182;</a>
-    React
+    <a href="#react" name="react" class="pilcrow"></a>
+React
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>Necessary components from ReactNative</p>
-  </div>
 </div>
+<div class="body">
+<p>Necessary components from ReactNative</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span>
-  <span class="nx">AppRegistry</span><span class="p">,</span>
-  <span class="nx">Navigator</span><span class="p">,</span>
-  <span class="nx">StyleSheet</span><span class="p">,</span>
-  <span class="nx">View</span><span class="p">,</span>
-  <span class="nx">Text</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> {
+  AppRegistry,
+  Navigator,
+  StyleSheet,
+  View,
+  Text } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="router-flux">
   <h3>
-    <a href="#router-flux" name="router-flux" class="pilcrow">&#182;</a>
-    Router-Flux
+    <a href="#router-flux" name="router-flux" class="pilcrow"></a>
+Router-Flux
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>Necessary components from Router-Flux</p>
-  </div>
 </div>
+<div class="body">
+<p>Necessary components from Router-Flux</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span>
-  <span class="nx">Router</span><span class="p">,</span>
-  <span class="nx">Scene</span><span class="p">,</span>
-  <span class="nx">TabBar</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native-router-flux&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {
+  Router,
+  Scene,
+  TabBar} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native-router-flux'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="redux">
   <h3>
-    <a href="#redux" name="redux" class="pilcrow">&#182;</a>
-    Redux
+    <a href="#redux" name="redux" class="pilcrow"></a>
+Redux
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p><code>Provider</code> will tie the React-Native to the Redux store</p>
-  </div>
 </div>
+<div class="body">
+<p><code>Provider</code> will tie the React-Native to the Redux store</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span>
-  <span class="nx">Provider</span><span class="p">,</span>
-  <span class="nx">connect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-redux&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {
+  Provider,
+  connect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="configurestore">
   <h3>
-    <a href="#configurestore" name="configurestore" class="pilcrow">&#182;</a>
-    configureStore
+    <a href="#configurestore" name="configurestore" class="pilcrow"></a>
+configureStore
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p><code>configureStore</code> will connect the <code>reducers</code>, the</p>
-  </div>
 </div>
+<div class="body">
+<p><code>configureStore</code> will connect the <code>reducers</code>, the</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">configureStore</span> <span class="nx">from</span> <span class="s1">&#39;./lib/configureStore&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> configureStore <span class="hljs-keyword">from</span> <span class="hljs-string">'./lib/configureStore'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="translations">
   <h3>
-    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
-    Translations
+    <a href="#translations" name="translations" class="pilcrow"></a>
+Translations
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> I18n = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-native-i18n'</span>);
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-8" id="section-8">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
 </div>
 <p>Support fallbacks so en-US &amp; en-BR both use en</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">I18n</span><span class="p">.</span><span class="nx">fallbacks</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript">I18n.fallbacks = <span class="hljs-literal">true</span>;
 
-<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;./lib/Translations&#39;</span><span class="p">;</span>
-<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> Translations <span class="hljs-keyword">from</span> <span class="hljs-string">'./lib/Translations'</span>;
+I18n.translations = Translations;
 
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="containers">
-  <h3>
-    <a href="#containers" name="containers" class="pilcrow">&#182;</a>
-    containers
-  </h3>
-</div>
-
-  </div>
-  <div class="body"><p>All the top level containers</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./containers/App&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Login</span> <span class="nx">from</span> <span class="s1">&#39;./containers/Login&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Logout</span> <span class="nx">from</span> <span class="s1">&#39;./containers/Logout&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Register</span> <span class="nx">from</span> <span class="s1">&#39;./containers/Register&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">ForgotPassword</span> <span class="nx">from</span> <span class="s1">&#39;./containers/ForgotPassword&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Profile</span> <span class="nx">from</span> <span class="s1">&#39;./containers/Profile&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Main</span> <span class="nx">from</span> <span class="s1">&#39;./containers/Main&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Subview</span> <span class="nx">from</span> <span class="s1">&#39;./containers/Subview&#39;</span><span class="p">;</span>
-
-
-</pre></div>
+</pre>
         </td>
       </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="icons">
-  <h3>
-    <a href="#icons" name="icons" class="pilcrow">&#182;</a>
-    icons
-  </h3>
-</div>
-
-  </div>
-  <div class="body"><p>Add icon support for use in Tabbar</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">Icon</span> <span class="nx">from</span> <span class="s1">&#39;react-native-vector-icons/FontAwesome&#39;</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="actions">
-  <h2>
-    <a href="#actions" name="actions" class="pilcrow">&#182;</a>
-    Actions
-  </h2>
-</div>
-
-
-<p>The necessary actions for dispatching our bootstrap values</p>
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span><span class="nx">setPlatform</span><span class="p">,</span> <span class="nx">setVersion</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./reducers/device/deviceActions&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span><span class="nx">setStore</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./reducers/global/globalActions&#39;</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="states">
-  <h2>
-    <a href="#states" name="states" class="pilcrow">&#182;</a>
-    States
-  </h2>
-</div>
-
-
-<p>Snowflake explicitly defines initial state</p>
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">authInitialState</span> <span class="nx">from</span> <span class="s1">&#39;./reducers/auth/authInitialState&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">deviceInitialState</span> <span class="nx">from</span> <span class="s1">&#39;./reducers/device/deviceInitialState&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">globalInitialState</span> <span class="nx">from</span> <span class="s1">&#39;./reducers/global/globalInitialState&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">profileInitialState</span> <span class="nx">from</span> <span class="s1">&#39;./reducers/profile/profileInitialState&#39;</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-13" id="section-13">&#182;</a>
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="containers">
+  <h3>
+    <a href="#containers" name="containers" class="pilcrow"></a>
+containers
+  </h3>
+</div>
+</div>
+<div class="body">
+<p>All the top level containers</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">'./containers/App'</span>;
+<span class="hljs-keyword">import</span> Login <span class="hljs-keyword">from</span> <span class="hljs-string">'./containers/Login'</span>;
+<span class="hljs-keyword">import</span> Logout <span class="hljs-keyword">from</span> <span class="hljs-string">'./containers/Logout'</span>;
+<span class="hljs-keyword">import</span> Register <span class="hljs-keyword">from</span> <span class="hljs-string">'./containers/Register'</span>;
+<span class="hljs-keyword">import</span> ForgotPassword <span class="hljs-keyword">from</span> <span class="hljs-string">'./containers/ForgotPassword'</span>;
+<span class="hljs-keyword">import</span> Profile <span class="hljs-keyword">from</span> <span class="hljs-string">'./containers/Profile'</span>;
+<span class="hljs-keyword">import</span> Main <span class="hljs-keyword">from</span> <span class="hljs-string">'./containers/Main'</span>;
+<span class="hljs-keyword">import</span> Subview <span class="hljs-keyword">from</span> <span class="hljs-string">'./containers/Subview'</span>;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="icons">
+  <h3>
+    <a href="#icons" name="icons" class="pilcrow"></a>
+icons
+  </h3>
+</div>
+</div>
+<div class="body">
+<p>Add icon support for use in Tabbar</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> Icon <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native-vector-icons/FontAwesome'</span>;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="actions">
+  <h2>
+    <a href="#actions" name="actions" class="pilcrow"></a>
+Actions
+  </h2>
+</div>
+<p>The necessary actions for dispatching our bootstrap values</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {setPlatform, setVersion} <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers/device/deviceActions'</span>;
+<span class="hljs-keyword">import</span> {setStore} <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers/global/globalActions'</span>;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="states">
+  <h2>
+    <a href="#states" name="states" class="pilcrow"></a>
+States
+  </h2>
+</div>
+<p>Snowflake explicitly defines initial state</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> authInitialState <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers/auth/authInitialState'</span>;
+<span class="hljs-keyword">import</span> deviceInitialState <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers/device/deviceInitialState'</span>;
+<span class="hljs-keyword">import</span> globalInitialState <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers/global/globalInitialState'</span>;
+<span class="hljs-keyword">import</span> profileInitialState <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers/profile/profileInitialState'</span>;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-13" id="section-13"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The version of the app but not  displayed yet</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The version of the app but not  displayed yet</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">pack</span> <span class="nx">from</span> <span class="s1">&#39;../package&#39;</span><span class="p">;</span>
-<span class="kd">var</span> <span class="nx">VERSION</span><span class="o">=</span><span class="nx">pack</span><span class="p">.</span><span class="nx">version</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> pack <span class="hljs-keyword">from</span> <span class="hljs-string">'../package'</span>;
+<span class="hljs-keyword">var</span> VERSION=pack.version;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-  </div>
-  <div class="body">
-<div class="pilwrap" id="initial%20state">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="initial-state">
   <h2>
-    <a href="#initial%20state" name="initial%20state" class="pilcrow">&#182;</a>
-    Initial state
+    <a href="#initial-state" name="initial-state" class="pilcrow"></a>
+Initial state
   </h2>
 </div>
-
-
 <p>Create instances for the keys of each structure in snowflake</p>
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Returns</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name"></span>
-      <span class="dox_type">Object</span>
-      <span>object with 4 keys</span>
-    </div>
-  </div>
 </div>
+<div class="body">
+</div>
+<div class="details">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">function</span> <span class="nx">getInitialState</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">_initState</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">auth</span><span class="o">:</span> <span class="k">new</span> <span class="nx">authInitialState</span><span class="p">,</span>
-    <span class="nx">device</span><span class="o">:</span> <span class="p">(</span><span class="k">new</span> <span class="nx">deviceInitialState</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;isMobile&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">),</span>
-    <span class="nx">global</span><span class="o">:</span> <span class="p">(</span><span class="k">new</span> <span class="nx">globalInitialState</span><span class="p">),</span>
-    <span class="nx">profile</span><span class="o">:</span> <span class="k">new</span> <span class="nx">profileInitialState</span>
-  <span class="p">};</span>
-  <span class="k">return</span> <span class="nx">_initState</span><span class="p">;</span>
-<span class="p">}</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getInitialState</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> _initState = {
+    auth: <span class="hljs-keyword">new</span> authInitialState,
+    device: (<span class="hljs-keyword">new</span> deviceInitialState).set(<span class="hljs-string">'isMobile'</span>,<span class="hljs-literal">true</span>),
+    global: (<span class="hljs-keyword">new</span> globalInitialState),
+    profile: <span class="hljs-keyword">new</span> profileInitialState
+  };
+  <span class="hljs-keyword">return</span> _initState;
+}
 
-<span class="kr">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="nx">tabBar</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">height</span><span class="o">:</span> <span class="mi">70</span>
-  <span class="p">}</span>
-<span class="p">});</span>
+<span class="hljs-keyword">const</span> styles = StyleSheet.create({
+  tabBar: {
+    height: <span class="hljs-number">70</span>
+  }
+});
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="tabicon">
   <h2>
-    <a href="#tabicon" name="tabicon" class="pilcrow">&#182;</a>
-    TabIcon
+    <a href="#tabicon" name="tabicon" class="pilcrow"></a>
+TabIcon
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>Displays the icon for the tab w/ color dependent upon selection</p>
-  </div>
 </div>
+<div class="body">
+<p>Displays the icon for the tab w/ color dependent upon selection</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">class</span> <span class="nx">TabIcon</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
-  <span class="nx">render</span><span class="p">(){</span>
-    <span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">selected</span> <span class="o">?</span> <span class="s1">&#39;#FF3366&#39;</span> <span class="o">:</span> <span class="s1">&#39;#FFB3B3&#39;</span><span class="p">;</span>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">flex</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="nx">flexDirection</span><span class="o">:</span><span class="s1">&#39;column&#39;</span><span class="p">,</span> <span class="nx">alignItems</span><span class="o">:</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="nx">alignSelf</span><span class="o">:</span><span class="s1">&#39;center&#39;</span><span class="p">}}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Icon</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">}}</span> <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">iconName</span><span class="p">}</span> <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">30</span><span class="p">}</span> <span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Text</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">color</span><span class="o">:</span> <span class="nx">color</span><span class="p">}}</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
-      <span class="o">&lt;</span><span class="err">/View&gt;</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TabIcon</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render(){
+    <span class="hljs-keyword">var</span> color = <span class="hljs-keyword">this</span>.props.selected ? <span class="hljs-string">'#FF3366'</span> : <span class="hljs-string">'#FFB3B3'</span>;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{flex:1,</span> <span class="hljs-attr">flexDirection:</span>'<span class="hljs-attr">column</span>', <span class="hljs-attr">alignItems:</span>'<span class="hljs-attr">center</span>', <span class="hljs-attr">alignSelf:</span>'<span class="hljs-attr">center</span>'}}&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{color:</span> <span class="hljs-attr">color</span>}} <span class="hljs-attr">name</span>=<span class="hljs-string">{this.props.iconName}</span> <span class="hljs-attr">size</span>=<span class="hljs-string">{30}</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{color:</span> <span class="hljs-attr">color</span>}}&gt;</span>{this.props.title}<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
+    );
+  }
+}
 
-
-</pre></div>
+</span></pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="native">
   <h2>
-    <a href="#native" name="native" class="pilcrow">&#182;</a>
-    Native
+    <a href="#native" name="native" class="pilcrow"></a>
+Native
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p><code>configureStore</code> with the <code>initialState</code> and set the
+</div>
+<div class="body">
+<p><code>configureStore</code> with the <code>initialState</code> and set the
 <code>platform</code> and <code>version</code> into the store by <code>dispatch</code>.
 <em>Note</em> the <code>store</code> itself is set into the <code>store</code>.  This
 will be used when doing hot loading</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">native</span>(<span class="hljs-params">platform</span>) </span>{
 
-<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="kr">native</span><span class="p">(</span><span class="nx">platform</span><span class="p">)</span> <span class="p">{</span>
-
-  <span class="kd">let</span> <span class="nx">Snowflake</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">(</span> <span class="p">{</span>
-    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+  <span class="hljs-keyword">let</span> Snowflake = React.createClass( {
+    render() {
       
-      <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">configureStore</span><span class="p">(</span><span class="nx">getInitialState</span><span class="p">());</span>
+      <span class="hljs-keyword">const</span> store = configureStore(getInitialState());
       
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-17" id="section-17">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-17" id="section-17"></a>
 </div>
 <p>configureStore will combine reducers from snowflake and main application
 it will then create the store based on aggregate state from all reducers</p>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-      <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">setPlatform</span><span class="p">(</span><span class="nx">platform</span><span class="p">));</span>
-      <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">setVersion</span><span class="p">(</span><span class="nx">VERSION</span><span class="p">));</span>
-      <span class="nx">store</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">(</span><span class="nx">setStore</span><span class="p">(</span><span class="nx">store</span><span class="p">));</span>
-      
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">      store.dispatch(setPlatform(platform));
+      store.dispatch(setVersion(VERSION));
+      store.dispatch(setStore(store));
+      
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-18" id="section-18">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-18" id="section-18"></a>
 </div>
 <p>setup the router table with App selected as the initial component
-note: See <a href='https://github.com/aksonov/react-native-router-flux/issues/948'>https://github.com/aksonov/react-native-router-flux/issues/948</a> </p>
+note: See https://github.com/aksonov/react-native-router-flux/issues/948</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-      <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">Provider</span> <span class="nx">store</span><span class="o">=</span><span class="p">{</span><span class="nx">store</span><span class="p">}</span><span class="o">&gt;</span>
+        <td class="code highlight">
+          <pre class="javascript">      <span class="hljs-keyword">return</span> (
+        &lt;Provider store={store}&gt;
 
-    <span class="o">&lt;</span><span class="nx">Router</span> <span class="nx">sceneStyle</span><span class="o">=</span><span class="p">{{</span> <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;white&#39;</span> <span class="p">}}</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;root&quot;</span>
-                   <span class="nx">hideNavBar</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span><span class="o">&gt;</span>
+	  &lt;Router sceneStyle={{ backgroundColor: 'white' }}&gt;
+	    &lt;Scene key="root"
+                   hideNavBar={true}&gt;
               
-              <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;App&quot;</span>
-                     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">App</span><span class="p">}</span>
-                     <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span>
-                     <span class="nx">initial</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span><span class="o">/&gt;</span>
+              &lt;Scene key="App"
+                     component={App}
+                     type="replace"
+                     initial={true}/&gt;
               
-        <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;InitialLoginForm&quot;</span>
-                     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Register</span><span class="p">}</span>
-                     <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span>
-                     <span class="o">/&gt;</span>
+	      &lt;Scene key="InitialLoginForm"
+                     component={Register}
+                     type="replace"
+                     /&gt;
               
-              <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Login&quot;</span>
-                     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Login</span><span class="p">}</span>
-                     <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="o">/&gt;</span>
-        
-        <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Register&quot;</span>
-                     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Register</span><span class="p">}</span>
-                     <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span> <span class="o">/&gt;</span>
-        
-        <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;ForgotPassword&quot;</span>
-                     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">ForgotPassword</span><span class="p">}</span>
-                     <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="o">/&gt;</span>
-        
-        <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Subview&quot;</span>
-                     <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Subview</span><span class="p">}</span>
-              <span class="o">/&gt;</span>
+              &lt;Scene key="Login"
+                     component={Login}
+                     type="replace"/&gt;
+	      
+	      &lt;Scene key="Register"
+                     component={Register}
+                     type="replace" /&gt;
+	      
+	      &lt;Scene key="ForgotPassword"
+                     component={ForgotPassword}
+                     type="replace"/&gt;
+	      
+	      &lt;Scene key="Subview"
+                     component={Subview}
+              /&gt;
 
-        <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Tabbar&quot;</span>
-                     <span class="nx">tabs</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                     <span class="nx">hideNavBar</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                     <span class="nx">tabBarStyle</span><span class="o">=</span><span class="p">{</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">tabBar</span> <span class="p">}</span>
-                     <span class="k">default</span><span class="o">=</span><span class="s2">&quot;Main&quot;</span><span class="o">&gt;</span>
+	      &lt;Scene key="Tabbar"
+                     tabs={true}
+                     hideNavBar={true}
+                     tabBarStyle={ styles.tabBar }
+                     default="Main"&gt;
                 
-          <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Logout&quot;</span>
-                       <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Snowflake.logout&quot;</span><span class="p">)}</span>
-                       <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">TabIcon</span><span class="p">}</span>
-                       <span class="nx">iconName</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;sign-out&quot;</span><span class="p">}</span>
-                       <span class="nx">hideNavBar</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                       <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Logout</span><span class="p">}</span><span class="o">/&gt;</span>
+	        &lt;Scene key="Logout"
+                       title={I18n.t("Snowflake.logout")}
+                       icon={TabIcon}
+                       iconName={"sign-out"}
+                       hideNavBar={true}
+                       component={Logout}/&gt;
                 
-                <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Main&quot;</span>
-                       <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Snowflake.main&quot;</span><span class="p">)}</span>                            
-                       <span class="nx">iconName</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;home&quot;</span><span class="p">}</span>
-                       <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">TabIcon</span><span class="p">}</span>                       
-                       <span class="nx">hideNavBar</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                       <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Main</span><span class="p">}</span>
-                       <span class="nx">initial</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span><span class="o">/&gt;</span>
+                &lt;Scene key="Main"
+                       title={I18n.t("Snowflake.main")}                            
+                       iconName={"home"}
+                       icon={TabIcon}                       
+                       hideNavBar={true}
+                       component={Main}
+                       initial={true}/&gt;
 
-                <span class="o">&lt;</span><span class="nx">Scene</span> <span class="nx">key</span><span class="o">=</span><span class="s2">&quot;Profile&quot;</span>
-                       <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Snowflake.profile&quot;</span><span class="p">)}</span>                       
-                       <span class="nx">icon</span><span class="o">=</span><span class="p">{</span><span class="nx">TabIcon</span><span class="p">}</span>                       
-                       <span class="nx">iconName</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;gear&quot;</span><span class="p">}</span>
-                       <span class="nx">hideNavBar</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                       <span class="nx">component</span><span class="o">=</span><span class="p">{</span><span class="nx">Profile</span><span class="p">}</span><span class="o">/&gt;</span>
-        <span class="o">&lt;</span><span class="err">/Scene&gt;</span>
-      <span class="o">&lt;</span><span class="err">/Scene&gt;</span>
-    <span class="o">&lt;</span><span class="err">/Router&gt;</span>
-        <span class="o">&lt;</span><span class="err">/Provider&gt;</span>
-      <span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
-
-</pre></div>
+                &lt;Scene key="Profile"
+                       title={I18n.t("Snowflake.profile")}                       
+                       icon={TabIcon}                       
+                       iconName={"gear"}
+                       hideNavBar={true}
+                       component={Profile}/&gt;
+	      &lt;/Scene&gt;
+	    &lt;/Scene&gt;
+	  &lt;/Router&gt;
+        &lt;/Provider&gt;
+      );
+    }
+  });
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-19" id="section-19">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-19" id="section-19"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>registerComponent to the AppRegistery and off we go....</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>registerComponent to the AppRegistery and off we go....</p>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
+<div class="body">
+</div>
+</div>
 
-  <span class="nx">AppRegistry</span><span class="p">.</span><span class="nx">registerComponent</span><span class="p">(</span><span class="s1">&#39;snowflake&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">Snowflake</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">
+  AppRegistry.registerComponent(<span class="hljs-string">'snowflake'</span>, () =&gt; Snowflake);
+}
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

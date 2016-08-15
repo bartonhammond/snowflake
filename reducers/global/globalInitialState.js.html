@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/global/globalInitialState.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/global/globalInitialState.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,103 +21,122 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#globalinitialstate.js">globalInitialState.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#import">Import</a>
       </div>
+
       <div class="heading h2">
         <a href="#initialstate">InitialState</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="globalinitialstate.js">
   <h1>
-    <a href="#globalinitialstate.js" name="globalinitialstate.js" class="pilcrow">&#182;</a>
-    globalInitialState.js
+    <a href="#globalinitialstate.js" name="globalinitialstate.js" class="pilcrow"></a>
+globalInitialState.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This class is a Immutable object
+</div>
+<div class="body">
+<p>This class is a Immutable object
 Working <em>successfully</em> with Redux, requires
 state that is immutable.
 In my opinion, that can not be by convention
 By using Immutable, it's enforced.  Just saying....</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="import">
   <h2>
-    <a href="#import" name="import" class="pilcrow">&#182;</a>
-    Import
+    <a href="#import" name="import" class="pilcrow"></a>
+Import
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span><span class="nx">Record</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;immutable&#39;</span><span class="p">;</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {Record} <span class="hljs-keyword">from</span> <span class="hljs-string">'immutable'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="initialstate">
   <h2>
-    <a href="#initialstate" name="initialstate" class="pilcrow">&#182;</a>
-    InitialState
+    <a href="#initialstate" name="initialstate" class="pilcrow"></a>
+InitialState
   </h2>
 </div>
-
-  </div>
-  <div class="body"><ul>
+<ul>
 <li>currentUser - object returned from Parse.com when validated</li>
 <li>showState - toggle for Header to display state</li>
 <li>currentState - object in Json format of the entire state</li>
 <li>store - the Redux store which is an object w/ 4 initial states
-<ul><li>device</li>
+<ul>
+<li>device</li>
 <li>auth</li>
 <li>global</li>
-<li>profile</li></ul></li>
+<li>profile</li>
 </ul>
-  </div>
+</li>
+</ul>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">InitialState</span> <span class="o">=</span> <span class="nx">Record</span><span class="p">({</span>
-  <span class="nx">currentUser</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">showState</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nx">currentState</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-  <span class="nx">store</span><span class="o">:</span> <span class="kc">null</span>
-<span class="p">});</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">InitialState</span><span class="p">;</span>
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> InitialState = Record({
+  currentUser: <span class="hljs-literal">null</span>,
+  showState: <span class="hljs-literal">false</span>,
+  currentState: <span class="hljs-literal">null</span>,
+  store: <span class="hljs-literal">null</span>
+});
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> InitialState;
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

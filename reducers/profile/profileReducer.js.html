@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/profile/profileReducer.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/profile/profileReducer.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,441 +21,478 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#profilereducer.js">profileReducer.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
         <a href="#actions">Actions</a>
       </div>
+
       <div class="heading h2">
-        <a href="#initial%20state">Initial State</a>
+        <a href="#initial-state">Initial State</a>
       </div>
+
       <div class="heading h2">
-        <a href="#profilereducer%20function">profileReducer function</a>
+        <a href="#profilereducer-function">profileReducer function</a>
       </div>
+
       <div class="heading h3">
-        <a href="#request%20starts">Request starts</a>
+        <a href="#request-starts">Request starts</a>
       </div>
+
       <div class="heading h3">
-        <a href="#request%20end%20successfully">Request end successfully</a>
+        <a href="#request-end-successfully">Request end successfully</a>
       </div>
+
       <div class="heading h3">
-        <a href="#request%20ends%20successfully">Request ends successfully</a>
+        <a href="#request-ends-successfully">Request ends successfully</a>
       </div>
+
       <div class="heading h3">
-        <a href="#request%20fails">Request fails</a>
+        <a href="#request-fails">Request fails</a>
       </div>
+
       <div class="heading h3">
-        <a href="#form%20fields%20have%20changed">form fields have changed</a>
+        <a href="#form-fields-have-changed">form fields have changed</a>
       </div>
+
       <div class="heading h3">
-        <a href="#set%20the%20state">set the state</a>
+        <a href="#set-the-state">set the state</a>
       </div>
+
       <div class="heading h1">
         <a href="#default">Default</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="profilereducer.js">
-  <h1>
-    <a href="#profilereducer.js" name="profilereducer.js" class="pilcrow">&#182;</a>
-    profileReducer.js
-  </h1>
-</div>
-
-  </div>
-  <div class="body"><p>The reducer user profile actions</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="imports">
-  <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
-  </h2>
-</div>
-
-  </div>
-  <div class="body"><p>fieldValidation for validating the fields
-formValidation for setting the form's valid flag</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">fieldValidation</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/fieldValidation&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">formValidation</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./profileFormValidation&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="actions">
-  <h2>
-    <a href="#actions" name="actions" class="pilcrow">&#182;</a>
-    Actions
-  </h2>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_REQUEST</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_SUCCESS</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_FAILURE</span><span class="p">,</span>
-
-  <span class="nx">PROFILE_UPDATE_REQUEST</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_SUCCESS</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_FAILURE</span><span class="p">,</span>
-  
-  <span class="nx">LOGOUT_SUCCESS</span><span class="p">,</span>
-
-  <span class="nx">SET_STATE</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="initial%20state">
-  <h2>
-    <a href="#initial%20state" name="initial%20state" class="pilcrow">&#182;</a>
-    Initial State
-  </h2>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">InitialState</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./profileInitialState&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-<span class="kr">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">InitialState</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="profilereducer%20function">
-  <h2>
-    <a href="#profilereducer%20function" name="profilereducer%20function" class="pilcrow">&#182;</a>
-    profileReducer function
-  </h2>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">state</span>
-      <span class="dox_type">Object</span>
-      <span><ul>
-<li>initialState </li>
-</ul></span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">action</span>
-      <span class="dox_type">Object</span>
-      <span><ul>
-<li>type and payload</li>
-</ul></span>
-    </div>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">initialState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">nextProfileState</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">state</span> <span class="k">instanceof</span> <span class="nx">InitialState</span><span class="p">))</span> <span class="k">return</span> <span class="nx">initialState</span><span class="p">.</span><span class="nx">mergeDeep</span><span class="p">(</span><span class="nx">state</span><span class="p">);</span>
-
-  <span class="k">switch</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="request%20starts">
-  <h3>
-    <a href="#request%20starts" name="request%20starts" class="pilcrow">&#182;</a>
-    Request starts
-  </h3>
-</div>
-
-
-<p>set the form to fetching and clear any errors</p>
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">GET_PROFILE_REQUEST</span><span class="o">:</span>
-  <span class="k">case</span> <span class="nx">PROFILE_UPDATE_REQUEST</span><span class="o">:</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;isFetching&#39;</span><span class="p">],</span> <span class="kc">true</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">);</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="request%20end%20successfully">
-  <h3>
-    <a href="#request%20end%20successfully" name="request%20end%20successfully" class="pilcrow">&#182;</a>
-    Request end successfully
-  </h3>
-</div>
-
-
-<p>set the form to fetching as done</p>
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">PROFILE_UPDATE_SUCCESS</span><span class="o">:</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;isFetching&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">);</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="request%20ends%20successfully">
-  <h3>
-    <a href="#request%20ends%20successfully" name="request%20ends%20successfully" class="pilcrow">&#182;</a>
-    Request ends successfully
-  </h3>
-</div>
-
-  </div>
-  <div class="body"><p>the fetching is done, set the UI fields and the originalProfile</p>
-
-<p>Validate the data to make sure it's all good and someone didn't
-mung it up through some other mechanism</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">GET_PROFILE_SUCCESS</span><span class="o">:</span>
-    <span class="nx">nextProfileState</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;isFetching&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;username&#39;</span><span class="p">],</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;email&#39;</span><span class="p">],</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;emailVerified&#39;</span><span class="p">],</span>
-             <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">emailVerified</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span><span class="s1">&#39;username&#39;</span><span class="p">],</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span><span class="s1">&#39;email&#39;</span><span class="p">],</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span><span class="s1">&#39;emailVerified&#39;</span><span class="p">],</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">emailVerified</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span><span class="s1">&#39;objectId&#39;</span><span class="p">],</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">objectId</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">);</span>
     
-    <span class="k">return</span> <span class="nx">formValidation</span><span class="p">(</span>
-      <span class="nx">fieldValidation</span><span class="p">(</span> <span class="nx">nextProfileState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span>
-      <span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
     
-
-</pre></div>
-        </td>
-      </tr>
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-9" id="section-9">&#182;</a>
-</div>
-<div class="dox">
-  <div class="summary"><p>User logged out, so reset form fields and original profile.</p>
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">LOGOUT_SUCCESS</span><span class="o">:</span>
-    <span class="nx">nextProfileState</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;username&#39;</span><span class="p">],</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>   
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;email&#39;</span><span class="p">],</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span><span class="s1">&#39;emailVerified&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span><span class="s1">&#39;username&#39;</span><span class="p">],</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span><span class="s1">&#39;email&#39;</span><span class="p">],</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span><span class="s1">&#39;emailVerified&#39;</span><span class="p">],</span><span class="kc">false</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span><span class="s1">&#39;objectId&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">formValidation</span><span class="p">(</span> <span class="nx">nextProfileState</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="request%20fails">
-  <h3>
-    <a href="#request%20fails" name="request%20fails" class="pilcrow">&#182;</a>
-    Request fails
-  </h3>
-</div>
-
-
-<p>we're done fetching and the error needs to be displayed to the user</p>
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">GET_PROFILE_FAILURE</span><span class="o">:</span>
-  <span class="k">case</span> <span class="nx">PROFILE_UPDATE_FAILURE</span><span class="o">:</span>
-    <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;isFetching&#39;</span><span class="p">],</span> <span class="kc">false</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="form%20fields%20have%20changed">
-  <h3>
-    <a href="#form%20fields%20have%20changed" name="form%20fields%20have%20changed" class="pilcrow">&#182;</a>
-    form fields have changed
-  </h3>
-</div>
-
-  </div>
-  <div class="body"><p>Set the state with the fields, clear the form error
-and perform field and form validation</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="o">:</span>
-    <span class="kr">const</span> <span class="p">{</span><span class="nx">field</span><span class="p">,</span> <span class="nx">value</span><span class="p">}</span> <span class="o">=</span> <span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
-    <span class="kd">let</span> <span class="nx">nextState</span> <span class="o">=</span>  <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span> <span class="s1">&#39;fields&#39;</span><span class="p">,</span> <span class="nx">field</span><span class="p">],</span> <span class="nx">value</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="kc">null</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="nx">formValidation</span><span class="p">(</span>
-      <span class="nx">fieldValidation</span><span class="p">(</span> <span class="nx">nextState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span>
-      <span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="set%20the%20state">
-  <h3>
-    <a href="#set%20the%20state" name="set%20the%20state" class="pilcrow">&#182;</a>
-    set the state
-  </h3>
-</div>
-
-  </div>
-  <div class="body"><p>This is in support of Hot Loading - take the payload
-and set the values into the state</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">case</span> <span class="nx">SET_STATE</span><span class="o">:</span>
-    <span class="kd">var</span> <span class="nx">profile</span>  <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">).</span><span class="nx">profile</span><span class="p">.</span><span class="nx">form</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;disabled&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">disabled</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;error&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">isValid</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isFetching&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;username&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;email&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;objectId&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">objectId</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;originalProfile&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;emailVerified&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">emailVerified</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;username&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;usernameHasError&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;email&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;emailHasError&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;fields&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;emailVerified&#39;</span><span class="p">],</span><span class="nx">profile</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailVerified</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">next</span><span class="p">;</span>
-    
-  <span class="p">}</span><span class="c1">//switch</span>
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="default">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="profilereducer.js">
   <h1>
-    <a href="#default" name="default" class="pilcrow">&#182;</a>
-    Default
+    <a href="#profilereducer.js" name="profilereducer.js" class="pilcrow"></a>
+profileReducer.js
   </h1>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+<p>The reducer user profile actions</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+
+</pre>
         </td>
       </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
+  </h2>
+</div>
+</div>
+<div class="body">
+<p>fieldValidation for validating the fields
+formValidation for setting the form's valid flag</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> fieldValidation = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/fieldValidation'</span>).default;
+<span class="hljs-keyword">const</span> formValidation = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./profileFormValidation'</span>).default;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="actions">
+  <h2>
+    <a href="#actions" name="actions" class="pilcrow"></a>
+Actions
+  </h2>
+</div>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> {
+  ON_PROFILE_FORM_FIELD_CHANGE,
+  GET_PROFILE_REQUEST,
+  GET_PROFILE_SUCCESS,
+  GET_PROFILE_FAILURE,
+
+  PROFILE_UPDATE_REQUEST,
+  PROFILE_UPDATE_SUCCESS,
+  PROFILE_UPDATE_FAILURE,
+  
+  LOGOUT_SUCCESS,
+
+  SET_STATE
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/constants'</span>).default;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="initial-state">
+  <h2>
+    <a href="#initial-state" name="initial-state" class="pilcrow"></a>
+Initial State
+  </h2>
+</div>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> InitialState = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./profileInitialState'</span>).default;
+<span class="hljs-keyword">const</span> initialState = <span class="hljs-keyword">new</span> InitialState;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="profilereducer-function">
+  <h2>
+    <a href="#profilereducer-function" name="profilereducer-function" class="pilcrow"></a>
+profileReducer function
+  </h2>
+</div>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">state</span>
+<span class="dox_type">Object</span>
+<span><ul>
+<li>initialState</li>
+</ul>
+</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">action</span>
+<span class="dox_type">Object</span>
+<span><ul>
+<li>type and payload</li>
+</ul>
+</span>
+</div>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">profileReducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+  <span class="hljs-keyword">let</span> nextProfileState = <span class="hljs-literal">null</span>;
+
+  <span class="hljs-keyword">if</span> (!(state <span class="hljs-keyword">instanceof</span> InitialState)) <span class="hljs-keyword">return</span> initialState.mergeDeep(state);
+
+  <span class="hljs-keyword">switch</span> (action.type) {
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="request-starts">
+  <h3>
+    <a href="#request-starts" name="request-starts" class="pilcrow"></a>
+Request starts
+  </h3>
+</div>
+<p>set the form to fetching and clear any errors</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> GET_PROFILE_REQUEST:
+  <span class="hljs-keyword">case</span> PROFILE_UPDATE_REQUEST:
+    <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'isFetching'</span>], <span class="hljs-literal">true</span>)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'error'</span>],<span class="hljs-literal">null</span>);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="request-end-successfully">
+  <h3>
+    <a href="#request-end-successfully" name="request-end-successfully" class="pilcrow"></a>
+Request end successfully
+  </h3>
+</div>
+<p>set the form to fetching as done</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> PROFILE_UPDATE_SUCCESS:
+    <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'isFetching'</span>], <span class="hljs-literal">false</span>);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="request-ends-successfully">
+  <h3>
+    <a href="#request-ends-successfully" name="request-ends-successfully" class="pilcrow"></a>
+Request ends successfully
+  </h3>
+</div>
+</div>
+<div class="body">
+<p>the fetching is done, set the UI fields and the originalProfile</p>
+<p>Validate the data to make sure it's all good and someone didn't
+mung it up through some other mechanism</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> GET_PROFILE_SUCCESS:
+    nextProfileState = state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'isFetching'</span>], <span class="hljs-literal">false</span>)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,<span class="hljs-string">'username'</span>], action.payload.username)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,<span class="hljs-string">'email'</span>], action.payload.email)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,<span class="hljs-string">'emailVerified'</span>],
+             action.payload.emailVerified)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,<span class="hljs-string">'username'</span>],action.payload.username)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,<span class="hljs-string">'email'</span>],action.payload.email)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,<span class="hljs-string">'emailVerified'</span>],action.payload.emailVerified)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,<span class="hljs-string">'objectId'</span>],action.payload.objectId)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'error'</span>],<span class="hljs-literal">null</span>);
+    
+    <span class="hljs-keyword">return</span> formValidation(
+      fieldValidation( nextProfileState, action)
+      , action);
+    
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>User logged out, so reset form fields and original profile.</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> LOGOUT_SUCCESS:
+    nextProfileState = state.setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,<span class="hljs-string">'username'</span>], <span class="hljs-string">''</span>)   
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,<span class="hljs-string">'email'</span>], <span class="hljs-string">''</span>)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,<span class="hljs-string">'emailVerified'</span>], <span class="hljs-literal">false</span>)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,<span class="hljs-string">'username'</span>],<span class="hljs-string">''</span>)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,<span class="hljs-string">'email'</span>],<span class="hljs-string">''</span>)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,<span class="hljs-string">'emailVerified'</span>],<span class="hljs-literal">false</span>)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,<span class="hljs-string">'objectId'</span>],<span class="hljs-literal">null</span>)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'error'</span>],<span class="hljs-literal">null</span>);
+    <span class="hljs-keyword">return</span> formValidation( nextProfileState, action);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="request-fails">
+  <h3>
+    <a href="#request-fails" name="request-fails" class="pilcrow"></a>
+Request fails
+  </h3>
+</div>
+<p>we're done fetching and the error needs to be displayed to the user</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> GET_PROFILE_FAILURE:
+  <span class="hljs-keyword">case</span> PROFILE_UPDATE_FAILURE:
+    <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'isFetching'</span>], <span class="hljs-literal">false</span>)
+      .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'error'</span>], action.payload);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="form-fields-have-changed">
+  <h3>
+    <a href="#form-fields-have-changed" name="form-fields-have-changed" class="pilcrow"></a>
+form fields have changed
+  </h3>
+</div>
+</div>
+<div class="body">
+<p>Set the state with the fields, clear the form error
+and perform field and form validation</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> ON_PROFILE_FORM_FIELD_CHANGE:
+    <span class="hljs-keyword">const</span> {field, value} = action.payload;
+    <span class="hljs-keyword">let</span> nextState =  state.setIn([<span class="hljs-string">'form'</span>, <span class="hljs-string">'fields'</span>, field], value)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'error'</span>],<span class="hljs-literal">null</span>);
+
+    <span class="hljs-keyword">return</span> formValidation(
+      fieldValidation( nextState, action)
+      , action);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="set-the-state">
+  <h3>
+    <a href="#set-the-state" name="set-the-state" class="pilcrow"></a>
+set the state
+  </h3>
+</div>
+</div>
+<div class="body">
+<p>This is in support of Hot Loading - take the payload
+and set the values into the state</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">case</span> SET_STATE:
+    <span class="hljs-keyword">var</span> profile  = <span class="hljs-built_in">JSON</span>.parse(action.payload).profile.form;
+    <span class="hljs-keyword">var</span> next = state.setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'disabled'</span>],profile.disabled)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'error'</span>],profile.error)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'isValid'</span>],profile.isValid)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'isFetching'</span>],profile.isFetching)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,
+                  <span class="hljs-string">'username'</span>],profile.originalProfile.username)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,
+                  <span class="hljs-string">'email'</span>],profile.originalProfile.email)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,
+                  <span class="hljs-string">'objectId'</span>],profile.originalProfile.objectId)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'originalProfile'</span>,
+                  <span class="hljs-string">'emailVerified'</span>],profile.originalProfile.emailVerified)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,
+                  <span class="hljs-string">'username'</span>],profile.fields.username)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,
+                  <span class="hljs-string">'usernameHasError'</span>],profile.fields.usernameHasError)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,
+                  <span class="hljs-string">'email'</span>],profile.fields.email)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,
+                  <span class="hljs-string">'emailHasError'</span>],profile.fields.emailHasError)
+          .setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'fields'</span>,
+                  <span class="hljs-string">'emailVerified'</span>],profile.fields.emailVerified);
+    <span class="hljs-keyword">return</span> next;
+    
+  }<span class="hljs-comment">//switch</span>
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="default">
+  <h1>
+    <a href="#default" name="default" class="pilcrow"></a>
+Default
+  </h1>
+</div>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">return</span> state;
+}
+
+</pre>
+        </td>
+      </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

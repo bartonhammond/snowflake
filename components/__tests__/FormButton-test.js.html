@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/__tests__/FormButton-test.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/components/__tests__/FormButton-test.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,80 +21,92 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#formbutton-test.js">FormButton-test.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="formbutton-test.js">
   <h1>
-    <a href="#formbutton-test.js" name="formbutton-test.js" class="pilcrow">&#182;</a>
-    FormButton-test.js
+    <a href="#formbutton-test.js" name="formbutton-test.js" class="pilcrow"></a>
+FormButton-test.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This class tests that the form button displays correctly</p>
-
+</div>
+<div class="body">
+<p>This class tests that the form button displays correctly</p>
 <p><em>Note:</em> if you want to understand the structures here, add a
 <code>console.log</code> and then <code>npm test</code>.</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-keyword">import</span> <span class="hljs-string">'react-native'</span>;
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
 
-<span class="kr">import</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> FormButton <span class="hljs-keyword">from</span> <span class="hljs-string">'../FormButton'</span>;
 
-<span class="kr">import</span> <span class="nx">FormButton</span> <span class="nx">from</span> <span class="s1">&#39;../FormButton&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> renderer <span class="hljs-keyword">from</span> <span class="hljs-string">'react/lib/ReactTestRenderer'</span>;
 
-<span class="kr">import</span> <span class="nx">renderer</span> <span class="nx">from</span> <span class="s1">&#39;react/lib/ReactTestRenderer&#39;</span><span class="p">;</span>
+test(<span class="hljs-string">'FormButton'</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> props = {
+    isDisabled: <span class="hljs-literal">false</span>,
+    onPress: () =&gt; {},
+    buttonText: <span class="hljs-string">'TestString'</span>
+  };
+  <span class="hljs-keyword">const</span> tree = renderer.create(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">FormButton</span> {<span class="hljs-attr">...props</span>} /&gt;</span>).toJSON();
+  expect(tree).toMatchSnapshot();
+});
 
-<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;FormButton&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">isDisabled</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nx">onPress</span><span class="o">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{},</span>
-    <span class="nx">buttonText</span><span class="o">:</span> <span class="s1">&#39;TestString&#39;</span>
-  <span class="p">};</span>
-  <span class="kr">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">renderer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">FormButton</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">();</span>
-  <span class="nx">expect</span><span class="p">(</span><span class="nx">tree</span><span class="p">).</span><span class="nx">toMatchSnapshot</span><span class="p">();</span>
-<span class="p">});</span>
-</pre></div>
+</span></pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

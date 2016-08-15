@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/profile/profileFormValidation.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/profile/profileFormValidation.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,96 +21,119 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#profileformvalidation.js">profileFormValidation.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#formvalidation">formValidation</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="profileformvalidation.js">
   <h1>
-    <a href="#profileformvalidation.js" name="profileformvalidation.js" class="pilcrow">&#182;</a>
-    profileFormValidation.js
+    <a href="#profileformvalidation.js" name="profileformvalidation.js" class="pilcrow"></a>
+profileFormValidation.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This class determines only if the form is valid 
+</div>
+<div class="body">
+<p>This class determines only if the form is valid
 so that the form button can be enabled.
 if all the fields on the form are without error,
 the form is considered valid</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="formvalidation">
   <h2>
-    <a href="#formvalidation" name="formvalidation" class="pilcrow">&#182;</a>
-    formValidation
+    <a href="#formvalidation" name="formvalidation" class="pilcrow"></a>
+formValidation
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">state</span>
-      <span class="dox_type">Object</span>
-      <span><ul>
-<li>the Redux state object</li>
-</ul>
-
-As there are only two fields, the form is valid if they are</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">formValidation</span> <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span>
-        <span class="o">&amp;&amp;</span>
-        <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span> <span class="o">!==</span> <span class="s1">&#39;&#39;</span>
-        <span class="o">&amp;&amp;</span>
-        <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span>
-        <span class="o">&amp;&amp;</span>
-        <span class="o">!</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span>
-        <span class="o">&amp;&amp;</span>
-        <span class="p">(</span><span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span> <span class="o">!=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">username</span>
-        <span class="o">||</span>
-         <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span> <span class="o">!=</span> <span class="nx">state</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span>
-       <span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="kc">true</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">setIn</span><span class="p">([</span><span class="s1">&#39;form&#39;</span><span class="p">,</span><span class="s1">&#39;isValid&#39;</span><span class="p">],</span><span class="kc">false</span><span class="p">);</span>
-    <span class="p">}</span>
-    
-  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">state</span>
+<span class="dox_type">Object</span>
+<span><ul>
+<li>the Redux state object
+As there are only two fields, the form is valid if they are</li>
+</ul>
+</span>
+</div>
+</div>
+</div>
 
-<span class="p">}</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">formValidation</span> (<span class="hljs-params">state</span>) </span>{
+    <span class="hljs-keyword">if</span> (state.form.fields.username != <span class="hljs-string">''</span>
+        &amp;&amp;
+        state.form.fields.email !== <span class="hljs-string">''</span>
+        &amp;&amp;
+        !state.form.fields.usernameHasError
+        &amp;&amp;
+        !state.form.fields.emailHasError
+        &amp;&amp;
+        (state.form.fields.username != state.form.originalProfile.username
+        ||
+         state.form.fields.email != state.form.originalProfile.email)
+       ) {
+      <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'isValid'</span>],<span class="hljs-literal">true</span>);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> state.setIn([<span class="hljs-string">'form'</span>,<span class="hljs-string">'isValid'</span>],<span class="hljs-literal">false</span>);
+    }
+    
+  <span class="hljs-keyword">return</span> state;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

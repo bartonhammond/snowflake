@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../../doc-style.css" />
   <script src="../../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/profile/__tests__/profileReducer-test.js", defaultSidebar = true;
+    var relativeDir = "../../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/profile/__tests__/profileReducer-test.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,505 +21,552 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#profilereducer-test.js">profileReducer-test.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
-        <a href="#class%20under%20test">Class under test</a>
+        <a href="#class-under-test">Class under test</a>
       </div>
+
       <div class="heading h2">
         <a href="#tests">Tests</a>
       </div>
+
       <div class="heading h3">
-        <a href="#profile%20request">Profile Request</a>
+        <a href="#profile-request">Profile Request</a>
       </div>
+
       <div class="heading h4">
-        <a href="#starts%20fetching">starts fetching</a>
+        <a href="#starts-fetching">starts fetching</a>
       </div>
+
       <div class="heading h4">
-        <a href="#it%20finishes%20fetching%20on%20success">it finishes fetching on success</a>
+        <a href="#it-finishes-fetching-on-success">it finishes fetching on success</a>
       </div>
+
       <div class="heading h4">
-        <a href="#finishes%20fetching%20on%20failure">finishes fetching on failure</a>
+        <a href="#finishes-fetching-on-failure">finishes fetching on failure</a>
       </div>
+
       <div class="heading h3">
-        <a href="#profile%20update">Profile update</a>
+        <a href="#profile-update">Profile update</a>
       </div>
+
       <div class="heading h4">
-        <a href="#starts%20fetching%20on%20request">starts fetching on request</a>
+        <a href="#starts-fetching-on-request">starts fetching on request</a>
       </div>
+
       <div class="heading h4">
-        <a href="#finishes%20fetching%20on%20success">finishes fetching on success</a>
+        <a href="#finishes-fetching-on-success">finishes fetching on success</a>
       </div>
+
       <div class="heading h4">
-        <a href="#finishes%20fetching%20on%20failure%20and%20saves%20error">finishes fetching on failure and saves error</a>
+        <a href="#finishes-fetching-on-failure-and-saves-error">finishes fetching on failure and saves error</a>
       </div>
+
       <div class="heading h3">
-        <a href="#profile%20form%20field%20changes">Profile form field changes</a>
+        <a href="#profile-form-field-changes">Profile form field changes</a>
       </div>
+
       <div class="heading h4">
-        <a href="#form%20is%20valid%20to%20logout">form is valid to logout</a>
+        <a href="#form-is-valid-to-logout">form is valid to logout</a>
       </div>
+
       <div class="heading h4">
-        <a href="#form%20is%20invalid%20with%20invalid%20email%20%26amp%3B%20invalid%20username">form is invalid with invalid email &amp; invalid username</a>
+        <a href="#form-is-invalid-with-invalid-email-and-invalid-username">form is invalid with invalid email &amp;amp; invalid username</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="profilereducer-test.js">
   <h1>
-    <a href="#profilereducer-test.js" name="profilereducer-test.js" class="pilcrow">&#182;</a>
-    profileReducer-test.js
+    <a href="#profilereducer-test.js" name="profilereducer-test.js" class="pilcrow"></a>
+profileReducer-test.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This will confirm that given a specific action with a type and
-payload, that the state object is modified accordingly.</p>
-
-<p><em>Note</em>: in this app,<code>state</code> is an Immutable.js object</p>
-  </div>
 </div>
+<div class="body">
+<p>This will confirm that given a specific action with a type and
+payload, that the state object is modified accordingly.</p>
+<p><em>Note</em>: in this app,<code>state</code> is an Immutable.js object</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>These actions of the users profile</p>
-  </div>
 </div>
+<div class="body">
+<p>These actions of the users profile</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_REQUEST</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_SUCCESS</span><span class="p">,</span>
-  <span class="nx">GET_PROFILE_FAILURE</span><span class="p">,</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> {
+  ON_PROFILE_FORM_FIELD_CHANGE,
+  GET_PROFILE_REQUEST,
+  GET_PROFILE_SUCCESS,
+  GET_PROFILE_FAILURE,
 
-  <span class="nx">PROFILE_UPDATE_REQUEST</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_SUCCESS</span><span class="p">,</span>
-  <span class="nx">PROFILE_UPDATE_FAILURE</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+  PROFILE_UPDATE_REQUEST,
+  PROFILE_UPDATE_SUCCESS,
+  PROFILE_UPDATE_FAILURE
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../../lib/constants'</span>).default;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="class%20under%20test">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="class-under-test">
   <h2>
-    <a href="#class%20under%20test" name="class%20under%20test" class="pilcrow">&#182;</a>
-    Class under test
+    <a href="#class-under-test" name="class-under-test" class="pilcrow"></a>
+Class under test
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span>  <span class="nx">profileReducer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../profileReducer&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span>  profileReducer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../profileReducer'</span>).default;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="tests">
   <h2>
-    <a href="#tests" name="tests" class="pilcrow">&#182;</a>
-    Tests
+    <a href="#tests" name="tests" class="pilcrow"></a>
+Tests
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>profileReducer</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;profileReducer&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="body">
+<p>profileReducer</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">describe(<span class="hljs-string">'profileReducer'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="profile%20request">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="profile-request">
   <h3>
-    <a href="#profile%20request" name="profile%20request" class="pilcrow">&#182;</a>
-    Profile Request
+    <a href="#profile-request" name="profile-request" class="pilcrow"></a>
+Profile Request
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p><em>Note</em>: these tests call the <code>profileReducer</code> with an
+</div>
+<div class="body">
+<p><em>Note</em>: these tests call the <code>profileReducer</code> with an
 <code>undefined</code> state so that the reducer will return a valid state.</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;PROFILE_REQUEST&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="starts%20fetching">
-  <h4>
-    <a href="#starts%20fetching" name="starts%20fetching" class="pilcrow">&#182;</a>
-    starts fetching
-  </h4>
 </div>
 
-  </div>
-  <div class="body"><p>Should have a valid form and no form error</p>
-  </div>
-</div>
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;starts fetching&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_REQUEST</span>
-      <span class="p">};</span>
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">error</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-    <span class="p">});</span>
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript">  describe(<span class="hljs-string">'PROFILE_REQUEST'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="it%20finishes%20fetching%20on%20success">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="starts-fetching">
   <h4>
-    <a href="#it%20finishes%20fetching%20on%20success" name="it%20finishes%20fetching%20on%20success" class="pilcrow">&#182;</a>
-    it finishes fetching on success
+    <a href="#starts-fetching" name="starts-fetching" class="pilcrow"></a>
+starts fetching
   </h4>
 </div>
+</div>
+<div class="body">
+<p>Should have a valid form and no form error</p>
+</div>
+</div>
 
-  </div>
-  <div class="body"><p>Should have a valid form and in the Logged out state</p>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'starts fetching'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> action = {
+        type: GET_PROFILE_REQUEST
+      };
+      <span class="hljs-keyword">let</span> next = profileReducer(<span class="hljs-literal">undefined</span>, action);
 
+      expect(next.form.isFetching).toBe(<span class="hljs-literal">true</span>);
+      expect(next.form.error).toBe(<span class="hljs-literal">null</span>);
+    });
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="it-finishes-fetching-on-success">
+  <h4>
+    <a href="#it-finishes-fetching-on-success" name="it-finishes-fetching-on-success" class="pilcrow"></a>
+it finishes fetching on success
+  </h4>
+</div>
+</div>
+<div class="body">
+<p>Should have a valid form and in the Logged out state</p>
 <p>We set the action to simulate valid data returning from
 Parse.com</p>
-
 <p>We validate that after form and field validation, the values
 are set.</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;finishes fetching on success&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_SUCCESS</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span>
-          <span class="nx">username</span><span class="o">:</span> <span class="s1">&#39;barton&#39;</span><span class="p">,</span>
-          <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;barton@foo.com&#39;</span><span class="p">,</span>
-          <span class="nx">emailVerified</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-          <span class="nx">objectId</span><span class="o">:</span> <span class="s1">&#39;someObjectId&#39;</span>
-        <span class="p">}</span>
-      <span class="p">};</span>
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'finishes fetching on success'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> action = {
+        type: GET_PROFILE_SUCCESS,
+        payload: {
+          username: <span class="hljs-string">'barton'</span>,
+          email: <span class="hljs-string">'barton@foo.com'</span>,
+          emailVerified: <span class="hljs-literal">true</span>,
+          objectId: <span class="hljs-string">'someObjectId'</span>
+        }
+      };
+      <span class="hljs-keyword">let</span> next = profileReducer(<span class="hljs-literal">undefined</span>, action);
 
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">error</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">email</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailVerified</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">emailVerified</span><span class="p">);</span>
+      expect(next.form.isFetching).toBe(<span class="hljs-literal">false</span>);
+      expect(next.form.error).toBe(<span class="hljs-literal">null</span>);
+      expect(next.form.fields.username).toEqual(action.payload.username);
+      expect(next.form.fields.email).toEqual(action.payload.email);
+      expect(next.form.fields.emailVerified).toBe(action.payload.emailVerified);
 
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">username</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">email</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">email</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">originalProfile</span><span class="p">.</span><span class="nx">emailVerified</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">emailVerified</span><span class="p">);</span>
+      expect(next.form.originalProfile.username).toEqual(action.payload.username);
+      expect(next.form.originalProfile.email).toEqual(action.payload.email);
+      expect(next.form.originalProfile.emailVerified).toBe(action.payload.emailVerified);
 
-    <span class="p">});</span>
-
-</pre></div>
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="finishes%20fetching%20on%20failure">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="finishes-fetching-on-failure">
   <h4>
-    <a href="#finishes%20fetching%20on%20failure" name="finishes%20fetching%20on%20failure" class="pilcrow">&#182;</a>
-    finishes fetching on failure
+    <a href="#finishes-fetching-on-failure" name="finishes-fetching-on-failure" class="pilcrow"></a>
+finishes fetching on failure
   </h4>
 </div>
-
-  </div>
-  <div class="body"><p>On failure, toggle the fetching flag and provide the error so
+</div>
+<div class="body">
+<p>On failure, toggle the fetching flag and provide the error so
 the use can see it</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;finishes fetching on failure&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">GET_PROFILE_FAILURE</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span><span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;error&#39;</span><span class="p">}</span>
-      <span class="p">};</span>
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">error</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-    <span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'finishes fetching on failure'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> action = {
+        type: GET_PROFILE_FAILURE,
+        payload: {error: <span class="hljs-string">'error'</span>}
+      };
+      <span class="hljs-keyword">let</span> next = profileReducer(<span class="hljs-literal">undefined</span>, action);
+      expect(next.form.isFetching).toBe(<span class="hljs-literal">false</span>);
+      expect(next.form.error).toBe(action.payload);
+    });
 
-  <span class="p">});</span><span class="c1">//Profile Request</span>
+  });<span class="hljs-comment">//Profile Request</span>
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="profile%20update">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="profile-update">
   <h3>
-    <a href="#profile%20update" name="profile%20update" class="pilcrow">&#182;</a>
-    Profile update
+    <a href="#profile-update" name="profile-update" class="pilcrow"></a>
+Profile update
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;PROFILE_UPDATE&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="starts%20fetching%20on%20request">
-  <h4>
-    <a href="#starts%20fetching%20on%20request" name="starts%20fetching%20on%20request" class="pilcrow">&#182;</a>
-    starts fetching on request
-  </h4>
+<div class="body">
+</div>
 </div>
 
-  </div>
-  <div class="body"><p>Should have a valid form and show that it's fetching</p>
-  </div>
-</div>
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;starts fetching on request&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_REQUEST</span>
-      <span class="p">};</span>
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">error</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-    <span class="p">});</span>
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript">  describe(<span class="hljs-string">'PROFILE_UPDATE'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="finishes%20fetching%20on%20success">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="starts-fetching-on-request">
   <h4>
-    <a href="#finishes%20fetching%20on%20success" name="finishes%20fetching%20on%20success" class="pilcrow">&#182;</a>
-    finishes fetching on success
+    <a href="#starts-fetching-on-request" name="starts-fetching-on-request" class="pilcrow"></a>
+starts fetching on request
   </h4>
 </div>
-
-  </div>
-  <div class="body"><p>Toggle fetching flag</p>
-  </div>
 </div>
+<div class="body">
+<p>Should have a valid form and show that it's fetching</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;finishes fetching on success&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_SUCCESS</span>
-      <span class="p">};</span>
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'starts fetching on request'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> action = {
+        type: PROFILE_UPDATE_REQUEST
+      };
+      <span class="hljs-keyword">let</span> next = profileReducer(<span class="hljs-literal">undefined</span>, action);
 
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-
-    <span class="p">});</span>
-
-</pre></div>
+      expect(next.form.isFetching).toBe(<span class="hljs-literal">true</span>);
+      expect(next.form.error).toBe(<span class="hljs-literal">null</span>);
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="finishes%20fetching%20on%20failure%20and%20saves%20error">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="finishes-fetching-on-success">
   <h4>
-    <a href="#finishes%20fetching%20on%20failure%20and%20saves%20error" name="finishes%20fetching%20on%20failure%20and%20saves%20error" class="pilcrow">&#182;</a>
-    finishes fetching on failure and saves error
+    <a href="#finishes-fetching-on-success" name="finishes-fetching-on-success" class="pilcrow"></a>
+finishes fetching on success
   </h4>
 </div>
+</div>
+<div class="body">
+<p>Toggle fetching flag</p>
+</div>
+</div>
 
-  </div>
-  <div class="body"><p>The fetching has ended and the error saved so the user can see
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'finishes fetching on success'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> action = {
+        type: PROFILE_UPDATE_SUCCESS
+      };
+      <span class="hljs-keyword">let</span> next = profileReducer(<span class="hljs-literal">undefined</span>, action);
+
+      expect(next.form.isFetching).toBe(<span class="hljs-literal">false</span>);
+
+    });
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="finishes-fetching-on-failure-and-saves-error">
+  <h4>
+    <a href="#finishes-fetching-on-failure-and-saves-error" name="finishes-fetching-on-failure-and-saves-error" class="pilcrow"></a>
+finishes fetching on failure and saves error
+  </h4>
+</div>
+</div>
+<div class="body">
+<p>The fetching has ended and the error saved so the user can see
 it</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;finishes fetching on failure and saves error&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">action</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">PROFILE_UPDATE_FAILURE</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span><span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;error&#39;</span><span class="p">}</span>
-      <span class="p">};</span>
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span> <span class="nx">action</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isFetching</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">error</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">payload</span><span class="p">);</span>
-    <span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'finishes fetching on failure and saves error'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> action = {
+        type: PROFILE_UPDATE_FAILURE,
+        payload: {error: <span class="hljs-string">'error'</span>}
+      };
+      <span class="hljs-keyword">let</span> next = profileReducer(<span class="hljs-literal">undefined</span>, action);
+      expect(next.form.isFetching).toBe(<span class="hljs-literal">false</span>);
+      expect(next.form.error).toBe(action.payload);
+    });
 
-  <span class="p">});</span><span class="c1">//ProfileUpdate</span>
-
-</pre></div>
+  });<span class="hljs-comment">//ProfileUpdate</span>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="profile%20form%20field%20changes">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="profile-form-field-changes">
   <h3>
-    <a href="#profile%20form%20field%20changes" name="profile%20form%20field%20changes" class="pilcrow">&#182;</a>
-    Profile form field changes
+    <a href="#profile-form-field-changes" name="profile-form-field-changes" class="pilcrow"></a>
+Profile form field changes
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;PROFILE_FORM_FIELD_CHANGE&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  describe(<span class="hljs-string">'PROFILE_FORM_FIELD_CHANGE'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="form%20is%20valid%20to%20logout">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="form-is-valid-to-logout">
   <h4>
-    <a href="#form%20is%20valid%20to%20logout" name="form%20is%20valid%20to%20logout" class="pilcrow">&#182;</a>
-    form is valid to logout
+    <a href="#form-is-valid-to-logout" name="form-is-valid-to-logout" class="pilcrow"></a>
+form is valid to logout
   </h4>
 </div>
-
-  </div>
-  <div class="body"><p>Should have a valid form when the field has no error</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;form is valid with valid email &amp; username&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">usernameAction</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span><span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;barton&#39;</span><span class="p">}</span>
-      <span class="p">};</span>
-      <span class="kr">const</span> <span class="nx">emailAction</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span><span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;barton@gmail.com&#39;</span><span class="p">}</span>
-      <span class="p">};</span>      
-      <span class="kd">let</span> <span class="nx">firstState</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span>
-                                <span class="nx">usernameAction</span><span class="p">);</span>
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="nx">firstState</span><span class="p">,</span>
-                                <span class="nx">emailAction</span><span class="p">);</span>
-      
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isValid</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">//</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">usernameAction</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">emailAction</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-    <span class="p">});</span>
+<div class="body">
+<p>Should have a valid form when the field has no error</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'form is valid with valid email &amp; username'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> usernameAction = {
+        type: ON_PROFILE_FORM_FIELD_CHANGE,
+        payload: {field: <span class="hljs-string">'username'</span>, value: <span class="hljs-string">'barton'</span>}
+      };
+      <span class="hljs-keyword">const</span> emailAction = {
+        type: ON_PROFILE_FORM_FIELD_CHANGE,
+        payload: {field: <span class="hljs-string">'email'</span>, value: <span class="hljs-string">'barton@gmail.com'</span>}
+      };      
+      <span class="hljs-keyword">let</span> firstState = profileReducer(<span class="hljs-literal">undefined</span>,
+                                usernameAction);
+      <span class="hljs-keyword">let</span> next = profileReducer(firstState,
+                                emailAction);
+      
+      expect(next.form.isValid).toBe(<span class="hljs-literal">true</span>); <span class="hljs-comment">//</span>
+      expect(next.form.fields.username).toEqual(usernameAction.payload.value);
+      expect(next.form.fields.usernameHasError).toBe(<span class="hljs-literal">false</span>);
+      expect(next.form.fields.email).toEqual(emailAction.payload.value);
+      expect(next.form.fields.emailHasError).toBe(<span class="hljs-literal">false</span>);
+    });
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="form%20is%20invalid%20with%20invalid%20email%20%26amp%3B%20invalid%20username">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="form-is-invalid-with-invalid-email-and-invalid-username">
   <h4>
-    <a href="#form%20is%20invalid%20with%20invalid%20email%20%26amp%3B%20invalid%20username" name="form%20is%20invalid%20with%20invalid%20email%20%26amp%3B%20invalid%20username" class="pilcrow">&#182;</a>
-    form is invalid with invalid email &amp; invalid username
+    <a href="#form-is-invalid-with-invalid-email-and-invalid-username" name="form-is-invalid-with-invalid-email-and-invalid-username" class="pilcrow"></a>
+form is invalid with invalid email &amp; invalid username
   </h4>
 </div>
-
-  </div>
-  <div class="body"><p>Bad data in, errors out!</p>
-  </div>
 </div>
+<div class="body">
+<p>Bad data in, errors out!</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;form is invalid with invalid username&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="kr">const</span> <span class="nx">usernameAction</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span><span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span><span class="s1">&#39;bart&#39;</span><span class="p">}</span>
-      <span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript">    it(<span class="hljs-string">'form is invalid with invalid username'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> usernameAction = {
+        type: ON_PROFILE_FORM_FIELD_CHANGE,
+        payload: {field: <span class="hljs-string">'username'</span>, value:<span class="hljs-string">'bart'</span>}
+      };
       
-      <span class="kr">const</span> <span class="nx">emailAction</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="nx">type</span><span class="o">:</span> <span class="nx">ON_PROFILE_FORM_FIELD_CHANGE</span><span class="p">,</span>
-        <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span><span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span><span class="s1">&#39;bart&#39;</span><span class="p">}</span>
-      <span class="p">};</span>      
-      <span class="kd">let</span> <span class="nx">firstState</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="kc">undefined</span><span class="p">,</span>
-                                <span class="nx">usernameAction</span><span class="p">);</span>
+      <span class="hljs-keyword">const</span> emailAction = {
+        type: ON_PROFILE_FORM_FIELD_CHANGE,
+        payload: {field: <span class="hljs-string">'email'</span>, value:<span class="hljs-string">'bart'</span>}
+      };      
+      <span class="hljs-keyword">let</span> firstState = profileReducer(<span class="hljs-literal">undefined</span>,
+                                usernameAction);
 
-      <span class="kd">let</span> <span class="nx">next</span> <span class="o">=</span> <span class="nx">profileReducer</span><span class="p">(</span><span class="nx">firstState</span><span class="p">,</span> <span class="nx">emailAction</span><span class="p">);</span>
+      <span class="hljs-keyword">let</span> next = profileReducer(firstState, emailAction);
       
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">isValid</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">username</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">usernameAction</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">usernameHasError</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">email</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">emailAction</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-      <span class="nx">expect</span><span class="p">(</span><span class="nx">next</span><span class="p">.</span><span class="nx">form</span><span class="p">.</span><span class="nx">fields</span><span class="p">.</span><span class="nx">emailHasError</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+      expect(next.form.isValid).toBe(<span class="hljs-literal">false</span>);
+      expect(next.form.fields.username).toEqual(usernameAction.payload.value);
+      expect(next.form.fields.usernameHasError).toBe(<span class="hljs-literal">true</span>);
+      expect(next.form.fields.email).toEqual(emailAction.payload.value);
+      expect(next.form.fields.emailHasError).toBe(<span class="hljs-literal">true</span>);
 
-    <span class="p">});</span>
+    });
 
-  <span class="p">});</span> <span class="c1">//FORM FIELD CHANGE</span>
-<span class="p">});</span><span class="c1">//profileReducer</span>
-</pre></div>
+  }); <span class="hljs-comment">//FORM FIELD CHANGE</span>
+});<span class="hljs-comment">//profileReducer</span>
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

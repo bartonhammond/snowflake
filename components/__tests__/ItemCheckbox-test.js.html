@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/__tests__/ItemCheckbox-test.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/components/__tests__/ItemCheckbox-test.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,213 +21,239 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#itemcheckbox-test.js">ItemCheckbox-test.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#test">Test</a>
       </div>
+
       <div class="heading h3">
-        <a href="#if%20not%20disabled%20and%20checked%2C%20it%20should%20display%20check-square%20and%20text">if not disabled and checked, it should display check-square and text</a>
+        <a href="#if-not-disabled-and-checked-it-should-display-check-square-and-text">if not disabled and checked, it should display check-square and text</a>
       </div>
+
       <div class="heading h3">
-        <a href="#if%20not%20disabled%20and%20not%20checked%2C%20it%20should%20display%20square-o%20and%20text">if not disabled and not checked, it should display square-o and text</a>
+        <a href="#if-not-disabled-and-not-checked-it-should-display-square-o-and-text">if not disabled and not checked, it should display square-o and text</a>
       </div>
+
       <div class="heading h3">
-        <a href="#if%20disabled%20and%20checked%2C%20it%20should%20display%20check-square%20and%20text">if disabled and checked, it should display check-square and text</a>
+        <a href="#if-disabled-and-checked-it-should-display-check-square-and-text">if disabled and checked, it should display check-square and text</a>
       </div>
+
       <div class="heading h3">
-        <a href="#if%20disabled%20and%20not%20checked%2C%20it%20should%20display%20square-o%20and%20text">if disabled and not checked, it should display square-o and text</a>
+        <a href="#if-disabled-and-not-checked-it-should-display-square-o-and-text">if disabled and not checked, it should display square-o and text</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="itemcheckbox-test.js">
   <h1>
-    <a href="#itemcheckbox-test.js" name="itemcheckbox-test.js" class="pilcrow">&#182;</a>
-    ItemCheckbox-test.js
+    <a href="#itemcheckbox-test.js" name="itemcheckbox-test.js" class="pilcrow"></a>
+ItemCheckbox-test.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This class tests that the ItemCheckbox renders correctly under
+</div>
+<div class="body">
+<p>This class tests that the ItemCheckbox renders correctly under
 numerous conditions</p>
-
 <p><em>Note:</em> if you want to understand the structures here, add a
 <code>console.log</code> and then <code>npm test</code>.</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-<span class="kr">import</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">'react-native'</span>;
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
 
-<span class="kr">import</span> <span class="nx">ItemCheckbox</span> <span class="nx">from</span> <span class="s1">&#39;../ItemCheckbox&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> ItemCheckbox <span class="hljs-keyword">from</span> <span class="hljs-string">'../ItemCheckbox'</span>;
 
-<span class="kr">import</span> <span class="nx">renderer</span> <span class="nx">from</span> <span class="s1">&#39;react/lib/ReactTestRenderer&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> renderer <span class="hljs-keyword">from</span> <span class="hljs-string">'react/lib/ReactTestRenderer'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="test">
   <h2>
-    <a href="#test" name="test" class="pilcrow">&#182;</a>
-    Test
+    <a href="#test" name="test" class="pilcrow"></a>
+Test
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;ItemCheckbox&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">describe(<span class="hljs-string">'ItemCheckbox'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="if%20not%20disabled%20and%20checked%2C%20it%20should%20display%20check-square%20and%20text">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="if-not-disabled-and-checked-it-should-display-check-square-and-text">
   <h3>
-    <a href="#if%20not%20disabled%20and%20checked%2C%20it%20should%20display%20check-square%20and%20text" name="if%20not%20disabled%20and%20checked%2C%20it%20should%20display%20check-square%20and%20text" class="pilcrow">&#182;</a>
-    if not disabled and checked, it should display check-square and text
+    <a href="#if-not-disabled-and-checked-it-should-display-check-square-and-text" name="if-not-disabled-and-checked-it-should-display-check-square-and-text" class="pilcrow"></a>
+if not disabled and checked, it should display check-square and text
   </h3>
 </div>
-
-
 <p>change the props and call <code>testItemCheckbox</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;if not disabled and checked, it should display check-square and text&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">checked</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;TextShouldDisplay&#39;</span><span class="p">,</span>
-      <span class="nx">disabled</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">};</span>
-    <span class="kr">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">renderer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ItemCheckbox</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">();</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">tree</span><span class="p">).</span><span class="nx">toMatchSnapshot</span><span class="p">();</span>
-  <span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript">  it(<span class="hljs-string">'if not disabled and checked, it should display check-square and text'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> props = {
+      checked: <span class="hljs-literal">true</span>,
+      text: <span class="hljs-string">'TextShouldDisplay'</span>,
+      disabled: <span class="hljs-literal">false</span>
+    };
+    <span class="hljs-keyword">const</span> tree = renderer.create(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ItemCheckbox</span> {<span class="hljs-attr">...props</span>} /&gt;</span>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-
-</pre></div>
+</span></pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="if%20not%20disabled%20and%20not%20checked%2C%20it%20should%20display%20square-o%20and%20text">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="if-not-disabled-and-not-checked-it-should-display-square-o-and-text">
   <h3>
-    <a href="#if%20not%20disabled%20and%20not%20checked%2C%20it%20should%20display%20square-o%20and%20text" name="if%20not%20disabled%20and%20not%20checked%2C%20it%20should%20display%20square-o%20and%20text" class="pilcrow">&#182;</a>
-    if not disabled and not checked, it should display square-o and text
+    <a href="#if-not-disabled-and-not-checked-it-should-display-square-o-and-text" name="if-not-disabled-and-not-checked-it-should-display-square-o-and-text" class="pilcrow"></a>
+if not disabled and not checked, it should display square-o and text
   </h3>
 </div>
-
-
 <p>change the props and call <code>testItemCheckbox</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;if not disabled and not checked, it should display square-o and text&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">checked</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;TextShouldDisplay&#39;</span><span class="p">,</span>
-      <span class="nx">disabled</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">};</span>
-    <span class="kr">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">renderer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ItemCheckbox</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">();</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">tree</span><span class="p">).</span><span class="nx">toMatchSnapshot</span><span class="p">();</span>
-  <span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript">  it(<span class="hljs-string">'if not disabled and not checked, it should display square-o and text'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> props = {
+      checked: <span class="hljs-literal">false</span>,
+      text: <span class="hljs-string">'TextShouldDisplay'</span>,
+      disabled: <span class="hljs-literal">false</span>
+    };
+    <span class="hljs-keyword">const</span> tree = renderer.create(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ItemCheckbox</span> {<span class="hljs-attr">...props</span>} /&gt;</span>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-
-</pre></div>
+</span></pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="if%20disabled%20and%20checked%2C%20it%20should%20display%20check-square%20and%20text">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="if-disabled-and-checked-it-should-display-check-square-and-text">
   <h3>
-    <a href="#if%20disabled%20and%20checked%2C%20it%20should%20display%20check-square%20and%20text" name="if%20disabled%20and%20checked%2C%20it%20should%20display%20check-square%20and%20text" class="pilcrow">&#182;</a>
-    if disabled and checked, it should display check-square and text
+    <a href="#if-disabled-and-checked-it-should-display-check-square-and-text" name="if-disabled-and-checked-it-should-display-check-square-and-text" class="pilcrow"></a>
+if disabled and checked, it should display check-square and text
   </h3>
 </div>
-
-
 <p>change the props and call <code>testItemCheckbox</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;if disabled and checked, it should display check-square and text&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">checked</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;TextShouldDisplay&#39;</span><span class="p">,</span>
-      <span class="nx">disabled</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">};</span>
-    <span class="kr">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">renderer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ItemCheckbox</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">();</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">tree</span><span class="p">).</span><span class="nx">toMatchSnapshot</span><span class="p">();</span>
-  <span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript">  it(<span class="hljs-string">'if disabled and checked, it should display check-square and text'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> props = {
+      checked: <span class="hljs-literal">true</span>,
+      text: <span class="hljs-string">'TextShouldDisplay'</span>,
+      disabled: <span class="hljs-literal">true</span>
+    };
+    <span class="hljs-keyword">const</span> tree = renderer.create(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ItemCheckbox</span> {<span class="hljs-attr">...props</span>} /&gt;</span>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
-
-</pre></div>
+</span></pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="if%20disabled%20and%20not%20checked%2C%20it%20should%20display%20square-o%20and%20text">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="if-disabled-and-not-checked-it-should-display-square-o-and-text">
   <h3>
-    <a href="#if%20disabled%20and%20not%20checked%2C%20it%20should%20display%20square-o%20and%20text" name="if%20disabled%20and%20not%20checked%2C%20it%20should%20display%20square-o%20and%20text" class="pilcrow">&#182;</a>
-    if disabled and not checked, it should display square-o and text
+    <a href="#if-disabled-and-not-checked-it-should-display-square-o-and-text" name="if-disabled-and-not-checked-it-should-display-square-o-and-text" class="pilcrow"></a>
+if disabled and not checked, it should display square-o and text
   </h3>
 </div>
-
-
 <p>change the props and call <code>testItemCheckbox</code> to validate</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;if disabled and not checked, it should display square-o and text&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">checked</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;TextShouldDisplay&#39;</span><span class="p">,</span>
-      <span class="nx">disabled</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">};</span>
-    <span class="kr">const</span> <span class="nx">tree</span> <span class="o">=</span> <span class="nx">renderer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ItemCheckbox</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">();</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">tree</span><span class="p">).</span><span class="nx">toMatchSnapshot</span><span class="p">();</span>
-  <span class="p">});</span>
+<div class="body">
+</div>
+</div>
 
-<span class="p">});</span><span class="c1">//describe ItemCheckbox</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  it(<span class="hljs-string">'if disabled and not checked, it should display square-o and text'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> props = {
+      checked: <span class="hljs-literal">false</span>,
+      text: <span class="hljs-string">'TextShouldDisplay'</span>,
+      disabled: <span class="hljs-literal">true</span>
+    };
+    <span class="hljs-keyword">const</span> tree = renderer.create(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ItemCheckbox</span> {<span class="hljs-attr">...props</span>} /&gt;</span>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+});//describe ItemCheckbox
+
+
+
+
+
+
+
+
+
+
+
+</span></pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

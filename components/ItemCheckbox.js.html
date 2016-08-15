@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/ItemCheckbox.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/components/ItemCheckbox.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,387 +21,413 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#itemcheckbox.js">ItemCheckbox.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
-        <a href="#itemcheckbox%20class">ItemCheckbox class</a>
+        <a href="#itemcheckbox-class">ItemCheckbox class</a>
       </div>
+
       <div class="heading h3">
         <a href="#getdefaultprops">getDefaultProps</a>
       </div>
+
       <div class="heading h3">
         <a href="#getinitialstate">getInitialState</a>
       </div>
+
       <div class="heading h3">
         <a href="#_getcirclechecksytel">_getCircleCheckSytel</a>
       </div>
+
       <div class="heading h3">
         <a href="#_completeprogress">_completeProgress</a>
       </div>
+
       <div class="heading h3">
         <a href="#componentdidmount">componentDidMount</a>
       </div>
+
       <div class="heading h3">
         <a href="#render">render</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="itemcheckbox.js">
-  <h1>
-    <a href="#itemcheckbox.js" name="itemcheckbox.js" class="pilcrow">&#182;</a>
-    ItemCheckbox.js
-  </h1>
-</div>
-
-  </div>
-  <div class="body"><p>This class was initially written by
-<a href='https://github.com/mhollweck/react-native-item-checkbox'>https://github.com/mhollweck/react-native-item-checkbox</a></p>
-
-<p>I've opened an issue to attempt to merge this back in </p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="imports">
-  <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
-  </h2>
-</div>
-
-  </div>
-  <div class="body"><p>React</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span>
-<span class="p">{</span>
-  <span class="nx">View</span><span class="p">,</span>
-  <span class="nx">Text</span><span class="p">,</span>
-  <span class="nx">TouchableHighlight</span><span class="p">,</span>
-  <span class="nx">TouchableWithoutFeedback</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
+    
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="itemcheckbox.js">
+  <h1>
+    <a href="#itemcheckbox.js" name="itemcheckbox.js" class="pilcrow"></a>
+ItemCheckbox.js
+  </h1>
 </div>
-<div class="dox">
-  <div class="summary"><p>The vector icon</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+<p>This class was initially written by
+https://github.com/mhollweck/react-native-item-checkbox</p>
+<p>I've opened an issue to attempt to merge this back in</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">Icon</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-vector-icons/FontAwesome&#39;</span><span class="p">);</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-
-
-<span class="kd">var</span> <span class="nx">ItemCheckbox</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="itemcheckbox%20class">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="imports">
   <h2>
-    <a href="#itemcheckbox%20class" name="itemcheckbox%20class" class="pilcrow">&#182;</a>
-    ItemCheckbox class
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>set the propTypes</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">onCheck</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span>
-    <span class="nx">onUncheck</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span>
-    <span class="nx">icon_check</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
-    <span class="nx">icon_open</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
-    <span class="nx">size</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">,</span>
-    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
-    <span class="nx">color</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
-    <span class="nx">iconSize</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
-    <span class="nx">checked</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
-    <span class="nx">style</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span>
-    <span class="nx">text</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">,</span>
-    <span class="nx">disabled</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span>
-  <span class="p">},</span>
+<div class="body">
+<p>React</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> React, {PropTypes} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span>
+{
+  View,
+  Text,
+  TouchableHighlight,
+  TouchableWithoutFeedback
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
+
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>The vector icon</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> Icon = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-native-vector-icons/FontAwesome'</span>);
+
+
+
+<span class="hljs-keyword">var</span> ItemCheckbox = React.createClass({
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="itemcheckbox-class">
+  <h2>
+    <a href="#itemcheckbox-class" name="itemcheckbox-class" class="pilcrow"></a>
+ItemCheckbox class
+  </h2>
+</div>
+</div>
+<div class="body">
+<p>set the propTypes</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  propTypes: {
+    onCheck: PropTypes.func,
+    onUncheck: PropTypes.func,
+    icon_check: PropTypes.string,
+    icon_open: PropTypes.string,
+    size: PropTypes.number,
+    backgroundColor: PropTypes.string,
+    color: PropTypes.string,
+    iconSize: PropTypes.string,
+    checked: PropTypes.bool,
+    style: PropTypes.func,
+    text: PropTypes.string,
+    disabled: PropTypes.bool
+  },
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="getdefaultprops">
   <h3>
-    <a href="#getdefaultprops" name="getdefaultprops" class="pilcrow">&#182;</a>
-    getDefaultProps
+    <a href="#getdefaultprops" name="getdefaultprops" class="pilcrow"></a>
+getDefaultProps
   </h3>
 </div>
-
-
 <p>set the default values</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">getDefaultProps</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">onCheck</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="nx">onUncheck</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="nx">icon_check</span><span class="o">:</span> <span class="s2">&quot;check-square&quot;</span><span class="p">,</span>
-      <span class="nx">icon_open</span><span class="o">:</span> <span class="s2">&quot;square-o&quot;</span><span class="p">,</span>
-      <span class="nx">size</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
-      <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;white&#39;</span><span class="p">,</span>
-      <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;grey&#39;</span><span class="p">,</span>
-      <span class="nx">iconSize</span><span class="o">:</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span>
-      <span class="nx">checked</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;MISSING TEXT&#39;</span><span class="p">,</span>
-      <span class="nx">disabled</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">};</span>
-  <span class="p">},</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  getDefaultProps: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> {
+      onCheck: <span class="hljs-literal">null</span>,
+      onUncheck: <span class="hljs-literal">null</span>,
+      icon_check: <span class="hljs-string">"check-square"</span>,
+      icon_open: <span class="hljs-string">"square-o"</span>,
+      size: <span class="hljs-number">30</span>,
+      backgroundColor: <span class="hljs-string">'white'</span>,
+      color: <span class="hljs-string">'grey'</span>,
+      iconSize: <span class="hljs-string">'normal'</span>,
+      checked: <span class="hljs-literal">false</span>,
+      text: <span class="hljs-string">'MISSING TEXT'</span>,
+      disabled: <span class="hljs-literal">false</span>
+    };
+  },
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="getinitialstate">
   <h3>
-    <a href="#getinitialstate" name="getinitialstate" class="pilcrow">&#182;</a>
-    getInitialState
+    <a href="#getinitialstate" name="getinitialstate" class="pilcrow"></a>
+getInitialState
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>Set the box to be checked or not</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">checked</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span><span class="p">,</span>
-      <span class="nx">bg_color</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">backgroundColor</span>
-    <span class="p">};</span>
-  <span class="p">},</span>
+<div class="body">
+<p>Set the box to be checked or not</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  getInitialState: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> {
+      checked: <span class="hljs-keyword">this</span>.props.checked,
+      bg_color: <span class="hljs-keyword">this</span>.props.backgroundColor
+    };
+  },
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="_getcirclechecksytel">
   <h3>
-    <a href="#_getcirclechecksytel" name="_getcirclechecksytel" class="pilcrow">&#182;</a>
-    _getCircleCheckSytel
+    <a href="#_getcirclechecksytel" name="_getcirclechecksytel" class="pilcrow"></a>
+_getCircleCheckSytel
   </h3>
 </div>
-
-
 <p>merge the props styles w/ some defaults</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">_getCircleCheckStyle</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">width</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">size</span><span class="p">,</span>
-      <span class="nx">height</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">size</span><span class="p">,</span>
-      <span class="nx">backgroundColor</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">bg_color</span><span class="p">,</span>
-      <span class="nx">borderColor</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span><span class="p">,</span>
-      <span class="nx">borderWidth</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="nx">borderRadius</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">size</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
-      <span class="nx">justifyContent</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
-      <span class="nx">alignItems</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
-      <span class="nx">padding</span><span class="o">:</span> <span class="mi">2</span>
-    <span class="p">};</span>
-  <span class="p">},</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  _getCircleCheckStyle: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> {
+      width: <span class="hljs-keyword">this</span>.props.size,
+      height: <span class="hljs-keyword">this</span>.props.size,
+      backgroundColor: <span class="hljs-keyword">this</span>.state.bg_color,
+      borderColor: <span class="hljs-keyword">this</span>.props.color,
+      borderWidth: <span class="hljs-number">2</span>,
+      borderRadius: <span class="hljs-keyword">this</span>.props.size/<span class="hljs-number">2</span>,
+      justifyContent: <span class="hljs-string">'center'</span>,
+      alignItems: <span class="hljs-string">'center'</span>,
+      padding: <span class="hljs-number">2</span>
+    };
+  },
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="_completeprogress">
   <h3>
-    <a href="#_completeprogress" name="_completeprogress" class="pilcrow">&#182;</a>
-    _completeProgress
+    <a href="#_completeprogress" name="_completeprogress" class="pilcrow"></a>
+_completeProgress
   </h3>
 </div>
-
-
 <p>If the checkbox is pressable, figure out what state it's in and
 what the display should look like</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">_completeProgress</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
-        <span class="nx">checked</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nx">bg_color</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">backgroundColor</span>
-      <span class="p">});</span>
-      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onUncheck</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onUncheck</span><span class="p">();</span>
-      <span class="p">}</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
-        <span class="nx">checked</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nx">bg_color</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">color</span>
-      <span class="p">});</span>
-      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onCheck</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onCheck</span><span class="p">();</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  _completeProgress: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state.checked) {
+      <span class="hljs-keyword">this</span>.setState({
+        checked: <span class="hljs-literal">false</span>,
+        bg_color: <span class="hljs-keyword">this</span>.props.backgroundColor
+      });
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.onUncheck) {
+        <span class="hljs-keyword">this</span>.props.onUncheck();
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">this</span>.setState({
+        checked: <span class="hljs-literal">true</span>,
+        bg_color: <span class="hljs-keyword">this</span>.props.color
+      });
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.onCheck) {
+        <span class="hljs-keyword">this</span>.props.onCheck();
+      }
+    }
+  },
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="componentdidmount">
   <h3>
-    <a href="#componentdidmount" name="componentdidmount" class="pilcrow">&#182;</a>
-    componentDidMount
+    <a href="#componentdidmount" name="componentdidmount" class="pilcrow"></a>
+componentDidMount
   </h3>
 </div>
-
-
 <p>If there is a <code>checked</code> property, set the UI appropriately</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">componentDidMount</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">_completeProgress</span><span class="p">();</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  componentDidMount: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.checked) {
+      <span class="hljs-keyword">this</span>._completeProgress();
+    }
+  },
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="render">
   <h3>
-    <a href="#render" name="render" class="pilcrow">&#182;</a>
-    render
+    <a href="#render" name="render" class="pilcrow"></a>
+render
   </h3>
 </div>
-
-
 <p>Use Touchable with or without Feedback depending on
 <code>disabled</code>.
 Set the <code>iconName</code> depending on if checked</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">iconName</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon_open</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">checked</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">iconName</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon_check</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">disabled</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">iconName</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">checked</span> <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon_check</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">icon_open</span><span class="p">;</span>
-      <span class="k">return</span> <span class="p">(</span>
-        <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">style</span><span class="p">}</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">TouchableWithoutFeedback</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span>
-                <span class="nx">flexDirection</span><span class="o">:</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span>
-                <span class="nx">flex</span><span class="o">:</span><span class="mi">1</span>
-              <span class="p">}}</span><span class="o">&gt;</span>
-              <span class="o">&lt;</span><span class="nx">Icon</span>
-                  <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="nx">iconName</span><span class="p">}</span>
-                  <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">20</span><span class="p">}</span>
-              <span class="o">/&gt;</span>
-              <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
-            <span class="o">&lt;</span><span class="err">/View&gt;</span>
-          <span class="o">&lt;</span><span class="err">/TouchableWithoutFeedback&gt;</span>
-        <span class="o">&lt;</span><span class="err">/View&gt;</span>
-        <span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">return</span><span class="p">(</span>
-          <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">style</span><span class="p">}</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="nx">TouchableHighlight</span>
-                <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_completeProgress</span><span class="p">}</span>
-            <span class="o">&gt;</span>
-              <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span>
-                  <span class="nx">flexDirection</span><span class="o">:</span> <span class="s1">&#39;row&#39;</span><span class="p">,</span>
-                  <span class="nx">flex</span><span class="o">:</span><span class="mi">1</span>
-                <span class="p">}}</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">Icon</span>
-                    <span class="nx">name</span><span class="o">=</span><span class="p">{</span><span class="nx">iconName</span><span class="p">}</span>
-                    <span class="nx">size</span><span class="o">=</span><span class="p">{</span><span class="mi">20</span><span class="p">}</span>
-                <span class="o">/&gt;</span>
-                <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
-              <span class="o">&lt;</span><span class="err">/View&gt;</span>
-            <span class="o">&lt;</span><span class="err">/TouchableHighlight&gt;</span>
-          <span class="o">&lt;</span><span class="err">/View&gt;</span>
-        <span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
+<div class="body">
+</div>
+</div>
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">ItemCheckbox</span><span class="p">;</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  render: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> iconName=<span class="hljs-keyword">this</span>.props.icon_open;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.state.checked) {
+      iconName=<span class="hljs-keyword">this</span>.props.icon_check;
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.disabled) {
+      iconName = <span class="hljs-keyword">this</span>.props.checked ? <span class="hljs-keyword">this</span>.props.icon_check : <span class="hljs-keyword">this</span>.props.icon_open;
+      <span class="hljs-keyword">return</span> (
+        &lt;View style={this.props.style}&gt;
+          &lt;TouchableWithoutFeedback&gt;
+            &lt;View style={{
+                flexDirection: 'row',
+                flex:1
+              }}&gt;
+              &lt;Icon
+                  name={iconName}
+                  size={20}
+              /&gt;
+              &lt;Text&gt; {this.props.text}&lt;/Text&gt;
+            &lt;/View&gt;
+          &lt;/TouchableWithoutFeedback&gt;
+        &lt;/View&gt;
+        );
+      } else {
+        return(
+          &lt;View style={this.props.style}&gt;
+            &lt;TouchableHighlight
+                onPress={this._completeProgress}
+            &gt;
+              &lt;View style={{
+                  flexDirection: 'row',
+                  flex:1
+                }}&gt;
+                &lt;Icon
+                    name={iconName}
+                    size={20}
+                /&gt;
+                &lt;Text&gt; {this.props.text}&lt;/Text&gt;
+              &lt;/View&gt;
+            &lt;/TouchableHighlight&gt;
+          &lt;/View&gt;
+        );
+      }
+    }
+  });
+
+module.exports = ItemCheckbox;
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

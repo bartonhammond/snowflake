@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/device/deviceInitialState.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/device/deviceInitialState.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,95 +21,111 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#deviceinitialstate.js">deviceInitialState.js</a>
       </div>
+
       <div class="heading h2">
-        <a href="#import%20immutable%20record">Import immutable record</a>
+        <a href="#import-immutable-record">Import immutable record</a>
       </div>
+
       <div class="heading h2">
         <a href="#initialstate">InitialState</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="deviceinitialstate.js">
   <h1>
-    <a href="#deviceinitialstate.js" name="deviceinitialstate.js" class="pilcrow">&#182;</a>
-    deviceInitialState.js
+    <a href="#deviceinitialstate.js" name="deviceinitialstate.js" class="pilcrow"></a>
+deviceInitialState.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This class is a Immutable object
+</div>
+<div class="body">
+<p>This class is a Immutable object
 Working <em>successfully</em> with Redux, requires
 state that is immutable.
 In my opinion, that can not be by convention
 By using Immutable, it's enforced.  Just saying....</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="import%20immutable%20record">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="import-immutable-record">
   <h2>
-    <a href="#import%20immutable%20record" name="import%20immutable%20record" class="pilcrow">&#182;</a>
-    Import immutable record
+    <a href="#import-immutable-record" name="import-immutable-record" class="pilcrow"></a>
+Import immutable record
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span><span class="nx">Record</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;immutable&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {Record} <span class="hljs-keyword">from</span> <span class="hljs-string">'immutable'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="initialstate">
   <h2>
-    <a href="#initialstate" name="initialstate" class="pilcrow">&#182;</a>
-    InitialState
+    <a href="#initialstate" name="initialstate" class="pilcrow"></a>
+InitialState
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>The fields we're concerned with</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">InitialState</span> <span class="o">=</span> <span class="nx">Record</span><span class="p">({</span>
-  <span class="nx">isMobile</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="nx">platform</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-  <span class="nx">version</span><span class="o">:</span> <span class="kc">null</span>
-<span class="p">});</span>
+<div class="body">
+<p>The fields we're concerned with</p>
+</div>
+</div>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">InitialState</span><span class="p">;</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> InitialState = Record({
+  isMobile: <span class="hljs-literal">false</span>,
+  platform: <span class="hljs-string">''</span>,
+  version: <span class="hljs-literal">null</span>
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> InitialState;
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

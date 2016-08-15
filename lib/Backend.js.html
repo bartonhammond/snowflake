@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//lib/Backend.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/lib/Backend.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,367 +21,358 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#backend.js">Backend.js</a>
       </div>
+
       <div class="heading h2">
-        <a href="#async%20support">Async support</a>
+        <a href="#async-support">Async support</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
-        <a href="#constructor">Constructor</a>
+        <a href="#constructor-1">Constructor</a>
       </div>
+
       <div class="heading h3">
         <a href="#signup">signup</a>
       </div>
+
       <div class="heading h3">
         <a href="#login">login</a>
       </div>
+
       <div class="heading h3">
         <a href="#logout">logout</a>
       </div>
+
       <div class="heading h3">
         <a href="#resetpassword">resetPassword</a>
       </div>
+
       <div class="heading h3">
         <a href="#getprofile">getProfile</a>
       </div>
+
       <div class="heading h3">
         <a href="#updateprofile">updateProfile</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="backend.js">
   <h1>
-    <a href="#backend.js" name="backend.js" class="pilcrow">&#182;</a>
-    Backend.js
+    <a href="#backend.js" name="backend.js" class="pilcrow"></a>
+Backend.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>Abstract Base class for Backend support</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<div class="body">
+<p>Abstract Base class for Backend support</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="async%20support">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="async-support">
   <h2>
-    <a href="#async%20support" name="async%20support" class="pilcrow">&#182;</a>
-    Async support
+    <a href="#async-support" name="async-support" class="pilcrow"></a>
+Async support
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">require</span><span class="p">(</span><span class="s1">&#39;regenerator/runtime&#39;</span><span class="p">);</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-built_in">require</span>(<span class="hljs-string">'regenerator/runtime'</span>);
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>Config for defaults and underscore for a couple of features</p>
-  </div>
 </div>
+<div class="body">
+<p>Config for defaults and underscore for a couple of features</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">CONFIG</span> <span class="nx">from</span> <span class="s1">&#39;./config&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">_</span> <span class="nx">from</span> <span class="s1">&#39;underscore&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> CONFIG <span class="hljs-keyword">from</span> <span class="hljs-string">'./config'</span>;
+<span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">'underscore'</span>;
 
-<span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">Backend</span> <span class="p">{</span>
-
-</pre></div>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Backend</span> </span>{
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="constructor_NaN">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="constructor-1">
   <h2>
-    <a href="#constructor_NaN" name="constructor_NaN" class="pilcrow">&#182;</a>
-    Constructor
+    <a href="#constructor-1" name="constructor-1" class="pilcrow"></a>
+Constructor
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">throws</div>
-    <div class="dox_tag_detail">
-      <span>tokenMissing if token is undefined</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">constructor</span><span class="p">(</span> <span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
-  <span class="p">}</span>
+<div class="body">
+</div>
+<div class="details">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">constructor</span>( token) {
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="signup">
   <h3>
-    <a href="#signup" name="signup" class="pilcrow">&#182;</a>
-    signup
+    <a href="#signup" name="signup" class="pilcrow"></a>
+signup
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">data</span>
-      <span>object
-
-{username: "barton", email: "<a href='mailto:<a href='mailto:foo@gmail.com'>foo@gmail.com</a>'><a href='mailto:foo@gmail.com'>foo@gmail.com</a></a>", password: "Passw0rd!"}</span>
-    </div>
-    <div class="dox_tag_title">return
-if</div>
-    <div class="dox_tag_detail">
-      <span>ok, {createdAt: "2015-12-30T15:17:05.379Z",
-  objectId: "5TgExo2wBA", 
-  sessionToken: "r:dEgdUkcs2ydMV9Y9mt8HcBrDM"}
-
-if error, {code: xxx, error: 'message'}</span>
-    </div>
-  </div>
 </div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">data</span>
+<span>object
+{username: &quot;barton&quot;, email: &quot;foo@gmail.com&quot;, password: &quot;Passw0rd!&quot;}
+</span>
+</div>
+<div class="dox_tag_title">Returns</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name"></span>
+<span>if ok, {createdAt: &quot;2015-12-30T15:17:05.379Z&quot;,
+objectId: &quot;5TgExo2wBA&quot;,
+sessionToken: &quot;r:dEgdUkcs2ydMV9Y9mt8HcBrDM&quot;}
+if error, {code: xxx, error: 'message'}
+</span>
+</div>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">signup</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> signup(data) {
 
-  <span class="p">}</span>
-
-</pre></div>
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="login">
   <h3>
-    <a href="#login" name="login" class="pilcrow">&#182;</a>
-    login
+    <a href="#login" name="login" class="pilcrow"></a>
+login
   </h3>
 </div>
-
-
 <p>encode the data and and call _fetch</p>
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">data
-
-</span>
-      <span>{username: "barton", password: "Passw0rd!"}</span>
-    </div>
-    <div class="dox_tag_title">returns
-
-createdAt:</div>
-    <div class="dox_tag_detail">
-      <span>"2015-12-30T15:29:36.611Z"
-email: "<a href='mailto:<a href='mailto:barton@foo.com'>barton@foo.com</a>'><a href='mailto:barton@foo.com'>barton@foo.com</a></a>"
-objectId: "Z4yvP19OeL"
-sessionToken: "r:Kt9wXIBWD0dNijNIq2u5rRllW"
-updatedAt: "2015-12-30T16:08:50.419Z"
-username: "barton"</span>
-    </div>
-  </div>
 </div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">data</span>
+<span>{username: &quot;barton&quot;, password: &quot;Passw0rd!&quot;}
+</span>
+</div>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">login</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> login(data) {
 
-  <span class="p">}</span>
-
-</pre></div>
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="logout">
   <h3>
-    <a href="#logout" name="logout" class="pilcrow">&#182;</a>
-    logout
+    <a href="#logout" name="logout" class="pilcrow"></a>
+logout
   </h3>
 </div>
-
-
 <p>prepare the request and call _fetch</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">logout</span><span class="p">()</span> <span class="p">{</span>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> logout() {
 
-  <span class="p">}</span>
-
-</pre></div>
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="resetpassword">
   <h3>
-    <a href="#resetpassword" name="resetpassword" class="pilcrow">&#182;</a>
-    resetPassword
+    <a href="#resetpassword" name="resetpassword" class="pilcrow"></a>
+resetPassword
   </h3>
 </div>
-
-
 <p>the data is already in a JSON format, so call _fetch</p>
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">data</span>
-      <span>{email: "<a href='mailto:<a href='mailto:barton@foo.com'>barton@foo.com</a>'><a href='mailto:barton@foo.com'>barton@foo.com</a></a>"}</span>
-    </div>
-    <div class="dox_tag_title">Returns</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name"></span>
-      <span>empty object
-
-if error:  {code: xxx, error: 'message'}</span>
-    </div>
-  </div>
 </div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">data</span>
+<span>{email: &quot;barton@foo.com&quot;}
+</span>
+</div>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">resetPassword</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> resetPassword(data) {
 
-  <span class="p">}</span>  
-
-</pre></div>
+  }  
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="getprofile">
   <h3>
-    <a href="#getprofile" name="getprofile" class="pilcrow">&#182;</a>
-    getProfile
+    <a href="#getprofile" name="getprofile" class="pilcrow"></a>
+getProfile
   </h3>
 </div>
-
-
 <p>Using the sessionToken, we'll get everything about
 the current user.</p>
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">returns
-
-if</div>
-    <div class="dox_tag_detail">
-      <span>good:
-{createdAt: "2015-12-30T15:29:36.611Z"
- email: "<a href='mailto:<a href='mailto:barton@acclivyx.com'>barton@acclivyx.com</a>'><a href='mailto:barton@acclivyx.com'>barton@acclivyx.com</a></a>"
- objectId: "Z4yvP19OeL"
- sessionToken: "r:uFeYONgIsZMPyxOWVJ6VqJGqv"
- updatedAt: "2015-12-30T15:29:36.611Z"
- username: "barton"}
-
-if error, {code: xxx, error: 'message'}</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">getProfile</span><span class="p">()</span> <span class="p">{</span>
-  <span class="p">}</span>
+<div class="body">
+</div>
+<div class="details">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> getProfile() {
+  }
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="updateprofile">
   <h3>
-    <a href="#updateprofile" name="updateprofile" class="pilcrow">&#182;</a>
-    updateProfile
+    <a href="#updateprofile" name="updateprofile" class="pilcrow"></a>
+updateProfile
   </h3>
 </div>
-
-
 <p>for this user, update their record
 the data is already in JSON format</p>
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">userId</span>
-      <span>_id of Parse.com</span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">data</span>
-      <span>object:
-{username: "barton", email: "<a href='mailto:<a href='mailto:barton@foo.com'>barton@foo.com</a>'><a href='mailto:barton@foo.com'>barton@foo.com</a></a>"}</span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">async</span> <span class="nx">updateProfile</span><span class="p">(</span><span class="nx">userId</span><span class="p">,</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="p">}</span>  
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">userId</span>
+<span>_id of Parse.com
+</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">data</span>
+<span>object: {username: &quot;barton&quot;, email: &quot;barton@foo.com&quot;}
+</span>
+</div>
+</div>
+</div>
 
-<span class="p">};</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  <span class="hljs-keyword">async</span> updateProfile(userId,data) {
+  }  
+
+};
+
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

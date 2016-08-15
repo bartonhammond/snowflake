@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/Header.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/components/Header.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,230 +21,248 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#header.js">Header.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
         <a href="#styles">Styles</a>
       </div>
+
       <div class="heading h3">
         <a href="#translations">Translations</a>
       </div>
+
       <div class="heading h2">
         <a href="#header.class">Header.class</a>
       </div>
+
       <div class="heading h3">
         <a href="#proptypes">propTypes</a>
       </div>
+
       <div class="heading h3">
         <a href="#_onpressmark">_onPressMark</a>
       </div>
+
       <div class="heading h3">
         <a href="#_onchangetext">_onChangeText</a>
       </div>
+
       <div class="heading h3">
         <a href="#_updatestatebuttonpress">_updateStateButtonPress</a>
       </div>
+
       <div class="heading h3">
         <a href="#render">render</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="header.js">
-  <h1>
-    <a href="#header.js" name="header.js" class="pilcrow">&#182;</a>
-    Header.js
-  </h1>
-</div>
-
-  </div>
-  <div class="body"><p>This component initially displays a image. But when clicked, things
-get interesting. </p>
-
-<p>On the initial display after being clicked, the
-textinput will display the current <code>state</code> of the application.</p>
-
-<p>The button will be enabled and if clicked, whatever state is now
-contained in the textinput will be processed and the application
-will be restored to that state. </p>
-
-<p>By pasting in a previous state, the application will reset to that
-state  </p>
-
-<p>When the mark image is clicked, it is just toggled to display or hide.</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="imports">
-  <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
-  </h2>
-</div>
-
-  </div>
-  <div class="body"><p>React</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span>
-<span class="p">{</span>
-  <span class="nx">ActivityIndicator</span><span class="p">,</span>
-  <span class="nx">Image</span><span class="p">,</span>
-  <span class="nx">StyleSheet</span><span class="p">,</span>
-  <span class="nx">Text</span><span class="p">,</span>
-  <span class="nx">TextInput</span><span class="p">,</span>
-  <span class="nx">TouchableHighlight</span><span class="p">,</span>
-  <span class="nx">View</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
+    
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="header.js">
+  <h1>
+    <a href="#header.js" name="header.js" class="pilcrow"></a>
+Header.js
+  </h1>
+</div>
+</div>
+<div class="body">
+<p>This component initially displays a image. But when clicked, things
+get interesting.</p>
+<p>On the initial display after being clicked, the
+textinput will display the current <code>state</code> of the application.</p>
+<p>The button will be enabled and if clicked, whatever state is now
+contained in the textinput will be processed and the application
+will be restored to that state.</p>
+<p>By pasting in a previous state, the application will reset to that
+state</p>
+<p>When the mark image is clicked, it is just toggled to display or hide.</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
+  </h2>
+</div>
+</div>
+<div class="body">
+<p>React</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> React, {PropTypes} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span>
+{
+  ActivityIndicator,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableHighlight,
+  View
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Project component that will respond to onPress</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>Project component that will respond to onPress</p>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">FormButton</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./FormButton&#39;</span><span class="p">);</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> FormButton = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./FormButton'</span>);
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="styles">
   <h2>
-    <a href="#styles" name="styles" class="pilcrow">&#182;</a>
-    Styles
+    <a href="#styles" name="styles" class="pilcrow"></a>
+Styles
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="nx">container</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">flexDirection</span><span class="o">:</span> <span class="s1">&#39;column&#39;</span><span class="p">,</span>
-    <span class="nx">flex</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">10</span>
-  <span class="p">},</span>
-  <span class="nx">header</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
-    <span class="nx">justifyContent</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
-    <span class="nx">alignItems</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
-    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;transparent&#39;</span>
-  <span class="p">},</span>
-  <span class="nx">mark</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">height</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span>
-    <span class="nx">width</span><span class="o">:</span> <span class="mi">100</span>
-  <span class="p">}</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> styles = StyleSheet.create({
+  container: {
+    flexDirection: <span class="hljs-string">'column'</span>,
+    flex: <span class="hljs-number">1</span>,
+    marginTop: <span class="hljs-number">10</span>
+  },
+  header: {
+    marginTop: <span class="hljs-number">20</span>,
+    justifyContent: <span class="hljs-string">'center'</span>,
+    alignItems: <span class="hljs-string">'center'</span>,
+    backgroundColor: <span class="hljs-string">'transparent'</span>
+  },
+  mark: {
+    height:<span class="hljs-number">100</span>,
+    width: <span class="hljs-number">100</span>
+  }
   
 
-<span class="p">});</span>
+});
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="translations">
   <h3>
-    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
-    Translations
+    <a href="#translations" name="translations" class="pilcrow"></a>
+Translations
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
-<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
-<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> I18n = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-native-i18n'</span>);
+<span class="hljs-keyword">import</span> Translations <span class="hljs-keyword">from</span> <span class="hljs-string">'../lib/Translations'</span>;
+I18n.translations = Translations;
 
-<span class="kd">var</span> <span class="nx">Header</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-
-</pre></div>
+<span class="hljs-keyword">var</span> Header = React.createClass({
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="header.class">
   <h2>
-    <a href="#header.class" name="header.class" class="pilcrow">&#182;</a>
-    Header.class
+    <a href="#header.class" name="header.class" class="pilcrow"></a>
+Header.class
   </h2>
 </div>
-
-
 <p>set the initial state of having the button be disabled.</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">getInitialState</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="nx">text</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-      <span class="nx">isDisabled</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">};</span>
-  <span class="p">},</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  getInitialState() {
+    <span class="hljs-keyword">return</span> {
+      text: <span class="hljs-string">''</span>,
+      isDisabled: <span class="hljs-literal">true</span>
+    };
+  },
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="proptypes">
   <h3>
-    <a href="#proptypes" name="proptypes" class="pilcrow">&#182;</a>
-    propTypes
+    <a href="#proptypes" name="proptypes" class="pilcrow"></a>
+propTypes
   </h3>
 </div>
-
-
 <ul>
 <li>isFetching: display the spinner if true</li>
 <li>showState: should the JSON state, currentState, be displayed</li>
@@ -249,187 +270,191 @@ state  </p>
 <li>onGetState: the action to call to get the current state</li>
 <li>onSetState: the action to call to set the state</li>
 </ul>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">isFetching</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
-    <span class="nx">showState</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">bool</span><span class="p">,</span>
-    <span class="nx">currentState</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">object</span><span class="p">,</span>
-    <span class="nx">onGetState</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">,</span>
-    <span class="nx">onSetState</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span>
-  <span class="p">},</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  propTypes: {
+    isFetching: PropTypes.bool,
+    showState: PropTypes.bool,
+    currentState: PropTypes.object,
+    onGetState: PropTypes.func,
+    onSetState: PropTypes.func
+  },
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="_onpressmark">
   <h3>
-    <a href="#_onpressmark" name="_onpressmark" class="pilcrow">&#182;</a>
-    _onPressMark
+    <a href="#_onpressmark" name="_onpressmark" class="pilcrow"></a>
+_onPressMark
   </h3>
 </div>
-
-
 <p>Call the onGetState action passing the state prop</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">_onPressMark</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onGetState</span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">showState</span><span class="p">);</span>
-  <span class="p">},</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  _onPressMark() {
+    <span class="hljs-keyword">this</span>.props.onGetState(!<span class="hljs-keyword">this</span>.props.showState);
+  },
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="_onchangetext">
   <h3>
-    <a href="#_onchangetext" name="_onchangetext" class="pilcrow">&#182;</a>
-    _onChangeText
+    <a href="#_onchangetext" name="_onchangetext" class="pilcrow"></a>
+_onChangeText
   </h3>
 </div>
-
-
 <p>when the textinput value changes, set the state for that component</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">_onChangeText</span><span class="p">(</span><span class="nx">text</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
-      <span class="nx">text</span><span class="p">,</span>
-      <span class="nx">isDisabled</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">});</span>
-  <span class="p">},</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  _onChangeText(text) {
+    <span class="hljs-keyword">this</span>.setState({
+      text,
+      isDisabled: <span class="hljs-literal">false</span>
+    });
+  },
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="_updatestatebuttonpress">
   <h3>
-    <a href="#_updatestatebuttonpress" name="_updatestatebuttonpress" class="pilcrow">&#182;</a>
-    _updateStateButtonPress
+    <a href="#_updatestatebuttonpress" name="_updatestatebuttonpress" class="pilcrow"></a>
+_updateStateButtonPress
   </h3>
 </div>
-
-
 <p>When the button for the state is pressed, call <code>onSetState</code></p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">_updateStateButtonPress</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onSetState</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span>
-  <span class="p">},</span>
+        <td class="code highlight">
+          <pre class="javascript">  _updateStateButtonPress() {
+    <span class="hljs-keyword">this</span>.props.onSetState(<span class="hljs-keyword">this</span>.state.text);
+  },
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="render">
   <h3>
-    <a href="#render" name="render" class="pilcrow">&#182;</a>
-    render
+    <a href="#render" name="render" class="pilcrow"></a>
+render
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>if showState, stringify the currentState and display it to the
+</div>
+<div class="body">
+<p>if showState, stringify the currentState and display it to the
 browser for copying. Then display to the user.</p>
-
 <p>When the value of the input changes, call <code>_onChangeText</code></p>
-
-<p>When the 'Update State' button is pressed, we're off to the 
+<p>When the 'Update State' button is pressed, we're off to the
 races with Hot Loading...just call the
 <code>_updateStateButtonPress</code> and away we go...</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">displayText</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">showState</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">displayText</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">currentState</span><span class="p">);</span>
-      
-     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">displayText</span><span class="p">);</span>
+</div>
 
-    <span class="p">}</span>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  render() {
+    <span class="hljs-keyword">let</span> displayText;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.props.showState) {
+      displayText = <span class="hljs-built_in">JSON</span>.stringify(<span class="hljs-keyword">this</span>.props.currentState);
+      
+     <span class="hljs-built_in">console</span>.log(displayText);
+
+    }
     
 
 
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">View</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">header</span><span class="p">}</span><span class="o">&gt;</span>
+    <span class="hljs-keyword">return</span> (
+      &lt;View&gt;
+        &lt;View style={styles.header}&gt;
 
-          <span class="o">&lt;</span><span class="nx">TouchableHighlight</span> <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_onPressMark</span><span class="p">}</span><span class="o">&gt;</span>
+          &lt;TouchableHighlight onPress={this._onPressMark}&gt;
 
-            <span class="o">&lt;</span><span class="nx">Image</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">mark</span><span class="p">}</span>
-                   <span class="nx">source</span><span class="o">=</span><span class="p">{</span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../images/Snowflake.png&#39;</span><span class="p">)}</span>
-            <span class="o">/&gt;</span>
-          <span class="o">&lt;</span><span class="err">/TouchableHighlight&gt;</span>
-          <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">isFetching</span> <span class="o">?</span>
-           <span class="o">&lt;</span><span class="nx">ActivityIndicator</span>    <span class="nx">animating</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>      <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;large&quot;</span>   <span class="o">/&gt;</span>
-           <span class="o">:</span>
-           <span class="kc">null</span>
-          <span class="p">}</span>
+            &lt;Image style={styles.mark}
+                   source={require('../images/Snowflake.png')}
+            /&gt;
+          &lt;/TouchableHighlight&gt;
+          {this.props.isFetching ?
+           &lt;ActivityIndicator    animating={true}      size="large"   /&gt;
+           :
+           null
+          }
 
 
-        <span class="o">&lt;</span><span class="err">/View&gt;</span>
-        <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">showState</span> <span class="o">?</span>
-         <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
-           <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Header.current_state&quot;</span><span class="p">)}</span> <span class="p">({</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Header.see_console&quot;</span><span class="p">)})</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
-           <span class="o">&lt;</span><span class="nx">TextInput</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="nx">height</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span> <span class="nx">borderColor</span><span class="o">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="nx">borderWidth</span><span class="o">:</span> <span class="mi">1</span><span class="p">}}</span>
-                      <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">displayText</span><span class="p">}</span>
-                      <span class="nx">editable</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                      <span class="nx">multiline</span><span class="o">=</span><span class="p">{</span><span class="kc">true</span><span class="p">}</span>
-                      <span class="nx">onChangeText</span><span class="o">=</span><span class="p">{(</span><span class="nx">text</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">_onChangeText</span><span class="p">(</span><span class="nx">text</span><span class="p">)}</span>
-                      <span class="nx">numberOfLines</span><span class="o">=</span><span class="p">{</span><span class="mi">20</span><span class="p">}</span><span class="o">&gt;</span>
-           <span class="o">&lt;</span><span class="err">/TextInput&gt;</span>
-           <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{{</span>
-               <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">10</span>
-             <span class="p">}}</span><span class="o">&gt;</span>
-             <span class="o">&lt;</span><span class="nx">FormButton</span>  <span class="nx">isDisabled</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">isDisabled</span><span class="p">}</span>
-                          <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">_updateStateButtonPress</span><span class="p">}</span>
-                          <span class="nx">buttonText</span><span class="o">=</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s1">&#39;Header.update_state&#39;</span><span class="p">)}</span><span class="o">&gt;</span>
-             <span class="o">&lt;</span><span class="err">/FormButton&gt;</span>
+        &lt;/View&gt;
+        {this.props.showState ?
+         &lt;View style={styles.container}&gt;
+           &lt;Text&gt;{I18n.t("Header.current_state")} ({I18n.t("Header.see_console")})&lt;/Text&gt;
+           &lt;TextInput style={{height: 100, borderColor: 'gray', borderWidth: 1}}
+                      value={displayText}
+                      editable={true}
+                      multiline={true}
+                      onChangeText={(text) =&gt; this._onChangeText(text)}
+                      numberOfLines={20}&gt;
+           &lt;/TextInput&gt;
+           &lt;View style={{
+               marginTop: 10
+             }}&gt;
+             &lt;FormButton  isDisabled={this.state.isDisabled}
+                          onPress={this._updateStateButtonPress}
+                          buttonText={I18n.t('Header.update_state')}&gt;
+             &lt;/FormButton&gt;
              
-           <span class="o">&lt;</span><span class="err">/View&gt;</span>
-         <span class="o">&lt;</span><span class="err">/View&gt;</span>
-         <span class="o">:</span>
-         <span class="kc">null</span><span class="p">}</span>
-      <span class="o">&lt;</span><span class="err">/View&gt;</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
+           &lt;/View&gt;
+         &lt;/View&gt;
+         :
+         null}
+      &lt;/View&gt;
+    );
+  }
+});
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Header</span><span class="p">;</span>
-</pre></div>
+module.exports = Header;
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

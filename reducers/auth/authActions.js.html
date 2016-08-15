@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/auth/authActions.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/auth/authActions.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,866 +21,911 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#authactions.js">authActions.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
-        <a href="#state%20actions">State actions</a>
+        <a href="#state-actions">State actions</a>
       </div>
+
       <div class="heading h2">
-        <a href="#logout%20actions">Logout actions</a>
+        <a href="#logout-actions">Logout actions</a>
       </div>
+
       <div class="heading h2">
         <a href="#login">Login</a>
       </div>
+
       <div class="heading h2">
         <a href="#onauthformfieldchange">onAuthFormFieldChange</a>
       </div>
+
       <div class="heading h2">
-        <a href="#signup%20actions">Signup actions</a>
+        <a href="#signup-actions">Signup actions</a>
       </div>
+
       <div class="heading h2">
-        <a href="#sessiontoken%20actions">SessionToken actions</a>
+        <a href="#sessiontoken-actions">SessionToken actions</a>
       </div>
+
       <div class="heading h2">
-        <a href="#deletetoken%20actions">DeleteToken actions</a>
+        <a href="#deletetoken-actions">DeleteToken actions</a>
       </div>
+
       <div class="heading h2">
-        <a href="#delete%20session%20token">Delete session token</a>
+        <a href="#delete-session-token">Delete session token</a>
       </div>
+
       <div class="heading h2">
         <a href="#token">Token</a>
       </div>
+
       <div class="heading h2">
         <a href="#savesessiontoken">saveSessionToken</a>
       </div>
+
       <div class="heading h2">
         <a href="#signup">signup</a>
       </div>
+
       <div class="heading h2">
-        <a href="#login%20actions">Login actions</a>
+        <a href="#login-actions">Login actions</a>
       </div>
+
       <div class="heading h2">
-        <a href="#login">Login</a>
+        <a href="#login-1">Login</a>
       </div>
+
       <div class="heading h2">
-        <a href="#resetpassword%20actions">ResetPassword actions</a>
+        <a href="#resetpassword-actions">ResetPassword actions</a>
       </div>
+
       <div class="heading h2">
         <a href="#resetpassword">ResetPassword</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="authactions.js">
   <h1>
-    <a href="#authactions.js" name="authactions.js" class="pilcrow">&#182;</a>
-    authActions.js
+    <a href="#authactions.js" name="authactions.js" class="pilcrow"></a>
+authActions.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>All the request actions have 3 variations, the request, a success
+</div>
+<div class="body">
+<p>All the request actions have 3 variations, the request, a success
 and a failure. They all follow the pattern that the request will
 set the <code>isFetching</code> to true and the whether it's successful or
 fails, setting it back to false.</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="imports">
-  <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
-  </h2>
-</div>
-
-  </div>
-  <div class="body"><p>The actions supported</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">SESSION_TOKEN_REQUEST</span><span class="p">,</span>
-  <span class="nx">SESSION_TOKEN_SUCCESS</span><span class="p">,</span>
-  <span class="nx">SESSION_TOKEN_FAILURE</span><span class="p">,</span>
-  
-  <span class="nx">DELETE_TOKEN_REQUEST</span><span class="p">,</span>
-  <span class="nx">DELETE_TOKEN_SUCCESS</span><span class="p">,</span>
-
-  <span class="nx">LOGOUT</span><span class="p">,</span>
-  <span class="nx">REGISTER</span><span class="p">,</span>
-  <span class="nx">LOGIN</span><span class="p">,</span>
-  <span class="nx">FORGOT_PASSWORD</span><span class="p">,</span>
-
-  <span class="nx">LOGOUT_REQUEST</span><span class="p">,</span>
-  <span class="nx">LOGOUT_SUCCESS</span><span class="p">,</span>
-  <span class="nx">LOGOUT_FAILURE</span><span class="p">,</span>
-
-  <span class="nx">LOGIN_REQUEST</span><span class="p">,</span>
-  <span class="nx">LOGIN_SUCCESS</span><span class="p">,</span>
-  <span class="nx">LOGIN_FAILURE</span><span class="p">,</span>
-  
-  <span class="nx">ON_AUTH_FORM_FIELD_CHANGE</span><span class="p">,</span>
-  <span class="nx">SIGNUP_REQUEST</span><span class="p">,</span>
-  <span class="nx">SIGNUP_SUCCESS</span><span class="p">,</span>
-  <span class="nx">SIGNUP_FAILURE</span><span class="p">,</span>
-
-  <span class="nx">RESET_PASSWORD_REQUEST</span><span class="p">,</span>
-  <span class="nx">RESET_PASSWORD_SUCCESS</span><span class="p">,</span>
-  <span class="nx">RESET_PASSWORD_FAILURE</span>
-
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="imports">
+  <h2>
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
+  </h2>
+</div>
+</div>
+<div class="body">
+<p>The actions supported</p>
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> {
+  SESSION_TOKEN_REQUEST,
+  SESSION_TOKEN_SUCCESS,
+  SESSION_TOKEN_FAILURE,
+  
+  DELETE_TOKEN_REQUEST,
+  DELETE_TOKEN_SUCCESS,
+
+  LOGOUT,
+  REGISTER,
+  LOGIN,
+  FORGOT_PASSWORD,
+
+  LOGOUT_REQUEST,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAILURE,
+
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  
+  ON_AUTH_FORM_FIELD_CHANGE,
+  SIGNUP_REQUEST,
+  SIGNUP_SUCCESS,
+  SIGNUP_FAILURE,
+
+  RESET_PASSWORD_REQUEST,
+  RESET_PASSWORD_SUCCESS,
+  RESET_PASSWORD_FAILURE
+
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/constants'</span>).default;
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Project requirements</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>Project requirements</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">BackendFactory</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/BackendFactory&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> BackendFactory = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/BackendFactory'</span>).default;
 
-<span class="kr">import</span> <span class="p">{</span><span class="nx">Actions</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native-router-flux&#39;</span><span class="p">;</span>
+<span class="hljs-keyword">import</span> {Actions} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native-router-flux'</span>;
 
-<span class="kr">const</span>  <span class="nx">AppAuthToken</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../../lib/AppAuthToken&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+<span class="hljs-keyword">const</span>  AppAuthToken = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../lib/AppAuthToken'</span>).default;
 
-<span class="kr">const</span>  <span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;underscore&#39;</span><span class="p">);</span>
+<span class="hljs-keyword">const</span>  _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'underscore'</span>);
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="state%20actions">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="state-actions">
   <h2>
-    <a href="#state%20actions" name="state%20actions" class="pilcrow">&#182;</a>
-    State actions
+    <a href="#state-actions" name="state-actions" class="pilcrow"></a>
+State actions
   </h2>
 </div>
-
-
 <p>controls which form is displayed to the user
 as in login, register, logout or reset password</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logoutState</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: LOGOUT
+  };
 
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">logoutState</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">LOGOUT</span>
-  <span class="p">};</span>
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerState</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: REGISTER
+  };
+}
 
-<span class="p">}</span>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">registerState</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">REGISTER</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loginState</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: LOGIN
+  };
+}
 
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">loginState</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">LOGIN</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forgotPasswordState</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: FORGOT_PASSWORD
+  };
+}
 
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">forgotPasswordState</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">FORGOT_PASSWORD</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="logout%20actions">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="logout-actions">
   <h2>
-    <a href="#logout%20actions" name="logout%20actions" class="pilcrow">&#182;</a>
-    Logout actions
+    <a href="#logout-actions" name="logout-actions" class="pilcrow"></a>
+Logout actions
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">logoutRequest</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">LOGOUT_REQUEST</span>
-  <span class="p">};</span>
-<span class="p">}</span> 
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logoutRequest</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: LOGOUT_REQUEST
+  };
+} 
 
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">logoutSuccess</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">LOGOUT_SUCCESS</span>
-  <span class="p">};</span>
-<span class="p">}</span> 
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">logoutFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">LOGOUT_FAILURE</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">error</span>
-  <span class="p">};</span>
-<span class="p">}</span> 
-
-</pre></div>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logoutSuccess</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: LOGOUT_SUCCESS
+  };
+} 
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logoutFailure</span>(<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: LOGOUT_FAILURE,
+    payload: error
+  };
+} 
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="login">
   <h2>
-    <a href="#login" name="login" class="pilcrow">&#182;</a>
-    Login
+    <a href="#login" name="login" class="pilcrow"></a>
+Login
   </h2>
 </div>
-
-
 <p>After dispatching the logoutRequest, get the sessionToken
-and call Parse </p>
-  </div>
-  <div class="body"><p>When the response from Parse is received and it's valid
+and call Parse</p>
+</div>
+<div class="body">
+<p>When the response from Parse is received and it's valid
 change the state to register and finish the logout</p>
-
 <p>But if the call to Parse fails, like expired token or
 no network connection, just send the failure</p>
-
 <p>And if you fail due to an invalid sessionToken, be sure
 to delete it so the user can log in.</p>
-
 <p>How could there be an invalid sessionToken?  Maybe they
 haven't used the app for a long time.  Or they used another
 device and logged out there.</p>
-  </div>
 </div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">logout</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">logoutRequest</span><span class="p">());</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">AppAuthToken</span><span class="p">().</span><span class="nx">getSessionToken</span><span class="p">()</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logout</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> dispatch =&gt; {
+    dispatch(logoutRequest());
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> AppAuthToken().getSessionToken()
 
-      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">token</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">BackendFactory</span><span class="p">(</span><span class="nx">token</span><span class="p">).</span><span class="nx">logout</span><span class="p">();</span>
-      <span class="p">})</span>
+      .then((token) =&gt; {
+        <span class="hljs-keyword">return</span> BackendFactory(token).logout();
+      })
     
-      <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">loginState</span><span class="p">());</span>          
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">logoutSuccess</span><span class="p">());</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">deleteSessionToken</span><span class="p">());</span>
-        <span class="nx">Actions</span><span class="p">.</span><span class="nx">InitialLoginForm</span><span class="p">();</span>
-      <span class="p">})</span>                
+      .then(() =&gt; {
+        dispatch(loginState());          
+        dispatch(logoutSuccess());
+        dispatch(deleteSessionToken());
+        Actions.InitialLoginForm();
+      })            		
 
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">loginState</span><span class="p">());</span>        
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">logoutFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
-      <span class="p">});</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-</pre></div>
+      .catch((error) =&gt; {
+        dispatch(loginState());        
+        dispatch(logoutFailure(error));
+      });
+  };
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="onauthformfieldchange">
   <h2>
-    <a href="#onauthformfieldchange" name="onauthformfieldchange" class="pilcrow">&#182;</a>
-    onAuthFormFieldChange
+    <a href="#onauthformfieldchange" name="onauthformfieldchange" class="pilcrow"></a>
+onAuthFormFieldChange
   </h2>
 </div>
-
-
 <p>Set the payload so the reducer can work on it</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">onAuthFormFieldChange</span><span class="p">(</span><span class="nx">field</span><span class="p">,</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">ON_AUTH_FORM_FIELD_CHANGE</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="p">{</span><span class="nx">field</span><span class="o">:</span> <span class="nx">field</span><span class="p">,</span> <span class="nx">value</span><span class="o">:</span> <span class="nx">value</span><span class="p">}</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onAuthFormFieldChange</span>(<span class="hljs-params">field,value</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: ON_AUTH_FORM_FIELD_CHANGE,
+    payload: {field: field, value: value}
+  };
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="signup%20actions">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="signup-actions">
   <h2>
-    <a href="#signup%20actions" name="signup%20actions" class="pilcrow">&#182;</a>
-    Signup actions
+    <a href="#signup-actions" name="signup-actions" class="pilcrow"></a>
+Signup actions
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">signupRequest</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">SIGNUP_REQUEST</span>
-  <span class="p">};</span>
-<span class="p">}</span> 
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">signupSuccess</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">SIGNUP_SUCCESS</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">json</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">signupFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">SIGNUP_FAILURE</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">error</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signupRequest</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: SIGNUP_REQUEST
+  };
+} 
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signupSuccess</span>(<span class="hljs-params">json</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: SIGNUP_SUCCESS,
+    payload: json
+  };
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signupFailure</span>(<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: SIGNUP_FAILURE,
+    payload: error
+  };
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="sessiontoken%20actions">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="sessiontoken-actions">
   <h2>
-    <a href="#sessiontoken%20actions" name="sessiontoken%20actions" class="pilcrow">&#182;</a>
-    SessionToken actions
+    <a href="#sessiontoken-actions" name="sessiontoken-actions" class="pilcrow"></a>
+SessionToken actions
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">sessionTokenRequest</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">SESSION_TOKEN_REQUEST</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">sessionTokenRequestSuccess</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">SESSION_TOKEN_SUCCESS</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">token</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">sessionTokenRequestFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">SESSION_TOKEN_FAILURE</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">?</span> <span class="kc">null</span><span class="o">:</span><span class="nx">error</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sessionTokenRequest</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: SESSION_TOKEN_REQUEST
+  };
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sessionTokenRequestSuccess</span>(<span class="hljs-params">token</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: SESSION_TOKEN_SUCCESS,
+    payload: token
+  };
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sessionTokenRequestFailure</span>(<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: SESSION_TOKEN_FAILURE,
+    payload: _.isUndefined(error) ? <span class="hljs-literal">null</span>:error
+  };
+}
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="deletetoken%20actions">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="deletetoken-actions">
   <h2>
-    <a href="#deletetoken%20actions" name="deletetoken%20actions" class="pilcrow">&#182;</a>
-    DeleteToken actions
+    <a href="#deletetoken-actions" name="deletetoken-actions" class="pilcrow"></a>
+DeleteToken actions
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">deleteTokenRequest</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">DELETE_TOKEN_REQUEST</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">deleteTokenRequestSuccess</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">DELETE_TOKEN_SUCCESS</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deleteTokenRequest</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: DELETE_TOKEN_REQUEST
+  };
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deleteTokenRequestSuccess</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: DELETE_TOKEN_SUCCESS
+  };
+}
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="delete%20session%20token">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="delete-session-token">
   <h2>
-    <a href="#delete%20session%20token" name="delete%20session%20token" class="pilcrow">&#182;</a>
-    Delete session token
+    <a href="#delete-session-token" name="delete-session-token" class="pilcrow"></a>
+Delete session token
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>Call the AppAuthToken deleteSessionToken </p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">deleteSessionToken</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">deleteTokenRequest</span><span class="p">());</span>
-    <span class="k">return</span> <span class="k">new</span>  <span class="nx">AppAuthToken</span><span class="p">().</span><span class="nx">deleteSessionToken</span><span class="p">()</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">deleteTokenRequestSuccess</span><span class="p">());</span>
-      <span class="p">});</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+<div class="body">
+<p>Call the AppAuthToken deleteSessionToken</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deleteSessionToken</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> dispatch =&gt; {
+    dispatch(deleteTokenRequest());
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span>  AppAuthToken().deleteSessionToken()
+      .then(() =&gt; {
+        dispatch(deleteTokenRequestSuccess());
+      });
+  };
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="token">
   <h2>
-    <a href="#token" name="token" class="pilcrow">&#182;</a>
-    Token
+    <a href="#token" name="token" class="pilcrow"></a>
+Token
   </h2>
 </div>
-
-
 <p>If AppAuthToken has the sessionToken, the user is logged in
 so set the state to logout.
 Otherwise, the user will default to the login in screen.</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">getSessionToken</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">sessionTokenRequest</span><span class="p">());</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">AppAuthToken</span><span class="p">().</span><span class="nx">getSessionToken</span><span class="p">()</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getSessionToken</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> dispatch =&gt; {
+    dispatch(sessionTokenRequest());
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> AppAuthToken().getSessionToken()
 
-      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">token</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span>
-          <span class="nx">dispatch</span><span class="p">(</span><span class="nx">sessionTokenRequestSuccess</span><span class="p">(</span><span class="nx">token</span><span class="p">));</span>
-          <span class="nx">dispatch</span><span class="p">(</span><span class="nx">logoutState</span><span class="p">());</span>
-          <span class="nx">Actions</span><span class="p">.</span><span class="nx">Tabbar</span><span class="p">();</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="nx">dispatch</span><span class="p">(</span><span class="nx">sessionTokenRequestFailure</span><span class="p">());</span>
-          <span class="nx">Actions</span><span class="p">.</span><span class="nx">InitialLoginForm</span><span class="p">();</span>
-        <span class="p">}</span>
-      <span class="p">})</span>
+      .then((token) =&gt; {
+        <span class="hljs-keyword">if</span> (token) {
+          dispatch(sessionTokenRequestSuccess(token));
+          dispatch(logoutState());
+          Actions.Tabbar();
+        } <span class="hljs-keyword">else</span> {
+          dispatch(sessionTokenRequestFailure());
+          Actions.InitialLoginForm();
+        }
+      })
     
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">sessionTokenRequestFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">loginState</span><span class="p">());</span>
-        <span class="nx">Actions</span><span class="p">.</span><span class="nx">InitialLoginForm</span><span class="p">();</span>
-      <span class="p">});</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+      .catch((error) =&gt; {
+        dispatch(sessionTokenRequestFailure(error));
+        dispatch(loginState());
+        Actions.InitialLoginForm();
+      });
+  };
+}
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="savesessiontoken">
   <h2>
-    <a href="#savesessiontoken" name="savesessiontoken" class="pilcrow">&#182;</a>
-    saveSessionToken
+    <a href="#savesessiontoken" name="savesessiontoken" class="pilcrow"></a>
+saveSessionToken
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">response</span>
-      <span class="dox_type">Object</span>
-      <span><ul>
-<li>to return to keep the promise chain</li>
-</ul></span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">json</span>
-      <span class="dox_type">Object</span>
-      <span><ul>
-<li>object with sessionToken</li>
-</ul></span>
-    </div>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">saveSessionToken</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">new</span> <span class="nx">AppAuthToken</span><span class="p">().</span><span class="nx">storeSessionToken</span><span class="p">(</span><span class="nx">json</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">response</span>
+<span class="dox_type">Object</span>
+<span><ul>
+<li>to return to keep the promise chain</li>
+</ul>
+</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">json</span>
+<span class="dox_type">Object</span>
+<span><ul>
+<li>object with sessionToken</li>
+</ul>
+</span>
+</div>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">saveSessionToken</span>(<span class="hljs-params">json</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> AppAuthToken().storeSessionToken(json);
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="signup">
   <h2>
-    <a href="#signup" name="signup" class="pilcrow">&#182;</a>
-    signup
+    <a href="#signup" name="signup" class="pilcrow"></a>
+signup
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">username</span>
-      <span class="dox_type">string</span>
-      <span><ul>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">username</span>
+<span class="dox_type">string</span>
+<span><ul>
 <li>name of user</li>
-</ul></span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">email</span>
-      <span class="dox_type">string</span>
-      <span><ul>
+</ul>
+</span>
+</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">email</span>
+<span class="dox_type">string</span>
+<span><ul>
 <li>user's email</li>
-</ul></span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">password</span>
-      <span class="dox_type">string</span>
-      <span><ul>
-<li>user's password</li>
 </ul>
-
-Call Parse.signup and if good, save the sessionToken, 
-set the state to logout and signal success
-
-Otherwise, dispatch the error so the user can see</span>
-    </div>
-  </div>
+</span>
 </div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">password</span>
+<span class="dox_type">string</span>
+<span><ul>
+<li>user's password
+Call Parse.signup and if good, save the sessionToken,
+set the state to logout and signal success</li>
+</ul>
+Otherwise, dispatch the error so the user can see
+</span>
+</div>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">signup</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signup</span>(<span class="hljs-params">username, email, password</span>) </span>{
   
-  <span class="k">return</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">signupRequest</span><span class="p">());</span>
-    <span class="k">return</span>  <span class="nx">BackendFactory</span><span class="p">().</span><span class="nx">signup</span><span class="p">({</span>
-      <span class="nx">username</span><span class="o">:</span> <span class="nx">username</span><span class="p">,</span>
-      <span class="nx">email</span><span class="o">:</span> <span class="nx">email</span><span class="p">,</span>
-      <span class="nx">password</span><span class="o">:</span> <span class="nx">password</span>
-    <span class="p">})</span>
+  <span class="hljs-keyword">return</span> dispatch =&gt; {
+    dispatch(signupRequest());
+    <span class="hljs-keyword">return</span>  BackendFactory().signup({
+      username: username,
+      email: email,
+      password: password
+    })
 
-      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">json</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">saveSessionToken</span><span class="p">(</span>
-    <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">json</span><span class="p">,</span>
-      <span class="p">{</span>
-        <span class="nx">username</span><span class="o">:</span> <span class="nx">username</span><span class="p">,</span>
-        <span class="nx">email</span><span class="o">:</span> <span class="nx">email</span>
-      <span class="p">})</span>      
-  <span class="p">)</span>
+      .then((json) =&gt; {
+	<span class="hljs-keyword">return</span> saveSessionToken(
+	  <span class="hljs-built_in">Object</span>.assign({}, json,
+			{
+			  username: username,
+			  email: email
+			})			
+	)
         
-          <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">signupSuccess</span><span class="p">(</span>
-        <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">({},</span> <span class="nx">json</span><span class="p">,</span>
-          <span class="p">{</span>
-            <span class="nx">username</span><span class="o">:</span> <span class="nx">username</span><span class="p">,</span>
-            <span class="nx">email</span><span class="o">:</span> <span class="nx">email</span>
-          <span class="p">}</span>
-         <span class="p">)</span>
-      <span class="p">));</span>
-      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">logoutState</span><span class="p">());</span>  
-
-</pre></div>
+          .then(() =&gt; {
+	    dispatch(signupSuccess(
+	      <span class="hljs-built_in">Object</span>.assign({}, json,
+			    {
+			      username: username,
+			      email: email
+			    }
+			   )
+	    ));
+	    dispatch(logoutState());  
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-15" id="section-15">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-15" id="section-15"></a>
 </div>
 <p>navigate to Tabbar</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-      <span class="nx">Actions</span><span class="p">.</span><span class="nx">Tabbar</span><span class="p">();</span>        
-    <span class="p">});</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">dispatch</span><span class="p">(</span><span class="nx">signupFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
-      <span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript">	    Actions.Tabbar();        
+	  });
+      })
+      .catch((error) =&gt; {
+	dispatch(signupFailure(error));
+      });
 
-  <span class="p">};</span>
-<span class="p">}</span>
+  };
+}
 
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="login%20actions">
-  <h2>
-    <a href="#login%20actions" name="login%20actions" class="pilcrow">&#182;</a>
-    Login actions
-  </h2>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">loginRequest</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">LOGIN_REQUEST</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">loginSuccess</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">LOGIN_SUCCESS</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">json</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">loginFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">LOGIN_FAILURE</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">error</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="login">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="login-actions">
   <h2>
-    <a href="#login" name="login" class="pilcrow">&#182;</a>
-    Login
+    <a href="#login-actions" name="login-actions" class="pilcrow"></a>
+Login actions
   </h2>
 </div>
+</div>
+<div class="body">
+</div>
+</div>
 
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">username</span>
-      <span class="dox_type">string</span>
-      <span><ul>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loginRequest</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: LOGIN_REQUEST
+  };
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loginSuccess</span>(<span class="hljs-params">json</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: LOGIN_SUCCESS,
+    payload: json
+  };
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loginFailure</span>(<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: LOGIN_FAILURE,
+    payload: error
+  };
+}
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="login-1">
+  <h2>
+    <a href="#login-1" name="login-1" class="pilcrow"></a>
+Login
+  </h2>
+</div>
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">username</span>
+<span class="dox_type">string</span>
+<span><ul>
 <li>user's name</li>
-</ul></span>
-    </div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">password</span>
-      <span class="dox_type">string</span>
-      <span><ul>
-<li>user's password</li>
 </ul>
-
-After calling Backend, if response is good, save the json
-which is the currentUser which contains the sessionToken
-
-If successful, set the state to logout
-otherwise, dispatch a failure</span>
-    </div>
-  </div>
+</span>
 </div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">password</span>
+<span class="dox_type">string</span>
+<span><ul>
+<li>user's password
+After calling Backend, if response is good, save the json
+which is the currentUser which contains the sessionToken</li>
+</ul>
+If successful, set the state to logout
+otherwise, dispatch a failure
+</span>
+</div>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
+        <td class="code highlight">
+          <pre class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">username,  password</span>) </span>{
+  <span class="hljs-keyword">return</span> dispatch =&gt; {
+    dispatch(loginRequest());
+    <span class="hljs-keyword">return</span> BackendFactory().login({
+      username: username,
+      password: password
+    })
 
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">login</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span>  <span class="nx">password</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">loginRequest</span><span class="p">());</span>
-    <span class="k">return</span> <span class="nx">BackendFactory</span><span class="p">().</span><span class="nx">login</span><span class="p">({</span>
-      <span class="nx">username</span><span class="o">:</span> <span class="nx">username</span><span class="p">,</span>
-      <span class="nx">password</span><span class="o">:</span> <span class="nx">password</span>
-    <span class="p">})</span>
-
-      <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">json</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">saveSessionToken</span><span class="p">(</span><span class="nx">json</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">loginSuccess</span><span class="p">(</span><span class="nx">json</span><span class="p">));</span>
-
-</pre></div>
+      .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">json</span>) </span>{
+	<span class="hljs-keyword">return</span> saveSessionToken(json)
+	  .then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+	    dispatch(loginSuccess(json));
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-18" id="section-18">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-18" id="section-18"></a>
 </div>
 <p>navigate to Tabbar</p>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-      <span class="nx">Actions</span><span class="p">.</span><span class="nx">Tabbar</span><span class="p">();</span>                    
-      <span class="nx">dispatch</span><span class="p">(</span><span class="nx">logoutState</span><span class="p">());</span>
-    <span class="p">});</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">dispatch</span><span class="p">(</span><span class="nx">loginFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
-      <span class="p">});</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+        <td class="code highlight">
+          <pre class="javascript">	    Actions.Tabbar();                    
+	    dispatch(logoutState());
+	  });
+      })
+      .catch((error) =&gt; {
+	dispatch(loginFailure(error));
+      });
+  };
+}
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="resetpassword%20actions">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="resetpassword-actions">
   <h2>
-    <a href="#resetpassword%20actions" name="resetpassword%20actions" class="pilcrow">&#182;</a>
-    ResetPassword actions
+    <a href="#resetpassword-actions" name="resetpassword-actions" class="pilcrow"></a>
+ResetPassword actions
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">resetPasswordRequest</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">RESET_PASSWORD_REQUEST</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resetPasswordRequest</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: RESET_PASSWORD_REQUEST
+  };
+}
 
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">resetPasswordSuccess</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">RESET_PASSWORD_SUCCESS</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resetPasswordSuccess</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: RESET_PASSWORD_SUCCESS
+  };
+}
 
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">resetPasswordFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">RESET_PASSWORD_FAILURE</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">error</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-
-</pre></div>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resetPasswordFailure</span>(<span class="hljs-params">error</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: RESET_PASSWORD_FAILURE,
+    payload: error
+  };
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="resetpassword">
   <h2>
-    <a href="#resetpassword" name="resetpassword" class="pilcrow">&#182;</a>
-    ResetPassword
+    <a href="#resetpassword" name="resetpassword" class="pilcrow"></a>
+ResetPassword
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
-  <div class="details">
-    <div class="dox_tag_title">Params</div>
-    <div class="dox_tag_detail">
-      <span class="dox_tag_name">email</span>
-      <span class="dox_type">string</span>
-      <span><ul>
-<li>the email address to reset password
-<em>Note</em> There's no feedback to the user whether the email
+</div>
+<div class="body">
+</div>
+<div class="details">
+<div class="dox_tag_title">Params</div>
+<div class="dox_tag_detail">
+<span class="dox_tag_name">email</span>
+<span class="dox_type">string</span>
+<span><ul>
+<li>the email address to reset password <em>Note</em> There's no feedback to the user whether the email
 address is valid or not.</li>
 </ul>
-
-This functionality depends on setting Parse.com 
+This functionality depends on setting Parse.com
 up correctly ie, that emails are verified.
 With that enabled, an email can be sent w/ a
-form for setting the new password.</span>
-    </div>
-  </div>
+form for setting the new password.
+</span>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">resetPassword</span><span class="p">(</span><span class="nx">email</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">dispatch</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">dispatch</span><span class="p">(</span><span class="nx">resetPasswordRequest</span><span class="p">());</span>
-    <span class="k">return</span> <span class="nx">BackendFactory</span><span class="p">().</span><span class="nx">resetPassword</span><span class="p">({</span>
-      <span class="nx">email</span><span class="o">:</span> <span class="nx">email</span>
-    <span class="p">})</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">loginState</span><span class="p">());</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">resetPasswordSuccess</span><span class="p">());</span>
-        <span class="nx">Actions</span><span class="p">.</span><span class="nx">Login</span><span class="p">();</span>
-      <span class="p">})</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">dispatch</span><span class="p">(</span><span class="nx">resetPasswordFailure</span><span class="p">(</span><span class="nx">error</span><span class="p">));</span>
-      <span class="p">});</span>
+</div>
+</div>
 
-  <span class="p">};</span>
-<span class="p">}</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">resetPassword</span>(<span class="hljs-params">email</span>) </span>{
+  <span class="hljs-keyword">return</span> dispatch =&gt; {
+    dispatch(resetPasswordRequest());
+    <span class="hljs-keyword">return</span> BackendFactory().resetPassword({
+      email: email
+    })
+      .then(() =&gt; {
+        dispatch(loginState());
+        dispatch(resetPasswordSuccess());
+        Actions.Login();
+      })
+      .catch((error) =&gt; {
+        dispatch(resetPasswordFailure(error));
+      });
+
+  };
+}
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

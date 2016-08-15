@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/FormButton.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/components/FormButton.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,159 +21,180 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#formbutton.js">FormButton.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
         <a href="#styles">Styles</a>
       </div>
+
       <div class="heading h3">
         <a href="#render">render</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="formbutton.js">
-  <h1>
-    <a href="#formbutton.js" name="formbutton.js" class="pilcrow">&#182;</a>
-    FormButton.js
-  </h1>
-</div>
-
-  </div>
-  <div class="body"><p>Display a button that responds to onPress and is colored appropriately</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="imports">
-  <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
-  </h2>
-</div>
-
-  </div>
-  <div class="body"><p>React</p>
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">Component</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span>
-<span class="p">{</span>  
-  <span class="nx">StyleSheet</span><span class="p">,</span>
-  <span class="nx">View</span>
-<span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
-
-
-</pre></div>
-        </td>
-      </tr>
+    
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="formbutton.js">
+  <h1>
+    <a href="#formbutton.js" name="formbutton.js" class="pilcrow"></a>
+FormButton.js
+  </h1>
 </div>
-<div class="dox">
-  <div class="summary"><p>The platform neutral button</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+<p>Display a button that responds to onPress and is colored appropriately</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span>  <span class="nx">Button</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;apsl-react-native-button&#39;</span><span class="p">);</span>
-
-
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="styles">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="imports">
   <h2>
-    <a href="#styles" name="styles" class="pilcrow">&#182;</a>
-    Styles
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+<p>React</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="nx">signin</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">marginLeft</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-    <span class="nx">marginRight</span><span class="o">:</span> <span class="mi">10</span>
-  <span class="p">},</span>
-  <span class="nx">button</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;#FF3366&#39;</span><span class="p">,</span>
-    <span class="nx">borderColor</span><span class="o">:</span>  <span class="s1">&#39;#FF3366&#39;</span>
-  <span class="p">}</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> React, {Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span>
+{  
+  StyleSheet,
+  View
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
 
-<span class="p">});</span>
-
-<span class="kd">var</span> <span class="nx">FormButton</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>The platform neutral button</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span>  Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'apsl-react-native-button'</span>);
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="styles">
+  <h2>
+    <a href="#styles" name="styles" class="pilcrow"></a>
+Styles
+  </h2>
+</div>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> styles = StyleSheet.create({
+  signin: {
+    marginLeft: <span class="hljs-number">10</span>,
+    marginRight: <span class="hljs-number">10</span>
+  },
+  button: {
+    backgroundColor: <span class="hljs-string">'#FF3366'</span>,
+    borderColor:  <span class="hljs-string">'#FF3366'</span>
+  }
+
+});
+
+<span class="hljs-keyword">var</span> FormButton = React.createClass({
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="render">
   <h3>
-    <a href="#render" name="render" class="pilcrow">&#182;</a>
-    render
+    <a href="#render" name="render" class="pilcrow"></a>
+render
   </h3>
 </div>
-
-  </div>
-  <div class="body"><p>Display the Button </p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">signin</span><span class="p">}</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">Button</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">button</span><span class="p">}</span>
-                <span class="nx">textStyle</span><span class="o">=</span><span class="p">{{</span><span class="nx">fontSize</span><span class="o">:</span> <span class="mi">18</span><span class="p">}}</span>                
-                <span class="nx">isDisabled</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">isDisabled</span><span class="p">}</span>
-                <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onPress</span><span class="p">}</span> <span class="o">&gt;</span>
-          <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">buttonText</span><span class="p">}</span>
-        <span class="o">&lt;</span><span class="err">/Button&gt;</span>
-      <span class="o">&lt;</span><span class="err">/View&gt;</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
+<div class="body">
+<p>Display the Button</p>
+</div>
+</div>
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">FormButton</span><span class="p">;</span>
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{styles.signin}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{styles.button}</span>
+                <span class="hljs-attr">textStyle</span>=<span class="hljs-string">{{fontSize:</span> <span class="hljs-attr">18</span>}}                
+                <span class="hljs-attr">isDisabled</span>=<span class="hljs-string">{this.props.isDisabled}</span>
+                <span class="hljs-attr">onPress</span>=<span class="hljs-string">{this.props.onPress}</span> &gt;</span>
+          {this.props.buttonText}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span></span>
+    );
+  }
+});
+
+<span class="hljs-built_in">module</span>.exports = FormButton;
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

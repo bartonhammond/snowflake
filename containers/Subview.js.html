@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//containers/Subview.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/containers/Subview.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,353 +21,389 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#subview.js">Subview.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
-        <a href="#redux%20boilerplate">Redux boilerplate</a>
+        <a href="#redux-boilerplate">Redux boilerplate</a>
       </div>
+
       <div class="heading h3">
         <a href="#translations">Translations</a>
       </div>
+
       <div class="heading h2">
-        <a href="#subview%20class">Subview class</a>
+        <a href="#subview-class">Subview class</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="subview.js">
   <h1>
-    <a href="#subview.js" name="subview.js" class="pilcrow">&#182;</a>
-    Subview.js
+    <a href="#subview.js" name="subview.js" class="pilcrow"></a>
+Subview.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>This is called from main to demonstrate the back button</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<div class="body">
+<p>This is called from main to demonstrate the back button</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>Imports from redux</p>
-  </div>
+<p>Imports from redux</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">bindActionCreators</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">connect</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-redux&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> { bindActionCreators } <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+<span class="hljs-keyword">import</span> { connect } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Immutable</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>Immutable</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span><span class="nx">Map</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;immutable&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {<span class="hljs-built_in">Map</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">'immutable'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-4" id="section-4">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-4" id="section-4"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Router</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>Router</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="p">{</span><span class="nx">Actions</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native-router-flux&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> {Actions} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native-router-flux'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-5" id="section-5">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-5" id="section-5"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Navigation Bar</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>Navigation Bar</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">NavigationBar</span> <span class="nx">from</span> <span class="s1">&#39;react-native-navbar&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> NavigationBar <span class="hljs-keyword">from</span> <span class="hljs-string">'react-native-navbar'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-6" id="section-6">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-6" id="section-6"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>The necessary components from React</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>The necessary components from React</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span>
-<span class="p">{</span>  
-  <span class="nx">StyleSheet</span><span class="p">,</span>
-  <span class="nx">View</span><span class="p">,</span>
-  <span class="nx">Text</span>
-<span class="p">}</span>
-<span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span>
+{  
+  StyleSheet,
+  View,
+  Text
+}
+<span class="hljs-keyword">from</span> <span class="hljs-string">'react-native'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-7" id="section-7">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Use device options so we can reference the Version</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>Use device options so we can reference the Version</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">deviceActions</span> <span class="nx">from</span> <span class="s1">&#39;../reducers/device/deviceActions&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> deviceActions <span class="hljs-keyword">from</span> <span class="hljs-string">'../reducers/device/deviceActions'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="redux%20boilerplate">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="redux-boilerplate">
   <h2>
-    <a href="#redux%20boilerplate" name="redux%20boilerplate" class="pilcrow">&#182;</a>
-    Redux boilerplate
+    <a href="#redux-boilerplate" name="redux-boilerplate" class="pilcrow"></a>
+Redux boilerplate
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">actions</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="nx">deviceActions</span>
-<span class="p">];</span>
-
-
-</pre></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-9" id="section-9">&#182;</a>
+<div class="body">
 </div>
-<div class="dox">
-  <div class="summary"><p>Instead of including all app states via ...state
- You probably want to explicitly enumerate only those which Main.js will depend on.</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">function</span> <span class="nx">mapStateToProps</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-      <span class="p">...</span><span class="nx">state</span>
-  <span class="p">};</span>
-<span class="p">};</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
+  deviceActions
+];
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-10" id="section-10">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-9" id="section-9"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Bind all the functions from the <code>actions</code> and bind them with
+<div class="summary">
+<p>Instead of including all app states via ...state
+You probably want to explicitly enumerate only those which Main.js will depend on.</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+      ...state
+  };
+};
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-10" id="section-10"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>Bind all the functions from the <code>actions</code> and bind them with
 <code>dispatch</code></p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">function</span> <span class="nx">mapDispatchToProps</span><span class="p">(</span><span class="nx">dispatch</span><span class="p">)</span> <span class="p">{</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
 
-  <span class="kr">const</span> <span class="nx">creators</span> <span class="o">=</span> <span class="nx">Map</span><span class="p">()</span>
-          <span class="p">.</span><span class="nx">merge</span><span class="p">(...</span><span class="nx">actions</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">value</span> <span class="o">=&gt;</span> <span class="k">typeof</span> <span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span>
-          <span class="p">.</span><span class="nx">toObject</span><span class="p">();</span>
+  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
+          .merge(...actions)
+          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
+          .toObject();
 
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">actions</span><span class="o">:</span> <span class="nx">bindActionCreators</span><span class="p">(</span><span class="nx">creators</span><span class="p">,</span> <span class="nx">dispatch</span><span class="p">),</span>
-    <span class="nx">dispatch</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+  <span class="hljs-keyword">return</span> {
+    actions: bindActionCreators(creators, dispatch),
+    dispatch
+  };
+}
 
-<span class="kd">var</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="nx">container</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">borderTopWidth</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="nx">borderBottomWidth</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span>
-    <span class="nx">marginTop</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
-    <span class="nx">padding</span><span class="o">:</span> <span class="mi">10</span>
-  <span class="p">},</span>
-  <span class="nx">summary</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">fontFamily</span><span class="o">:</span> <span class="s1">&#39;BodoniSvtyTwoITCTT-Book&#39;</span><span class="p">,</span>
-    <span class="nx">fontSize</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span>
-    <span class="nx">fontWeight</span><span class="o">:</span> <span class="s1">&#39;bold&#39;</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-
-</pre></div>
+<span class="hljs-keyword">var</span> styles = StyleSheet.create({
+  container: {
+    borderTopWidth: <span class="hljs-number">2</span>,
+    borderBottomWidth:<span class="hljs-number">2</span>,
+    marginTop: <span class="hljs-number">80</span>,
+    padding: <span class="hljs-number">10</span>
+  },
+  summary: {
+    fontFamily: <span class="hljs-string">'BodoniSvtyTwoITCTT-Book'</span>,
+    fontSize: <span class="hljs-number">18</span>,
+    fontWeight: <span class="hljs-string">'bold'</span>
+  }
+});
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="translations">
   <h3>
-    <a href="#translations" name="translations" class="pilcrow">&#182;</a>
-    Translations
+    <a href="#translations" name="translations" class="pilcrow"></a>
+Translations
   </h3>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">I18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-i18n&#39;</span><span class="p">);</span>
-<span class="kr">import</span> <span class="nx">Translations</span> <span class="nx">from</span> <span class="s1">&#39;../lib/Translations&#39;</span><span class="p">;</span>
-<span class="nx">I18n</span><span class="p">.</span><span class="nx">translations</span> <span class="o">=</span> <span class="nx">Translations</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> I18n = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-native-i18n'</span>);
+<span class="hljs-keyword">import</span> Translations <span class="hljs-keyword">from</span> <span class="hljs-string">'../lib/Translations'</span>;
+I18n.translations = Translations;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="subview%20class">
-  <h2>
-    <a href="#subview%20class" name="subview%20class" class="pilcrow">&#182;</a>
-    Subview class
-  </h2>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">let</span> <span class="nx">Subview</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-  
-  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">titleConfig</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">title</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Subview.subview&quot;</span><span class="p">)</span>
-    <span class="p">};</span>
     
-    <span class="kd">var</span> <span class="nx">leftButtonConfig</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">title</span><span class="o">:</span> <span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Subview.back&quot;</span><span class="p">),</span>
-      <span class="nx">handler</span><span class="o">:</span> <span class="nx">Actions</span><span class="p">.</span><span class="nx">pop</span>
-    <span class="p">};</span>
-
-    <span class="k">return</span><span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">View</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">NavigationBar</span>
-            <span class="nx">title</span><span class="o">=</span><span class="p">{</span> <span class="nx">titleConfig</span> <span class="p">}</span>
-            <span class="nx">leftButton</span><span class="o">=</span><span class="p">{</span> <span class="nx">leftButtonConfig</span> <span class="p">}</span>
-  <span class="o">/&gt;</span>
-  <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">container</span> <span class="p">}</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">Text</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span> <span class="nx">styles</span><span class="p">.</span><span class="nx">summary</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;Subview.subview&quot;</span><span class="p">)}</span> <span class="p">{</span><span class="nx">I18n</span><span class="p">.</span><span class="nx">t</span><span class="p">(</span><span class="s2">&quot;App.version&quot;</span><span class="p">)}</span><span class="o">:</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">device</span><span class="p">.</span><span class="nx">version</span><span class="p">}</span> <span class="o">&lt;</span><span class="err">/Text&gt;</span>
-  <span class="o">&lt;</span><span class="err">/View&gt;</span>
-      <span class="o">&lt;</span><span class="err">/View&gt;</span>
-    <span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-
-
-</pre></div>
-        </td>
-      </tr>
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-13" id="section-13">&#182;</a>
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="subview-class">
+  <h2>
+    <a href="#subview-class" name="subview-class" class="pilcrow"></a>
+Subview class
+  </h2>
 </div>
-<div class="dox">
-  <div class="summary"><p>Connect the properties</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">connect</span><span class="p">(</span><span class="nx">mapStateToProps</span><span class="p">,</span> <span class="nx">mapDispatchToProps</span><span class="p">)(</span><span class="nx">Subview</span><span class="p">);</span>
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">let</span> Subview = React.createClass({
+  
+  render() {
+    <span class="hljs-keyword">var</span> titleConfig = {
+      title: I18n.t(<span class="hljs-string">"Subview.subview"</span>)
+    };
+    
+    <span class="hljs-keyword">var</span> leftButtonConfig = {
+      title: I18n.t(<span class="hljs-string">"Subview.back"</span>),
+      handler: Actions.pop
+    };
+
+    <span class="hljs-keyword">return</span>(
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">NavigationBar</span>
+            <span class="hljs-attr">title</span>=<span class="hljs-string">{</span> <span class="hljs-attr">titleConfig</span> }
+            <span class="hljs-attr">leftButton</span>=<span class="hljs-string">{</span> <span class="hljs-attr">leftButtonConfig</span> }
+	/&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{</span> <span class="hljs-attr">styles.container</span> }&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{</span> <span class="hljs-attr">styles.summary</span> }&gt;</span>{I18n.t("Subview.subview")} {I18n.t("App.version")}: {this.props.device.version} <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+	<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
+    );
+  }
+});
+
+</span></pre>
         </td>
       </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-13" id="section-13"></a>
+</div>
+<div class="dox">
+<div class="summary">
+<p>Connect the properties</p>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(Subview);
+
+</pre>
+        </td>
+      </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

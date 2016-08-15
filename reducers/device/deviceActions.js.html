@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//reducers/device/deviceActions.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/reducers/device/deviceActions.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,125 +21,142 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#deviceactions.js">deviceActions.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#imports">Imports</a>
       </div>
+
       <div class="heading h2">
-        <a href="#set%20the%20platformstate">Set the platformState</a>
+        <a href="#set-the-platformstate">Set the platformState</a>
       </div>
+
       <div class="heading h2">
-        <a href="#set%20the%20version">set the version</a>
+        <a href="#set-the-version">set the version</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="deviceactions.js">
   <h1>
-    <a href="#deviceactions.js" name="deviceactions.js" class="pilcrow">&#182;</a>
-    deviceActions.js
+    <a href="#deviceactions.js" name="deviceactions.js" class="pilcrow"></a>
+deviceActions.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>What platform are we running on, ie <code>ios</code> or <code>android</code></p>
-
-<p>What version is the app?</p>
-  </div>
 </div>
+<div class="body">
+<p>What platform are we running on, ie <code>ios</code> or <code>android</code></p>
+<p>What version is the app?</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="imports">
   <h2>
-    <a href="#imports" name="imports" class="pilcrow">&#182;</a>
-    Imports
+    <a href="#imports" name="imports" class="pilcrow"></a>
+Imports
   </h2>
 </div>
-
-  </div>
-  <div class="body"><p>The actions supported</p>
-  </div>
 </div>
+<div class="body">
+<p>The actions supported</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="p">{</span>
-  <span class="nx">SET_PLATFORM</span><span class="p">,</span>
-  <span class="nx">SET_VERSION</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">require</span> <span class="p">(</span><span class="s1">&#39;../../lib/constants&#39;</span><span class="p">).</span><span class="k">default</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> {
+  SET_PLATFORM,
+  SET_VERSION
+} = <span class="hljs-built_in">require</span> (<span class="hljs-string">'../../lib/constants'</span>).default;
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="set%20the%20platformstate">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="set-the-platformstate">
   <h2>
-    <a href="#set%20the%20platformstate" name="set%20the%20platformstate" class="pilcrow">&#182;</a>
-    Set the platformState
+    <a href="#set-the-platformstate" name="set-the-platformstate" class="pilcrow"></a>
+Set the platformState
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">setPlatform</span><span class="p">(</span><span class="nx">platform</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">SET_PLATFORM</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">platform</span>
-  <span class="p">};</span>
-<span class="p">}</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setPlatform</span>(<span class="hljs-params">platform</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: SET_PLATFORM,
+    payload: platform
+  };
+}
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="set%20the%20version">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="set-the-version">
   <h2>
-    <a href="#set%20the%20version" name="set%20the%20version" class="pilcrow">&#182;</a>
-    set the version
+    <a href="#set-the-version" name="set-the-version" class="pilcrow"></a>
+set the version
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">export</span> <span class="kd">function</span> <span class="nx">setVersion</span><span class="p">(</span><span class="nx">version</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="nx">type</span><span class="o">:</span> <span class="nx">SET_VERSION</span><span class="p">,</span>
-    <span class="nx">payload</span><span class="o">:</span> <span class="nx">version</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-</pre></div>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVersion</span>(<span class="hljs-params">version</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    type: SET_VERSION,
+    payload: version
+  };
+}
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

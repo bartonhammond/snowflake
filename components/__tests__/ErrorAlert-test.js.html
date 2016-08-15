@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../../doc-style.css" />
   <script src="../../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../../", thisFile = "Users/barton/projects/snowflakework/snowflake//components/__tests__/ErrorAlert-test.js", defaultSidebar = true;
+    var relativeDir = "../../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/components/__tests__/ErrorAlert-test.js";
+    var defaultSidebar = true;
   </script>
   <script src="../../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,196 +21,216 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
         <a href="#erroralert-test.js">ErrorAlert-test.js</a>
       </div>
+
       <div class="heading h2">
         <a href="#mock">Mock</a>
       </div>
+
       <div class="heading h2">
-        <a href="#under%20test">Under test</a>
+        <a href="#under-test">Under test</a>
       </div>
+
       <div class="heading h2">
         <a href="#test">Test</a>
       </div>
+
       <div class="heading h3">
         <a href="#defaults">defaults</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="erroralert-test.js">
   <h1>
-    <a href="#erroralert-test.js" name="erroralert-test.js" class="pilcrow">&#182;</a>
-    ErrorAlert-test.js
+    <a href="#erroralert-test.js" name="erroralert-test.js" class="pilcrow"></a>
+ErrorAlert-test.js
   </h1>
 </div>
-
-
 <p>This class validates that the SimpleAlert class will display the
 correct error message</p>
-  </div>
-  <div class="body"><p><em>Note:</em> if you want to understand the structures here, add a
-<code>console.log</code> and then <code>npm test</code>.</p>
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+<div class="body">
+<p><em>Note:</em> if you want to understand the structures here, add a
+<code>console.log</code> and then <code>npm test</code>.</p>
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="mock">
   <h2>
-    <a href="#mock" name="mock" class="pilcrow">&#182;</a>
-    Mock
+    <a href="#mock" name="mock" class="pilcrow"></a>
+Mock
   </h2>
 </div>
-
-
 <p>Mock the simpledialog, see: 'src/<strong>mocks</strong>/react-native-simpledialog-android.js'</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
+        <td class="code highlight">
+          <pre class="javascript">
+jest.mock(<span class="hljs-string">'react-native-simpledialog-android'</span>);
 
-<span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;react-native-simpledialog-android&#39;</span><span class="p">);</span>
-
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-3" id="section-3">&#182;</a>
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-3" id="section-3"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>This will load in the mocked version</p>
-  </div>
-  <div class="body">
-  </div>
+<div class="summary">
+<p>This will load in the mocked version</p>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kr">const</span> <span class="nx">SimpleAlert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react-native-simpledialog-android&#39;</span><span class="p">);</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">const</span> SimpleAlert = <span class="hljs-built_in">require</span>(<span class="hljs-string">'react-native-simpledialog-android'</span>);
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="under%20test">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="under-test">
   <h2>
-    <a href="#under%20test" name="under%20test" class="pilcrow">&#182;</a>
-    Under test
+    <a href="#under-test" name="under-test" class="pilcrow"></a>
+Under test
   </h2>
 </div>
-
-
 <p>Object under test</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="kd">var</span> <span class="nx">ErrorAlert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;../ErrorAlert&#39;</span><span class="p">);</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-keyword">var</span> ErrorAlert = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../ErrorAlert'</span>);
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
 <div class="pilwrap" id="test">
   <h2>
-    <a href="#test" name="test" class="pilcrow">&#182;</a>
-    Test
+    <a href="#test" name="test" class="pilcrow"></a>
+Test
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;ErrorAlert&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should be fine&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="body">
+</div>
+</div>
 
-</pre></div>
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">describe(<span class="hljs-string">'ErrorAlert'</span>, () =&gt; {
+  it(<span class="hljs-string">'should be fine'</span>, () =&gt; {
+</pre>
         </td>
       </tr>
-      <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="defaults">
-  <h3>
-    <a href="#defaults" name="defaults" class="pilcrow">&#182;</a>
-    defaults
-  </h3>
-</div>
-
-  </div>
-  <div class="body">
-  </div>
-</div>
-        </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="kr">const</span> <span class="nx">errorAlertProps</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="nx">error</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;Error occurred&#39;</span>
-      <span class="p">}</span>
-    <span class="p">};</span>
-
-
-</pre></div>
-        </td>
-      </tr>
+    
       <tr>
         <td class="docs">
-<div class="pilwrap">
-  <a class="pilcrow" href="#section-7" id="section-7">&#182;</a>
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="defaults">
+  <h3>
+    <a href="#defaults" name="defaults" class="pilcrow"></a>
+defaults
+  </h3>
+</div>
+</div>
+<div class="body">
+</div>
+</div>
+
+        </td>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">const</span> errorAlertProps = {
+      error: {
+        error: <span class="hljs-string">'Error occurred'</span>
+      }
+    };
+
+</pre>
+        </td>
+      </tr>
+    
+      <tr>
+        <td class="docs">
+          <div class="pilwrap">
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
 </div>
 <div class="dox">
-  <div class="summary"><p>Invoke the ErrorAlert constructor and pass in the mocked
+<div class="summary">
+<p>Invoke the ErrorAlert constructor and pass in the mocked
 version
 Then call the method that processes the error
 check that the title is 'Error' which is a hard coded constant
 and the alert matches the props error</p>
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
-    <span class="k">new</span> <span class="nx">ErrorAlert</span><span class="p">().</span><span class="nx">checkError</span><span class="p">(</span><span class="nx">errorAlertProps</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">SimpleAlert</span><span class="p">.</span><span class="nx">alert</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">);</span>
-    <span class="nx">expect</span><span class="p">(</span><span class="nx">SimpleAlert</span><span class="p">.</span><span class="nx">alert</span><span class="p">.</span><span class="nx">mock</span><span class="p">.</span><span class="nx">calls</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]).</span><span class="nx">toEqual</span><span class="p">(</span><span class="nx">errorAlertProps</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
-  <span class="p">});</span>
+        <td class="code highlight">
+          <pre class="javascript">    <span class="hljs-keyword">new</span> ErrorAlert().checkError(errorAlertProps);
+    expect(SimpleAlert.alert.mock.calls[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]).toEqual(<span class="hljs-string">'Error'</span>);
+    expect(SimpleAlert.alert.mock.calls[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]).toEqual(errorAlertProps.error.error);
+  });
 
 
-<span class="p">});</span><span class="c1">//describe ErrorAlert</span>
-</pre></div>
+});<span class="hljs-comment">//describe ErrorAlert</span>
+
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>

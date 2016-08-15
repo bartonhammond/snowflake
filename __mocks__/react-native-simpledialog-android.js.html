@@ -6,9 +6,12 @@
   <link rel="stylesheet" media="all" href="../doc-style.css" />
   <script src="../doc-filelist.js"></script>
   <script>
-    var relativeDir = "../", thisFile = "Users/barton/projects/snowflakework/snowflake//__mocks__/react-native-simpledialog-android.js", defaultSidebar = true;
+    var relativeDir = "../";
+    var thisFile = "Users/barton/projects/snowflakework/snowflake/__mocks__/react-native-simpledialog-android.js";
+    var defaultSidebar = true;
   </script>
   <script src="../doc-script.js"></script>
+
 </head>
 <body>
   <div id="sidebar_wrapper">
@@ -18,66 +21,79 @@
     </div>
     <div id="tree"></div>
     <div id="headings">
+
       <div class="heading h1">
-        <a href="#mocks%2Fsimplealert.js">mocks/SimpleAlert.js</a>
+        <a href="#mockssimplealert.js">mocks/SimpleAlert.js</a>
       </div>
+
       <div class="heading h2">
-        <a href="#override%20the%20default%20behavior%20of%20the%20alert%20mock">Override the default behavior of the alert mock</a>
+        <a href="#override-the-default-behavior-of-the-alert-mock">Override the default behavior of the alert mock</a>
       </div>
+
     </div>
   </div>
   <div id="sidebar-toggle"></div>
-  <div id="container"><div class="background highlight"></div>
+  <div id="container">
+    <div class="background highlight"></div>
 <table cellpadding="0" cellspacing="0">
   <tbody>
+    
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="mocks%2Fsimplealert.js">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="mockssimplealert.js">
   <h1>
-    <a href="#mocks%2Fsimplealert.js" name="mocks%2Fsimplealert.js" class="pilcrow">&#182;</a>
-    <strong>mocks</strong>/SimpleAlert.js
+    <a href="#mockssimplealert.js" name="mockssimplealert.js" class="pilcrow"></a>
+<strong>mocks</strong>/SimpleAlert.js
   </h1>
 </div>
-
-  </div>
-  <div class="body"><p>A simple mock for a simple class</p>
-  </div>
 </div>
+<div class="body">
+<p>A simple mock for a simple class</p>
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre><span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+        <td class="code highlight">
+          <pre class="javascript"><span class="hljs-meta">'use strict'</span>;
 
-<span class="kd">var</span> <span class="nx">SimpleAlert</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="hljs-keyword">var</span> SimpleAlert = {};
 
-
-</pre></div>
+</pre>
         </td>
       </tr>
+    
       <tr>
-        <td class="docs"><div class="dox">
-  <div class="summary">
-<div class="pilwrap" id="override%20the%20default%20behavior%20of%20the%20alert%20mock">
+        <td class="docs">
+          <div class="dox">
+<div class="summary">
+<div class="pilwrap" id="override-the-default-behavior-of-the-alert-mock">
   <h2>
-    <a href="#override%20the%20default%20behavior%20of%20the%20alert%20mock" name="override%20the%20default%20behavior%20of%20the%20alert%20mock" class="pilcrow">&#182;</a>
-    Override the default behavior of the <code>alert</code> mock
+    <a href="#override-the-default-behavior-of-the-alert-mock" name="override-the-default-behavior-of-the-alert-mock" class="pilcrow"></a>
+Override the default behavior of the <code>alert</code> mock
   </h2>
 </div>
-
-  </div>
-  <div class="body">
-  </div>
 </div>
+<div class="body">
+</div>
+</div>
+
         </td>
-        <td class="code highlight"><div class="highlight"><pre>
+        <td class="code highlight">
+          <pre class="javascript">
+SimpleAlert.alert = jest.genMockFunction();
 
-<span class="nx">SimpleAlert</span><span class="p">.</span><span class="nx">alert</span> <span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">genMockFunction</span><span class="p">();</span>
+<span class="hljs-built_in">module</span>.exports = SimpleAlert;
 
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">SimpleAlert</span><span class="p">;</span>
-</pre></div>
+</pre>
         </td>
       </tr>
+    
   </tbody>
 </table>
+
   </div>
 </body>
 </html>
