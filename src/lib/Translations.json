@@ -5,7 +5,8 @@
     },
     "Header": {
       "current_state": "Current State",
-      "see_console": "see console"
+      "see_console": "see console",
+      "update_state": "Update State"
     },
     "Subview": {
       "subview": "Subview",
@@ -60,7 +61,8 @@
     },
     "Header": {
       "current_state": "état actuel",
-      "see_console": "voir console"
+      "see_console": "voir console",
+      "update_state": "état de mise à jour"      
     },    
     "Subview": {
       "subview": "Sous-vue",
@@ -115,7 +117,8 @@
     },
     "Header": {
       "current_state": "Estado actual",
-      "see_console": "ver la consola"
+      "see_console": "ver la consola",
+      "update_state": "Estado de actualización"      
     },    
     "Subview": {
       "subview": "Subview",
