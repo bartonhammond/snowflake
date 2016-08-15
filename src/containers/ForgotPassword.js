@@ -1,12 +1,12 @@
 /**
  * # ForgotPassword.js
- * 
+ *
  */
 'use strict';
 /**
  * ## Imports
- * 
- * Redux 
+ *
+ * Redux
  */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -18,7 +18,7 @@ import * as authActions from '../reducers/auth/authActions';
 
 /**
  * Immutable
- */ 
+ */
 import {Map} from 'immutable';
 
 /**
@@ -32,7 +32,7 @@ import LoginRender from '../components/LoginRender';
 import React from 'react';
 
 const {
-  REGISTER, 
+  REGISTER,
   LOGIN,
   FORGOT_PASSWORD
 } = require('../lib/constants').default;
@@ -40,9 +40,6 @@ const {
 /**
   * ## Redux boilerplate
   */
-const actions = [
-  authActions
-];
 
 function mapStateToProps(state) {
   return {
@@ -51,14 +48,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
   return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators(authActions, dispatch),
   };
 }
 
@@ -82,7 +73,7 @@ let ForgotPassword = React.createClass({
 		                               );
 
     return(
-      <LoginRender 
+      <LoginRender
           formType={ FORGOT_PASSWORD }
           loginButtonText={ loginButtonText }
           onButtonPress={ onButtonPress }

@@ -2,12 +2,12 @@
  * # Subview.js
  *
  *  This is called from main to demonstrate the back button
- *  
+ *
  */
 'use strict';
 /*
  * ## Imports
- *  
+ *
  * Imports from redux
  */
 import { bindActionCreators } from 'redux';
@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 
 /**
  * Immutable
- */ 
+ */
 import {Map} from 'immutable';
 
 /**
@@ -33,7 +33,7 @@ import NavigationBar from 'react-native-navbar';
  */
 import React from 'react';
 import
-{  
+{
   StyleSheet,
   View,
   Text
@@ -42,16 +42,13 @@ from 'react-native';
 
 /**
  * Use device options so we can reference the Version
- * 
+ *
  */
 import * as deviceActions from '../reducers/device/deviceActions';
 
-/** 
+/**
 * ## Redux boilerplate
 */
-const actions = [
-  deviceActions
-];
 
 /**
  *  Instead of including all app states via ...state
@@ -65,20 +62,11 @@ function mapStateToProps(state) {
 };
 
 /*
- * Bind all the functions from the ```actions``` and bind them with
- * ```dispatch```
-
+ * Bind all the actions in deviceActions
  */
 function mapDispatchToProps(dispatch) {
-
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
   return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators(deviceActions, dispatch),
   };
 }
 
@@ -106,12 +94,12 @@ I18n.translations = Translations;
  * ## Subview class
  */
 let Subview = React.createClass({
-  
+
   render() {
     var titleConfig = {
       title: I18n.t("Subview.subview")
     };
-    
+
     var leftButtonConfig = {
       title: I18n.t("Subview.back"),
       handler: Actions.pop

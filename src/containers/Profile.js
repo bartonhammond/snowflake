@@ -1,6 +1,6 @@
 /**
  * # Profile.js
- * 
+ *
  * This component provides an interface for a logged in user to change
  * their username and email.
  * It too is a container so there is boilerplate from Redux similar to
@@ -78,13 +78,9 @@ var styles = StyleSheet.create({
   }
 });
 
-/** 
+/**
 * ## Redux boilerplate
 */
-const actions = [
-  profileActions,
-  globalActions
-];
 
 function mapStateToProps(state) {
   return {
@@ -93,14 +89,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
   return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...profileActions, ...globalActions }, dispatch),
   };
 }
 /**
@@ -131,14 +121,14 @@ class Profile extends Component {
    *
    * When any fields change in the form, fire this action so they can
    * be validated.
-   * 
+   *
    */
   onChange(value) {
     if (value.username != '') {
       this.props.actions.onProfileFormFieldChange('username',value.username);
     }
     if (value.email != '') {
-      this.props.actions.onProfileFormFieldChange('email',value.email);      
+      this.props.actions.onProfileFormFieldChange('email',value.email);
     }
     this.setState({value});
   }
@@ -174,7 +164,7 @@ class Profile extends Component {
           email: this.props.profile.form.fields.email
         }
       });
-    }      
+    }
   }
 
   /**
@@ -185,14 +175,14 @@ class Profile extends Component {
     this.errorAlert.checkError(this.props.profile.form.error);
 
     let self = this;
-    
+
     let ProfileForm = t.struct({
       username: t.String,
       email: t.String
     });
     /**
      * Set up the field definitions.  If we're fetching, the fields
-     * are disabled.  
+     * are disabled.
      */
     let options = {
       auto: 'placeholders',

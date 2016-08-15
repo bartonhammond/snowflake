@@ -1,14 +1,14 @@
 /**
  * # Logout.js
- * 
  *
- * 
+ *
+ *
  */
 'use strict';
 /**
  * ## Imports
- * 
- * Redux 
+ *
+ * Redux
  */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -22,7 +22,7 @@ import * as globalActions from '../reducers/global/globalActions';
 
 /**
  * Immutable
- */ 
+ */
 import {Map} from 'immutable';
 
 /**
@@ -57,10 +57,6 @@ var styles = StyleSheet.create({
 /**
  * ## Redux boilerplate
  */
-const actions = [
-  authActions,
-  globalActions
-];
 
 function mapStateToProps(state) {
   return {
@@ -69,14 +65,8 @@ function mapStateToProps(state) {
 };
 
 function mapDispatchToProps(dispatch) {
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
   return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...authActions, ...globalActions }, dispatch),
   };
 }
 /**
@@ -91,12 +81,12 @@ class Logout extends Component {
 
   /**
    * ### render
-   * Setup some default presentations and render 
+   * Setup some default presentations and render
    */
   render() {
-            
+
     let self = this;
-    
+
     let onButtonPress = () => {
 			this.props.actions.logout();
 		};
