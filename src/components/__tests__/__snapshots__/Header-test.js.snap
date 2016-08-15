@@ -6,7 +6,7 @@ exports[`Header should be display empty text when not fetching 1`] = `
         "alignItems": "center",
         "backgroundColor": "transparent",
         "justifyContent": "center",
-        "marginTop": 10
+        "marginTop": 20
       }
     }>
     <View
@@ -32,25 +32,15 @@ exports[`Header should be display empty text when not fetching 1`] = `
       }
       testID={undefined}>
       <Image
-        source={
-          Object {
-            "uri": "http://i.imgur.com/da4G0Io.png"
-          }
-        }
+        source={1}
         style={
           Object {
-            "height": 50,
-            "width": 50
+            "height": 100,
+            "width": 100
           }
         } />
     </View>
-    <Text>
-       
-    </Text>
   </View>
-  <Text>
-     
-  </Text>
 </View>
 `;
 
@@ -62,7 +52,7 @@ exports[`Header should be display spinner when fetching 1`] = `
         "alignItems": "center",
         "backgroundColor": "transparent",
         "justifyContent": "center",
-        "marginTop": 10
+        "marginTop": 20
       }
     }>
     <View
@@ -88,15 +78,11 @@ exports[`Header should be display spinner when fetching 1`] = `
       }
       testID={undefined}>
       <Image
-        source={
-          Object {
-            "uri": "http://i.imgur.com/da4G0Io.png"
-          }
-        }
+        source={1}
         style={
           Object {
-            "height": 50,
-            "width": 50
+            "height": 100,
+            "width": 100
           }
         } />
     </View>
@@ -104,8 +90,5 @@ exports[`Header should be display spinner when fetching 1`] = `
       animating={true}
       size="large" />
   </View>
-  <Text>
-     
-  </Text>
 </View>
 `;

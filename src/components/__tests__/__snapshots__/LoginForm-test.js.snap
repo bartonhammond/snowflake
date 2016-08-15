@@ -144,7 +144,6 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "email": Object {
           "autoCapitalize": "none",
@@ -152,7 +151,8 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
           "error": undefined,
           "hasError": false,
           "keyboardType": "email-address",
-          "label": "Email"
+          "label": undefined,
+          "placeholder": undefined
         }
       }
     }
@@ -311,7 +311,6 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "email": Object {
           "autoCapitalize": "none",
@@ -319,7 +318,8 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
           "error": undefined,
           "hasError": true,
           "keyboardType": "email-address",
-          "label": "Email"
+          "label": undefined,
+          "placeholder": undefined
         }
       }
     }
@@ -478,7 +478,6 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "email": Object {
           "autoCapitalize": "none",
@@ -486,7 +485,8 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
           "error": undefined,
           "hasError": false,
           "keyboardType": "email-address",
-          "label": "Email"
+          "label": undefined,
+          "placeholder": undefined
         }
       }
     }
@@ -645,14 +645,14 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "password": Object {
           "editable": false,
           "error": undefined,
           "hasError": undefined,
-          "label": "Password",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "username": Object {
@@ -660,8 +660,9 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
           "editable": false,
           "error": undefined,
           "hasError": undefined,
-          "label": "Username",
-          "maxLength": 12
+          "label": undefined,
+          "maxLength": 12,
+          "placeholder": undefined
         }
       }
     }
@@ -821,14 +822,14 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "password": Object {
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Password",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": false
         },
         "username": Object {
@@ -836,8 +837,9 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Username",
-          "maxLength": 12
+          "label": undefined,
+          "maxLength": 12,
+          "placeholder": undefined
         }
       }
     }
@@ -997,14 +999,14 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "password": Object {
           "editable": true,
           "error": undefined,
           "hasError": true,
-          "label": "Password",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "username": Object {
@@ -1012,8 +1014,9 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
           "editable": true,
           "error": undefined,
           "hasError": true,
-          "label": "Username",
-          "maxLength": 12
+          "label": undefined,
+          "maxLength": 12,
+          "placeholder": undefined
         }
       }
     }
@@ -1173,14 +1176,14 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "password": Object {
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Password",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "username": Object {
@@ -1188,8 +1191,9 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Username",
-          "maxLength": 12
+          "label": undefined,
+          "maxLength": 12,
+          "placeholder": undefined
         }
       }
     }
@@ -1349,14 +1353,14 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "password": Object {
           "editable": false,
           "error": undefined,
           "hasError": true,
-          "label": "Password",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "username": Object {
@@ -1364,8 +1368,9 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
           "editable": false,
           "error": undefined,
           "hasError": true,
-          "label": "Username",
-          "maxLength": 12
+          "label": undefined,
+          "maxLength": 12,
+          "placeholder": undefined
         }
       }
     }
@@ -1525,7 +1530,6 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "email": Object {
           "autoCapitalize": "none",
@@ -1533,22 +1537,25 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
           "error": undefined,
           "hasError": false,
           "keyboardType": "email-address",
-          "label": "Email"
+          "label": undefined,
+          "placeholder": undefined
         },
         "password": Object {
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Password",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": false
         },
         "passwordAgain": Object {
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Please enter password again",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": false
         },
         "username": Object {
@@ -1556,8 +1563,9 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Username",
-          "maxLength": 12
+          "label": undefined,
+          "maxLength": 12,
+          "placeholder": undefined
         }
       }
     }
@@ -1719,7 +1727,6 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "email": Object {
           "autoCapitalize": "none",
@@ -1727,22 +1734,25 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
           "error": undefined,
           "hasError": true,
           "keyboardType": "email-address",
-          "label": "Email"
+          "label": undefined,
+          "placeholder": undefined
         },
         "password": Object {
           "editable": true,
           "error": undefined,
           "hasError": true,
-          "label": "Password",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "passwordAgain": Object {
           "editable": true,
           "error": undefined,
           "hasError": true,
-          "label": "Please enter password again",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "username": Object {
@@ -1750,8 +1760,9 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
           "editable": true,
           "error": undefined,
           "hasError": true,
-          "label": "Username",
-          "maxLength": 12
+          "label": undefined,
+          "maxLength": 12,
+          "placeholder": undefined
         }
       }
     }
@@ -1913,7 +1924,6 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "email": Object {
           "autoCapitalize": "none",
@@ -1921,22 +1931,25 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
           "error": undefined,
           "hasError": false,
           "keyboardType": "email-address",
-          "label": "Email"
+          "label": undefined,
+          "placeholder": undefined
         },
         "password": Object {
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Password",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "passwordAgain": Object {
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Please enter password again",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "username": Object {
@@ -1944,8 +1957,9 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
           "editable": true,
           "error": undefined,
           "hasError": false,
-          "label": "Username",
-          "maxLength": 12
+          "label": undefined,
+          "maxLength": 12,
+          "placeholder": undefined
         }
       }
     }
@@ -2107,7 +2121,6 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
   onChange={[Function onChange]}
   options={
     Object {
-      "auto": "placeholders",
       "fields": Object {
         "email": Object {
           "autoCapitalize": "none",
@@ -2115,22 +2128,25 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
           "error": undefined,
           "hasError": true,
           "keyboardType": "email-address",
-          "label": "Email"
+          "label": undefined,
+          "placeholder": undefined
         },
         "password": Object {
           "editable": false,
           "error": undefined,
           "hasError": true,
-          "label": "Password",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "passwordAgain": Object {
           "editable": false,
           "error": undefined,
           "hasError": true,
-          "label": "Please enter password again",
+          "label": undefined,
           "maxLength": 12,
+          "placeholder": undefined,
           "secureTextEntry": true
         },
         "username": Object {
@@ -2138,8 +2154,9 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
           "editable": false,
           "error": undefined,
           "hasError": true,
-          "label": "Username",
-          "maxLength": 12
+          "label": undefined,
+          "maxLength": 12,
+          "placeholder": undefined
         }
       }
     }
