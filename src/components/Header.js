@@ -62,6 +62,13 @@ var styles = StyleSheet.create({
 
 });
 
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n');
+import Translations from '../lib/Translations';
+I18n.translations = Translations;
+
 var Header = React.createClass({
   /**
    * ## Header.class
@@ -127,9 +134,9 @@ var Header = React.createClass({
    *
    */
   render() {
-
+    let displayText;
     if (this.props.showState) {
-      let displayText = JSON.stringify(this.props.currentState);
+      displayText = JSON.stringify(this.props.currentState);
       
      console.log(displayText);
 
