@@ -1,6 +1,6 @@
 {
   "name": "snowflake",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "jest": {
     "preset": "jest-react-native",
@@ -47,7 +47,7 @@
     "babel-core": "6.9.0",
     "babel-jest": "14.0.0",
     "babel-preset-react-native": "1.8.0",
-    "docker": "0.2.14",
+    "docker": "1.0.0",
     "istanbul": "0.4.3",
     "jest": "14.0.0",
     "jest-react-native": "14.0.0",

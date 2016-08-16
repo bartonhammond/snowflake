@@ -10,39 +10,35 @@ app:
     opts:
       is_expand: false
 trigger_map:
-- pattern: "*"
+- pattern: master
   is_pull_request_allowed: true
   workflow: primary
 workflows:
   primary:
     steps:
-    - activate-ssh-key@3.1.0:
+    - activate-ssh-key@3.1.1:
         title: Activate App SSH key
         inputs:
         - ssh_key_save_path: "$HOME/.ssh/steplib_ssh_step_id_rsa"
-    - git-clone@3.1.0: {}
-    - script@1.1.0:
+    - git-clone@3.3.3:
+        inputs:
+        - clone_depth: '1'
+    - script@1.1.2:
         title: npm install
         inputs:
         - content: |-
             #!/bin/bash
 
             npm install
-    - script@1.1.0:
+    - script@1.1.2:
         title: npm test
         inputs:
         - content: |-
             #!/bin/bash
 
             npm test
-    - script@1.1.0:
-        title: npm install react-native -g
-        inputs:
-        - content: |-
-            #!/bin/bash
-
-            npm install -g react-native-cli
-    - script@1.1.0:
+    - install-react-native@0.1.0: {}
+    - script@1.1.2:
         title: create config
         inputs:
         - content: |-
@@ -50,14 +46,12 @@ workflows:
             touch src/lib/config.js
 
             echo "module.exports={ PARSE: {APP_ID: '$PARSE_APP_ID' ,REST_API_KEY: '$PARSE_REST_API_KEY', SESSION_TOKEN_KEY: 'SESSION_TOKEN_KEY'}}" >> src/lib/config.js
-    - script@1.1.0:
-        title: bundle-ios
+    - react-native-bundle@0.1.2:
         inputs:
-        - content: |-
-            #!/bin/bash
-            react-native bundle --entry-file ./index.ios.js --platform ios --bundle-output ios/main.jsbundle
-    - certificate-and-profile-installer@1.4.0: {}
-    - fastlane@2.1.0:
+        - entry_file: "./index.ios.js"
+        - out: ios/main.jsbundle
+    - certificate-and-profile-installer@1.6.0: {}
+    - fastlane@2.2.0:
         inputs:
         - lane: ios beta
-    - deploy-to-bitrise-io@1.2.0: {}
+    - deploy-to-bitrise-io@1.2.4: {}
