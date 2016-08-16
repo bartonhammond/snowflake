@@ -1,14 +1,14 @@
 /**
  * # Login.js
- * 
+ *
  * This class is a little complicated as it handles multiple states.
  *
  */
 'use strict';
 /**
  * ## Imports
- * 
- * Redux 
+ *
+ * Redux
  */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -21,7 +21,7 @@ import * as globalActions from '../reducers/global/globalActions';
 
 /**
  * Immutable
- */ 
+ */
 import {Map} from 'immutable';
 
 /**
@@ -47,7 +47,7 @@ import FormButton from '../components/FormButton';
  */
 import LoginForm from '../components/LoginForm';
 /**
- * The itemCheckbox will toggle the display of the password fields 
+ * The itemCheckbox will toggle the display of the password fields
  */
 import ItemCheckbox from '../components/ItemCheckbox';
 
@@ -107,11 +107,6 @@ const actions = [
   globalActions
 ];
 
-function mapStateToProps(state) {
-  return {
-  };
-}
-
 function mapDispatchToProps(dispatch) {
   const creators = Map()
           .merge(...actions)
@@ -144,7 +139,7 @@ class LoginRender extends Component {
       }
     };
   }
-  
+
   /**
    * ### componentWillReceiveProps
    * As the properties are validated they will be set here.
@@ -159,7 +154,7 @@ class LoginRender extends Component {
       }
     });
   }
-  
+
   /**
    * ### onChange
    *
@@ -172,7 +167,7 @@ class LoginRender extends Component {
   onChange(value) {
     if (value.username != '') {
       this.props.actions.onAuthFormFieldChange('username',value.username);
-    }    
+    }
     if (value.email != '') {
       this.props.actions.onAuthFormFieldChange('email',value.email);
     }
@@ -209,29 +204,29 @@ class LoginRender extends Component {
           }} >
       <Text>{I18n.t("LoginRender.already_have_account")}</Text>
     </TouchableHighlight>;
-    
+
     let register =
-    <TouchableHighlight 
+    <TouchableHighlight
         onPress={() => {
             actions.registerState();
             Actions.Register();
           }} >
       <Text>{I18n.t("LoginRender.register")}</Text>
     </TouchableHighlight>;
-    
+
     switch(messageType) {
     case FORGOT_PASSWORD:
       return forgotPassword;
     case LOGIN:
       return alreadyHaveAccount;
-    case REGISTER:	
+    case REGISTER:
       return register;
     }
   }
-  
+
   /**
    * ### render
-   * Setup some default presentations and render 
+   * Setup some default presentations and render
    */
   render() {
     var formType = this.props.formType;
@@ -240,16 +235,16 @@ class LoginRender extends Component {
     var displayPasswordCheckbox = this.props.displayPasswordCheckbox;
     var leftMessageType = this.props.leftMessageType;
     var rightMessageType = this.props.rightMessageType;
-    
+
     var passwordCheckbox = <Text/>;
     let leftMessage = this.getMessage(leftMessageType, this.props.actions);
     let rightMessage = this.getMessage(rightMessageType, this.props.actions);
-    
+
     let self = this;
 
     // display the login / register / change password screens
     this.errorAlert.checkError(this.props.auth.form.error);
-    
+
     /**
      * Toggle the display of the Password and PasswordAgain fields
      */
@@ -270,11 +265,11 @@ class LoginRender extends Component {
     /**
      * The LoginForm is now defined with the required fields.  Just
      * surround it with the Header and the navigation messages
-     * Note how the button too is disabled if we're fetching. The 
-     * header props are mostly for support of Hot reloading. 
+     * Note how the button too is disabled if we're fetching. The
+     * header props are mostly for support of Hot reloading.
      * See the docs for Header for more info.
      */
-    
+
     return(
       <View style={styles.container}>
 	<ScrollView horizontal={false} width={width} height={height}>
@@ -283,9 +278,9 @@ class LoginRender extends Component {
                     showState={this.props.global.showState}
                     currentState={this.props.global.currentState}
                     onGetState={this.props.actions.getState}
-                    onSetState={this.props.actions.setState}                      
+                    onSetState={this.props.actions.setState}
 	    />
-	    
+
 	    <View style={styles.inputs}>
 	      <LoginForm
                   formType={formType}
@@ -295,23 +290,23 @@ class LoginRender extends Component {
 	      />
 	      {passwordCheckbox}
             </View>
-	    
+
 	    <FormButton
                 isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
                 onPress={onButtonPress}
                 buttonText={loginButtonText}/>
-	    
+
 	    <View >
 	      <View style={styles.forgotContainer}>
 	        {leftMessage}
                 {rightMessage}
               </View>
-	    </View>	 
-	    
+	    </View>
+
 	  </View>
 	</ScrollView>
       </View>
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(LoginRender);
+export default connect(null, mapDispatchToProps)(LoginRender);
