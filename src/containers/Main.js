@@ -1,12 +1,12 @@
 /**
  * # Main.js
  *  This is the main app screen
- *  
+ *
  */
 'use strict';
 /*
  * ## Imports
- *  
+ *
  * Imports from redux
  */
 import { bindActionCreators } from 'redux';
@@ -20,7 +20,7 @@ import * as globalActions from '../reducers/global/globalActions';
 
 /**
  * Immutable
- */ 
+ */
 import {Map} from 'immutable';
 
 /**
@@ -52,11 +52,11 @@ const  Button = require('apsl-react-native-button');
 
 /**
  * Support for Hot reload
- * 
+ *
  */
 const actions = [
   authActions,
-  globalActions  
+  globalActions
 ];
 
 /**
@@ -65,9 +65,17 @@ const actions = [
  *
  */
 function mapStateToProps(state) {
-  return {
-      ...state
-  }
+    return {
+        auth: {
+            form: {
+                isFetching: state.auth.form.isFetching,
+            },
+        },
+        global: {
+            currentState: state.global.currentState,
+            showState: state.global.showState,
+        },
+    };
 };
 
 /*
@@ -91,7 +99,7 @@ function mapDispatchToProps(dispatch) {
 var styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    flex: 1    
+    flex: 1
   },
   summary: {
     fontFamily: 'BodoniSvtyTwoITCTT-Book',
@@ -102,7 +110,7 @@ var styles = StyleSheet.create({
     backgroundColor: '#FF3366',
     borderColor:  '#FF3366',
     marginLeft: 10,
-    marginRight: 10    
+    marginRight: 10
   }
 });
 /**
@@ -116,14 +124,14 @@ I18n.translations = Translations;
  * ## App class
  */
 class Main extends Component {
-  
+
   handlePress() {
     Actions.Subview({
       title: 'Subview'
       // you can add additional props to be passed to Subview here...
     });
   }
-  
+
   render() {
     return(
       <View style={styles.container}>
@@ -133,7 +141,7 @@ class Main extends Component {
                 currentState={this.props.global.currentState}
                 onGetState={this.props.actions.getState}
                 onSetState={this.props.actions.setState}
-        />        
+        />
     	<Button style={ styles.button } onPress={ this.handlePress.bind(this) }>
 	{I18n.t("Main.navigate")}
         </Button>
@@ -147,4 +155,3 @@ class Main extends Component {
  * Connect the properties
  */
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
-

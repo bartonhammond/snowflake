@@ -1,13 +1,13 @@
 /**
  * Register.js
- * 
- * Allow user to register 
+ *
+ * Allow user to register
  */
 'use strict';
 /**
  * ## Imports
- * 
- * Redux 
+ *
+ * Redux
  */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -19,7 +19,7 @@ import * as authActions from '../reducers/auth/authActions';
 
 /**
  * Immutable
- */ 
+ */
 import {Map} from 'immutable';
 
 /**
@@ -28,12 +28,12 @@ import {Map} from 'immutable';
 import LoginRender from '../components/LoginRender';
 
 /**
- * The necessary React 
+ * The necessary React
  */
 import React from 'react';
 
 const {
-  LOGIN, 
+  LOGIN,
   REGISTER,
   FORGOT_PASSWORD
 } = require('../lib/constants').default;
@@ -47,7 +47,8 @@ const actions = [
 
 function mapStateToProps(state) {
   return {
-      ...state
+      auth: state.auth,
+      global: state.global,
   };
 }
 
@@ -85,15 +86,15 @@ let Register = React.createClass({
 					        this.props.auth.form.fields.email,
 					        this.props.auth.form.fields.password
 		                               );
-    
+
 
 
 
     return(
-      <LoginRender 
+      <LoginRender
           formType={ REGISTER }
           loginButtonText={ loginButtonText }
-          onButtonPress={ onButtonPress }				
+          onButtonPress={ onButtonPress }
           displayPasswordCheckbox ={ true }
           leftMessageType={ FORGOT_PASSWORD }
           rightMessageType={ LOGIN }

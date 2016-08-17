@@ -246,6 +246,7 @@ The following videos will walk you through setting up CI with BitRise.io
 - [Create iOS App](#create-ios-app)
 - [iOS install](#ios-install)
 - [Android Setup](#android-setup)
+- [Addendum #1](#addendum-#1)
 - [Things not addressed](#things-not-addressed)
 
 ----------
@@ -369,6 +370,22 @@ alt="Android Setup" width="240" height="180" border="10"/>
 * Setup Secret and Env Vars 
 * Import YML
 * Run build
+
+##### Addendum #1
+* **Video **: [XCode Edge Stack, WorkFlow](https://youtu.be/mP5D2MQboxw)
+<a
+href="http://www.youtube.com/watch?feature=player_embedded&v=mP5D2MQboxw"
+target="_blank">
+<img src="https://i9.ytimg.com/vi/mP5D2MQboxw/1.jpg?sqp=CPDqzb0F&rs=AOn4CLBdpVDIWghF_-wSuaSKnbPdxHE1hw" 
+alt="XCode Edge Stack" width="240" height="180" border="10"/>
+</a>
+
+* "XCode Edge Stack" for iOS
+* New React-Native steps for Install & Bundle
+* Upgraded Step versions
+* GitHub branch triggers 
+
+
 
 ##### Things not addressed
 * Submission to any store

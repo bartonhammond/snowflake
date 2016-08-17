@@ -1,14 +1,14 @@
 /**
  * # Logout.js
- * 
  *
- * 
+ *
+ *
  */
 'use strict';
 /**
  * ## Imports
- * 
- * Redux 
+ *
+ * Redux
  */
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -22,7 +22,7 @@ import * as globalActions from '../reducers/global/globalActions';
 
 /**
  * Immutable
- */ 
+ */
 import {Map} from 'immutable';
 
 /**
@@ -63,9 +63,18 @@ const actions = [
 ];
 
 function mapStateToProps(state) {
-  return {
-      ...state
-  }
+    return {
+        auth: {
+            form: {
+                isFetching: state.auth.form.isFetching,
+                isValid: state.auth.form.isValid,
+            },
+        },
+        global: {
+            currentState: state.global.currentState,
+            showState: state.global.showState,
+        },
+    };
 };
 
 function mapDispatchToProps(dispatch) {
@@ -91,12 +100,12 @@ class Logout extends Component {
 
   /**
    * ### render
-   * Setup some default presentations and render 
+   * Setup some default presentations and render
    */
   render() {
-            
+
     let self = this;
-    
+
     let onButtonPress = () => {
 			this.props.actions.logout();
 		};

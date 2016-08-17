@@ -1,15 +1,15 @@
 /**
  * # app.js
- *  Display startup screen and 
- *  getSessionTokenAtStartup which will navigate upon completion 
+ *  Display startup screen and
+ *  getSessionTokenAtStartup which will navigate upon completion
  *
- *   
- *  
+ *
+ *
  */
 'use strict';
 /*
  * ## Imports
- *  
+ *
  * Imports from redux
  */
 import { bindActionCreators } from 'redux';
@@ -32,7 +32,7 @@ import * as globalActions from '../reducers/global/globalActions';
  */
 import React from 'react';
 import
-{ 	
+{
   StyleSheet,
   View,
   Text
@@ -59,7 +59,16 @@ const actions = [
  */
 function mapStateToProps(state) {
   return {
-      ...state
+      deviceVersion: state.device.version,
+      auth: {
+          form: {
+              isFetching: state.auth.form.isFetching,
+          },
+      },
+      global: {
+          currentState: state.global.currentState,
+          showState: state.global.showState,
+      },
   };
 };
 
@@ -110,10 +119,10 @@ I18n.translations = Translations;
 let App = React.createClass({
   /**
    * See if there's a sessionToken from a previous login
-   * 
+   *
    */
   componentDidMount() {
-    //Use a timer so App screen is displayed 
+    //Use a timer so App screen is displayed
     this.setTimeout(
       () => {
         this.props.actions.getSessionToken();
@@ -122,7 +131,7 @@ let App = React.createClass({
     );
 
   },
-  
+
   render() {
     return(
       <View style={ styles.container }>
@@ -130,10 +139,10 @@ let App = React.createClass({
                 showState={this.props.global.showState}
                 currentState={this.props.global.currentState}
                 onGetState={this.props.actions.getState}
-                onSetState={this.props.actions.setState}                      
+                onSetState={this.props.actions.setState}
 	/>
-        
-	<Text style={ styles.summary }>Snowflake {I18n.t("App.version")}:  {this.props.device.version}</Text>
+
+	<Text style={ styles.summary }>Snowflake {I18n.t("App.version")}:  {this.props.deviceVersion}</Text>
       </View>
     );
   }
@@ -144,4 +153,3 @@ reactMixin(App.prototype, TimerMixin);
  * Connect the properties
  */
 export default connect(mapStateToProps, mapDispatchToProps)(App);
-
