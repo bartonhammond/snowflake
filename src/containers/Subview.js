@@ -57,7 +57,7 @@ import * as deviceActions from '../reducers/device/deviceActions';
  */
 function mapStateToProps(state) {
   return {
-      ...state
+      deviceVersion: state.device.version,
   };
 };
 
@@ -112,7 +112,7 @@ let Subview = React.createClass({
             leftButton={ leftButtonConfig }
 	/>
 	<View style={ styles.container }>
-	<Text style={ styles.summary }>{I18n.t("Subview.subview")} {I18n.t("App.version")}: {this.props.device.version} </Text>
+	<Text style={ styles.summary }>{I18n.t("Subview.subview")} {I18n.t("App.version")}: {this.props.deviceVersion} </Text>
 	</View>
       </View>
     );

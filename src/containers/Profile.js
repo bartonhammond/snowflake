@@ -83,9 +83,14 @@ var styles = StyleSheet.create({
 */
 
 function mapStateToProps(state) {
-  return {
-      ...state
-  };
+    return {
+        profile: state.profile,
+        global: {
+            currentUser: state.global.currentUser,
+            currentState: state.global.currentState,
+            showState: state.global.showState,
+        },
+    };
 }
 
 function mapDispatchToProps(dispatch) {

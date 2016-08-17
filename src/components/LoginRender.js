@@ -103,11 +103,6 @@ var styles = StyleSheet.create({
  * ## Redux boilerplate
  */
 
-function mapStateToProps(state) {
-  return {
-  };
-}
-
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators({ ...authActions, ...globalActions }, dispatch),
@@ -304,4 +299,4 @@ class LoginRender extends Component {
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(LoginRender);
+export default connect(null, mapDispatchToProps)(LoginRender);

@@ -59,9 +59,18 @@ var styles = StyleSheet.create({
  */
 
 function mapStateToProps(state) {
-  return {
-      ...state
-  }
+    return {
+        auth: {
+            form: {
+                isFetching: state.auth.form.isFetching,
+                isValid: state.auth.form.isValid,
+            },
+        },
+        global: {
+            currentState: state.global.currentState,
+            showState: state.global.showState,
+        },
+    };
 };
 
 function mapDispatchToProps(dispatch) {

@@ -55,9 +55,17 @@ const  Button = require('apsl-react-native-button');
  *
  */
 function mapStateToProps(state) {
-  return {
-      ...state
-  }
+    return {
+        auth: {
+            form: {
+                isFetching: state.auth.form.isFetching,
+            },
+        },
+        global: {
+            currentState: state.global.currentState,
+            showState: state.global.showState,
+        },
+    };
 };
 
 /*

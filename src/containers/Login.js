@@ -48,7 +48,8 @@ const actions = [
 
 function mapStateToProps(state) {
   return {
-      ...state
+      auth: state.auth,
+      global: state.global,
   };
 }
 

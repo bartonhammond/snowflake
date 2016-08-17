@@ -49,7 +49,16 @@ import Header from '../components/Header';
  */
 function mapStateToProps(state) {
   return {
-      ...state
+      deviceVersion: state.device.version,
+      auth: {
+          form: {
+              isFetching: state.auth.form.isFetching,
+          },
+      },
+      global: {
+          currentState: state.global.currentState,
+          showState: state.global.showState,
+      },
   };
 };
 
@@ -115,7 +124,7 @@ let App = React.createClass({
                 onSetState={this.props.actions.setState}
 	/>
 
-	<Text style={ styles.summary }>Snowflake {I18n.t("App.version")}:  {this.props.device.version}</Text>
+	<Text style={ styles.summary }>Snowflake {I18n.t("App.version")}:  {this.props.deviceVersion}</Text>
       </View>
     );
   }
