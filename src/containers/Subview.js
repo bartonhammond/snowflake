@@ -2,12 +2,12 @@
  * # Subview.js
  *
  *  This is called from main to demonstrate the back button
- *  
+ *
  */
 'use strict';
 /*
  * ## Imports
- *  
+ *
  * Imports from redux
  */
 import { bindActionCreators } from 'redux';
@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 
 /**
  * Immutable
- */ 
+ */
 import {Map} from 'immutable';
 
 /**
@@ -33,7 +33,7 @@ import NavigationBar from 'react-native-navbar';
  */
 import React from 'react';
 import
-{  
+{
   StyleSheet,
   View,
   Text
@@ -42,11 +42,11 @@ from 'react-native';
 
 /**
  * Use device options so we can reference the Version
- * 
+ *
  */
 import * as deviceActions from '../reducers/device/deviceActions';
 
-/** 
+/**
 * ## Redux boilerplate
 */
 const actions = [
@@ -60,7 +60,7 @@ const actions = [
  */
 function mapStateToProps(state) {
   return {
-      ...state
+      deviceVersion: state.device.version,
   };
 };
 
@@ -106,12 +106,12 @@ I18n.translations = Translations;
  * ## Subview class
  */
 let Subview = React.createClass({
-  
+
   render() {
     var titleConfig = {
       title: I18n.t("Subview.subview")
     };
-    
+
     var leftButtonConfig = {
       title: I18n.t("Subview.back"),
       handler: Actions.pop
@@ -124,7 +124,7 @@ let Subview = React.createClass({
             leftButton={ leftButtonConfig }
 	/>
 	<View style={ styles.container }>
-	<Text style={ styles.summary }>{I18n.t("Subview.subview")} {I18n.t("App.version")}: {this.props.device.version} </Text>
+	<Text style={ styles.summary }>{I18n.t("Subview.subview")} {I18n.t("App.version")}: {this.props.deviceVersion} </Text>
 	</View>
       </View>
     );
