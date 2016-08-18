@@ -45,16 +45,6 @@ from 'react-native';
 import Header from '../components/Header';
 
 /**
- * ## Actions
- * 3 of our actions will be available as ```actions```
- */
-const actions = [
-  authActions,
-  deviceActions,
-  globalActions
-];
-
-/**
  *  Save that state
  */
 function mapStateToProps(state) {
@@ -73,19 +63,11 @@ function mapStateToProps(state) {
 };
 
 /**
- * Bind all the functions from the ```actions``` and bind them with
- * ```dispatch```
+ * Bind all the actions from authActions, deviceActions and globalActions
  */
 function mapDispatchToProps(dispatch) {
-
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
   return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...authActions, ...deviceActions, ...globalActions }, dispatch),
   };
 }
 

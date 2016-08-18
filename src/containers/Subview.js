@@ -49,9 +49,6 @@ import * as deviceActions from '../reducers/device/deviceActions';
 /**
 * ## Redux boilerplate
 */
-const actions = [
-  deviceActions
-];
 
 /**
  *  Instead of including all app states via ...state
@@ -65,20 +62,11 @@ function mapStateToProps(state) {
 };
 
 /*
- * Bind all the functions from the ```actions``` and bind them with
- * ```dispatch```
-
+ * Bind all the actions in deviceActions
  */
 function mapDispatchToProps(dispatch) {
-
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
   return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators(deviceActions, dispatch),
   };
 }
 

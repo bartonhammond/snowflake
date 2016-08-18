@@ -81,10 +81,6 @@ var styles = StyleSheet.create({
 /**
 * ## Redux boilerplate
 */
-const actions = [
-  profileActions,
-  globalActions
-];
 
 function mapStateToProps(state) {
     return {
@@ -98,14 +94,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
   return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...profileActions, ...globalActions }, dispatch),
   };
 }
 /**

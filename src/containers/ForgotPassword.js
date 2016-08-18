@@ -40,9 +40,6 @@ const {
 /**
   * ## Redux boilerplate
   */
-const actions = [
-  authActions
-];
 
 function mapStateToProps(state) {
   return {
@@ -52,14 +49,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
   return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators(authActions, dispatch),
   };
 }
 

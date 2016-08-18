@@ -49,16 +49,6 @@ from 'react-native';
  */
 const  Button = require('apsl-react-native-button');
 
-
-/**
- * Support for Hot reload
- *
- */
-const actions = [
-  authActions,
-  globalActions
-];
-
 /**
  *  Instead of including all app states via ...state
  *  One could explicitly enumerate only those which Main.js will depend on.
@@ -79,20 +69,11 @@ function mapStateToProps(state) {
 };
 
 /*
- * Bind all the functions from the ```actions``` and bind them with
- * ```dispatch```
-
+ * Bind all the actions
  */
 function mapDispatchToProps(dispatch) {
-
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
   return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...authActions, ...globalActions }, dispatch),
   };
 }
 
