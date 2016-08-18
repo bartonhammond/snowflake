@@ -31,10 +31,6 @@
       </div>
 
       <div class="heading h2">
-        <a href="#actions">Actions</a>
-      </div>
-
-      <div class="heading h2">
         <a href="#app-class">App class</a>
       </div>
 
@@ -85,9 +81,9 @@ getSessionTokenAtStartup which will navigate upon completion</p>
 Imports
   </h2>
 </div>
-<p>Imports from redux</p>
 </div>
 <div class="body">
+<p>Imports from redux</p>
 </div>
 </div>
 
@@ -161,7 +157,7 @@ Imports
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
 <span class="hljs-keyword">import</span>
-{ 	
+{
   StyleSheet,
   View,
   Text
@@ -195,36 +191,8 @@ Imports
     
       <tr>
         <td class="docs">
-          <div class="dox">
-<div class="summary">
-<div class="pilwrap" id="actions">
-  <h2>
-    <a href="#actions" name="actions" class="pilcrow"></a>
-Actions
-  </h2>
-</div>
-<p>3 of our actions will be available as <code>actions</code></p>
-</div>
-<div class="body">
-</div>
-</div>
-
-        </td>
-        <td class="code highlight">
-          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
-  authActions,
-  deviceActions,
-  globalActions
-];
-
-</pre>
-        </td>
-      </tr>
-    
-      <tr>
-        <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-8" id="section-8"></a>
+  <a class="pilcrow" href="#section-7" id="section-7"></a>
 </div>
 <div class="dox">
 <div class="summary">
@@ -238,7 +206,16 @@ Actions
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
   <span class="hljs-keyword">return</span> {
-      ...state
+      deviceVersion: state.device.version,
+      auth: {
+          form: {
+              isFetching: state.auth.form.isFetching,
+          },
+      },
+      global: {
+          currentState: state.global.currentState,
+          showState: state.global.showState,
+      },
   };
 };
 
@@ -249,12 +226,11 @@ Actions
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-9" id="section-9"></a>
+  <a class="pilcrow" href="#section-8" id="section-8"></a>
 </div>
 <div class="dox">
 <div class="summary">
-<p>Bind all the functions from the <code>actions</code> and bind them with
-<code>dispatch</code></p>
+<p>Bind all the actions from authActions, deviceActions and globalActions</p>
 </div>
 <div class="body">
 </div>
@@ -263,15 +239,8 @@ Actions
         </td>
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
-
-  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
-          .merge(...actions)
-          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
-          .toObject();
-
   <span class="hljs-keyword">return</span> {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...authActions, ...deviceActions, ...globalActions }, dispatch),
   };
 }
 
@@ -346,7 +315,7 @@ I18n.translations = Translations;
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-12" id="section-12"></a>
+  <a class="pilcrow" href="#section-11" id="section-11"></a>
 </div>
 <div class="dox">
 <div class="summary">
@@ -366,7 +335,7 @@ I18n.translations = Translations;
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-13" id="section-13"></a>
+  <a class="pilcrow" href="#section-12" id="section-12"></a>
 </div>
 <p>Use a timer so App screen is displayed</p>
 
@@ -380,7 +349,7 @@ I18n.translations = Translations;
     );
 
   },
-  
+
   render() {
     <span class="hljs-keyword">return</span>(
       <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{</span> <span class="hljs-attr">styles.container</span> }&gt;</span>
@@ -388,10 +357,10 @@ I18n.translations = Translations;
                 <span class="hljs-attr">showState</span>=<span class="hljs-string">{this.props.global.showState}</span>
                 <span class="hljs-attr">currentState</span>=<span class="hljs-string">{this.props.global.currentState}</span>
                 <span class="hljs-attr">onGetState</span>=<span class="hljs-string">{this.props.actions.getState}</span>
-                <span class="hljs-attr">onSetState</span>=<span class="hljs-string">{this.props.actions.setState}</span>                      
+                <span class="hljs-attr">onSetState</span>=<span class="hljs-string">{this.props.actions.setState}</span>
 	/&gt;</span>
-        
-	<span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{</span> <span class="hljs-attr">styles.summary</span> }&gt;</span>Snowflake {I18n.t("App.version")}:  {this.props.device.version}<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+
+	<span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{</span> <span class="hljs-attr">styles.summary</span> }&gt;</span>Snowflake {I18n.t("App.version")}:  {this.props.deviceVersion}<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
     );
   }
@@ -403,7 +372,7 @@ I18n.translations = Translations;
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-14" id="section-14"></a>
+  <a class="pilcrow" href="#section-13" id="section-13"></a>
 </div>
 <p>Since we're using ES6 classes, have to define the TimerMixin</p>
 
@@ -417,7 +386,7 @@ I18n.translations = Translations;
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-15" id="section-15"></a>
+  <a class="pilcrow" href="#section-14" id="section-14"></a>
 </div>
 <div class="dox">
 <div class="summary">
@@ -430,7 +399,6 @@ I18n.translations = Translations;
         </td>
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(App);
-
 
 </pre>
         </td>

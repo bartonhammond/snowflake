@@ -177,7 +177,7 @@ Imports
           <pre class="javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
 
 <span class="hljs-keyword">const</span> {
-  LOGIN, 
+  LOGIN,
   REGISTER,
   FORGOT_PASSWORD
 } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../lib/constants'</span>).default;
@@ -203,25 +203,17 @@ Redux boilerplate
 
         </td>
         <td class="code highlight">
-          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
-  authActions
-];
-
+          <pre class="javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
   <span class="hljs-keyword">return</span> {
-      ...state
+      auth: state.auth,
+      global: state.global,
   };
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
-  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
-          .merge(...actions)
-          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
-          .toObject();
-
   <span class="hljs-keyword">return</span> {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators(authActions, dispatch),
   };
 }
 
@@ -265,15 +257,15 @@ I18n.translations = Translations;
 					        <span class="hljs-keyword">this</span>.props.auth.form.fields.email,
 					        <span class="hljs-keyword">this</span>.props.auth.form.fields.password
 		                               );
-    
+
 
 
 
     <span class="hljs-keyword">return</span>(
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LoginRender</span> 
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LoginRender</span>
           <span class="hljs-attr">formType</span>=<span class="hljs-string">{</span> <span class="hljs-attr">REGISTER</span> }
           <span class="hljs-attr">loginButtonText</span>=<span class="hljs-string">{</span> <span class="hljs-attr">loginButtonText</span> }
-          <span class="hljs-attr">onButtonPress</span>=<span class="hljs-string">{</span> <span class="hljs-attr">onButtonPress</span> }				
+          <span class="hljs-attr">onButtonPress</span>=<span class="hljs-string">{</span> <span class="hljs-attr">onButtonPress</span> }
           <span class="hljs-attr">displayPasswordCheckbox</span> =<span class="hljs-string">{</span> <span class="hljs-attr">true</span> }
           <span class="hljs-attr">leftMessageType</span>=<span class="hljs-string">{</span> <span class="hljs-attr">FORGOT_PASSWORD</span> }
           <span class="hljs-attr">rightMessageType</span>=<span class="hljs-string">{</span> <span class="hljs-attr">LOGIN</span> }

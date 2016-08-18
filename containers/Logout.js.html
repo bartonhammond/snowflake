@@ -258,26 +258,25 @@ Redux boilerplate
 
         </td>
         <td class="code highlight">
-          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
-  authActions,
-  globalActions
-];
-
+          <pre class="javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
-  <span class="hljs-keyword">return</span> {
-      ...state
-  }
+    <span class="hljs-keyword">return</span> {
+        auth: {
+            form: {
+                isFetching: state.auth.form.isFetching,
+                isValid: state.auth.form.isValid,
+            },
+        },
+        global: {
+            currentState: state.global.currentState,
+            showState: state.global.showState,
+        },
+    };
 };
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
-  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
-          .merge(...actions)
-          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
-          .toObject();
-
   <span class="hljs-keyword">return</span> {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...authActions, ...globalActions }, dispatch),
   };
 }
 </pre>
@@ -331,9 +330,9 @@ render
         </td>
         <td class="code highlight">
           <pre class="javascript">  render() {
-            
+
     <span class="hljs-keyword">let</span> self = <span class="hljs-keyword">this</span>;
-    
+
     <span class="hljs-keyword">let</span> onButtonPress = () =&gt; {
 			<span class="hljs-keyword">this</span>.props.actions.logout();
 		};

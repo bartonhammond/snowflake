@@ -177,8 +177,8 @@ Imports
 
 <span class="hljs-keyword">const</span> {
   LOGIN,
-  REGISTER, 
-  FORGOT_PASSWORD 
+  REGISTER,
+  FORGOT_PASSWORD
 } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../lib/constants'</span>).default;
 
 </pre>
@@ -208,19 +208,14 @@ Redux boilerplate
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
   <span class="hljs-keyword">return</span> {
-      ...state
+      auth: state.auth,
+      global: state.global,
   };
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
-  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
-          .merge(...actions)
-          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
-          .toObject();
-
   <span class="hljs-keyword">return</span> {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators(authActions, dispatch),
   };
 }
 
@@ -259,12 +254,12 @@ I18n.translations = Translations;
     <span class="hljs-keyword">let</span> loginButtonText = I18n.t(<span class="hljs-string">"Login.login"</span>);
     <span class="hljs-keyword">let</span> onButtonPress = buttonPressHandler.bind(<span class="hljs-literal">null</span>,
 				                <span class="hljs-keyword">this</span>.props.actions.login,
-				                <span class="hljs-keyword">this</span>.props.auth.form.fields.username, 
+				                <span class="hljs-keyword">this</span>.props.auth.form.fields.username,
 				                <span class="hljs-keyword">this</span>.props.auth.form.fields.password
 		                               );
 
     <span class="hljs-keyword">return</span>(
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LoginRender</span> 
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LoginRender</span>
           <span class="hljs-attr">formType</span>=<span class="hljs-string">{</span> <span class="hljs-attr">LOGIN</span> }
           <span class="hljs-attr">loginButtonText</span>=<span class="hljs-string">{</span> <span class="hljs-attr">loginButtonText</span> }
           <span class="hljs-attr">onButtonPress</span>=<span class="hljs-string">{</span> <span class="hljs-attr">onButtonPress</span> }

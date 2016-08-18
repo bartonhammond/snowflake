@@ -80,9 +80,9 @@ Main.js
 Imports
   </h2>
 </div>
-<p>Imports from redux</p>
 </div>
 <div class="body">
+<p>Imports from redux</p>
 </div>
 </div>
 
@@ -224,7 +224,6 @@ Imports
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-keyword">const</span>  Button = <span class="hljs-built_in">require</span>(<span class="hljs-string">'apsl-react-native-button'</span>);
 
-
 </pre>
         </td>
       </tr>
@@ -233,30 +232,6 @@ Imports
         <td class="docs">
           <div class="pilwrap">
   <a class="pilcrow" href="#section-9" id="section-9"></a>
-</div>
-<div class="dox">
-<div class="summary">
-<p>Support for Hot reload</p>
-</div>
-<div class="body">
-</div>
-</div>
-
-        </td>
-        <td class="code highlight">
-          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
-  authActions,
-  globalActions  
-];
-
-</pre>
-        </td>
-      </tr>
-    
-      <tr>
-        <td class="docs">
-          <div class="pilwrap">
-  <a class="pilcrow" href="#section-10" id="section-10"></a>
 </div>
 <div class="dox">
 <div class="summary">
@@ -270,9 +245,17 @@ One could explicitly enumerate only those which Main.js will depend on.</p>
         </td>
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
-  <span class="hljs-keyword">return</span> {
-      ...state
-  }
+    <span class="hljs-keyword">return</span> {
+        auth: {
+            form: {
+                isFetching: state.auth.form.isFetching,
+            },
+        },
+        global: {
+            currentState: state.global.currentState,
+            showState: state.global.showState,
+        },
+    };
 };
 
 </pre>
@@ -282,12 +265,11 @@ One could explicitly enumerate only those which Main.js will depend on.</p>
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-11" id="section-11"></a>
+  <a class="pilcrow" href="#section-10" id="section-10"></a>
 </div>
 <div class="dox">
 <div class="summary">
-<p>Bind all the functions from the <code>actions</code> and bind them with
-<code>dispatch</code></p>
+<p>Bind all the actions</p>
 </div>
 <div class="body">
 </div>
@@ -296,22 +278,15 @@ One could explicitly enumerate only those which Main.js will depend on.</p>
         </td>
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
-
-  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
-          .merge(...actions)
-          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
-          .toObject();
-
   <span class="hljs-keyword">return</span> {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...authActions, ...globalActions }, dispatch),
   };
 }
 
 <span class="hljs-keyword">var</span> styles = StyleSheet.create({
   container: {
     flexDirection: <span class="hljs-string">'column'</span>,
-    flex: <span class="hljs-number">1</span>    
+    flex: <span class="hljs-number">1</span>
   },
   summary: {
     fontFamily: <span class="hljs-string">'BodoniSvtyTwoITCTT-Book'</span>,
@@ -322,7 +297,7 @@ One could explicitly enumerate only those which Main.js will depend on.</p>
     backgroundColor: <span class="hljs-string">'#FF3366'</span>,
     borderColor:  <span class="hljs-string">'#FF3366'</span>,
     marginLeft: <span class="hljs-number">10</span>,
-    marginRight: <span class="hljs-number">10</span>    
+    marginRight: <span class="hljs-number">10</span>
   }
 });
 </pre>
@@ -372,7 +347,7 @@ App class
         </td>
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
-  
+
   handlePress() {
     Actions.Subview({
       title: <span class="hljs-string">'Subview'</span>
@@ -383,7 +358,7 @@ App class
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-14" id="section-14"></a>
+  <a class="pilcrow" href="#section-13" id="section-13"></a>
 </div>
 <p>you can add additional props to be passed to Subview here...</p>
 
@@ -391,7 +366,7 @@ App class
         <td class="code highlight">
           <pre class="javascript">    });
   }
-  
+
   render() {
     <span class="hljs-keyword">return</span>(
       <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{styles.container}</span>&gt;</span>
@@ -401,7 +376,7 @@ App class
                 <span class="hljs-attr">currentState</span>=<span class="hljs-string">{this.props.global.currentState}</span>
                 <span class="hljs-attr">onGetState</span>=<span class="hljs-string">{this.props.actions.getState}</span>
                 <span class="hljs-attr">onSetState</span>=<span class="hljs-string">{this.props.actions.setState}</span>
-        /&gt;</span>        
+        /&gt;</span>
     	<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{</span> <span class="hljs-attr">styles.button</span> } <span class="hljs-attr">onPress</span>=<span class="hljs-string">{</span> <span class="hljs-attr">this.handlePress.bind</span>(<span class="hljs-attr">this</span>) }&gt;</span>
 	{I18n.t("Main.navigate")}
         <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
@@ -418,7 +393,7 @@ App class
       <tr>
         <td class="docs">
           <div class="pilwrap">
-  <a class="pilcrow" href="#section-15" id="section-15"></a>
+  <a class="pilcrow" href="#section-14" id="section-14"></a>
 </div>
 <div class="dox">
 <div class="summary">
@@ -431,7 +406,6 @@ App class
         </td>
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(mapStateToProps, mapDispatchToProps)(Main);
-
 
 </pre>
         </td>

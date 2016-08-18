@@ -348,26 +348,21 @@ Redux boilerplate
 
         </td>
         <td class="code highlight">
-          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
-  profileActions,
-  globalActions
-];
-
+          <pre class="javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
-  <span class="hljs-keyword">return</span> {
-      ...state
-  };
+    <span class="hljs-keyword">return</span> {
+        profile: state.profile,
+        global: {
+            currentUser: state.global.currentUser,
+            currentState: state.global.currentState,
+            showState: state.global.showState,
+        },
+    };
 }
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
-  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
-          .merge(...actions)
-          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
-          .toObject();
-
   <span class="hljs-keyword">return</span> {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...profileActions, ...globalActions }, dispatch),
   };
 }
 </pre>
@@ -457,7 +452,7 @@ be validated.</p>
       <span class="hljs-keyword">this</span>.props.actions.onProfileFormFieldChange(<span class="hljs-string">'username'</span>,value.username);
     }
     <span class="hljs-keyword">if</span> (value.email != <span class="hljs-string">''</span>) {
-      <span class="hljs-keyword">this</span>.props.actions.onProfileFormFieldChange(<span class="hljs-string">'email'</span>,value.email);      
+      <span class="hljs-keyword">this</span>.props.actions.onProfileFormFieldChange(<span class="hljs-string">'email'</span>,value.email);
     }
     <span class="hljs-keyword">this</span>.setState({value});
   }
@@ -527,7 +522,7 @@ form fields.  Otherwise, we need to go fetch the fields</p>
           email: <span class="hljs-keyword">this</span>.props.profile.form.fields.email
         }
       });
-    }      
+    }
   }
 
 </pre>
@@ -556,7 +551,7 @@ render
     <span class="hljs-keyword">this</span>.errorAlert.checkError(<span class="hljs-keyword">this</span>.props.profile.form.error);
 
     <span class="hljs-keyword">let</span> self = <span class="hljs-keyword">this</span>;
-    
+
     <span class="hljs-keyword">let</span> ProfileForm = t.struct({
       username: t.String,
       email: t.String

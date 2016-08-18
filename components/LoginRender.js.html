@@ -392,25 +392,10 @@ Redux boilerplate
 
         </td>
         <td class="code highlight">
-          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
-  authActions,
-  globalActions
-];
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
-  <span class="hljs-keyword">return</span> {
-  };
-}
-
+          <pre class="javascript">
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
-  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
-          .merge(...actions)
-          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
-          .toObject();
-
   <span class="hljs-keyword">return</span> {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators({ ...authActions, ...globalActions }, dispatch),
   };
 }
 </pre>
@@ -452,7 +437,7 @@ I18n.translations = Translations;
       }
     };
   }
-  
+
 </pre>
         </td>
       </tr>
@@ -485,7 +470,7 @@ componentWillReceiveProps
       }
     });
   }
-  
+
 </pre>
         </td>
       </tr>
@@ -515,7 +500,7 @@ meet the requirements.
           <pre class="javascript">  onChange(value) {
     <span class="hljs-keyword">if</span> (value.username != <span class="hljs-string">''</span>) {
       <span class="hljs-keyword">this</span>.props.actions.onAuthFormFieldChange(<span class="hljs-string">'username'</span>,value.username);
-    }    
+    }
     <span class="hljs-keyword">if</span> (value.email != <span class="hljs-string">''</span>) {
       <span class="hljs-keyword">this</span>.props.actions.onAuthFormFieldChange(<span class="hljs-string">'email'</span>,value.email);
     }
@@ -579,26 +564,26 @@ meet the requirements.
           }} &gt;
       <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>{I18n.t("LoginRender.already_have_account")}<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">TouchableHighlight</span>&gt;</span></span>;
-    
+
     <span class="hljs-keyword">let</span> register =
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">TouchableHighlight</span> 
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">TouchableHighlight</span>
         <span class="hljs-attr">onPress</span>=<span class="hljs-string">{()</span> =&gt;</span> {
             actions.registerState();
             Actions.Register();
           }} &gt;
       <span class="hljs-tag">&lt;<span class="hljs-name">Text</span>&gt;</span>{I18n.t("LoginRender.register")}<span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">TouchableHighlight</span>&gt;</span></span>;
-    
+
     <span class="hljs-keyword">switch</span>(messageType) {
     <span class="hljs-keyword">case</span> FORGOT_PASSWORD:
       <span class="hljs-keyword">return</span> forgotPassword;
     <span class="hljs-keyword">case</span> LOGIN:
       <span class="hljs-keyword">return</span> alreadyHaveAccount;
-    <span class="hljs-keyword">case</span> REGISTER:	
+    <span class="hljs-keyword">case</span> REGISTER:
       <span class="hljs-keyword">return</span> register;
     }
   }
-  
+
 </pre>
         </td>
       </tr>
@@ -628,11 +613,11 @@ render
     <span class="hljs-keyword">var</span> displayPasswordCheckbox = <span class="hljs-keyword">this</span>.props.displayPasswordCheckbox;
     <span class="hljs-keyword">var</span> leftMessageType = <span class="hljs-keyword">this</span>.props.leftMessageType;
     <span class="hljs-keyword">var</span> rightMessageType = <span class="hljs-keyword">this</span>.props.rightMessageType;
-    
+
     <span class="hljs-keyword">var</span> passwordCheckbox = <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Text</span>/&gt;</span></span>;
     <span class="hljs-keyword">let</span> leftMessage = <span class="hljs-keyword">this</span>.getMessage(leftMessageType, <span class="hljs-keyword">this</span>.props.actions);
     <span class="hljs-keyword">let</span> rightMessage = <span class="hljs-keyword">this</span>.getMessage(rightMessageType, <span class="hljs-keyword">this</span>.props.actions);
-    
+
     <span class="hljs-keyword">let</span> self = <span class="hljs-keyword">this</span>;
 
 </pre>
@@ -649,7 +634,7 @@ render
         </td>
         <td class="code highlight">
           <pre class="javascript">    <span class="hljs-keyword">this</span>.errorAlert.checkError(<span class="hljs-keyword">this</span>.props.auth.form.error);
-    
+
 </pre>
         </td>
       </tr>
@@ -706,7 +691,7 @@ See the docs for Header for more info.</p>
 
         </td>
         <td class="code highlight">
-          <pre class="javascript">    
+          <pre class="javascript">
     <span class="hljs-keyword">return</span>(
       &lt;View style={styles.container}&gt;
 	&lt;ScrollView horizontal={false} width={width} height={height}&gt;
@@ -715,9 +700,9 @@ See the docs for Header for more info.</p>
                     showState={this.props.global.showState}
                     currentState={this.props.global.currentState}
                     onGetState={this.props.actions.getState}
-                    onSetState={this.props.actions.setState}                      
+                    onSetState={this.props.actions.setState}
 	    /&gt;
-	    
+
 	    &lt;View style={styles.inputs}&gt;
 	      &lt;LoginForm
                   formType={formType}
@@ -727,26 +712,26 @@ See the docs for Header for more info.</p>
 	      /&gt;
 	      {passwordCheckbox}
             &lt;/View&gt;
-	    
+
 	    &lt;FormButton
                 isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
                 onPress={onButtonPress}
                 buttonText={loginButtonText}/&gt;
-	    
+
 	    &lt;View &gt;
 	      &lt;View style={styles.forgotContainer}&gt;
 	        {leftMessage}
                 {rightMessage}
               &lt;/View&gt;
-	    &lt;/View&gt;	 
-	    
+	    &lt;/View&gt;
+
 	  &lt;/View&gt;
 	&lt;/ScrollView&gt;
       &lt;/View&gt;
     );
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(LoginRender);
+export default connect(null, mapDispatchToProps)(LoginRender);
 
 </pre>
         </td>

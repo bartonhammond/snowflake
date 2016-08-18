@@ -84,9 +84,9 @@ Subview.js
 Imports
   </h2>
 </div>
-<p>Imports from redux</p>
 </div>
 <div class="body">
+<p>Imports from redux</p>
 </div>
 </div>
 
@@ -179,7 +179,7 @@ Imports
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
 <span class="hljs-keyword">import</span>
-{  
+{
   StyleSheet,
   View,
   Text
@@ -228,10 +228,7 @@ Redux boilerplate
 
         </td>
         <td class="code highlight">
-          <pre class="javascript"><span class="hljs-keyword">const</span> actions = [
-  deviceActions
-];
-
+          <pre class="javascript">
 </pre>
         </td>
       </tr>
@@ -254,7 +251,7 @@ You probably want to explicitly enumerate only those which Main.js will depend o
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapStateToProps</span>(<span class="hljs-params">state</span>) </span>{
   <span class="hljs-keyword">return</span> {
-      ...state
+      deviceVersion: state.device.version,
   };
 };
 
@@ -269,8 +266,7 @@ You probably want to explicitly enumerate only those which Main.js will depend o
 </div>
 <div class="dox">
 <div class="summary">
-<p>Bind all the functions from the <code>actions</code> and bind them with
-<code>dispatch</code></p>
+<p>Bind all the actions in deviceActions</p>
 </div>
 <div class="body">
 </div>
@@ -279,15 +275,8 @@ You probably want to explicitly enumerate only those which Main.js will depend o
         </td>
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mapDispatchToProps</span>(<span class="hljs-params">dispatch</span>) </span>{
-
-  <span class="hljs-keyword">const</span> creators = <span class="hljs-built_in">Map</span>()
-          .merge(...actions)
-          .filter(value =&gt; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'function'</span>)
-          .toObject();
-
   <span class="hljs-keyword">return</span> {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
+    actions: bindActionCreators(deviceActions, dispatch),
   };
 }
 
@@ -351,12 +340,12 @@ Subview class
         </td>
         <td class="code highlight">
           <pre class="javascript"><span class="hljs-keyword">let</span> Subview = React.createClass({
-  
+
   render() {
     <span class="hljs-keyword">var</span> titleConfig = {
       title: I18n.t(<span class="hljs-string">"Subview.subview"</span>)
     };
-    
+
     <span class="hljs-keyword">var</span> leftButtonConfig = {
       title: I18n.t(<span class="hljs-string">"Subview.back"</span>),
       handler: Actions.pop
@@ -369,7 +358,7 @@ Subview class
             <span class="hljs-attr">leftButton</span>=<span class="hljs-string">{</span> <span class="hljs-attr">leftButtonConfig</span> }
 	/&gt;</span>
 	<span class="hljs-tag">&lt;<span class="hljs-name">View</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{</span> <span class="hljs-attr">styles.container</span> }&gt;</span>
-	<span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{</span> <span class="hljs-attr">styles.summary</span> }&gt;</span>{I18n.t("Subview.subview")} {I18n.t("App.version")}: {this.props.device.version} <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">Text</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{</span> <span class="hljs-attr">styles.summary</span> }&gt;</span>{I18n.t("Subview.subview")} {I18n.t("App.version")}: {this.props.deviceVersion} <span class="hljs-tag">&lt;/<span class="hljs-name">Text</span>&gt;</span>
 	<span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-name">View</span>&gt;</span>
     );
