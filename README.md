@@ -1,11 +1,73 @@
 Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
 ==================================
-#### A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base. 
+A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base. - [Demo](#screens)
 
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![ios](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/348ae0a97c5e147a.svg?token=RmDwzjeIGuo7i9MeazE1fg)](https://www.bitrise.io/app/348ae0a97c5e147a)
 ![andriod](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/1e0425744dcc7ce3.svg?token=uvZDZvo89BLXvjrArJJreQ)](https://www.bitrise.io/app/1e0425744dcc7ce3)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE) 
+
+## Installation
+
+* [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
+
+* Clone snowflake:
+
+```
+git clone https://github.com/bartonhammond/snowflake.git
+```
+
+* install dependencies
+```
+cd snowflake
+
+npm install
+```
+
+*  Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.
+   * Note: you must select one of three options for the ```backend``` as shown below:
+
+```
+  backend: {
+    parse: false,
+    hapiLocal: false,
+    hapiRemote: true
+  },
+```
+* To run Hapi either locally on remotely on OpenShift, update the
+  ```src/lib/config.js``` file as shown below.  *Note:* use the ip
+  from the `ifconfig` command.  This ip matches the Hapi server setup.
+
+```
+  HAPI: {
+    local: {
+      url: 'http://192.168.0.5:5000'
+    },
+    remote: {
+      url: 'put your remote url here'
+    }
+  }
+
+```
+
+* If you choose Parse.com, create account and app on Parse.com
+  * Copy the Parse.com app keys for APP_ID and REST_API_KEY and update ```src/lib/config.js```
+  * Update the Apps Settings -> Authentication 
+ 	  * Allow username and password-based authentication -> Yes
+	  * Allow anonymous users -> No
+  * Update the Apps Settings -> Email
+	  * Verify user emails -> Yes
+
+### To run: 
+* For iOS, from the command line, run via command: ```react-native run-ios``` or open XCode and load project, Run ```Product -> Run (⌘+R)```
+* For android, from the command line, run via the command: ```react-native run-android``` assuming you have an emulator or device running and attached
+* To run Jest, ```npm test```
+* To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
+* Enjoy!
+
+
+----------
+
 
 ------------
 ##Notes
@@ -47,7 +109,6 @@ or
 - [Summary](#summary)
 - [Quotes](#quotes)
 - [Technologies](#technologies)
-- [Setup](#setup)
 - [Continuous Integration](#continuous-integration)
 - [Redux State Management](#redux-state-management)
 - [Hot Reloading](#hot-reloading)
@@ -167,66 +228,6 @@ I chose OpenShift because I could get a reasonable performing application for fr
 Using Validate.js for the Form processing was a breeze!  And with the ability to test the validations to the Redux state was very easy!
 
 ---------------
-
-
-## Setup
-
-* [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
-
-* Clone snowflake:
-
- ```
- git clone https://github.com/bartonhammond/snowflake.git
- ```
-
-* install dependencies
-```
-npm install
-```
-
-*  Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.
-   * Note: you must select one of three options for the ```backend``` as shown below:
-
-```
-  backend: {
-    parse: false,
-    hapiLocal: false,
-    hapiRemote: true
-  },
-```
-* To run Hapi either locally on remotely on OpenShift, update the
-  ```src/lib/config.js``` file as shown below.  *Note:* use the ip
-  from the `ifconfig` command.  This ip matches the Hapi server setup.
-
-```
-  HAPI: {
-    local: {
-      url: 'http://192.168.0.5:5000'
-    },
-    remote: {
-      url: 'put your remote url here'
-    }
-  }
-
-```
-
-* If you choose Parse.com, create account and app on Parse.com
-  * Copy the Parse.com app keys for APP_ID and REST_API_KEY and update ```src/lib/config.js```
-  * Update the Apps Settings -> Authentication 
- 	  * Allow username and password-based authentication -> Yes
-	  * Allow anonymous users -> No
-  * Update the Apps Settings -> Email
-	  * Verify user emails -> Yes
-
-### To run: 
-* For iOS, from the command line, run via command: ```react-native run-ios``` or open XCode and load project, Run ```Product -> Run (⌘+R)```
-* For android, from the command line, run via the command: ```react-native run-android``` assuming you have an emulator or device running and attached
-* To run Jest, ```npm test```
-* To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
-* Enjoy!
-
-
-----------
 
 
 ## Continuous Integration 
