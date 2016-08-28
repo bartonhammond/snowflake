@@ -1,15 +1,15 @@
 /**
  * # AppAuthToken.js
- * 
+ *
  * Simple mock of lib/AppAuthToken.js
  */
-'use strict';
+'use strict'
 /**
  * ## Async
- * 
+ *
  * Need to still treat as async
- */ 
-require('regenerator/runtime');
+ */
+require('regenerator/runtime')
 export default class AppAuthToken {
   /**
    * ## AppAuthToken
@@ -22,21 +22,20 @@ export default class AppAuthToken {
       sessionToken: {
         sessionToken: 'token'
       }
-    };
+    }
   }
   /**
    * ### storeSessionToken
    * @returns {Object} empty
    */
-  async storeSessionToken() {
-    return await {};
+  async storeSessionToken () {
+    return await {}
   }
   /**
    * ### deleteSessionToken
-   */  
+   */
   async deleteSessionToken () {
-    return await {};
+    return await {}
   }
 };
-
 

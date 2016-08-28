@@ -1,27 +1,27 @@
 /**
  * # Parse.js
- * 
+ *
  * This class interfaces with Parse.com using the rest api
  * see [https://parse.com/docs/rest/guide](https://parse.com/docs/rest/guide)
  *
  */
-'use strict';
+'use strict'
 /**
  * ## Async support
- * 
- */ 
-require('regenerator/runtime');
+ *
+ */
+require('regenerator/runtime')
 
 /**
  * ## Imports
- * 
+ *
  * Config for defaults and underscore for a couple of features
- */ 
-import CONFIG from './config';
-import _ from 'underscore';
-import Backend from './Backend';
+ */
+import CONFIG from './config'
+import _ from 'underscore'
+import Backend from './Backend'
 
-export default class Parse extends Backend{
+export default class Parse extends Backend {
   /**
    * ## Parse
    *
@@ -30,19 +30,19 @@ export default class Parse extends Backend{
    *
    * @throws tokenMissing if token is undefined
    */
-  constructor( token) {
-    super(token);
+  constructor (token) {
+    super(token)
     if (!_.isNull(token) && _.isUndefined(token.sessionToken)) {
-      throw 'TokenMissing';
+      throw new Error('TokenMissing')
     }
     this._sessionToken =
-      _.isNull(token) ?  null :  token.sessionToken.sessionToken;
-    
-    this._applicationId = CONFIG.PARSE.APP_ID;
-    this._restAPIKey = CONFIG.PARSE.REST_API_KEY;
-    this._masterKey = null;
+      _.isNull(token) ? null : token.sessionToken.sessionToken
 
-    this.API_BASE_URL= 'https://api.parse.com';
+    this._applicationId = CONFIG.PARSE.APP_ID
+    this._restAPIKey = CONFIG.PARSE.REST_API_KEY
+    this._masterKey = null
+
+    this.API_BASE_URL = 'https://api.parse.com'
   }
   /**
    * ### signup
@@ -53,30 +53,29 @@ export default class Parse extends Backend{
    *
    * @return
    * if ok, {createdAt: "2015-12-30T15:17:05.379Z",
-   *   objectId: "5TgExo2wBA", 
+   *   objectId: "5TgExo2wBA",
    *   sessionToken: "r:dEgdUkcs2ydMV9Y9mt8HcBrDM"}
    *
    * if error, {code: xxx, error: 'message'}
    */
-  async signup(data) {
+  async signup (data) {
     return await this._fetch({
       method: 'POST',
       url: '/1/users',
       body: data
     })
       .then((response) => {
-        return response.json().then(function (json) {       
-					if (response.status === 200 || response.status === 201) {
-						return json;
-					} else {
-						throw(json);
-					}
-				})
-			})
+        return response.json().then(function (json) {
+          if (response.status === 200 || response.status === 201) {
+            return json
+          } else {
+            throw (json)
+          }
+        })
+      })
       .catch((error) => {
-        throw(error);
-      });
-
+        throw (error)
+      })
   }
   /**
    * ### login
@@ -96,70 +95,68 @@ export default class Parse extends Backend{
    * username: "barton"
    *
    */
-  async login(data) {
-    var formBody = [];
+  async login (data) {
+    var formBody = []
     for (var property in data) {
-      var encodedKey = encodeURIComponent(property);
-      var encodedValue = encodeURIComponent(data[property]);
-      formBody.push(encodedKey + "=" + encodedValue);
+      var encodedKey = encodeURIComponent(property)
+      var encodedValue = encodeURIComponent(data[property])
+      formBody.push(encodedKey + '=' + encodedValue)
     }
-    formBody = formBody.join("&");
+    formBody = formBody.join('&')
 
     return await this._fetch({
       method: 'GET',
       url: '/1/login?' + formBody
     })
       .then((response) => {
-      	return response.json().then(function (json) {
-					if (response.status === 200 || response.status === 201) {
-						return json;
-					} else {
-						throw(json);
-					}
-				})
-			})
+        return response.json().then(function (json) {
+          if (response.status === 200 || response.status === 201) {
+            return json
+          } else {
+            throw (json)
+          }
+        })
+      })
       .catch((error) => {
-        throw(error);
-      });
+        throw (error)
+      })
   }
   /**
    * ### logout
    * prepare the request and call _fetch
-   */  
-  async logout() {
+   */
+  async logout () {
     return await this._fetch({
       method: 'POST',
       url: '/1/logout',
       body: {}
     })
       .then((response) => {
-        return response.json().then(function (res) {     
-					if ((response.status === 200 || response.status === 201)
-							|| //invalid session token
-							(response.status === 400 && res.code === 209)) {
-						return {};
-					} else {
-						throw({code: 404, error: 'unknown error from Parse.com'});
-					}
-				})
-      })
+        return response.json().then(function (res) {
+          if ((response.status === 200 || response.status === 201) || // invalid session token
+              (response.status === 400 && res.code === 209)) {
+            return {}
+          } else {
+            throw new Error({code: 404, error: 'unknown error from Parse.com'})
+          }
+        })
       .catch((error) => {
-        throw(error);
-      });
-
+        throw (error)
+      })
+      })
   }
   /**
    * ### resetPassword
    * the data is already in a JSON format, so call _fetch
    *
-   * @param data 
+   * @param data
    * {email: "barton@foo.com"}
    *
    * @returns empty object
    *
    * if error:  {code: xxx, error: 'message'}
    */
-  async resetPassword(data) {
+  async resetPassword (data) {
     return await this._fetch({
       method: 'POST',
       url: '/1/requestPasswordReset',
@@ -167,17 +164,17 @@ export default class Parse extends Backend{
     })
       .then((response) => {
         if ((response.status === 200 || response.status === 201)) {
-          return {};
+          return {}
         } else {
-					response.json().then(function (res) {               
-						throw(res);
-					})
+          response.json().then(function (res) {
+            throw (res)
+          })
         }
       })
       .catch((error) => {
-        throw(error);
-      });
-  }  
+        throw (error)
+      })
+  }
   /**
    * ### getProfile
    * Using the sessionToken, we'll get everything about
@@ -195,23 +192,23 @@ export default class Parse extends Backend{
    *
    * if error, {code: xxx, error: 'message'}
    */
-  async getProfile() {
+  async getProfile () {
     return await this._fetch({
       method: 'GET',
       url: '/1/users/me'
     })
       .then((response) => {
         return response.json().then(function (res) {
-					if ((response.status === 200 || response.status === 201)) {
-						return res;
-					} else {
-						throw(res);
-					}
-				})
+          if ((response.status === 200 || response.status === 201)) {
+            return res
+          } else {
+            throw (res)
+          }
+        })
       })
       .catch((error) => {
-        throw(error);
-      });
+        throw (error)
+      })
   }
   /**
    * ### updateProfile
@@ -222,7 +219,7 @@ export default class Parse extends Backend{
    * @param data object:
    * {username: "barton", email: "barton@foo.com"}
    */
-  async updateProfile(userId,data) {
+  async updateProfile (userId, data) {
     return await this._fetch({
       method: 'PUT',
       url: '/1/users/' + userId,
@@ -230,29 +227,28 @@ export default class Parse extends Backend{
     })
       .then((response) => {
         if ((response.status === 200 || response.status === 201)) {
-          return {};
+          return {}
         } else {
-          response.json().then(function (res) {     
-          	throw(res);
+          response.json().then(function (res) {
+            throw (res)
           })
         }
       })
       .catch((error) => {
-        throw(error);
-      });
-
-  }  
+        throw (error)
+      })
+  }
   /**
    * ### _fetch
    * A generic function that prepares the request to Parse.com
-   */  
-  async _fetch(opts) {
+   */
+  async _fetch (opts) {
     opts = _.extend({
       method: 'GET',
       url: null,
       body: null,
       callback: null
-    }, opts);
+    }, opts)
 
     var reqOpts = {
       method: opts.method,
@@ -260,26 +256,25 @@ export default class Parse extends Backend{
         'X-Parse-Application-Id': this._applicationId,
         'X-Parse-REST-API-Key': this._restAPIKey
       }
-    };
-    if (this._sessionToken) {
-      reqOpts.headers['X-Parse-Session-Token'] = this._sessionToken;
     }
-    
+    if (this._sessionToken) {
+      reqOpts.headers['X-Parse-Session-Token'] = this._sessionToken
+    }
+
     if (this._masterKey) {
-      reqOpts.headers['X-Parse-Master-Key'] = this.masterKey;
+      reqOpts.headers['X-Parse-Master-Key'] = this.masterKey
     }
 
     if (opts.method === 'POST' || opts.method === 'PUT') {
-      reqOpts.headers['Accept'] = 'application/json';
-      reqOpts.headers['Content-Type'] = 'application/json';
+      reqOpts.headers['Accept'] = 'application/json'
+      reqOpts.headers['Content-Type'] = 'application/json'
     }
 
     if (opts.body) {
-      reqOpts.body = JSON.stringify(opts.body);
+      reqOpts.body = JSON.stringify(opts.body)
     }
 
-    return await fetch(this.API_BASE_URL + opts.url, reqOpts);
-
+    return await fetch(this.API_BASE_URL + opts.url, reqOpts)
   }
 };
 

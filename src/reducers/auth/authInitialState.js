@@ -1,6 +1,6 @@
 /**
  * # authInitialState.js
- * 
+ *
  * This class is a Immutable object
  * Working *successfully* with Redux, requires
  * state that is immutable.
@@ -8,14 +8,14 @@
  * By using Immutable, it's enforced.  Just saying....
  *
  */
-'use strict';
+'use strict'
 /**
  * ## Import
  */
-const {Record} = require('immutable');
+const {Record} = require('immutable')
 const {
   REGISTER
-} = require('../../lib/constants').default;
+} = require('../../lib/constants').default
 
 /**
  * ## Form
@@ -40,17 +40,17 @@ const Form = Record({
     passwordErrorMsg: '',
     passwordAgain: '',
     passwordAgainHasError: false,
-    passwordAgainErrorMsg: '',    
+    passwordAgainErrorMsg: '',
     showPassword: false
   }))
-});
+})
 
 /**
  * ## InitialState
- * The form is set 
+ * The form is set
  */
 var InitialState = Record({
-  form: new Form
-});
-export default InitialState;
+  form: new Form()
+})
+export default InitialState
 

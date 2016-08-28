@@ -1,6 +1,6 @@
 {
   "name": "snowflake",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": true,
   "jest": {
     "preset": "jest-react-native",
@@ -13,8 +13,20 @@
     "collectCoverage": true,
     "verbose": true
   },
+  "standard": {
+      "globals": [
+          "jest",
+          "expect",
+          "it",
+          "describe",
+          "fetch",
+          "beforeEach"
+      ],
+      "parser": "babel-eslint"      
+  },
   "scripts": {
-    "test": "jest",
+    "format": "standard --fix",
+    "test": "standard && jest",
     "start": "react-native start",
     "test:watch": "npm run test -- --watch",
     "test-chrome": "node-debug --preload false --nodejs --harmony jest --runInBand",
@@ -45,6 +57,7 @@
   },
   "devDependencies": {
     "babel-core": "6.9.0",
+    "babel-eslint": "^6.1.2",
     "babel-jest": "14.0.0",
     "babel-preset-react-native": "1.8.0",
     "docker": "1.0.0",
@@ -53,6 +66,7 @@
     "jest-react-native": "14.0.0",
     "react-addons-test-utils": "15.0.2",
     "redux-mock-store": "1.1.2",
-    "rnpm-plugin-upgrade": "0.26.0"
+    "rnpm-plugin-upgrade": "0.26.0",
+    "standard": "^8.0.0"
   }
 }

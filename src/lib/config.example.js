@@ -16,5 +16,5 @@ module.exports = {
     remote: {
       url: 'enter your remote url here'
     }
-  }  
+  }
 }

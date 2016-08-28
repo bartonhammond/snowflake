@@ -3,23 +3,23 @@
  *
  * Display a button that responds to onPress and is colored appropriately
  */
-'use strict';
+'use strict'
 /**
  * ## Imports
  *
  * React
  */
-import React, {Component} from 'react';
+import React from 'react'
 import
-{  
+{
   StyleSheet,
   View
-} from 'react-native';
+} from 'react-native'
 
 /**
  * The platform neutral button
  */
-const  Button = require('apsl-react-native-button');
+const Button = require('apsl-react-native-button')
 
 /**
  * ## Styles
@@ -31,29 +31,29 @@ var styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#FF3366',
-    borderColor:  '#FF3366'
+    borderColor: '#FF3366'
   }
 
-});
+})
 
 var FormButton = React.createClass({
   /**
    * ### render
    *
-   * Display the Button 
+   * Display the Button
    */
-  render() {
+  render () {
     return (
       <View style={styles.signin}>
         <Button style={styles.button}
-                textStyle={{fontSize: 18}}                
-                isDisabled={this.props.isDisabled}
-                onPress={this.props.onPress} >
+          textStyle={{fontSize: 18}}
+          isDisabled={this.props.isDisabled}
+          onPress={this.props.onPress} >
           {this.props.buttonText}
         </Button>
       </View>
-    );
+    )
   }
-});
+})
 
-module.exports = FormButton;
+module.exports = FormButton

@@ -1,11 +1,11 @@
 /**
  * # __mocks__/I18n.js
- * 
+ *
  * A simple mock for I18n
- * 
+ *
  */
-'use strict';
+'use strict'
 
-var I18n = {};
+var I18n = {}
 I18n.t = jest.genMockFunction()
-module.exports = I18n;
+module.exports = I18n

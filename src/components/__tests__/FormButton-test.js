@@ -6,25 +6,25 @@
  * *Note:* if you want to understand the structures here, add a
  * ```console.log``` and then ```npm test```.
  */
-'use strict';
+'use strict'
 
 /**
 * ## Imports
  */
 
-import 'react-native';
-import React from 'react';
+import 'react-native'
+import React from 'react'
 
-import FormButton from '../FormButton';
+import FormButton from '../FormButton'
 
-import renderer from 'react/lib/ReactTestRenderer';
+import renderer from 'react/lib/ReactTestRenderer'
 
-test('FormButton', () => {
+it('FormButton', () => {
   const props = {
     isDisabled: false,
     onPress: () => {},
     buttonText: 'TestString'
-  };
-  const tree = renderer.create(<FormButton {...props} />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
+  }
+  const tree = renderer.create(<FormButton {...props} />).toJSON()
+  expect(tree).toMatchSnapshot()
+})

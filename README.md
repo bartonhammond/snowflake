@@ -2,10 +2,11 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 ==================================
 A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base. - [Demo](#screens)
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![ios](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/348ae0a97c5e147a.svg?token=RmDwzjeIGuo7i9MeazE1fg)](https://www.bitrise.io/app/348ae0a97c5e147a)
 ![andriod](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/1e0425744dcc7ce3.svg?token=uvZDZvo89BLXvjrArJJreQ)](https://www.bitrise.io/app/1e0425744dcc7ce3)
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE) 
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE)
 
 ## Installation
 
@@ -13,19 +14,17 @@ A React-Native starter mobile app, or maybe just an example, or maybe a boilerpl
 
 * Clone snowflake:
 
-```
-git clone https://github.com/bartonhammond/snowflake.git
-```
+`git clone https://github.com/bartonhammond/snowflake.git`
 
 * install dependencies
+
 ```
 cd snowflake
 
 npm install
 ```
 
-*  Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.
-   * Note: you must select one of three options for the ```backend``` as shown below:
+*  Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.  Note: you must select one of three options for the ```backend``` as shown below:
 
 ```
   backend: {
@@ -51,7 +50,7 @@ npm install
 ```
 
 * If you choose Parse.com, create account and app on Parse.com
-  * Copy the Parse.com app keys for APP_ID and REST_API_KEY and update ```src/lib/config.js```
+  * Copy the Parse.com app keys for APP_ID and REST_API_KEY and update `src/lib/config.js`
   * Update the Apps Settings -> Authentication 
  	  * Allow username and password-based authentication -> Yes
 	  * Allow anonymous users -> No
@@ -71,6 +70,8 @@ npm install
 
 ------------
 ##Notes
+
+Code is written to [JS Standard](https://github.com/feross/standard). See [Text Editor Plugins](https://github.com/feross/standard#text-editor-plugins) for your favorite editor integration.
 
 Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux).  Multiple scenes support **Login, Register, and Reset Password**.  Once successfully logged in, there are 3 more scenes: **Logout, Subview, and Profile**.
 

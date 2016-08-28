@@ -1,4 +1,4 @@
-import keyMirror from 'key-mirror';
+import keyMirror from 'key-mirror'
 
 export default keyMirror({
   SET_PLATFORM: null,
@@ -7,13 +7,13 @@ export default keyMirror({
   SESSION_TOKEN_REQUEST: null,
   SESSION_TOKEN_SUCCESS: null,
   SESSION_TOKEN_FAILURE: null,
-  
+
   DELETE_TOKEN_REQUEST: null,
   DELETE_TOKEN_SUCCESS: null,
-  
+
   ON_LOGIN_STATE_CHANGE: null,
   LOGOUT: null,
-  
+
   ON_AUTH_FORM_FIELD_CHANGE: null,
   SIGNUP_REQUEST: null,
   SIGNUP_SUCCESS: null,
@@ -41,7 +41,7 @@ export default keyMirror({
   GET_PROFILE_FAILURE: null,
 
   ON_PROFILE_FORM_FIELD_CHANGE: null,
-  
+
   PROFILE_UPDATE_REQUEST: null,
   PROFILE_UPDATE_SUCCESS: null,
   PROFILE_UPDATE_FAILURE: null,
@@ -49,9 +49,9 @@ export default keyMirror({
   SET_STATE: null,
   GET_STATE: null,
   SET_STORE: null,
-  
+
   FORGOT_PASSWORD: null,
   LOGIN: null,
   REGISTER: null
 
-});
+})

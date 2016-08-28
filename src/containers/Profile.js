@@ -6,60 +6,55 @@
  * It too is a container so there is boilerplate from Redux similar to
  * ```App``` and ```Login```
  */
-'use strict';
+'use strict'
 /**
 * ## Imports
 *
 * Redux
 */
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 /**
  * The actions we need
  */
-import * as profileActions from '../reducers/profile/profileActions';
-import * as globalActions from '../reducers/global/globalActions';
-
-/**
- * Immutable Mapn
- */
-import {Map} from 'immutable';
+import * as profileActions from '../reducers/profile/profileActions'
+import * as globalActions from '../reducers/global/globalActions'
 
 /**
  * The ErrorAlert will display any and all errors
  */
-import ErrorAlert from '../components/ErrorAlert';
+import ErrorAlert from '../components/ErrorAlert'
 /**
  * The FormButton will respond to the press
  */
-import FormButton from '../components/FormButton';
+import FormButton from '../components/FormButton'
 /**
  * The Header will display a Image and support Hot Loading
  */
-import Header from '../components/Header';
+import Header from '../components/Header'
 
 /**
  * The itemCheckbox will display the state of the email verified
  */
-import ItemCheckbox from '../components/ItemCheckbox';
+import ItemCheckbox from '../components/ItemCheckbox'
 /**
  * The necessary React components
  */
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import
 {
   StyleSheet,
   View
 }
-from 'react-native';
+from 'react-native'
 
 /**
 * The form processing component
 */
-import t from 'tcomb-form-native';
+import t from 'tcomb-form-native'
 
-let Form = t.form.Form;
+let Form = t.form.Form
 
 /**
  * ## Styles
@@ -76,50 +71,49 @@ var styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10
   }
-});
+})
 
 /**
 * ## Redux boilerplate
 */
 
-function mapStateToProps(state) {
-    return {
-        profile: state.profile,
-        global: {
-            currentUser: state.global.currentUser,
-            currentState: state.global.currentState,
-            showState: state.global.showState,
-        },
-    };
+function mapStateToProps (state) {
+  return {
+    profile: state.profile,
+    global: {
+      currentUser: state.global.currentUser,
+      currentState: state.global.currentState,
+      showState: state.global.showState
+    }
+  }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return {
-    actions: bindActionCreators({ ...profileActions, ...globalActions }, dispatch),
-  };
+    actions: bindActionCreators({ ...profileActions, ...globalActions }, dispatch)
+  }
 }
 /**
  * ### Translations
  */
-var I18n = require('react-native-i18n');
-import Translations from '../lib/Translations';
-I18n.translations = Translations;
-
+var I18n = require('react-native-i18n')
+import Translations from '../lib/Translations'
+I18n.translations = Translations
 
 class Profile extends Component {
   /**
    * ## Profile class
    * Set the initial state and prepare the errorAlert
    */
-  constructor(props) {
-    super(props);
-    this.errorAlert = new ErrorAlert();
+  constructor (props) {
+    super(props)
+    this.errorAlert = new ErrorAlert()
     this.state = {
       formValues: {
         username: '',
         email: ''
       }
-    };
+    }
   }
   /**
    * ### onChange
@@ -128,14 +122,14 @@ class Profile extends Component {
    * be validated.
    *
    */
-  onChange(value) {
-    if (value.username != '') {
-      this.props.actions.onProfileFormFieldChange('username',value.username);
+  onChange (value) {
+    if (value.username !== '') {
+      this.props.actions.onProfileFormFieldChange('username', value.username)
     }
-    if (value.email != '') {
-      this.props.actions.onProfileFormFieldChange('email',value.email);
+    if (value.email !== '') {
+      this.props.actions.onProfileFormFieldChange('email', value.email)
     }
-    this.setState({value});
+    this.setState({value})
   }
   /**
    * ### componentWillReceiveProps
@@ -143,14 +137,13 @@ class Profile extends Component {
    * Since the Forms are looking at the state for the values of the
    * fields, when we we need to set them
    */
-  componentWillReceiveProps(props) {
+  componentWillReceiveProps (props) {
     this.setState({
       formValues: {
         username: props.profile.form.fields.username,
         email: props.profile.form.fields.email
       }
-    });
-
+    })
   }
   /**
    * ### componentDidMount
@@ -159,16 +152,16 @@ class Profile extends Component {
    * immediately being in a "logged in" state, we need to just set the
    * form fields.  Otherwise, we need to go fetch the fields
    */
-  componentDidMount() {
-    if (this.props.profile.form.fields.username == '' && this.props.profile.form.fields.email == '') {
-      this.props.actions.getProfile(this.props.global.currentUser);
+  componentDidMount () {
+    if (this.props.profile.form.fields.username === '' && this.props.profile.form.fields.email === '') {
+      this.props.actions.getProfile(this.props.global.currentUser)
     } else {
       this.setState({
         formValues: {
           username: this.props.profile.form.fields.username,
           email: this.props.profile.form.fields.email
         }
-      });
+      })
     }
   }
 
@@ -176,15 +169,15 @@ class Profile extends Component {
    * ### render
    * display the form wrapped with the header and button
    */
-  render() {
-    this.errorAlert.checkError(this.props.profile.form.error);
+  render () {
+    this.errorAlert.checkError(this.props.profile.form.error)
 
-    let self = this;
+    let self = this
 
     let ProfileForm = t.struct({
       username: t.String,
       email: t.String
-    });
+    })
     /**
      * Set up the field definitions.  If we're fetching, the fields
      * are disabled.
@@ -193,74 +186,72 @@ class Profile extends Component {
       auto: 'placeholders',
       fields: {
         username: {
-          label: I18n.t("Profile.username"),
+          label: I18n.t('Profile.username'),
           maxLength: 12,
           editable: !this.props.profile.form.isFetching,
           hasError: this.props.profile.form.fields.usernameHasError,
           error: this.props.profile.form.fields.usernameErrorMsg
         },
         email: {
-          label: I18n.t("Profile.email"),
+          label: I18n.t('Profile.email'),
           keyboardType: 'email-address',
           editable: !this.props.profile.form.isFetching,
           hasError: this.props.profile.form.fields.emailHasError,
           error: this.props.profile.form.fields.emailErrorMsg
         }
       }
-    };
+    }
 
     /**
      * When the button is pressed, send the users info including the
      * ```currrentUser``` object as it contains the sessionToken and
      * user objectId which Parse.com requires
      */
-    let profileButtonText = I18n.t("Profile.update");
+    let profileButtonText = I18n.t('Profile.update')
     let onButtonPress = () => {
       this.props.actions.updateProfile(
         this.props.profile.form.originalProfile.objectId,
         this.props.profile.form.fields.username,
         this.props.profile.form.fields.email,
-        this.props.global.currentUser);
-    };
+        this.props.global.currentUser)
+    }
     /**
      * Wrap the form with the header and button.  The header props are
      * mostly for support of Hot reloading. See the docs for Header
      * for more info.
      */
-    let verfiedText = I18n.t("Profile.verified") +
+    let verfiedText = I18n.t('Profile.verified') +
                        ' (' +
-                       I18n.t("Profile.display") +
-                       ')';
+                       I18n.t('Profile.display') +
+                       ')'
     return (
       <View style={styles.container}>
         <Header isFetching={this.props.profile.form.isFetching}
-                showState={this.props.global.showState}
-                currentState={this.props.global.currentState}
-                onGetState={this.props.actions.getState}
-                onSetState={this.props.actions.setState}
+          showState={this.props.global.showState}
+          currentState={this.props.global.currentState}
+          onGetState={this.props.actions.getState}
+          onSetState={this.props.actions.setState}
         />
         <View style={styles.inputs}>
           <Form
-              ref="form"
-              type={ProfileForm}
-              options={options}
-              value={this.state.formValues}
-              onChange={this.onChange.bind(self)}
+            ref='form'
+            type={ProfileForm}
+            options={options}
+            value={this.state.formValues}
+            onChange={this.onChange.bind(self)}
           />
-        <ItemCheckbox text={verfiedText}
-                        disabled={true}
-                        checked={this.props.profile.form.fields.emailVerified}
-          />
+          <ItemCheckbox text={verfiedText}
+            disabled
+            checked={this.props.profile.form.fields.emailVerified} />
         </View>
 
         <FormButton
-            isDisabled={!this.props.profile.form.isValid || this.props.profile.form.isFetching}
-            onPress={onButtonPress.bind(self)}
-            buttonText={profileButtonText}/>
-
+          isDisabled={!this.props.profile.form.isValid || this.props.profile.form.isFetching}
+          onPress={onButtonPress.bind(self)}
+          buttonText={profileButtonText} />
 
       </View>
-    );
+    )
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)

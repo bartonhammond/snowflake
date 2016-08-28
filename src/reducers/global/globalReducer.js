@@ -1,9 +1,9 @@
 /**
  * # globalReducer.js
- * 
+ *
  *
  */
-'use strict';
+'use strict'
 /**
  * ## Imports
  * The InitialState for auth
@@ -17,33 +17,33 @@ const {
   SIGNUP_SUCCESS,
   LOGIN_SUCCESS,
   SESSION_TOKEN_SUCCESS,
-  
+
   LOGOUT_SUCCESS,
 
   GET_STATE,
   SET_STATE,
   SET_STORE
-  
-} = require('../../lib/constants').default;
 
-import InitialState from './globalInitialState';
+} = require('../../lib/constants').default
 
-const initialState = new InitialState;
+import InitialState from './globalInitialState'
+
+const initialState = new InitialState()
 /**
  * ## globalReducer function
- * @param {Object} state - initialState 
+ * @param {Object} state - initialState
  * @param {Object} action - type and payload
  */
-export default function globalReducer(state = initialState, action) {
-  if (!(state instanceof InitialState)) return initialState.merge(state);
+export default function globalReducer (state = initialState, action) {
+  if (!(state instanceof InitialState)) return initialState.merge(state)
 
   switch (action.type) {
     /**
      * ### Save the sessionToken
      */
-  case SET_SESSION_TOKEN:
-    return state.set('sessionToken', action.payload);
-    
+    case SET_SESSION_TOKEN:
+      return state.set('sessionToken', action.payload)
+
     /**
      * ### Save the payload in the store
      *
@@ -51,25 +51,25 @@ export default function globalReducer(state = initialState, action) {
      * Parse.com.  It contains the ```sessionToken``` and the user's
      * ```objectId``` which will be needed for some calls to Parse
      */
-  case SIGNUP_SUCCESS:
-  case LOGIN_SUCCESS:
-  case GET_PROFILE_SUCCESS:
-    return state.set('currentUser',action.payload);
-    
-  case SESSION_TOKEN_SUCCESS:
-    return state.set('currentUser',action.payload.sessionToken);
+    case SIGNUP_SUCCESS:
+    case LOGIN_SUCCESS:
+    case GET_PROFILE_SUCCESS:
+      return state.set('currentUser', action.payload)
+
+    case SESSION_TOKEN_SUCCESS:
+      return state.set('currentUser', action.payload.sessionToken)
 
     /**
      * ### Clear currentUser
      *
-     * 
-     * 
+     *
+     *
      *
      */
-  case LOGOUT_SUCCESS:
-    
-    return state.set('currentUser', null);
-    
+    case LOGOUT_SUCCESS:
+
+      return state.set('currentUser', null)
+
     /**
      * ### sets the payload into the store
      *
@@ -77,8 +77,8 @@ export default function globalReducer(state = initialState, action) {
      * ```store``` itself.
      *
      */
-  case SET_STORE:
-    return state.set('store',action.payload);
+    case SET_STORE:
+      return state.set('store', action.payload)
 
     /**
      * ### Get the current state from the store
@@ -88,43 +88,42 @@ export default function globalReducer(state = initialState, action) {
      *
      * *Note*: the global state removes the ```store```, otherwise,
      * when trying to convert to JSON, it will be recursive and fail
-     */    
-  case GET_STATE:
-    let _state = state.store.getState();
+     */
+    case GET_STATE:
+      let _state = state.store.getState()
 
-    if (action.payload) {
-      let newState = {};
-      newState['auth'] = _state.auth.toJS();
-      newState['device'] = _state.device.toJS();
-      newState['profile'] = _state.profile.toJS();
+      if (action.payload) {
+        let newState = {}
+        newState['auth'] = _state.auth.toJS()
+        newState['device'] = _state.device.toJS()
+        newState['profile'] = _state.profile.toJS()
 
+      // Make sure global doesn't have the previous currentState
+        // let _noCurrentState =  _state.global.set('currentState',null);
+        // let _noStore = _noCurrentState.set('store',null);
 
-      //Make sure global doesn't have the previous currentState
-        //let _noCurrentState =  _state.global.set('currentState',null);
-        //let _noStore = _noCurrentState.set('store',null);
-      
-      newState['global'] =  _state.global.set('currentState',null).set('store',null).toJS();
-      
-      return state.set('showState',action.payload)
-        .set('currentState',newState);
-    } else {
-      return state.set('showState',action.payload);
-    }
+        newState['global'] = _state.global.set('currentState', null).set('store', null).toJS()
+
+        return state.set('showState', action.payload)
+        .set('currentState', newState)
+      } else {
+        return state.set('showState', action.payload)
+      }
 
     /**
      * ### Set the state
      *
      * This is in support of Hot Loading
      *
-     */    
-  case SET_STATE:
-    var global = JSON.parse(action.payload).global;
-    var next = state.set('currentUser', global.currentUser)
+     */
+    case SET_STATE:
+      var global = JSON.parse(action.payload).global
+      var next = state.set('currentUser', global.currentUser)
           .set('showState', false)
-          .set('currentState', null);
-    return next;
+          .set('currentState', null)
+      return next
 
   }
-  
-  return state;
+
+  return state
 }

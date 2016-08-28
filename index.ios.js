@@ -1,5 +1,5 @@
-'use strict';
+'use strict'
 
-import snowflake from './src/snowflake';
+import snowflake from './src/snowflake'
 
-snowflake('ios');
+snowflake('ios')

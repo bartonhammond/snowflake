@@ -1,43 +1,39 @@
 /**
  * # Hapi.js
- * 
+ *
  * This class interfaces with Hapi.com using the rest api
  * see [http://hapijs.com/api](http://hapijs.com/api)
  *
  */
-'use strict';
-/**
- * ## Async support
- * 
- */ 
-require('regenerator/runtime');
+'use strict'
 
 /**
  * ## Imports
- * 
+ *
  * Config for defaults and underscore for a couple of features
- */ 
-import CONFIG from './config';
-import _ from 'underscore';
-import Backend from './Backend';
+ */
+import CONFIG from './config'
+import _ from 'underscore'
+import Backend from './Backend'
 
-export default class Hapi extends Backend{
+export default class Hapi extends Backend {
   /**
    * ## Hapi.js client
    *
    *
    * @throws tokenMissing if token is undefined
    */
-  constructor( token) {
-    super(token);
+  constructor (token) {
+    super(token)
     if (!_.isNull(token) && _.isUndefined(token.sessionToken)) {
-      throw 'TokenMissing';
+      throw new Error('TokenMissing')
     }
     this._sessionToken =
-      _.isNull(token) ?  null :  token.sessionToken.sessionToken;
-    
-    this.API_BASE_URL= CONFIG.backend.hapiLocal ?
-      CONFIG.HAPI.local.url : CONFIG.HAPI.remote.url;
+      _.isNull(token) ? null : token.sessionToken.sessionToken
+
+    this.API_BASE_URL = CONFIG.backend.hapiLocal
+          ? CONFIG.HAPI.local.url
+          : CONFIG.HAPI.remote.url
   }
   /**
    * ### signup
@@ -48,12 +44,12 @@ export default class Hapi extends Backend{
    *
    * @return
    * if ok, res.json={createdAt: "2015-12-30T15:17:05.379Z",
-   *   objectId: "5TgExo2wBA", 
+   *   objectId: "5TgExo2wBA",
    *   sessionToken: "r:dEgdUkcs2ydMV9Y9mt8HcBrDM"}
    *
    * if error, {code: xxx, error: 'message'}
    */
-  async signup(data) {
+  async signup (data) {
     return await this._fetch({
       method: 'POST',
       url: '/account/register',
@@ -61,15 +57,14 @@ export default class Hapi extends Backend{
     })
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
-          return res.json;
+          return res.json
         } else {
-          throw res.json;
+          throw res.json
         }
       })
       .catch((error) => {
-        throw(error);
-      });
-
+        throw (error)
+      })
   }
   /**
    * ### login
@@ -89,7 +84,7 @@ export default class Hapi extends Backend{
    * username: "barton"
    *
    */
-  async login(data) {
+  async login (data) {
     return await this._fetch({
       method: 'POST',
       url: '/account/login',
@@ -97,52 +92,49 @@ export default class Hapi extends Backend{
     })
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
-          return res.json;
+          return res.json
         } else {
-          throw(res.json);
+          throw (res.json)
         }
       })
       .catch((error) => {
-        throw(error);
-      });
-
+        throw (error)
+      })
   }
   /**
    * ### logout
    * prepare the request and call _fetch
-   */  
-  async logout() {
+   */
+  async logout () {
     return await this._fetch({
       method: 'POST',
       url: '/account/logout',
       body: {}
     })
       .then((res) => {
-        if ((res.status === 200 || res.status === 201)
-            || //invalid session token
+        if ((res.status === 200 || res.status === 201) ||
             (res.status === 400 && res.code === 209)) {
-          return {};
+          return {}
         } else {
-          throw({code: res.statusCode, error: res.message});
+          throw new Error({code: res.statusCode, error: res.message})
         }
       })
       .catch((error) => {
-        throw(error);
-      });
-
+        throw (error)
+      })
   }
   /**
    * ### resetPassword
    * the data is already in a JSON format, so call _fetch
    *
-   * @param data 
+   * @param data
    * {email: "barton@foo.com"}
    *
    * @returns empty object
    *
    * if error:  {code: xxx, error: 'message'}
    */
-  async resetPassword(data) {
+  async resetPassword (data) {
     return await this._fetch({
       method: 'POST',
       url: '/account/resetPasswordRequest',
@@ -150,16 +142,16 @@ export default class Hapi extends Backend{
     })
       .then((response) => {
         if ((response.status === 200 || response.status === 201)) {
-          return {};
+          return {}
         } else {
-          var  res = JSON.parse(response._bodyInit);                  
-          throw(res);
+          var res = JSON.parse(response._bodyInit)
+          throw (res)
         }
       })
       .catch((error) => {
-        throw(error);
-      });
-  }  
+        throw (error)
+      })
+  }
   /**
    * ### getProfile
    * Using the sessionToken, we'll get everything about
@@ -177,21 +169,21 @@ export default class Hapi extends Backend{
    *
    * if error, {code: xxx, error: 'message'}
    */
-  async getProfile() {
+  async getProfile () {
     return await this._fetch({
       method: 'GET',
       url: '/account/profile/me'
     })
       .then((res) => {
         if ((res.status === 200 || res.status === 201)) {
-          return res.json;
+          return res.json
         } else {
-          throw(res.json);
+          throw (res.json)
         }
       })
       .catch((error) => {
-        throw(error);
-      });
+        throw (error)
+      })
   }
   /**
    * ### updateProfile
@@ -202,7 +194,7 @@ export default class Hapi extends Backend{
    * @param data object:
    * {username: "barton", email: "barton@foo.com"}
    */
-  async updateProfile(userId,data) {
+  async updateProfile (userId, data) {
     return await this._fetch({
       method: 'POST',
       url: '/account/profile/' + userId,
@@ -210,16 +202,15 @@ export default class Hapi extends Backend{
     })
       .then((res) => {
         if ((res.status === 200 || res.status === 201)) {
-          return {};
+          return {}
         } else {
-          throw(res.json);
+          throw (res.json)
         }
       })
       .catch((error) => {
-        throw(error);
-      });
-
-  }  
+        throw (error)
+      })
+  }
   /**
    * ### _fetch
    * A generic function that prepares the request to Parse.com or Hapi
@@ -228,46 +219,46 @@ export default class Hapi extends Backend{
    *  {code: response.code,
    *   status: response.status,
    *   json: response.json()
-   */  
-  async _fetch(opts) {
+   */
+  async _fetch (opts) {
     opts = _.extend({
       method: 'GET',
       url: null,
       body: null,
       callback: null
-    }, opts);
+    }, opts)
 
     var reqOpts = {
       method: opts.method,
       headers: {
       }
-    };
-    
+    }
+
     if (this._sessionToken) {
-      reqOpts.headers['Authorization'] = 'Bearer ' + this._sessionToken;
+      reqOpts.headers['Authorization'] = 'Bearer ' + this._sessionToken
     }
 
     if (opts.method === 'POST' || opts.method === 'PUT') {
-      reqOpts.headers['Accept'] = 'application/json';
-      reqOpts.headers['Content-Type'] = 'application/json';
+      reqOpts.headers['Accept'] = 'application/json'
+      reqOpts.headers['Content-Type'] = 'application/json'
     }
 
     if (opts.body) {
-      reqOpts.body = JSON.stringify(opts.body);
+      reqOpts.body = JSON.stringify(opts.body)
     }
 
-    let url = this.API_BASE_URL + opts.url;
-    let res = {};
+    let url = this.API_BASE_URL + opts.url
+    let res = {}
 
-    let response = await fetch(url , reqOpts);
-    res.status = response.status;
-    res.code = response.code;
+    let response = await fetch(url, reqOpts)
+    res.status = response.status
+    res.code = response.code
 
     return response.json()
       .then((json) => {
-        res.json = json;
-        return res;
-      });
+        res.json = json
+        return res
+      })
   }
 };
 
