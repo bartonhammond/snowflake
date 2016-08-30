@@ -126,19 +126,12 @@ android {
 }
 
 dependencies {
-
+    compile project(':react-native-vector-icons')
+    compile project(':react-native-simpledialog-android')
+    compile project(':react-native-i18n')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
-        
-   // Added this line:
-    compile project(':react-native-vector-icons')
-
-    // Added this line:
-    compile project(':RNSimpleAlertDialogModule')
-
-    // Added this line:
-    compile project(':react-native-i18n')        
 }
 
 // Run this once to be able to run the application with BUCK
