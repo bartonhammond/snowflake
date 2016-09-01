@@ -12,7 +12,7 @@ workflows:
         title: Activate App SSH key
         inputs:
         - ssh_key_save_path: "$HOME/.ssh/steplib_ssh_step_id_rsa"
-    - git-clone@3.3.3: {}
+    - git-clone@3.3.4: {}
     - script@1.1.2:
         title: npm install
         inputs:
@@ -28,15 +28,11 @@ workflows:
 
             npm test
     - install-react-native@0.1.0: {}
-    - script@1.1.2:
-        title: create config
+    - file-downloader@0.9.1:
         inputs:
-        - content: |-
-            #!/bin/bash
-             touch src/lib/config.js
-
-            echo "module.exports={ PARSE: {APP_ID: '$PARSE_APP_ID' ,REST_API_KEY: '$PARSE_REST_API_KEY', SESSION_TOKEN_KEY: 'SESSION_TOKEN_KEY'}}" >> src/lib/config.js
-    - react-native-bundle@0.1.2:
+        - source: "$BITRISEIO_snowflakeserver_URL"
+        - destination: src/lib/config.js
+    - react-native-bundle@1.0.0:
         inputs:
         - platform: android
         - entry_file: "./index.android.js"
@@ -57,5 +53,5 @@ workflows:
             #!/bin/bash
 
              cp $BITRISE_SIGNED_APK_PATH $BITRISE_DEPLOY_DIR/signed-app-release.apk
-    - deploy-to-bitrise-io@1.2.4:
+    - deploy-to-bitrise-io@1.2.5:
         is_always_run: false
