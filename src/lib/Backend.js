@@ -95,7 +95,7 @@ export default class Backend {
    * for this user, update their record
    * the data is already in JSON format
    *
-   * @param userId 
+   * @param userId
    * @param data object:
    * {username: "barton", email: "barton@foo.com"}
    */

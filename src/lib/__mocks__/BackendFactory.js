@@ -2,7 +2,7 @@
  * # BackendFactory.js
  *
  * Mocked BackendFactory
- * 
+ *
  *
  */
 'use strict'
