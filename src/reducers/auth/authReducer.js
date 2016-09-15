@@ -75,7 +75,7 @@ export default function authReducer (state = initialState, action) {
 
     /**
      * ### Logout state
-     * The user has successfully access Parse.com
+     * The logged in user logs out
      * Clear the form's error and all the fields
      */
     case LOGOUT:
@@ -133,7 +133,7 @@ export default function authReducer (state = initialState, action) {
       return state.setIn(['form', 'isFetching'], false)
 
     /**
-     * ### Access to Parse.com denied or failed
+     *
      * The fetching is done, but save the error
      * for display to the user
      */

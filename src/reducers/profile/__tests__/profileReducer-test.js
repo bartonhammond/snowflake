@@ -65,7 +65,7 @@ describe('profileReducer', () => {
      * Should have a valid form and in the Logged out state
      *
      * We set the action to simulate valid data returning from
-     * Parse.com
+     * the server
      *
      * We validate that after form and field validation, the values
      * are set.

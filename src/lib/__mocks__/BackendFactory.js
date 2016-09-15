@@ -1,8 +1,8 @@
 /**
- * # Parse.js
+ * # BackendFactory.js
  *
- * This class interfaces with Parse.com using the rest api
- * see [https://parse.com/docs/rest/guide](https://parse.com/docs/rest/guide)
+ * Mocked BackendFactory
+ * 
  *
  */
 'use strict'

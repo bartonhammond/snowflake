@@ -1,20 +1,15 @@
 module.exports = {
-  PARSE: {
-    APP_ID: '',
-    REST_API_KEY: '',
-    SESSION_TOKEN_KEY: 'SESSION_TOKEN_KEY'
-  },
+  SESSION_TOKEN_KEY: 'SESSION_TOKEN_KEY',
   backend: {
-    parse: false,
-    hapiRemote: false,
-    hapiLocal: true
+    hapiRemote: true,
+    hapiLocal: false
   },
   HAPI: {
     local: {
-      url: 'http://127.0.0.1:5000'
+      url: 'http://192.168.0.13:5000'
     },
     remote: {
-      url: 'enter your remote url here'
+      url: 'https://snowflakeserver-bartonhammond.rhcloud.com/'
     }
   }
 }

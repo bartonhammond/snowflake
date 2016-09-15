@@ -11,7 +11,7 @@
  * ## Mocks
  *
  * We don't want to use the devices storage, nor actually call
- * Parse.com
+ * the server
  *
  */
 jest.mock('../../../lib/AppAuthToken')

@@ -1,7 +1,7 @@
 /**
- * # Parse.js
+ * # Backend.js
  *
- * This class mocks lib/Parse.js
+ * This class mocks Backend
  *
  */
 'use strict'
@@ -14,7 +14,6 @@ require('regenerator/runtime')
 
 export default class Backend {
   /**
-   * ## Parse
    *
    * ### constructor
    * prepare the response for all the methods

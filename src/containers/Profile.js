@@ -205,7 +205,7 @@ class Profile extends Component {
     /**
      * When the button is pressed, send the users info including the
      * ```currrentUser``` object as it contains the sessionToken and
-     * user objectId which Parse.com requires
+     * user objectId 
      */
     let profileButtonText = I18n.t('Profile.update')
     let onButtonPress = () => {

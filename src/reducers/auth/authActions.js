@@ -109,12 +109,12 @@ export function logoutFailure (error) {
 /**
  * ## Login
  * After dispatching the logoutRequest, get the sessionToken
- * and call Parse
  *
- * When the response from Parse is received and it's valid
+ *
+ * When the response is received and it's valid
  * change the state to register and finish the logout
  *
- * But if the call to Parse fails, like expired token or
+ * But if the call fails, like expired token or
  * no network connection, just send the failure
  *
  * And if you fail due to an invalid sessionToken, be sure
@@ -269,7 +269,7 @@ export function saveSessionToken (json) {
  * @param {string} email - user's email
  * @param {string} password - user's password
  *
- * Call Parse.signup and if good, save the sessionToken,
+ * Call the server signup and if good, save the sessionToken,
  * set the state to logout and signal success
  *
  * Otherwise, dispatch the error so the user can see
@@ -393,7 +393,7 @@ export function resetPasswordFailure (error) {
  * *Note* There's no feedback to the user whether the email
  * address is valid or not.
  *
- * This functionality depends on setting Parse.com
+ * This functionality depends on the server set
  * up correctly ie, that emails are verified.
  * With that enabled, an email can be sent w/ a
  * form for setting the new password.

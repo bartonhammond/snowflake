@@ -17,7 +17,7 @@ const {Record} = require('immutable')
  * This Record contains the state of the form and the
  * fields it contains.
  *
- * The originalProfile is what Parse.com provided and has the objectId
+ * The originalProfile is what the server provided and has the objectId
  * The fields are what display on the UI
  */
 const Form = Record({

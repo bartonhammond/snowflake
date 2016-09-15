@@ -48,8 +48,8 @@ export default function globalReducer (state = initialState, action) {
      * ### Save the payload in the store
      *
      * This payload is the ```currentUser``` object returned by
-     * Parse.com.  It contains the ```sessionToken``` and the user's
-     * ```objectId``` which will be needed for some calls to Parse
+     * the server.  It contains the ```sessionToken``` and the user's
+     * ```objectId``` which will be needed for some calls to the server
      */
     case SIGNUP_SUCCESS:
     case LOGIN_SUCCESS:

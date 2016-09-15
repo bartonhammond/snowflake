@@ -12,9 +12,8 @@ A React-Native starter mobile app, or maybe just an example, or maybe a boilerpl
 
 * [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
 
-* Clone snowflake:
-
-`git clone https://github.com/bartonhammond/snowflake.git`
+#### Install Snowflake
+* Clone snowflake: `git clone https://github.com/bartonhammond/snowflake.git`
 
 * install dependencies
 
@@ -24,18 +23,31 @@ cd snowflake
 npm install
 ```
 
-*  Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.  Note: you must select one of three options for the ```backend``` as shown below:
+#### Use the local or remote Snowflake Hapi Server
+To make things easy for you, the `config.example.js` has been initialized to use the remote **Snowflake Hapi Server** which is running on **Redhat OpenShift**.
+
+This **Snowflake Hapi Server** is Open Source.  It can run either locally or on **RedHat OpenShift**.  For your convince a server is running at: [https://snowflakeserver-bartonhammond.rhcloud.com](https://snowflakeserver-bartonhammond.rhcloud.com/)
+
+Please refer to [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the code and instructions for installation and setup of the server.
+
+#### Copy `config.example.js` and setup the remote or local option
+
+*  Copy the ```src/lib/config.example.js``` to ```src/lib/config.js```.  
+* **Note**: the `.gitignore` includes `config.js` from being committed to GitHub
+* **Note**: you must select either  `hapiLocal` or `hapiRemote` for the ```backend``` as shown below with `hapiRemote` set as the default.
 
 ```
   backend: {
-    parse: false,
     hapiLocal: false,
     hapiRemote: true
   },
 ```
-* To run Hapi either locally on remotely on OpenShift, update the
-  ```src/lib/config.js``` file as shown below.  *Note:* use the ip
-  from the `ifconfig` command.  This ip matches the Hapi server setup.
+* To run Hapi locally, follow the instructions at [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift).  You will have to install **MongoDB** and **Redis**.
+* **Note**: The default is to run remotely on the **RedHat OpenShift Snowflake Server** so there is nothing more to do if you want to use it! In that case, just use the `config.js` as is.
+* If you want to install and run  the **Snowflake Hapi Server** locally, then update the ```src/lib/config.js``` file as shown below.  
+* **Note**: use the ip from the `ifconfig` command for the `local`. This ip matches the **Snowflake Hapi Server** setup. 
+*  An example of the `url` is shown below assuming the `ifconfig` shows the local ip to be `192.168.0.5`
+* **Note**: You don't have to provide the `local.url` value if you are using the `remote`
 
 ```
   HAPI: {
@@ -43,19 +55,13 @@ npm install
       url: 'http://192.168.0.5:5000'
     },
     remote: {
-      url: 'put your remote url here'
+      url: 'https://snowflakeserver-bartonhammond.rhcloud.com/'
     }
   }
 
 ```
 
-* If you choose Parse.com, create account and app on Parse.com
-  * Copy the Parse.com app keys for APP_ID and REST_API_KEY and update `src/lib/config.js`
-  * Update the Apps Settings -> Authentication 
- 	  * Allow username and password-based authentication -> Yes
-	  * Allow anonymous users -> No
-  * Update the Apps Settings -> Email
-	  * Verify user emails -> Yes
+
 
 ### To run: 
 * For iOS, from the command line, run via command: ```react-native run-ios``` or open XCode and load project, Run ```Product -> Run (⌘+R)```

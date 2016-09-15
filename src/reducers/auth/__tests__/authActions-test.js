@@ -10,7 +10,7 @@
  * ## Mocks
  *
  * We don't want to use the devices storage, nor actually call
- * Parse.com
+ * the server
  *
  * Need to mock router so the "keys" are available (see src/__mocks__)
  */

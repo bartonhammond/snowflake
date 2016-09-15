@@ -12,7 +12,7 @@
 /**
  * ## Mocks
  *
- * turn mocking off but mock AppAuthToken and Parse
+ * turn mocking off but mock AppAuthToken and BackendFactory
  * also mock the router (see src/__mocks__)
  *
  */

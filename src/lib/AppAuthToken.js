@@ -20,7 +20,7 @@ export default class AppAuthToken {
    * set the key from the config
    */
   constructor () {
-    this.SESSION_TOKEN_KEY = CONFIG.PARSE.SESSION_TOKEN_KEY
+    this.SESSION_TOKEN_KEY = CONFIG.SESSION_TOKEN_KEY
   }
 
   /**
@@ -34,7 +34,7 @@ export default class AppAuthToken {
   }
   /**
    * ### getSessionToken
-   * @param {Object} sessionToken the currentUser object from Parse.com
+   * @param {Object} sessionToken the currentUser object
    *
    * When Hot Loading, the sessionToken  will be passed in, and if so,
    * it needs to be stored on the device.  Remember, the store is a

@@ -95,13 +95,13 @@ export function profileUpdateFailure (json) {
  * @param {string} userId -  objectId
  * @param {string} username - the users name
  * @param {string] email - user's email
- * @param {Object} sessionToken - the sessionToken from Parse.com
+ * @param {Object} sessionToken - the sessionToken
  *
  * The sessionToken is provided when Hot Loading.
  *
- * With the sessionToken, Parse.com is called with the data to update
+ * With the sessionToken, the server is called with the data to update
  * If successful, get the profile so that the screen is updated with
- * the data as now persisted on Parse.com
+ * the data as now persisted on the serverx
  *
  */
 export function updateProfile (userId, username, email, sessionToken) {
