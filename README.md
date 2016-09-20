@@ -3,6 +3,7 @@ Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/115993
 A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base. - [Demo](#screens)
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c072e4c80b2e477591170553b149772b)](https://www.codacy.com/app/bartonhammond/snowflake?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bartonhammond/snowflake&amp;utm_campaign=Badge_Grade)
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![ios](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/348ae0a97c5e147a.svg?token=RmDwzjeIGuo7i9MeazE1fg)](https://www.bitrise.io/app/348ae0a97c5e147a)
 ![andriod](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/1e0425744dcc7ce3.svg?token=uvZDZvo89BLXvjrArJJreQ)](https://www.bitrise.io/app/1e0425744dcc7ce3)
@@ -155,6 +156,18 @@ or
 
 Some quotes from users of **Snowflake**
 
+**Open Source Mag: Learn best of React Native with these open source projects**:[http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/](http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/)
+
+**ICICletech Blog: Mobile App Development With 8 Awesome React-Native Starter Kits**: We have listed some of our favorite starter kits and boilerplates to get started quickly.
+[https://www.icicletech.com/blog/react-native-starter-kits](https://www.icicletech.com/blog/react-native-starter-kits)
+
+**Infinite.Red: Ignite Your Mobile Development:** 
+> awesome releases as Barton Hammond’s snowflake.
+
+[https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm](https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm)
+
+**AdtMag: New Community Projects for React Native: Deco IDE and Pepperoni Boilerplate** [https://adtmag.com/articles/2016/05/26/react-native-projects.aspx](https://adtmag.com/articles/2016/05/26/react-native-projects.aspx) Snowflake mentioned
+
 **Pepperoni App Kit** (see [Credits](https://github.com/futurice/pepperoni-app-kit#credits) )
 >This project was initially motivated by Snowflake....you should check it out to see if it's a good fit for your app.
 
@@ -213,13 +226,6 @@ Before Redux, application state was managed by all the various components in the
 For me, Hapi provided a clear way for defining APIs and managing things clearly.  Some folks like Express, I've used Express myself, and I wanted to try Hapi.  I'm very satisfied with Hapi.  As you may or may not know, WalMart Labs produced Hapi and they've used it in their business.  
 
 One of the needs of any application is server side processing.  With the ability to run Hapi locally or on OpenShift, I'm able to write my server logic and test it locally.  When I'm "happy" I can push the code to OpenShift.  The same code runs in both environments.
-
-###[Parse.com](https://www.parse.com/)
-*Focus on creating amazing user experiences and forget complex infrastructure*
-
-Using Parse.com as the backend **reduces the angst** of setting up a server, managing the database, providing security and backups, etc.  Their free tier is more then ample to achieve a POC.
-
-While Parse.com was nice to use in starting the Snowflake app, once I needed to write server side code, I chose to look elsewhere.  Why?  Because, for one, I can't debug the "Cloud Code" locally or remotely.  Another, Parse has it's own flavors for HTTP Request and Promises.  It just made it difficult to write server side code and work w/ Parse.  
 
 ### [OpenShift](https://www.openshift.com/)
 I chose OpenShift because I could get a reasonable performing application for free.  The Snowflake server ([https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) uses 3 gears with MongoDB and Redis.  
