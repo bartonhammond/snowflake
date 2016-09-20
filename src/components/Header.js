@@ -150,31 +150,30 @@ var Header = React.createClass({
               source={require('../images/Snowflake.png')}
             />
           </TouchableHighlight>
-            {this.props.isFetching
-             ? <ActivityIndicator animating size='large' />
-             : null
+          {this.props.isFetching
+           ? <ActivityIndicator animating size='large' />
+           : null
           }
 
         </View>
-            {this.props.showState
-             ? <View style={styles.container}>
-               <Text>{I18n.t('Header.current_state')} ({I18n.t('Header.see_console')})</Text>
-               <TextInput style={{height: 100, borderColor: 'gray', borderWidth: 1}}
-                 value={displayText}
-                 editable
-                 multiline
-                 onChangeText={(text) => this._onChangeText(text)}
-                 numberOfLines={20} />
-
-               <View style={{
-                 marginTop: 10
-               }}>
-                 <FormButton isDisabled={this.state.isDisabled}
-                   onPress={this._updateStateButtonPress}
-                   buttonText={I18n.t('Header.update_state')} />
-               </View>
-             </View>
-            : null}
+        {this.props.showState
+         ? <View style={styles.container}>
+           <Text>{I18n.t('Header.current_state')} ({I18n.t('Header.see_console')})</Text>
+           <TextInput style={{height: 100, borderColor: 'gray', borderWidth: 1}}
+             value={displayText}
+             editable
+             multiline
+             onChangeText={(text) => this._onChangeText(text)}
+             numberOfLines={20} />
+           <View style={{
+             marginTop: 10
+           }}>
+             <FormButton isDisabled={this.state.isDisabled}
+               onPress={this._updateStateButtonPress}
+               buttonText={I18n.t('Header.update_state')} />
+           </View>
+         </View>
+         : null}
       </View>
     )
   }

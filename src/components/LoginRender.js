@@ -270,7 +270,7 @@ class LoginRender extends Component {
                 form={this.props.auth.form}
                 value={this.state.value}
                 onChange={self.onChange.bind(self)} />
-           {passwordCheckbox}
+              {passwordCheckbox}
             </View>
 
             <FormButton

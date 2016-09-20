@@ -119,7 +119,7 @@ class Main extends Component {
             onSetState={this.props.actions.setState} />
 
           <Button style={styles.button} onPress={this.handlePress.bind(this)}>
-           {I18n.t('Main.navigate')}
+            {I18n.t('Main.navigate')}
           </Button>
         </View>
       </View>
