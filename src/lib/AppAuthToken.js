@@ -12,7 +12,7 @@
  * Redux  & the config file
  */
 import store from 'react-native-simple-store'
-import CONFIG from './config.example'
+import CONFIG from './config'
 
 export class AppAuthToken {
   /**
