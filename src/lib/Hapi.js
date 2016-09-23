@@ -4,6 +4,7 @@
  * This class interfaces with Hapi.com using the rest api
  * see [http://hapijs.com/api](http://hapijs.com/api)
  *
+ * Singleton module see: https://k94n.com/es6-modules-single-instance-pattern
  */
 'use strict'
 
@@ -12,27 +13,18 @@
  *
  * Config for defaults and underscore for a couple of features
  */
-import CONFIG from './config.example'
+import CONFIG from './config'
 import _ from 'underscore'
 import Backend from './Backend'
 
-let instance = null;
-export default class Hapi extends Backend {
+export class Hapi extends Backend {
   /**
    * ## Hapi.js client
    *
    *
    * @throws tokenMissing if token is undefined
    */
-  constructor (token) {
-    super(token)
-
-    if (instance) {
-      return instance;
-    } else {
-      instance = this;
-    }
-
+  initialize (token) {
     if (!_.isNull(token) && _.isUndefined(token.sessionToken)) {
       throw new Error('TokenMissing')
     }
@@ -268,5 +260,6 @@ export default class Hapi extends Backend {
         return res
       })
   }
-};
-
+}
+// The singleton variable
+export let hapi = new Hapi()

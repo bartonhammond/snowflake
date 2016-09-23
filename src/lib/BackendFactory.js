@@ -6,11 +6,12 @@
  */
 'use strict'
 
-import CONFIG from './config.example'
-import Hapi from './Hapi'
+import CONFIG from './config'
+import {hapi} from './Hapi'
 
 export default function BackendFactory (token = null) {
   if (CONFIG.backend.hapiLocal || CONFIG.backend.hapiRemote) {
-    return new Hapi(token)
+    hapi.initialize(token)
+    return hapi
   }
 }

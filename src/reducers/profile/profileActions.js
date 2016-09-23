@@ -26,7 +26,7 @@ const {
  * AppAuthToken for localStorage sessionToken access
  */
 const BackendFactory = require('../../lib/BackendFactory').default
-const AppAuthToken = require('../../lib/AppAuthToken').default
+import {appAuthToken} from '../../lib/AppAuthToken'
 
 /**
  * ## retreiving profile actions
@@ -57,7 +57,7 @@ export function getProfile (sessionToken) {
   return dispatch => {
     dispatch(getProfileRequest())
     // store or get a sessionToken
-    return new AppAuthToken().getSessionToken(sessionToken)
+    return appAuthToken.getSessionToken(sessionToken)
       .then((token) => {
         return BackendFactory(token).getProfile()
       })
@@ -107,7 +107,7 @@ export function profileUpdateFailure (json) {
 export function updateProfile (userId, username, email, sessionToken) {
   return dispatch => {
     dispatch(profileUpdateRequest())
-    return new AppAuthToken().getSessionToken(sessionToken)
+    return appAuthToken.getSessionToken(sessionToken)
       .then((token) => {
         return BackendFactory(token).updateProfile(userId,
           {

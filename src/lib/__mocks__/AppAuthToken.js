@@ -10,7 +10,7 @@
  * Need to still treat as async
  */
 require('regenerator/runtime')
-export default class AppAuthToken {
+export class AppAuthToken {
   /**
    * ## AppAuthToken
    *
@@ -37,5 +37,5 @@ export default class AppAuthToken {
   async deleteSessionToken () {
     return await {}
   }
-};
-
+}
+export let appAuthToken = new AppAuthToken()

@@ -3,6 +3,7 @@
  *
  * A thin wrapper over the react-native-simple-store
  *
+ * Singleton module see https://k94n.com/es6-modules-single-instance-pattern
  */
 'use strict'
 /**
@@ -13,23 +14,14 @@
 import store from 'react-native-simple-store'
 import CONFIG from './config.example'
 
-let instance = null;
-export default class AppAuthToken {
+export class AppAuthToken {
   /**
    * ## AppAuthToken
    *
    * set the key from the config
    */
   constructor () {
-
-    this.SESSION_TOKEN_KEY = CONFIG.SESSION_TOKEN_KEY;
-
-    if (instance) {
-      return instance;
-    } else {
-      instance = this;
-    }
-
+    this.SESSION_TOKEN_KEY = CONFIG.SESSION_TOKEN_KEY
   }
 
   /**
@@ -67,4 +59,5 @@ export default class AppAuthToken {
     return store.delete(this.SESSION_TOKEN_KEY)
   }
 }
-
+// The singleton variable
+export let appAuthToken = new AppAuthToken()
