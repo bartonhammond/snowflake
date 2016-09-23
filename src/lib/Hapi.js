@@ -12,10 +12,11 @@
  *
  * Config for defaults and underscore for a couple of features
  */
-import CONFIG from './config'
+import CONFIG from './config.example'
 import _ from 'underscore'
 import Backend from './Backend'
 
+let instance = null;
 export default class Hapi extends Backend {
   /**
    * ## Hapi.js client
@@ -25,6 +26,13 @@ export default class Hapi extends Backend {
    */
   constructor (token) {
     super(token)
+
+    if (instance) {
+      return instance;
+    } else {
+      instance = this;
+    }
+
     if (!_.isNull(token) && _.isUndefined(token.sessionToken)) {
       throw new Error('TokenMissing')
     }

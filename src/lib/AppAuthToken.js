@@ -11,8 +11,9 @@
  * Redux  & the config file
  */
 import store from 'react-native-simple-store'
-import CONFIG from './config'
+import CONFIG from './config.example'
 
+let instance = null;
 export default class AppAuthToken {
   /**
    * ## AppAuthToken
@@ -20,7 +21,15 @@ export default class AppAuthToken {
    * set the key from the config
    */
   constructor () {
-    this.SESSION_TOKEN_KEY = CONFIG.SESSION_TOKEN_KEY
+
+    this.SESSION_TOKEN_KEY = CONFIG.SESSION_TOKEN_KEY;
+
+    if (instance) {
+      return instance;
+    } else {
+      instance = this;
+    }
+
   }
 
   /**

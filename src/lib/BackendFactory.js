@@ -6,7 +6,7 @@
  */
 'use strict'
 
-import CONFIG from './config'
+import CONFIG from './config.example'
 import Hapi from './Hapi'
 
 export default function BackendFactory (token = null) {
