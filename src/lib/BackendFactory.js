@@ -7,10 +7,11 @@
 'use strict'
 
 import CONFIG from './config'
-import Hapi from './Hapi'
+import {hapi} from './Hapi'
 
 export default function BackendFactory (token = null) {
   if (CONFIG.backend.hapiLocal || CONFIG.backend.hapiRemote) {
-    return new Hapi(token)
+    hapi.initialize(token)
+    return hapi
   }
 }

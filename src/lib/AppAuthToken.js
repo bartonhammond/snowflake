@@ -3,6 +3,7 @@
  *
  * A thin wrapper over the react-native-simple-store
  *
+ * Singleton module see https://k94n.com/es6-modules-single-instance-pattern
  */
 'use strict'
 /**
@@ -11,9 +12,9 @@
  * Redux  & the config file
  */
 import store from 'react-native-simple-store'
-import CONFIG from './config'
+import CONFIG from './config.example'
 
-export default class AppAuthToken {
+export class AppAuthToken {
   /**
    * ## AppAuthToken
    *
@@ -58,4 +59,5 @@ export default class AppAuthToken {
     return store.delete(this.SESSION_TOKEN_KEY)
   }
 }
-
+// The singleton variable
+export let appAuthToken = new AppAuthToken()

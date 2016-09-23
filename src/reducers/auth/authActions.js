@@ -53,7 +53,7 @@ const BackendFactory = require('../../lib/BackendFactory').default
 
 import {Actions} from 'react-native-router-flux'
 
-const AppAuthToken = require('../../lib/AppAuthToken').default
+import {appAuthToken} from '../../lib/AppAuthToken'
 
 const _ = require('underscore')
 
@@ -127,7 +127,7 @@ export function logoutFailure (error) {
 export function logout () {
   return dispatch => {
     dispatch(logoutRequest())
-    return new AppAuthToken().getSessionToken()
+    return appAuthToken.getSessionToken()
 
       .then((token) => {
         return BackendFactory(token).logout()
@@ -219,7 +219,7 @@ export function deleteTokenRequestSuccess () {
 export function deleteSessionToken () {
   return dispatch => {
     dispatch(deleteTokenRequest())
-    return new AppAuthToken().deleteSessionToken()
+    return appAuthToken.deleteSessionToken()
       .then(() => {
         dispatch(deleteTokenRequestSuccess())
       })
@@ -234,7 +234,7 @@ export function deleteSessionToken () {
 export function getSessionToken () {
   return dispatch => {
     dispatch(sessionTokenRequest())
-    return new AppAuthToken().getSessionToken()
+    return appAuthToken.getSessionToken()
 
       .then((token) => {
         if (token) {
@@ -261,7 +261,7 @@ export function getSessionToken () {
  * @param {Object} json - object with sessionToken
  */
 export function saveSessionToken (json) {
-  return new AppAuthToken().storeSessionToken(json)
+  return appAuthToken.storeSessionToken(json)
 }
 /**
  * ## signup
