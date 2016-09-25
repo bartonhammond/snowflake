@@ -23,6 +23,9 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
+#Fastlane output of gym
+snowflake.app.dSYM.zip
+
 # Android/IJ
 #
 *.iml

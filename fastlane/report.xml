@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+      
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.00044">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000177">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: match" time="10.584676">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: gym" time="65.704893">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: pilot" time="75.456354">
+        
+          <failure message="/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/actions/actions_helper.rb:33:in `execute_action'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/runner.rb:187:in `block in execute_action'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/runner.rb:186:in `chdir'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/runner.rb:186:in `execute_action'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/runner.rb:112:in `trigger_action_by_name'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/fast_file.rb:140:in `method_missing'&#10;Fastfile:37:in `block (2 levels) in parsing_binding'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/lane.rb:33:in `call'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/runner.rb:49:in `block in execute'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/runner.rb:45:in `chdir'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/runner.rb:45:in `execute'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/lane_manager.rb:46:in `cruise_lane'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/command_line_handler.rb:30:in `handle'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/commands_generator.rb:49:in `block (2 levels) in run'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/commander-4.4.0/lib/commander/command.rb:178:in `call'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/commander-4.4.0/lib/commander/command.rb:153:in `run'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/commander-4.4.0/lib/commander/runner.rb:444:in `run_active_command'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane_core-0.52.0/lib/fastlane_core/ui/fastlane_runner.rb:36:in `run!'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/commander-4.4.0/lib/commander/delegates.rb:15:in `run!'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/commands_generator.rb:246:in `run'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/commands_generator.rb:20:in `start'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/lib/fastlane/cli_tools_distributor.rb:58:in `take_off'&#10;/usr/local/lib/ruby/gems/2.3.0/gems/fastlane-1.104.0/bin/fastlane:5:in `&lt;top (required)&gt;'&#10;/usr/local/bin/fastlane:23:in `load'&#10;/usr/local/bin/fastlane:23:in `&lt;main&gt;'&#10;&#10;Error receiving the newly uploaded binary, please check iTunes Connect" />
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
