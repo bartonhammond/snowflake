@@ -46,7 +46,7 @@ Please refer to [https://github.com/bartonhammond/snowflake-hapi-openshift](http
 * To run Hapi locally, follow the instructions at [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift).  You will have to install **MongoDB** and **Redis**.
 * **Note**: The default is to run remotely on the **RedHat OpenShift Snowflake Server** so there is nothing more to do if you want to use it! In that case, just use the `config.js` as is.
 * If you want to install and run  the **Snowflake Hapi Server** locally, then update the ```src/lib/config.js``` file as shown below.  
-* **Note**: use the ip from the `ifconfig` command for the `local`. This ip matches the **Snowflake Hapi Server** setup. 
+* **Note**: use the ip from the `ifconfig` command for the `local`. This ip matches the **Snowflake Hapi Server** setup.
 *  An example of the `url` is shown below assuming the `ifconfig` shows the local ip to be `192.168.0.5`
 * **Note**: You don't have to provide the `local.url` value if you are using the `remote`
 
@@ -64,7 +64,7 @@ Please refer to [https://github.com/bartonhammond/snowflake-hapi-openshift](http
 
 
 
-### To run: 
+### To run:
 * For iOS, from the command line, run via command: ```react-native run-ios``` or open XCode and load project, Run ```Product -> Run (⌘+R)```
 * For android, from the command line, run via the command: ```react-native run-android``` assuming you have an emulator or device running and attached
 * To run Jest, ```npm test```
@@ -102,10 +102,10 @@ Snowflake supports **Hot Reloading** of its state.
 
 Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has **extensive docs and 45+ min of video** demonstating implementation.
 
-Snowflake has a **choice of servers**, either 
+Snowflake has a **choice of servers**, either
 
 * The original **Parse.com**
-or 
+or
 * **Hapi Server** that runs on **RedHat Openshift** and **locally**.
 
     See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
@@ -113,6 +113,7 @@ or
 ---------------
 # Content
 
+- [Editor Configuration](#editor-configuration)
 - [Screens](#screens)
 - [Summary](#summary)
 - [Quotes](#quotes)
@@ -124,6 +125,23 @@ or
 - [Source documentation](http://bartonhammond.github.io/snowflake/snowflake.js.html)
 
 ----------
+
+## Editor Configuration
+**Atom**
+```bash
+apm install editorconfig es6-javascript javascript-snippets linter linter-eslint language-babel
+```
+
+**Sublime**
+* https://github.com/sindresorhus/editorconfig-sublime#readme
+* https://github.com/SublimeLinter/SublimeLinter3
+* https://github.com/roadhump/SublimeLinter-eslint
+* https://github.com/babel/babel-sublime
+
+**Others**
+* [Editorconfig](http://editorconfig.org/#download)
+* [ESLint](http://eslint.org/docs/user-guide/integrations#editors)
+* Babel Syntax Plugin
 
 ## Screens
 
@@ -161,7 +179,7 @@ Some quotes from users of **Snowflake**
 **ICICletech Blog: Mobile App Development With 8 Awesome React-Native Starter Kits**: We have listed some of our favorite starter kits and boilerplates to get started quickly.
 [https://www.icicletech.com/blog/react-native-starter-kits](https://www.icicletech.com/blog/react-native-starter-kits)
 
-**Infinite.Red: Ignite Your Mobile Development:** 
+**Infinite.Red: Ignite Your Mobile Development:**
 > awesome releases as Barton Hammond’s snowflake.
 
 [https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm](https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm)
@@ -181,7 +199,7 @@ Some quotes from users of **Snowflake**
 > I've been going through snowflake and love what you have done!
 
 **Nikos**:
-> wow new videos, nice 
+> wow new videos, nice
 
 **Josh**
 >thanks for the thorough videos!
@@ -193,7 +211,7 @@ Some quotes from users of **Snowflake**
 >Congrats - the project is super helpful
 
 **Stephen**
->Thanks so much for this amazing foundation! 
+>Thanks so much for this amazing foundation!
 
 **Jim**
 >Neat project
@@ -203,14 +221,14 @@ Some quotes from users of **Snowflake**
 ## Technologies
 *The following are brief descriptions of the technologies used*
 
-### [React-Native](https://facebook.github.io/react-native/) 
+### [React-Native](https://facebook.github.io/react-native/)
 *React Native enables you to build world-class application experiences on native platforms using a consistent developer experience based on JavaScript and React.*
 
 What more can I say?  It's a fantastic leap forward in providing the ability to write native applications with Javascript that target both iOS and Android.
 
 This application provides one code base that works on both platforms.  It demonstrates Form interactions,  Navigation, and use of many other components.
 
-###[Jest](https://facebook.github.io/jest/) 
+###[Jest](https://facebook.github.io/jest/)
 *85 Unit tests that cover plain objects and JSX components*
 
 The de-facto standard for React/Native testing.  This app demonstrates how to mock **ReactNative, node_modules, classes** and to properly **test JSX components** by programmatically changing the props, and throughly **test the applications data state and the actions** in conjunction with Redux.
@@ -243,7 +261,7 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
 ---------------
 
 
-## Continuous Integration 
+## Continuous Integration
 
 CI proves to the developer that everything required to build and test
 the application is well defined and repeatable.  Without CI, one would
@@ -265,18 +283,18 @@ The following videos will walk you through setting up CI with BitRise.io
 
 ----------
 
-##### Introduction 
+##### Introduction
 * **Video 1/7**: [https://youtu.be/EYafslJvXz8](https://youtu.be/EYafslJvXz8)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=EYafslJvXz8"
 target="_blank">
-<img src="http://img.youtube.com/vi/EYafslJvXz8/0.jpg" 
+<img src="http://img.youtube.com/vi/EYafslJvXz8/0.jpg"
 alt="Introduction" width="240" height="180" border="10"
 /></a>
 
 * Snowflake is a *starter app* so all tutorials are basic in nature
 * There are a bizzilion ways of doing any of this - I'm showing one
-* There's a number of CI sites, I chose Bitrise.io 
+* There's a number of CI sites, I chose Bitrise.io
 * There's a general understanding of why to us a CI
 * The build will be done on Bitrise.io - not locally
 * The **only** goal is to get the build to run on Bitrise.io
@@ -288,22 +306,22 @@ alt="Introduction" width="240" height="180" border="10"
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=JAHlfNUKoLg"
 target="_blank">
-<img src="http://img.youtube.com/vi/JAHlfNUKoLg/0.jpg" 
+<img src="http://img.youtube.com/vi/JAHlfNUKoLg/0.jpg"
 alt="Bitrise.io Overview" width="240" height="180" border="10"
 /></a>
 
   *  Introduction to Bitrise.io [https://www.bitrise.io/](https://www.bitrise.io/)
   * Overview of what it does for us
   * Overview of the two WorkFlows
-	  * iOS 
-	  * Android 
+	  * iOS
+	  * Android
 
 ##### iOS XCode Modifications
 * **Video 3/7**:[https://youtu.be/3y72adWNRSU](https://youtu.be/3y72adWNRSU)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=3y72adWNRSU"
 target="_blank">
-<img src="http://img.youtube.com/vi/3y72adWNRSU/0.jpg" 
+<img src="http://img.youtube.com/vi/3y72adWNRSU/0.jpg"
 alt="iOS XCode Modifications" width="240" height="180" border="10"
 /></a>
   * XCode
@@ -321,7 +339,7 @@ alt="iOS XCode Modifications" width="240" height="180" border="10"
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=zJXoHIaJg7Y"
 target="_blank">
-<img src="http://img.youtube.com/vi/zJXoHIaJg7Y/0.jpg" 
+<img src="http://img.youtube.com/vi/zJXoHIaJg7Y/0.jpg"
 alt="XCode Certs Provision Profiles" width="240" height="180" border="10"
 /></a>
 * see [https://developer.apple.com/library/ios/qa/qa1814/_index.html](https://developer.apple.com/library/ios/qa/qa1814/_index.html)
@@ -331,36 +349,36 @@ alt="XCode Certs Provision Profiles" width="240" height="180" border="10"
 		* Update XCode appDelegate.m w/ ifconfig value
 		* Xcode -> Run with device attached
 		* Select option for Xcode to fix signing
-	
+
 ##### Create iOS App
 * **Video 5/7**:
 [Bitrise, YML, Profile, P12](https://youtu.be/olfpwEjVlZ4)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=olfpwEjVlZ4"
 target="_blank">
-<img src="http://img.youtube.com/vi/olfpwEjVlZ4/0.jpg" 
+<img src="http://img.youtube.com/vi/olfpwEjVlZ4/0.jpg"
 alt="Create iOS App" width="240" height="180" border="10"
 /></a>
 * Login/Register Bitrise.io
 * Dashboard
-* Add App 
+* Add App
 * Authenticate GitHub
 * Select repository, branch
 * Import YML
-* Download Certifications 
+* Download Certifications
 * Update KeyChain
 * Save .p12
 * Download Provision
 * Load .p12 and provision to Bitrise.io
-* Setup Secret and Env Vars 
+* Setup Secret and Env Vars
 * Build
-	
+
 ##### iOS install
 * **Video 6/7**: [https://youtu.be/nQWXJI0ncns](https://youtu.be/nQWXJI0ncns)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=nQWXJI0ncns"
 target="_blank">
-<img src="http://img.youtube.com/vi/nQWXJI0ncns/0.jpg" 
+<img src="http://img.youtube.com/vi/nQWXJI0ncns/0.jpg"
 alt="iOS install from email" width="240" height="180" border="10"
 /></a>
 
@@ -369,19 +387,19 @@ alt="iOS install from email" width="240" height="180" border="10"
 * Follow instructions to load in Safarie
 * Follow prompts and enjoy!
 
-##### Android Setup 
+##### Android Setup
 * **Video 7/7**: [Android YML, Setup](https://youtu.be/o4RQZodbzIU)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=o4RQZodbzIU"
 target="_blank">
-<img src="http://img.youtube.com/vi/o4RQZodbzIU/0.jpg" 
+<img src="http://img.youtube.com/vi/o4RQZodbzIU/0.jpg"
 alt="Android Setup" width="240" height="180" border="10"/>
 </a>
 
 * Settings -> Docker Image
-* Secret Variables 
+* Secret Variables
 * App/build.gradle
-* Setup Secret and Env Vars 
+* Setup Secret and Env Vars
 * Import YML
 * Run build
 
@@ -390,14 +408,14 @@ alt="Android Setup" width="240" height="180" border="10"/>
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=mP5D2MQboxw"
 target="_blank">
-<img src="https://i9.ytimg.com/vi/mP5D2MQboxw/1.jpg?sqp=CPDqzb0F&rs=AOn4CLBdpVDIWghF_-wSuaSKnbPdxHE1hw" 
+<img src="https://i9.ytimg.com/vi/mP5D2MQboxw/1.jpg?sqp=CPDqzb0F&rs=AOn4CLBdpVDIWghF_-wSuaSKnbPdxHE1hw"
 alt="XCode Edge Stack" width="240" height="180" border="10"/>
 </a>
 
 * "XCode Edge Stack" for iOS
 * New React-Native steps for Install & Bundle
 * Upgraded Step versions
-* GitHub branch triggers 
+* GitHub branch triggers
 
 
 
@@ -573,14 +591,14 @@ If you'd like to read an excellent tutorial on Redux I can't recommend this one 
 ## Hot Reloading
 This video shows Snowflake exporting and importing state from Redux.  It demonstrates, with the iOS Simulator, the process of copying the state for import at a later time.  After the demo, I walk through the code to clarify how I achieved this.  It's assumed you have some familiarity with Redux.  Hopefully it helps you gain a better understanding of what Redux provides you!
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=b4eqQUA3O6o" target="_blank"><img src="http://img.youtube.com/vi/b4eqQUA3O6o/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=b4eqQUA3O6o" target="_blank"><img src="http://img.youtube.com/vi/b4eqQUA3O6o/0.jpg"
 alt="Snowflake Hot Loading" width="240" height="180" border="10" /></a>
 
 
 
 -------------
 
-## Faq 
+## Faq
 
 ### How do I change the Language of the App?  
 
@@ -596,7 +614,7 @@ Also, it had this statement
 
 I don't want to deal w/ wrapping my head around Flux Actions and have to monkey-patch or something to get Redux Actions.
 
-In a previous life, I worked with Parse JS SDK and it's based on backbone.js.  So I didn't go that direction either, because, again, I didn't want to have another data model to deal with.  Plus, at the time I was using it, the SDK was buggy and it was difficult to work with. 
+In a previous life, I worked with Parse JS SDK and it's based on backbone.js.  So I didn't go that direction either, because, again, I didn't want to have another data model to deal with.  Plus, at the time I was using it, the SDK was buggy and it was difficult to work with.
 
 With the Parse Rest API, it's simple, can be tested itself from the command line with curl, it's clear, it's succinct and it's easily replaced with something else, an example such as Mongo/Mongoose without much, if any, impact on the code base.
 
