@@ -25,8 +25,8 @@
     "parser": "babel-eslint"
   },
   "scripts": {
-    "format": "standard --fix",
-    "test": "./node_modules/standard/bin/cmd.js  && jest",
+    "lint": "eslint . --fix --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty",
+    "test": "./node_modules/standard/bin/cmd.js && jest",
     "start": "react-native start",
     "test:watch": "npm run test -- --watch",
     "test-chrome": "node-debug --preload false --nodejs --harmony jest --runInBand",
@@ -61,6 +61,12 @@
     "babel-jest": "14.0.0",
     "babel-preset-react-native": "1.8.0",
     "docker": "1.0.0",
+    "eslint": "^3.8.0",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-flowtype-errors": "^1.4.1",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-react": "^6.4.1",
+    "eslint-plugin-standard": "^2.0.1",
     "istanbul": "0.4.3",
     "jest": "14.1.0",
     "jest-react-native": "14.1.3",

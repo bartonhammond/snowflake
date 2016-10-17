@@ -201,13 +201,13 @@ export default function native (platform) {
                 <Scene key='Logout'
                   title={I18n.t('Snowflake.logout')}
                   icon={TabIcon}
-                  iconName={"sign-out"}
+                  iconName={'sign-out'}
                   hideNavBar
                   component={Logout} />
 
                 <Scene key='Main'
                   title={I18n.t('Snowflake.main')}
-                  iconName={"home"}
+                  iconName={'home'}
                   icon={TabIcon}
                   hideNavBar
                   component={Main}
@@ -216,7 +216,7 @@ export default function native (platform) {
                 <Scene key='Profile'
                   title={I18n.t('Snowflake.profile')}
                   icon={TabIcon}
-                  iconName={"gear"}
+                  iconName={'gear'}
                   hideNavBar
                   component={Profile} />
               </Scene>

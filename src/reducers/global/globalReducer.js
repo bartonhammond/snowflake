@@ -89,7 +89,7 @@ export default function globalReducer (state = initialState, action) {
      * *Note*: the global state removes the ```store```, otherwise,
      * when trying to convert to JSON, it will be recursive and fail
      */
-    case GET_STATE:
+    case GET_STATE: {
       let _state = state.store.getState()
 
       if (action.payload) {
@@ -109,6 +109,7 @@ export default function globalReducer (state = initialState, action) {
       } else {
         return state.set('showState', action.payload)
       }
+    }
 
     /**
      * ### Set the state

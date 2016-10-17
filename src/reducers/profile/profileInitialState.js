@@ -26,7 +26,7 @@ const Form = Record({
     email: null,
     objectId: null,
     emailVerified: null
-  })),
+  }))(),
   disabled: false,
   error: null,
   isValid: false,
@@ -39,7 +39,7 @@ const Form = Record({
     emailHasError: false,
     emailErrorMsg: '',
     emailVerified: false
-  }))
+  }))()
 })
 
 var InitialState = Record({

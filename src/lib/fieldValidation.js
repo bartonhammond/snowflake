@@ -80,7 +80,7 @@ export default function fieldValidation (state, action) {
      * ### username validation
      * set the form field error
      */
-    case ('username'):
+    case ('username'): {
       let validUsername = _.isUndefined(validate({username: value},
                                                 usernameConstraints))
       if (validUsername) {
@@ -92,12 +92,13 @@ export default function fieldValidation (state, action) {
         .setIn(['form', 'fields', 'usernameErrorMsg'],
                I18n.t('FieldValidation.valid_user_name'))
       }
+    }
 
     /**
      * ### email validation
      * set the form field error
      */
-    case ('email'):
+    case ('email'): {
       let validEmail = _.isUndefined(validate({from: value},
                                              emailConstraints))
       if (validEmail) {
@@ -107,12 +108,13 @@ export default function fieldValidation (state, action) {
         .setIn(['form', 'fields', 'emailErrorMsg'],
                  I18n.t('FieldValidation.valid_email'))
       }
+    }
 
     /**
      * ### password validation
      * set the form field error
      */
-    case ('password'):
+    case ('password'): {
       let validPassword = _.isUndefined(validate({password: value},
                                                passwordConstraints))
       if (validPassword) {
@@ -125,6 +127,7 @@ export default function fieldValidation (state, action) {
         .setIn(['form', 'fields', 'passwordErrorMsg'],
           I18n.t('FieldValidation.valid_password'))
       }
+    }
 
     /**
      * ### passwordAgain validation

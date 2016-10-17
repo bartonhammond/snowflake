@@ -42,7 +42,7 @@ const Form = Record({
     passwordAgainHasError: false,
     passwordAgainErrorMsg: '',
     showPassword: false
-  }))
+  }))()
 })
 
 /**
