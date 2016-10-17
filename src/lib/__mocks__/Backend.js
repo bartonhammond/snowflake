@@ -10,7 +10,7 @@
  *
  * Need to still treat as async
  */
-require('regenerator/runtime')
+require('regenerator-runtime/runtime')
 
 export default class Backend {
   /**
