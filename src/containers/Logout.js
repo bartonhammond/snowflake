@@ -65,7 +65,7 @@ function mapStateToProps (state) {
       showState: state.global.showState
     }
   }
-};
+}
 
 function mapDispatchToProps (dispatch) {
   return {

@@ -54,7 +54,7 @@ function mapStateToProps (state) {
   return {
     deviceVersion: state.device.version
   }
-};
+}
 
 /*
  * Bind all the actions in deviceActions

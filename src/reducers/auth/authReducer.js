@@ -68,10 +68,12 @@ export default function authReducer (state = initialState, action) {
     case SIGNUP_REQUEST:
     case LOGOUT_REQUEST:
     case LOGIN_REQUEST:
-    case RESET_PASSWORD_REQUEST:
-      let nextState = state.setIn(['form', 'isFetching'], true)
-      .setIn(['form', 'error'], null)
+    case RESET_PASSWORD_REQUEST: {
+      let nextState = state
+        .setIn(['form', 'isFetching'], true)
+        .setIn(['form', 'error'], null)
       return nextState
+    }
 
     /**
      * ### Logout state

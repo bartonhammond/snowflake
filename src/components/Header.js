@@ -1,6 +1,6 @@
 /**
-* # Header.js
-*
+ * # Header.js
+ *
  * This component initially displays a image. But when clicked, things
  * get interesting.
  *
@@ -136,8 +136,6 @@ var Header = React.createClass({
     let displayText
     if (this.props.showState) {
       displayText = JSON.stringify(this.props.currentState)
-
-      console.log(displayText)
     }
 
     return (

@@ -55,7 +55,7 @@ function mapStateToProps (state) {
       showState: state.global.showState
     }
   }
-};
+}
 
 /**
  * Bind all the actions from authActions, deviceActions and globalActions

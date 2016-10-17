@@ -16,7 +16,7 @@ jest.mock('tcomb-form-native', () => {
   const React = require('React')
   const t = require.requireActual('tcomb-form-native')
   // Patch the base Component class to make rendering possible.
-  t.form.Component.prototype.render = function () {
+  t.form.Component.prototype.render = function render () {
     return React.createElement(this.getTemplate().name, this.props)
   }
   return t
