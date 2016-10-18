@@ -61,7 +61,7 @@ function mapStateToProps (state) {
       showState: state.global.showState
     }
   }
-};
+}
 
 /*
  * Bind all the actions
@@ -125,7 +125,7 @@ class Main extends Component {
       </View>
     )
   }
-};
+}
 
 /**
  * Connect the properties

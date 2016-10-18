@@ -35,17 +35,19 @@ export default function deviceReducer (state = initialState, action) {
      * ### set the platform in the state
      *
      */
-    case SET_PLATFORM:
+    case SET_PLATFORM: {
       const platform = action.payload
       return state.set('platform', platform)
+    }
 
     /**
      * ### set the version in the state
      *
      */
-    case SET_VERSION:
+    case SET_VERSION: {
       const version = action.payload
       return state.set('version', version)
+    }
   }
 
   return state

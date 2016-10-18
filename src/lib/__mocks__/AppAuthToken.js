@@ -9,7 +9,7 @@
  *
  * Need to still treat as async
  */
-require('regenerator/runtime')
+require('regenerator-runtime/runtime')
 export class AppAuthToken {
   /**
    * ## AppAuthToken
