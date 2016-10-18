@@ -8,21 +8,23 @@ exports[`ItemCheckbox if disabled and checked, it should display check-square an
     accessible={true}
     hitSlop={undefined}
     onLayout={undefined}
-    onResponderGrant={[Function bound touchableHandleResponderGrant]}
-    onResponderMove={[Function bound touchableHandleResponderMove]}
-    onResponderRelease={[Function bound touchableHandleResponderRelease]}
-    onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
-    onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
-    onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "flex": 1,
-        "flexDirection": "row"
+        "flexDirection": "row",
       }
     }
     testID={undefined}>
     <Text
+      accessible={true}
       allowFontScaling={false}
+      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -30,14 +32,17 @@ exports[`ItemCheckbox if disabled and checked, it should display check-square an
             "fontFamily": "FontAwesome",
             "fontSize": 20,
             "fontStyle": "normal",
-            "fontWeight": "normal"
+            "fontWeight": "normal",
           },
-          undefined
+          undefined,
         ]
       }>
       
     </Text>
-    <Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail">
        
       TextShouldDisplay
     </Text>
@@ -55,21 +60,23 @@ exports[`ItemCheckbox if disabled and not checked, it should display square-o an
     accessible={true}
     hitSlop={undefined}
     onLayout={undefined}
-    onResponderGrant={[Function bound touchableHandleResponderGrant]}
-    onResponderMove={[Function bound touchableHandleResponderMove]}
-    onResponderRelease={[Function bound touchableHandleResponderRelease]}
-    onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
-    onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
-    onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Object {
         "flex": 1,
-        "flexDirection": "row"
+        "flexDirection": "row",
       }
     }
     testID={undefined}>
     <Text
+      accessible={true}
       allowFontScaling={false}
+      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -77,14 +84,17 @@ exports[`ItemCheckbox if disabled and not checked, it should display square-o an
             "fontFamily": "FontAwesome",
             "fontSize": 20,
             "fontStyle": "normal",
-            "fontWeight": "normal"
+            "fontWeight": "normal",
           },
-          undefined
+          undefined,
         ]
       }>
       
     </Text>
-    <Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail">
        
       TextShouldDisplay
     </Text>
@@ -102,18 +112,18 @@ exports[`ItemCheckbox if not disabled and checked, it should display check-squar
     accessible={true}
     hitSlop={undefined}
     onLayout={undefined}
-    onResponderGrant={[Function bound touchableHandleResponderGrant]}
-    onResponderMove={[Function bound touchableHandleResponderMove]}
-    onResponderRelease={[Function bound touchableHandleResponderRelease]}
-    onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
-    onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
-    onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent"
+          "backgroundColor": "transparent",
         },
-        undefined
+        undefined,
       ]
     }
     testID={undefined}>
@@ -121,11 +131,13 @@ exports[`ItemCheckbox if not disabled and checked, it should display check-squar
       style={
         Object {
           "flex": 1,
-          "flexDirection": "row"
+          "flexDirection": "row",
         }
       }>
       <Text
+        accessible={true}
         allowFontScaling={false}
+        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -133,14 +145,17 @@ exports[`ItemCheckbox if not disabled and checked, it should display check-squar
               "fontFamily": "FontAwesome",
               "fontSize": 20,
               "fontStyle": "normal",
-              "fontWeight": "normal"
+              "fontWeight": "normal",
             },
-            undefined
+            undefined,
           ]
         }>
         
       </Text>
-      <Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
          
         TextShouldDisplay
       </Text>
@@ -159,18 +174,18 @@ exports[`ItemCheckbox if not disabled and not checked, it should display square-
     accessible={true}
     hitSlop={undefined}
     onLayout={undefined}
-    onResponderGrant={[Function bound touchableHandleResponderGrant]}
-    onResponderMove={[Function bound touchableHandleResponderMove]}
-    onResponderRelease={[Function bound touchableHandleResponderRelease]}
-    onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
-    onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
-    onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
       Array [
         Object {
-          "backgroundColor": "transparent"
+          "backgroundColor": "transparent",
         },
-        undefined
+        undefined,
       ]
     }
     testID={undefined}>
@@ -178,11 +193,13 @@ exports[`ItemCheckbox if not disabled and not checked, it should display square-
       style={
         Object {
           "flex": 1,
-          "flexDirection": "row"
+          "flexDirection": "row",
         }
       }>
       <Text
+        accessible={true}
         allowFontScaling={false}
+        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -190,14 +207,17 @@ exports[`ItemCheckbox if not disabled and not checked, it should display square-
               "fontFamily": "FontAwesome",
               "fontSize": 20,
               "fontStyle": "normal",
-              "fontWeight": "normal"
+              "fontWeight": "normal",
             },
-            undefined
+            undefined,
           ]
         }>
         
       </Text>
-      <Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
          
         TextShouldDisplay
       </Text>

@@ -78,7 +78,7 @@ Please refer to [https://github.com/bartonhammond/snowflake-hapi-openshift](http
 ------------
 ##Notes
 
-Code is written to [JS Standard](https://github.com/feross/standard). See [Text Editor Plugins](https://github.com/feross/standard#text-editor-plugins) for your favorite editor integration.
+Code is written to [JS Standard](https://github.com/feross/standard) and validated with [Eslint](http://eslint.org/).  To setup your favorite editor using the Eslint configuration, see [Editors](http://eslint.org/docs/user-guide/integrations#editors)
 
 Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux).  Multiple scenes support **Login, Register, and Reset Password**.  Once successfully logged in, there are 3 more scenes: **Logout, Subview, and Profile**.
 

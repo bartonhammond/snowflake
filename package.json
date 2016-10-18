@@ -1,11 +1,12 @@
 {
   "name": "snowflake",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "private": true,
   "jest": {
     "preset": "jest-react-native",
     "moduleNameMapper": {
-      "\\./datepicker$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/datepicker.ios.js"
+      "\\./datepicker$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/datepicker.ios.js",
+       "\\./select$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/select.ios.js"
     },
     "preprocessorIgnorePatterns": [
       "node_modules/(?!react-native|tcomb-form-native|apsl-react-native-button)"
@@ -14,8 +15,9 @@
     "verbose": true
   },
   "scripts": {
-    "lint": "eslint . --fix --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty",
-    "test": "npm run lint && jest",
+    "lint": "eslint . --fix --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty",    
+    "lint-validate": "eslint .  --ignore-path .gitignore  --quiet",
+    "test": "npm run lint-validate && jest -u",
     "start": "react-native start",
     "test:watch": "npm run test -- --watch",
     "test-chrome": "node-debug --preload false --nodejs --harmony jest --runInBand",

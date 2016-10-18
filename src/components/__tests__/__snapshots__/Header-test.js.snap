@@ -6,7 +6,7 @@ exports[`Header should be display empty text when not fetching 1`] = `
         "alignItems": "center",
         "backgroundColor": "transparent",
         "justifyContent": "center",
-        "marginTop": 20
+        "marginTop": 20,
       }
     }>
     <View
@@ -16,18 +16,18 @@ exports[`Header should be display empty text when not fetching 1`] = `
       accessible={true}
       hitSlop={undefined}
       onLayout={undefined}
-      onResponderGrant={[Function bound touchableHandleResponderGrant]}
-      onResponderMove={[Function bound touchableHandleResponderMove]}
-      onResponderRelease={[Function bound touchableHandleResponderRelease]}
-      onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
-      onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
-      onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Array [
           Object {
-            "backgroundColor": "transparent"
+            "backgroundColor": "transparent",
           },
-          undefined
+          undefined,
         ]
       }
       testID={undefined}>
@@ -36,7 +36,7 @@ exports[`Header should be display empty text when not fetching 1`] = `
         style={
           Object {
             "height": 100,
-            "width": 100
+            "width": 100,
           }
         } />
     </View>
@@ -52,7 +52,7 @@ exports[`Header should be display spinner when fetching 1`] = `
         "alignItems": "center",
         "backgroundColor": "transparent",
         "justifyContent": "center",
-        "marginTop": 20
+        "marginTop": 20,
       }
     }>
     <View
@@ -62,18 +62,18 @@ exports[`Header should be display spinner when fetching 1`] = `
       accessible={true}
       hitSlop={undefined}
       onLayout={undefined}
-      onResponderGrant={[Function bound touchableHandleResponderGrant]}
-      onResponderMove={[Function bound touchableHandleResponderMove]}
-      onResponderRelease={[Function bound touchableHandleResponderRelease]}
-      onResponderTerminate={[Function bound touchableHandleResponderTerminate]}
-      onResponderTerminationRequest={[Function bound touchableHandleResponderTerminationRequest]}
-      onStartShouldSetResponder={[Function bound touchableHandleStartShouldSetResponder]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Array [
           Object {
-            "backgroundColor": "transparent"
+            "backgroundColor": "transparent",
           },
-          undefined
+          undefined,
         ]
       }
       testID={undefined}>
@@ -82,7 +82,7 @@ exports[`Header should be display spinner when fetching 1`] = `
         style={
           Object {
             "height": 100,
-            "width": 100
+            "width": 100,
           }
         } />
     </View>
