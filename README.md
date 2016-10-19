@@ -1,4 +1,4 @@
-Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
+Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/4646826/19122050/1d051e6e-8b29-11e6-92c4-a21972b2d55e.png)
 ==================================
 A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base. - [Demo](#screens)
 
