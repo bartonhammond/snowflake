@@ -154,13 +154,13 @@ export class Parse extends Backend {
       body: data
     })
       .then((res) => {
-        if ((res.status === 200 || res.status === 201)) {
-          return {}
-        } else {
-					res.json().then(function (res) {          
-						throw (res)
-					})
-        }
+      	return res.json().then(function(json) {
+        	if ((res.status === 200 || res.status === 201)) {
+          	return {}
+        	} else {
+						throw (json)
+					}
+        })
       })
       .catch((error) => {
         throw (error)
