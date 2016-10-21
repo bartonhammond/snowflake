@@ -27,6 +27,7 @@
     "apsl-react-native-button": "3.0.1",
     "immutable": "3.8.1",
     "key-mirror": "1.0.1",
+    "parse": "1.8.5",        
     "react": "15.3.2",
     "react-mixin": "3.0.5",
     "react-native": "0.35.0",

@@ -1,6 +1,6 @@
 Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/4646826/19122050/1d051e6e-8b29-11e6-92c4-a21972b2d55e.png)
 ==================================
-A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base. - [Demo](#screens)
+A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base, with 2 backends to chose from: a Hapi or Parse Server solution- [Demo](#screens)
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c072e4c80b2e477591170553b149772b)](https://www.codacy.com/app/bartonhammond/snowflake?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bartonhammond/snowflake&amp;utm_campaign=Badge_Grade)
@@ -13,7 +13,7 @@ A React-Native starter mobile app, or maybe just an example, or maybe a boilerpl
 
 * [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
 
-#### Install Snowflake
+### Install Snowflake
 * Clone snowflake: `git clone https://github.com/bartonhammond/snowflake.git`
 
 * install dependencies
@@ -23,6 +23,8 @@ cd snowflake
 
 npm install
 ```
+
+### Using Snowflake Hapi Server
 
 #### Use the local or remote Snowflake Hapi Server
 To make things easy for you, the `config.example.js` has been initialized to use the remote **Snowflake Hapi Server** which is running on **Redhat OpenShift**.
@@ -40,7 +42,9 @@ Please refer to [https://github.com/bartonhammond/snowflake-hapi-openshift](http
 ```
   backend: {
     hapiLocal: false,
-    hapiRemote: true
+    hapiRemote: true,
+    parseLocal: false,
+    parseRemote: false
   },
 ```
 * To run Hapi locally, follow the instructions at [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift).  You will have to install **MongoDB** and **Redis**.
@@ -62,7 +66,39 @@ Please refer to [https://github.com/bartonhammond/snowflake-hapi-openshift](http
 
 ```
 
+### Using Parse Server
 
+* Copy the ```src/lib/config.example.js``` to ```src/lib/config.js```.  
+* **Note**: the `.gitignore` includes `config.js` from being committed to GitHub
+* Set `parseLocal` to true if you are running a local instance of parse-server
+* Otherwise, set `parseRemote` to true to indicate your parse server instance is hosted in the cloud
+
+```
+  backend: {
+    hapiLocal: false,
+    hapiRemote: false,
+    parseLocal: true,
+    parseRemote: false
+  },
+```
+  
+* To setup parse-server, follow the instructions at https://github.com/ParsePlatform/parse-server-example
+* Set the `local.url` value if you are running parse-server `local`
+* Set the `remote.url` value if you are running parse-server `remote`
+
+```
+  PARSE: {
+    appId: 'snowflake',                              // match APP_ID in parse-server's index.js
+    masterKey: 'F6NmZRK2VBncbdJCJRvPPJWyMLTjzPeWeX', // match MASTER_KEY in parse-server's index.js
+    local: {
+    	url: 'http://localhost:1337/parse'             // match SERVER_URL in parse-server's index.js
+    },
+    remote: {
+    	url: 'https://enter_your_snowflake_host.com'   // match SERVER_URL in parse-server's index.js
+    }
+  }
+  
+```
 
 ### To run:
 * For iOS, from the command line, run via command: ```react-native run-ios``` or open XCode and load project, Run ```Product -> Run (⌘+R)```
@@ -104,11 +140,12 @@ Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has **extensive
 
 Snowflake has a **choice of servers**, either
 
-* The original **Parse.com**
-or
 * **Hapi Server** that runs on **RedHat Openshift** and **locally**.
 
     See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
+
+* **Parse Server** that runs **remotely** or **locally**
+		See [https://github.com/ParsePlatform/parse-server-example](https://github.com/ParsePlatform/parse-server-example) for more information.
 
 ---------------
 # Content
@@ -162,7 +199,7 @@ apm install editorconfig es6-javascript javascript-snippets linter linter-eslint
 1. The Forms display **spinner** when fetching.
 1. Form submission **errors are displayed** (see above Login)
 1. **All state changes*** are actions to the Redux store.
-1. The backend is provided by Parse.com using the **Rest API**
+1. The backend is provided by either a Hapi server or Parse server using the **Rest API**
 1. **Every action** performed by the UI interfaces with the **Redux actions** and subsequently to the Redux Store.  This **reduces the complexity** of the JSX Components **tremendously**and makes them easily testable.
 1. **Jest Unit Tests cover ~90%** of the application statements.
 1. Demonstrates how to **setup React-Native to perform Jest testing** with Mock modules
@@ -244,6 +281,11 @@ Before Redux, application state was managed by all the various components in the
 For me, Hapi provided a clear way for defining APIs and managing things clearly.  Some folks like Express, I've used Express myself, and I wanted to try Hapi.  I'm very satisfied with Hapi.  As you may or may not know, WalMart Labs produced Hapi and they've used it in their business.  
 
 One of the needs of any application is server side processing.  With the ability to run Hapi locally or on OpenShift, I'm able to write my server logic and test it locally.  When I'm "happy" I can push the code to OpenShift.  The same code runs in both environments.
+
+###[Parse Server](https://github.com/ParsePlatform/parse-server)
+As an alternative to Hapi, Snowflake also supports Parse Server.  Parse Server is an open source version of the Parse backend that can be deployed to any infrastructure that can run Node.js.
+
+Parse Server works with the Express web application framework.  You can test it locally and push changes to your parse remote server when you are ready.
 
 ### [OpenShift](https://www.openshift.com/)
 I chose OpenShift because I could get a reasonable performing application for free.  The Snowflake server ([https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) uses 3 gears with MongoDB and Redis.  
@@ -451,7 +493,7 @@ This section explains a little about what I've learned with Redux and the manage
 
 A typical app, at least those I've written before, have logic and state scattered all through out.  Frameworks help to organize but typically the developer has to know how to "stitch" it together by remembering to update certain state at certain times.
 
-In the above diagram, the Login component is responsible for calling the Validate and making sure the rules are applied and errors are displayed. Then it has to have logic that confirms everything is in the right state, and pass that data to a Restul API to interact, in this case, with Parse.com.  When that activity is complete the Router has to be informed and a new_page can be displayed.
+In the above diagram, the Login component is responsible for calling the Validate and making sure the rules are applied and errors are displayed. Then it has to have logic that confirms everything is in the right state, and pass that data to a Restul API to interact, in this case, with Parse.  When that activity is complete the Router has to be informed and a new_page can be displayed.
 
 This makes testing hard as the logic is partially contained in the Login component itself and the sequence of those events are encapsulated there too!  
 
