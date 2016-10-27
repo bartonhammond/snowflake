@@ -1,4 +1,60 @@
 {
+  "zh": {
+    "App": {
+      "version": "版本"
+    },
+    "Header": {
+      "current_state": "当前状态",
+      "see_console": "查看控制台",
+      "update_state": "更新状态"
+    },
+    "Subview": {
+      "subview": "子视图",
+      "back": "返回"
+    },
+    "Snowflake": {
+      "logout": "注销",
+      "main": "主页",
+      "profile":"个人信息"
+    },
+    "Main": {
+      "navigate": "导航到子视图"
+    },
+    "Profile": {
+      "username": "用户名",
+      "email": "邮箱",
+      "update": "更新个人信息",
+      "verified": "已验证邮箱",
+      "display": "只显示"
+    },
+    "LoginForm": {
+      "username": "用户名",
+      "email": "邮箱",
+      "password": "密码",
+      "password_again": "确认密码"
+    },
+    "LoginRender": {
+      "forgot_password": "忘记密码?",
+      "already_have_account": "已有账户?",
+      "register": "注册",
+      "show_password": "显示密码"
+    },
+    "ForgotPassword": {
+      "reset_password": "重置密码"
+    },
+    "Login": {
+      "login": "登陆"
+    },
+    "Register": {
+      "register": "注册"
+    },
+    "FieldValidation": {
+      "valid_user_name": "请输入6-12个字母或数字",
+      "valid_email": "请提供有效邮箱地址",
+      "valid_password": "请输入6-12个数字和特殊字符: !@#$%^&*",
+      "valid_password_again": "密码不匹配"
+    }
+  },
   "en": {
     "App": {
       "version": "Version"
