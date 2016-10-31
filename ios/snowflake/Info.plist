@@ -24,19 +24,19 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>https://snowflake-parse.herokuapp.com</key>
-        <dict>
-      		<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-          <true/>
-        </dict>
-      <key>localhost</key>
-				<dict>
-					<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-					<true/>
-				</dict>
-		</dict>
+	<key>NSExceptionDomains</key>
+	<dict>
+	  <key>https://snowflake-parse.herokuapp.com</key>
+          <dict>
+      	    <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+          </dict>
+          <key>localhost</key>
+	  <dict>
+	    <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+	    <true/>
+	  </dict>
+	</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
