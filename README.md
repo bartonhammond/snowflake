@@ -1,4 +1,4 @@
-Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/19871682/0fd644ec-9f84-11e6-8601-8421c4d85916.png)
+Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/19871941/447b11ea-9f85-11e6-81d6-cb4b70faea6f.png)
 ==================================
 A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base, with 2 backends to chose from: a Hapi or Parse Server solution- [Demo](#screens)
 
