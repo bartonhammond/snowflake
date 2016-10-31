@@ -33,7 +33,7 @@ This **Snowflake Hapi Server** is Open Source.  It can run either locally or on 
 
 Please refer to [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the code and instructions for installation and setup of the server.
 
-#### Copy `config.example.js` and setup the remote or local option
+#### The following commands are for the client
 
 *  Copy the ```src/lib/config.example.js``` to ```src/lib/config.js```.  
 * **Note**: the `.gitignore` includes `config.js` from being committed to GitHub
@@ -67,7 +67,11 @@ Please refer to [https://github.com/bartonhammond/snowflake-hapi-openshift](http
 ```
 
 ### Using Parse Server
+This **Snowflake Parse Heroku Server** is Open Source.  It can run either locally or on **Heroku**.  For your convince a server is running at: [https://snowflake-parse.herokuapp.com/parse](https://snowflake-parse.herokuapp.com/parse)
 
+Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https://github.com/bartonhammond/snowflake-parse-heroku) for more information about the code and instructions for installation and setup of the server.
+
+#### The following instructions are for the client
 * Copy the ```src/lib/config.example.js``` to ```src/lib/config.js```.  
 * **Note**: the `.gitignore` includes `config.js` from being committed to GitHub
 * Set `parseLocal` to true if you are running a local instance of parse-server
