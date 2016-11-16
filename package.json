@@ -42,6 +42,7 @@
     "redux": "3.6.0",
     "redux-thunk": "2.1.0",
     "regenerator": "0.8.46",
+    "regenerator-runtime": "0.9.6",
     "tcomb-form-native": "0.6.1",
     "undefined": "0.1.0",
     "underscore": "1.8.3",
