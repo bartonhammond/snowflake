@@ -93,7 +93,6 @@ Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https:
 ```
   PARSE: {
     appId: 'snowflake',                              // match APP_ID in parse-server's index.js
-    masterKey: 'F6NmZRK2VBncbdJCJRvPPJWyMLTjzPeWeX', // match MASTER_KEY in parse-server's index.js
     local: {
     	url: 'http://localhost:1337/parse'             // match SERVER_URL in parse-server's index.js
     },
