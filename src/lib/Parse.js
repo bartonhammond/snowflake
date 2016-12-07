@@ -31,7 +31,6 @@ export class Parse extends Backend {
       _.isNull(token) ? null : token.sessionToken.sessionToken
 
     this._applicationId = CONFIG.PARSE.appId
-    this._masterKey = CONFIG.PARSE.masterKey
     this.API_BASE_URL = CONFIG.backend.parseLocal
     ? CONFIG.PARSE.local.url
     : CONFIG.PARSE.remote.url
@@ -255,10 +254,6 @@ export class Parse extends Backend {
     }
     if (this._sessionToken) {
       reqOpts.headers['X-Parse-Session-Token'] = this._sessionToken
-    }
-
-    if (this._masterKey) {
-      reqOpts.headers['X-Parse-Master-Key'] = this.masterKey
     }
 
     if (opts.method === 'POST' || opts.method === 'PUT') {
