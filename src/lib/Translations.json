@@ -178,7 +178,7 @@
     },    
     "Subview": {
       "subview": "Subview",
-      "back": "Espalda"
+      "back": "Regresar"
     },    
     "Snowflake": {
       "logout": "Cerrar sesión",
@@ -202,9 +202,9 @@
       "password_again": "Contraseña de nuevo"
     },
     "LoginRender": {
-      "forgot_password": "Se te olvidó tu contraseña?",
-      "already_have_account": "Ya tiene cuenta?",
-      "register": "Registro",
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "already_have_account": "¿Ya tienes cuenta?",
+      "register": "Registrarse",
       "show_password": "Mostrar Contraseña"      
     },
     "ForgotPassword": {
@@ -214,7 +214,7 @@
       "login": "Iniciar sesión"
     },
     "Register": {
-      "register": "Registro"
+      "register": "Registrarse"
     },
     "FieldValidation": {
       "valid_user_name": "6-12 de longitud con letras o números",
