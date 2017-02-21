@@ -1,8 +1,7 @@
 # OSX
 #
 .DS_Store
-.tern-port
-        
+
 # Xcode
 #
 build/
@@ -23,30 +22,33 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
-#Fastlane output of gym
-snowflake.app.dSYM.zip
-
-# Android/IJ
+# Android/IntelliJ
 #
-*.iml
+build/
 .idea
 .gradle
 local.properties
+*.iml
 
 # node.js
 #
-npm-debug.log
 node_modules/
-# jest
-coverage/
-
-src/lib/config.js
+npm-debug.log
+yarn-error.log
 
 # BUCK
 buck-out/
 \.buckd/
 android/app/libs
-android/keystores/debug.keystore
+*.keystore
 
-#vs code
-.vscode/
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots

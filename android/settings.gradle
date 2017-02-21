@@ -1,7 +1,3 @@
 rootProject.name = 'snowflake'
 
 include ':app'
-include ':react-native-simpledialog-android'
-project(':react-native-simpledialog-android').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-simpledialog-android/android')
-include ':react-native-i18n'
-project(':react-native-i18n').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-i18n/android')
