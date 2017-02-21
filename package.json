@@ -65,6 +65,7 @@
     "jest-react-native": "16.0.0",
     "react-addons-test-utils": "15.3.2",
     "redux-mock-store": "1.2.1",
-    "rnpm-plugin-upgrade": "0.26.0"
+    "rnpm-plugin-upgrade": "0.26.0",
+    "whatwg-fetch": "^1.1.1"
   }
 }
