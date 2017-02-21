@@ -25,7 +25,7 @@ import
  /**
   * The vector icon
   */
-var Icon = require('react-native-vector-icons/FontAwesome')
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 var ItemCheckbox = React.createClass({
   /**
