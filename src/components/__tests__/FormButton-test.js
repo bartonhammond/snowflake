@@ -17,7 +17,8 @@ import React from 'react'
 
 import FormButton from '../FormButton'
 
-import renderer from 'react/lib/ReactTestRenderer'
+import ReactTestUtils from 'react-addons-test-utils'
+const renderer = ReactTestUtils.createRenderer()
 
 it('FormButton', () => {
   const props = {
@@ -25,6 +26,7 @@ it('FormButton', () => {
     onPress: () => {},
     buttonText: 'TestString'
   }
-  const tree = renderer.create(<FormButton {...props} />).toJSON()
+  renderer.render(<FormButton {...props} />)
+  const tree = renderer.getRenderOutput()
   expect(tree).toMatchSnapshot()
 })

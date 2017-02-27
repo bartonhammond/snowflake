@@ -19,7 +19,8 @@ import React from 'react'
 
 import Header from '../Header'
 
-import renderer from 'react/lib/ReactTestRenderer'
+import ReactTestUtils from 'react-addons-test-utils'
+const renderer = ReactTestUtils.createRenderer()
 
 /**
  * ## Test
@@ -33,7 +34,8 @@ describe('Header', () => {
     const props = {
       isFetching: false
     }
-    const tree = renderer.create(<Header {...props} />).toJSON()
+    renderer.render(<Header {...props} />)
+    const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
   })
   /**
@@ -44,8 +46,8 @@ describe('Header', () => {
     const props = {
       isFetching: true
     }
-
-    const tree = renderer.create(<Header {...props} />).toJSON()
+    renderer.render(<Header {...props} />)
+    const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
   })
 })// describe Header

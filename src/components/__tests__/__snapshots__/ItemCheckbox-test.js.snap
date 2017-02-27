@@ -1,132 +1,64 @@
 exports[`ItemCheckbox if disabled and checked, it should display check-square and text 1`] = `
 <View
   style={undefined}>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "flex": 1,
-        "flexDirection": "row",
-      }
-    }
-    testID={undefined}>
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      ellipsizeMode="tail"
+  <TouchableWithoutFeedback>
+    <View
       style={
-        Array [
-          Object {
-            "color": undefined,
-            "fontFamily": "FontAwesome",
-            "fontSize": 20,
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          undefined,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }>
-      
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail">
-       
-      TextShouldDisplay
-    </Text>
-  </View>
+      <Icon
+        allowFontScaling={false}
+        name="check-square"
+        size={20} />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+         
+        TextShouldDisplay
+      </Text>
+    </View>
+  </TouchableWithoutFeedback>
 </View>
 `;
 
 exports[`ItemCheckbox if disabled and not checked, it should display square-o and text 1`] = `
 <View
   style={undefined}>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "flex": 1,
-        "flexDirection": "row",
-      }
-    }
-    testID={undefined}>
-    <Text
-      accessible={true}
-      allowFontScaling={false}
-      ellipsizeMode="tail"
+  <TouchableWithoutFeedback>
+    <View
       style={
-        Array [
-          Object {
-            "color": undefined,
-            "fontFamily": "FontAwesome",
-            "fontSize": 20,
-            "fontStyle": "normal",
-            "fontWeight": "normal",
-          },
-          undefined,
-        ]
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
       }>
-      
-    </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail">
-       
-      TextShouldDisplay
-    </Text>
-  </View>
+      <Icon
+        allowFontScaling={false}
+        name="square-o"
+        size={20} />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+         
+        TextShouldDisplay
+      </Text>
+    </View>
+  </TouchableWithoutFeedback>
 </View>
 `;
 
 exports[`ItemCheckbox if not disabled and checked, it should display check-square and text 1`] = `
 <View
   style={undefined}>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
-        undefined,
-      ]
-    }
-    testID={undefined}>
+  <TouchableHighlight
+    activeOpacity={0.85}
+    onPress={[Function]}
+    underlayColor="black">
     <View
       style={
         Object {
@@ -134,24 +66,10 @@ exports[`ItemCheckbox if not disabled and checked, it should display check-squar
           "flexDirection": "row",
         }
       }>
-      <Text
-        accessible={true}
+      <Icon
         allowFontScaling={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": undefined,
-              "fontFamily": "FontAwesome",
-              "fontSize": 20,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-            undefined,
-          ]
-        }>
-        
-      </Text>
+        name="check-square"
+        size={20} />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -160,35 +78,17 @@ exports[`ItemCheckbox if not disabled and checked, it should display check-squar
         TextShouldDisplay
       </Text>
     </View>
-  </View>
+  </TouchableHighlight>
 </View>
 `;
 
 exports[`ItemCheckbox if not disabled and not checked, it should display square-o and text 1`] = `
 <View
   style={undefined}>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-        },
-        undefined,
-      ]
-    }
-    testID={undefined}>
+  <TouchableHighlight
+    activeOpacity={0.85}
+    onPress={[Function]}
+    underlayColor="black">
     <View
       style={
         Object {
@@ -196,24 +96,10 @@ exports[`ItemCheckbox if not disabled and not checked, it should display square-
           "flexDirection": "row",
         }
       }>
-      <Text
-        accessible={true}
+      <Icon
         allowFontScaling={false}
-        ellipsizeMode="tail"
-        style={
-          Array [
-            Object {
-              "color": undefined,
-              "fontFamily": "FontAwesome",
-              "fontSize": 20,
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-            undefined,
-          ]
-        }>
-        
-      </Text>
+        name="check-square"
+        size={20} />
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -222,6 +108,6 @@ exports[`ItemCheckbox if not disabled and not checked, it should display square-
         TextShouldDisplay
       </Text>
     </View>
-  </View>
+  </TouchableHighlight>
 </View>
 `;

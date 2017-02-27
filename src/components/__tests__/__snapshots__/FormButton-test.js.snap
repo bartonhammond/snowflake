@@ -6,51 +6,21 @@ exports[`test FormButton 1`] = `
       "marginRight": 10,
     }
   }>
-  <View
-    accessibilityComponentType={undefined}
-    accessibilityLabel={undefined}
-    accessibilityTraits={undefined}
-    accessible={true}
-    hitSlop={undefined}
-    onLayout={undefined}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
+  <Button
+    isDisabled={false}
+    onPress={[Function]}
     style={
       Object {
-        "alignSelf": "stretch",
         "backgroundColor": "#FF3366",
         "borderColor": "#FF3366",
-        "borderRadius": 8,
-        "borderWidth": 1,
-        "flexDirection": "row",
-        "height": 44,
-        "justifyContent": "center",
-        "marginBottom": 10,
-        "opacity": 1,
       }
     }
-    testID={undefined}>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Array [
-          Object {
-            "alignSelf": "center",
-            "fontSize": 18,
-          },
-          Object {
-            "fontSize": 18,
-          },
-        ]
-      }>
-      TestString
-    </Text>
-  </View>
+    textStyle={
+      Object {
+        "fontSize": 18,
+      }
+    }>
+    TestString
+  </Button>
 </View>
 `;
