@@ -9,28 +9,10 @@ exports[`Header should be display empty text when not fetching 1`] = `
         "marginTop": 20,
       }
     }>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-          },
-          undefined,
-        ]
-      }
-      testID={undefined}>
+    <TouchableHighlight
+      activeOpacity={0.85}
+      onPress={[Function]}
+      underlayColor="black">
       <Image
         source={1}
         style={
@@ -39,7 +21,7 @@ exports[`Header should be display empty text when not fetching 1`] = `
             "width": 100,
           }
         } />
-    </View>
+    </TouchableHighlight>
   </View>
 </View>
 `;
@@ -55,28 +37,10 @@ exports[`Header should be display spinner when fetching 1`] = `
         "marginTop": 20,
       }
     }>
-    <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
-      accessible={true}
-      hitSlop={undefined}
-      onLayout={undefined}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "transparent",
-          },
-          undefined,
-        ]
-      }
-      testID={undefined}>
+    <TouchableHighlight
+      activeOpacity={0.85}
+      onPress={[Function]}
+      underlayColor="black">
       <Image
         source={1}
         style={
@@ -85,7 +49,7 @@ exports[`Header should be display spinner when fetching 1`] = `
             "width": 100,
           }
         } />
-    </View>
+    </TouchableHighlight>
     <ActivityIndicator
       animating={true}
       size="large" />

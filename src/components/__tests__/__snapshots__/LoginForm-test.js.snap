@@ -1,184 +1,13 @@
 exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -197,6 +26,189 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
       },
     }
   }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
+    }
+  }
   type={[Function]}
   value={
     Object {
@@ -206,186 +218,15 @@ exports[`LoginForm FORGOT_PASSWORD password fields are not secured if shown 1`] 
 `;
 
 exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -404,6 +245,189 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
       },
     }
   }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
+    }
+  }
   type={[Function]}
   value={
     Object {
@@ -413,186 +437,15 @@ exports[`LoginForm FORGOT_PASSWORD should display  errors and  values 1`] = `
 `;
 
 exports[`LoginForm FORGOT_PASSWORD should display without errors and without values 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -611,6 +464,189 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
       },
     }
   }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
+    }
+  }
   type={[Function]}
   value={
     Object {
@@ -620,186 +656,15 @@ exports[`LoginForm FORGOT_PASSWORD should display without errors and without val
 `;
 
 exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -827,6 +692,189 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
       },
     }
   }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
+    }
+  }
   type={[Function]}
   value={
     Object {
@@ -837,186 +885,15 @@ exports[`LoginForm FORGOT_PASSWORD should not be editable if fetching 1`] = `
 `;
 
 exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -1044,6 +921,189 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
       },
     }
   }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
+    }
+  }
   type={[Function]}
   value={
     Object {
@@ -1054,186 +1114,15 @@ exports[`LoginForm LOGIN password fields are not secured if shown 1`] = `
 `;
 
 exports[`LoginForm LOGIN should display  errors and  values 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -1259,6 +1148,189 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
           "placeholder": undefined,
         },
       },
+    }
+  }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
     }
   }
   type={[Function]}
@@ -1271,186 +1343,15 @@ exports[`LoginForm LOGIN should display  errors and  values 1`] = `
 `;
 
 exports[`LoginForm LOGIN should display without errors and without values 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -1476,6 +1377,189 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
           "placeholder": undefined,
         },
       },
+    }
+  }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
     }
   }
   type={[Function]}
@@ -1488,186 +1572,15 @@ exports[`LoginForm LOGIN should display without errors and without values 1`] = 
 `;
 
 exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -1695,6 +1608,189 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
       },
     }
   }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
+    }
+  }
   type={[Function]}
   value={
     Object {
@@ -1705,186 +1801,15 @@ exports[`LoginForm LOGIN should not be editable if fetching 1`] = `
 `;
 
 exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -1928,6 +1853,189 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
           "placeholder": undefined,
         },
       },
+    }
+  }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
     }
   }
   type={[Function]}
@@ -1942,186 +2050,15 @@ exports[`LoginForm REGISTER password fields are not secured if shown 1`] = `
 `;
 
 exports[`LoginForm REGISTER should display  errors and  values 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -2165,6 +2102,189 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
           "placeholder": undefined,
         },
       },
+    }
+  }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
     }
   }
   type={[Function]}
@@ -2179,186 +2299,15 @@ exports[`LoginForm REGISTER should display  errors and  values 1`] = `
 `;
 
 exports[`LoginForm REGISTER should display without errors and without values 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -2402,6 +2351,189 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
           "placeholder": undefined,
         },
       },
+    }
+  }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
     }
   }
   type={[Function]}
@@ -2416,186 +2548,15 @@ exports[`LoginForm REGISTER should display without errors and without values 1`]
 `;
 
 exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
-<struct
-  ctx={
+<Form
+  i18n={
     Object {
-      "auto": "labels",
-      "context": undefined,
-      "i18n": Object {
-        "add": "Add",
-        "down": "↓",
-        "optional": " (optional)",
-        "remove": "✘",
-        "required": "",
-        "up": "↑",
-      },
-      "path": Array [],
-      "stylesheet": Object {
-        "button": Object {
-          "alignSelf": "stretch",
-          "backgroundColor": "#48BBEC",
-          "borderColor": "#48BBEC",
-          "borderRadius": 8,
-          "borderWidth": 1,
-          "height": 36,
-          "justifyContent": "center",
-          "marginBottom": 10,
-        },
-        "buttonText": Object {
-          "alignSelf": "center",
-          "color": "white",
-          "fontSize": 18,
-        },
-        "checkbox": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "controlLabel": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "fontWeight": "500",
-            "marginBottom": 7,
-          },
-        },
-        "dateTouchable": Object {
-          "error": Object {},
-          "normal": Object {},
-        },
-        "dateValue": Object {
-          "error": Object {
-            "color": "#a94442",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "color": "#000000",
-            "fontSize": 17,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-        "datepicker": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "errorBlock": Object {
-          "color": "#a94442",
-          "fontSize": 17,
-          "marginBottom": 2,
-        },
-        "fieldset": Object {},
-        "formGroup": Object {
-          "error": Object {
-            "marginBottom": 10,
-          },
-          "normal": Object {
-            "marginBottom": 10,
-          },
-        },
-        "helpBlock": Object {
-          "error": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-          "normal": Object {
-            "color": "#999999",
-            "fontSize": 17,
-            "marginBottom": 2,
-          },
-        },
-        "pickerTouchable": Object {
-          "error": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-          "normal": Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": 44,
-          },
-        },
-        "pickerValue": Object {
-          "error": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-          "normal": Object {
-            "fontSize": 17,
-            "paddingLeft": 7,
-          },
-        },
-        "select": Object {
-          "error": Object {
-            "marginBottom": 4,
-          },
-          "normal": Object {
-            "marginBottom": 4,
-          },
-        },
-        "textbox": Object {
-          "error": Object {
-            "borderColor": "#a94442",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "normal": Object {
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#000000",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-          "notEditable": Object {
-            "backgroundColor": "#eeeeee",
-            "borderColor": "#cccccc",
-            "borderRadius": 4,
-            "borderWidth": 1,
-            "color": "#777777",
-            "fontSize": 17,
-            "height": 36,
-            "marginBottom": 5,
-            "padding": 7,
-          },
-        },
-      },
-      "templates": Object {
-        "checkbox": [Function],
-        "datepicker": [Function],
-        "list": [Function],
-        "select": [Function],
-        "struct": [Function],
-        "textbox": [Function],
-      },
-      "uidGenerator": UIDGenerator {
-        "counter": 0,
-        "seed": "tfid-0-",
-      },
+      "add": "Add",
+      "down": "↓",
+      "optional": " (optional)",
+      "remove": "✘",
+      "required": "",
+      "up": "↑",
     }
   }
   onChange={[Function]}
@@ -2639,6 +2600,189 @@ exports[`LoginForm REGISTER should not be editable if fetching 1`] = `
           "placeholder": undefined,
         },
       },
+    }
+  }
+  stylesheet={
+    Object {
+      "button": Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#48BBEC",
+        "borderColor": "#48BBEC",
+        "borderRadius": 8,
+        "borderWidth": 1,
+        "height": 36,
+        "justifyContent": "center",
+        "marginBottom": 10,
+      },
+      "buttonText": Object {
+        "alignSelf": "center",
+        "color": "white",
+        "fontSize": 18,
+      },
+      "checkbox": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "controlLabel": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "fontWeight": "500",
+          "marginBottom": 7,
+        },
+      },
+      "dateTouchable": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "dateValue": Object {
+        "error": Object {
+          "color": "#a94442",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "color": "#000000",
+          "fontSize": 17,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "datepicker": Object {
+        "error": Object {
+          "marginBottom": 4,
+        },
+        "normal": Object {
+          "marginBottom": 4,
+        },
+      },
+      "errorBlock": Object {
+        "color": "#a94442",
+        "fontSize": 17,
+        "marginBottom": 2,
+      },
+      "fieldset": Object {},
+      "formGroup": Object {
+        "error": Object {
+          "marginBottom": 10,
+        },
+        "normal": Object {
+          "marginBottom": 10,
+        },
+      },
+      "helpBlock": Object {
+        "error": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+        "normal": Object {
+          "color": "#999999",
+          "fontSize": 17,
+          "marginBottom": 2,
+        },
+      },
+      "pickerContainer": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "marginBottom": 4,
+        },
+        "open": Object {},
+      },
+      "pickerTouchable": Object {
+        "active": Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#cccccc",
+        },
+        "error": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+        "normal": Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 44,
+        },
+      },
+      "pickerValue": Object {
+        "error": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+        "normal": Object {
+          "fontSize": 17,
+          "paddingLeft": 7,
+        },
+      },
+      "select": Object {
+        "error": Object {},
+        "normal": Object {},
+      },
+      "textbox": Object {
+        "error": Object {
+          "borderColor": "#a94442",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "normal": Object {
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#000000",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+        "notEditable": Object {
+          "backgroundColor": "#eeeeee",
+          "borderColor": "#cccccc",
+          "borderRadius": 4,
+          "borderWidth": 1,
+          "color": "#777777",
+          "fontSize": 17,
+          "height": 36,
+          "marginBottom": 5,
+          "padding": 7,
+        },
+      },
+      "textboxView": Object {
+        "error": Object {},
+        "normal": Object {},
+        "notEditable": Object {},
+      },
+    }
+  }
+  templates={
+    Object {
+      "checkbox": [Function],
+      "datepicker": [Function],
+      "list": [Function],
+      "select": [Function],
+      "struct": [Function],
+      "textbox": [Function],
     }
   }
   type={[Function]}

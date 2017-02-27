@@ -27,7 +27,8 @@ import React from 'react'
 
 import LoginForm from '../LoginForm'
 
-import renderer from 'react/lib/ReactTestRenderer'
+import ReactTestUtils from 'react-addons-test-utils'
+const renderer = ReactTestUtils.createRenderer()
 
 const {
   REGISTER,
@@ -45,7 +46,8 @@ describe('LoginForm', () => {
    * component has the correct data
    */
   function snapshotForm (props) {
-    const tree = renderer.create(<LoginForm {...props} />).toJSON()
+    renderer.render(<LoginForm {...props} />)
+    const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
   }
   /**

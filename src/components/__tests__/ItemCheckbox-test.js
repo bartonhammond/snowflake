@@ -15,7 +15,8 @@ import React from 'react'
 
 import ItemCheckbox from '../ItemCheckbox'
 
-import renderer from 'react/lib/ReactTestRenderer'
+import ReactTestUtils from 'react-addons-test-utils'
+const renderer = ReactTestUtils.createRenderer()
 
 /**
  * ## Test
@@ -31,7 +32,8 @@ describe('ItemCheckbox', () => {
       text: 'TextShouldDisplay',
       disabled: false
     }
-    const tree = renderer.create(<ItemCheckbox {...props} />).toJSON()
+    renderer.render(<ItemCheckbox {...props} />)
+    const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
   })
 
@@ -45,7 +47,8 @@ describe('ItemCheckbox', () => {
       text: 'TextShouldDisplay',
       disabled: false
     }
-    const tree = renderer.create(<ItemCheckbox {...props} />).toJSON()
+    renderer.render(<ItemCheckbox {...props} />)
+    const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
   })
 
@@ -59,7 +62,8 @@ describe('ItemCheckbox', () => {
       text: 'TextShouldDisplay',
       disabled: true
     }
-    const tree = renderer.create(<ItemCheckbox {...props} />).toJSON()
+    renderer.render(<ItemCheckbox {...props} />)
+    const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
   })
 
@@ -73,7 +77,8 @@ describe('ItemCheckbox', () => {
       text: 'TextShouldDisplay',
       disabled: true
     }
-    const tree = renderer.create(<ItemCheckbox {...props} />).toJSON()
+    renderer.render(<ItemCheckbox {...props} />)
+    const tree = renderer.getRenderOutput()
     expect(tree).toMatchSnapshot()
   })
 })// describe ItemCheckbox

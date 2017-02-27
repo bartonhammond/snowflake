@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "jest": {
-    "preset": "jest-react-native",
+    "preset": "react-native",
     "moduleNameMapper": {
       "\\./datepicker$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/datepicker.ios.js",
        "\\./select$": "<rootDir>/node_modules/tcomb-form-native/lib/templates/bootstrap/select.ios.js"
@@ -29,6 +29,7 @@
     "key-mirror": "1.0.1",
     "parse": "1.8.5",        
     "react": "15.4.2",
+    "react-dom": "15.4.2",
     "react-mixin": "3.0.5",
     "react-native": "0.41.2",
     "react-native-i18n": "1.0.0",
@@ -62,7 +63,6 @@
     "eslint-plugin-standard": "2.0.1",
     "istanbul": "0.4.5",
     "jest": "16.0.1",
-    "jest-react-native": "16.0.0",
     "react-addons-test-utils": "15.4.2",
     "redux-mock-store": "1.2.1"
   }
