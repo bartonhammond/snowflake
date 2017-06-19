@@ -1,19 +1,27 @@
 /**
- * # Login.js
- * 
- * This class is a little complicated as it handles 4 states. It's also
- * a container so there is boilerplate from Redux similiar to ```App```.
+ * # fieldValidation.js
+ *
+ * Define the validation rules for various fields such as email, username,
+ * and passwords.  If the rules are not passed, the appropriate
+ * message is displayed to the user
+ *
  */
-'use strict';
+'use strict'
 
 /**
  * ## Imports
- * 
+ *
  * validate and underscore
  *
  */
-import validate from 'validate.js';
-import _ from 'underscore';
+import validate from 'validate.js'
+import _ from 'underscore'
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n')
+import Translations from '../lib/Translations'
+I18n.translations = Translations
 
 /**
  * ## Email validation setup
@@ -23,120 +31,131 @@ const emailConstraints = {
   from: {
     email: true
   }
-};
+}
 
 /**
 * ## username validation rule
 * read the message.. ;)
 */
-const usernamePattern = /^[a-zA-Z0-9]{6,12}$/;
+const usernamePattern = /^[a-zA-Z0-9]{6,12}$/
 const usernameConstraints = {
   username: {
     format: {
       pattern: usernamePattern,
-      flags: 'i',
-      message: "must have 6-12 numbers, letters or special characters"
+      flags: 'i'
     }
   }
-};
+}
 
 /**
 * ## password validation rule
 * read the message... ;)
 */
-const passwordPattern =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/;
+const passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,12}$/
 const passwordConstraints = {
   password: {
     format: {
       pattern: passwordPattern,
-      flags: "i",
-      message: "have at least a number and a special character,"
-          + " and between 6-12 in length"
+      flags: 'i'
     }
   }
-};
+}
 
 const passwordAgainConstraints = {
   confirmPassword: {
-    equality: "password"
+    equality: 'password'
   }
-};
+}
 
 /**
  * ## Field Validation
  * @param {Object} state Redux state
  * @param {Object} action type & payload
  */
-export default function fieldValidation(state, action ) {
-  const {field, value} = action.payload;
-  
-  switch(field) {
+export default function fieldValidation (state, action) {
+  const {field, value} = action.payload
+
+  switch (field) {
     /**
      * ### username validation
-     * set the form field error 
+     * set the form field error
      */
-  case('username'):
-    let validUsername  = _.isUndefined(validate({username: value},
-                                                usernameConstraints));
-    if (validUsername) {
-      return state.setIn(['form', 'fields', 'usernameHasError'], false);
-    } else {
-      return state.setIn(['form', 'fields', 'usernameHasError'], true);
+    case ('username'): {
+      let validUsername = _.isUndefined(validate({username: value},
+                                                usernameConstraints))
+      if (validUsername) {
+        return state.setIn(['form', 'fields', 'usernameHasError'],
+                         false)
+        .setIn(['form', 'fields', 'usernameErrorMsg'], '')
+      } else {
+        return state.setIn(['form', 'fields', 'usernameHasError'], true)
+        .setIn(['form', 'fields', 'usernameErrorMsg'],
+               I18n.t('FieldValidation.valid_user_name'))
+      }
     }
-    break;
-    
+
     /**
      * ### email validation
-     * set the form field error 
-     */    
-  case('email'):
-    let validEmail  = _.isUndefined(validate({from: value},
-                                             emailConstraints));
-    if (validEmail) {
-        return state.setIn(['form', 'fields', 'emailHasError'], false);
-    } else {
-      return state.setIn(['form', 'fields', 'emailHasError'], true);
+     * set the form field error
+     */
+    case ('email'): {
+      let validEmail = _.isUndefined(validate({from: value},
+                                             emailConstraints))
+      if (validEmail) {
+        return state.setIn(['form', 'fields', 'emailHasError'], false)
+      } else {
+        return state.setIn(['form', 'fields', 'emailHasError'], true)
+        .setIn(['form', 'fields', 'emailErrorMsg'],
+                 I18n.t('FieldValidation.valid_email'))
+      }
     }
-    break;
-    
+
     /**
      * ### password validation
-     * set the form field error 
-     */    
-  case('password'):
-    let validPassword = _.isUndefined(validate({password: value},
-                                               passwordConstraints));
-    if (validPassword) {
-      return state.setIn(['form', 'fields', 'passwordHasError'], false);
-    } else {
-      return state.setIn(['form', 'fields', 'passwordHasError'], true);
+     * set the form field error
+     */
+    case ('password'): {
+      let validPassword = _.isUndefined(validate({password: value},
+                                               passwordConstraints))
+      if (validPassword) {
+        return state.setIn(['form', 'fields', 'passwordHasError'],
+                         false)
+        .setIn(['form', 'fields', 'passwordErrorMsg'],
+               '')
+      } else {
+        return state.setIn(['form', 'fields', 'passwordHasError'], true)
+        .setIn(['form', 'fields', 'passwordErrorMsg'],
+          I18n.t('FieldValidation.valid_password'))
+      }
     }
-    break;
-    
+
     /**
      * ### passwordAgain validation
-     * set the form field error 
-     */    
-  case('passwordAgain'):
-    var validPasswordAgain
-      = _.isUndefined(validate({password: state.form.fields.password,
-                                confirmPassword: value}, passwordAgainConstraints));
-    if (validPasswordAgain) {
-      return state.setIn(['form', 'fields', 'passwordAgainHasError'], false);
-    } else {
-      return  state.setIn(['form', 'fields', 'passwordAgainHasError'], true);
-    }
-    break;
+     * set the form field error
+     */
+    case ('passwordAgain'):
+      var validPasswordAgain =
+          _.isUndefined(validate({password: state.form.fields.password,
+                                confirmPassword: value}, passwordAgainConstraints))
+      if (validPasswordAgain) {
+        return state.setIn(['form', 'fields', 'passwordAgainHasError'],
+                         false)
+        .setIn(['form', 'fields', 'passwordAgainErrorMsg'], '')
+      } else {
+        return state.setIn(['form', 'fields', 'passwordAgainHasError'],
+                          true)
+        .setIn(['form', 'fields', 'passwordAgainErrorMsg'],
+        I18n.t('FieldValidation.valid_password_again'))
+      }
 
     /**
      * ### showPassword
      * toggle the display of the password
-     */    
-  case('showPassword'):
-    return state.setIn(['form', 'fields',
-                                'showPassword'], value);
-    break;
-  }
-  return state;
+     */
+    case ('showPassword'):
+      return state.setIn(['form', 'fields',
+                                'showPassword'], value)
 
+  }
+  return state
 }

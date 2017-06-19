@@ -5,32 +5,23 @@
  *
  */
 
-'use strict';
-
-jest.autoMockOff();
+'use strict'
 
 /**
  * ## Mocks
  *
- * We don't want to use the devices storage, nor actually call Parse.com
- */
-jest.mock('../../../lib/AppAuthToken');
-jest.mock('../../../lib/BackendFactory');
-
-/**
- * ## Mock Store
- *
- * The ```mockStore``` confirms the all the actions are dispatched and
- * in the correct order
+ * We don't want to use the devices storage, nor actually call
+ * the server
  *
  */
-var mockStore = require('../../mocks/Store').default;
+jest.mock('../../../lib/AppAuthToken')
+jest.mock('../../../lib/BackendFactory')
 
 /**
  * ## Class under test
  *
  */
-var actions = require('../deviceActions');
+var actions = require('../deviceActions')
 
 /**
  * ## Imports
@@ -40,7 +31,7 @@ var actions = require('../deviceActions');
 const {
   SET_PLATFORM,
   SET_VERSION
-} = require('../../../lib/constants').default;
+} = require('../../../lib/constants').default
 
 /**
  * ## Tests
@@ -49,19 +40,19 @@ const {
  */
 describe('deviceActions', () => {
   it('should setPlatform', () => {
-    let platform = 'ios';
+    let platform = 'ios'
     expect(actions.setPlatform(platform)).toEqual({
       type: SET_PLATFORM,
       payload: platform
-    });
-  });
+    })
+  })
 
   it('should setVersion', () => {
-    let version = '0.0.8';
+    let version = '0.0.8'
     expect(actions.setVersion(version)).toEqual({
       type: SET_VERSION,
       payload: version
-    });
-  });
-});
+    })
+  })
+})
 

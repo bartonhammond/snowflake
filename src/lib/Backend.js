@@ -1,33 +1,17 @@
 /**
  * # Backend.js
- * 
+ *
  * Abstract Base class for Backend support
  *
  */
-'use strict';
+'use strict'
 /**
  * ## Async support
- * 
- */ 
-require('regenerator/runtime');
-
-/**
- * ## Imports
- * 
- * Config for defaults and underscore for a couple of features
- */ 
-import CONFIG from './config';
-import _ from 'underscore';
+ *
+ */
+require('regenerator-runtime/runtime')
 
 export default class Backend {
-  /**
-   * ## Constructor
-   *
-   *
-   * @throws tokenMissing if token is undefined
-   */
-  constructor( token) {
-  }
   /**
    * ### signup
    *
@@ -37,12 +21,12 @@ export default class Backend {
    *
    * @return
    * if ok, {createdAt: "2015-12-30T15:17:05.379Z",
-   *   objectId: "5TgExo2wBA", 
+   *   objectId: "5TgExo2wBA",
    *   sessionToken: "r:dEgdUkcs2ydMV9Y9mt8HcBrDM"}
    *
    * if error, {code: xxx, error: 'message'}
-   */  
-  async signup(data) {
+   */
+  signup (data) {
 
   }
  /**
@@ -63,30 +47,30 @@ export default class Backend {
    * username: "barton"
    *
    */
-  async login(data) {
+  login (data) {
 
   }
   /**
    * ### logout
    * prepare the request and call _fetch
-   */  
-  async logout() {
+   */
+  logout () {
 
   }
   /**
    * ### resetPassword
    * the data is already in a JSON format, so call _fetch
    *
-   * @param data 
+   * @param data
    * {email: "barton@foo.com"}
    *
    * @returns empty object
    *
    * if error:  {code: xxx, error: 'message'}
    */
-  async resetPassword(data) {
+  resetPassword (data) {
 
-  }  
+  }
   /**
    * ### getProfile
    * Using the sessionToken, we'll get everything about
@@ -104,19 +88,19 @@ export default class Backend {
    *
    * if error, {code: xxx, error: 'message'}
    */
-  async getProfile() {
+  getProfile () {
   }
   /**
    * ### updateProfile
    * for this user, update their record
    * the data is already in JSON format
    *
-   * @param userId  _id of Parse.com
+   * @param userId
    * @param data object:
    * {username: "barton", email: "barton@foo.com"}
    */
-  async updateProfile(userId,data) {
-  }  
+  updateProfile (userId, data) {
+  }
 
-};
+}
 

@@ -1,63 +1,63 @@
 /**
  * # AppAuthToken.js
- * 
+ *
  * A thin wrapper over the react-native-simple-store
  *
+ * Singleton module see https://k94n.com/es6-modules-single-instance-pattern
  */
-'use strict';
+'use strict'
 /**
  * ## Imports
- * 
+ *
  * Redux  & the config file
- */ 
-import store from 'react-native-simple-store';
-import CONFIG from './config';
+ */
+import store from 'react-native-simple-store'
+import CONFIG from './config'
 
-
-export default class AppAuthToken {
+export class AppAuthToken {
   /**
    * ## AppAuthToken
    *
    * set the key from the config
    */
   constructor () {
-    this.SESSION_TOKEN_KEY = CONFIG.PARSE.SESSION_TOKEN_KEY;
+    this.SESSION_TOKEN_KEY = CONFIG.SESSION_TOKEN_KEY
   }
 
   /**
    * ### storeSessionToken
-   * Store the session key 
+   * Store the session key
    */
-  storeSessionToken(sessionToken) {
-    return store.save(this.SESSION_TOKEN_KEY,{
+  storeSessionToken (sessionToken) {
+    return store.save(this.SESSION_TOKEN_KEY, {
       sessionToken: sessionToken
-    });
-
+    })
   }
   /**
    * ### getSessionToken
-   * @param {Object} sessionToken the currentUser object from Parse.com
+   * @param {Object} sessionToken the currentUser object
    *
    * When Hot Loading, the sessionToken  will be passed in, and if so,
    * it needs to be stored on the device.  Remember, the store is a
    * promise so, have to be careful.
    */
-  getSessionToken(sessionToken) {
+  getSessionToken (sessionToken) {
     if (sessionToken) {
-      return store.save(this.SESSION_TOKEN_KEY,{
-          sessionToken: sessionToken
+      return store.save(this.SESSION_TOKEN_KEY, {
+        sessionToken: sessionToken
       }).then(() => {
-        return store.get(this.SESSION_TOKEN_KEY);
-      });
+        return store.get(this.SESSION_TOKEN_KEY)
+      })
     }
-    return store.get(this.SESSION_TOKEN_KEY);
+    return store.get(this.SESSION_TOKEN_KEY)
   }
   /**
    * ### deleteSessionToken
    * Deleted during log out
    */
-  deleteSessionToken() {
-    return store.delete(this.SESSION_TOKEN_KEY);
+  deleteSessionToken () {
+    return store.delete(this.SESSION_TOKEN_KEY)
   }
 }
-
+// The singleton variable
+export let appAuthToken = new AppAuthToken()

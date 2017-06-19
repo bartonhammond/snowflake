@@ -1,38 +1,164 @@
-# NOTES: 
-
-Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/11599365/1a1c39d2-9a8c-11e5-8819-bc1e48b30525.png)
+Snowflake ![snowflake](https://cloud.githubusercontent.com/assets/1282364/19871941/447b11ea-9f85-11e6-81d6-cb4b70faea6f.png)
 ==================================
-#### A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base. 
+A React-Native starter mobile app, or maybe just an example, or maybe a boilerplate (you decide) for iOS and Android with a single code base, with 2 backends to chose from: a Hapi or Parse Server solution- [Demo](#screens)
 
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c072e4c80b2e477591170553b149772b)](https://www.codacy.com/app/bartonhammond/snowflake?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bartonhammond/snowflake&amp;utm_campaign=Badge_Grade)
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![ios](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/348ae0a97c5e147a.svg?token=RmDwzjeIGuo7i9MeazE1fg)](https://www.bitrise.io/app/348ae0a97c5e147a)
 ![andriod](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/1e0425744dcc7ce3.svg?token=uvZDZvo89BLXvjrArJJreQ)](https://www.bitrise.io/app/1e0425744dcc7ce3)
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE) 
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE)
+[![React Native](https://img.shields.io/badge/react%20native-0.41.2-brightgreen.svg)](https://github.com/facebook/react-native)
 
---------------- 
-Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux)
+## Installation
 
-Using [Redux](https://github.com/reactjs/react-redux) and [Immutable](https://facebook.github.io/immutable-js/), the state of the application is testable with Jest, currently at 80% coverage. 
+* [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
 
-Snowflake supports Hot Reloading of its state.  Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has extensive docs and 45+ min of video demonstating implementation.
+### Install Snowflake
+* Clone snowflake: `git clone https://github.com/bartonhammond/snowflake.git`
 
-Note: Snowflake now (Jan 3, 2016) has a **choice of servers**, either 
+* install dependencies
 
-* The original Parse.com 
-or 
-* Hapi Server that runs on Openshift and locally.  
+```
+cd snowflake
 
-See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
+npm install
+```
 
------------------
+### Using Snowflake Hapi Server
 
+#### Use the local or remote Snowflake Hapi Server
+To make things easy for you, the `config.example.js` has been initialized to use the remote **Snowflake Hapi Server** which is running on **Redhat OpenShift**.
+
+This **Snowflake Hapi Server** is Open Source.  It can run either locally or on **RedHat OpenShift**.  For your convince a server is running at: [https://snowflakeserver-bartonhammond.rhcloud.com](https://snowflakeserver-bartonhammond.rhcloud.com/)
+
+Please refer to [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the code and instructions for installation and setup of the server.
+
+#### The following commands are for the client
+
+*  Copy the ```src/lib/config.example.js``` to ```src/lib/config.js```.  
+* **Note**: the `.gitignore` includes `config.js` from being committed to GitHub
+* **Note**: you must select either  `hapiLocal` or `hapiRemote` for the ```backend``` as shown below with `hapiRemote` set as the default.
+
+```
+  backend: {
+    hapiLocal: false,
+    hapiRemote: true,
+    parseLocal: false,
+    parseRemote: false
+  },
+```
+* To run Hapi locally, follow the instructions at [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift).  You will have to install **MongoDB** and **Redis**.
+* **Note**: The default is to run remotely on the **RedHat OpenShift Snowflake Server** so there is nothing more to do if you want to use it! In that case, just use the `config.js` as is.
+* If you want to install and run  the **Snowflake Hapi Server** locally, then update the ```src/lib/config.js``` file as shown below.  
+* **Note**: use the ip from the `ifconfig` command for the `local`. This ip matches the **Snowflake Hapi Server** setup.
+*  An example of the `url` is shown below assuming the `ifconfig` shows the local ip to be `192.168.0.5`
+* **Note**: You don't have to provide the `local.url` value if you are using the `remote`
+
+```
+  HAPI: {
+    local: {
+      url: 'http://192.168.0.5:5000'
+    },
+    remote: {
+      url: 'https://snowflakeserver-bartonhammond.rhcloud.com/'
+    }
+  }
+
+```
+
+### Using Parse Server
+This **Snowflake Parse Heroku Server** is Open Source.  It can run either locally or on **Heroku**.  For your convince a server is running at: [https://snowflake-parse.herokuapp.com/parse](https://snowflake-parse.herokuapp.com/parse)
+
+Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https://github.com/bartonhammond/snowflake-parse-heroku) for more information about the code and instructions for installation and setup of the server.
+
+#### The following instructions are for the client
+* Copy the ```src/lib/config.example.js``` to ```src/lib/config.js```.  
+* **Note**: the `.gitignore` includes `config.js` from being committed to GitHub
+* Set `parseLocal` to true if you are running a local instance of parse-server
+* Otherwise, set `parseRemote` to true to indicate your parse server instance is hosted in the cloud
+
+```
+  backend: {
+    hapiLocal: false,
+    hapiRemote: false,
+    parseLocal: true,
+    parseRemote: false
+  },
+```
+  
+* To setup parse-server, follow the instructions at https://github.com/ParsePlatform/parse-server-example
+* Set the `local.url` value if you are running parse-server `local`
+* Set the `remote.url` value if you are running parse-server `remote`
+
+```
+  PARSE: {
+    appId: 'snowflake',                              // match APP_ID in parse-server's index.js
+    local: {
+    	url: 'http://localhost:1337/parse'             // match SERVER_URL in parse-server's index.js
+    },
+    remote: {
+    	url: 'https://enter_your_snowflake_host.com'   // match SERVER_URL in parse-server's index.js
+    }
+  }
+  
+```
+
+### To run:
+* For iOS, from the command line, run via command: ```react-native run-ios``` or open XCode and load project, Run ```Product -> Run (⌘+R)```
+* For android, from the command line, run via the command: ```react-native run-android``` assuming you have an emulator or device running and attached
+* To run Jest, ```npm test```
+* To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
+* Enjoy!
+
+
+----------
+
+
+------------
+##Notes
+
+Code is written to [JS Standard](https://github.com/feross/standard) and validated with [Eslint](http://eslint.org/).  To setup your favorite editor using the Eslint configuration, see [Editors](http://eslint.org/docs/user-guide/integrations#editors)
+
+Navigation is handled with [React Native Router Flux](https://github.com/aksonov/react-native-router-flux).  Multiple scenes support **Login, Register, and Reset Password**.  Once successfully logged in, there are 3 more scenes: **Logout, Subview, and Profile**.
+
+A user can **change** their **Email Address** and **User Name** once they are logged in using the **Profile** form.
+
+The icons used throughout the app are from [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons), namely using **FontAwesome**
+
+**Form building** is extremely easy and consistent by using [Tcomb Form Library](https://github.com/gcanti/tcomb-form-native) by using **domain models** and writing less code.
+
+Using [Redux](https://github.com/reactjs/react-redux) and [Immutable](https://facebook.github.io/immutable-js/), the state of the application is **testable** with [Jest](https://facebook.github.io/jest/), which includes [Snapshot tests](http://facebook.github.io/jest/blog/2016/07/27/jest-14.html) currently with 85 tests and ~90% coverage!!!  
+
+To ease the pain of Redux Action definitions, Snowflake uses [Key Mirror](https://github.com/STRML/keyMirror).
+
+Using the [Validate.JS](https://validatejs.org/) Library, all **user input is validated**.  Appropriate messages are displayed to the user guiding them in the input requirements.
+
+Once a user is logged in, their **Session State is stored** in [AsyncStorage](https://github.com/jasonmerino/react-native-simple-store) so that subsequent usage does not require logging in again.
+
+Snowflake supports **multiple languages** using [I18n](https://github.com/AlexanderZaytsev/react-native-i18n) with English, French and Spanish.
+
+Snowflake supports **Hot Reloading** of its state.  
+
+Snowflake uses CI with [Bitrise.io]( https://www.bitrise.io) and has **extensive docs and 45+ min of video** demonstating implementation.
+
+Snowflake has a **choice of servers**, either
+
+* **Hapi Server** that runs on **RedHat Openshift** and **locally**.
+
+    See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
+
+* **Parse Server** that runs **remotely** or **locally**
+		See [https://github.com/ParsePlatform/parse-server-example](https://github.com/ParsePlatform/parse-server-example) for more information.
+
+---------------
 # Content
 
+- [Editor Configuration](#editor-configuration)
 - [Screens](#screens)
 - [Summary](#summary)
 - [Quotes](#quotes)
 - [Technologies](#technologies)
-- [Setup](#setup)
 - [Continuous Integration](#continuous-integration)
 - [Redux State Management](#redux-state-management)
 - [Hot Reloading](#hot-reloading)
@@ -40,6 +166,23 @@ See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.c
 - [Source documentation](http://bartonhammond.github.io/snowflake/snowflake.js.html)
 
 ----------
+
+## Editor Configuration
+**Atom**
+```bash
+apm install editorconfig es6-javascript javascript-snippets linter linter-eslint language-babel
+```
+
+**Sublime**
+* https://github.com/sindresorhus/editorconfig-sublime#readme
+* https://github.com/SublimeLinter/SublimeLinter3
+* https://github.com/roadhump/SublimeLinter-eslint
+* https://github.com/babel/babel-sublime
+
+**Others**
+* [Editorconfig](http://editorconfig.org/#download)
+* [ESLint](http://eslint.org/docs/user-guide/integrations#editors)
+* Babel Syntax Plugin
 
 ## Screens
 
@@ -60,17 +203,32 @@ See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.c
 1. The Forms display **spinner** when fetching.
 1. Form submission **errors are displayed** (see above Login)
 1. **All state changes*** are actions to the Redux store.
-1. The backend is provided by Parse.com using the **Rest API**
+1. The backend is provided by either a Hapi server or Parse server using the **Rest API**
 1. **Every action** performed by the UI interfaces with the **Redux actions** and subsequently to the Redux Store.  This **reduces the complexity** of the JSX Components **tremendously**and makes them easily testable.
-1. **Jest Unit Tests cover 86%** of the application statements.
-1. Demonstrates how to **setup React-Native to perform Jest testing** with Babel.
-1. Includes ability to **debug Jest unit tests**with Chrome
+1. **Jest Unit Tests cover ~90%** of the application statements.
+1. Demonstrates how to **setup React-Native to perform Jest testing** with Mock modules
+1. Includes ability to **debug Jest unit tests** with Chrome
 1. Instructions and videos for **continuous integration with Bitrise.io**
 
 ----------
 ## Quotes
 
 Some quotes from users of **Snowflake**
+
+**Open Source Mag: Learn best of React Native with these open source projects**:[http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/](http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/)
+
+**ICICletech Blog: Mobile App Development With 8 Awesome React-Native Starter Kits**: We have listed some of our favorite starter kits and boilerplates to get started quickly.
+[https://www.icicletech.com/blog/react-native-starter-kits](https://www.icicletech.com/blog/react-native-starter-kits)
+
+**Infinite.Red: Ignite Your Mobile Development:**
+> awesome releases as Barton Hammond’s snowflake.
+
+[https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm](https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm)
+
+**AdtMag: New Community Projects for React Native: Deco IDE and Pepperoni Boilerplate** [https://adtmag.com/articles/2016/05/26/react-native-projects.aspx](https://adtmag.com/articles/2016/05/26/react-native-projects.aspx) Snowflake mentioned
+
+**Pepperoni App Kit** (see [Credits](https://github.com/futurice/pepperoni-app-kit#credits) )
+>This project was initially motivated by Snowflake....you should check it out to see if it's a good fit for your app.
 
 **Viktor**
 >Just saw the tweets, still watching the vids. It's awesome!! It's really really high quality, I'm truly amazed
@@ -82,7 +240,7 @@ Some quotes from users of **Snowflake**
 > I've been going through snowflake and love what you have done!
 
 **Nikos**:
-> wow new videos, nice 
+> wow new videos, nice
 
 **Josh**
 >thanks for the thorough videos!
@@ -94,30 +252,29 @@ Some quotes from users of **Snowflake**
 >Congrats - the project is super helpful
 
 **Stephen**
->Thanks so much for this amazing foundation! 
+>Thanks so much for this amazing foundation!
 
 **Jim**
 >Neat project
-
 
 ----------
 
 ## Technologies
 *The following are brief descriptions of the technologies used*
 
-### [React-Native](https://facebook.github.io/react-native/) 
+### [React-Native](https://facebook.github.io/react-native/)
 *React Native enables you to build world-class application experiences on native platforms using a consistent developer experience based on JavaScript and React.*
 
 What more can I say?  It's a fantastic leap forward in providing the ability to write native applications with Javascript that target both iOS and Android.
 
 This application provides one code base that works on both platforms.  It demonstrates Form interactions,  Navigation, and use of many other components.
 
-###[Jest](https://facebook.github.io/jest/) 
-*81 Unit tests that cover plain objects and JSX components*
+###[Jest](https://facebook.github.io/jest/)
+*85 Unit tests that cover plain objects and JSX components*
 
 The de-facto standard for React/Native testing.  This app demonstrates how to mock **ReactNative, node_modules, classes** and to properly **test JSX components** by programmatically changing the props, and throughly **test the applications data state and the actions** in conjunction with Redux.
 
-![Jest Coverage Analysis](https://cloud.githubusercontent.com/assets/1282364/11598581/6d38ead8-9a88-11e5-956f-c0f09c22b6f0.png)
+![Jest Coverage Analysis](https://cloud.githubusercontent.com/assets/1282364/17187737/19524234-5400-11e6-8350-53e653a4c1f6.png)
 
 ###[Redux](http://redux.js.org/)
 *Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.*
@@ -129,12 +286,10 @@ For me, Hapi provided a clear way for defining APIs and managing things clearly.
 
 One of the needs of any application is server side processing.  With the ability to run Hapi locally or on OpenShift, I'm able to write my server logic and test it locally.  When I'm "happy" I can push the code to OpenShift.  The same code runs in both environments.
 
-###[Parse.com](https://www.parse.com/)
-*Focus on creating amazing user experiences and forget complex infrastructure*
+###[Parse Server](https://github.com/ParsePlatform/parse-server)
+As an alternative to Hapi, Snowflake also supports Parse Server.  Parse Server is an open source version of the Parse backend that can be deployed to any infrastructure that can run Node.js.
 
-Using Parse.com as the backend **reduces the angst** of setting up a server, managing the database, providing security and backups, etc.  Their free tier is more then ample to achieve a POC.
-
-While Parse.com was nice to use in starting the Snowflake app, once I needed to write server side code, I chose to look elsewhere.  Why?  Because, for one, I can't debug the "Cloud Code" locally or remotely.  Another, Parse has it's own flavors for HTTP Request and Promises.  It just made it difficult to write server side code and work w/ Parse.  
+Parse Server works with the Express web application framework.  You can test it locally and push changes to your parse remote server when you are ready.
 
 ### [OpenShift](https://www.openshift.com/)
 I chose OpenShift because I could get a reasonable performing application for free.  The Snowflake server ([https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) uses 3 gears with MongoDB and Redis.  
@@ -152,65 +307,7 @@ Using Validate.js for the Form processing was a breeze!  And with the ability to
 ---------------
 
 
-## Setup
-
-* [Install React-Native](https://facebook.github.io/react-native/docs/getting-started.html#content)
-
-* Clone snowflake:
-
- ```
- git clone https://github.com/bartonhammond/snowflake.git
- ```
-
-* install dependencies
-```
-npm install
-```
-
-*  Copy or move ```src/lib/config.example.js``` to ```src/lib/config.js```.
-   * Note: you must select one of three options for the ```backend``` as shown below:
-
-```
-  backend: {
-    parse: false,
-    hapiLocal: false,
-    hapiRemote: true
-  },
-```
-   * To run Hapi either locally on remotely on OpenShift, update the below ```src/lib/config.js``` file:
-
-```
-  HAPI: {
-    local: {
-      url: 'http://127.0.0.1:5000'
-    },
-    remote: {
-      url: 'https://mysnowflake-bartonhammond.rhcloud.com'
-    }
-  }
-
-```
-
-* If you choose Parse.com, create account and app on Parse.com
-  * Copy the Parse.com app keys for APP_ID and REST_API_KEY and update ```src/lib/config.js```
-  * Update the Apps Settings -> Authentication 
- 	  * Allow username and password-based authentication -> Yes
-	  * Allow anonymous users -> No
-  * Update the Apps Settings -> Email
-	  * Verify user emails -> Yes
-
-### To run: 
-* On mac, open XCode and load project
-* For android, ```react-native run-android``` assuming you have an emulator or device attached.
-* To run Jest, ```npm test```
-* To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
-* Enjoy!
-
-
-----------
-
-
-## Continuous Integration 
+## Continuous Integration
 
 CI proves to the developer that everything required to build and test
 the application is well defined and repeatable.  Without CI, one would
@@ -227,22 +324,23 @@ The following videos will walk you through setting up CI with BitRise.io
 - [Create iOS App](#create-ios-app)
 - [iOS install](#ios-install)
 - [Android Setup](#android-setup)
+- [Addendum #1](#addendum-#1)
 - [Things not addressed](#things-not-addressed)
 
 ----------
 
-##### Introduction 
+##### Introduction
 * **Video 1/7**: [https://youtu.be/EYafslJvXz8](https://youtu.be/EYafslJvXz8)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=EYafslJvXz8"
 target="_blank">
-<img src="http://img.youtube.com/vi/EYafslJvXz8/0.jpg" 
+<img src="http://img.youtube.com/vi/EYafslJvXz8/0.jpg"
 alt="Introduction" width="240" height="180" border="10"
 /></a>
 
 * Snowflake is a *starter app* so all tutorials are basic in nature
 * There are a bizzilion ways of doing any of this - I'm showing one
-* There's a number of CI sites, I chose Bitrise.io 
+* There's a number of CI sites, I chose Bitrise.io
 * There's a general understanding of why to us a CI
 * The build will be done on Bitrise.io - not locally
 * The **only** goal is to get the build to run on Bitrise.io
@@ -254,22 +352,22 @@ alt="Introduction" width="240" height="180" border="10"
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=JAHlfNUKoLg"
 target="_blank">
-<img src="http://img.youtube.com/vi/JAHlfNUKoLg/0.jpg" 
+<img src="http://img.youtube.com/vi/JAHlfNUKoLg/0.jpg"
 alt="Bitrise.io Overview" width="240" height="180" border="10"
 /></a>
 
   *  Introduction to Bitrise.io [https://www.bitrise.io/](https://www.bitrise.io/)
   * Overview of what it does for us
   * Overview of the two WorkFlows
-	  * iOS 
-	  * Android 
+	  * iOS
+	  * Android
 
 ##### iOS XCode Modifications
 * **Video 3/7**:[https://youtu.be/3y72adWNRSU](https://youtu.be/3y72adWNRSU)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=3y72adWNRSU"
 target="_blank">
-<img src="http://img.youtube.com/vi/3y72adWNRSU/0.jpg" 
+<img src="http://img.youtube.com/vi/3y72adWNRSU/0.jpg"
 alt="iOS XCode Modifications" width="240" height="180" border="10"
 /></a>
   * XCode
@@ -287,7 +385,7 @@ alt="iOS XCode Modifications" width="240" height="180" border="10"
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=zJXoHIaJg7Y"
 target="_blank">
-<img src="http://img.youtube.com/vi/zJXoHIaJg7Y/0.jpg" 
+<img src="http://img.youtube.com/vi/zJXoHIaJg7Y/0.jpg"
 alt="XCode Certs Provision Profiles" width="240" height="180" border="10"
 /></a>
 * see [https://developer.apple.com/library/ios/qa/qa1814/_index.html](https://developer.apple.com/library/ios/qa/qa1814/_index.html)
@@ -297,36 +395,36 @@ alt="XCode Certs Provision Profiles" width="240" height="180" border="10"
 		* Update XCode appDelegate.m w/ ifconfig value
 		* Xcode -> Run with device attached
 		* Select option for Xcode to fix signing
-	
+
 ##### Create iOS App
 * **Video 5/7**:
 [Bitrise, YML, Profile, P12](https://youtu.be/olfpwEjVlZ4)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=olfpwEjVlZ4"
 target="_blank">
-<img src="http://img.youtube.com/vi/olfpwEjVlZ4/0.jpg" 
+<img src="http://img.youtube.com/vi/olfpwEjVlZ4/0.jpg"
 alt="Create iOS App" width="240" height="180" border="10"
 /></a>
 * Login/Register Bitrise.io
 * Dashboard
-* Add App 
+* Add App
 * Authenticate GitHub
 * Select repository, branch
 * Import YML
-* Download Certifications 
+* Download Certifications
 * Update KeyChain
 * Save .p12
 * Download Provision
 * Load .p12 and provision to Bitrise.io
-* Setup Secret and Env Vars 
+* Setup Secret and Env Vars
 * Build
-	
+
 ##### iOS install
 * **Video 6/7**: [https://youtu.be/nQWXJI0ncns](https://youtu.be/nQWXJI0ncns)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=nQWXJI0ncns"
 target="_blank">
-<img src="http://img.youtube.com/vi/nQWXJI0ncns/0.jpg" 
+<img src="http://img.youtube.com/vi/nQWXJI0ncns/0.jpg"
 alt="iOS install from email" width="240" height="180" border="10"
 /></a>
 
@@ -335,21 +433,37 @@ alt="iOS install from email" width="240" height="180" border="10"
 * Follow instructions to load in Safarie
 * Follow prompts and enjoy!
 
-##### Android Setup 
+##### Android Setup
 * **Video 7/7**: [Android YML, Setup](https://youtu.be/o4RQZodbzIU)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=o4RQZodbzIU"
 target="_blank">
-<img src="http://img.youtube.com/vi/o4RQZodbzIU/0.jpg" 
+<img src="http://img.youtube.com/vi/o4RQZodbzIU/0.jpg"
 alt="Android Setup" width="240" height="180" border="10"/>
 </a>
 
 * Settings -> Docker Image
-* Secret Variables 
+* Secret Variables
 * App/build.gradle
-* Setup Secret and Env Vars 
+* Setup Secret and Env Vars
 * Import YML
 * Run build
+
+##### Addendum #1
+* **Video **: [XCode Edge Stack, WorkFlow](https://youtu.be/mP5D2MQboxw)
+<a
+href="http://www.youtube.com/watch?feature=player_embedded&v=mP5D2MQboxw"
+target="_blank">
+<img src="https://i9.ytimg.com/vi/mP5D2MQboxw/1.jpg?sqp=CPDqzb0F&rs=AOn4CLBdpVDIWghF_-wSuaSKnbPdxHE1hw"
+alt="XCode Edge Stack" width="240" height="180" border="10"/>
+</a>
+
+* "XCode Edge Stack" for iOS
+* New React-Native steps for Install & Bundle
+* Upgraded Step versions
+* GitHub branch triggers
+
+
 
 ##### Things not addressed
 * Submission to any store
@@ -383,7 +497,7 @@ This section explains a little about what I've learned with Redux and the manage
 
 A typical app, at least those I've written before, have logic and state scattered all through out.  Frameworks help to organize but typically the developer has to know how to "stitch" it together by remembering to update certain state at certain times.
 
-In the above diagram, the Login component is responsible for calling the Validate and making sure the rules are applied and errors are displayed. Then it has to have logic that confirms everything is in the right state, and pass that data to a Restul API to interact, in this case, with Parse.com.  When that activity is complete the Router has to be informed and a new_page can be displayed.
+In the above diagram, the Login component is responsible for calling the Validate and making sure the rules are applied and errors are displayed. Then it has to have logic that confirms everything is in the right state, and pass that data to a Restul API to interact, in this case, with Parse.  When that activity is complete the Router has to be informed and a new_page can be displayed.
 
 This makes testing hard as the logic is partially contained in the Login component itself and the sequence of those events are encapsulated there too!  
 
@@ -523,14 +637,18 @@ If you'd like to read an excellent tutorial on Redux I can't recommend this one 
 ## Hot Reloading
 This video shows Snowflake exporting and importing state from Redux.  It demonstrates, with the iOS Simulator, the process of copying the state for import at a later time.  After the demo, I walk through the code to clarify how I achieved this.  It's assumed you have some familiarity with Redux.  Hopefully it helps you gain a better understanding of what Redux provides you!
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=b4eqQUA3O6o" target="_blank"><img src="http://img.youtube.com/vi/b4eqQUA3O6o/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=b4eqQUA3O6o" target="_blank"><img src="http://img.youtube.com/vi/b4eqQUA3O6o/0.jpg"
 alt="Snowflake Hot Loading" width="240" height="180" border="10" /></a>
 
 
 
 -------------
 
-## Faq 
+## Faq
+
+### How do I change the Language of the App?  
+
+Just use the Settings of your Device or Simulator.
 
 ### Why did you use the RestAPI instead of the (JS-sdk | ParseReact)
 
@@ -542,7 +660,7 @@ Also, it had this statement
 
 I don't want to deal w/ wrapping my head around Flux Actions and have to monkey-patch or something to get Redux Actions.
 
-In a previous life, I worked with Parse JS SDK and it's based on backbone.js.  So I didn't go that direction either, because, again, I didn't want to have another data model to deal with.  Plus, at the time I was using it, the SDK was buggy and it was difficult to work with. 
+In a previous life, I worked with Parse JS SDK and it's based on backbone.js.  So I didn't go that direction either, because, again, I didn't want to have another data model to deal with.  Plus, at the time I was using it, the SDK was buggy and it was difficult to work with.
 
 With the Parse Rest API, it's simple, can be tested itself from the command line with curl, it's clear, it's succinct and it's easily replaced with something else, an example such as Mongo/Mongoose without much, if any, impact on the code base.
 

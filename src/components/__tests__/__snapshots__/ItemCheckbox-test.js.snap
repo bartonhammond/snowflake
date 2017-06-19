@@ -1,0 +1,113 @@
+exports[`ItemCheckbox if disabled and checked, it should display check-square and text 1`] = `
+<View
+  style={undefined}>
+  <TouchableWithoutFeedback>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <Icon
+        allowFontScaling={false}
+        name="check-square"
+        size={20} />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+         
+        TextShouldDisplay
+      </Text>
+    </View>
+  </TouchableWithoutFeedback>
+</View>
+`;
+
+exports[`ItemCheckbox if disabled and not checked, it should display square-o and text 1`] = `
+<View
+  style={undefined}>
+  <TouchableWithoutFeedback>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <Icon
+        allowFontScaling={false}
+        name="square-o"
+        size={20} />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+         
+        TextShouldDisplay
+      </Text>
+    </View>
+  </TouchableWithoutFeedback>
+</View>
+`;
+
+exports[`ItemCheckbox if not disabled and checked, it should display check-square and text 1`] = `
+<View
+  style={undefined}>
+  <TouchableHighlight
+    activeOpacity={0.85}
+    onPress={[Function]}
+    underlayColor="black">
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <Icon
+        allowFontScaling={false}
+        name="check-square"
+        size={20} />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+         
+        TextShouldDisplay
+      </Text>
+    </View>
+  </TouchableHighlight>
+</View>
+`;
+
+exports[`ItemCheckbox if not disabled and not checked, it should display square-o and text 1`] = `
+<View
+  style={undefined}>
+  <TouchableHighlight
+    activeOpacity={0.85}
+    onPress={[Function]}
+    underlayColor="black">
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+        }
+      }>
+      <Icon
+        allowFontScaling={false}
+        name="check-square"
+        size={20} />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail">
+         
+        TextShouldDisplay
+      </Text>
+    </View>
+  </TouchableHighlight>
+</View>
+`;

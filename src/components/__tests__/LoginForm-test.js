@@ -1,6 +1,6 @@
 /**
  * # LoginForm-test.js
- * 
+ *
  * This class tests that the LoginForm renders correctly under
  * 4 states of the Login component, namely, logging in,
  * resetting the password and registration
@@ -10,118 +10,45 @@
  *
  */
 
-'use strict';
+'use strict'
 
-jest.autoMockOff();
+jest.mock('tcomb-form-native', () => {
+  const React = require('React')
+  const t = require.requireActual('tcomb-form-native')
+  // Patch the base Component class to make rendering possible.
+  t.form.Component.prototype.render = function render () {
+    return React.createElement(this.getTemplate().name, this.props)
+  }
+  return t
+})
 
-/**
- * ## Imports
- * 
- * React is mocked in src/__mocks__/react-native.js
- */
-const React = require('react-native');
+import 'react-native'
+import React from 'react'
 
-const utils = require('react-addons-test-utils');
+import LoginForm from '../LoginForm'
+
+import ReactTestUtils from 'react-addons-test-utils'
+const renderer = ReactTestUtils.createRenderer()
 
 const {
   REGISTER,
   LOGIN,
   FORGOT_PASSWORD
-} = require('../../lib/constants').default;
-
-/**
- * ## Under test
- * class under test
- */
-jest.dontMock('../LoginForm');
-var LoginForm = require('../LoginForm');
-
-/**
- * Included here, after dontMock so it's in all it's glory
- */
-var t = require('tcomb-form-native');
-let Form = t.form.Form;
-
+} = require('../../lib/constants').default
 /**
  * ## Test
  */
 describe('LoginForm', () => {
-
   /**
-   * ### renderLoginForm
-   * render the component under test and return
-   * @returns {Object} object with props, output and the renderer
-   */
-  function renderLoginForm(props) {
-    const renderer = utils.createRenderer();
-    renderer.render(<LoginForm {...props}/>);
-    const output = renderer.getRenderOutput();
-
-    return {
-      props,
-      output,
-      renderer
-    };
-  }
-  /**
-   * ### getFields
-   * 
-   * @returns {Object} fields
-   */  
-  function getFields(output) {
-    return output.props.options.fields;
-  }
-  /**
-   * ### renderLoginForm
-   * render the component under test and return
-   * @returns {Object} object with props, output and the renderer
-   */
-  function getValues(output) {
-    return output.props.value;
-  }
-  /**
-   * ### checkLoginForm
+   * ### snapshotForm
    *
    * Depending on the state, this function validates that the rendered
    * component has the correct data
    */
-  function checkLoginForm(props) {
-    const {output} = renderLoginForm(props);
-
-    expect(output.type,Form);
-
-    const fields = getFields(output);
-    const values = getValues(output);
-    
-    if (props.form.state === REGISTER
-        ||
-        props.form.state === LOGIN) {
-
-      expect(values.username).toEqual(props.value.username);      
-      expect(fields.username.editable).toEqual(!props.form.isFetching);
-      expect(fields.username.hasError).toEqual(props.form.fields.usernameHasError);
-
-      expect(values.password).toEqual(props.value.password);      
-      expect(fields.password.editable).toEqual(!props.form.isFetching);
-      expect(fields.password.hasError).toEqual(props.form.fields.passwordHasError);    
-      expect(fields.password.secureTextEntry).toEqual(!props.form.fields.showPassword);
-    }
-    
-    if (props.form.state === FORGOT_PASSWORD
-        ||
-        props.form.state === REGISTER) {
-      expect(values.email).toEqual(props.value.email);      
-      expect(fields.email.editable).toEqual(!props.form.isFetching);
-      expect(fields.email.hasError).toEqual(props.form.fields.emailHasError);
-    }
-
-    if (props.form.state === REGISTER) {
-      expect(values.passwordAgain).toEqual(props.value.passwordAgain);          
-      expect(fields.passwordAgain.editable).toEqual(!props.form.isFetching);
-      expect(fields.passwordAgain.hasError).toEqual(props.form.fields.passwordAgainHasError);    
-      expect(fields.passwordAgain.secureTextEntry).toEqual(!props.form.fields.showPassword);
-    }
-
+  function snapshotForm (props) {
+    renderer.render(<LoginForm {...props} />)
+    const tree = renderer.getRenderOutput()
+    expect(tree).toMatchSnapshot()
   }
   /**
    * ## Test Registration
@@ -129,8 +56,8 @@ describe('LoginForm', () => {
   describe('REGISTER', () => {
     /**
      * ### it should display without errors and without value
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('should display without errors and without values', () => {
       let form = {
         isFetching: false,
@@ -140,29 +67,29 @@ describe('LoginForm', () => {
           passwordHasError: false,
           passwordAgainHasError: false,
           showPassword: false
-        },
-        formType: REGISTER
-      };
+        }
+      }
 
       let value = {
         username: '',
         email: '',
         password: '',
         passwordAgain: ''
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: REGISTER,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
+      snapshotForm(props)
+    })
     /**
      * ### it should display  errors and  value
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('should display  errors and  values', () => {
       let form = {
         isFetching: false,
@@ -172,29 +99,29 @@ describe('LoginForm', () => {
           passwordHasError: true,
           passwordAgainHasError: true,
           showPassword: false
-        },
-        formType: REGISTER
-      };
+        }
+      }
 
       let value = {
         username: 'username',
         email: 'email',
         password: 'password',
         passwordAgain: 'passwordagain'
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: REGISTER,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
+      snapshotForm(props)
+    })
     /**
      * ### it should not be editable if fetching
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('should not be editable if fetching', () => {
       let form = {
         isFetching: true,
@@ -204,29 +131,29 @@ describe('LoginForm', () => {
           passwordHasError: true,
           passwordAgainHasError: true,
           showPassword: false
-        },
-        formType: REGISTER
-      };
+        }
+      }
 
       let value = {
         username: 'username',
         email: 'email',
         password: 'password',
         passwordAgain: 'passwordagain'
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: REGISTER,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
+      snapshotForm(props)
+    })
     /**
      * ### the password fields are not secured if shown
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('password fields are not secured if shown', () => {
       let form = {
         isFetching: false,
@@ -236,36 +163,35 @@ describe('LoginForm', () => {
           passwordHasError: false,
           passwordAgainHasError: false,
           showPassword: true
-        },
-        formType: REGISTER
-      };
+        }
+      }
 
       let value = {
         username: 'username',
         email: 'email',
         password: 'password',
         passwordAgain: 'passwordagain'
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: REGISTER,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
-
-  });
+      snapshotForm(props)
+    })
+  })
 
   /**
    * ## Test Log in
-   */  
+   */
   describe('LOGIN', () => {
     /**
      * ### it should display without errors and without value
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('should display without errors and without values', () => {
       let form = {
         isFetching: false,
@@ -273,54 +199,54 @@ describe('LoginForm', () => {
           usernameHasError: false,
           passwordHasError: false,
           showPassword: false
-        },
-        formType: LOGIN
-      };
+        }
+      }
 
       let value = {
         username: '',
         password: ''
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: LOGIN,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
+      snapshotForm(props)
+    })
     /**
      * ### it should display  errors and  values
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('should display  errors and  values', () => {
       let form = {
         isFetching: false,
         fields: {
           usernameHasError: true,
           passwordHasError: true
-        },
-        formType: LOGIN
-      };
+        }
+      }
 
       let value = {
         username: 'username',
         password: 'password'
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: LOGIN,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
+      snapshotForm(props)
+    })
     /**
      * ### it should not be editable if fetching
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('should not be editable if fetching', () => {
       let form = {
         isFetching: true,
@@ -328,27 +254,27 @@ describe('LoginForm', () => {
           usernameHasError: true,
           passwordHasError: true,
           showPassword: false
-        },
-        formType: LOGIN
-      };
+        }
+      }
 
       let value = {
         username: 'username',
         password: 'password'
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: LOGIN,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
+      snapshotForm(props)
+    })
     /**
      * ### password fields are not secured if shown
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('password fields are not secured if shown', () => {
       let form = {
         isFetching: false,
@@ -356,136 +282,133 @@ describe('LoginForm', () => {
           usernameHasError: false,
           passwordHasError: false,
           showPassword: true
-        },
-        formType: LOGIN
-      };
+        }
+      }
 
       let value = {
         username: 'username',
         password: 'password'
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: LOGIN,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
-
-  });
+      snapshotForm(props)
+    })
+  })
   /**
    * ## Test reset password
    */
   describe('FORGOT_PASSWORD', () => {
     /**
      * ### it should display without errors and without values
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('should display without errors and without values', () => {
       let form = {
         isFetching: false,
         fields: {
           emailHasError: false,
           showPassword: false
-        },
-        formType: FORGOT_PASSWORD
-      };
+        }
+      }
 
       let value = {
         email: ''
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: FORGOT_PASSWORD,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
+      snapshotForm(props)
+    })
     /**
      * ### register password fields are not secured if shown
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('should display  errors and  values', () => {
       let form = {
         isFetching: false,
         fields: {
           emailHasError: true
-        },
-        formType: FORGOT_PASSWORD
-      };
+        }
+      }
 
       let value = {
         email: 'email'
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: FORGOT_PASSWORD,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
+      snapshotForm(props)
+    })
 
     /**
      * ### it should not be editable if fetching
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('should not be editable if fetching', () => {
       let form = {
         isFetching: true,
         fields: {
           emailHasError: true,
           showPassword: false
-        },
-        formType: LOGIN
-      };
+        }
+      }
 
       let value = {
         username: 'username',
         password: 'password'
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: LOGIN,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
+      snapshotForm(props)
+    })
 
     /**
      * ### password fields are not secured if shown
-     * change the props and call ```checkLoginForm``` to validate
-     */      
+     * change the props and call ```snapshotForm``` to validate
+     */
     it('password fields are not secured if shown', () => {
       let form = {
         isFetching: false,
         fields: {
           emailHasError: false,
           showPassword: true
-        },
-        formType: FORGOT_PASSWORD
-      };
+        }
+      }
 
       let value = {
         email: 'email'
-      };
-      
+      }
+
       let props = {
         form: form,
+        formType: FORGOT_PASSWORD,
         value: value,
         onChange: () => {}
-      };
+      }
 
-      checkLoginForm(props);
-    });
-
-  });
-  
-});//describe LoginFormTest
+      snapshotForm(props)
+    })
+  })
+})// describe LoginFormTest

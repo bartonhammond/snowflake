@@ -2,75 +2,56 @@
 format_version: 1.1.0
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 trigger_map:
-- pattern: "*"
+- pattern: master
   is_pull_request_allowed: true
   workflow: primary
 workflows:
   primary:
     steps:
-    - activate-ssh-key@3.1.0:
+    - activate-ssh-key@3.1.1:
         title: Activate App SSH key
         inputs:
         - ssh_key_save_path: "$HOME/.ssh/steplib_ssh_step_id_rsa"
-    - git-clone@3.1.1: {}
-    - script@1.1.0:
-        title: install node & npm
-        inputs:
-        - content: |-
-            #!/bin/bash
-            curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-            apt-get install -y nodejs
-    - script@1.1.0:
+    - git-clone@3.3.4: {}
+    - script@1.1.2:
         title: npm install
         inputs:
         - content: |-
             #!/bin/bash
 
             npm install
-    - script@1.1.0:
+    - script@1.1.2:
         title: npm test
         inputs:
         - content: |-
             #!/bin/bash
 
             npm test
-    - script@1.1.0:
-        title: npm install react-native -g
+    - install-react-native@0.1.0: {}
+    - file-downloader@0.9.1:
         inputs:
-        - content: |-
-            #!/bin/bash
-
-            npm install -g react-native-cli
-    - script@1.1.0:
-        title: create config
+        - source: "$BITRISEIO_snowflakeserver_URL"
+        - destination: src/lib/config.js
+    - react-native-bundle@1.0.0:
         inputs:
-        - content: |-
-            #!/bin/bash
-             touch src/lib/config.js
-
-            echo "module.exports={ PARSE: {APP_ID: '$PARSE_APP_ID' ,REST_API_KEY: '$PARSE_REST_API_KEY', SESSION_TOKEN_KEY: 'SESSION_TOKEN_KEY'}}" >> src/lib/config.js
-    - script@1.1.0:
-        title: bundle-android
-        inputs:
-        - content: |-
-            #!/bin/bash
-
-            react-native bundle --entry-file ./index.android.js --platform android --bundle-output android/app/src/main/assets/index.android.bundle
-    - script@1.1.0:
+        - platform: android
+        - entry_file: "./index.android.js"
+        - out: android/app/src/main/assets/index.android.bundle
+    - script@1.1.2:
         title: gradlew
         inputs:
         - content: "#!/bin/bash\n\ncd android \n./gradlew  assembleRelease"
           opts:
             is_expand: true
-    - sign-apk@0.9.4:
+    - sign-apk@1.0.1:
         inputs:
         - apk_path: "/bitrise/src/android/app/build/outputs/apk/app-release-unsigned.apk"
-    - script@1.1.0:
+    - script@1.1.2:
         title: cp apk
         inputs:
         - content: |-
             #!/bin/bash
 
              cp $BITRISE_SIGNED_APK_PATH $BITRISE_DEPLOY_DIR/signed-app-release.apk
-    - deploy-to-bitrise-io@1.2.2:
+    - deploy-to-bitrise-io@1.2.5:
         is_always_run: false

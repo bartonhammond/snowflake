@@ -1,21 +1,21 @@
 /**
- * # Parse.js
- * 
- * This class interfaces with Parse.com using the rest api
- * see [https://parse.com/docs/rest/guide](https://parse.com/docs/rest/guide)
+ * # BackendFactory
+ *
+ * This class sets up the backend by checking the config.js
  *
  */
-'use strict';
+'use strict'
 
-import CONFIG from './config';
-import Parse from './Parse';
-import Hapi from './Hapi';
+import CONFIG from './config'
+import {parse} from './Parse'
+import {hapi} from './Hapi'
 
-export default function BackendFactory(token = null) {
-  if (CONFIG.backend.parse) {
-    return new Parse(token);
-  } else if (CONFIG.backend.hapiLocal || CONFIG.backend.hapiRemote) {
-    return new Hapi(token);
-
+export default function BackendFactory (token = null) {
+  if (CONFIG.backend.hapiLocal || CONFIG.backend.hapiRemote) {
+    hapi.initialize(token)
+    return hapi
+  } else if (CONFIG.backend.parseLocal || CONFIG.backend.parseRemote) {
+    parse.initialize(token)
+    return parse
   }
 }

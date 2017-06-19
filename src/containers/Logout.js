@@ -1,49 +1,43 @@
 /**
  * # Logout.js
- * 
  *
- * 
+ *
+ *
  */
-'use strict';
+'use strict'
 /**
  * ## Imports
- * 
- * Redux 
+ *
+ * Redux
  */
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 /**
  * The actions we need
  */
-import * as authActions from '../reducers/auth/authActions';
-import * as globalActions from '../reducers/global/globalActions';
-
-/**
- * Immutable
- */ 
-import {Map} from 'immutable';
+import * as authActions from '../reducers/auth/authActions'
+import * as globalActions from '../reducers/global/globalActions'
 
 /**
  * The Header will display a Image and support Hot Loading
  */
-import Header from '../components/Header';
+import Header from '../components/Header'
 /**
  * The FormButton will change it's text between the 4 states as necessary
  */
-import FormButton from '../components/FormButton';
+import FormButton from '../components/FormButton'
 
 /**
  * The necessary React components
  */
-import React,
+import React, {Component} from 'react'
+import
 {
-  Component,
   StyleSheet,
   View
 }
-from 'react-native';
+from 'react-native'
 
 /**
  * ## Styles
@@ -53,63 +47,67 @@ var styles = StyleSheet.create({
     flexDirection: 'column',
     flex: 1
   }
-});
+})
 /**
  * ## Redux boilerplate
  */
-const actions = [
-  authActions,
-  globalActions
-];
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
-      ...state
+    auth: {
+      form: {
+        isFetching: state.auth.form.isFetching,
+        isValid: state.auth.form.isValid
+      }
+    },
+    global: {
+      currentState: state.global.currentState,
+      showState: state.global.showState
+    }
   }
-};
-
-function mapDispatchToProps(dispatch) {
-  const creators = Map()
-          .merge(...actions)
-          .filter(value => typeof value === 'function')
-          .toObject();
-
-  return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
-  };
 }
+
+function mapDispatchToProps (dispatch) {
+  return {
+    actions: bindActionCreators({ ...authActions, ...globalActions }, dispatch)
+  }
+}
+/**
+ * ### Translations
+ */
+var I18n = require('react-native-i18n')
+import Translations from '../lib/Translations'
+I18n.translations = Translations
 
 class Logout extends Component {
 
   /**
    * ### render
-   * Setup some default presentations and render 
+   * Setup some default presentations and render
    */
-  render() {
-            
-    let self = this;
-    
-    let onButtonPress = () => {
-			this.props.actions.logout();
-		};
+  render () {
+    let self = this
 
-     return (
-        <View style={styles.container}>
-          <View>
-            <Header isFetching={this.props.auth.form.isFetching}
-                    showState={this.props.global.showState}
-                    currentState={this.props.global.currentState}
-                    onGetState={this.props.actions.getState}
-                    onSetState={this.props.actions.setState}
-            />
-            <FormButton
-                isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
-                onPress={onButtonPress.bind(self)}
-                buttonText={'Log out'}/>
-          </View>
+    let onButtonPress = () => {
+      this.props.actions.logout()
+    }
+
+    return (
+      <View style={styles.container}>
+        <View>
+          <Header isFetching={this.props.auth.form.isFetching}
+            showState={this.props.global.showState}
+            currentState={this.props.global.currentState}
+            onGetState={this.props.actions.getState}
+            onSetState={this.props.actions.setState} />
+
+          <FormButton
+            isDisabled={!this.props.auth.form.isValid || this.props.auth.form.isFetching}
+            onPress={onButtonPress.bind(self)}
+            buttonText={I18n.t('Snowflake.logout')} />
         </View>
-      );
+      </View>
+      )
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Logout);
+export default connect(mapStateToProps, mapDispatchToProps)(Logout)

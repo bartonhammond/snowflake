@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended", "plugin:react/recommended", "standard"],
+  "env": {
+    "jest": true
+  },
+  "plugins": [
+    "flowtype-errors",
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "flowtype-errors/show-errors": 2,
+    "react/prop-types": 0
+  },
+  "globals": {
+    "fetch": true
+  }
+}

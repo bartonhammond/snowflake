@@ -1,0 +1,228 @@
+{
+  "zh": {
+    "App": {
+      "version": "版本"
+    },
+    "Header": {
+      "current_state": "当前状态",
+      "see_console": "查看控制台",
+      "update_state": "更新状态"
+    },
+    "Subview": {
+      "subview": "子视图",
+      "back": "返回"
+    },
+    "Snowflake": {
+      "logout": "注销",
+      "main": "主页",
+      "profile":"个人信息"
+    },
+    "Main": {
+      "navigate": "导航到子视图"
+    },
+    "Profile": {
+      "username": "用户名",
+      "email": "邮箱",
+      "update": "更新个人信息",
+      "verified": "已验证邮箱",
+      "display": "只显示"
+    },
+    "LoginForm": {
+      "username": "用户名",
+      "email": "邮箱",
+      "password": "密码",
+      "password_again": "确认密码"
+    },
+    "LoginRender": {
+      "forgot_password": "忘记密码?",
+      "already_have_account": "已有账户?",
+      "register": "注册",
+      "show_password": "显示密码"
+    },
+    "ForgotPassword": {
+      "reset_password": "重置密码"
+    },
+    "Login": {
+      "login": "登陆"
+    },
+    "Register": {
+      "register": "注册"
+    },
+    "FieldValidation": {
+      "valid_user_name": "请输入6-12个字母或数字",
+      "valid_email": "请提供有效邮箱地址",
+      "valid_password": "请输入6-12个数字和特殊字符: !@#$%^&*",
+      "valid_password_again": "密码不匹配"
+    }
+  },
+  "en": {
+    "App": {
+      "version": "Version"
+    },
+    "Header": {
+      "current_state": "Current State",
+      "see_console": "see console",
+      "update_state": "Update State"
+    },
+    "Subview": {
+      "subview": "Subview",
+      "back": "Back"
+    },
+    "Snowflake": {
+      "logout": "Log out",
+      "main": "Main",
+      "profile":"Profile"
+    },
+    "Main": {
+      "navigate": "Navigate to Subview"
+    },
+    "Profile": {
+      "username": "User name",
+      "email": "Email",
+      "update": "Update Profile",
+      "verified": "Email verified",
+      "display": "display only"
+    },
+    "LoginForm": {
+      "username": "User name",
+      "email": "Email",
+      "password": "Password",
+      "password_again": "Password again"
+    },
+    "LoginRender": {
+      "forgot_password": "Forgot Password?",
+      "already_have_account": "Already have an account?",
+      "register": "Register",
+      "show_password": "Show Password"
+    },
+    "ForgotPassword": {
+      "reset_password": "Reset password"
+    },
+    "Login": {
+      "login": "Log in"
+    },
+    "Register": {
+      "register": "Register"
+    },
+    "FieldValidation": {
+      "valid_user_name": "6-12 in length with letters or numbers",
+      "valid_email": "Provide valid email",
+      "valid_password": "6-12 in length, with a number and special character: !@#$%^&*",
+      "valid_password_again": "Passwords must match"
+    }
+  },
+  "fr": {
+    "App": {
+      "version": "Version"
+    },
+    "Header": {
+      "current_state": "état actuel",
+      "see_console": "voir console",
+      "update_state": "état de mise à jour"      
+    },    
+    "Subview": {
+      "subview": "Sous-vue",
+      "back": "Arrière"
+    },    
+    "Snowflake": {
+      "logout": "Se déconnecter",
+      "main": "Principal",
+      "profile":"Profil"
+    },
+    "Main": {
+      "navigate": "Accédez à sous-vue"
+    },
+    "Profile": {
+      "username": "Nom d'utilisateur",
+      "email": "Email",
+      "update": "Mettre à jour le profil",
+      "verified": "Email verifié",
+      "display": "afficher seulement"      
+    },
+    "LoginForm": {
+      "username": "Nom d'utilisateur",
+      "email": "Email",
+      "password": "Mot de passe",
+      "password_again": "Mot de passe à nouveau"
+    },
+    "LoginRender": {
+      "forgot_password": "Mot de passe oublié?",
+      "already_have_account": "Vous avez déjà compte?",
+      "register": "Registre",
+      "show_password": "Montrer le mot de passe"      
+    },
+    "ForgotPassword": {
+      "reset_password": "Réinitialiser le mot de passe"
+    },
+    "Login": {
+      "login": "S'identifier"
+    },
+    "Register": {
+      "register": "Registre"
+    },
+    "FieldValidation": {
+      "valid_user_name": "6-12 de longueur avec des lettres ou des chiffres",
+      "valid_email": "Fournir email valide",
+      "valid_password": "6-12 en longueur, avec un nombre et un caractère spécial: !@#$%^&*",
+      "valid_password_again": "les mots de passe doivent correspondre"
+    }    
+  },
+  "es": {
+    "App": {
+      "version": "Versión"
+    },
+    "Header": {
+      "current_state": "Estado actual",
+      "see_console": "ver la consola",
+      "update_state": "Estado de actualización"      
+    },    
+    "Subview": {
+      "subview": "Subview",
+      "back": "Regresar"
+    },    
+    "Snowflake": {
+      "logout": "Cerrar sesión",
+      "main": "Principal",
+      "profile":"Perfil"
+    },
+    "Main": {
+      "navigate": "Navegue hasta subview"
+    },
+    "Profile": {
+      "username": "Nombre de usuario",
+      "email": "Correo electrónico",
+      "update": "Actualización del perfil",
+     "verified": "Correo electrónico verificado",
+      "display": "solo mostrar"
+    },
+    "LoginForm": {
+      "username": "Nombre de usuario",
+      "email": "Email",
+      "password": "Contraseña",
+      "password_again": "Contraseña de nuevo"
+    },
+    "LoginRender": {
+      "forgot_password": "¿Olvidaste tu contraseña?",
+      "already_have_account": "¿Ya tienes cuenta?",
+      "register": "Registrarse",
+      "show_password": "Mostrar Contraseña"      
+    },
+    "ForgotPassword": {
+      "reset_password": "Restablecer la contraseña"
+    },
+    "Login": {
+      "login": "Iniciar sesión"
+    },
+    "Register": {
+      "register": "Registrarse"
+    },
+    "FieldValidation": {
+      "valid_user_name": "6-12 de longitud con letras o números",
+      "valid_email": "Proveer de correo electrónico válida",
+      "valid_password": "6-12 de longitud, con un número y carácter especial: !@#$%^&*",
+      "valid_password_again": "Las contraseñas deben coincidir"
+    }    
+  }
+
+}
+
