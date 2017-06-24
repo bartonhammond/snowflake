@@ -5,8 +5,8 @@ A React-Native starter mobile app, or maybe just an example, or maybe a boilerpl
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c072e4c80b2e477591170553b149772b)](https://www.codacy.com/app/bartonhammond/snowflake?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bartonhammond/snowflake&amp;utm_campaign=Badge_Grade)
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-![ios](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/348ae0a97c5e147a.svg?token=RmDwzjeIGuo7i9MeazE1fg)](https://www.bitrise.io/app/348ae0a97c5e147a)
-![android](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/1e0425744dcc7ce3.svg?token=uvZDZvo89BLXvjrArJJreQ)](https://www.bitrise.io/app/1e0425744dcc7ce3)
+![iOS](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/348ae0a97c5e147a.svg?token=RmDwzjeIGuo7i9MeazE1fg)](https://www.bitrise.io/app/348ae0a97c5e147a)
+![Android](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/1e0425744dcc7ce3.svg?token=uvZDZvo89BLXvjrArJJreQ)](https://www.bitrise.io/app/1e0425744dcc7ce3)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE)
 [![React Native](https://img.shields.io/badge/react%20native-0.41.2-brightgreen.svg)](https://github.com/facebook/react-native)
 
@@ -106,7 +106,7 @@ Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https:
 
 ### To run:
 * For iOS, from the command line, run via command: ```react-native run-ios``` or open XCode and load project, Run ```Product -> Run (⌘+R)```
-* For android, from the command line, run via the command: ```react-native run-android``` assuming you have an emulator or device running and attached
+* For Android, from the command line, run via the command: ```react-native run-android``` assuming you have an emulator or device running and attached
 * To run Jest, ```npm test```
 * To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
 * Enjoy!
@@ -189,7 +189,7 @@ apm install editorconfig es6-javascript javascript-snippets linter linter-eslint
 
 | Platform| Register     | Login | Profile   |
 | :------:| :-------: | :----: | :---: |
-| iOS|  ![ios Profile](https://cloud.githubusercontent.com/assets/1282364/11598478/b2b1b5e6-9a87-11e5-8be9-37cbfa478a71.gif)  | ![ios Login](https://cloud.githubusercontent.com/assets/1282364/11598580/6d360f02-9a88-11e5-836b-4171f789a41d.gif)| ![ios Register](https://cloud.githubusercontent.com/assets/1282364/11598582/6d392750-9a88-11e5-9839-05127dfba96b.gif)  |
+| iOS|  ![iOS Profile](https://cloud.githubusercontent.com/assets/1282364/11598478/b2b1b5e6-9a87-11e5-8be9-37cbfa478a71.gif)  | ![iOS Login](https://cloud.githubusercontent.com/assets/1282364/11598580/6d360f02-9a88-11e5-836b-4171f789a41d.gif)| ![iOS Register](https://cloud.githubusercontent.com/assets/1282364/11598582/6d392750-9a88-11e5-9839-05127dfba96b.gif)  |
 | Android |![Android Register](https://cloud.githubusercontent.com/assets/1282364/11598579/6d3487b8-9a88-11e5-9e95-260283a6951e.gif)    | ![Android Login](https://cloud.githubusercontent.com/assets/1282364/11598577/6d2f140e-9a88-11e5-8cd4-1ba8c9cbc603.gif)   |  ![Android Profile](https://cloud.githubusercontent.com/assets/1282364/11598578/6d314ee0-9a88-11e5-9a6c-512a313535ee.gif) |
 
 
@@ -457,7 +457,7 @@ The following videos will walk you through setting up CI with BitRise.io
 ##### Things not addressed
 * Submission to any store
 * Working with other CIs
-* Complex setups for either ios or android
+* Complex setups for either iOS or Android
 * Debugging any failures
 * Shiny new things
 * No local builds with Bitrise CLI
