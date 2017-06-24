@@ -116,7 +116,7 @@ Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https:
 
 
 ------------
-##Notes
+## Notes
 
 Code is written to [JS Standard](https://github.com/feross/standard) and validated with [Eslint](http://eslint.org/).  To setup your favorite editor using the Eslint configuration, see [Editors](http://eslint.org/docs/user-guide/integrations#editors)
 
@@ -269,24 +269,24 @@ What more can I say?  It's a fantastic leap forward in providing the ability to 
 
 This application provides one code base that works on both platforms.  It demonstrates Form interactions,  Navigation, and use of many other components.
 
-###[Jest](https://facebook.github.io/jest/)
+### [Jest](https://facebook.github.io/jest/)
 *85 Unit tests that cover plain objects and JSX components*
 
 The de-facto standard for React/Native testing.  This app demonstrates how to mock **ReactNative, node_modules, classes** and to properly **test JSX components** by programmatically changing the props, and throughly **test the applications data state and the actions** in conjunction with Redux.
 
 ![Jest Coverage Analysis](https://cloud.githubusercontent.com/assets/1282364/17187737/19524234-5400-11e6-8350-53e653a4c1f6.png)
 
-###[Redux](http://redux.js.org/)
+### [Redux](http://redux.js.org/)
 *Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.*
 
 Before Redux, application state was managed by all the various components in the app.  Now, the state is managed in a **predictable and consistent manner** and it can be **tested with Jest** and best of all, it is **independent** of the UI.  This is a major advancement in application design!
 
-###[Hapi](http://hapijs.com/)
+### [Hapi](http://hapijs.com/)
 For me, Hapi provided a clear way for defining APIs and managing things clearly.  Some folks like Express, I've used Express myself, and I wanted to try Hapi.  I'm very satisfied with Hapi.  As you may or may not know, WalMart Labs produced Hapi and they've used it in their business.  
 
 One of the needs of any application is server side processing.  With the ability to run Hapi locally or on OpenShift, I'm able to write my server logic and test it locally.  When I'm "happy" I can push the code to OpenShift.  The same code runs in both environments.
 
-###[Parse Server](https://github.com/ParsePlatform/parse-server)
+### [Parse Server](https://github.com/ParsePlatform/parse-server)
 As an alternative to Hapi, Snowflake also supports Parse Server.  Parse Server is an open source version of the Parse backend that can be deployed to any infrastructure that can run Node.js.
 
 Parse Server works with the Express web application framework.  You can test it locally and push changes to your parse remote server when you are ready.
@@ -294,12 +294,12 @@ Parse Server works with the Express web application framework.  You can test it 
 ### [OpenShift](https://www.openshift.com/)
 I chose OpenShift because I could get a reasonable performing application for free.  The Snowflake server ([https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) uses 3 gears with MongoDB and Redis.  
 
-###[TComb](https://github.com/gcanti/tcomb-form-native)
+### [TComb](https://github.com/gcanti/tcomb-form-native)
 *A structured model based approach to declarative forms*
 
 *With this library, you **simplify form processing** incredibly!  Write a lot **less code**, get **usability** and **accessibility for free** (automatic labels, inline validation, etc) and no need to update forms when domain model changes.  This application **demonstrates how to test these forms** also!
 
-###[Validate.js](http://validatejs.org/)
+### [Validate.js](http://validatejs.org/)
 *Validate.js provides a declarative way of validating javascript objects.*
 
 Using Validate.js for the Form processing was a breeze!  And with the ability to test the validations to the Redux state was very easy!
@@ -347,7 +347,7 @@ alt="Introduction" width="240" height="180" border="10"
 * You can **still** run applications locally with simulators
 
 
-#####  Bitrise Overview
+##### Bitrise Overview
   * **Video 2/7**:[https://youtu.be/JAHlfNUKoLg](https://youtu.be/JAHlfNUKoLg)
 <a
 href="http://www.youtube.com/watch?feature=player_embedded&v=JAHlfNUKoLg"
@@ -665,4 +665,4 @@ In a previous life, I worked with Parse JS SDK and it's based on backbone.js.  S
 With the Parse Rest API, it's simple, can be tested itself from the command line with curl, it's clear, it's succinct and it's easily replaced with something else, an example such as Mongo/Mongoose without much, if any, impact on the code base.
 
 
-######-barton hammond
+###### -barton hammond
