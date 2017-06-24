@@ -86,7 +86,7 @@ Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https:
     parseRemote: false
   },
 ```
-  
+
 * To setup parse-server, follow the instructions at https://github.com/ParsePlatform/parse-server-example
 * Set the `local.url` value if you are running parse-server `local`
 * Set the `remote.url` value if you are running parse-server `remote`
@@ -101,7 +101,7 @@ Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https:
     	url: 'https://enter_your_snowflake_host.com'   // match SERVER_URL in parse-server's index.js
     }
   }
-  
+
 ```
 
 ### To run:
