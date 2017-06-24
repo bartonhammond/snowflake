@@ -149,7 +149,8 @@ Snowflake has a **choice of servers**, either
     See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
 
 * **Parse Server** that runs **remotely** or **locally**
-		See [https://github.com/ParsePlatform/parse-server-example](https://github.com/ParsePlatform/parse-server-example) for more information.
+
+    See [https://github.com/ParsePlatform/parse-server-example](https://github.com/ParsePlatform/parse-server-example) for more information.
 
 ---------------
 # Content
@@ -215,9 +216,11 @@ apm install editorconfig es6-javascript javascript-snippets linter linter-eslint
 
 Some quotes from users of **Snowflake**
 
-**Open Source Mag: Learn best of React Native with these open source projects**:[http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/](http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/)
+**Open Source Mag: Learn best of React Native with these open source projects**:
+[http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/](http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/)
 
-**ICICletech Blog: Mobile App Development With 8 Awesome React-Native Starter Kits**: We have listed some of our favorite starter kits and boilerplates to get started quickly.
+**ICICletech Blog: Mobile App Development With 8 Awesome React-Native Starter Kits**:
+We have listed some of our favorite starter kits and boilerplates to get started quickly.
 [https://www.icicletech.com/blog/react-native-starter-kits](https://www.icicletech.com/blog/react-native-starter-kits)
 
 **Infinite.Red: Ignite Your Mobile Development:**
@@ -225,9 +228,10 @@ Some quotes from users of **Snowflake**
 
 [https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm](https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm)
 
-**AdtMag: New Community Projects for React Native: Deco IDE and Pepperoni Boilerplate** [https://adtmag.com/articles/2016/05/26/react-native-projects.aspx](https://adtmag.com/articles/2016/05/26/react-native-projects.aspx) Snowflake mentioned
+**AdtMag: New Community Projects for React Native: Deco IDE and Pepperoni Boilerplate**
+[https://adtmag.com/articles/2016/05/26/react-native-projects.aspx](https://adtmag.com/articles/2016/05/26/react-native-projects.aspx) Snowflake mentioned
 
-**Pepperoni App Kit** (see [Credits](https://github.com/futurice/pepperoni-app-kit#credits) )
+**Pepperoni App Kit** (see [Credits](https://github.com/futurice/pepperoni-app-kit#credits))
 >This project was initially motivated by Snowflake....you should check it out to see if it's a good fit for your app.
 
 **Viktor**
