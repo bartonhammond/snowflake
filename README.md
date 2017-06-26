@@ -472,8 +472,8 @@ This section explains a little about what I've learned with Redux and the manage
 
 ### Without Redux
 
-
 ![Alt text](https://g.gravizo.com/source/custom_mark10?https%3A%2F%2Fraw.githubusercontent.com%2Fbartonhammond%2Fsnowflake%2Fgravizo%2FREADME.md)
+
 <details> 
 <summary></summary>
 custom_mark10
@@ -486,7 +486,7 @@ custom_mark10
     login -> router [style=bold,label="4"];
     router-> new_page [style=bold,label="5"];
   }
-  custom_mark10
+custom_mark10
 </details>
 
 
@@ -497,7 +497,9 @@ In the above diagram, the Login component is responsible for calling the Validat
 This makes testing hard as the logic is partially contained in the Login component itself and the sequence of those events are encapsulated there too!  
 
 ### With Redux
+
 ![Alt text](https://g.gravizo.com/source/custom_mark11?https%3A%2F%2Fraw.githubusercontent.com%2Fbartonhammond%2Fsnowflake%2Fgravizo%2FREADME.md)
+
 <details> 
 <summary></summary>
 custom_mark11
@@ -513,7 +515,7 @@ custom_mark11
     Action -> Reducer [style=bold,label="7"];
     Reducer -> new_page [style=bold,label="8"];
   }
-  custom_mark10
+custom_mark11
 </details>
 
 What the above diagram depicts is that the logic for login is contained in the Actions and Reducer and can be tested in isolation from the UI. This also makes the UI Component Login much simpler to write as it just renders content based on props that are provided.  The props are actually the Reducer Store.
