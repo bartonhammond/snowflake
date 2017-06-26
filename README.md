@@ -5,8 +5,8 @@ A React-Native starter mobile app, or maybe just an example, or maybe a boilerpl
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c072e4c80b2e477591170553b149772b)](https://www.codacy.com/app/bartonhammond/snowflake?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bartonhammond/snowflake&amp;utm_campaign=Badge_Grade)
 [![Join the chat at https://gitter.im/bartonhammond/snowflake](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bartonhammond/snowflake?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-![ios](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/348ae0a97c5e147a.svg?token=RmDwzjeIGuo7i9MeazE1fg)](https://www.bitrise.io/app/348ae0a97c5e147a)
-![andriod](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/1e0425744dcc7ce3.svg?token=uvZDZvo89BLXvjrArJJreQ)](https://www.bitrise.io/app/1e0425744dcc7ce3)
+![iOS](https://img.shields.io/badge/IOS--blue.svg) [![Build Status](https://www.bitrise.io/app/348ae0a97c5e147a.svg?token=RmDwzjeIGuo7i9MeazE1fg)](https://www.bitrise.io/app/348ae0a97c5e147a)
+![Android](https://img.shields.io/badge/Android--blue.svg) [![Build Status](https://www.bitrise.io/app/1e0425744dcc7ce3.svg?token=uvZDZvo89BLXvjrArJJreQ)](https://www.bitrise.io/app/1e0425744dcc7ce3)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/bartonhammond/snowflake/blob/master/LICENSE)
 [![React Native](https://img.shields.io/badge/react%20native-0.41.2-brightgreen.svg)](https://github.com/facebook/react-native)
 
@@ -86,7 +86,7 @@ Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https:
     parseRemote: false
   },
 ```
-  
+
 * To setup parse-server, follow the instructions at https://github.com/ParsePlatform/parse-server-example
 * Set the `local.url` value if you are running parse-server `local`
 * Set the `remote.url` value if you are running parse-server `remote`
@@ -101,12 +101,12 @@ Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https:
     	url: 'https://enter_your_snowflake_host.com'   // match SERVER_URL in parse-server's index.js
     }
   }
-  
+
 ```
 
 ### To run:
 * For iOS, from the command line, run via command: ```react-native run-ios``` or open XCode and load project, Run ```Product -> Run (⌘+R)```
-* For android, from the command line, run via the command: ```react-native run-android``` assuming you have an emulator or device running and attached
+* For Android, from the command line, run via the command: ```react-native run-android``` assuming you have an emulator or device running and attached
 * To run Jest, ```npm test```
 * To debug Jest unit cases, install [node_inspector](https://github.com/node-inspector/node-inspector) and run ```npm run test-chrome```
 * Enjoy!
@@ -116,7 +116,7 @@ Please refer to [https://github.com/bartonhammond/snowflake-parse-heroku](https:
 
 
 ------------
-##Notes
+## Notes
 
 Code is written to [JS Standard](https://github.com/feross/standard) and validated with [Eslint](http://eslint.org/).  To setup your favorite editor using the Eslint configuration, see [Editors](http://eslint.org/docs/user-guide/integrations#editors)
 
@@ -149,7 +149,8 @@ Snowflake has a **choice of servers**, either
     See [https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) for more information about the OpenShift Hapi server.  The setup instructions below describe how to select the server you desire.  
 
 * **Parse Server** that runs **remotely** or **locally**
-		See [https://github.com/ParsePlatform/parse-server-example](https://github.com/ParsePlatform/parse-server-example) for more information.
+
+    See [https://github.com/ParsePlatform/parse-server-example](https://github.com/ParsePlatform/parse-server-example) for more information.
 
 ---------------
 # Content
@@ -188,7 +189,7 @@ apm install editorconfig es6-javascript javascript-snippets linter linter-eslint
 
 | Platform| Register     | Login | Profile   |
 | :------:| :-------: | :----: | :---: |
-| iOS|  ![ios Profile](https://cloud.githubusercontent.com/assets/1282364/11598478/b2b1b5e6-9a87-11e5-8be9-37cbfa478a71.gif)  | ![ios Login](https://cloud.githubusercontent.com/assets/1282364/11598580/6d360f02-9a88-11e5-836b-4171f789a41d.gif)| ![ios Register](https://cloud.githubusercontent.com/assets/1282364/11598582/6d392750-9a88-11e5-9839-05127dfba96b.gif)  |
+| iOS|  ![iOS Profile](https://cloud.githubusercontent.com/assets/1282364/11598478/b2b1b5e6-9a87-11e5-8be9-37cbfa478a71.gif)  | ![iOS Login](https://cloud.githubusercontent.com/assets/1282364/11598580/6d360f02-9a88-11e5-836b-4171f789a41d.gif)| ![iOS Register](https://cloud.githubusercontent.com/assets/1282364/11598582/6d392750-9a88-11e5-9839-05127dfba96b.gif)  |
 | Android |![Android Register](https://cloud.githubusercontent.com/assets/1282364/11598579/6d3487b8-9a88-11e5-9e95-260283a6951e.gif)    | ![Android Login](https://cloud.githubusercontent.com/assets/1282364/11598577/6d2f140e-9a88-11e5-8cd4-1ba8c9cbc603.gif)   |  ![Android Profile](https://cloud.githubusercontent.com/assets/1282364/11598578/6d314ee0-9a88-11e5-9a6c-512a313535ee.gif) |
 
 
@@ -215,9 +216,11 @@ apm install editorconfig es6-javascript javascript-snippets linter linter-eslint
 
 Some quotes from users of **Snowflake**
 
-**Open Source Mag: Learn best of React Native with these open source projects**:[http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/](http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/)
+**Open Source Mag: Learn best of React Native with these open source projects**:
+[http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/](http://opensourceforu.com/2016/05/learn-best-of-react-native-with-these-open-source-projects/)
 
-**ICICletech Blog: Mobile App Development With 8 Awesome React-Native Starter Kits**: We have listed some of our favorite starter kits and boilerplates to get started quickly.
+**ICICletech Blog: Mobile App Development With 8 Awesome React-Native Starter Kits**:
+We have listed some of our favorite starter kits and boilerplates to get started quickly.
 [https://www.icicletech.com/blog/react-native-starter-kits](https://www.icicletech.com/blog/react-native-starter-kits)
 
 **Infinite.Red: Ignite Your Mobile Development:**
@@ -225,9 +228,10 @@ Some quotes from users of **Snowflake**
 
 [https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm](https://shift.infinite.red/ignite-your-mobile-development-32417590ed3e#.pz7u3djtm)
 
-**AdtMag: New Community Projects for React Native: Deco IDE and Pepperoni Boilerplate** [https://adtmag.com/articles/2016/05/26/react-native-projects.aspx](https://adtmag.com/articles/2016/05/26/react-native-projects.aspx) Snowflake mentioned
+**AdtMag: New Community Projects for React Native: Deco IDE and Pepperoni Boilerplate**
+[https://adtmag.com/articles/2016/05/26/react-native-projects.aspx](https://adtmag.com/articles/2016/05/26/react-native-projects.aspx) Snowflake mentioned
 
-**Pepperoni App Kit** (see [Credits](https://github.com/futurice/pepperoni-app-kit#credits) )
+**Pepperoni App Kit** (see [Credits](https://github.com/futurice/pepperoni-app-kit#credits))
 >This project was initially motivated by Snowflake....you should check it out to see if it's a good fit for your app.
 
 **Viktor**
@@ -269,24 +273,24 @@ What more can I say?  It's a fantastic leap forward in providing the ability to 
 
 This application provides one code base that works on both platforms.  It demonstrates Form interactions,  Navigation, and use of many other components.
 
-###[Jest](https://facebook.github.io/jest/)
+### [Jest](https://facebook.github.io/jest/)
 *85 Unit tests that cover plain objects and JSX components*
 
 The de-facto standard for React/Native testing.  This app demonstrates how to mock **ReactNative, node_modules, classes** and to properly **test JSX components** by programmatically changing the props, and throughly **test the applications data state and the actions** in conjunction with Redux.
 
 ![Jest Coverage Analysis](https://cloud.githubusercontent.com/assets/1282364/17187737/19524234-5400-11e6-8350-53e653a4c1f6.png)
 
-###[Redux](http://redux.js.org/)
+### [Redux](http://redux.js.org/)
 *Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.*
 
 Before Redux, application state was managed by all the various components in the app.  Now, the state is managed in a **predictable and consistent manner** and it can be **tested with Jest** and best of all, it is **independent** of the UI.  This is a major advancement in application design!
 
-###[Hapi](http://hapijs.com/)
+### [Hapi](http://hapijs.com/)
 For me, Hapi provided a clear way for defining APIs and managing things clearly.  Some folks like Express, I've used Express myself, and I wanted to try Hapi.  I'm very satisfied with Hapi.  As you may or may not know, WalMart Labs produced Hapi and they've used it in their business.  
 
 One of the needs of any application is server side processing.  With the ability to run Hapi locally or on OpenShift, I'm able to write my server logic and test it locally.  When I'm "happy" I can push the code to OpenShift.  The same code runs in both environments.
 
-###[Parse Server](https://github.com/ParsePlatform/parse-server)
+### [Parse Server](https://github.com/ParsePlatform/parse-server)
 As an alternative to Hapi, Snowflake also supports Parse Server.  Parse Server is an open source version of the Parse backend that can be deployed to any infrastructure that can run Node.js.
 
 Parse Server works with the Express web application framework.  You can test it locally and push changes to your parse remote server when you are ready.
@@ -294,12 +298,12 @@ Parse Server works with the Express web application framework.  You can test it 
 ### [OpenShift](https://www.openshift.com/)
 I chose OpenShift because I could get a reasonable performing application for free.  The Snowflake server ([https://github.com/bartonhammond/snowflake-hapi-openshift](https://github.com/bartonhammond/snowflake-hapi-openshift) uses 3 gears with MongoDB and Redis.  
 
-###[TComb](https://github.com/gcanti/tcomb-form-native)
+### [TComb](https://github.com/gcanti/tcomb-form-native)
 *A structured model based approach to declarative forms*
 
 *With this library, you **simplify form processing** incredibly!  Write a lot **less code**, get **usability** and **accessibility for free** (automatic labels, inline validation, etc) and no need to update forms when domain model changes.  This application **demonstrates how to test these forms** also!
 
-###[Validate.js](http://validatejs.org/)
+### [Validate.js](http://validatejs.org/)
 *Validate.js provides a declarative way of validating javascript objects.*
 
 Using Validate.js for the Form processing was a breeze!  And with the ability to test the validations to the Redux state was very easy!
@@ -331,12 +335,10 @@ The following videos will walk you through setting up CI with BitRise.io
 
 ##### Introduction
 * **Video 1/7**: [https://youtu.be/EYafslJvXz8](https://youtu.be/EYafslJvXz8)
-<a
-href="http://www.youtube.com/watch?feature=player_embedded&v=EYafslJvXz8"
-target="_blank">
-<img src="http://img.youtube.com/vi/EYafslJvXz8/0.jpg"
-alt="Introduction" width="240" height="180" border="10"
-/></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=EYafslJvXz8" target="_blank">
+  <img src="http://img.youtube.com/vi/EYafslJvXz8/0.jpg" alt="Introduction" width="240" height="180" border="10" />
+</a>
 
 * Snowflake is a *starter app* so all tutorials are basic in nature
 * There are a bizzilion ways of doing any of this - I'm showing one
@@ -347,14 +349,12 @@ alt="Introduction" width="240" height="180" border="10"
 * You can **still** run applications locally with simulators
 
 
-#####  Bitrise Overview
-  * **Video 2/7**:[https://youtu.be/JAHlfNUKoLg](https://youtu.be/JAHlfNUKoLg)
-<a
-href="http://www.youtube.com/watch?feature=player_embedded&v=JAHlfNUKoLg"
-target="_blank">
-<img src="http://img.youtube.com/vi/JAHlfNUKoLg/0.jpg"
-alt="Bitrise.io Overview" width="240" height="180" border="10"
-/></a>
+##### Bitrise Overview
+  * **Video 2/7**: [https://youtu.be/JAHlfNUKoLg](https://youtu.be/JAHlfNUKoLg)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=JAHlfNUKoLg" target="_blank">
+  <img src="http://img.youtube.com/vi/JAHlfNUKoLg/0.jpg" alt="Bitrise.io Overview" width="240" height="180" border="10" />
+</a>
 
   *  Introduction to Bitrise.io [https://www.bitrise.io/](https://www.bitrise.io/)
   * Overview of what it does for us
@@ -363,13 +363,12 @@ alt="Bitrise.io Overview" width="240" height="180" border="10"
 	  * Android
 
 ##### iOS XCode Modifications
-* **Video 3/7**:[https://youtu.be/3y72adWNRSU](https://youtu.be/3y72adWNRSU)
-<a
-href="http://www.youtube.com/watch?feature=player_embedded&v=3y72adWNRSU"
-target="_blank">
-<img src="http://img.youtube.com/vi/3y72adWNRSU/0.jpg"
-alt="iOS XCode Modifications" width="240" height="180" border="10"
-/></a>
+* **Video 3/7**: [https://youtu.be/3y72adWNRSU](https://youtu.be/3y72adWNRSU)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=3y72adWNRSU" target="_blank">
+  <img src="http://img.youtube.com/vi/3y72adWNRSU/0.jpg" alt="iOS XCode Modifications" width="240" height="180" border="10" />
+</a>
+
   * XCode
 	* Icons - Asset Catalog Creator Free - see App Store
 	* Bundler ID
@@ -380,14 +379,12 @@ alt="iOS XCode Modifications" width="240" height="180" border="10"
 	* Automatic Certificate & Development
 
 ##### XCode Certs Provision Profiles App Id
-  * **Video 4/7**:
-  [https://youtu.be/zJXoHIaJg7Y](https://youtu.be/zJXoHIaJg7Y)
-<a
-href="http://www.youtube.com/watch?feature=player_embedded&v=zJXoHIaJg7Y"
-target="_blank">
-<img src="http://img.youtube.com/vi/zJXoHIaJg7Y/0.jpg"
-alt="XCode Certs Provision Profiles" width="240" height="180" border="10"
-/></a>
+  * **Video 4/7**: [https://youtu.be/zJXoHIaJg7Y](https://youtu.be/zJXoHIaJg7Y)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=zJXoHIaJg7Y" target="_blank">
+  <img src="http://img.youtube.com/vi/zJXoHIaJg7Y/0.jpg" alt="XCode Certs Provision Profiles" width="240" height="180" border="10" />
+</a>
+
 * see [https://developer.apple.com/library/ios/qa/qa1814/_index.html](https://developer.apple.com/library/ios/qa/qa1814/_index.html)
 * App Development Center
 	*  Remove all Certs, App Ids, and Profiles
@@ -397,14 +394,12 @@ alt="XCode Certs Provision Profiles" width="240" height="180" border="10"
 		* Select option for Xcode to fix signing
 
 ##### Create iOS App
-* **Video 5/7**:
-[Bitrise, YML, Profile, P12](https://youtu.be/olfpwEjVlZ4)
-<a
-href="http://www.youtube.com/watch?feature=player_embedded&v=olfpwEjVlZ4"
-target="_blank">
-<img src="http://img.youtube.com/vi/olfpwEjVlZ4/0.jpg"
-alt="Create iOS App" width="240" height="180" border="10"
-/></a>
+* **Video 5/7**: [Bitrise, YML, Profile, P12](https://youtu.be/olfpwEjVlZ4)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=olfpwEjVlZ4" target="_blank">
+  <img src="http://img.youtube.com/vi/olfpwEjVlZ4/0.jpg" alt="Create iOS App" width="240" height="180" border="10" />
+</a>
+
 * Login/Register Bitrise.io
 * Dashboard
 * Add App
@@ -421,12 +416,10 @@ alt="Create iOS App" width="240" height="180" border="10"
 
 ##### iOS install
 * **Video 6/7**: [https://youtu.be/nQWXJI0ncns](https://youtu.be/nQWXJI0ncns)
-<a
-href="http://www.youtube.com/watch?feature=player_embedded&v=nQWXJI0ncns"
-target="_blank">
-<img src="http://img.youtube.com/vi/nQWXJI0ncns/0.jpg"
-alt="iOS install from email" width="240" height="180" border="10"
-/></a>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=nQWXJI0ncns" target="_blank">
+  <img src="http://img.youtube.com/vi/nQWXJI0ncns/0.jpg" alt="iOS install from email" width="240" height="180" border="10" />
+</a>
 
 * From device, open email app
 * Open **letsconnect**
@@ -435,11 +428,9 @@ alt="iOS install from email" width="240" height="180" border="10"
 
 ##### Android Setup
 * **Video 7/7**: [Android YML, Setup](https://youtu.be/o4RQZodbzIU)
-<a
-href="http://www.youtube.com/watch?feature=player_embedded&v=o4RQZodbzIU"
-target="_blank">
-<img src="http://img.youtube.com/vi/o4RQZodbzIU/0.jpg"
-alt="Android Setup" width="240" height="180" border="10"/>
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=o4RQZodbzIU" target="_blank">
+  <img src="http://img.youtube.com/vi/o4RQZodbzIU/0.jpg" alt="Android Setup" width="240" height="180" border="10" />
 </a>
 
 * Settings -> Docker Image
@@ -450,12 +441,10 @@ alt="Android Setup" width="240" height="180" border="10"/>
 * Run build
 
 ##### Addendum #1
-* **Video **: [XCode Edge Stack, WorkFlow](https://youtu.be/mP5D2MQboxw)
-<a
-href="http://www.youtube.com/watch?feature=player_embedded&v=mP5D2MQboxw"
-target="_blank">
-<img src="https://i9.ytimg.com/vi/mP5D2MQboxw/1.jpg?sqp=CPDqzb0F&rs=AOn4CLBdpVDIWghF_-wSuaSKnbPdxHE1hw"
-alt="XCode Edge Stack" width="240" height="180" border="10"/>
+* **Video**: [XCode Edge Stack, WorkFlow](https://youtu.be/mP5D2MQboxw)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=mP5D2MQboxw" target="_blank">
+  <img src="https://i9.ytimg.com/vi/mP5D2MQboxw/1.jpg?sqp=CPDqzb0F&rs=AOn4CLBdpVDIWghF_-wSuaSKnbPdxHE1hw" alt="XCode Edge Stack" width="240" height="180" border="10" />
 </a>
 
 * "XCode Edge Stack" for iOS
@@ -468,7 +457,7 @@ alt="XCode Edge Stack" width="240" height="180" border="10"/>
 ##### Things not addressed
 * Submission to any store
 * Working with other CIs
-* Complex setups for either ios or andriod
+* Complex setups for either iOS or Android
 * Debugging any failures
 * Shiny new things
 * No local builds with Bitrise CLI
@@ -665,4 +654,4 @@ In a previous life, I worked with Parse JS SDK and it's based on backbone.js.  S
 With the Parse Rest API, it's simple, can be tested itself from the command line with curl, it's clear, it's succinct and it's easily replaced with something else, an example such as Mongo/Mongoose without much, if any, impact on the code base.
 
 
-######-barton hammond
+###### -barton hammond
