@@ -472,7 +472,11 @@ This section explains a little about what I've learned with Redux and the manage
 
 ### Without Redux
 
-![Alt text](http://g.gravizo.com/g?
+
+![Alt text](https://g.gravizo.com/source/custom_mark10?https%3A%2F%2Fgithub.com%2Fbartonhammond%2Fsnowflake%2Fblob%2Fmaster%2FREADME.md)
+<details> 
+<summary></summary>
+custom_mark10
   digraph G {
     aize ="4,4";
     login [shape=box];
@@ -482,7 +486,9 @@ This section explains a little about what I've learned with Redux and the manage
     login -> router [style=bold,label="4"];
     router-> new_page [style=bold,label="5"];
   }
-)
+  custom_mark10
+</details>
+
 
 A typical app, at least those I've written before, have logic and state scattered all through out.  Frameworks help to organize but typically the developer has to know how to "stitch" it together by remembering to update certain state at certain times.
 
@@ -491,8 +497,10 @@ In the above diagram, the Login component is responsible for calling the Validat
 This makes testing hard as the logic is partially contained in the Login component itself and the sequence of those events are encapsulated there too!  
 
 ### With Redux
-
-![Alt text](http://g.gravizo.com/g?
+![Alt text](https://g.gravizo.com/source/custom_mark11?https%3A%2F%2Fgithub.com%2Fbartonhammond%2Fsnowflake%2Fblob%2Fmaster%2FREADME.md)
+<details> 
+<summary></summary>
+custom_mark11
   digraph G {
     aize ="4,4";
     login [shape=box];
@@ -505,7 +513,8 @@ This makes testing hard as the logic is partially contained in the Login compone
     Action -> Reducer [style=bold,label="7"];
     Reducer -> new_page [style=bold,label="8"];
   }
-)
+  custom_mark10
+</details>
 
 What the above diagram depicts is that the logic for login is contained in the Actions and Reducer and can be tested in isolation from the UI. This also makes the UI Component Login much simpler to write as it just renders content based on props that are provided.  The props are actually the Reducer Store.
 
