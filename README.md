@@ -444,7 +444,7 @@ The following videos will walk you through setting up CI with BitRise.io
 * **Video**: [XCode Edge Stack, WorkFlow](https://youtu.be/mP5D2MQboxw)
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=mP5D2MQboxw" target="_blank">
-  <img src="https://i9.ytimg.com/vi/mP5D2MQboxw/1.jpg?sqp=CPDqzb0F&rs=AOn4CLBdpVDIWghF_-wSuaSKnbPdxHE1hw" alt="XCode Edge Stack" width="240" height="180" border="10" />
+  <img src="http://img.youtube.com/vi/mP5D2MQboxw/1.jpg" alt="XCode Edge Stack" width="240" height="180" border="10" />
 </a>
 
 * "XCode Edge Stack" for iOS
