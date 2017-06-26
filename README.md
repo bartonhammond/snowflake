@@ -472,7 +472,7 @@ This section explains a little about what I've learned with Redux and the manage
 
 ### Without Redux
 
-![Alt text](https://g.gravizo.com/source/custom_mark10?https%3A%2F%2Fraw.githubusercontent.com%2Fbartonhammond%2Fsnowflake%2Fgravizo%2FREADME.md)
+![Alt text](https://g.gravizo.com/source/custom_mark10?https%3A%2F%2Fraw.githubusercontent.com%2Fbartonhammond%2Fsnowflake%2Fmaster%2FREADME.md)
 
 <details> 
 <summary></summary>
@@ -498,7 +498,7 @@ This makes testing hard as the logic is partially contained in the Login compone
 
 ### With Redux
 
-![Alt text](https://g.gravizo.com/source/custom_mark11?https%3A%2F%2Fraw.githubusercontent.com%2Fbartonhammond%2Fsnowflake%2Fgravizo%2FREADME.md)
+![Alt text](https://g.gravizo.com/source/custom_mark11?https%3A%2F%2Fraw.githubusercontent.com%2Fbartonhammond%2Fsnowflake%2Fmaster%2FREADME.md)
 
 <details> 
 <summary></summary>
